@@ -38,9 +38,9 @@ python3 -m http.server 8000
 
 ## 部署
 
-部署到 Cloudflare Pages：
+部署到 Cloudflare Workers（Static Assets），設定檔為 `wrangler.jsonc`：
 
-1. 將此專案推送到 GitHub（或直接用 Cloudflare Pages 的 Direct Upload）
-2. 在 Cloudflare Pages 建立專案，framework preset 選 "None"，build command 留空，
-   輸出目錄設為專案根目錄（`/`）
-3. 綁定自訂網域 `rnhighpass.com`
+1. 登入 Cloudflare 帳號：`npx wrangler login`
+2. 執行 `npx wrangler deploy` 即可將整個網站部署上線
+3. 在 Cloudflare dashboard 的 Workers 專案設定中新增 Custom Domain，
+   綁定 `rnhighpass.com`
