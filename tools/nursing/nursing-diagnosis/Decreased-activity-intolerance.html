@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Diagnosis - Activity Intolerance</title>
+    <link rel="stylesheet" href="diagnosis.css">
+</head>
+<body>
+    <header style="background-color: #3498db">
+        <h1 style="color: white;">Nursing Diagnosis Library</h1>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <input type="text" class="search-box" placeholder="Search diagnoses...">
+            
+            <h3>Nursing Diagnoses</h3>
+            
+            <div class="taxonomy-container">
+                <!-- Domain filter dropdown -->
+                <select id="domain-filter" class="taxonomy-filter">
+                    <option value="all">All Domains</option>
+                    <option value="domain1">Domain 1: Health Promotion</option>
+                    <option value="domain2">Domain 2: Nutrition</option>
+                    <option value="domain3">Domain 3: Elimination and Exchange</option>
+                    <option value="domain4" selected>Domain 4: Activity/Rest</option>
+                    <option value="domain5">Domain 5: Perception/Cognition</option>
+                    <option value="domain6">Domain 6: Self-Perception</option>
+                    <option value="domain7">Domain 7: Role Relationship</option>
+                    <option value="domain8">Domain 8: Sexuality</option>
+                    <option value="domain9">Domain 9: Coping/Stress Tolerance</option>
+                    <option value="domain10">Domain 10: Life Principles</option>
+                    <option value="domain11">Domain 11: Safety/Protection</option>
+                    <option value="domain12">Domain 12: Comfort</option>
+                    <option value="domain13">Domain 13: Growth/Development</option>
+                </select>
+                
+                <!-- Class filter dropdown -->
+                <select id="class-filter" class="taxonomy-filter">
+                    <option value="all">All Classes</option>
+                    <option value="class1">Class 1: Sleep/Rest</option>
+                    <option value="class2" selected>Class 2: Activity/Exercise</option>
+                    <option value="class3">Class 3: Energy Balance</option>
+                    <option value="class4">Class 4: Cardiovascular/Pulmonary Responses</option>
+                    <option value="class5">Class 5: Self-Care</option>
+                </select>
+            </div>
+            
+            <div class="diagnosis-container">
+                <!-- Domain 1: Health Promotion -->
+                <div class="domain-group" id="domain1">
+                    <div class="class-group" id="domain1-class1">
+                        <h4 class="class-title">Health Awareness</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Decreased-diversional-activity-engagement.html" data-domain="domain1" data-class="class1">Decreased diversional activity engagement</li>
+                            <li href="Readiness-for-enhanced-health-literacy.html" data-domain="domain1" data-class="class1">Readiness for enhanced health literacy</li>
+                            <li href="Sedentary-lifestyle.html" data-domain="domain1" data-class="class1">Sedentary lifestyle</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain1-class2">
+                        <h4 class="class-title">Health Management</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-elopement-attempt.html" data-domain="domain1" data-class="class2">Risk for elopement attempt</li>
+                            <li href="Frail-elderly-syndrome.html" data-domain="domain1" data-class="class2">Frail elderly syndrome</li>
+                            <li href="Risk-for-frail-elderly-syndrome.html" data-domain="domain1" data-class="class2">Risk for frail elderly syndrome</li>
+                            <li href="Readiness-for-enhanced-exercise-engagement.html" data-domain="domain1" data-class="class2">Readiness for enhanced exercise engagement</li>
+                            <li href="Deficient-community-health.html" data-domain="domain1" data-class="class2">Deficient community health</li>
+                            <li href="Risk-prone-health-behavior.html" data-domain="domain1" data-class="class2">Risk-prone health behavior</li>
+                            <li href="Ineffective-health-maintenance-behaviors.html" data-domain="domain1" data-class="class2">Ineffective health maintenance behaviors</li>
+                            <li href="Ineffective-health-self-management.html" data-domain="domain1" data-class="class2">Ineffective health self-management</li>
+                            <li href="Readiness-for-enhanced-health-self-management.html" data-domain="domain1" data-class="class2">Readiness for enhanced health self-management</li>
+                            <li href="Ineffective-family-health-self-management.html" data-domain="domain1" data-class="class2">Ineffective family health self-management</li>
+                            <li href="Ineffective-home-maintenance-behaviors.html" data-domain="domain1" data-class="class2">Ineffective home maintenance behaviors</li>
+                            <li href="Ineffective-protection.html" data-domain="domain1" data-class="class2">Ineffective protection</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 2: Nutrition -->
+                <div class="domain-group" id="domain2">
+                    <div class="class-group" id="domain2-class1">
+                        <h4 class="class-title">Ingestion</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Imbalanced-nutrition.html" data-domain="domain2" data-class="class1">Imbalanced nutrition: less than body requirements</li>
+                            <li href="Readiness-for-enhanced-nutrition.html" data-domain="domain2" data-class="class1">Readiness for enhanced nutrition</li>
+                            <li href="Insufficient-breast-milk-production.html" data-domain="domain2" data-class="class1">Insufficient breast milk production</li>
+                            <li href="Ineffective-breastfeeding.html" data-domain="domain2" data-class="class1">Ineffective breastfeeding</li>
+                            <li href="Obesity.html" data-domain="domain2" data-class="class1">Obesity</li>
+                            <li href="Overweight.html" data-domain="domain2" data-class="class1">Overweight</li>
+                            <li href="Impaired-swallowing.html" data-domain="domain2" data-class="class1">Impaired swallowing</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain2-class2">
+                        <h4 class="class-title">Digestion</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain2-class3">
+                        <h4 class="class-title">Absorption</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain2-class4">
+                        <h4 class="class-title">Metabolism</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-unstable-blood-glucose-level.html" data-domain="domain2" data-class="class4">Risk for unstable blood glucose level</li>
+                            <li href="Neonatal-hyperbilirubinemia.html" data-domain="domain2" data-class="class4">Neonatal hyperbilirubinemia</li>
+                            <li href="Risk-for-impaired-liver-function.html" data-domain="domain2" data-class="class4">Risk for impaired liver function</li>
+                            <li href="Risk-for-metabolic-syndrome.html" data-domain="domain2" data-class="class4">Risk for metabolic syndrome</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain2-class5">
+                        <h4 class="class-title">Hydration</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-electrolyte-imbalance.html" data-domain="domain2" data-class="class5">Risk for electrolyte imbalance</li>
+                            <li href="Risk-for-imbalanced-fluid-volume.html" data-domain="domain2" data-class="class5">Risk for imbalanced fluid volume</li>
+                            <li href="Deficient-fluid-volume.html" data-domain="domain2" data-class="class5">Deficient fluid volume</li>
+                            <li href="Excess-fluid-volume.html" data-domain="domain2" data-class="class5">Excess fluid volume</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 3: Elimination and Exchange -->
+                <div class="domain-group" id="domain3">
+                    <div class="class-group" id="domain3-class1">
+                        <h4 class="class-title">Urinary Function</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Disability-associated-urinary-incontinence.html" data-domain="domain3" data-class="class1">Disability-associated urinary incontinence</li>
+                            <li href="Impaired-urinary-elimination.html" data-domain="domain3" data-class="class1">Impaired urinary elimination</li>
+                            <li href="Stress-urinary-incontinence.html" data-domain="domain3" data-class="class1">Stress urinary incontinence</li>
+                            <li href="Urge-urinary-incontinence.html" data-domain="domain3" data-class="class1">Urge urinary incontinence</li>
+                            <li href="Urinary-retention.html" data-domain="domain3" data-class="class1">Urinary retention</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain3-class2">
+                        <h4 class="class-title">Gastrointestinal Function</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Constipation.html" data-domain="domain3" data-class="class2">Constipation</li>
+                            <li href="Risk-for-constipation.html" data-domain="domain3" data-class="class2">Risk for constipation</li>
+                            <li href="Chronic-functional-constipation.html" data-domain="domain3" data-class="class2">Chronic functional constipation</li>
+                            <li href="Impaired-bowel-continence.html" data-domain="domain3" data-class="class2">Impaired bowel continence</li>
+                            <li href="Diarrhea.html" data-domain="domain3" data-class="class2">Diarrhea</li>
+                            <li href="Dysfunctional-gastrointestinal-motility.html" data-domain="domain3" data-class="class2">Dysfunctional gastrointestinal motility</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain3-class3">
+                        <h4 class="class-title">Integumentary Function</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain3-class4">
+                        <h4 class="class-title">Respiratory Function</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Impaired-gas-exchange.html" data-domain="domain3" data-class="class4">Impaired gas exchange</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 4: Activity/Rest -->
+                <div class="domain-group" id="domain4">
+                    <div class="class-group" id="domain4-class1">
+                        <h4 class="class-title">Sleep/Rest</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Insomnia.html" data-domain="domain4" data-class="class1">Insomnia</li>
+                            <li href="Sleep-deprivation.html" data-domain="domain4" data-class="class1">Sleep deprivation</li>
+                            <li href="Readiness-for-enhanced-sleep.html" data-domain="domain4" data-class="class1">Readiness for enhanced sleep</li>
+                            <li href="Disturbed-sleep-pattern.html" data-domain="domain4" data-class="class1">Disturbed sleep pattern</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain4-class2">
+                        <h4 class="class-title">Activity/Exercise</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Decreased-activity-tolerance.html" data-domain="domain4" data-class="class2">Decreased activity tolerance</li>
+                            <li href="Risk-for-disuse-syndrome.html" data-domain="domain4" data-class="class2">Risk for disuse syndrome</li>
+                            <li href="Impaired-physical-mobility.html" data-domain="domain4" data-class="class2">Impaired physical mobility</li>
+                            <li href="Impaired-wheelchair-mobility.html" data-domain="domain4" data-class="class2">Impaired wheelchair mobility</li>
+                            <li href="Impaired-standing.html" data-domain="domain4" data-class="class2">Impaired standing</li>
+                            <li href="Impaired-walking.html" data-domain="domain4" data-class="class2">Impaired walking</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain4-class3">
+                        <h4 class="class-title">Energy Balance</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Imbalanced-energy-field.html" data-domain="domain4" data-class="class3">Imbalanced energy field</li>
+                            <li href="Fatigue.html" data-domain="domain4" data-class="class3">Fatigue</li>
+                            <li href="Wandering.html" data-domain="domain4" data-class="class3">Wandering</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain4-class4">
+                        <h4 class="class-title">Cardiovascular/Pulmonary Responses</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Ineffective-breathing-pattern.html" data-domain="domain4" data-class="class4">Ineffective breathing pattern</li>
+                            <li href="Decreased-cardiac-output.html" data-domain="domain4" data-class="class4">Decreased cardiac output</li>
+                            <li href="Risk-for-impaired-cardiovascular-function.html" data-domain="domain4" data-class="class4">Risk for impaired cardiovascular function</li>
+                            <li href="Risk-for-ineffective-peripheral-tissue-perfusion.html" data-domain="domain4" data-class="class4">Risk for ineffective peripheral tissue perfusion</li>
+                            <li href="Dysfunctional-ventilatory-weaning-response.html" data-domain="domain4" data-class="class4">Dysfunctional ventilatory weaning response</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain4-class5">
+                        <h4 class="class-title">Self-Care</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Bathing-self-care-deficit.html" data-domain="domain4" data-class="class5">Bathing self-care deficit</li>
+                            <li href="Dressing-self-care-deficit.html" data-domain="domain4" data-class="class5">Dressing self-care deficit</li>
+                            <li href="Feeding-self-care-deficit.html" data-domain="domain4" data-class="class5">Feeding self-care deficit</li>
+                            <li href="Toileting-self-care-deficit.html" data-domain="domain4" data-class="class5">Toileting self-care deficit</li>
+                            <li href="Self-neglect.html" data-domain="domain4" data-class="class5">Self-neglect</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 5: Perception/Cognition -->
+                <div class="domain-group" id="domain5">
+                    <div class="class-group" id="domain5-class1">
+                        <h4 class="class-title">Attention</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Unilateral-neglect.html" data-domain="domain5" data-class="class1">Unilateral neglect</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain5-class2">
+                        <h4 class="class-title">Orientation</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain5-class3">
+                        <h4 class="class-title">Sensation/Perception</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain5-class4">
+                        <h4 class="class-title">Cognition</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Acute-confusion.html" data-domain="domain5" data-class="class4">Acute confusion</li>
+                            <li href="Chronic-confusion.html" data-domain="domain5" data-class="class4">Chronic confusion</li>
+                            <li href="Ineffective-impulse-control.html" data-domain="domain5" data-class="class4">Ineffective impulse control</li>
+                            <li href="Deficient-knowledge.html" data-domain="domain5" data-class="class4">Deficient knowledge</li>
+                            <li href="Impaired-memory.html" data-domain="domain5" data-class="class4">Impaired memory</li>
+                            <li href="Disturbed-thought-process.html" data-domain="domain5" data-class="class4">Disturbed thought process</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain5-class5">
+                        <h4 class="class-title">Communication</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Readiness-for-enhanced-communication.html" data-domain="domain5" data-class="class5">Readiness for enhanced communication</li>
+                            <li href="Impaired-verbal-communication.html" data-domain="domain5" data-class="class5">Impaired verbal communication</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 6: Self-Perception -->
+                <div class="domain-group" id="domain6">
+                    <div class="class-group" id="domain6-class1">
+                        <h4 class="class-title">Self-Concept</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Hopelessness.html" data-domain="domain6" data-class="class1">Hopelessness</li>
+                            <li href="Readiness-for-enhanced-hope.html" data-domain="domain6" data-class="class1">Readiness for enhanced hope</li>
+                            <li href="Risk-for-compromised-human-dignity.html" data-domain="domain6" data-class="class1">Risk for compromised human dignity</li>
+                            <li href="Disturbed-personal-identity.html" data-domain="domain6" data-class="class1">Disturbed personal identity</li>
+                            <li href="Readiness-for-enhanced-self-concept.html" data-domain="domain6" data-class="class1">Readiness for enhanced self-concept</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain6-class2">
+                        <h4 class="class-title">Self-Esteem</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Chronic-low-self-esteem.html" data-domain="domain6" data-class="class2">Chronic low self-esteem</li>
+                            <li href="Situational-low-self-esteem.html" data-domain="domain6" data-class="class2">Situational low self-esteem</li>
+                            <li href="Risk-for-situational-low-self-esteem.html" data-domain="domain6" data-class="class2">Risk for situational low self-esteem</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain6-class3">
+                        <h4 class="class-title">Body Image</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Disturbed-body-image.html" data-domain="domain6" data-class="class3">Disturbed body image</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 7: Role Relationship -->
+                <div class="domain-group" id="domain7">
+                    <div class="class-group" id="domain7-class1">
+                        <h4 class="class-title">Caregiving Roles</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Impaired-parenting.html" data-domain="domain7" data-class="class1">Impaired parenting</li>
+                            <li href="Risk-for-impaired-parenting.html" data-domain="domain7" data-class="class1">Risk for impaired parenting</li>
+                            <li href="Readiness-for-enhanced-parenting.html" data-domain="domain7" data-class="class1">Readiness for enhanced parenting</li>
+                            <li href="Caregiver-role-strain.html" data-domain="domain7" data-class="class1">Caregiver role strain</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain7-class2">
+                        <h4 class="class-title">Family Relationships</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-impaired-attachment.html" data-domain="domain7" data-class="class2">Risk for impaired attachment</li>
+                            <li href="Disturbed-family-identity-syndrome.html" data-domain="domain7" data-class="class2">Disturbed family identity syndrome</li>
+                            <li href="Dysfunctional-family-processes.html" data-domain="domain7" data-class="class2">Dysfunctional family processes</li>
+                            <li href="Interrupted-family-processes.html" data-domain="domain7" data-class="class2">Interrupted family processes</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain7-class3">
+                        <h4 class="class-title">Role Performance</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Ineffective-relationship.html" data-domain="domain7" data-class="class3">Ineffective relationship</li>
+                            <li href="Readiness-for-enhanced-relationship.html" data-domain="domain7" data-class="class3">Readiness for enhanced relationship</li>
+                            <li href="Parental-role-conflict.html" data-domain="domain7" data-class="class3">Parental role conflict</li>
+                            <li href="Ineffective-role-performance.html" data-domain="domain7" data-class="class3">Ineffective role performance</li>
+                            <li href="Impaired-social-interaction.html" data-domain="domain7" data-class="class3">Impaired social interaction</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 8: Sexuality -->
+                <div class="domain-group" id="domain8">
+                    <div class="class-group" id="domain8-class1">
+                        <h4 class="class-title">Sexual Identity</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain8-class2">
+                        <h4 class="class-title">Sexual Function</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Sexual-dysfunction.html" data-domain="domain8" data-class="class2">Sexual dysfunction</li>
+                            <li href="Ineffective-sexuality-pattern.html" data-domain="domain8" data-class="class2">Ineffective sexuality pattern</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain8-class3">
+                        <h4 class="class-title">Reproduction</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Ineffective-childbearing-process.html" data-domain="domain8" data-class="class3">Ineffective childbearing process</li>
+                            <li href="Readiness-for-enhanced-childbearing-process.html" data-domain="domain8" data-class="class3">Readiness for enhanced childbearing process</li>
+                            <li href="Risk-for-disturbed-maternal-fetal-dyad.html" data-domain="domain8" data-class="class3">Risk for disturbed maternal-fetal dyad</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 9: Coping/Stress Tolerance -->
+                <div class="domain-group" id="domain9">
+                    <div class="class-group" id="domain9-class1">
+                        <h4 class="class-title">Post-Trauma Responses</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-complicated-immigration-transition.html" data-domain="domain9" data-class="class1">Risk for complicated immigration transition</li>
+                            <li href="Post-trauma-syndrome.html" data-domain="domain9" data-class="class1">Post-trauma syndrome</li>
+                            <li href="Rape-trauma-syndrome.html" data-domain="domain9" data-class="class1">Rape-trauma syndrome</li>
+                            <li href="Relocation-stress-syndrome.html" data-domain="domain9" data-class="class1">Relocation stress syndrome</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain9-class2">
+                        <h4 class="class-title">Coping Responses</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Anxiety.html" data-domain="domain9" data-class="class2">Anxiety</li>
+                            <li href="Ineffective-coping.html" data-domain="domain9" data-class="class2">Ineffective coping</li>
+                            <li href="Ineffective-community-coping.html" data-domain="domain9" data-class="class2">Ineffective community coping</li>
+                            <li href="Compromised-family-coping.html" data-domain="domain9" data-class="class2">Compromised family coping</li>
+                            <li href="Death-anxiety.html" data-domain="domain9" data-class="class2">Death anxiety</li>
+                            <li href="Fear.html" data-domain="domain9" data-class="class2">Fear</li>
+                            <li href="Maladaptive-grieving.html" data-domain="domain9" data-class="class2">Maladaptive grieving</li>
+                            <li href="Powerlessness.html" data-domain="domain9" data-class="class2">Powerlessness</li>
+                            <li href="Stress-overload.html" data-domain="domain9" data-class="class2">Stress overload</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain9-class3">
+                        <h4 class="class-title">Neurobehavioral Stress</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Acute-substance-withdrawal-syndrome.html" data-domain="domain9" data-class="class3">Acute substance withdrawal syndrome</li>
+                            <li href="Autonomic-dysreflexia.html" data-domain="domain9" data-class="class3">Autonomic dysreflexia</li>
+                            <li href="Neonatal-abstinence-syndrome.html" data-domain="domain9" data-class="class3">Neonatal abstinence syndrome</li>
+                            <li href="Disorganized-infant-behavior.html" data-domain="domain9" data-class="class3">Disorganized infant behavior</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 10: Life Principles -->
+                <div class="domain-group" id="domain10">
+                    <div class="class-group" id="domain10-class1">
+                        <h4 class="class-title">Values</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain10-class2">
+                        <h4 class="class-title">Beliefs</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Readiness-for-enhanced-spiritual-well-being.html" data-domain="domain10" data-class="class2">Readiness for enhanced spiritual well-being</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain10-class3">
+                        <h4 class="class-title">Value/Belief/Action Congruence</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Readiness-for-enhanced-decision-making.html" data-domain="domain10" data-class="class3">Readiness for enhanced decision-making</li>
+                            <li href="Decisional-conflict.html" data-domain="domain10" data-class="class3">Decisional conflict</li>
+                            <li href="Moral-distress.html" data-domain="domain10" data-class="class3">Moral distress</li>
+                            <li href="Impaired-religiosity.html" data-domain="domain10" data-class="class3">Impaired religiosity</li>
+                            <li href="Spiritual-distress.html" data-domain="domain10" data-class="class3">Spiritual distress</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 11: Safety/Protection -->
+                <div class="domain-group" id="domain11">
+                    <div class="class-group" id="domain11-class1">
+                        <h4 class="class-title">Infection</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-infection.html" data-domain="domain11" data-class="class1">Risk for infection</li>
+                            <li href="Risk-for-surgical-site-infection.html" data-domain="domain11" data-class="class1">Risk for surgical site infection</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain11-class2">
+                        <h4 class="class-title">Physical Injury</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Ineffective-airway-clearance.html" data-domain="domain11" data-class="class2">Ineffective airway clearance</li>
+                            <li href="Risk-for-aspiration.html" data-domain="domain11" data-class="class2">Risk for aspiration</li>
+                            <li href="Risk-for-falls.html" data-domain="domain11" data-class="class2">Risk for falls</li>
+                            <li href="Impaired-skin-integrity.html" data-domain="domain11" data-class="class2">Impaired skin integrity</li>
+                            <li href="Risk-for-impaired-skin-integrity.html" data-domain="domain11" data-class="class2">Risk for impaired skin integrity</li>
+                            <li href="Impaired-tissue-integrity.html" data-domain="domain11" data-class="class2">Impaired tissue integrity</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain11-class3">
+                        <h4 class="class-title">Violence</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-other-directed-violence.html" data-domain="domain11" data-class="class3">Risk for other-directed violence</li>
+                            <li href="Risk-for-self-directed-violence.html" data-domain="domain11" data-class="class3">Risk for self-directed violence</li>
+                            <li href="Self-mutilation.html" data-domain="domain11" data-class="class3">Self-mutilation</li>
+                            <li href="Risk-for-suicidal-behavior.html" data-domain="domain11" data-class="class3">Risk for suicidal behavior</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain11-class4">
+                        <h4 class="class-title">Environmental Hazards</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Contamination.html" data-domain="domain11" data-class="class4">Contamination</li>
+                            <li href="Risk-for-contamination.html" data-domain="domain11" data-class="class4">Risk for contamination</li>
+                            <li href="Risk-for-poisoning.html" data-domain="domain11" data-class="class4">Risk for poisoning</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain11-class5">
+                        <h4 class="class-title">Defensive Processes</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Risk-for-allergy-reaction.html" data-domain="domain11" data-class="class5">Risk for allergy reaction</li>
+                            <li href="Risk-for-latex-allergy-reaction.html" data-domain="domain11" data-class="class5">Risk for latex allergy reaction</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain11-class6">
+                        <h4 class="class-title">Thermoregulation</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Hyperthermia.html" data-domain="domain11" data-class="class6">Hyperthermia</li>
+                            <li href="Hypothermia.html" data-domain="domain11" data-class="class6">Hypothermia</li>
+                            <li href="Risk-for-hypothermia.html" data-domain="domain11" data-class="class6">Risk for hypothermia</li>
+                            <li href="Ineffective-thermoregulation.html" data-domain="domain11" data-class="class6">Ineffective thermoregulation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 12: Comfort -->
+                <div class="domain-group" id="domain12">
+                    <div class="class-group" id="domain12-class1">
+                        <h4 class="class-title">Physical Comfort</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Acute-pain.html" data-domain="domain12" data-class="class1">Acute Pain</li>
+                            <li href="Chronic-pain.html" data-domain="domain12" data-class="class1">Chronic Pain</li>
+                            <li href="Chronic-pain-syndrome.html" data-domain="domain12" data-class="class1">Chronic Pain Syndrome</li>
+                            <li href="Nausea.html" data-domain="domain12" data-class="class1">Nausea</li>
+                            <li href="Physical-impaired-comfort.html" data-domain="domain12" data-class="class1">Impaired Comfort</li>
+                            <li href="Labor-pain.html" data-domain="domain12" data-class="class1">Labor Pain</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain12-class2">
+                        <h4 class="class-title">Environmental Comfort</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Environmental-impaired-comfort.html" data-domain="domain12" data-class="class2">Impaired Comfort</li>
+                            <li href="Readiness-for-enhanced-comfort.html" data-domain="domain12" data-class="class2">Readiness for Enhanced Comfort</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain12-class3">
+                        <h4 class="class-title">Social Comfort</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Social-impaired-comfort.html" data-domain="domain12" data-class="class3">Impaired Comfort</li>
+                            <li href="Risk-for-loneliness.html" data-domain="domain12" data-class="class3">Risk for Loneliness</li>
+                            <li href="Social-isolation.html" data-domain="domain12" data-class="class3">Social Isolation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Domain 13: Growth/Development -->
+                <div class="domain-group" id="domain13">
+                    <div class="class-group" id="domain13-class1">
+                        <h4 class="class-title">Growth</h4>
+                        <ul class="diagnosis-nav">
+                            <li class="empty-class">This class does not currently contain any diagnoses</li>
+                        </ul>
+                    </div>
+                    <div class="class-group" id="domain13-class2">
+                        <h4 class="class-title">Development</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Delayed-child-development.html" data-domain="domain13" data-class="class2">Delayed child development</li>
+                            <li href="Risk-for-delayed-child-development.html" data-domain="domain13" data-class="class2">Risk for delayed child development</li>
+                            <li href="Delayed-infant-motor-development.html" data-domain="domain13" data-class="class2">Delayed infant motor development</li>
+                            <li href="Risk-for-delayed-infant-motor-development.html" data-domain="domain13" data-class="class2">Risk for delayed infant motor development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Add new diagnosis option -->
+                <div class="add-diagnosis-container">
+                    <ul class="diagnosis-nav">
+                        <li class="add-new">Add new diagnosis...</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="add-button">+ Add New Diagnosis</button>
+            
+            <div class="legend" style="margin-top: 20px;">
+                <div><span class="tag independent">•</span> Independent</div>
+                <div><span class="tag collaborative">!</span> Collaborative</div>
+                <div><span class="tag ebn">EBN</span> Evidence-Based Nursing</div>
+                <div><span class="tag eb">EB</span> Evidence-Based</div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Decreased Activity Tolerance</h1>
+            
+            <!-- NANDA-I Definition -->
+            <div class="section">
+                <h2>NANDA-I Definition</h2>
+                <p>Insufficient physiological or psychological energy to endure or complete required or desired daily activities</p>
+            </div>
+            
+            <!-- Defining Characteristics -->
+            <div class="section">
+                <h2>Defining Characteristics</h2>
+                <p>Abnormal blood pressure response to activity; abnormal heart rate response to activity; ECG change (e.g., arrhythmia, conduction abnormality, ischemia); exertional discomfort; exertional dyspnea; fatigue; generalized weakness</p>
+            </div>
+            
+            <!-- Related Factors -->
+            <div class="section">
+                <h2>Related Factors (r/t)</h2>
+                <p>Bed rest; generalized weakness; imbalance between oxygen supply/demand; immobility; sedentary lifestyle</p>
+            </div>
+            
+            <!-- NOC Outcomes -->
+            <div class="section">
+                <h2>NOC (Nursing Outcomes Classification)</h2>
+                <h3>Suggested NOC Outcomes</h3>
+                <ul>
+                    <li>Activity Tolerance</li>
+                    <li>Endurance</li>
+                    <li>Energy Conservation</li>
+                    <li>Self-Care: Instrumental Activities of Daily Living (IADLs)</li>
+                </ul>
+                
+                <h3>Example NOC Outcome</h3>
+                <p><strong>Activity Tolerance</strong> as evidenced by the following indicators: Oxygen saturation with activity/Pulse rate with activity/Respiratory rate with activity/Blood pressure with activity/Electrocardiogram findings/Skin color/Walking distance.</p>
+                <p>NOTE: Rate the outcome and indicators of Activity Tolerance: 1 = severely compromised, 2 = substantially compromised, 3 = moderately compromised, 4 = mildly compromised, 5 = not compromised</p>
+            </div>
+            
+            <!-- Client Outcomes -->
+            <div class="section">
+                <h2>Client Outcomes</h2>
+                <p>Client Will (Specify Time Frame)</p>
+                <ul>
+                    <li>Participate in prescribed physical activity with appropriate changes in heart rate, blood pressure, and breathing rate; maintain monitor patterns (rhythm and ST segment) within normal limits</li>
+                    <li>State symptoms of adverse effects of exercise and report onset of symptoms immediately</li>
+                    <li>Maintain normal skin color; skin is warm and dry with activity</li>
+                    <li>Verbalize an understanding of the need to gradually increase activity based on testing, tolerance, and symptoms</li>
+                    <li>Demonstrate increased tolerance to activity</li>
+                </ul>
+            </div>
+            
+            <!-- NIC Interventions -->
+            <div class="section">
+                <h2>NIC (Nursing Interventions Classification)</h2>
+                <h3>Suggested NIC Interventions</h3>
+                <ul>
+                    <li>Activity Therapy</li>
+                    <li>Energy Management</li>
+                    <li>Exercise Therapy: Ambulation</li>
+                </ul>
+                
+                <h3>Example NIC Activities—Energy Management</h3>
+                <p>Monitor cardiorespiratory response to activity; Monitor location and nature of discomfort or pain during movement/activity</p>
+            </div>
+            
+            <!-- Nursing Interventions and Rationales -->
+            <div class="section">
+                <h2>Nursing Interventions and Rationales</h2>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Determine cause of Activity intolerance (see Related Factors) and determine whether cause is physical, psychological, or motivational.</p>
+                    <p class="rationale"><span class="tag eb">QSEN</span>: As nurses we are called upon to assure higher levels of safety and quality for our clients by our governments, professional organizations, and hospital administrations. It is essential that we implement evidence-based nursing care strategies to reduce avoidable errors in care so that clinical outcomes improve (Vollman, 2013).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> If mainly on bed rest, minimize cardiovascular deconditioning by positioning the client in an upright position several times daily if possible.</p>
+                    <p class="rationale"><span class="tag eb">CEB</span>: With bed rest there is a shift of fluids from the extremities to the thoracic cavity from the loss of gravitational stress. Positioning in an upright position helps maintain optimal fluid distribution and maintain orthostatic tolerance (Perme & Chandrashekar, 2009).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Assess the client daily for appropriateness of activity and bed rest orders. Mobilize the client as soon as possible.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: Mobilization is a cost-effective and simple method of maintaining stable cardiovascular parameters (i.e., blood pressure, heart rate), countering orthostatic intolerance, and reducing the risk of secondary problems in clients during long-term immobilization (Wieser, 2014).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> If the client is mostly immobile, consider use of a transfer chair: a chair that becomes a stretcher.</p>
+                    <p class="rationale"><span class="tag eb">CEB</span>: Using a transfer chair where the client is pulled onto a flat surface and then seated upright in the chair can help previously immobile clients get out of bed (Perme & Chandrashekar, 2009).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> When appropriate, gradually increase activity, allowing the client to assist with positioning, transferring, and self-care as able. Progress the client from sitting in bed to dangling, to standing, to ambulation. Always have the client dangle at the bedside before standing to evaluate for postural hypotension.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: A reduction in plasma volume associated with bed rest impacts the physiological responses of autonomic control of circulation (Dorantes-Mendez et al, 2013).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> When getting a client up, observe for symptoms of intolerance such as nausea, pallor, dizziness, visual dimming, and impaired consciousness, as well as changes in vital signs; manual blood pressure monitoring is best.</p>
+                    <p class="rationale"><span class="tag ebn">EBN</span>: Automatic devices cannot reliably detect or rule out orthostatic hypotension, indicating that nurses need to use manual devices to take accurate postural blood pressures for optimal client care (Dind et al, 2011).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> If the client has symptoms of postural hypotension, such as dizziness, lightheadedness, or pallor, take precautions, such as dangling the client and applying leg compression stockings before the client stands.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: Put graduated compression stockings on the client or use lower limb compression bandaging, if ordered, to return blood to the heart and brain. Have the client dangle at the side of the bed with legs hanging over the edge of the bed, flexing and extending the feet several times after sitting up, then standing slowly with someone holding the client. If the client becomes lightheaded or dizzy, return him to bed immediately (Tibaldi et al, 2014).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Monitor and record the client's ability to tolerate activity: note pulse rate, blood pressure, respiratory pattern, dyspnea, use of accessory muscles, and skin color before, during, and after the activity.</p>
+                    <p class="rationale">The following are symptoms of intolerance to activity and continuation of activity may result in client harm (Goldman, 2011):</p>
+                    <ul>
+                        <li>Onset of chest discomfort or pain</li>
+                        <li>Dyspnea</li>
+                        <li>Palpitations</li>
+                        <li>Excessive fatigue</li>
+                        <li>Lightheadedness, confusion, ataxia, pallor, cyanosis, nausea, or any peripheral circulatory insufficiency</li>
+                        <li>Dysrhythmia</li>
+                        <li>Exercise hypotension</li>
+                        <li>Excessive rise in blood pressure</li>
+                        <li>Inappropriate bradycardia</li>
+                        <li>Increased heart rate</li>
+                        <li>Decreased oxygen saturation</li>
+                    </ul>
+                </div>
+
+                <h3>Activity Intolerance Due to Respiratory Disease</h3>
+                <div class="special-section">
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> If the client is able to walk and has chronic obstructive pulmonary disease (COPD), use the traditional 6-minute walk distance to evaluate ability to walk.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag collaborative">!</span> Ensure that the chronic pulmonary client has oxygen saturation testing with exercise. Use supplemental oxygen to keep oxygen saturation 90% or above or as prescribed with activity.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Oxygen therapy can improve exercise ability and long-term administration of oxygen can increase survival in clients with COPD (Gold Report, 2012).</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag collaborative">!</span> Refer the COPD client to a pulmonary rehabilitation program.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Pulmonary rehabilitation is a highly effective and safe intervention to reduce hospital admissions and mortality and to improve health-related quality of life in clients with COPD who have recently suffered an exacerbation (Puhan et al, 2009).</p>
+                    </div>
+                </div>
+                
+                <h3>Activity Intolerance Due to Cardiovascular Disease</h3>
+                <div class="special-section">
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> If the client is able to walk and has heart failure, consider use of the 6-minute walk test to determine physical ability.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Allow for periods of rest before and after planned exertion periods such as meals, baths, treatments, and physical activity.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag collaborative">!</span> Refer to a heart failure program or cardiac rehabilitation program for education, evaluation, and guided support to increase activity and rebuild life.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Exercise-based cardiac rehabilitation is effective in reducing total and cardiovascular mortality and hospital admissions (Heran et al, 2011).</p>
+                    </div>
+                </div>
+                
+                <h3>Pediatric</h3>
+                <div class="special-section">
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Focus interview questions toward exercise tolerance specifically including any history of asthma exacerbations.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Cardiopulmonary deconditioning should be considered as an important differential diagnosis for breathlessness among obese adolescents. Some of these children may need pulmonary rehabilitation if difficulty breathing is the perceived reason for not exercising (Shim et al, 2013).</p>
+                    </div>
+                </div>
+                
+                <h3>Geriatric</h3>
+                <div class="special-section">
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Slow the pace of care. Allow the client extra time to carry out physical activities.</p>
+                        <p class="rationale">Slow gait in older adults may be related to fear of falling, decreased strength in muscles, reduced balance or visual acuity, knee flexion contractures, and foot pain.</p>
+                        <p class="rationale"><span class="tag eb">QSEN</span>: Older patients with chronic cardiac conditions are more vulnerable to falls and injuries. Cardiovascular conditions, prevalent in older people, are also the frequent cause of potentially harmful fall injuries in this group. The need to identify the fall risk-related factors that cluster with arrhythmia and syncope is relevant, in that it will potentially reduce patients' risk for falls and fall injuries (Belita et al, 2013).</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Encourage families to help/allow an older client to be independent in whatever activities possible.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Physical activity and cognitive exercise may improve memory and executive functions in older people with mild cognitive impairment (Teixeira et al, 2012).</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag collaborative">!</span> Initiate ambulation by simply ambulating a patient a few steps from bed to chair, once a health care provider's out-of-bed order is obtained.</p>
+                        <p class="rationale"><span class="tag ebn">EBN</span>: Lack of ambulation and deconditioning effects of bed rest are one of the most predictable causes of loss of independent ambulation in hospitalized older persons. Nurses have been identified as the professional most capable of promoting walking independence in the hospital setting (Doherty-King & Bowers, 2013).</p>
+                    </div>
+                </div>
+                
+                <h3>Home Care</h3>
+                <div class="special-section">
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag collaborative">!</span> Begin discharge planning as soon as possible with the case manager or social worker to assess the need for home support systems and the need for community or home health services.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Home-based exercise appears more effective in increasing daily ambulatory activity in the community setting than supervised exercise in clients with intermittent claudication (Gardner et al, 2011).</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag collaborative">!</span> Assess the home environment for factors that contribute to decreased activity tolerance such as stairs or distance to the bathroom.</p>
+                        <p class="rationale">During hospitalization, clients and families often estimate energy requirements at home inaccurately because the hospital's availability of staff support distorts the level of care that will be needed.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Encourage routine low-level exercise periods such as a daily short walk or chair exercises.</p>
+                        <p class="rationale"><span class="tag eb">EB</span>: Older adults participating in low levels of regular exercise can establish and maintain a home-based exercise program that yields immediate and long-term physical and affective benefits (Teri et al, 2011).</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client/Family Teaching -->
+            <div class="section">
+                <h2>Client/Family Teaching and Discharge Planning</h2>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Instruct the client on techniques for avoiding Activity intolerance, such as controlled breathing techniques.</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Teach the client techniques to decrease dizziness from postural hypotension when standing up.</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Help client with energy conservation and work simplification techniques in ADLs.</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Describe to the client the symptoms of Activity intolerance, including which symptoms to report to the physician.</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Explain to the client how to use assistive devices, oxygen, or medications before or during activity.</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Help the client set up an activity log to record exercise and exercise tolerance.</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Teach the client/family the importance of and methods for setting priorities for activities, especially those having a high energy demand (e.g., home/family events). Instruct in realistic expectations.</p>
+                </div>
+            </div>
+            
+            <div class="footnote">
+                <p>References have been abbreviated for this template. For full references, please refer to the original source material.</p>
+                <p>Template created: March 13, 2025</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript file reference -->
+    <script src="diagnosis.js"></script>
+</body>
+</html>

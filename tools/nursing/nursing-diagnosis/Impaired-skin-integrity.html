@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Diagnosis - Impaired Skin Integrity</title>
+    <link rel="stylesheet" href="diagnosis.css">
+</head>
+<body>
+    <header style="background-color: #3498db">
+        <h1 style="color: white;">Nursing Diagnosis Library</h1>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <input type="text" class="search-box" placeholder="Search diagnoses...">
+            
+            <h3>Nursing Diagnoses</h3>
+            
+            <div class="taxonomy-container">
+                <!-- Domain filter dropdown -->
+                <select id="domain-filter" class="taxonomy-filter">
+                    <option value="all">All Domains</option>
+                    <option value="domain1">Domain 1: Health Promotion</option>
+                    <option value="domain2">Domain 2: Nutrition</option>
+                    <option value="domain3">Domain 3: Elimination and Exchange</option>
+                    <option value="domain4">Domain 4: Activity/Rest</option>
+                    <option value="domain5">Domain 5: Perception/Cognition</option>
+                    <option value="domain6">Domain 6: Self-Perception</option>
+                    <option value="domain7">Domain 7: Role Relationship</option>
+                    <option value="domain8">Domain 8: Sexuality</option>
+                    <option value="domain9">Domain 9: Coping/Stress Tolerance</option>
+                    <option value="domain10">Domain 10: Life Principles</option>
+                    <option value="domain11" selected>Domain 11: Safety/Protection</option>
+                    <option value="domain12">Domain 12: Comfort</option>
+                    <option value="domain13">Domain 13: Growth/Development</option>
+                </select>
+                
+                <!-- Class filter dropdown (will be populated based on domain selection) -->
+                <select id="class-filter" class="taxonomy-filter">
+                    <option value="all">All Classes</option>
+                    <option value="class1">Class 1: Infection</option>
+                    <option value="class2" selected>Class 2: Physical Injury</option>
+                    <option value="class3">Class 3: Violence</option>
+                    <option value="class4">Class 4: Environmental Hazards</option>
+                    <option value="class5">Class 5: Defensive Processes</option>
+                    <option value="class6">Class 6: Thermoregulation</option>
+                </select>
+            </div>
+            
+            <div class="diagnosis-container">
+                <!-- Domain 11: Safety/Protection -->
+                <div class="domain-group" id="domain11">
+                    <div class="class-group" id="domain11-class2">
+                        <h4 class="class-title">Physical Injury</h4>
+                        <ul class="diagnosis-nav">
+                            <li href="Ineffective-airway-clearance.html" data-domain="domain11" data-class="class2">Ineffective airway clearance</li>
+                            <li href="Risk-for-aspiration.html" data-domain="domain11" data-class="class2">Risk for aspiration</li>
+                            <li href="Risk-for-falls.html" data-domain="domain11" data-class="class2">Risk for falls</li>
+                            <li class="active" data-domain="domain11" data-class="class2">Impaired skin integrity</li>
+                            <li href="Risk-for-impaired-skin-integrity.html" data-domain="domain11" data-class="class2">Risk for impaired skin integrity</li>
+                            <li href="Impaired-tissue-integrity.html" data-domain="domain11" data-class="class2">Impaired tissue integrity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="add-button">+ Add New Diagnosis</button>
+            
+            <div class="legend" style="margin-top: 20px;">
+                <div><span class="tag independent">•</span> Independent</div>
+                <div><span class="tag collaborative">!</span> Collaborative</div>
+                <div><span class="tag ebn">EBN</span> Evidence-Based Nursing</div>
+                <div><span class="tag eb">EB</span> Evidence-Based</div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Impaired Skin Integrity</h1>
+            
+            <!-- NANDA-I Definition -->
+            <div class="section">
+                <h2>NANDA-I Definition</h2>
+                <p>Altered epidermis and/or dermis</p>
+            </div>
+            
+            <!-- Defining Characteristics -->
+            <div class="section">
+                <h2>Defining Characteristics</h2>
+                <p>Alteration in skin integrity; foreign matter piercing skin</p>
+            </div>
+            
+            <!-- Related Factors -->
+            <div class="section">
+                <h2>Related Factors (r/t)</h2>
+                <h3>External</h3>
+                <p>Chemical injury agent (e.g., burn, capsaicin, methylene chloride, mustard agent); extremes of age; humidity; hyperthermia; hypothermia; mechanical factors (e.g., shearing forces, pressure, physical immobility); moisture; pharmaceutical agent; radiation therapy</p>
+                
+                <h3>Internal</h3>
+                <p>Alteration in fluid volume; alteration in metabolism; alteration in pigmentation; alteration in sensation (e.g., resulting from spinal cord injury, diabetes mellitus); alteration in skin turgor; hormonal change; immunodeficiency; impaired circulation; impaired nutrition; pressure over bony prominence</p>
+            </div>
+            
+            <!-- NOC Outcomes -->
+            <div class="section">
+                <h2>NOC (Nursing Outcomes Classification)</h2>
+                <h3>Suggested NOC Outcomes</h3>
+                <ul>
+                    <li>Tissue Integrity: Skin and Mucous Membranes</li>
+                    <li>Wound Healing: Primary Intention, Secondary Intention</li>
+                </ul>
+                
+                <h3>Example NOC Outcome</h3>
+                <p><strong>Tissue Integrity: Skin and Mucous Membranes</strong> will be intact as evidenced by the following indicators: Skin integrity/Skin lesions not present/Tissue perfusion/Skin temperature/Skin thickness. (Rate the outcome and indicators of Tissue Integrity: Skin and Mucous Membranes: 1 = severely compromised, 2 = substantially compromised, 3 = moderately compromised, 4 = mildly compromised, 5 = not compromised)</p>
+            </div>
+            
+            <!-- Client Outcomes -->
+            <div class="section">
+                <h2>Client Outcomes</h2>
+                <p>Client Will (Specify Time Frame)</p>
+                <ul>
+                    <li>Regain integrity of skin surface</li>
+                    <li>Report any altered sensation or pain at site of skin impairment</li>
+                    <li>Demonstrate understanding of plan to heal skin and prevent reinjury</li>
+                    <li>Describe measures to protect and heal the skin and to care for any skin lesion</li>
+                </ul>
+            </div>
+            
+            <!-- NIC Interventions -->
+            <div class="section">
+                <h2>NIC (Nursing Interventions Classification)</h2>
+                <h3>Suggested NIC Interventions</h3>
+                <ul>
+                    <li>Incision Site Care</li>
+                    <li>Pain Management</li>
+                    <li>Pressure Ulcer Care</li>
+                    <li>Pressure Ulcer Prevention</li>
+                    <li>Risk Identification</li>
+                    <li>Skin Care: Topical Treatments</li>
+                    <li>Skin Surveillance</li>
+                    <li>Wound Care</li>
+                    <li>Wound Irrigation</li>
+                </ul>
+                
+                <h3>Example NIC Activities—Pressure Ulcer Care</h3>
+                <p>Monitor color of wound bed, temperature, edema, erythema, moisture, and appearance of surrounding skin; Note characteristics of any drainage</p>
+            </div>
+            
+            <!-- Nursing Interventions and Rationales -->
+            <div class="section">
+                <h2>Nursing Interventions and Rationales</h2>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Assess site of skin impairment and determine cause or type of wound (e.g., acute or chronic wound, burn, dermatological lesion, pressure ulcer, skin tear).</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: The cause of the wound must be determined before appropriate interventions can be implemented. This will provide the basis for additional testing and evaluation to start the assessment process (Baranoski & Ayello, 2012; McCulloch & Kloth, 2010).</p>
+                </div>
+
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Use a risk assessment tool to systematically assess client risk factors for skin breakdown due to pressure.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: A validated risk assessment tool such as the Norton or Braden scale should be used to identify clients at risk for immobility-related skin breakdown (National Pressure Ulcer Advisory Panel [NPUAP] and European Pressure Ulcer Advisory Panel [EPUAP], 2014). Targeting variables (e.g., age and Braden Scale Risk Category) can focus assessment on particular risk factors (e.g., pressure) and help guide the plan of prevention and care (McCulloch & Kloth, 2010; NPUAP/EPUAP, 2014; Sussman & Bates-Jensen, 2012).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Determine the extent of the skin impairment (e.g., partial-thickness wound, stage I or stage II pressure ulcer). The following classification system and definition is for pressure ulcers: Pressure ulcer: localized injury to the skin and/or underlying tissue usually over a bony prominence, as a result of pressure, or pressure in combination with shear (NOTE: Friction is not included in the definition) (NPUAP/EPUAP, 2014).</p>
+                    <p class="rationale">
+                        ❍ Category/Stage I: Intact skin with nonblanchable erythema of a localized area, usually over a bony prominence. Darkly pigmented skin may not have visible blanching. The area may be painful, firm, soft, warmer, or cooler than adjacent tissue. Category/Stage I may be difficult to detect in individuals with dark skin tones and may indicate "at risk" persons.<br>
+                        ❍ Category/Stage II: Partial-thickness skin loss of dermis presenting as a shallow open ulcer with a red pink wound bed, without slough, that may also present as intact or open/ruptured and serum-filled. Presents as a shiny or dry shallow ulcer without slough or bruising. This category/stage should not be used to describe skin tears, tape burns, incontinence-associated dermatitis, maceration, or excoriation.<br>
+                        ❍ Bruising may indicate suspected deep tissue injury; for wounds deeper into subcutaneous tissue, muscle, or bone (category/stage III or stage IV pressure ulcers), see the care plan for Impaired Tissue integrity (NPUAP/EPUAP, 2014).
+                    </p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Inspect and monitor site of skin impairment at least once a day for color changes, redness, swelling, warmth, pain, or other signs of infection. Determine whether the client is experiencing changes in sensation or pain. Closely assess high-risk areas such as bony prominences, skinfolds, the sacrum, and heels.</p>
+                    <p class="rationale">Systematic inspection can identify impending problems early (Baranoski & Ayello, 2012; NPUAP/EPUAP, 2014).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Monitor the client's skin care practices, noting type of soap or other cleansing agents used, temperature of water, and frequency of skin cleansing.</p>
+                    <p class="rationale">Cleansing should not compromise the skin (Baranoski & Ayello, 2012).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Consider using normal saline to clean the pressure ulcer or as ordered by the health care provider, but if necessary tap water suitable for drinking may be used to clean the wound.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: A Cochrane review found no evidence that using tap water to cleanse acute wounds in adults or children increases or reduces infection (Fernandez et al, 2012).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Individualize plan according to the client's skin condition, needs, and preferences.</p>
+                    <p class="rationale"><span class="tag ebn">EBN</span>: Avoid harsh cleansing agents, hot water, extreme friction or force, or cleansing too frequently (Wound, Ostomy, and Continence Nurses Society [WOCN], 2010).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Monitor the client's continence status, and minimize exposure of skin impairment to other areas of moisture from perspiration or wound drainage.</p>
+                    <p class="rationale"><span class="tag ebn">EBN</span>: Moisture from incontinence may contribute to pressure ulcer development by macerating the skin (Borchert et al, 2010; WOCN, 2010).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> If the client is incontinent, implement an incontinence management plan to prevent exposure to chemicals in urine and stool that can damage the skin. Use a skin protectant cream to protect the skin after each incontinence episode. Refer to a continence care specialist, urologist, or gastroenterologist for incontinence assessment.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: Implementing an incontinence prevention plan with the use of a skin protectant or a cleanser protectant can significantly decrease skin breakdown and pressure ulcer formation (Borchert et al, 2010; Scemons 2013).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> For clients with limited mobility and activity, use a risk assessment tool to systematically assess immobility and activity-related risk factors.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: A validated risk assessment tool such as the Norton or Braden scale should be used to identify clients at risk for immobility-related skin breakdown (NPUAP/EPUAP, 2014). <span class="tag ebn">EBN</span>: A study found that the most commonly reported interventions to reduce skin breakdown in acutely ill patients were protocol development, staff education, new use of a risk assessment tool, performance monitoring, development of a team approach, use of new beds/support surfaces, implementation of guidelines, providing feedback to staff, and linking staff with resources (Stotts et al, 2013).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Do not position the client on site of skin impairment. If consistent with overall client management goals, reposition the client as determined by individualized tissue tolerance and overall condition. Reposition and transfer the client with care to protect against the adverse effects of external mechanical forces such as pressure, friction, and shear.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: Do not position an individual directly on a pressure ulcer. Continue to turn/reposition the individual regardless of the support surface in use. Establish turning frequency based on the characteristics of the support surface and the individual's response (NPUAP/EPUAP, 2014). If the goal of care is to keep the client (e.g., a terminally ill client) comfortable, turning and repositioning may not be appropriate (NPUAP/EPUAP, 2014).</p>
+                </div>
+                
+                <h3>Home Care</h3>
+                <div class="special-section">
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> The interventions described previously may be adapted for home care use.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Instruct and assist the client and caregivers in how to change dressings and maintain a clean environment. Provide written instructions and observe the client completing the dressing change before hospital discharge and in the home setting.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> Educate client and caregivers on proper nutrition, signs and symptoms of infection, and when to call the agency and/or health care provider with concerns.</p>
+                    </div>
+                    
+                    <div class="intervention">
+                        <p class="intervention-header"><span class="tag independent">•</span> It may be beneficial to initiate a consultation in a case assignment with a wound, ostomy, continence nurse (or wounds specialist) to establish a comprehensive plan for complex wounds.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client/Family Teaching -->
+            <div class="section">
+                <h2>Client/Family Teaching and Discharge Planning</h2>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Teach skin and wound assessment and ways to monitor for signs and symptoms of infection, complications, and healing.</p>
+                    <p class="rationale">Early assessment and intervention help prevent serious problems from developing. <span class="tag eb">EB</span>: A home visit by a wound care specialist can provide essential in-home education, client specific plan of care, and reduce health care costs (Vrtis, 2013).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Teach the client why a topical treatment has been selected.</p>
+                    <p class="rationale"><span class="tag ebn">EBN</span>: The type of dressing needed may change over time as the wound heals and/or deteriorates (NPUAP/EPUAP, 2014; WOCN, 2010).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> If consistent with overall client management goals, teach how to reposition as client condition warrants.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: If the goal of care is to keep a client (e.g., terminally ill client) comfortable, turning and repositioning may not be appropriate (NPUAP/EPUAP, 2014).</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> Teach the client to use pillows, foam wedges, chair cushions, and pressure-redistribution devices to prevent pressure injury.</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: The use of effective pressure-reducing seat cushions for older wheelchair users significantly prevented sitting-acquired pressure ulcers (Brienza et al, 2012).</p>
+                </div>
+            </div>
+            
+            <div class="footnote">
+                <p>References have been abbreviated for this template. For full references, please refer to the original source material.</p>
+                <p>Template created: March 12, 2025</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="diagnosis.js"></script>
+</body>
+</html>

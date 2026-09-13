@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>護理臨床小工具</title>
+    <link rel="stylesheet" href="css/nursing-clinical-tools.css">
+    <link rel="stylesheet" href="css/mobile-style.css">
+</head>
+<body>
+    <header>
+        <div class="navigation-container">
+            <div class="navigation">
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="user-guide.html">使用說明</a>
+                    <a href="index.html">護理工作時間表</a>
+                    <a href="nursing-checklist.html">護理工作Checklist</a>
+                    <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+                    <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+                    <a href="clinical-cheatsheet.html">臨床懶人包</a>
+                    <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+                    <a href="nursing-kardex.html">交班單（prototype）</a>
+                </div>
+            </div>
+        </div>
+        <h1 style="margin-top: 60px">護理臨床小工具</h1>
+    </header>
+
+    <!-- 顯示時間 -->
+    <div class="date-container">
+        <div class="date" id="date"></div>
+        <div class="day" id="day"></div>
+        <div class="time" id="time"></div>
+    </div>
+
+    <!-- 功能標籤頁 -->
+    <div class="tabs">
+        <div class="tab" data-tab="drug-calculator">藥物劑量計算</div>
+        <div class="tab" data-tab="drip-rate">點滴速率計算</div>
+        <div class="tab active" data-tab="drug-timer">藥物計時器</div>
+        <div class="tab" data-tab="clock">常規鬧鐘</div>
+    </div>
+    
+    <div class="calculator">
+        <!-- 藥物劑量計算機 -->
+        <div id="drug-calculator" class="calculator-content">
+            <div class="sub-tabs">
+                <div class="sub-tab active" data-subtab="dilution">藥物稀釋計算</div>
+                <div class="sub-tab" data-subtab="ampule">安瓿劑量計算</div>
+            </div>
+            
+            <!-- 稀釋計算機 -->
+            <div id="dilution-calc" class="sub-content active">
+                <h2>藥物稀釋計算</h2>
+                <div class="form-group">
+                    <label for="total-dosage">藥物總劑量:</label>
+                    <div class="input-group">
+                        <input type="number" id="total-dosage" placeholder="例如: 1">
+                        <select id="total-unit">
+                            <option value="mg">mg</option>
+                            <option value="g" selected>g</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dilution-volume">稀釋液體積:</label>
+                    <div class="input-group">
+                        <input type="number" id="dilution-volume" placeholder="例如: 10">
+                        <span>c.c.</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="required-dosage">需要給藥劑量:</label>
+                    <div class="input-group">
+                        <input type="number" id="required-dosage" placeholder="例如: 600">
+                        <select id="required-unit">
+                            <option value="mg" selected>mg</option>
+                            <option value="g">g</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="calculate-dilution-btn">計算</button>
+                
+                <div id="dilution-error" class="error">請填寫所有欄位並確保數值大於零</div>
+                
+                <div id="dilution-result" class="result">
+                    <h3>計算結果</h3>
+                    <p>您需要抽取 <span id="result-volume" class="highlight"></span> c.c. 的稀釋液</p>
+                </div>
+            </div>
+            
+            <!-- 安瓿計算機 -->
+            <div id="ampule-calc" class="sub-content">
+                <h2>安瓿劑量計算</h2>
+                <div class="form-group">
+                    <label for="amp-concentration">安瓿中藥物濃度:</label>
+                    <div class="input-group">
+                        <input type="number" id="amp-concentration" placeholder="例如: 50">
+                        <span>mg</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="amp-volume">每安瓿的體積:</label>
+                    <div class="input-group">
+                        <input type="number" id="amp-volume" placeholder="例如: 5">
+                        <span>mL</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="amp-required-dosage">需要給藥劑量:</label>
+                    <div class="input-group">
+                        <input type="number" id="amp-required-dosage" placeholder="例如: 325">
+                        <span>mg</span>
+                    </div>
+                </div>
+                
+                <button id="calculate-ampule-btn">計算</button>
+                
+                <div id="ampule-error" class="error">請填寫所有欄位並確保數值大於零</div>
+                
+                <div id="ampule-result" class="result">
+                    <h3>計算結果</h3>
+                    <p>需要總體積: <span id="amp-result-volume" class="highlight"></span> mL</p>
+                    <p>需要使用 <span id="amp-count" class="highlight"></span> 支安瓿</p>
+                    <p>最後一支安瓿需要使用 <span id="last-amp-volume" class="highlight"></span> mL</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 點滴速率計算器 -->
+        <div id="drip-rate" class="calculator-content">
+            <h2>滴速計算器</h2>
+            
+            <div class="form-group">
+                <label for="totalVolume">總溶液量 (mL)</label>
+                <input type="number" id="totalVolume" placeholder="例如: 500" min="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="infusion-time">輸注時間</label>
+                <div class="time-input-group">
+                    <input type="number" id="hours" placeholder="小時" min="0">
+                    <input type="number" id="minutes" placeholder="分鐘" min="0" max="59">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dropFactor">IV Set 選擇</label>
+                <select id="dropFactor">
+                    <option value="60">精密Set (60 gtts/mL)</option>
+                    <option value="20">普通Set (20 gtts/mL)</option>
+                    <option value="15">普通Set (15 gtts/mL)</option>
+                </select>
+            </div>
+            
+            <button id="calculate-drip-rate-btn">計算點滴速率</button>
+            
+            <div class="result" id="drip-result">
+                <div class="result-row">
+                    <div class="result-item">
+                        <span>輸液速率: </span>
+                        <span class="result-value" id="flowRate">-- mL/hr</span>
+                    </div>
+                    <div class="result-item">
+                        <span>點滴間隔: </span>
+                        <span class="result-value" id="dripInterval">-- 秒/滴</span>
+                    </div>
+                </div>
+                <div class="result-row">
+                    <div class="result-item">
+                        <span>點滴速率: </span>
+                        <span class="result-value" id="dripRate">-- gtts/min</span>
+                    </div>
+                    <div class="result-item">
+                        <span>一秒幾滴: </span>
+                        <span class="result-value" id="dropsPerSecond">-- 滴/秒</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flash-indicator" id="flashIndicator">
+                <div class="flash-title">點滴節奏指示器</div>
+                <div class="flash-circle" id="flashCircle"></div>
+                <div class="flash-info" id="flashInfo">指示燈將每 -- 秒閃爍一次</div>
+                <div class="flash-controls">
+                    <button id="startFlashBtn">開始</button>
+                    <button id="testSoundBtn">測試聲音</button>
+                </div>
+                <div class="sound-control">
+                    <input type="checkbox" class="input-checkbox" id="soundEnabled" checked>
+                    <label for="soundEnabled">開啟聲音</label>
+                    <select id="soundType">
+                        <option value="beep">嗶嗶聲</option>
+                        <option value="drop">水滴聲</option>
+                        <option value="click">點擊聲</option>
+                    </select>
+                </div>
+                <div class="volume-control">
+                    <label for="volume">音量:</label>
+                    <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+                </div>
+            </div>
+        </div>
+
+        <!-- 藥物計時器 -->
+        <div id="drug-timer" class="calculator-content active"> 
+            <div class="container" id="timers-container">
+                <!-- 計時器會動態添加在這裡 -->
+            </div>
+            <button id="add-timer-btn" class="add-timer">新增藥物計時器</button>
+        </div>
+
+        <!-- 護理常規鬧鐘 -->
+        <div id="clock" class="calculator-content">
+            <div class="clock" id="current-time">00:00:00</div>
+                
+            <div class="alarm-container">
+                <h2>設定鬧鐘</h2>
+                <div class="alarm-form">
+                    <input type="time" id="alarm-time" required>
+                    <input type="text" id="alarm-label" placeholder="護理任務名稱">
+                    <div class="alarm-controls">
+                        <button type="button" id="set-alarm-btn">設定鬧鐘</button>
+                        <button type="button" id="test-alarm-btn">測試聲音</button>
+                    </div>
+                </div>
+                
+                <div class="quick-presets">
+                    <h3>快速設定</h3>
+                    <div class="alarm-controls">
+                        <button type="button" id="cardiac-cath-btn" class="preset-btn">心導管術後監測</button>
+                        <button type="button" id="blood-transfusion-btn" class="preset-btn">輸血</button>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="alarm-list">
+                <div class="section-title">
+                    <h2>已設定的鬧鐘</h2>
+                    <button type="button" id="clear-all-btn" class="clear-all-btn" style="width: 49%;">清除所有鬧鐘</button>
+                </div>
+                <div id="alarms-container">
+                    <p>尚未設定任何鬧鐘</p>
+                </div>
+            </div>
+            
+            <div class="modal" id="alarm-modal">
+                <div class="modal-content">
+                    <h2>鬧鐘響了！</h2>
+                    <p id="alarm-message">執行護理任務的時間到了</p>
+                    <button class="stop-alarm" id="stop-alarm-btn">停止鬧鐘</button>
+                </div>
+            </div>
+            
+            <div class="confirmation-modal" id="cardiac-confirmation">
+                <div class="confirmation-content">
+                    <h2>心導管術後監測排程</h2>
+                    <div class="alarm-schedule">
+                        <p>將設置以下鬧鐘：</p>
+                        <ul id="cardiac-schedule-list"></ul>
+                    </div>
+                    <div class="confirmation-buttons">
+                        <button type="button" id="confirm-cardiac-btn" class="confirm-btn">確認設定</button>
+                        <button type="button" id="cancel-cardiac-btn" class="cancel-btn">取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="confirmation-modal" id="blood-confirmation">
+                <div class="confirmation-content">
+                    <h2>輸血監測排程</h2>
+                    <div class="alarm-schedule">
+                        <p>將設置以下鬧鐘：</p>
+                        <ul id="blood-schedule-list"></ul>
+                    </div>
+                    <div class="confirmation-buttons">
+                        <button type="button" id="confirm-blood-btn" class="confirm-btn">確認設定</button>
+                        <button type="button" id="cancel-blood-btn" class="cancel-btn">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript檔案 -->
+    <script src="javascript/main.js"></script>
+    <script src="javascript/drug-calculator.js"></script>
+    <script src="javascript/drip-rate.js"></script>
+    <script src="javascript/drug-timer.js"></script>
+    <script src="javascript/clinical-clock.js"></script>
+    <script src="javascript/mobile-script.js"></script>
+    
+</body>
+</html>

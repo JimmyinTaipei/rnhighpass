@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>護理工作時間表</title>
+    <link rel="stylesheet" href="css/nursing-timetable.css">
+    <link rel="stylesheet" href="css/mobile-style.css">
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="navigation">
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="user-guide.html">使用說明</a>
+                <a href="index.html">護理工作時間表</a>
+                <a href="nursing-checklist.html">護理工作Checklist</a>
+                <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+                <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+                <a href="clinical-cheatsheet.html">臨床懶人包</a>
+                <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+                <a href="nursing-kardex.html">交班單（prototype）</a>
+            </div>
+        </div>
+    </div>
+    <h1>護理工作時間表</h1>
+    
+    <!-- 班別選擇器 - 調整順序為大夜、白班、小夜 -->
+    <div class="shift-selector">
+        <button id="night-shift" class="shift-btn">大夜 (23:00-09:00)</button>
+        <button id="day-shift" class="shift-btn active">白班 (07:00-17:00)</button>
+        <button id="evening-shift" class="shift-btn">小夜 (15:00-01:00)</button>
+    </div>
+    
+    <!-- 控制面板 -->
+    <div class="controls">
+        <div class="form-group">
+            <label for="bed-number">床號</label>
+            <input type="text" id="bed-number" placeholder="例如: 101">
+        </div>
+        
+        <div class="form-group">
+            <label for="patient-name">病患姓名</label>
+            <input type="text" id="patient-name" placeholder="輸入病患姓名(選填)">
+        </div>
+        
+        <div class="form-group">
+            <label for="task-type">工作類型</label>
+            <select id="task-type">
+                <option value="exam">檢查</option>
+                <option value="medication">給藥</option>
+                <option value="surgery">手術</option>
+                <option value="treatment">治療</option>
+                <option value="other">其他</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="task-description">工作描述</label>
+            <input type="text" id="task-description" placeholder="例如: 測量體溫">
+        </div>
+        
+        <div class="form-group">
+            <label for="start-time">開始時間</label>
+            <input type="time" id="start-time">
+        </div>
+        
+        <div class="form-group">
+            <label for="end-time">結束時間</label>
+            <input type="time" id="end-time">
+        </div>
+    </div>
+
+    <!--各種模板-->
+    <div class="templates-container">
+        <h3>常用模板</h3>
+        <div class="templates-grid">
+            <button class="template-btn" data-template="vital-tid">
+                <span class="template-name">Vital Sign (TID)</span>
+                <span class="template-desc">每日三次生命徵象</span>
+            </button>
+            <button class="template-btn" data-template="vital-qid">
+                <span class="template-name">Vital Sign (QID)</span>
+                <span class="template-desc">每日四次生命徵象</span>
+            </button>
+            <button class="template-btn" data-template="glucose-bidac">
+                <span class="template-name">Blood Glucose (BIDAC)</span>
+                <span class="template-desc">每日兩次飯前血糖檢測</span>
+            </button>
+            <button class="template-btn" data-template="glucose-tidac">
+                <span class="template-name">Blood Glucose (TIDAC)</span>
+                <span class="template-desc">每日三次飯前血糖檢測</span>
+            </button>
+            <button class="template-btn" data-template="glucose-qidac">
+                <span class="template-name">Blood Glucose (QIDAC)</span>
+                <span class="template-desc">每日四次飯前血糖檢測</span>
+            </button>
+            <button class="template-btn" data-template="iv-drip">
+                <span class="template-name">點滴、藥物 (Q8H)</span>
+                <span class="template-desc">每8小時給予點滴/藥物</span>
+            </button>
+            <button class="template-btn" data-template="medication-qid">
+                <span class="template-name">藥物 (QID)</span>
+                <span class="template-desc">一日四次給藥</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 過濾器 -->
+    <div class="filters">
+        <div class="filter-item">
+            <button id="exam-filter" class="toggle-btn active" data-type="exam">檢查</button>
+        </div>
+        <div class="filter-item">
+            <button id="medication-filter" class="toggle-btn active" data-type="medication">給藥</button>
+        </div>
+        <div class="filter-item">
+            <button id="surgery-filter" class="toggle-btn active" data-type="surgery">手術</button>
+        </div>
+        <div class="filter-item">
+            <button id="treatment-filter" class="toggle-btn active" data-type="treatment">治療</button>
+        </div>
+        <div class="filter-item">
+            <button id="other-filter" class="toggle-btn active" data-type="other">其他</button>
+        </div>
+    
+        <div style="margin-left:auto">
+            <button id="add-task">添加工作</button>
+            <button id="save-data">儲存資料</button>
+            <button id="clear-data" style="background-color: #e74c3c;">清除所有資料</button>
+        </div>
+    </div>
+    
+    <!-- 時間軸 -->
+    <div class="timeline-container">
+        <table id="timeline-table">
+            <!-- 動態生成表格 -->
+        </table>
+    </div>
+    
+    <!-- 任務詳情彈窗 -->
+    <div id="task-details" class="task-details">
+        <h3>工作詳情</h3>
+        <div class="detail-row">
+            <span class="detail-label">床號:</span>
+            <span id="detail-bed"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">病患:</span>
+            <span id="detail-patient"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">類型:</span>
+            <span id="detail-type"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">描述:</span>
+            <span id="detail-description"></span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">時間:</span>
+            <span id="detail-time"></span>
+        </div>
+        <div class="task-actions">
+            <button id="close-details">關閉</button>
+            <button id="delete-task" class="delete-btn">刪除</button>
+        </div>
+    </div>
+
+    <script src="javascript/nursing-timetable.js"></script>
+    <script src="javascript/mobile-script.js"></script>
+</body>
+</html>

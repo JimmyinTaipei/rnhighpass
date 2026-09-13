@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>護理工作檢查清單</title>
+    <link rel="stylesheet" href="css/nursing-checklist.css">
+    <link rel="stylesheet" href="css/mobile-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="navigation-container">
+                <div class="navigation">
+                    <div class="nav-toggle" id="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="nav-links" id="nav-links">
+                        <a href="user-guide.html">使用說明</a>
+                        <a href="index.html">護理工作時間表</a>
+                        <a href="nursing-checklist.html">護理工作Checklist</a>
+                        <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+                        <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+                        <a href="clinical-cheatsheet.html">臨床懶人包</a>
+                        <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+                        <a href="nursing-kardex.html">交班單（prototype）</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 style="margin-top: 60px">護理工作檢查清單</h1>
+            </div>
+            
+            <div>
+                <div class="shift-selector">
+                    <button class="shift-btn active" data-shift="D">白班</button>
+                    <button class="shift-btn" data-shift="N">小夜</button>
+                    <button class="shift-btn" data-shift="E">大夜</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="add-patient-form" id="add-patient-form">
+            <h2>新增病患</h2>
+            <div class="form-group">
+                <label for="patient-id">病床號</label>
+                <input type="text" id="patient-id" placeholder="請輸入病床號" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="patient-name">病患姓名</label>
+                <input type="text" id="patient-name" placeholder="請輸入病患姓名(可空白)">
+            </div>
+            <div class="form-group">
+                <label for="patient-diagnosis">診斷</label>
+                <input type="text" id="patient-diagnosis" placeholder="請輸入診斷(可空白)">
+            </div>
+            <button id="add-patient-btn">新增病患</button>
+        </div>
+        
+        <div class="patients-container" id="patients-container"></div>
+    </div>
+    <script src="javascript/nursing-checklist.js"></script>
+</body>
+</html>

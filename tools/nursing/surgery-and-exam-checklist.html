@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手術與檢查Checklist</title>
+    <link rel="stylesheet" href="css/surgery-and-exam-checklist.css">
+    <link rel="stylesheet" href="css/mobile-style.css">
+</head>
+<body>
+    <header>
+        <div class="navigation-container">
+            <div class="navigation">
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="user-guide.html">使用說明</a>
+                    <a href="index.html">護理工作時間表</a>
+                    <a href="nursing-checklist.html">護理工作Checklist</a>
+                    <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+                    <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+                    <a href="clinical-cheatsheet.html">臨床懶人包</a>
+                    <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+                    <a href="nursing-kardex.html">交班單（prototype）</a>
+                </div>
+            </div>
+        </div>
+        <h1 style="margin-top: 60px">手術與檢查Checklist</h1>
+    </header>
+    <div class="container">
+        
+        <!-- 模板選擇 -->
+        <div class="template-selection">
+            <select id="template-select">
+                <option value="">請選擇手術與檢查項目</option>
+                <option value="cardiac-catheterization">心導管檢查</option>
+            </select>
+            <button class="button" onclick="loadTemplate()">帶入</button>
+        </div>
+        
+        <div class="button-container">
+            <button class="button danger" onclick="resetCheckboxes()">重置所有勾選</button>
+            <button class="button success" onclick="toggleNewTemplateForm()">新增模板</button>
+            <button class="button" onclick="saveCurrentTemplate()">儲存目前模板</button>
+        </div>
+
+        <!-- 新增的匯出/匯入區塊 -->
+        <div class="import-export-container">
+            <div class="import-export-title">檢查清單匯出/匯入</div>
+            <div class="button-container" style="justify-content: flex-start">
+                <button class="button warning" onclick="exportTemplates()">匯出所有模板</button>
+                <button class="button success" onclick="document.getElementById('importFile').click()">匯入模板</button>
+                <input type="file" id="importFile" accept=".json" class="import-file-input" onchange="importTemplates(this.files)">
+            </div>
+        </div>
+
+        <div id="checklist-container">
+            <!-- 這裡將動態添加檢查模板 -->
+        </div>
+
+        <!-- 新增模板表單 -->
+        <div class="new-template-form" id="new-template-form">
+            <h2>新增檢查模板</h2>
+            <div class="form-group">
+                <label for="template-name">檢查名稱</label>
+                <input type="text" id="template-name" placeholder="例如: 心導管檢查">
+            </div>
+            <div class="form-group">
+                <label for="template-key">模板識別碼 (英文字母、數字和連字符)</label>
+                <input type="text" id="template-key" placeholder="例如: cardiac-catheterization">
+            </div>
+            <div class="form-group">
+                <label>檢查項目</label>
+                <div id="items-container" class="items-container">
+                    <div class="item-row">
+                        <input type="text" placeholder="例如: 確認病人身份">
+                        <button type="button" onclick="removeItem(this)">×</button>
+                    </div>
+                    <div class="item-row">
+                        <input type="text" placeholder="例如: 確認同意書已簽署">
+                        <button type="button" onclick="removeItem(this)">×</button>
+                    </div>
+                </div>
+                <button type="button" class="button" onclick="addItem()" style="margin-top: 10px">新增項目</button>
+            </div>
+            <div class="button-container" style="justify-content: flex-start">
+                <button type="button" class="button success" onclick="saveTemplate()">保存模板</button>
+                <button type="button" class="button danger" onclick="toggleNewTemplateForm()">取消</button>
+            </div>
+        </div>
+
+        <!-- 新增項目對話框 -->
+        <div class="add-item-dialog" id="add-item-dialog">
+            <div class="dialog-content">
+                <h2>新增檢查項目</h2>
+                <div class="form-group">
+                    <label for="new-item-text">項目內容</label>
+                    <input type="text" id="new-item-text" placeholder="例如: 確認病人身份">
+                    <input type="hidden" id="template-id-for-new-item">
+                </div>
+                <div class="dialog-footer">
+                    <button class="button" onclick="hideAddItemDialog()">取消</button>
+                    <button class="button success" onclick="addItemToTemplate()">新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/surgery-and-exam-checklist.js"></script>
+    <script src="javascript/mobile-script.js"></script>
+</body>
+</html>

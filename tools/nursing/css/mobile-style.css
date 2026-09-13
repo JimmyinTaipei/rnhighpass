@@ -1,0 +1,108 @@
+/* mobile-menu.css - 將這個文件保存到您的css目錄 */
+
+/* 導航容器樣式 */
+.navigation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #3498db;
+}
+
+/* 導航樣式 */
+.navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 導航鏈接樣式 */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 導航鏈接內部的鏈接樣式 */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* 漢堡菜單按鈕樣式 */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 移動端樣式 */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    header h1, .header h1 {
+        margin-top: 20px !important;
+    }
+    
+    /* 顯示漢堡菜單按鈕 */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* 移動端導航鏈接樣式 */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #3498db;
+        padding: 0;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s, visibility 0.3s;
+    }
+
+    /* 活動狀態的導航鏈接 */
+    .nav-links.active {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+    }
+
+    /* 導航鏈接中的鏈接樣式 */
+    .nav-links a {
+        padding: 15px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        display: block;
+    }
+}

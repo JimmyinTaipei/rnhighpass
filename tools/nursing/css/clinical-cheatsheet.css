@@ -1,0 +1,546 @@
+body {
+    font-family: 'Microsoft JhengHei', Arial, sans-serif;
+    margin: 0;
+    padding: 0 20px 20px 20px;
+    background-color: #f9f9f9;
+    padding-top: 60px; /* Added for fixed navigation */
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+/* Mobile Navigation Styles */
+.navigation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #3498db;
+}
+
+.navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger menu button styles */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    header h1 {
+        margin-top: 20px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    /* Show hamburger menu button */
+    .nav-toggle {
+        display: flex;
+    }
+    
+    /* Mobile nav links styles */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #3498db;
+        padding: 0;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s, visibility 0.3s;
+    }
+    
+    /* Active state for nav links */
+    .nav-links.active {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+    }
+    
+    /* Nav link styles */
+    .nav-links a {
+        padding: 15px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        display: block;
+    }
+    
+    /* Tab scrolling */
+    .tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        min-width: 150px;
+    }
+}
+
+/* Original styles */
+.section-divider {
+    border-top: 2px solid #ecf0f1;
+    margin: 30px 0;
+}
+.subtitle {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+.gcs-table, .muscle-table, .abbrev-table, .vital-table, .pressure-table, .edema-table, .pupil-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.gcs-table th, .muscle-table th, .abbrev-table th, .vital-table th, .pressure-table th, .edema-table th, .pupil-table th {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.gcs-table td, .muscle-table td, .abbrev-table td, .vital-table td, .pressure-table td, .edema-table td, .pupil-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.section-header {
+    background-color: #ecf0f1;
+    font-weight: bold;
+}
+.radio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score {
+    text-align: center;
+    font-weight: bold;
+}
+.result-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f4fd;
+    border-radius: 5px;
+    text-align: center;
+}
+.total-score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0;
+}
+.interpretation {
+    margin-top: 15px;
+    padding: 10px;
+    border-left: 4px solid #3498db;
+    background-color: #f8f9fa;
+}
+.selected-row {
+    background-color: #d5f5e3;
+}
+.selected-cell {
+    background-color: #b8f3d1;
+    color: black;
+}
+.btn-reset {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-reset:hover {
+    background-color: #2980b9;
+}
+.bilingual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chinese {
+    font-weight: normal;
+}
+.english {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+.score-header {
+    width: 60px;
+}
+.abbrev-table td:first-child {
+    font-weight: bold;
+    width: 20%;
+}
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #ecf0f1;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    min-width: 120px;
+}
+.tab.active {
+    background-color: #3498db;
+    color: white;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .gcs-table th, .gcs-table td, .muscle-table th, .muscle-table td, .abbrev-table th, .abbrev-table td, .vital-table th, .vital-table td, .pressure-table th, .pressure-table td, .edema-table th, .edema-table td, .pupil-table th, .pupil-table td {
+        padding: 5px;
+        font-size: 14px;
+    }
+    .tabs {
+        flex-direction: column;
+    }
+    .tab {
+        flex: none;
+        margin-bottom: 2px;
+        border-radius: 0;
+    }
+    .pupil-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .result-section {
+        padding: 10px;
+    }
+    
+    .btn-reset {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+.vital-category {
+    background-color: #ecf0f1;
+    font-weight: bold;
+}
+.normal-value {
+    color: #16a085;
+    font-weight: bold;
+}
+.abnormal-value {
+    color: #c0392b;
+    font-weight: bold;
+}
+.stage {
+    font-weight: bold;
+    text-align: center;
+}
+.stage-1 {
+    background-color: #ffe6e6;
+}
+.stage-2 {
+    background-color: #ffcccc;
+}
+.stage-3 {
+    background-color: #ff9999;
+}
+.stage-4 {
+    background-color: #ff6666;
+}
+.stage-u {
+    background-color: #cc9966;
+}
+.stage-dti {
+    background-color: #9966cc;
+    color: white;
+}
+.braden-category {
+    background-color: #ecf0f1;
+    font-weight: bold;
+    text-align: center;
+}
+.braden-score {
+    width: 40px;
+    text-align: center;
+}
+.braden-header {
+    width: 16%;
+}
+
+/* New styles for pupil assessment */
+.pupil-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+.pupil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #333;
+    border: 2px solid #666;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.pupil-inner {
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+.pupil-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+.pupil-size-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.pupil-side {
+    text-align: center;
+}
+.pupil-reactivity {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.pupil-reactivity label {
+    margin: 0 5px;
+}
+
+/* New styles for edema assessment */
+.edema-grade {
+    font-weight: bold;
+    text-align: center;
+}
+.edema-grade-1 {
+    background-color: #e8f8f5;
+}
+.edema-grade-2 {
+    background-color: #d1f2eb;
+}
+.edema-grade-3 {
+    background-color: #a3e4d7;
+}
+.edema-grade-4 {
+    background-color: #76d7c4;
+}
+.edema-image {
+    text-align: center;
+    margin: 20px 0;
+}
+.edema-circle {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ecf0f1;
+    margin: 0 5px;
+    position: relative;
+    border: 2px solid #bdc3c7;
+}
+.edema-indent {
+    position: absolute;
+    background-color: rgba(52, 152, 219, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.edema-grade-1 .edema-indent {
+    width: 15px;
+    height: 15px;
+}
+.edema-grade-2 .edema-indent {
+    width: 25px;
+    height: 25px;
+}
+.edema-grade-3 .edema-indent {
+    width: 35px;
+    height: 35px;
+}
+.edema-grade-4 .edema-indent {
+    width: 45px;
+    height: 45px;
+}
+
+/* New styles for pupil size chart */
+.pupil-size-chart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.pupil-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pupil-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.pupil-black {
+    background-color: black;
+    border-radius: 50%;
+}
+.size-label {
+    font-size: 12px;
+    text-align: center;
+}
+
+.power-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.power-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* 隱藏輸入框上下箭頭 */
+.power-input::-webkit-inner-spin-button, 
+.power-input::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+.power-input {
+    appearance: textfield;
+}
+
+.special-conditions {
+    background-color:  rgb(241, 241, 241);
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.condition-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.condition-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+} 

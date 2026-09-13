@@ -1,0 +1,877 @@
+/* basic style */
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #e8f4fc;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --text-color: #2c3e50;
+    --border-color: #ddd;
+    --background-color: #f9f9f9;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --border-radius: 4px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* 布局組件 */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.navigation a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.date-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.date, .day, .time {
+    color: black;
+}
+
+.time {
+    font-weight: bold;
+}
+
+/* 標籤頁樣式 */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-right: 5px;
+}
+
+.tab.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.calculator-content {
+    display: none;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.calculator-content.active {
+    display: block;
+}
+
+/* 子標籤頁樣式 */
+.sub-tabs {
+    display: flex;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.sub-tab {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    margin-right: 5px;
+}
+
+.sub-tab.active {
+    background-color: #5dade2;
+    color: white;
+    border-color: #5dade2;
+}
+
+.sub-content {
+    display: none;
+}
+
+.sub-content.active {
+    display: block;
+}
+
+/* 表單元素 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+
+.input-checkbox {
+    width: auto;
+    margin-right: 5px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group input, .input-group select {
+    flex: 1;
+}
+
+.time-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.time-input-group input {
+    width: 50%;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* 結果顯示 */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    display: none;
+}
+
+.error {
+    color: var(--danger-color);
+    display: none;
+    margin-top: 10px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.result-item {
+    width: 48%;
+}
+
+.result-value {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* 點滴速率計算器 */
+.flash-indicator {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+
+.flash-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    margin: 0 auto 15px;
+    transition: background-color 0.1s ease;
+}
+
+.flash-circle.active {
+    background-color: #d2e2ec;
+}
+
+.flash-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.flash-controls button {
+    width: auto;
+    flex: 1;
+    max-width: 120px;
+}
+
+.flash-info {
+    margin: 10px 0;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.flash-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sound-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.sound-control label {
+    display: inline;
+    margin: 0;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.volume-control label {
+    display: inline;
+    margin: 0;
+    width: 60px;
+}
+
+/* 藥物計時器 */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.drtm-timer-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    width: 300px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timer-display {
+    font-size: 36px;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timer-name {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.timer-status {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    height: 20px;
+}
+
+.notification {
+    background-color: var(--danger-color);
+    color: white;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.add-timer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    margin: 20px auto;
+    display: block;
+    max-width: 200px;
+}
+
+.completed {
+    color: var(--danger-color);
+}
+
+.drtm-delete-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    width: 48px;
+    height: 24px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.drtm-timer-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.drtm-timer-form {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-btn {
+    background-color: var(--success-color);
+}
+
+.pause-btn {
+    background-color: var(--warning-color);
+}
+
+.reset-btn {
+    background-color: var(--danger-color);
+}
+
+/* 護理鬧鐘 */
+.clock {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.alarm-container {
+    margin: 20px 0;
+}
+
+.alarm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alarm-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.quick-presets {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.preset-btn {
+    background-color: #4a90e2;
+    margin-bottom: 8px;
+    flex: 1;
+}
+
+.alarm-list {
+    margin-top: 20px;
+}
+
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    background-color: var(--background-color);
+}
+
+.alarm-time {
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.alarm-label {
+    color: #666;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    padding: 8px 12px;
+    margin-left: 5px;
+    width: 70px;
+}
+
+.toggle-btn {
+    background-color: var(--success-color);
+    padding: 8px 12px;
+    margin-left: 5px;
+    width: 70px;
+}
+
+.modal, .confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+.modal-content, .confirmation-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    z-index: 10001;
+}
+
+.stop-alarm {
+    background-color: var(--danger-color);
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.confirm-btn {
+    background-color: var(--success-color);
+    width: 120px;
+}
+
+.cancel-btn {
+    background-color: var(--danger-color);
+    width: 90px;
+}
+
+.alarm-schedule {
+    text-align: left;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.alarm-schedule ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.clear-all-btn {
+    background-color: var(--danger-color);
+    margin-left: 10px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Mobile Menu and Responsive Design Additions */
+
+/* Section dividers - add borders between each main section */
+.section-divider {
+    border-bottom: 1px solid #e0e0e0;
+    margin: 15px 0;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+/* Make the last divider more prominent */
+.section-divider:last-of-type {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Navigation section styling */
+.navigation-section {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4a4a4a;
+    color: white;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+/* Highlight the active navigation section */
+.navigation-section.active {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Mobile-friendly section headers */
+.section-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+/* Hamburger Menu Button - hidden by default on larger screens */
+.menu-button {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 0%;
+    width: 98%;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 0 10px; /* Added margin to prevent touching edge */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.menu-button .icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Mobile menu - fullscreen overlay */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 999;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+/* Mobile navigation links */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 70px;
+}
+
+.mobile-menu li {
+    text-align: center;
+    margin: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.mobile-menu li:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.mobile-menu a:hover, 
+.mobile-menu a:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    /* Show hamburger menu on mobile */
+    .menu-button {
+        display: block;
+    }
+
+    header {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    header h1 {
+        text-align: center;
+        width: 100%;
+        margin: 15px auto;
+        margin-top: 60px;
+    }
+    
+    /* Convert tabs to column layout on mobile */
+    .tabs {
+        flex-direction: column;
+        display: none; /* Hide by default, will be shown in mobile menu */
+    }
+    
+    .tabs.mobile-visible {
+        display: flex;
+    }
+    
+    .tab {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px 15px;
+        background-color: #f8f8f8;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    }
+    
+    .tab.active {
+        border-color: var(--primary-color);
+        background-color: #e6f2ff;
+    }
+    
+    /* Adjust form elements for mobile */
+    .input-group, .time-input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .input-group input, 
+    .input-group select,
+    .time-input-group input {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    /* Adjust subpage tabs for mobile */
+    .sub-tabs {
+        flex-direction: column;
+        padding-left: 0;
+    }
+    
+    .sub-tab {
+        width: 93%;
+        margin-right: 0;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    /* Adjust calculator content for mobile */
+    .calculator-content {
+        padding: 15px 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        margin-bottom: 25px;
+    }
+    
+    /* Add dividers between form groups */
+    .calculator-content .form-group {
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .calculator-content .form-group:last-of-type {
+        border-bottom: none;
+    }
+    
+    /* Result display adjustments */
+    .result-row {
+        flex-direction: column;
+    }
+    
+    .result-item {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+    }
+    
+    /* Make result more visible */
+    .result {
+        border: 1px solid #c8e1ff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        background-color: #f0f8ff;
+    }
+    
+    .result h3 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+    }
+    
+    /* Timer cards */
+    .drtm-timer-card {
+        width: 100%;
+        border: 1px solid #ddd;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    
+    /* Add divider between timer elements */
+    .drtm-timer-header {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .timer-display {
+        border-top: 1px dashed #eee;
+        border-bottom: 1px dashed #eee;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+    
+    /* Drip rate calculator adjustments */
+    .flash-controls button {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    /* Alarm controls */
+    .alarm-controls {
+        flex-direction: column;
+    }
+    
+    .alarm-controls button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    /* Modal adjustments */
+    .modal-content, .confirmation-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    /* Date container for smaller screens */
+    .date-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Diagnosis - [DIAGNOSIS NAME]</title>
+    <link rel="stylesheet" href="diagnosis.css">
+</head>
+<body>
+    <header style="background-color: #3498db">
+        <h1 style="color: white;">Nursing Diagnosis Library</h1>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <input type="text" class="search-box" placeholder="Search diagnoses...">
+            
+            <h3>Nursing Diagnoses</h3>
+            
+            <div class="taxonomy-container">
+                <!-- Domain filter dropdown -->
+                <select id="domain-filter" class="taxonomy-filter">
+                    <option value="all">All Domains</option>
+                    <option value="domain1">Domain 1: Health Promotion</option>
+                    <option value="domain2">Domain 2: Nutrition</option>
+                    <option value="domain3">Domain 3: Elimination and Exchange</option>
+                    <option value="domain4">Domain 4: Activity/Rest</option>
+                    <option value="domain5">Domain 5: Perception/Cognition</option>
+                    <option value="domain6">Domain 6: Self-Perception</option>
+                    <option value="domain7">Domain 7: Role Relationship</option>
+                    <option value="domain8">Domain 8: Sexuality</option>
+                    <option value="domain9" selected>Domain 9: Coping/Stress Tolerance</option>
+                    <option value="domain10">Domain 10: Life Principles</option>
+                    <option value="domain11">Domain 11: Safety/Protection</option>
+                    <option value="domain12">Domain 12: Comfort</option>
+                    <option value="domain13">Domain 13: Growth/Development</option>
+                </select>
+                
+                <!-- Class filter dropdown -->
+                <select id="class-filter" class="taxonomy-filter">
+                    <option value="all">All Classes</option>
+                    <option value="class1">Class 1: Post-Trauma Responses</option>
+                    <option value="class2" selected>Class 2: Coping Responses</option>
+                    <option value="class3">Class 3: Neurobehavioral Stress</option>
+                </select>
+            </div>
+            
+            <!-- Diagnosis navigation menu would go here -->
+            <div class="diagnosis-container">
+                <!-- Replace with the appropriate domain and class -->
+            </div>
+            
+            <button class="add-button">+ Add New Diagnosis</button>
+            
+            <div class="legend" style="margin-top: 20px;">
+                <div><span class="tag independent">•</span> Independent</div>
+                <div><span class="tag collaborative">!</span> Collaborative</div>
+                <div><span class="tag ebn">EBN</span> Evidence-Based Nursing</div>
+                <div><span class="tag eb">EB</span> Evidence-Based</div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <h1>[DIAGNOSIS NAME]</h1>
+            
+            <!-- NANDA-I Definition -->
+            <div class="section">
+                <h2>NANDA-I Definition</h2>
+                <p>[Insert definition here]</p>
+            </div>
+            
+            <!-- Defining Characteristics -->
+            <div class="section">
+                <h2>Defining Characteristics</h2>
+                <p>[Insert defining characteristics here]</p>
+            </div>
+            
+            <!-- Related Factors -->
+            <div class="section">
+                <h2>Related Factors (r/t)</h2>
+                <p>[Insert related factors here]</p>
+            </div>
+            
+            <!-- NOC Outcomes -->
+            <div class="section">
+                <h2>NOC (Nursing Outcomes Classification)</h2>
+                <h3>Suggested NOC Outcomes</h3>
+                <ul>
+                    <li>[Outcome 1]</li>
+                    <li>[Outcome 2]</li>
+                    <li>[Outcome 3]</li>
+                </ul>
+                
+                <h3>Example NOC Outcome</h3>
+                <p><strong>[Outcome Name]</strong> [Insert outcome description here]</p>
+            </div>
+            
+            <!-- Client Outcomes -->
+            <div class="section">
+                <h2>Client Outcomes</h2>
+                <p>Client Will (Specify Time Frame)</p>
+                <ul>
+                    <li>[Outcome 1]</li>
+                    <li>[Outcome 2]</li>
+                    <li>[Outcome 3]</li>
+                </ul>
+            </div>
+            
+            <!-- NIC Interventions -->
+            <div class="section">
+                <h2>NIC (Nursing Interventions Classification)</h2>
+                <h3>Suggested NIC Interventions</h3>
+                <ul>
+                    <li>[Intervention 1]</li>
+                    <li>[Intervention 2]</li>
+                    <li>[Intervention 3]</li>
+                </ul>
+                
+                <h3>Example NIC Activities</h3>
+                <p>[Insert example activities here]</p>
+            </div>
+            
+            <!-- Nursing Interventions and Rationales -->
+            <div class="section">
+                <h2>Nursing Interventions and Rationales</h2>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> [Intervention 1]</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: [Rationale 1]</p>
+                </div>
+
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> [Intervention 2]</p>
+                    <p class="rationale"><span class="tag ebn">EBN</span>: [Rationale 2]</p>
+                </div>
+                
+                <!-- Special populations sections as needed -->
+                <h3>Pediatric</h3>
+                <div class="special-section">
+                    <!-- Pediatric interventions -->
+                </div>
+                
+                <h3>Geriatric</h3>
+                <div class="special-section">
+                    <!-- Geriatric interventions -->
+                </div>
+                
+                <h3>Home Care</h3>
+                <div class="special-section">
+                    <!-- Home care interventions -->
+                </div>
+            </div>
+            
+            <!-- Client/Family Teaching -->
+            <div class="section">
+                <h2>Client/Family Teaching and Discharge Planning</h2>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> [Teaching point 1]</p>
+                    <p class="rationale"><span class="tag eb">EB</span>: [Rationale 1]</p>
+                </div>
+                
+                <div class="intervention">
+                    <p class="intervention-header"><span class="tag independent">•</span> [Teaching point 2]</p>
+                    <p class="rationale"><span class="tag ebn">EBN</span>: [Rationale 2]</p>
+                </div>
+            </div>
+            
+            <div class="footnote">
+                <p>References have been abbreviated for this template. For full references, please refer to the original source material.</p>
+                <p>Template created: March 13, 2025</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="diagnosis.js"></script>
+</body>
+</html>

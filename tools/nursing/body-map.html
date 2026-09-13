@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Incident Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .main-content {
+            display: flex;
+            width: 100%;
+            margin-bottom: 30px;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+            }
+        }
+        
+        .body-map {
+            width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+        
+        @media (min-width: 1024px) {
+            .body-map {
+                width: 75%;
+            }
+        }
+        
+        .sidebar {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 1024px) {
+            .sidebar {
+                width: 25%;
+                margin-top: 0;
+                margin-left: 20px;
+            }
+        }
+        
+        .legend-box, .incidents-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .legend-symbol {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 17px solid #ff0000;
+        }
+        
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+        
+        .square {
+            width: 20px;
+            height: 20px;
+            border: 2px solid;
+        }
+        
+        .incidents-list {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        
+        .incident-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .delete-btn {
+            color: #ff0000;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .delete-btn:hover {
+            color: #cc0000;
+        }
+        
+        svg {
+            width: 100%;
+        }
+        
+        .body-part {
+            cursor: pointer;
+            transition: fill 0.2s;
+        }
+        
+        .body-part:hover {
+            fill: #f0f0f0;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 24px;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .modal h2 {
+            margin-bottom: 20px;
+        }
+        
+        .incident-type-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .incident-type-btn {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .incident-type-btn:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .cancel-btn {
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .empty-message {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Incident Tracker</h1>
+        
+        <div class="main-content">
+            <div class="body-map">
+                <!-- Front View -->
+                <svg viewBox="0 0 200 400" id="front-view">
+                    <!-- Head -->
+                    <circle 
+                        cx="100" cy="40" r="30" 
+                        class="body-part" 
+                        data-part="Head"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></circle>
+                    
+                    <!-- Torso -->
+                    <path 
+                        d="M70,70 L70,200 L130,200 L130,70 Z" 
+                        class="body-part"
+                        data-part="Torso"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Arm -->
+                    <path 
+                        d="M70,80 L50,80 L40,130 L50,130 L60,130" 
+                        class="body-part"
+                        data-part="Left Arm"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Forearm -->
+                    <path 
+                        d="M40,130 L30,180 L50,180" 
+                        class="body-part"
+                        data-part="Left Forearm"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Arm -->
+                    <path 
+                        d="M130,80 L150,80 L160,130 L150,130 L140,130" 
+                        class="body-part"
+                        data-part="Right Arm"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Forearm -->
+                    <path 
+                        d="M160,130 L170,180 L150,180" 
+                        class="body-part"
+                        data-part="Right Forearm"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Leg -->
+                    <path 
+                        d="M70,200 L70,300 L90,300 L100,200" 
+                        class="body-part"
+                        data-part="Left Leg"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Leg -->
+                    <path 
+                        d="M130,200 L130,300 L110,300 L100,200" 
+                        class="body-part"
+                        data-part="Right Leg"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Foot -->
+                    <path 
+                        d="M70,300 L70,320 L90,320 L90,300" 
+                        class="body-part"
+                        data-part="Left Foot"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Foot -->
+                    <path 
+                        d="M130,300 L130,320 L110,320 L110,300" 
+                        class="body-part"
+                        data-part="Right Foot"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Incident markers will be added here dynamically -->
+                    <g id="front-incidents"></g>
+                </svg>
+                
+                <!-- Back View -->
+                <svg viewBox="0 0 200 400" id="back-view">
+                    <!-- Head -->
+                    <circle 
+                        cx="100" cy="40" r="30" 
+                        class="body-part" 
+                        data-part="Head Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></circle>
+                    
+                    <!-- Back -->
+                    <path 
+                        d="M70,70 L70,200 L130,200 L130,70 Z" 
+                        class="body-part"
+                        data-part="Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Arm -->
+                    <path 
+                        d="M70,80 L50,80 L40,130 L50,130 L60,130" 
+                        class="body-part"
+                        data-part="Left Arm Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Forearm -->
+                    <path 
+                        d="M40,130 L30,180 L50,180" 
+                        class="body-part"
+                        data-part="Left Forearm Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Arm -->
+                    <path 
+                        d="M130,80 L150,80 L160,130 L150,130 L140,130" 
+                        class="body-part"
+                        data-part="Right Arm Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Forearm -->
+                    <path 
+                        d="M160,130 L170,180 L150,180" 
+                        class="body-part"
+                        data-part="Right Forearm Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Buttocks -->
+                    <path 
+                        d="M70,200 L100,220 L130,200 L130,240 L70,240 Z" 
+                        class="body-part"
+                        data-part="Buttocks"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Leg -->
+                    <path 
+                        d="M70,240 L70,300 L90,300 L100,240" 
+                        class="body-part"
+                        data-part="Left Leg Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Leg -->
+                    <path 
+                        d="M130,240 L130,300 L110,300 L100,240" 
+                        class="body-part"
+                        data-part="Right Leg Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Left Foot -->
+                    <path 
+                        d="M70,300 L70,320 L90,320 L90,300" 
+                        class="body-part"
+                        data-part="Left Foot Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Right Foot -->
+                    <path 
+                        d="M130,300 L130,320 L110,320 L110,300" 
+                        class="body-part"
+                        data-part="Right Foot Back"
+                        fill="white" stroke="#888" stroke-width="2"
+                    ></path>
+                    
+                    <!-- Incident markers will be added here dynamically -->
+                    <g id="back-incidents"></g>
+                </svg>
+            </div>
+            
+            <div class="sidebar">
+                <div class="legend-box">
+                    <h2>Legend</h2>
+                    <div class="legend-item">
+                        <div class="legend-symbol">
+                            <div class="triangle"></div>
+                        </div>
+                        <span>Pain</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol">
+                            <div class="circle" style="border-color: #ff9900;"></div>
+                        </div>
+                        <span>Wound</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol">
+                            <div class="circle" style="border-color: #0000ff;"></div>
+                        </div>
+                        <span>Drain/管路</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol">
+                            <div class="square" style="border-color: #ff9900;"></div>
+                        </div>
+                        <span>Pressure Sore</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol">
+                            <div class="circle" style="border-color: #0000ff;"></div>
+                        </div>
+                        <span>IV Catheter (IC)</span>
+                    </div>
+                </div>
+                
+                <div class="incidents-box">
+                    <h2>Incidents List</h2>
+                    <div id="incidents-list" class="incidents-list">
+                        <p class="empty-message">No incidents added yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for adding incident (initially hidden) -->
+        <div id="modal" class="modal-overlay" style="display: none;">
+            <div class="modal">
+                <h2 id="modal-title">Add Incident</h2>
+                <div class="incident-type-grid">
+                    <!-- Incident type buttons will be added here dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button id="cancel-btn" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Incident types configuration
+        const incidentTypes = [
+            { id: 'pain', name: 'Pain', color: '#ff0000', symbol: 'triangle' },
+            { id: 'wound', name: 'Wound', color: '#ff9900', symbol: 'circle' },
+            { id: 'drain', name: 'Drain/管路', color: '#0000ff', symbol: 'circle' },
+            { id: 'pressure', name: 'Pressure Sore', color: '#ff9900', symbol: 'square' },
+            { id: 'ic', name: 'IV Catheter (IC)', color: '#0000ff', symbol: 'circle' }
+        ];
+        
+        // State variables
+        let incidents = [];
+        let selectedPart = null;
+        let selectedPosition = { x: 0, y: 0 };
+        let selectedView = null;
+        
+        // DOM elements
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const incidentTypeGrid = document.querySelector('.incident-type-grid');
+        const incidentsList = document.getElementById('incidents-list');
+        const frontView = document.getElementById('front-view');
+        const backView = document.getElementById('back-view');
+        const frontIncidents = document.getElementById('front-incidents');
+        const backIncidents = document.getElementById('back-incidents');
+        
+        // Initialize incident type buttons in modal
+        function initIncidentTypeButtons() {
+            incidentTypeGrid.innerHTML = '';
+            
+            incidentTypes.forEach(type => {
+                const button = document.createElement('button');
+                button.className = 'incident-type-btn';
+                
+                let symbolHtml = '';
+                if (type.symbol === 'triangle') {
+                    symbolHtml = `<div class="legend-symbol"><div class="triangle" style="border-bottom-color: ${type.color};"></div></div>`;
+                } else if (type.symbol === 'circle') {
+                    symbolHtml = `<div class="legend-symbol"><div class="circle" style="border-color: ${type.color};"></div></div>`;
+                } else if (type.symbol === 'square') {
+                    symbolHtml = `<div class="legend-symbol"><div class="square" style="border-color: ${type.color};"></div></div>`;
+                }
+                
+                button.innerHTML = `${symbolHtml}<span>${type.name}</span>`;
+                
+                button.addEventListener('click', () => {
+                    addIncident(type.id);
+                    closeModal();
+                });
+                
+                incidentTypeGrid.appendChild(button);
+            });
+        }
+        
+        // Add click event listeners to all body parts
+        function initBodyParts() {
+            const bodyParts = document.querySelectorAll('.body-part');
+            
+            bodyParts.forEach(part => {
+                part.addEventListener('click', (e) => {
+                    // Get the SVG element that contains the clicked part
+                    const svg = part.closest('svg');
+                    selectedView = svg.id === 'front-view' ? 'front' : 'back';
+                    
+                    // Get position relative to the SVG
+                    const svgRect = svg.getBoundingClientRect();
+                    const pointX = e.clientX - svgRect.left;
+                    const pointY = e.clientY - svgRect.top;
+                    
+                    // Convert to SVG coordinates
+                    const svgPoint = svg.createSVGPoint();
+                    svgPoint.x = pointX;
+                    svgPoint.y = pointY;
+                    const transformedPoint = svgPoint.matrixTransform(svg.getScreenCTM().inverse());
+                    
+                    selectedPart = part.getAttribute('data-part');
+                    selectedPosition = { 
+                        x: transformedPoint.x, 
+                        y: transformedPoint.y 
+                    };
+                    
+                    openModal();
+                });
+            });
+        }
+        
+        // Open the modal
+        function openModal() {
+            modalTitle.textContent = `Add Incident to ${selectedPart}`;
+            modal.style.display = 'flex';
+        }
+        
+        // Close the modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        
+        // Add a new incident
+        function addIncident(typeId) {
+            const newIncident = {
+                id: Date.now(),
+                part: selectedPart,
+                type: typeId,
+                position: selectedPosition,
+                view: selectedView
+            };
+            
+            incidents.push(newIncident);
+            renderIncidents();
+            updateIncidentsList();
+        }
+        
+        // Delete an incident
+        function deleteIncident(id) {
+            incidents = incidents.filter(incident => incident.id !== id);
+            renderIncidents();
+            updateIncidentsList();
+        }
+        
+        // Render all incidents on the body maps
+        function renderIncidents() {
+            // Clear current incidents
+            frontIncidents.innerHTML = '';
+            backIncidents.innerHTML = '';
+            
+            // Render front view incidents
+            incidents.filter(inc => inc.view === 'front').forEach(incident => {
+                const incidentElement = createIncidentElement(incident);
+                frontIncidents.appendChild(incidentElement);
+            });
+            
+            // Render back view incidents
+            incidents.filter(inc => inc.view === 'back').forEach(incident => {
+                const incidentElement = createIncidentElement(incident);
+                backIncidents.appendChild(incidentElement);
+            });
+        }
+        
+        // Create SVG element for an incident
+        function createIncidentElement(incident) {
+            const type = incidentTypes.find(t => t.id === incident.type);
+            const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            
+            group.setAttribute('class', 'incident');
+            group.setAttribute('data-id', incident.id);
+            group.style.cursor = 'pointer';
+            
+            group.addEventListener('click', () => {
+                deleteIncident(incident.id);
+            });
+            
+            let marker;
+            
+            if (type.symbol === 'triangle') {
+                marker = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                marker.setAttribute('points', `${incident.position.x-10},${incident.position.y+5} ${incident.position.x},${incident.position.y-10} ${incident.position.x+10},${incident.position.y+5}`);
+                marker.setAttribute('fill', type.color);
+                marker.setAttribute('stroke', 'black');
+                marker.setAttribute('stroke-width', '1');
+            } else if (type.symbol === 'circle') {
+                marker = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+                marker.setAttribute('cx', incident.position.x);
+                marker.setAttribute('cy', incident.position.y);
+                marker.setAttribute('rx', '10');
+                marker.setAttribute('ry', '15');
+                marker.setAttribute('fill', 'none');
+                marker.setAttribute('stroke', type.color);
+                marker.setAttribute('stroke-width', '2');
+            } else if (type.symbol === 'square') {
+                marker = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                marker.setAttribute('x', incident.position.x - 10);
+                marker.setAttribute('y', incident.position.y - 10);
+                marker.setAttribute('width', '20');
+                marker.setAttribute('height', '20');
+                marker.setAttribute('fill', 'none');
+                marker.setAttribute('stroke', type.color);
+                marker.setAttribute('stroke-width', '2');
+            }
+            
+            const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            label.setAttribute('x', parseInt(incident.position.x) + 15);
+            label.setAttribute('y', incident.position.y);
+            label.setAttribute('font-size', '8');
+            label.setAttribute('fill', type.color);
+            label.textContent = type.name;
+            
+            group.appendChild(marker);
+            group.appendChild(label);
+            
+            return group;
+        }
+        
+        // Update the incidents list in the sidebar
+        function updateIncidentsList() {
+            if (incidents.length === 0) {
+                incidentsList.innerHTML = '<p class="empty-message">No incidents added yet</p>';
+                return;
+            }
+            
+            incidentsList.innerHTML = '';
+            
+            incidents.forEach(incident => {
+                const type = incidentTypes.find(t => t.id === incident.type);
+                
+                const item = document.createElement('div');
+                item.className = 'incident-item';
+                
+                const info = document.createElement('span');
+                info.innerHTML = `<strong>${incident.part}:</strong> ${type.name}`;
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-btn';
+                deleteButton.textContent = '×';
+                deleteButton.addEventListener('click', () => {
+                    deleteIncident(incident.id);
+                });
+                
+                item.appendChild(info);
+                item.appendChild(deleteButton);
+                incidentsList.appendChild(item);
+            });
+        }
+        
+        // Initialize the application
+        function init() {
+            initIncidentTypeButtons();
+            initBodyParts();
+            
+            cancelBtn.addEventListener('click', closeModal);
+            
+            // Load saved incidents if available
+            const savedIncidents = localStorage.getItem('medicalIncidents');
+            if (savedIncidents) {
+                try {
+                    incidents = JSON.parse(savedIncidents);
+                    renderIncidents();
+                    updateIncidentsList();
+                } catch (e) {
+                    console.error('Failed to load saved incidents', e);
+                }
+            }
+            
+            // Save incidents when they change
+            window.addEventListener('beforeunload', () => {
+                localStorage.setItem('medicalIncidents', JSON.stringify(incidents));
+            });
+        }
+        
+        // Start the application
+        init();
+    </script>
+</body>
+</html>

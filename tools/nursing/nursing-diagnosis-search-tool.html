@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>護理診斷查詢工具</title>
+    <!-- Mobile style CSS -->
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding-top: 60px; /* Added padding for fixed navigation */
+        }
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+        /* Remove old navigation styles */
+        .hidden {
+            display: none;
+        }
+        .search-results {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        /* Link styling */
+        .diagnosis-link {
+            color: #3182ce;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .diagnosis-link:hover {
+            color: #2c5282;
+        }
+        /* Admin panel styles */
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+        .admin-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .admin-content {
+                padding: 1rem;
+                width: 95%;
+            }
+            .tabs {
+                flex-direction: column;
+            }
+            .tab {
+                flex: none;
+                margin-bottom: 2px;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navigation-container">
+            <div class="navigation">
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="user-guide.html">使用說明</a>
+                    <a href="index.html">護理工作時間表</a>
+                    <a href="nursing-checklist.html">護理工作Checklist</a>
+                    <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+                    <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+                    <a href="clinical-cheatsheet.html">臨床懶人包</a>
+                    <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+                    <a href="nursing-kardex.html">交班單（prototype）</a>
+                </div>
+            </div>
+        </div>
+        <h1 style="font-size: 2rem; margin-top: 15px">護理診斷查詢工具</h1>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="mb-4">
+                <label for="search" class="block text-gray-700 font-medium mb-2">
+                    輸入醫學診斷英文：
+                </label>
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="請輸入醫學診斷英文（如：Diabetes Mellitus）"
+                    />
+                    <div id="searchResults" class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg hidden search-results">
+                        <!-- Search results will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h3 class="text-md font-semibold text-gray-700 mb-2">可嘗試以下連結：</h3>
+                <div class="flex flex-wrap gap-2" id="examples">
+                    <!-- Example buttons will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="text-center py-6 hidden">
+            <p>讀取診斷資料庫中...</p>
+        </div>
+
+        <div id="diagnosisResult" class="bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 id="diagnosisTitle" class="text-xl font-bold mb-4 text-blue-700"></h2>
+            <div class="border-t border-gray-200 pt-4">
+                <h3 class="font-semibold text-gray-800 mb-3">相關的護理診斷：</h3>
+                <ul id="diagnosisList" class="space-y-2">
+                    <!-- Diagnosis descriptions will be inserted here by JavaScript -->
+                </ul>
+            </div>
+        </div>
+
+        <div id="noResults" class="bg-white rounded-lg shadow-md p-6 text-center hidden">
+            <p class="text-gray-600">沒有找到診斷 "<span id="searchTermDisplay"></span>". Try a different medical diagnosis.</p>
+        </div>
+        
+        <div class="text-center mt-8 mb-4">
+            <button id="openAdminBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded">
+                新增/編輯醫學診斷
+            </button>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-100 p-4 border-t border-gray-200 mt-8">
+        <div class="container mx-auto text-center text-gray-600">
+            <p>© <span id="currentYear"></span> 護理診斷搜尋工具</p>
+            <p class="text-sm mt-1">This tool is for educational purposes only. Always use clinical judgment when making nursing diagnoses.</p>
+        </div>
+    </footer>
+    
+    <!-- Admin Panel for adding/editing diagnoses -->
+    <div id="adminPanel" class="admin-panel hidden">
+        <div class="admin-content">
+            <h2 class="text-xl font-bold mb-4">醫學與護理診斷管理</h2>
+            
+            <!-- Tab navigation -->
+            <div class="border-b border-gray-200 mb-6">
+                <ul class="flex flex-wrap -mb-px" id="adminTabs" role="tablist">
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-blue-500 text-blue-600 active" 
+                                id="add-tab" 
+                                role="tab" 
+                                aria-selected="true">
+                            新增診斷
+                        </button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-600" 
+                                id="manage-tab" 
+                                role="tab" 
+                                aria-selected="false">
+                            管理診斷
+                        </button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-600" 
+                                id="links-tab" 
+                                role="tab" 
+                                aria-selected="false">
+                            護理診斷連結
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-600" 
+                                id="import-export-tab" 
+                                role="tab" 
+                                aria-selected="false">
+                            輸入/輸出
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Add diagnosis tab -->
+            <div id="add-tab-content" class="tab-content">
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">醫學診斷名稱：</label>
+                        <input type="text" id="medicalDiagnosisInput" class="w-full p-2 border rounded" placeholder="e.g., Hypertension">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">相關的護理診斷：</label>
+                        <div class="mb-2">
+                            <select id="commonNursingDiagnoses" class="w-full p-2 border rounded">
+                                <option value="">-- 選擇常見護理診斷新增 --</option>
+                                <!-- Will be populated with JavaScript -->
+                            </select>
+                        </div>
+                        <textarea id="nursingDiagnosesInput" class="w-full p-2 border rounded h-32" placeholder="Enter one nursing diagnosis per line, e.g.:&#10;Anxiety r/t change in health status&#10;Risk for Falls: Risk factor: dizziness"></textarea>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button id="saveMedicalDiagnosisBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            儲存醫學診斷
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Manage diagnoses tab -->
+            <div id="manage-tab-content" class="tab-content hidden">
+                <div class="mb-4">
+                    <input type="text" id="diagnosisSearchInput" class="w-full p-2 border rounded" placeholder="搜尋醫學診斷...">
+                </div>
+                
+                <div id="diagnosisList" class="max-h-96 overflow-y-auto border rounded">
+                    <!-- Will be populated with JavaScript -->
+                </div>
+                
+                <!-- Edit diagnosis modal will be created dynamically -->
+            </div>
+            
+            <!-- Nursing diagnosis links tab -->
+            <div id="links-tab-content" class="tab-content hidden">
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">護理診斷：</label>
+                        <input type="text" id="nursingDiagnosisInput" class="w-full p-2 border rounded" placeholder="e.g., Acute Pain">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">護理診斷頁面連結（URL）：</label>
+                        <input type="text" id="diagnosisLinkInput" class="w-full p-2 border rounded" placeholder="e.g., nursing-diagnosis/acute-pain.html">
+                    </div>
+                    
+                    <div class="text-right">
+                        <button id="saveDiagnosisLinkBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            儲存診斷連結
+                        </button>
+                    </div>
+                    
+                    <div class="border-t pt-4 mt-2">
+                        <h4 class="font-medium mb-2">現有護理診斷連結：</h4>
+                        <div id="nursingLinksContainer" class="max-h-48 overflow-y-auto border rounded p-2">
+                            <!-- Will be populated with JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Import/Export tab -->
+            <div id="import-export-tab-content" class="tab-content hidden">
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <h4 class="font-medium mb-2">輸出資料：</h4>
+                        <button id="exportDataBtn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full">
+                            輸出資料到JSON檔案
+                        </button>
+                    </div>
+                    
+                    <div class="border-t pt-4 mt-2">
+                        <h4 class="font-medium mb-2">輸入資料：</h4>
+                        <textarea id="importDataInput" class="w-full p-2 border rounded h-32" placeholder="貼上輸出的JSON資料或選擇檔案"></textarea>
+                        <div class="mt-2">
+                            <input type="file" id="importFileInput" class="hidden" accept=".json">
+                            <button id="chooseFileBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">
+                                選擇JSON檔案
+                            </button>
+                            <button id="importDataBtn" class="ml-2 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                                輸入資料
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <button id="closeAdminBtn" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                    關閉
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize data from JSON files if available, otherwise use localStorage
+        async function initializeDatabase() {
+            try {
+                // Try to load from external JSON files first
+                const medicalResponse = await fetch('nursing-diagnosis-data.json');
+                const linksResponse = await fetch('nursing-diagnosis-links.json');
+                
+                if (medicalResponse.ok && linksResponse.ok) {
+                    diagnosisDatabase = await medicalResponse.json();
+                    diagnosisLinks = await linksResponse.json();
+                    
+                    // Save to localStorage as backup
+                    localStorage.setItem('diagnosisDatabase', JSON.stringify(diagnosisDatabase));
+                    localStorage.setItem('diagnosisLinks', JSON.stringify(diagnosisLinks));
+                } else {
+                    // Fallback to localStorage if files not available
+                    loadFromLocalStorage();
+                }
+            } catch (error) {
+                console.error('Error loading JSON files:', error);
+                loadFromLocalStorage();
+            }
+            
+            // Initialize diagnosis aliases if needed
+            if (!localStorage.getItem('diagnosisAliases')) {
+                const initialAliases = {
+                    "ACS (Acute Coronary Syndrome)": "Myocardial Infarction",
+                    "DM": "Diabetes Mellitus",
+                    "HTN": "Hypertension"
+                };
+                localStorage.setItem('diagnosisAliases', JSON.stringify(initialAliases));
+                diagnosisAliases = initialAliases;
+            } else {
+                diagnosisAliases = JSON.parse(localStorage.getItem('diagnosisAliases'));
+            }
+            
+            // Initialize UI elements after data is loaded
+            createExampleButtons();
+        }
+        
+        function loadFromLocalStorage() {
+            // Check if localStorage has data
+            if (!localStorage.getItem('diagnosisDatabase')) {
+                // Initialize with sample data
+                const initialDiagnosisDatabase = {
+                    "Diabetes Mellitus": {
+                        descriptions: [
+                            "Ineffective Health maintenance r/t complexity of therapeutic regimen",
+                            "Imbalanced Nutrition: less than body requirements r/t inability to use glucose",
+                            "Ineffective peripheral Tissue perfusion r/t impaired arterial circulation",
+                            "Risk for unstable blood Glucose level",
+                            "Risk for Infection: Risk factors: hyperglycemia, impaired healing",
+                            "Risk for impaired Skin integrity: Risk factor: loss of pain perception in extremities"
+                        ]
+                    },
+                    "Pneumonia": {
+                        descriptions: [
+                            "Ineffective Airway clearance r/t inflammation and presence of secretions",
+                            "Impaired Gas exchange r/t decreased functional lung tissue",
+                            "Ineffective Thermoregulation r/t infectious process",
+                            "Risk for deficient Fluid volume: Risk factor: inadequate intake of fluids",
+                            "Acute Pain r/t inflammatory process"
+                        ]
+                    },
+                    "Myocardial Infarction": {
+                        descriptions: [
+                            "Activity intolerance r/t imbalance between oxygen supply and demand",
+                            "Anxiety r/t threat of death, possible change in role status",
+                            "Decreased Cardiac output r/t myocardial injury",
+                            "Acute Pain r/t myocardial tissue damage from inadequate blood supply",
+                            "Risk for decreased Cardiac tissue perfusion: Risk factors: coronary artery spasm, hypertension"
+                        ]
+                    }
+                };
+                localStorage.setItem('diagnosisDatabase', JSON.stringify(initialDiagnosisDatabase));
+            }
+
+            if (!localStorage.getItem('diagnosisLinks')) {
+                // Initialize with sample data
+                const initialDiagnosisLinks = {
+                    "Acute Pain": "nursing-diagnosis/acute-pain.html",
+                    "Anxiety": "nursing-diagnosis/anxiety.html",
+                    "Impaired Gas exchange": "nursing-diagnosis/impaired-gas-exchange.html",
+                    "Decreased Cardiac output": "nursing-diagnosis/decreased-cardiac-output.html",
+                    "Ineffective Breathing pattern": "nursing-diagnosis/ineffective-breathing-pattern.html",
+                    "Ineffective Airway clearance": "nursing-diagnosis/ineffective-airway-clearance.html"
+                };
+                localStorage.setItem('diagnosisLinks', JSON.stringify(initialDiagnosisLinks));
+            }
+            
+            // Load data from localStorage
+            diagnosisDatabase = JSON.parse(localStorage.getItem('diagnosisDatabase'));
+            diagnosisLinks = JSON.parse(localStorage.getItem('diagnosisLinks'));
+        }
+
+        // Load data
+        let diagnosisDatabase = {};
+        let diagnosisLinks = {};
+        let diagnosisAliases = {};
+        
+        // DOM elements
+        const searchInput = document.getElementById('search');
+        const searchResults = document.getElementById('searchResults');
+        const examplesContainer = document.getElementById('examples');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const diagnosisResult = document.getElementById('diagnosisResult');
+        const diagnosisTitle = document.getElementById('diagnosisTitle');
+        const diagnosisList = document.getElementById('diagnosisList');
+        const noResults = document.getElementById('noResults');
+        const searchTermDisplay = document.getElementById('searchTermDisplay');
+        const currentYear = document.getElementById('currentYear');
+        const openAdminBtn = document.getElementById('openAdminBtn');
+        const closeAdminBtn = document.getElementById('closeAdminBtn');
+        const adminPanel = document.getElementById('adminPanel');
+        const saveMedicalDiagnosisBtn = document.getElementById('saveMedicalDiagnosisBtn');
+        const saveDiagnosisLinkBtn = document.getElementById('saveDiagnosisLinkBtn');
+        const exportDataBtn = document.getElementById('exportDataBtn');
+        const importDataBtn = document.getElementById('importDataBtn');
+
+        // Set the current year for the footer
+        currentYear.textContent = new Date().getFullYear();
+
+        // Create example buttons
+        function createExampleButtons() {
+            examplesContainer.innerHTML = '';
+            
+            // Include both direct diagnoses and aliases
+            const directDiagnoses = Object.keys(diagnosisDatabase);
+            const aliases = Object.keys(diagnosisAliases);
+            
+            // Combine and sort alphabetically (prioritize direct diagnoses when duplicates exist)
+            let allExamples = [...directDiagnoses];
+            
+            // Only add aliases that don't conflict with direct diagnoses
+            aliases.forEach(alias => {
+                if (!directDiagnoses.includes(alias)) {
+                    allExamples.push(alias);
+                }
+            });
+            
+            allExamples.sort(); // Sort alphabetically
+            
+            // Show only first 10 examples to avoid cluttering the UI
+            const displayExamples = allExamples.slice(0, 10);
+            
+            displayExamples.forEach(example => {
+                const button = document.createElement('button');
+                
+                // Style aliases differently for visual distinction
+                if (diagnosisAliases[example]) {
+                    button.className = 'bg-green-100 hover:bg-green-200 text-green-700 text-sm px-3 py-1 rounded-full';
+                    button.title = `別名指向: ${diagnosisAliases[example]}`;
+                } else {
+                    button.className = 'bg-blue-100 hover:bg-blue-200 text-blue-700 text-sm px-3 py-1 rounded-full';
+                }
+                
+                button.textContent = example;
+                button.addEventListener('click', () => {
+                    searchInput.value = example;
+                    handleSelectDiagnosis(example);
+                });
+                examplesContainer.appendChild(button);
+            });
+            
+            // Add a "More..." button if there are more examples
+            if (allExamples.length > 10) {
+                const moreButton = document.createElement('button');
+                moreButton.className = 'bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-3 py-1 rounded-full';
+                moreButton.textContent = "More...";
+                moreButton.addEventListener('click', () => {
+                    // Display a modal with all diagnoses instead of using search results
+                    showAllDiagnosesModal(allExamples);
+                });
+                examplesContainer.appendChild(moreButton);
+            }
+            
+            // Function to show a modal with all diagnoses
+            function showAllDiagnosesModal(diagnoses) {
+                // Create modal container
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                
+                // Create modal content
+                const modalContent = document.createElement('div');
+                modalContent.className = 'bg-white rounded-lg p-6 w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto';
+                
+                // Create header
+                const header = document.createElement('div');
+                header.className = 'flex justify-between items-center mb-4';
+                
+                const title = document.createElement('h3');
+                title.className = 'text-xl font-bold';
+                title.textContent = 'All Medical Diagnoses';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'text-gray-500 hover:text-gray-700';
+                closeBtn.innerHTML = '&times;';
+                closeBtn.onclick = () => document.body.removeChild(modal);
+                
+                header.appendChild(title);
+                header.appendChild(closeBtn);
+                
+                // Create search input for filtering diagnoses
+                const searchDiv = document.createElement('div');
+                searchDiv.className = 'mb-4';
+                
+                const searchFilter = document.createElement('input');
+                searchFilter.type = 'text';
+                searchFilter.className = 'w-full p-2 border rounded';
+                searchFilter.placeholder = 'Filter diagnoses...';
+                
+                searchDiv.appendChild(searchFilter);
+                
+                // Create diagnoses list
+                const list = document.createElement('div');
+                list.className = 'grid grid-cols-1 md:grid-cols-2 gap-2';
+                
+                // Function to render diagnoses list
+                const renderList = (filter = '') => {
+                    list.innerHTML = '';
+                    const filteredDiagnoses = diagnoses.filter(d => 
+                        d.toLowerCase().includes(filter.toLowerCase())
+                    ).sort();
+                    
+                    filteredDiagnoses.forEach(d => {
+                        const item = document.createElement('div');
+                        item.className = 'p-2 hover:bg-blue-50 cursor-pointer rounded border';
+                        item.textContent = d;
+                        item.onclick = () => {
+                            handleSelectDiagnosis(d);
+                            document.body.removeChild(modal);
+                        };
+                        list.appendChild(item);
+                    });
+                    
+                    if (filteredDiagnoses.length === 0) {
+                        const noResults = document.createElement('div');
+                        noResults.className = 'col-span-2 text-center py-4 text-gray-500';
+                        noResults.textContent = 'No matching diagnoses found';
+                        list.appendChild(noResults);
+                    }
+                };
+                
+                // Add event listener for search filtering
+                searchFilter.addEventListener('input', () => {
+                    renderList(searchFilter.value);
+                });
+                
+                // Initial render
+                renderList();
+                
+                // Assemble modal
+                modalContent.appendChild(header);
+                modalContent.appendChild(searchDiv);
+                modalContent.appendChild(list);
+                modal.appendChild(modalContent);
+                
+                // Add to DOM
+                document.body.appendChild(modal);
+            }
+        }
+
+        // Function to create linkable text in nursing diagnoses
+        function createLinkableText(diagnosisText) {
+            // First, get the base diagnosis (before r/t or Risk factors)
+            let baseDiagnosis = diagnosisText;
+            
+            if (diagnosisText.includes(' r/t ')) {
+                baseDiagnosis = diagnosisText.split(' r/t ')[0];
+            } else if (diagnosisText.includes('Risk factor')) {
+                baseDiagnosis = diagnosisText.split('Risk factor')[0].trim();
+                if (baseDiagnosis.endsWith(':')) {
+                    baseDiagnosis = baseDiagnosis.slice(0, -1).trim();
+                }
+            }
+            
+            // Check if we have a link for this diagnosis
+            const hasLink = Object.keys(diagnosisLinks).some(key => 
+                baseDiagnosis.includes(key)
+            );
+            
+            if (hasLink) {
+                // Find which diagnosis key is contained in the text
+                const matchedKey = Object.keys(diagnosisLinks).find(key => 
+                    baseDiagnosis.includes(key)
+                );
+                
+                // Replace the matched key with a linked version
+                return diagnosisText.replace(
+                    matchedKey, 
+                    `<span class="diagnosis-link" data-link="${diagnosisLinks[matchedKey]}">${matchedKey}</span>`
+                );
+            }
+            
+            return diagnosisText;
+        }
+
+        // Handle search input changes with debounce for better performance
+        let debounceTimeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(() => {
+                const term = searchInput.value;
+                
+                if (term.trim() === '') {
+                    searchResults.classList.add('hidden');
+                    return;
+                }
+                
+                // Search in both diagnoses and aliases
+                const directMatches = Object.keys(diagnosisDatabase)
+                    .filter(diagnosis => diagnosis.toLowerCase().includes(term.toLowerCase()));
+                
+                const aliasMatches = Object.keys(diagnosisAliases)
+                    .filter(alias => alias.toLowerCase().includes(term.toLowerCase()));
+                
+                // Combine results while avoiding duplicates (prefer direct matches)
+                let combinedResults = [...directMatches];
+                aliasMatches.forEach(alias => {
+                    if (!directMatches.includes(alias)) {
+                        combinedResults.push(alias);
+                    }
+                });
+                
+                // Sort results by relevance
+                combinedResults.sort((a, b) => {
+                    // Sort by how close the match is to the beginning of the string
+                    const aIndex = a.toLowerCase().indexOf(term.toLowerCase());
+                    const bIndex = b.toLowerCase().indexOf(term.toLowerCase());
+                    
+                    // If indices are the same, prioritize direct matches
+                    if (aIndex === bIndex) {
+                        const aIsDirect = directMatches.includes(a);
+                        const bIsDirect = directMatches.includes(b);
+                        
+                        if (aIsDirect && !bIsDirect) return -1;
+                        if (!aIsDirect && bIsDirect) return 1;
+                    }
+                    
+                    return aIndex - bIndex;
+                });
+                
+                // Display search results
+                searchResults.innerHTML = '';
+                
+                if (combinedResults.length > 0) {
+                    combinedResults.forEach(result => {
+                        const resultItem = document.createElement('div');
+                        
+                        // Style based on whether it's a direct diagnosis or an alias
+                        if (diagnosisAliases[result]) {
+                            resultItem.className = 'p-3 hover:bg-green-50 cursor-pointer border-b last:border-b-0 flex items-center';
+                            
+                            const text = document.createElement('span');
+                            text.textContent = result;
+                            
+                            const aliasIndicator = document.createElement('span');
+                            aliasIndicator.className = 'ml-2 text-sm text-green-600';
+                            aliasIndicator.textContent = `→ ${diagnosisAliases[result]}`;
+                            
+                            resultItem.appendChild(text);
+                            resultItem.appendChild(aliasIndicator);
+                        } else {
+                            resultItem.className = 'p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0';
+                            resultItem.textContent = result;
+                        }
+                        
+                        resultItem.addEventListener('click', () => handleSelectDiagnosis(result));
+                        searchResults.appendChild(resultItem);
+                    });
+                    
+                    searchResults.classList.remove('hidden');
+                } else {
+                    searchResults.classList.add('hidden');
+                }
+            }, 300); // 300ms debounce
+        });
+
+        // Handle selection of a medical diagnosis
+        function handleSelectDiagnosis(diagnosis) {
+            searchInput.value = diagnosis;
+            searchResults.classList.add('hidden');
+            
+            // First, check if this is an alias and redirect accordingly
+            if (diagnosisAliases[diagnosis]) {
+                const targetDiagnosis = diagnosisAliases[diagnosis];
+                
+                // Display a message indicating the redirection
+                const alertMessage = `「${diagnosis}」是「${targetDiagnosis}」的別名。正在查看「${targetDiagnosis}」。`;
+                
+                setTimeout(() => {
+                    alert(alertMessage);
+                    // Proceed with showing the target diagnosis
+                    showDiagnosis(targetDiagnosis);
+                }, 100);
+                
+                return;
+            }
+            
+            // If not an alias, show directly
+            showDiagnosis(diagnosis);
+        }
+        
+        // Helper function to actually display the diagnosis information
+        function showDiagnosis(diagnosis) {
+            if (diagnosisDatabase[diagnosis]) {
+                // Show the diagnosis result section
+                diagnosisTitle.textContent = diagnosis;
+                diagnosisList.innerHTML = '';
+                
+                // Add each nursing diagnosis to the list
+                diagnosisDatabase[diagnosis].descriptions.forEach(description => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'bg-gray-50 p-3 rounded-md';
+                    listItem.innerHTML = createLinkableText(description);
+                    diagnosisList.appendChild(listItem);
+                });
+                
+                // Add click event listeners to the diagnosis links
+                const diagnosisLinkElements = document.querySelectorAll('.diagnosis-link');
+                diagnosisLinkElements.forEach(link => {
+                    link.addEventListener('click', function() {
+                        const url = this.getAttribute('data-link');
+                        window.location.href = url;
+                    });
+                });
+                
+                // Add aliases section if this diagnosis has aliases pointing to it
+                const aliasesForThisDiagnosis = Object.entries(diagnosisAliases)
+                    .filter(([alias, target]) => target === diagnosis)
+                    .map(([alias]) => alias);
+                
+                if (aliasesForThisDiagnosis.length > 0) {
+                    const aliasesSection = document.createElement('div');
+                    aliasesSection.className = 'mt-4 pt-4 border-t border-gray-200';
+                    
+                    const aliasesTitle = document.createElement('h4');
+                    aliasesTitle.className = 'font-semibold text-gray-800 mb-2';
+                    aliasesTitle.textContent = '別名：';
+                    
+                    const aliasesList = document.createElement('div');
+                    aliasesList.className = 'flex flex-wrap gap-2';
+                    
+                    aliasesForThisDiagnosis.forEach(alias => {
+                        const aliasTag = document.createElement('span');
+                        aliasTag.className = 'bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm';
+                        aliasTag.textContent = alias;
+                        aliasesList.appendChild(aliasTag);
+                    });
+                    
+                    aliasesSection.appendChild(aliasesTitle);
+                    aliasesSection.appendChild(aliasesList);
+                    diagnosisList.parentNode.appendChild(aliasesSection);
+                }
+                
+                diagnosisResult.classList.remove('hidden');
+                noResults.classList.add('hidden');
+            } else {
+                // Show the no results section
+                searchTermDisplay.textContent = diagnosis;
+                diagnosisResult.classList.add('hidden');
+                noResults.classList.remove('hidden');
+            }
+        }
+
+        // Admin Panel Functions
+        openAdminBtn.addEventListener('click', () => {
+            adminPanel.classList.remove('hidden');
+            
+            // Populate common nursing diagnoses dropdown
+            populateCommonNursingDiagnoses();
+            
+            // Populate nursing links list
+            updateNursingLinksList();
+            
+            // Populate diagnosis management list
+            updateDiagnosisManagementList();
+            
+            // Populate target diagnosis dropdown in aliases tab
+            populateTargetDiagnosisSelect();
+            
+            // Update aliases list
+            updateAliasesList();
+        });
+        
+        closeAdminBtn.addEventListener('click', () => {
+            adminPanel.classList.add('hidden');
+        });
+        
+        // Add a new tab for diagnosis aliases
+        const adminTabsContainer = document.getElementById('adminTabs');
+        const aliasesTabButton = document.createElement('li');
+        aliasesTabButton.className = 'mr-2';
+        aliasesTabButton.role = 'presentation';
+        const aliasesButton = document.createElement('button');
+        aliasesButton.className = 'inline-block p-4 border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-gray-600';
+        aliasesButton.id = 'aliases-tab';
+        aliasesButton.role = 'tab';
+        aliasesButton.setAttribute('aria-selected', 'false');
+        aliasesButton.textContent = '診斷別名';
+        aliasesTabButton.appendChild(aliasesButton);
+        adminTabsContainer.appendChild(aliasesTabButton);
+
+        // Create aliases tab content
+        const adminContent = document.querySelector('.admin-content');
+        const aliasesTabContent = document.createElement('div');
+        aliasesTabContent.id = 'aliases-tab-content';
+        aliasesTabContent.className = 'tab-content hidden';
+        aliasesTabContent.innerHTML = `
+            <div class="grid grid-cols-1 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">診斷別名：</label>
+                    <input type="text" id="aliasInput" class="w-full p-2 border rounded" placeholder="e.g., ACS (Acute Coronary Syndrome)">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1">指向的醫學診斷：</label>
+                    <select id="targetDiagnosisSelect" class="w-full p-2 border rounded">
+                        <option value="">-- 選擇相關醫學診斷 --</option>
+                        <!-- Will be populated with JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="text-right">
+                    <button id="saveAliasBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        儲存別名
+                    </button>
+                </div>
+                
+                <div class="border-t pt-4 mt-2">
+                    <h4 class="font-medium mb-2">現有診斷別名：</h4>
+                    <div id="aliasesContainer" class="max-h-48 overflow-y-auto border rounded p-2">
+                        <!-- Will be populated with JavaScript -->
+                    </div>
+                </div>
+            </div>
+        `;
+        adminContent.insertBefore(aliasesTabContent, document.getElementById('close-tab-div') || document.querySelector('.mt-6.text-center'));
+
+        // Admin panel tabs functionality
+        const tabButtons = document.querySelectorAll('#adminTabs button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Remove active state from all tabs
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('border-blue-500', 'text-blue-600');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                
+                // Set active state for clicked tab
+                button.classList.remove('border-transparent', 'text-gray-500');
+                button.classList.add('border-blue-500', 'text-blue-600');
+                button.setAttribute('aria-selected', 'true');
+                
+                // Show corresponding tab content
+                const tabId = button.id.replace('-tab', '-tab-content');
+                document.getElementById(tabId).classList.remove('hidden');
+                
+                // Special handling for specific tabs
+                if (button.id === 'manage-tab') {
+                    updateDiagnosisManagementList();
+                } else if (button.id === 'links-tab') {
+                    updateNursingLinksList();
+                }
+            });
+        });
+        
+        // Function to populate common nursing diagnoses dropdown
+        function populateCommonNursingDiagnoses() {
+            const dropdown = document.getElementById('commonNursingDiagnoses');
+            dropdown.innerHTML = '<option value="">-- 選擇常見護理診斷新增 --</option>';
+            
+            // Get all nursing diagnoses from links
+            const nursingDiagnoses = Object.keys(diagnosisLinks).sort();
+            
+            nursingDiagnoses.forEach(diagnosis => {
+                const option = document.createElement('option');
+                option.value = diagnosis;
+                option.textContent = diagnosis;
+                dropdown.appendChild(option);
+            });
+            
+            // Add event listener
+            dropdown.addEventListener('change', () => {
+                if (dropdown.value) {
+                    const textarea = document.getElementById('nursingDiagnosesInput');
+                    const currentText = textarea.value.trim();
+                    const newDiagnosis = dropdown.value;
+                    
+                    if (currentText) {
+                        textarea.value = currentText + '\n' + newDiagnosis;
+                    } else {
+                        textarea.value = newDiagnosis;
+                    }
+                }
+            });
+        }
+        
+        // Function to update nursing links list
+        function updateNursingLinksList() {
+            const container = document.getElementById('nursingLinksContainer');
+            container.innerHTML = '';
+            
+            const links = Object.entries(diagnosisLinks).sort((a, b) => a[0].localeCompare(b[0]));
+            
+            if (links.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-2">No nursing diagnosis links defined</p>';
+                return;
+            }
+            
+            links.forEach(([diagnosis, url]) => {
+                const item = document.createElement('div');
+                item.className = 'flex justify-between items-center mb-1 p-1 hover:bg-gray-100 rounded';
+                
+                const diagnosisText = document.createElement('span');
+                diagnosisText.textContent = diagnosis;
+                diagnosisText.className = 'truncate flex-grow';
+                diagnosisText.title = diagnosis;
+                
+                const urlText = document.createElement('span');
+                urlText.textContent = url;
+                urlText.className = 'text-gray-500 text-sm truncate ml-2 flex-grow';
+                urlText.title = url;
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'text-red-500 hover:text-red-700 ml-2';
+                deleteBtn.innerHTML = '&times;';
+                deleteBtn.title = 'Delete this link';
+                deleteBtn.onclick = () => {
+                    if (confirm(`Are you sure you want to delete the link for "${diagnosis}"?`)) {
+                        delete diagnosisLinks[diagnosis];
+                        localStorage.setItem('diagnosisLinks', JSON.stringify(diagnosisLinks));
+                        updateNursingLinksList();
+                    }
+                };
+                
+                item.appendChild(diagnosisText);
+                item.appendChild(urlText);
+                item.appendChild(deleteBtn);
+                container.appendChild(item);
+            });
+        }
+        
+        // Function to update diagnosis management list
+        function updateDiagnosisManagementList() {
+            const container = document.getElementById('diagnosisList');
+            const searchInput = document.getElementById('diagnosisSearchInput');
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            
+            container.innerHTML = '';
+            
+            // Get all medical diagnoses and filter by search term if needed
+            let diagnoses = Object.keys(diagnosisDatabase)
+                .filter(d => !searchTerm || d.toLowerCase().includes(searchTerm))
+                .sort();
+            
+            if (diagnoses.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-4">No medical diagnoses found</p>';
+                return;
+            }
+            
+            diagnoses.forEach(diagnosis => {
+                const item = document.createElement('div');
+                item.className = 'p-3 border-b last:border-b-0 hover:bg-gray-50';
+                
+                const header = document.createElement('div');
+                header.className = 'flex justify-between items-center';
+                
+                const title = document.createElement('h4');
+                title.className = 'font-medium';
+                title.textContent = diagnosis;
+                
+                const buttonContainer = document.createElement('div');
+                
+                const editBtn = document.createElement('button');
+                editBtn.className = 'bg-blue-100 hover:bg-blue-200 text-blue-700 px-2 py-1 rounded text-sm mr-2';
+                editBtn.textContent = '編輯';
+                editBtn.onclick = () => showEditDiagnosisModal(diagnosis);
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'bg-red-100 hover:bg-red-200 text-red-700 px-2 py-1 rounded text-sm';
+                deleteBtn.textContent = '刪除';
+                deleteBtn.onclick = () => {
+                    if (confirm(`確定要刪除「${diagnosis}」嗎？`)) {
+                        delete diagnosisDatabase[diagnosis];
+                        localStorage.setItem('diagnosisDatabase', JSON.stringify(diagnosisDatabase));
+                        updateDiagnosisManagementList();
+                        createExampleButtons();
+                    }
+                };
+                
+                buttonContainer.appendChild(editBtn);
+                buttonContainer.appendChild(deleteBtn);
+                
+                header.appendChild(title);
+                header.appendChild(buttonContainer);
+                
+                // Show a preview of nursing diagnoses
+                const preview = document.createElement('div');
+                preview.className = 'mt-1 text-sm text-gray-600';
+                
+                const nursingDiagnoses = diagnosisDatabase[diagnosis].descriptions;
+                if (nursingDiagnoses && nursingDiagnoses.length > 0) {
+                    preview.textContent = `${nursingDiagnoses.length} 個相關護理診斷`;
+                } else {
+                    preview.textContent = '沒有相關護理診斷';
+                }
+                
+                item.appendChild(header);
+                item.appendChild(preview);
+                container.appendChild(item);
+            });
+            
+            // Add search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', updateDiagnosisManagementList);
+            }
+        }
+        
+        // Function to show edit diagnosis modal
+        function showEditDiagnosisModal(diagnosis) {
+            // Create modal container
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            
+            // Create modal content
+            const modalContent = document.createElement('div');
+            modalContent.className = 'bg-white rounded-lg p-6 w-11/12 max-w-2xl';
+            
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'flex justify-between items-center mb-4';
+            
+            const title = document.createElement('h3');
+            title.className = 'text-xl font-bold';
+            title.textContent = `編輯診斷: ${diagnosis}`;
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'text-gray-500 hover:text-gray-700';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.onclick = () => document.body.removeChild(modal);
+            
+            header.appendChild(title);
+            header.appendChild(closeBtn);
+            
+            // Create form
+            const form = document.createElement('div');
+            form.className = 'grid grid-cols-1 gap-4';
+            
+            const diagnosisNameDiv = document.createElement('div');
+            const diagnosisNameLabel = document.createElement('label');
+            diagnosisNameLabel.className = 'block text-sm font-medium mb-1';
+            diagnosisNameLabel.textContent = '醫學診斷名稱：';
+            
+            const diagnosisNameInput = document.createElement('input');
+            diagnosisNameInput.type = 'text';
+            diagnosisNameInput.className = 'w-full p-2 border rounded';
+            diagnosisNameInput.value = diagnosis;
+            
+            diagnosisNameDiv.appendChild(diagnosisNameLabel);
+            diagnosisNameDiv.appendChild(diagnosisNameInput);
+            
+            const nursingDiagnosesDiv = document.createElement('div');
+            const nursingDiagnosesLabel = document.createElement('label');
+            nursingDiagnosesLabel.className = 'block text-sm font-medium mb-1';
+            nursingDiagnosesLabel.textContent = '相關的護理診斷：';
+            
+            // Add dropdown for common nursing diagnoses
+            const commonDiagnosesSelect = document.createElement('select');
+            commonDiagnosesSelect.className = 'w-full p-2 border rounded mb-2';
+            
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = '-- 選擇常見護理診斷新增 --';
+            commonDiagnosesSelect.appendChild(defaultOption);
+            
+            // Get all nursing diagnoses from links
+            const nursingDiagnosesOptions = Object.keys(diagnosisLinks).sort();
+            
+            nursingDiagnosesOptions.forEach(nd => {
+                const option = document.createElement('option');
+                option.value = nd;
+                option.textContent = nd;
+                commonDiagnosesSelect.appendChild(option);
+            });
+            
+            const nursingDiagnosesTextarea = document.createElement('textarea');
+            nursingDiagnosesTextarea.className = 'w-full p-2 border rounded h-48';
+            nursingDiagnosesTextarea.value = diagnosisDatabase[diagnosis].descriptions.join('\n');
+            
+            // Add event listener to dropdown
+            commonDiagnosesSelect.addEventListener('change', () => {
+                if (commonDiagnosesSelect.value) {
+                    const currentText = nursingDiagnosesTextarea.value.trim();
+                    const newDiagnosis = commonDiagnosesSelect.value;
+                    
+                    if (currentText) {
+                        nursingDiagnosesTextarea.value = currentText + '\n' + newDiagnosis;
+                    } else {
+                        nursingDiagnosesTextarea.value = newDiagnosis;
+                    }
+                    
+                    // Reset dropdown
+                    commonDiagnosesSelect.value = '';
+                }
+            });
+            
+            nursingDiagnosesDiv.appendChild(nursingDiagnosesLabel);
+            nursingDiagnosesDiv.appendChild(commonDiagnosesSelect);
+            nursingDiagnosesDiv.appendChild(nursingDiagnosesTextarea);
+            
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'text-right mt-4';
+            
+            const saveButton = document.createElement('button');
+            saveButton.className = 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded';
+            saveButton.textContent = '儲存變更';
+            saveButton.onclick = () => {
+                const newDiagnosisName = diagnosisNameInput.value.trim();
+                const nursingDiagnoses = nursingDiagnosesTextarea.value.trim();
+                
+                if (newDiagnosisName && nursingDiagnoses) {
+                    // Split nursing diagnoses by new line
+                    const descriptions = nursingDiagnoses.split('\n').filter(desc => desc.trim() !== '');
+                    
+                    // If diagnosis name changed
+                    if (newDiagnosisName !== diagnosis) {
+                        // Create new entry with new name
+                        diagnosisDatabase[newDiagnosisName] = {
+                            descriptions: descriptions
+                        };
+                        
+                        // Remove old entry
+                        delete diagnosisDatabase[diagnosis];
+                    } else {
+                        // Update existing entry
+                        diagnosisDatabase[diagnosis].descriptions = descriptions;
+                    }
+                    
+                    // Save to localStorage
+                    localStorage.setItem('diagnosisDatabase', JSON.stringify(diagnosisDatabase));
+                    
+                    // Update UI
+                    updateDiagnosisManagementList();
+                    createExampleButtons();
+                    
+                    // Close modal
+                    document.body.removeChild(modal);
+                    
+                    alert(`診斷「${newDiagnosisName}」已儲存！`);
+                } else {
+                    alert('請填寫所有欄位！');
+                }
+            };
+            
+            buttonDiv.appendChild(saveButton);
+            
+            // Assemble the form
+            form.appendChild(diagnosisNameDiv);
+            form.appendChild(nursingDiagnosesDiv);
+            form.appendChild(buttonDiv);
+            
+            // Assemble the modal
+            modalContent.appendChild(header);
+            modalContent.appendChild(form);
+            modal.appendChild(modalContent);
+            
+            // Add to DOM
+            document.body.appendChild(modal);
+        }
+        
+        // Save medical diagnosis
+        saveMedicalDiagnosisBtn.addEventListener('click', () => {
+            const medicalDiagnosis = document.getElementById('medicalDiagnosisInput').value.trim();
+            const nursingDiagnoses = document.getElementById('nursingDiagnosesInput').value.trim();
+            
+            if (medicalDiagnosis && nursingDiagnoses) {
+                // Split nursing diagnoses by new line
+                const descriptions = nursingDiagnoses.split('\n').filter(desc => desc.trim() !== '');
+                
+                // Check if diagnosis already exists
+                if (diagnosisDatabase[medicalDiagnosis] && !confirm(`醫學診斷「${medicalDiagnosis}」已存在。要覆蓋嗎？`)) {
+                    return;
+                }
+                
+                // Add or update the diagnosis in the database
+                diagnosisDatabase[medicalDiagnosis] = {
+                    descriptions: descriptions
+                };
+                
+                // Save to localStorage
+                localStorage.setItem('diagnosisDatabase', JSON.stringify(diagnosisDatabase));
+                
+                // Update example buttons
+                createExampleButtons();
+                
+                // Clear inputs
+                document.getElementById('medicalDiagnosisInput').value = '';
+                document.getElementById('nursingDiagnosesInput').value = '';
+                
+                alert(`醫學診斷「${medicalDiagnosis}」已儲存！`);
+            } else {
+                alert('請填寫所有欄位！');
+            }
+        });
+        
+        // Save diagnosis link
+        saveDiagnosisLinkBtn.addEventListener('click', () => {
+            const nursingDiagnosis = document.getElementById('nursingDiagnosisInput').value.trim();
+            const diagnosisLink = document.getElementById('diagnosisLinkInput').value.trim();
+            
+            if (nursingDiagnosis && diagnosisLink) {
+                // Check if link already exists
+                if (diagnosisLinks[nursingDiagnosis] && 
+                    !confirm(`護理診斷「${nursingDiagnosis}」已有連結。要覆蓋嗎？`)) {
+                    return;
+                }
+                
+                // Add or update the diagnosis link
+                diagnosisLinks[nursingDiagnosis] = diagnosisLink;
+                
+                // Save to localStorage
+                localStorage.setItem('diagnosisLinks', JSON.stringify(diagnosisLinks));
+                
+                // Update the links list
+                updateNursingLinksList();
+                
+                // Clear inputs
+                document.getElementById('nursingDiagnosisInput').value = '';
+                document.getElementById('diagnosisLinkInput').value = '';
+                
+                alert(`護理診斷「${nursingDiagnosis}」連結已儲存！`);
+            } else {
+                alert('請填寫所有欄位！');
+            }
+        });
+        
+        // Populate target diagnosis dropdown in aliases tab
+        function populateTargetDiagnosisSelect() {
+            const select = document.getElementById('targetDiagnosisSelect');
+            if (!select) return;
+            
+            select.innerHTML = '<option value="">-- 選擇相關醫學診斷 --</option>';
+            
+            const diagnoses = Object.keys(diagnosisDatabase).sort();
+            diagnoses.forEach(diagnosis => {
+                const option = document.createElement('option');
+                option.value = diagnosis;
+                option.textContent = diagnosis;
+                select.appendChild(option);
+            });
+        }
+        
+        // Function to update aliases list
+        function updateAliasesList() {
+            const container = document.getElementById('aliasesContainer');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            const aliases = Object.entries(diagnosisAliases).sort((a, b) => a[0].localeCompare(b[0]));
+            
+            if (aliases.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-2">沒有定義的診斷別名</p>';
+                return;
+            }
+            
+            aliases.forEach(([alias, target]) => {
+                const item = document.createElement('div');
+                item.className = 'flex justify-between items-center mb-1 p-1 hover:bg-gray-100 rounded';
+                
+                const aliasText = document.createElement('span');
+                aliasText.textContent = alias;
+                aliasText.className = 'truncate flex-grow';
+                aliasText.title = alias;
+                
+                const targetText = document.createElement('span');
+                targetText.textContent = `→ ${target}`;
+                targetText.className = 'text-blue-500 text-sm ml-2 flex-grow-0';
+                targetText.title = `Points to: ${target}`;
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'text-red-500 hover:text-red-700 ml-2';
+                deleteBtn.innerHTML = '&times;';
+                deleteBtn.title = 'Delete this alias';
+                deleteBtn.onclick = () => {
+                    if (confirm(`確定要刪除別名「${alias}」嗎？`)) {
+                        delete diagnosisAliases[alias];
+                        localStorage.setItem('diagnosisAliases', JSON.stringify(diagnosisAliases));
+                        updateAliasesList();
+                    }
+                };
+                
+                item.appendChild(aliasText);
+                item.appendChild(targetText);
+                item.appendChild(deleteBtn);
+                container.appendChild(item);
+            });
+        }
+        
+        // Save alias button handler
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.id === 'saveAliasBtn') {
+                const aliasInput = document.getElementById('aliasInput');
+                const targetSelect = document.getElementById('targetDiagnosisSelect');
+                
+                if (aliasInput && targetSelect) {
+                    const alias = aliasInput.value.trim();
+                    const target = targetSelect.value;
+                    
+                    if (alias && target) {
+                        // Check if alias already exists
+                        if (diagnosisAliases[alias] && 
+                            !confirm(`別名「${alias}」已存在。要覆蓋嗎？`)) {
+                            return;
+                        }
+                        
+                        // Add or update the alias
+                        diagnosisAliases[alias] = target;
+                        
+                        // Save to localStorage
+                        localStorage.setItem('diagnosisAliases', JSON.stringify(diagnosisAliases));
+                        
+                        // Update the aliases list
+                        updateAliasesList();
+                        
+                        // Update example buttons (to include aliases)
+                        createExampleButtons();
+                        
+                        // Clear inputs
+                        aliasInput.value = '';
+                        targetSelect.value = '';
+                        
+                        alert(`診斷別名「${alias}」已儲存！`);
+                    } else {
+                        alert('請填寫所有欄位！');
+                    }
+                }
+            }
+        });
+        
+        // Export data
+        exportDataBtn.addEventListener('click', () => {
+            const exportData = {
+                diagnosisDatabase: diagnosisDatabase,
+                diagnosisLinks: diagnosisLinks,
+                diagnosisAliases: diagnosisAliases
+            };
+            
+            const exportString = JSON.stringify(exportData, null, 2);
+            
+            // Create a temporary textarea to copy the data
+            const textarea = document.createElement('textarea');
+            textarea.value = exportString;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            // Create and download a JSON file
+            const blob = new Blob([exportString], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'nursing-diagnosis-data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('資料已匯出並複製到剪貼簿！檔案也已下載。');
+        });
+        
+        // Choose file button
+        document.getElementById('chooseFileBtn').addEventListener('click', () => {
+            document.getElementById('importFileInput').click();
+        });
+        
+        // File input change handler
+        document.getElementById('importFileInput').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    document.getElementById('importDataInput').value = e.target.result;
+                };
+                reader.readAsText(file);
+            }
+        });
+        
+        // Import data
+        importDataBtn.addEventListener('click', () => {
+            const importDataString = document.getElementById('importDataInput').value.trim();
+            
+            if (importDataString) {
+                try {
+                    const importData = JSON.parse(importDataString);
+                    
+                    if (importData.diagnosisDatabase && importData.diagnosisLinks) {
+                        if (confirm('這會覆蓋目前所有資料。確定要匯入嗎？')) {
+                            diagnosisDatabase = importData.diagnosisDatabase;
+                            diagnosisLinks = importData.diagnosisLinks;
+                            
+                            // Import aliases if available
+                            if (importData.diagnosisAliases) {
+                                diagnosisAliases = importData.diagnosisAliases;
+                                localStorage.setItem('diagnosisAliases', JSON.stringify(diagnosisAliases));
+                            }
+                            
+                            // Save to localStorage
+                            localStorage.setItem('diagnosisDatabase', JSON.stringify(diagnosisDatabase));
+                            localStorage.setItem('diagnosisLinks', JSON.stringify(diagnosisLinks));
+                            
+                            // Update UI
+                            createExampleButtons();
+                            updateNursingLinksList();
+                            updateDiagnosisManagementList();
+                            updateAliasesList();
+                            
+                            // Clear input
+                            document.getElementById('importDataInput').value = '';
+                            document.getElementById('importFileInput').value = '';
+                            
+                            alert('資料匯入成功！');
+                        }
+                    } else {
+                        alert('匯入資料格式無效。');
+                    }
+                } catch (error) {
+                    alert('解析匯入資料時發生錯誤: ' + error.message);
+                }
+            } else {
+                alert('請輸入匯入資料或選擇檔案。');
+            }
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+                searchResults.classList.add('hidden');
+            }
+        });
+        
+        // Initialize data and UI
+        document.addEventListener('DOMContentLoaded', initializeDatabase);
+    </script>
+    
+    <!-- Mobile menu script -->
+    <script src="javascript/mobile-script.js"></script>
+</body>
+</html>

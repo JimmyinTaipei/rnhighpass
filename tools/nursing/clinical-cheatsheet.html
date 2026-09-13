@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臨床懶人包</title>
+    <link rel="stylesheet" href="css/clinical-cheatsheet.css">
+</head>
+<body>
+    <header>
+        <div class="navigation-container">
+            <div class="navigation">
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="user-guide.html">使用說明</a>
+                    <a href="index.html">護理工作時間表</a>
+                    <a href="nursing-checklist.html">護理工作Checklist</a>
+                    <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+                    <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+                    <a href="clinical-cheatsheet.html">臨床懶人包</a>
+                    <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+                    <a href="nursing-kardex.html">交班單（prototype）</a>
+                </div>
+            </div>
+        </div>
+        <h1 style="font-size: 2rem; margin-top: 15px">臨床懶人包</h1>
+    </header>
+    
+    <div class="tabs">
+        <div class="tab active" onclick="openTab('gcs')">格拉斯哥昏迷指數<br>Glasgow Coma Scale</div>
+        <div class="tab" onclick="openTab('muscle')">肌力評估<br>Muscle Power</div>
+        <div class="tab" onclick="openTab('abbrev')">醫囑縮寫<br>Medical Abbreviations</div>
+        <div class="tab" onclick="openTab('blood')">採血管<br>Blood Tubes</div>
+        <div class="tab" onclick="openTab('vital')">生命徵象與血糖<br>Vital Signs & Glucose</div>
+        <div class="tab" onclick="openTab('pressure')">壓傷評估<br>Pressure Injury</div>
+        <div class="tab" onclick="openTab('edema')">水腫評估<br>Edema Assessment</div>
+        <div class="tab" onclick="openTab('sixp')">6P評估<br>6P Assessment</div>
+    </div>
+
+    <div id="gcs" class="tab-content active">
+        <div class="container">
+            <h1>格拉斯哥昏迷指數 <br> Glasgow Coma Scale</h1>
+            
+            <table class="gcs-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">張眼反應 (E)</th>
+                        <th colspan="2">語言反應 (V)</th>
+                        <th colspan="2">動作反應 (M)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>自發性張眼</span>
+                        </td>
+                        <td class="score-header">
+                            <div class="radio-container">
+                                <input type="radio" name="eye" value="4" id="eye4" onchange="updateScore()">
+                                <label for="eye4">4</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>有條理的對話</span>
+                        </td>
+                        <td class="score-header">
+                            <div class="radio-container">
+                                <input type="radio" name="verbal" value="5" id="verbal5" onchange="updateScore()">
+                                <label for="verbal5">5</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>能遵從命令動作</span>
+                        </td>
+                        <td class="score-header">
+                            <div class="radio-container">
+                                <input type="radio" name="motor" value="6" id="motor6" onchange="updateScore()">
+                                <label for="motor6">6</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>聲音刺激而張眼</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="eye" value="3" id="eye3" onchange="updateScore()">
+                                <label for="eye3">3</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>混淆的對話</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="verbal" value="4" id="verbal4" onchange="updateScore()">
+                                <label for="verbal4">4</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>能有效移處疼痛刺激點</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="motor" value="5" id="motor5" onchange="updateScore()">
+                                <label for="motor5">5</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>對疼痛刺激反應</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="eye" value="2" id="eye2" onchange="updateScore()">
+                                <label for="eye2">2</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>不適當之單字</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="verbal" value="3" id="verbal3" onchange="updateScore()">
+                                <label for="verbal3">3</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>無法有效移處疼痛刺激，收縮反應</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="motor" value="4" id="motor4" onchange="updateScore()">
+                                <label for="motor4">4</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>無反應</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="eye" value="1" id="eye1" onchange="updateScore()">
+                                <label for="eye1">1</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>無意義的呻吟</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="verbal" value="2" id="verbal2" onchange="updateScore()">
+                                <label for="verbal2">2</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>異常屈曲</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="motor" value="3" id="motor3" onchange="updateScore()">
+                                <label for="motor3">3</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="special-conditions">
+                            <span>眼睛腫脹無法睜開</span>
+                        </td>
+                        <td class="special-conditions">
+                            <div class="radio-container">
+                                <input type="checkbox" id="closeEyes" onchange="updateScore()">
+                                <label for="closeEyes">C</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>無反應</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="verbal" value="1" id="verbal1" onchange="updateScore()">
+                                <label for="verbal1">1</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>異常伸張</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="motor" value="2" id="motor2" onchange="updateScore()">
+                                <label for="motor2">2</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="special-conditions">
+                            <span>氣管插管(E)<br>氣管切開(T)</span>
+                        </td>
+                        <td class="special-conditions">
+                            <div class="radio-container">
+                                <input type="checkbox" id="endotracheal" onchange="updateScore()">
+                                <label for="endotracheal">E</label>
+                            </div>
+                            <div class="radio-container">
+                                <input type="checkbox" id="tracheostomy" onchange="updateScore()">
+                                <label for="tracheostomy">T</label>
+                            </div>
+                        </td>
+                        <td class="special-conditions">
+                            <span>失語症</span>
+                        </td>
+                        <td class="special-conditions">
+                            <div class="radio-container">
+                                <input type="checkbox" id="aphasia" onchange="updateScore()">
+                                <label for="aphasia">A</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>無反應</span>
+                        </td>
+                        <td>
+                            <div class="radio-container">
+                                <input type="radio" name="motor" value="1" id="motor1" onchange="updateScore()">
+                                <label for="motor1">1</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="result-section">
+                <h2>GCS 總分</h2>
+                <div class="total-score" id="totalScore">-</div>
+                <div class="score-breakdown">
+                    <span>眼睛 (E): <span id="eyeScore">-</span></span> | 
+                    <span>語言 (V): <span id="verbalScore">-</span></span> | 
+                    <span>運動 (M): <span id="motorScore">-</span></span>
+                </div>
+                <div class="interpretation" id="interpretation">
+                    請選擇各項目分數以計算 GCS 評分
+                </div>
+            </div>
+            
+            <!-- New Pupil Size Assessment Section -->
+            <h2>瞳孔評估 <br> Pupil Assessment</h2>
+            
+            <!-- Pupil Size Reference Chart -->
+            <div class="result-section">
+                <h3>瞳孔大小參照表 (mm) <br> Pupil Size Reference Chart</h3>
+                <div class="pupil-size-chart">
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 2px; height: 2px;"></div>
+                        </div>
+                        <div class="size-label">1mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 4px; height: 4px;"></div>
+                        </div>
+                        <div class="size-label">2mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 6px; height: 6px;"></div>
+                        </div>
+                        <div class="size-label">3mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 8px; height: 8px;"></div>
+                        </div>
+                        <div class="size-label">4mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 10px; height: 10px;"></div>
+                        </div>
+                        <div class="size-label">5mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 12px; height: 12px;"></div>
+                        </div>
+                        <div class="size-label">6mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 14px; height: 14px;"></div>
+                        </div>
+                        <div class="size-label">7mm</div>
+                    </div>
+                    <div class="pupil-example">
+                        <div class="pupil-circle">
+                            <div class="pupil-black" style="width: 16px; height: 16px;"></div>
+                        </div>
+                        <div class="size-label">8mm</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <h3>瞳孔大小測量方式 <br> Pupil Size Measurement Methods</h3>
+                
+                <table class="pupil-table">
+                    <thead>
+                        <tr>
+                            <th>測量方法</th>
+                            <th>操作步驟</th>
+                            <th>注意事項</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: bold;">直接視診<br>Direct Visual Inspection</td>
+                            <td>
+                                <ol>
+                                    <li>讓患者放鬆，直視前方</li>
+                                    <li>在適當光線下以裸眼或放大鏡觀察</li>
+                                    <li>比較瞳孔與參考卡或瞳孔尺的大小</li>
+                                    <li>記錄左右眼瞳孔大小（單位：mm）</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>避免過亮或過暗的環境</li>
+                                    <li>正常瞳孔大小約2-5 mm</li>
+                                    <li>左右眼差異>1 mm可能有病理意義</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">瞳孔尺測量<br>Pupil Gauge Measurement</td>
+                            <td>
+                                <ol>
+                                    <li>使用標準瞳孔尺或對照卡</li>
+                                    <li>在自然光或固定光源下進行比對</li>
+                                    <li>將瞳孔尺貼近患者眼睛旁進行比較</li>
+                                    <li>記錄最接近的尺寸刻度</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>確保使用醫療專用瞳孔尺</li>
+                                    <li>光線應保持一致以確保測量準確性</li>
+                                    <li>注意瞳孔不對稱（Anisocoria）情況</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="result-section">
+                <h3>瞳孔對光反射測試 <br> Pupillary Light Reflex Test</h3>
+                
+                <table class="pupil-table">
+                    <thead>
+                        <tr>
+                            <th>測試類型</th>
+                            <th>操作方法</th>
+                            <th>正常反應</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: bold;">直接光反應<br>Direct Light Reflex</td>
+                            <td>
+                                <ol>
+                                    <li>讓患者直視遠方，避免調節作用</li>
+                                    <li>使用筆燈從側方照射一側眼睛</li>
+                                    <li>觀察被照射眼睛的瞳孔反應</li>
+                                    <li>重複測試另一側眼睛</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>瞳孔應迅速縮小（1-2秒內）</li>
+                                    <li>光線移開後應逐漸恢復原大小</li>
+                                    <li>反應速度: 活潑(Brisk) > 遲緩(Sluggish) > 固定(Fixed)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">間接光反應<br>Consensual Light Reflex</td>
+                            <td>
+                                <ol>
+                                    <li>讓患者直視遠方</li>
+                                    <li>使用筆燈照射一側眼睛</li>
+                                    <li>觀察未被照射眼睛的瞳孔反應</li>
+                                    <li>正常情況下兩側瞳孔應同時縮小</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>未被照射眼瞳孔應同步縮小</li>
+                                    <li>反應可能比直接光反應稍弱</li>
+                                    <li>間接光反應缺失可能提示視神經或視路損傷</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <table class="pupil-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">瞳孔評估常見縮寫 (Common Abbreviations)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PERRLA</td>
+                        <td>Pupils Equal, Round, Reactive to Light and Accommodation <br> 瞳孔大小相等、圓形、對光反射正常且具調節能力</td>
+                    </tr>
+                    <tr>
+                        <td>PEARL</td>
+                        <td>Pupils Equal And Reactive to Light <br> 瞳孔大小相等且對光反射正常</td>
+                    </tr>
+                    <tr>
+                        <td>B (Brisk)</td>
+                        <td>活潑的對光反射</td>
+                    </tr>
+                    <tr>
+                        <td>S (Sluggish)</td>
+                        <td>遲緩的對光反射</td>
+                    </tr>
+                    <tr>
+                        <td>F (Fixed)</td>
+                        <td>固定的瞳孔 (無對光反射)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button class="btn-reset" onclick="resetGCS(); resetPupils();">重置</button>
+        </div>
+    </div>
+
+    <div id="muscle" class="tab-content">
+        <div class="container">
+            <h1>肌力評估 <br> Muscle Power Assessment</h1>
+            
+            <table class="muscle-table">
+                <thead>
+                    <tr>
+                        <th>分數 <br> Grade</th>
+                        <th>定義 <br> Definition</th>
+                        <th>說明 <br> Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="score">5</td>
+                        <td>正常肌力</td>
+                        <td>能對抗檢查者的阻力做完整範圍的運動</td>
+                    </tr>
+                    <tr>
+                        <td class="score">4</td>
+                        <td>中度肌力</td>
+                        <td>能對抗部分阻力做完整範圍的運動</td>
+                    </tr>
+                    <tr>
+                        <td class="score">3</td>
+                        <td>輕度肌力</td>
+                        <td>能對抗地心引力做完整範圍的運動，但無法對抗阻力</td>
+                    </tr>
+                    <tr>
+                        <td class="score">2</td>
+                        <td>微弱肌力</td>
+                        <td>能在排除重力影響的情況下做完整範圍的運動</td>
+                    </tr>
+                    <tr>
+                        <td class="score">1</td>
+                        <td>痕跡肌力</td>
+                        <td>可見或觸及肌肉收縮，但無法產生運動</td>
+                    </tr>
+                    <tr>
+                        <td class="score">0</td>
+                        <td>完全癱瘓</td>
+                        <td>完全無肌肉收縮</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="result-section">
+                <h2>肌力評估表 <br> Muscle Power Assessment Chart</h2>
+                <table class="muscle-table">
+                    <thead>
+                        <tr>
+                            <th>肢體 <br> Limb</th>
+                            <th>右側 <br> Right</th>
+                            <th>左側 <br> Left</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>上肢近端 <br> Proximal Upper Limb</td>
+                            <td>
+                                <input type="number" id="r-upper-prox" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                            <td>
+                                <input type="number" id="l-upper-prox" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>上肢遠端 <br> Distal Upper Limb</td>
+                            <td>
+                                <input type="number" id="r-upper-dist" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                            <td>
+                                <input type="number" id="l-upper-dist" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>下肢近端 <br> Proximal Lower Limb</td>
+                            <td>
+                                <input type="number" id="r-lower-prox" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                            <td>
+                                <input type="number" id="l-lower-prox" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>下肢遠端 <br> Distal Lower Limb</td>
+                            <td>
+                                <input type="number" id="r-lower-dist" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                            <td>
+                                <input type="number" id="l-lower-dist" class="power-input" min="0" max="5" step="1" placeholder="0-5">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <button class="btn-reset" onclick="resetMuscle()">重置</button>
+        </div>
+    </div>
+
+    <div id="abbrev" class="tab-content">
+        <div class="container">
+            <h1>醫囑縮寫 <br> Medical Abbreviations</h1>
+            
+            <table class="abbrev-table">
+                <thead>
+                    <tr>
+                        <th>縮寫 <br> Abbreviation</th>
+                        <th>英文全名 <br> Full Term</th>
+                        <th>中文意義 <br> Chinese Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>bid</td>
+                        <td>bis in die</td>
+                        <td>一天兩次</td>
+                    </tr>
+                    <tr>
+                        <td>tid</td>
+                        <td>ter in die</td>
+                        <td>一天三次</td>
+                    </tr>
+                    <tr>
+                        <td>qid</td>
+                        <td>quater in die</td>
+                        <td>一天四次</td>
+                    </tr>
+                    <tr>
+                        <td>qd</td>
+                        <td>quaque die</td>
+                        <td>每天一次</td>
+                    </tr>
+                    <tr>
+                        <td>qod</td>
+                        <td>quaque altera die</td>
+                        <td>每隔一天</td>
+                    </tr>
+                    <tr>
+                        <td>ac</td>
+                        <td>ante cibum</td>
+                        <td>飯前</td>
+                    </tr>
+                    <tr>
+                        <td>pc</td>
+                        <td>post cibum</td>
+                        <td>飯後</td>
+                    </tr>
+                    <tr>
+                        <td>hs</td>
+                        <td>hora somni</td>
+                        <td>睡前</td>
+                    </tr>
+                    <tr>
+                        <td>q4h</td>
+                        <td>quaque 4 hora</td>
+                        <td>每4小時</td>
+                    </tr>
+                    <tr>
+                        <td>q6h</td>
+                        <td>quaque 6 hora</td>
+                        <td>每6小時</td>
+                    </tr>
+                    <tr>
+                        <td>prn</td>
+                        <td>pro re nata</td>
+                        <td>需要時使用</td>
+                    </tr>
+                    <tr>
+                        <td>stat</td>
+                        <td>statim</td>
+                        <td>立即</td>
+                    </tr>
+                    <tr>
+                        <td>PO</td>
+                        <td>per os</td>
+                        <td>口服</td>
+                    </tr>
+                    <tr>
+                        <td>IV</td>
+                        <td>intravenous</td>
+                        <td>靜脈注射</td>
+                    </tr>
+                    <tr>
+                        <td>IM</td>
+                        <td>intramuscular</td>
+                        <td>肌肉注射</td>
+                    </tr>
+                    <tr>
+                        <td>SC/SQ</td>
+                        <td>subcutaneous</td>
+                        <td>皮下注射</td>
+                    </tr>
+                    <tr>
+                        <td>OU</td>
+                        <td>oculus uterque</td>
+                        <td>雙眼</td>
+                    </tr>
+                    <tr>
+                        <td>OS</td>
+                        <td>oculus sinister</td>
+                        <td>左眼</td>
+                    </tr>
+                    <tr>
+                        <td>OD</td>
+                        <td>oculus dexter</td>
+                        <td>右眼</td>
+                    </tr>
+                    <tr>
+                        <td>NPO</td>
+                        <td>nil per os</td>
+                        <td>禁食</td>
+                    </tr>
+                    <tr>
+                        <td>c</td>
+                        <td>cum</td>
+                        <td>伴隨</td>
+                    </tr>
+                    <tr>
+                        <td>s</td>
+                        <td>sine</td>
+                        <td>不伴隨</td>
+                    </tr>
+                    <tr>
+                        <td>a.c.</td>
+                        <td>ante cibum</td>
+                        <td>餐前</td>
+                    </tr>
+                    <tr>
+                        <td>p.c.</td>
+                        <td>post cibum</td>
+                        <td>餐後</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Blood Tubes tab -->
+    <div id="blood" class="tab-content">
+        <div class="container">
+            <h1>採血管與IC顏色 <br> Blood Collection Tubes and IC Color</h1>
+            
+            <div style="overflow-x: auto;">
+                <table class="abbrev-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 0%">採血順序</th>
+                            <th style="min-width: 100px;">種類</th>
+                            <th style="min-width: 120px;">頭蓋顏色</th>
+                            <th style="min-width: 140px;">添加劑成分</th>
+                            <th style="min-width: 100px;">檢驗項目</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" style="width: 0%">1.</td>
+                            <td>血液培養：厭氧</td>
+                            <td style="background-color: #800060; color: white;">厭氧</td>
+                            <td><img src="images/IMG_2857.JPG" alt="厭氧" width="270" height="110"></td>
+                            <td>培養厭氧菌<br>使用蝴蝶針與IC時：先嗜氧再厭氧</td>
+                        </tr>
+                        <tr>
+                            <td >血液培養：嗜氧</td>
+                            <td style="background-color: #0000b3; color: white;">嗜氧</td>
+                            <td><img src="images/IMG_2858.JPG" alt="好氧" width="270" height="110"></td>
+                            <td>培養嗜氧菌</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="width: 0%">2.</td>
+                            <td>凝血功能</td>
+                            <td style="background-color: #4682B4;">淺藍色</td>
+                            <td><img src="images/IMG_2849.jpg" alt="藍頭管" width="270" height="110"></td>
+                            <td>1. PT/APTT <br> 2. D-dimer/Fibrinogen <br> 重要：請將血加到黑色箭頭處，不可多也不可少</td>
+                        </tr>
+                        <tr>
+                            <td>紅血球沉降速率<br>ESR</td>
+                            <td style="background-color: #000000; color: white;">黑色</td>
+                            <td><img src="images/IMG_2854.JPG" alt="藍頭管" width="270" height="110"></td>
+                            <td>ESR <br>要抽到兩條白線中間</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" style="width: 0%">3.</td>
+                            <td>生化血清</td>
+                            <td style="background-color: #ff0000; color: white;">紅色</td>
+                            <td><img src="images/IMG_2852.jpg" alt="紅頭管" width="270" height="110"></td>
+                            <td>生化、血清</td>
+                        </tr>
+                        <tr>
+                            <td>血清/血庫</td>
+                            <td style="background-color: #daa520;">黃色</td>
+                            <td>Clot activator and gel</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>微量元素</td>
+                            <td style="background-color: #191970; color: white;">深藍色紅標</td>
+                            <td>Silicone Coated</td>
+                            <td>血中Zn, Cd, Hg, As, Pb</td>
+                        </tr>
+                        <tr >
+                            <td rowspan="1" style="width: 0%">4.</td>
+                            <td>生化血漿&特殊</td>
+                            <td style="background-color: #008000; color: white;">綠色</td>
+                            <td><img src="images/IMG_2850.jpg" alt="綠頭管" width="270" height="110"></td>
+                            <td>急生化<br>Ammonia, </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" style="width: 0%">5.</td>
+                            <td>血液學及血庫</td>
+                            <td style="background-color: #9400D3;">紫色</td>
+                            <td><img src="images/IMG_2851.jpg" alt="紫頭管" width="270" height="110"></td>
+                            <td>1. 血液學 <br> 2. CBC</td>
+                        </tr>
+                        <tr>
+                            <td >微量元素</td>
+                            <td style="background-color: #191970; color: white;">深藍色紫標</td>
+                            <td>K₂EDTA</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>分生(血漿)</td>
+                            <td style="background-color: #ffffff;">白色</td>
+                            <td>K₂EDTA and gel</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="1" style="width: 0%">6.</td>
+                            <td>血糖</td>
+                            <td style="background-color: #808080; color: white;">灰色</td>
+                            <td><img src="images/IMG_2853.jpg" alt="灰頭管" width="270" height="110"></td>
+                            <td>生化、血糖<br>Lactate需冰浴送檢</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: center; font-size: 12px;">
+                Based on CLSI GP41 7th; CAP An introduction to phlebotomy 2017
+            </div>
+            
+            <!-- IV Catheter Gauge Table -->
+            <h2 style="margin-top: 30px;">靜脈導管尺寸與顏色對照表 <br> IV Catheter Gauge & Color Code</h2>
+            
+            <div style="overflow-x: auto;">
+                <table class="abbrev-table">
+                    <thead>
+                        <tr>
+                            <th>尺寸 <br> Gauge</th>
+                            <th>顏色代碼</th>
+                            <th>常見用途</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">14G</td>
+                            <td style="background-color: #FFA500; color: black; text-align: center;">橙色</td>
+                            <td>大量輸液、輸血、創傷急救</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">16G</td>
+                            <td style="background-color: #808080; color: white; text-align: center;">灰色</td>
+                            <td>快速輸液、手術、重症治療</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">18G</td>
+                            <td style="background-color: #39ac6b; color: black; text-align: center;">綠色</td>
+                            <td>一般輸液、輸血、採血</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">20G</td>
+                            <td style="background-color: #ff80bf; color: black; text-align: center;">粉紅色</td>
+                            <td>一般輸液、日常用途</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">22G</td>
+                            <td style="background-color: #1E90FF; color: white; text-align: center;">藍色</td>
+                            <td>老年人、兒童、細小血管</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">24G</td>
+                            <td style="background-color: #ffff4d; color: black; text-align: center;">黃色</td>
+                            <td>兒童、新生兒、脆弱血管</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: center;">26G</td>
+                            <td style="background-color: #EE82EE; color: black; text-align: center;">紫色</td>
+                            <td>新生兒、早產兒、極細小血管</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: center; font-size: 12px;">
+                注意：顏色代碼可能因製造商而略有不同
+            </div>
+        </div>
+    </div>
+
+    <div id="vital" class="tab-content">
+        <div class="container">
+            <h1>生命徵象與血糖正常值 <br> Vital Signs & Blood Glucose Normal Values</h1>
+            
+            <table class="vital-table">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>正常範圍</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="vital-category">
+                        <td colspan="3">成人生命徵象 Adult Vital Signs</td>
+                    </tr>
+                    <tr>
+                        <td>心率</td>
+                        <td class="normal-value">60-100 次/分鐘</td>
+                        <td>運動員可能低於60<br>有其他證據指出有95%的心率在50-95 次/分鐘之間</td>
+                    </tr>
+                    <tr>
+                        <td>呼吸速率</td>
+                        <td class="normal-value">10-20 次/分鐘</td>
+                        <td>需判斷呼吸型態<br>有文獻指出呼吸速率為16-25 次/分<br>呼吸過緩&lt;8-12次/分<br>呼吸過速>20次/分</td>
+                    </tr>
+                    <tr>
+                        <td>血壓</td>
+                        <td class="normal-value">
+                            收縮壓：90-120 mmHg<br>
+                            舒張壓：60-80 mmHg
+                        </td>
+                        <td>
+                            正常: &lt;120/80 mmHg<br>
+                            高血壓: 大於130 or 80 mmHg
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>體溫</td>
+                        <td class="normal-value">
+                            耳溫: 35.9-37.6°C<br>
+                            口腔: 36.4-37.6°C<br>
+                            腋下: 35.2-36.9°C<br>
+                            肛門: 37.0-38.1°C
+                        </td>
+                        <td>
+                            發燒溫度: 耳溫37.5°C, 肛溫37.8°C<br>
+                            參考基本護理學課本，課本發燒定義為38°C<br>
+                            請根據實際狀況判斷
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>血氧飽和度<br> (SpO₂)</td>
+                        <td class="normal-value">95-100%</td>
+                        <td>
+                            低氧: &lt;94%<br>
+                            嚴重低氧: &lt;90%
+                        </td>
+                    </tr>
+                    <tr class="vital-category">
+                        <td colspan="3">血糖值</td>
+                    </tr>
+                    <tr>
+                        <td>空腹血糖</td>
+                        <td class="normal-value">
+                            70-99 mg/dL<br>
+                            (3.9-5.5 mmol/L)
+                        </td>
+                        <td rowspan="4">
+                            <strong>非糖尿病患者:</strong><br>
+                            <span class="normal-value">正常: &lt;100 mg/dL (5.6 mmol/L)</span><br>
+                            <span class="abnormal-value">糖尿病前期: 100-125 mg/dL (5.6-6.9 mmol/L)</span><br>
+                            <span class="abnormal-value">糖尿病: ≥126 mg/dL (7.0 mmol/L)</span><br><br>
+                            
+                            <strong>糖尿病患者目標:</strong><br>
+                            空腹及餐前: 80-130 mg/dL (4.4-7.2 mmol/L)<br>
+                            餐後兩小時: &lt;180 mg/dL (10.0 mmol/L)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>餐前血糖</td>
+                        <td class="normal-value">
+                            70-130 mg/dL<br>
+                            (3.9-7.2 mmol/L)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>餐後兩小時血糖</td>
+                        <td class="normal-value">
+                            &lt;140 mg/dL<br>
+                            (&lt;7.8 mmol/L)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>糖化血色素</td>
+                        <td>
+                            <span class="normal-value">正常: &lt;5.7%</span><br>
+                            <span class="abnormal-value">糖尿病前期: 5.7-6.4%</span><br>
+                            <span class="abnormal-value">糖尿病: ≥6.5%</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Pressure Injury tab -->
+    <div id="pressure" class="tab-content">
+        <div class="container">
+            <h1>壓傷評估表 <br> Pressure Injury Assessment</h1>
+            
+            <!-- Pressure Injury Staging -->
+            <h2>壓傷分級</h2>
+            <table class="pressure-table">
+                <thead>
+                    <tr>
+                        <th>分級</th>
+                        <th>定義</th>
+                        <th>臨床表現</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="stage-1">
+                        <td class="stage">第一級</td>
+                        <td>完整皮膚有非可壓白性紅斑</td>
+                        <td>
+                            <ul>
+                                <li>皮膚完整但有局部發紅</li>
+                                <li>用手指按壓不會變白</li>
+                                <li>深色皮膚可能出現持續性紅色、藍色或紫色</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="stage-2">
+                        <td class="stage">第二級</td>
+                        <td>部分皮膚缺損</td>
+                        <td>
+                            <ul>
+                                <li>表皮及/或真皮的部分缺損</li>
+                                <li>傷口呈淺潰瘍，粉紅色或紅色的傷口底部</li>
+                                <li>可能出現水泡（完整或破裂）</li>
+                                <li>不包括皮膚撕裂、膠帶損傷、失禁性皮膚炎或浸潤</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="stage-3">
+                        <td class="stage">第三級</td>
+                        <td>全層皮膚缺損</td>
+                        <td>
+                            <ul>
+                                <li>全層皮膚缺損（表皮和真皮）</li>
+                                <li>可見皮下脂肪組織，但不見筋膜、肌肉、肌腱、骨骼或關節</li>
+                                <li>可能有壞死組織或隧道形成</li>
+                                <li>深度因解剖位置而異，鼻樑、耳朵、枕部和踝部沒有皮下組織，可能很淺</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="stage-4">
+                        <td class="stage">第四級</td>
+                        <td>全層組織缺損</td>
+                        <td>
+                            <ul>
+                                <li>全層組織缺損，暴露筋膜、肌肉、肌腱、骨骼或關節</li>
+                                <li>常見壞死組織或痂皮</li>
+                                <li>常有隧道或竇道形成</li>
+                                <li>深度因解剖位置而異</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="stage-u">
+                        <td class="stage">無法分級</td>
+                        <td>深度不明的全層組織缺損</td>
+                        <td>
+                            <ul>
+                                <li>傷口基底被痂皮或壞死組織覆蓋</li>
+                                <li>黃色、棕色、灰色、綠色或褐色的壞死組織</li>
+                                <li>必須移除壞死組織才能確定分級</li>
+                                <li>穩定的痂皮（乾燥、完整無發炎）在腳跟或缺血性肢體不應移除</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="stage-dti">
+                        <td class="stage">深層組織損傷</td>
+                        <td>深層組織壓力損傷</td>
+                        <td>
+                            <ul>
+                                <li>皮膚完整或非完整</li>
+                                <li>局部呈現深紅色、褐色或紫色區域</li>
+                                <li>可能出現血泡</li>
+                                <li>周圍組織可能比周邊更痛、堅硬、糊狀、濕潤或熱</li>
+                                <li>可能難以在深色皮膚上檢測</li>
+                                <li>可能迅速惡化，即使採取最佳治療措施</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Braden Scale -->
+            <h2 style="margin-top: 30px;">布拉登量表 <br> Braden Scale for Predicting Pressure Sore Risk</h2>
+            <table class="pressure-table">
+                <thead>
+                    <tr>
+                        <th class="braden-header">評估項目</th>
+                        <th class="braden-score">1分</th>
+                        <th class="braden-score">2分</th>
+                        <th class="braden-score">3分</th>
+                        <th class="braden-score">4分</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="braden-category">感覺知覺</td>
+                        <td>完全喪失</td>
+                        <td>高度受限</td>
+                        <td>輕度受限</td>
+                        <td>無受損</td>
+                    </tr>
+                    <tr>
+                        <td class="braden-category">潮濕</td>
+                        <td>持續潮濕</td>
+                        <td>經常潮濕</td>
+                        <td>偶爾潮濕</td>
+                        <td>很少潮濕</td>
+                    </tr>
+                    <tr>
+                        <td class="braden-category">活動</td>
+                        <td>臥床</td>
+                        <td>只能坐</td>
+                        <td>偶爾走動</td>
+                        <td>經常走動</td>
+                    </tr>
+                    <tr>
+                        <td class="braden-category">活動能力</td>
+                        <td>完全不能動</td>
+                        <td>極度受限</td>
+                        <td>輕度受限</td>
+                        <td>無受限</td>
+                    </tr>
+                    <tr>
+                        <td class="braden-category">營養</td>
+                        <td>非常差</td>
+                        <td>可能不足</td>
+                        <td>足夠</td>
+                        <td>優良</td>
+                    </tr>
+                    <tr>
+                        <td class="braden-category">摩擦和剪力</td>
+                        <td>有問題</td>
+                        <td>潛在問題</td>
+                        <td>無明顯問題</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="result-section">
+                <h2>布拉登量表評分解釋 <br> Braden Scale Score Interpretation</h2>
+                <table class="pressure-table">
+                    <thead>
+                        <tr>
+                            <th>總分</th>
+                            <th>風險程度</th>
+                            <th>建議干預措施</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="score">≤ 9</td>
+                            <td>極高風險</td>
+                            <td>需要全面的預防措施、頻繁重新定位、特殊支持表面</td>
+                        </tr>
+                        <tr>
+                            <td class="score">10-12</td>
+                            <td>高風險</td>
+                            <td>需要頻繁重新定位、壓力重新分配表面、營養評估</td>
+                        </tr>
+                        <tr>
+                            <td class="score">13-14</td>
+                            <td>中等風險</td>
+                            <td>定期重新定位、壓力重新分配表面、保持皮膚清潔和乾燥</td>
+                        </tr>
+                        <tr>
+                            <td class="score">15-18</td>
+                            <td>輕度風險</td>
+                            <td>標準預防措施、定期皮膚評估、鼓勵活動</td>
+                        </tr>
+                        <tr>
+                            <td class="score">19-23</td>
+                            <td>無風險</td>
+                            <td>標準護理、保持良好的皮膚衛生</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: left; margin-top: 10px;">
+                    <strong>計算方法：</strong>六個評估項目的總分（最低6分，最高23分）<br>
+                    <strong>注意：</strong>對於某些特殊人群可能需要調整風險閾值：<br>
+                    - 老年人可能在15-18分時仍有中等風險<br>
+                    - 重症患者可能在19分以下均有風險<br>
+                    - 黑色或深色皮膚患者的評估可能需要特別注意，因為早期壓傷跡象可能難以識別
+                </p>
+            </div>
+
+            <!-- Common Pressure Injury Sites -->
+            <h2 style="margin-top: 30px;">常見壓傷好發部位 <br> Common Pressure Injury Sites</h2>
+            <table class="pressure-table">
+                <thead>
+                    <tr>
+                        <th>體位</th>
+                        <th>易受壓部位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>仰臥位</td>
+                        <td>枕骨、肩胛骨、肘部、薦骨、足跟</td>
+                    </tr>
+                    <tr>
+                        <td>側臥位</td>
+                        <td>耳朵、肩部、肋骨、髖骨、膝內外側、踝部</td>
+                    </tr>
+                    <tr>
+                        <td>俯臥位</td>
+                        <td>前額、顴骨、耳朵、前胸、髂前上棘、膝蓋、腳趾</td>
+                    </tr>
+                    <tr>
+                        <td>坐姿</td>
+                        <td>薦骨、坐骨、脊椎突起、肩胛骨、後腦、小腿後側</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- New Edema Assessment Tab -->
+    <div id="edema" class="tab-content">
+        <div class="container">
+            <h1>水腫評估 <br> Edema Assessment</h1>
+            
+            <!-- Edema Grading Scale -->
+            <h2>水腫分級 <br> Edema Grading Scale</h2>
+            <table class="edema-table">
+                <thead>
+                    <tr>
+                        <th>分級</th>
+                        <th>定義</th>
+                        <th>臨床表現</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="edema-grade-1">
+                        <td class="edema-grade">1+</td>
+                        <td>輕微水腫</td>
+                        <td>
+                            <ul>
+                                <li>輕微的凹陷（2mm或更少）</li>
+                                <li>按壓皮膚後，凹陷立即消失（&lt;2秒）</li>
+                                <li>僅有輕微的腫脹</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="edema-grade-2">
+                        <td class="edema-grade">2+</td>
+                        <td>中度水腫</td>
+                        <td>
+                            <ul>
+                                <li>中度凹陷（4mm）</li>
+                                <li>按壓皮膚後，凹陷消失需10-15秒</li>
+                                <li>明顯腫脹</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="edema-grade-3">
+                        <td class="edema-grade">3+</td>
+                        <td>嚴重水腫</td>
+                        <td>
+                            <ul>
+                                <li>深度凹陷（6mm）</li>
+                                <li>按壓皮膚後，凹陷消失需1-2分鐘</li>
+                                <li>重度腫脹，受影響部位外觀明顯變形</li>
+                                <li>可能影響日常活動</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="edema-grade-4">
+                        <td class="edema-grade">4+</td>
+                        <td>極重度水腫</td>
+                        <td>
+                            <ul>
+                                <li>非常深的凹陷（8mm或更多）</li>
+                                <li>按壓皮膚後，凹陷消失需2-5分鐘以上</li>
+                                <li>極度腫脹，受影響部位嚴重變形</li>
+                                <li>皮膚緊繃發亮</li>
+                                <li>嚴重影響日常活動</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    <!-- 6P Assessment tab -->
+    <div id="sixp" class="tab-content">
+        <div class="container">
+            <h1>6P神經血管評估 <br> 6P Neurovascular Assessment</h1>
+            
+            <table class="edema-table">
+                <thead>
+                    <tr>
+                        <th>評估項目</th>
+                        <th>正常表現</th>
+                        <th>異常表現</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pain<br>疼痛</td>
+                        <td>
+                            <ul>
+                                <li>無疼痛</li>
+                                <li>輕微不適</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>突然發生的嚴重疼痛</li>
+                                <li>持續性疼痛</li>
+                                <li>活動時加劇的疼痛</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pallor<br>蒼白</td>
+                        <td>
+                            <ul>
+                                <li>皮膚顏色正常</li>
+                                <li>指甲床顏色粉紅</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>皮膚蒼白</li>
+                                <li>指甲床發白</li>
+                                <li>皮膚發紫或發青</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pulse<br>脈搏</td>
+                        <td>
+                            <ul>
+                                <li>脈搏強度正常</li>
+                                <li>脈搏節律規律</li>
+                                <li>肢體血循正常</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>脈搏微弱或消失</li>
+                                <li>末梢脈搏不可觸及</li>
+                                <li>毛細血管充盈時間延長（>3秒）</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Paresthesia<br>感覺異常</td>
+                        <td>
+                            <ul>
+                                <li>感覺正常</li>
+                                <li>觸覺敏感度正常</li>
+                                <li>無異常感覺</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>刺痛感</li>
+                                <li>麻木感</li>
+                                <li>灼熱感</li>
+                                <li>觸覺敏感度減低</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Paralysis<br>癱瘓</td>
+                        <td>
+                            <ul>
+                                <li>肢體活動自如</li>
+                                <li>肌力正常</li>
+                                <li>關節活動度正常</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>肢體活動受限</li>
+                                <li>肌力下降</li>
+                                <li>無法完成正常動作</li>
+                                <li>肢體活動障礙進行性加重</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Poikilothermia<br>溫度異常</td>
+                        <td>
+                            <ul>
+                                <li>患肢溫度正常</li>
+                                <li>溫度與對側肢體相當</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>患肢溫度明顯下降</li>
+                                <li>患肢較對側肢體冰冷</li>
+                                <li>溫度變化隨病情進展加重</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button class="btn-reset" onclick="resetSixP()">重置</button>
+        </div>
+    </div>
+
+    <script src="javascript/clinical-cheatsheet.js"></script>
+</body>
+</html>

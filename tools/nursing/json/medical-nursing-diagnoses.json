@@ -1,0 +1,639 @@
+{
+  "Diabetes Mellitus": {
+    "descriptions": [
+      "Ineffective Health maintenance r/t complexity of therapeutic regimen",
+      "Imbalanced Nutrition: less than body requirements r/t inability to use glucose",
+      "Ineffective peripheral Tissue perfusion r/t impaired arterial circulation",
+      "Risk for unstable blood Glucose level",
+      "Risk for Infection: Risk factors: hyperglycemia, impaired healing",
+      "Risk for impaired Skin integrity: Risk factor: loss of pain perception in extremities"
+    ]
+  },
+  "Pneumonia": {
+    "descriptions": [
+      "Ineffective Airway clearance r/t inflammation and presence of secretions",
+      "Impaired Gas exchange r/t decreased functional lung tissue",
+      "Ineffective Thermoregulation r/t infectious process",
+      "Risk for deficient Fluid volume: Risk factor: inadequate intake of fluids",
+      "Acute Pain r/t inflammatory process"
+    ]
+  },
+  "Myocardial Infarction": {
+    "descriptions": [
+      "Activity intolerance r/t imbalance between oxygen supply and demand",
+      "Anxiety r/t threat of death, possible change in role status",
+      "Decreased Cardiac output r/t myocardial injury",
+      "Acute Pain r/t myocardial tissue damage from inadequate blood supply",
+      "Risk for decreased Cardiac tissue perfusion: Risk factors: coronary artery spasm, hypertension"
+    ]
+  },
+  "Hypertension": {
+    "descriptions": [
+      "Deficient Knowledge r/t lack of information about dietary management",
+      "Ineffective Health management r/t complexity of treatment regimen",
+      "Risk for decreased Cardiac output: Risk factors: increased afterload",
+      "Anxiety r/t current health status, uncertainty of prognosis",
+      "Risk for Noncompliance: Risk factor: lack of symptoms"
+    ]
+  },
+  "Chronic Obstructive Pulmonary Disease": {
+    "descriptions": [
+      "Ineffective Breathing pattern r/t decreased lung elasticity",
+      "Activity intolerance r/t fatigue, decreased oxygen supply",
+      "Impaired Gas exchange r/t alveolar-capillary membrane changes",
+      "Ineffective Airway clearance r/t increased mucus production",
+      "Risk for Infection: Risk factors: retained secretions, chronic illness"
+    ]
+  },
+  "Stroke (CVA)": {
+    "descriptions": [
+      "Impaired physical Mobility r/t neuromuscular impairment",
+      "Impaired verbal Communication r/t cerebral infarction",
+      "Risk for impaired Swallowing: Risk factors: neurological damage",
+      "Self-care deficit: bathing, dressing r/t neuromuscular impairment",
+      "Risk for Falls: Risk factors: altered mobility, sensory deficits",
+      "Unilateral Neglect r/t cerebral hemisphere damage"
+    ]
+  },
+  "Congestive Heart Failure": {
+    "descriptions": [
+      "Decreased Cardiac output r/t altered contractility",
+      "Excess Fluid volume r/t compromised regulatory mechanism",
+      "Activity intolerance r/t imbalance between oxygen supply and demand",
+      "Disturbed Sleep pattern r/t orthopnea, paroxysmal nocturnal dyspnea",
+      "Anxiety r/t change in health status, potential death"
+    ]
+  },
+  "Urinary Tract Infection": {
+    "descriptions": [
+      "Acute Pain r/t inflammation of urinary tract",
+      "Impaired Urinary elimination r/t inflammation of urinary tract",
+      "Risk for impaired Skin integrity: Risk factor: frequent urination",
+      "Deficient Knowledge r/t prevention strategies"
+    ]
+  },
+  "Hip Fracture": {
+    "descriptions": [
+      "Acute Pain r/t bone fracture",
+      "Impaired physical Mobility r/t musculoskeletal injury",
+      "Risk for peripheral Neurovascular dysfunction: Risk factor: trauma",
+      "Risk for Constipation: Risk factors: immobility, opioid analgesics",
+      "Risk for Falls: Risk factors: impaired mobility, pain"
+    ]
+  },
+  "Renal Failure": {
+    "descriptions": [
+      "Excess Fluid volume r/t compromised regulatory mechanisms",
+      "Imbalanced Nutrition: less than body requirements r/t anorexia, dietary restrictions",
+      "Risk for electrolyte Imbalance: Risk factor: compromised regulatory mechanisms",
+      "Fatigue r/t decreased metabolic energy production",
+      "Risk for impaired Skin integrity: Risk factor: uremic toxins"
+    ]
+  },
+    "diagnosisDatabase": {
+      "Acromegaly": {
+        "descriptions": [
+          "Activity intolerance (See Activity intolerance, Section III)",
+          "Ineffective Airway clearance r/t airway obstruction by enlarged tongue",
+          "Disturbed Body Image r/t changes in body function and appearance",
+          "Impaired physical Mobility r/t joint pain",
+          "Risk for decreased Cardiac tissue perfusion: Risk factor: increased atherosclerosis from abnormal health status",
+          "Risk for unstable blood Glucose level: Risk factor: abnormal physical health status",
+          "Sexual dysfunction r/t changes in hormonal secretions",
+          "Risk for Overweight: Risk factor: energy expenditure less than energy intake"
+        ]
+      },
+      "Abruptio Placentae": {
+        "descriptions": [
+          "Acute Pain r/t irritable uterus, hypertonic uterus",
+          "Impaired Tissue integrity: maternal r/t possible uterine rupture",
+          "Risk for Bleeding: Risk factor: separation of placenta from uterus causing bleeding",
+          "Risk for disproportionate Growth: Risk factor: uteroplacental insufficiency",
+          "Risk for Infection: Risk factor: partial separation of placenta",
+          "Risk for disturbed Maternal–Fetal dyad: Risk factors: trauma of process, lack of energy of mother",
+          "Risk for Shock: Risk factor: separation of placenta from uterus",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Abscess Formation": {
+        "descriptions": [
+          "Ineffective Protection r/t inadequate nutrition, abnormal blood profile, drug therapy, depressed immune function",
+          "Impaired Tissue integrity r/t altered circulation, nutritional deficit or excess",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Abuse, Child": {
+        "descriptions": [
+          "See Child Abuse"
+        ]
+      },
+      "Abuse, Spouse, Parent, or Significant Other": {
+        "descriptions": [
+          "Anxiety r/t threat to self-concept, situational crisis of abuse",
+          "Caregiver Role Strain r/t chronic illness, self-care deficits, lack of respite care, extent of caregiving required",
+          "Impaired verbal Communication r/t psychological barriers of fear",
+          "Compromised family Coping r/t abusive patterns",
+          "Defensive Coping r/t low self-esteem",
+          "Dysfunctional Family processes r/t inadequate coping skills",
+          "Insomnia r/t psychological stress",
+          "Post-Trauma syndrome r/t history of abuse",
+          "Powerlessness r/t lifestyle of helplessness",
+          "Chronic low Self-Esteem r/t negative family interactions",
+          "Risk for impaired emancipated Decision-Making: Risk factor: inability to verbalize needs and wants",
+          "Risk for self-directed Violence: Risk factor: history of abuse"
+        ]
+      },
+      "Accessory Muscle Use (to Breathe)": {
+        "descriptions": [
+          "Ineffective Breathing pattern (See Breathing pattern, ineffective, Section III)",
+          "See Asthma; Bronchitis; COPD (Chronic Obstructive Pulmonary Disease); Respiratory Infections, Acute Childhood"
+        ]
+      },
+      "Accident Prone": {
+        "descriptions": [
+          "Frail Elderly syndrome r/t history of falls",
+          "Acute Confusion r/t altered level of consciousness",
+          "Ineffective Coping r/t personal vulnerability, situational crises",
+          "Ineffective Impulse control (See Impulse control, ineffective, Section III)",
+          "Risk for Injury: Risk factor: history of accidents"
+        ]
+      },
+      "Achalasia": {
+        "descriptions": [
+          "Ineffective Coping r/t chronic disease",
+          "Acute Pain r/t stasis of food in esophagus",
+          "Impaired Swallowing r/t neuromuscular impairment",
+          "Risk for Aspiration: Risk factor: nocturnal regurgitation"
+        ]
+      },
+      "Acid-Base Imbalances": {
+        "descriptions": [
+          "Risk for Electrolyte imbalance: Risk factors: renal dysfunction, diarrhea, treatment-related side effects (e.g., medications, drains)"
+        ]
+      },
+      "Acidosis, Metabolic": {
+        "descriptions": [
+          "Acute Confusion r/t acid-base imbalance, associated electrolyte imbalance",
+          "Impaired Memory r/t effect of metabolic acidosis on brain function",
+          "Imbalanced Nutrition: less than body requirements r/t inability to ingest, absorb nutrients",
+          "Risk for Electrolyte imbalance: Risk factor: effect of metabolic acidosis on renal function",
+          "Risk for Injury: Risk factors: disorientation, weakness, stupor",
+          "Risk for decreased Cardiac tissue perfusion: Risk factor: dysrhythmias from hyperkalemia",
+          "Risk for Shock: Risk factors: abnormal metabolic state, presence of acid state impairing function, decreased tissue perfusion"
+        ]
+      },
+      "Acidosis, Respiratory": {
+        "descriptions": [
+          "Activity intolerance r/t imbalance between oxygen supply and demand",
+          "Impaired Gas exchange r/t ventilation-perfusion imbalance",
+          "Impaired Memory r/t hypoxia",
+          "Risk for decreased Cardiac tissue perfusion: Risk factor: dysrhythmias associated with respiratory acidosis"
+        ]
+      },
+      "Acne": {
+        "descriptions": [
+          "Disturbed Body Image r/t biophysical changes associated with skin disorder",
+          "Ineffective Health management r/t insufficient knowledge of therapeutic regimen",
+          "Impaired Skin integrity r/t hormonal changes (adolescence, menstrual cycle)"
+        ]
+      },
+      "ACS (Acute Coronary Syndrome)": {
+        "descriptions": [
+          "See MI (Myocardial Infarction)"
+        ]
+      },
+      "Acquired Immunodeficiency Syndrome": {
+        "descriptions": [
+          "See AIDS (Acquired Immunodeficiency Syndrome)"
+        ]
+      },
+      "Activity Intolerance, Potential to Develop": {
+        "descriptions": [
+          "Activity intolerance (See Activity intolerance, Section III)"
+        ]
+      },
+      "Acute Abdominal Pain": {
+        "descriptions": [
+          "Deficient Fluid volume r/t air and fluids trapped in bowel, inability to drink",
+          "Acute Pain r/t pathological process",
+          "Risk for dysfunctional Gastrointestinal motility: Risk factor: ineffective gastrointestinal tissue perfusion",
+          "See Abdominal Pain"
+        ]
+      },
+      "Acute Alcohol Intoxication": {
+        "descriptions": [
+          "Ineffective Breathing pattern r/t depression of the respiratory center from excessive alcohol intake",
+          "Acute Confusion r/t central nervous system depression",
+          "Dysfunctional Family processes r/t abuse of alcohol",
+          "Risk for Aspiration: Risk factor: depressed reflexes with acute vomiting",
+          "Risk for Infection: Risk factor: impaired immune system from malnutrition associated with chronic excessive alcohol intake",
+          "Risk for Injury: Risk factor: chemical (alcohol)"
+        ]
+      },
+      "Acute Back Pain": {
+        "descriptions": [
+          "Anxiety r/t situational crisis, back injury",
+          "Constipation r/t decreased activity, effect of pain medication",
+          "Ineffective Coping r/t situational crisis, back injury",
+          "Impaired physical Mobility r/t pain",
+          "Acute Pain r/t back injury",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Acute Coronary Syndrome": {
+        "descriptions": [
+          "Decreased Cardiac output r/t cardiac disorder",
+          "Risk for decreased Cardiac tissue perfusion (See Cardiac tissue perfusion, risk for decreased, Section III)"
+        ]
+      },
+      "Alzheimer's Disease": {
+        "descriptions": [
+          "Caregiver role strain r/t duration and extent of caregiving required",
+          "Chronic Confusion r/t loss of cognitive function",
+          "Compromised family Coping r/t interrupted family processes",
+          "Frail Elderly syndrome r/t alteration in cognitive functioning",
+          "Impaired Home maintenance r/t impaired cognitive function, inadequate support systems",
+          "Hopelessness r/t deteriorating condition",
+          "Insomnia r/t neurological impairment, daytime naps",
+          "Impaired Memory r/t neurological disturbance",
+          "Impaired physical Mobility r/t severe neurological dysfunction",
+          "Self-Neglect r/t loss of cognitive function",
+          "Powerlessness r/t deteriorating condition",
+          "Self-Care deficit: specify r/t loss of cognitive function, psychological impairment",
+          "Social isolation r/t fear of disclosure of memory loss",
+          "Wandering r/t cognitive impairment, frustration, physiological state",
+          "Risk for chronic functional Constipation: Risk factor: impaired cognitive functioning",
+          "Risk for Injury: Risk factor: confusion",
+          "Risk for Loneliness: Risk factor: potential social isolation",
+          "Risk for Relocation stress syndrome: Risk factors: impaired psychosocial health, decreased health status",
+          "Risk for other-directed Violence: Risk factors: frustration, fear, anger, loss of cognitive function",
+          "Readiness for enhanced Knowledge: Caregiver: expresses an interest in learning",
+          "See Dementia"
+        ]
+      },
+      "Abruptio Placentae <36 Weeks": {
+        "descriptions": [
+          "Anxiety r/t unknown outcome, change in birth plans",
+          "Death Anxiety r/t unknown outcome, hemorrhage, or pain",
+          "Interrupted Family processes r/t unmet expectations for pregnancy and childbirth",
+          "Fear r/t threat to well-being of self and fetus",
+          "Impaired Gas exchange: placental r/t decreased uteroplacental area",
+          "Acute Pain r/t irritable uterus, hypertonic uterus",
+          "Impaired Tissue integrity: maternal r/t possible uterine rupture",
+          "Risk for Bleeding: Risk factor: separation of placenta from uterus causing bleeding",
+          "Risk for disproportionate Growth: Risk factor: uteroplacental insufficiency",
+          "Risk for Infection: Risk factor: partial separation of placenta",
+          "Risk for disturbed Maternal–Fetal dyad: Risk factors: trauma of process, lack of energy of mother",
+          "Risk for Shock: Risk factor: separation of placenta from uterus",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Acute Confusion": {
+        "descriptions": [
+          "See Confusion, Acute"
+        ]
+      },
+      "Acute Lymphocytic Leukemia (ALL)": {
+        "descriptions": [
+          "See Cancer; Chemotherapy; Child with Chronic Condition;",
+          "Leukemia"
+        ]
+      },
+      "Acute Renal Failure/Acute Kidney Failure": {
+        "descriptions": [
+          "See Kidney Failure"
+        ]
+      },
+      "Acute Respiratory Distress Syndrome": {
+        "descriptions": [
+          "See ARDS (Acute Respiratory Distress Syndrome)"
+        ]
+      },
+      "Adams-Stokes Syndrome": {
+        "descriptions": [
+          "See Dysrhythmia"
+        ]
+      },
+      "Addiction": {
+        "descriptions": [
+          "See Alcoholism; Drug Abuse"
+        ]
+      },
+      "Addison’s Disease": {
+        "descriptions": [
+          "Activity intolerance r/t weakness, fatigue",
+          "Disturbed Body Image r/t increased skin pigmentation",
+          "Deficient Fluid volume r/t failure of regulatory mechanisms",
+          "Imbalanced Nutrition: less than body requirements r/t chronic illness",
+          "Risk for Injury: Risk factor: weakness",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Adenoidectomy": {
+        "descriptions": [
+          "Acute Pain r/t surgical incision",
+          "Ineffective Airway clearance r/t hesitation or reluctance to cough as a result of pain, fear",
+          "Nausea r/t anesthesia effects, drainage from surgery",
+          "Acute Pain r/t surgical incision",
+          "Risk for Aspiration: Risk factors: postoperative drainage, impaired swallowing",
+          "Risk for Bleeding: Risk factor: surgical incision",
+          "Risk for deficient Fluid volume: Risk factors: decreased intake as a result of painful swallowing, effects of anesthesia",
+          "Risk for imbalanced Nutrition: less than body requirements:",
+          "Risk factor: reluctance to swallow",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Adhesions, Lysis of": {
+        "descriptions": [
+          "See Abdominal Surgery"
+        ]
+      },
+      "Adjustment Disorder": {
+        "descriptions": [
+          "Anxiety r/t inability to cope with psychosocial stressor",
+          "Labile Emotional Control r/t emotional disturbance",
+          "Risk-prone Health behavior r/t assault to self-esteem",
+          "Disturbed personal Identity r/t psychosocial stressor (specific to individual)",
+          "Situational low Self-Esteem r/t change in role function",
+          "Impaired Social interaction r/t absence of significant others or peers"
+        ]
+      },
+      "Adjustment Impairment": {
+        "descriptions": [
+          "Risk-prone Health behavior (See Health behavior, risk-prone, Section III)"
+        ]
+      },
+      "Adolescent, Pregnant": {
+        "descriptions": [
+          "Anxiety r/t situational and maturational crisis, pregnancy",
+          "Disturbed Body Image r/t pregnancy superimposed on developing body",
+          "Decisional Conflict: keeping child versus giving up child versus abortion r/t lack of experience with decision-making, interference with decision-making, multiple or divergent sources of information, lack of support system",
+          "Disabled family Coping r/t highly ambivalent family relationships, chronically unresolved feelings of guilt, anger, despair",
+          "Ineffective Coping r/t situational and maturational crisis, personal vulnerability",
+          "Ineffective Denial r/t fear of consequences of pregnancy becoming known",
+          "Interrupted Family processes r/t unmet expectations for adolescent, situational crisis",
+          "Fear r/t labor and delivery",
+          "Deficient Knowledge r/t pregnancy, infant growth and development, parenting",
+          "Imbalanced Nutrition: less than body requirements r/t lack of",
+          "knowledge of nutritional needs during pregnancy and as growing adolescent",
+          "Ineffective Role performance r/t pregnancy",
+          "Situational low Self-Esteem r/t feelings of shame and guilt about becoming or being pregnant",
+          "Impaired Social interaction r/t self-concept disturbance",
+          "Social isolation r/t absence of supportive significant others",
+          "Risk for impaired Attachment: Risk factor: anxiety associated with the parent role",
+          "Risk for delayed Development: Risk factor: unplanned or unwanted pregnancy",
+          "Risk for urge urinary Incontinence: Risk factor: pressure on bladder by growing uterus",
+          "Risk for disturbed Maternal–Fetal dyad: Risk factors: immaturity, substance use",
+          "Risk for impaired Parenting: Risk factors: adolescent parent, unplanned or unwanted pregnancy, single parent",
+          "Readiness for enhanced Childbearing process: reports appropriate prenatal lifestyle",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Adoption, Giving Child Up for": {
+        "descriptions": [
+          "Decisional Conflict r/t unclear personal values or beliefs, perceived threat to value system, support system deficit",
+          "Ineffective Coping r/t stress of loss of child",
+          "Interrupted Family processes r/t conflict within family regarding relinquishment of child",
+          "Grieving r/t loss of child, loss of role of parent",
+          "Insomnia r/t depression or trauma of relinquishment of child",
+          "Social isolation r/t making choice that goes against values of significant others",
+          "Chronic Sorrow r/t loss of relationship with child",
+          "Risk for Spiritual distress: Risk factor: perceived moral implications of decision",
+          "Readiness for enhanced Spiritual well-being: harmony with self regarding final decision"
+        ]
+      },
+      "Adrenocortical Insufficiency": {
+        "descriptions": [
+          "Deficient Fluid volume r/t insufficient ability to reabsorb water",
+          "Ineffective Protection r/t inability to tolerate stress",
+          "Delayed Surgical recovery r/t inability to respond to stress",
+          "Risk for Shock: Risk factors: deficient fluid volume, decreased cortisol to initiate stress response to insult to body",
+          "See Addison’s Disease; Shock, Hypovolemic"
+        ]
+      },
+      "Advance Directives": {
+        "descriptions": [
+          "Death Anxiety r/t planning for end-of-life health decisions",
+          "Decisional Conflict r/t unclear personal values or beliefs, perceived threat to value system, support system deficit",
+          "Grieving r/t possible loss of self, significant other",
+          "Readiness for enhanced Spiritual well-being: harmonious interconnectedness with self, others, higher power, God"
+        ]
+      },
+      "Affective Disorders": {
+        "descriptions": [
+          "See Depression (Major Depressive Disorder); Dysthymic",
+          "Disorder; Manic Disorder, Bipolar I; SAD (Seasonal Affective",
+          "Disorder)"
+        ]
+      },
+      "Age-Related Macular Degeneration": {
+        "descriptions": [
+          "See Macular Degeneration"
+        ]
+      },
+      "Aggressive Behavior": {
+        "descriptions": [
+          "Fear r/t real or imagined threat to own well-being",
+          "Risk for other-directed Violence (See Violence, other-directed, risk for, Section III)"
+        ]
+      },
+      "Aging": {
+        "descriptions": [
+          "Death Anxiety r/t fear of unknown, loss of self, impact on significant others",
+          "Impaired Dentition r/t ineffective oral hygiene",
+          "Risk for Frail Elderly syndrome: Risk factors: >70 years, activity intolerance, impaired vision",
+          "Grieving r/t multiple losses, impending death",
+          "Ineffective Health management r/t powerlessness",
+          "Hearing Loss r/t exposure to loud noises, aging",
+          "Functional urinary Incontinence r/t impaired vision, impaired cognition, neuromuscular limitations, altered environmental factors",
+          "Impaired Resilience r/t aging, multiple losses",
+          "Sleep deprivation r/t aging-related sleep-stage shifts",
+          "Ineffective Thermoregulation r/t aging",
+          "Vision Loss r/t aging (see care plan in Appendix)",
+          "Risk for Caregiver Role Strain: Risk factor: inability to handle increasing needs of significant other",
+          "Risk for Impaired emancipated Decision-Making: Risk factor: inability to process information regarding health care decisions",
+          "Risk for Injury: Risk factors: vision loss, hearing loss, decreased balance, decreased sensation in feet",
+          "Risk for Loneliness: Risk factors: inadequate support system, role transition, health alterations, depression, fatigue",
+          "Readiness for enhanced community Coping: providing social support and other resources identified as needed for elderly client",
+          "Readiness for enhanced family Coping: ability to gratify needs, address adaptive tasks",
+          "Readiness for enhanced Health management: knowledge about medication, nutrition, exercise, coping strategies",
+          "Readiness for enhanced Knowledge: specify need to improve health",
+          "Readiness for enhanced Nutrition: need to improve health",
+          "Readiness for enhanced Relationship: demonstrates understanding of partner’s insufficient function",
+          "Readiness for enhanced Sleep: need to improve sleep",
+          "Readiness for enhanced Spiritual well-being: one’s experience of life’s meaning, harmony with self, others, higher power, God, environment",
+          "Readiness for enhanced Urinary elimination: need to improve health"
+        ]
+      },
+      "Agitation": {
+        "descriptions": [
+          "Acute Confusion r/t side effects of medication, hypoxia, decreased cerebral perfusion, alcohol abuse or withdrawal, substance abuse or withdrawal, sensory deprivation or overload",
+          "Sleep deprivation r/t sustained inadequate sleep hygiene, sundown syndrome"
+        ]
+      },
+      "Agoraphobia": {
+        "descriptions": [
+          "Anxiety r/t real or perceived threat to physical integrity",
+          "Ineffective Coping r/t inadequate support systems",
+          "Fear r/t leaving home, going out in public places",
+          "Impaired Social interaction r/t disturbance in self-concept",
+          "Social isolation r/t altered thought process"
+        ]
+      },
+      "Agranulocytosis": {
+        "descriptions": [
+          "Delayed Surgical recovery r/t abnormal blood profile",
+          "Risk for Infection: Risk factor: abnormal blood profile",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "AIDS (Acquired Immunodeficiency Syndrome)": {
+        "descriptions": [
+          "Death Anxiety r/t fear of premature death",
+          "Disturbed Body Image r/t chronic contagious illness, cachexia",
+          "Caregiver Role Strain r/t unpredictable illness course, presence of situation stressors",
+          "Diarrhea r/t inflammatory bowel changes",
+          "Interrupted Family processes r/t distress about diagnosis of human immunodeficiency virus (HIV) infection",
+          "Fatigue r/t disease process, stress, decreased nutritional intake",
+          "Fear r/t powerlessness, threat to well-being",
+          "Grieving: family/parental r/t potential or impending death of loved one",
+          "Grieving: individual r/t loss of physical and psychosocial well-being",
+          "Hopelessness r/t deteriorating physical condition",
+          "Imbalanced Nutrition: less than body requirements r/t decreased ability to eat and absorb nutrients as a result of anorexia, nausea, diarrhea; oral candidiasis",
+          "Chronic Pain r/t tissue inflammation and destruction",
+          "Impaired Resilience r/t chronic illness",
+          "Situational low Self-Esteem r/t crisis of chronic contagious illness",
+          "Ineffective Sexuality pattern r/t possible transmission of disease",
+          "Social isolation r/t self-concept disturbance, therapeutic isolation",
+          "Chronic Sorrow r/t chronic illness",
+          "Spiritual distress r/t challenged beliefs or moral system",
+          "Risk for deficient Fluid volume: Risk factors: diarrhea, vomiting, fever, bleeding",
+          "Risk for Infection: Risk factor: inadequate immune system",
+          "Risk for Loneliness: Risk factor: social isolation",
+          "Risk for impaired Oral Mucous Membrane: Risk factor: immunological deficit",
+          "Risk for impaired Skin integrity: Risk factors: immunological deficit, diarrhea",
+          "Risk for Spiritual distress: Risk factor: physical illness",
+          "Readiness for enhanced Knowledge: expresses an interest in learning",
+          "See AIDS, Child; Cancer; Pneumonia"
+        ]
+      },
+      "AIDS Dementia": {
+        "descriptions": [
+          "Chronic Confusion r/t viral invasion of nervous system",
+          "See Dementia"
+        ]
+      },
+      "AIDS, Child": {
+        "descriptions": [
+          "Impaired Parenting r/t congenital acquisition of infection secondary to intravenous (IV) drug use, multiple sexual partners, history of contaminated blood transfusion",
+          "See AIDS (Acquired Immunodeficiency Syndrome); Child with Chronic Condition; Hospitalized Child; Terminally Ill Child, Adolescent; Terminally Ill Child, Infant/Toddler; Terminally Ill Child, Preschool Child; Terminally Ill Child, School-Age Child/Preadolescent; Terminally Ill Child/Death of Child, Parent"
+        ]
+      },
+      "Airway Obstruction/Secretions": {
+        "descriptions": [
+          "Ineffective Airway clearance (See Airway clearance, ineffective, Section III)"
+        ]
+      },
+      "Alcohol Withdrawal": {
+        "descriptions": [
+          "Anxiety r/t situational crisis, withdrawal",
+          "Acute Confusion r/t effects of alcohol withdrawal",
+          "Ineffective Coping r/t personal vulnerability",
+          "Dysfunctional Family processes r/t abuse of alcohol",
+          "Insomnia r/t effect of alcohol withdrawal, anxiety",
+          "Imbalanced Nutrition: less than body requirements r/t poor dietary habits",
+          "Chronic low Self-Esteem r/t repeated unmet expectations",
+          "Risk for deficient Fluid volume: Risk factors: excessive diaphoresis, agitation, decreased fluid intake",
+          "Risk for other-directed Violence: Risk factor: substance withdrawal",
+          "Risk for self-directed Violence: Risk factor: substance withdrawal",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Alcoholism": {
+        "descriptions": [
+          "Anxiety r/t loss of control",
+          "Risk-prone Health behavior r/t lack of motivation to change behaviors, addiction",
+          "Acute Confusion r/t alcohol abuse",
+          "Chronic Confusion r/t neurological effects of chronic alcohol intake",
+          "Defensive Coping r/t denial of reality of addiction",
+          "Disabled family Coping r/t codependency issues due to alcoholism",
+          "Ineffective Coping r/t use of alcohol to cope with life events",
+          "Labile Emotional Control r/t substance abuse",
+          "Ineffective Denial r/t refusal to acknowledge addiction",
+          "Dysfunctional Family processes r/t alcohol abuse",
+          "Impaired Home maintenance r/t memory deficits, fatigue",
+          "Insomnia r/t irritability, nightmares, tremors",
+          "Impaired Memory r/t alcohol abuse",
+          "Self-Neglect r/t effects of alcohol abuse",
+          "Imbalanced Nutrition: less than body requirements r/t anorexia, inappropriate diet with increased carbohydrates",
+          "Powerlessness r/t alcohol addiction",
+          "Ineffective Protection r/t malnutrition, sleep deprivation",
+          "Chronic low Self-Esteem r/t failure at life events",
+          "Social isolation r/t unacceptable social behavior, values",
+          "Risk for Injury: Risk factor: alteration in sensory or perceptual function",
+          "Risk for Loneliness: Risk factor: unacceptable social behavior",
+          "Risk for other-directed Violence: Risk factors: reactions to substances used, impulsive behavior, disorientation, impaired judgment",
+          "Risk for self-directed Violence: Risk factors: reactions to substances used, impulsive behavior, disorientation, impaired judgment"
+        ]
+      },
+      "Alcoholism, Dysfunctional Family Processes": {
+        "descriptions": [
+          "Dysfunctional Family processes (See Family processes, dysfunctional, Section III)"
+        ]
+      },
+      "Alkalosis": {
+        "descriptions": [
+          "See Metabolic Alkalosis"
+        ]
+      },
+      "ALL (Acute Lymphocytic Leukemia)": {
+        "descriptions": [
+          "See Cancer; Chemotherapy; Child with Chronic Condition; Leukemia"
+        ]
+      },
+      "Allergies": {
+        "descriptions": [
+          "Latex Allergy response r/t hypersensitivity to natural rubber latex",
+          "Risk for Allergy response: Risk factors: chemical factors, dander, environmental substances, foods, insect stings, medications",
+          "Risk for Latex Allergy response: Risk factor: repeated exposure to products containing latex",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Alopecia": {
+        "descriptions": [
+          "Disturbed Body Image r/t loss of hair, change in appearance",
+          "Readiness for enhanced Knowledge: expresses an interest in learning"
+        ]
+      },
+      "Altered Mental Status": {
+        "descriptions": [
+          "See Confusion, Acute; Confusion, Chronic; Memory Deficit"
+        ]
+      },
+      "ALS (Amyotrophic Lateral Sclerosis)": {
+        "descriptions": [
+          "See Amyotrophic Lateral Sclerosis (ALS)"
+        ]
+      },
+      "AMD (Age-Related Macular Degeneration)": {
+        "descriptions": [
+          "See Macular Degeneration"
+        ]
+      }
+    },
+    "diagnosisLinks": {
+      "Acute Pain": "nursing-diagnosis/Acute-pain.html",
+      "Anxiety": "nursing-diagnosis/Anxiety.html",
+      "Impaired Gas exchange": "impaired-gas-exchange.html",
+      "Decreased Cardiac output": "decreased-cardiac-output.html",
+      "Ineffective Breathing pattern": "ineffective-breathing-pattern.html",
+      "Ineffective Airway clearance": "ineffective-airway-clearance.html",
+      "Risk for Infection": "nursing-diagnosis/Risk-for-infection.html",
+      "Acute pain": "nursing-diagnosis/Acute-pain.html",
+      "Activity intolerance": "activity-intolerance.html",
+      "Impaired Memory": "impaired-memory.html",
+      "Impaired Swallowing": "impaired-swallowing.html",
+      "Disturbed Body Image": "disturbed-body-image.html",
+      "Impaired Skin integrity": "impaired-skin-integrity.html"
+    }
+  }

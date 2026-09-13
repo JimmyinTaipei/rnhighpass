@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用說明</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        /* 布局組件 */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        
+        .content {
+            margin-top: 70px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        strong {
+            color: #e74c3c;
+        }
+        
+        ul {
+            padding-left: 25px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/mobile-style.css">
+</head>
+<body>
+    <header>
+        <div class="navigation" style="background-color: #3498db; width: 1360px; padding:20px; position:absolute; top:0px; right:20px; left:20px">
+            <a href="user-guide.html">使用說明</a>
+            <a href="index.html">護理工作時間表</a>
+            <a href="nursing-checklist.html">護理工作Checklist</a>
+            <a href="nursing-clinical-tools.html">護理臨床小工具</a>
+            <a href="surgery-and-exam-checklist.html">手術與檢查Checklist</a>
+            <a href="clinical-cheatsheet.html">臨床懶人包</a>
+            <a href="nursing-diagnosis-search-tool.html">護理診斷查詢工具</a>
+            <a href="nursing-kardex.html">交班單（prototype）</a>
+        </div>
+    </header>
+    
+    <div class="content">
+        <h1>使用說明</h1>
+        <p>歡迎大家來到這個由 AI 協助製作的網頁！我之所以想做這個網站，是因為在實習期間，經常會因為繁瑣的事務而忘東忘西。當時就想，如果有一個工具可以幫忙提醒、減輕負擔，那該有多好。因此，我利用護理行政實習的時間來開發這個網站，希望能幫助護理師減少處理雜事的壓力。</p>
+        
+        <p>特別感謝 <strong>Claude AI</strong>，剛好在使用 AI 協助製作的過程中，它更新到了 3.7 版，不僅自動排版，還時常產生意想不到的實用功能，讓網站的版面更整齊美觀。此外，也要感謝提供建議的朋友們，與我一起討論改進的地方和可新增的功能，使這個網站更加完整。</p>
+        
+        <h2>關於醫療環境與網站的初衷</h2>
+        <p>大家應該都注意到，當前的醫療環境並不理想，人力持續流失。我經常思考這個問題，最直接的解決方案當然是提高薪資，這不僅是最好的投資，也能吸引更多人力，進而提升病床的開放量。然而，許多醫療機構似乎不願採取這個方法。</p>
+        
+        <p>除了加薪，還有沒有其他解決辦法呢？有的，那就是 <strong>減少臨床的繁瑣事務</strong> 及 <strong>降低工作量</strong>。如果能減少不必要的工作內容，就能讓現有人力得以維持；但這仍然需要更多人力支撐，與加薪的效果相差不大。因此，我認為 <strong>減少臨床雜事</strong> 是目前最可行的解決方向。</p>
+        
+        <p>以我的實習經驗來看，護理評估、技術執行、給藥等屬於護理的專業工作，不應視為雜事。然而，以下這些常見的行政事務，卻會無形中增加護理師的負擔：</p>
+        <ul>
+            <li>計價與核對</li>
+            <li>點班與排班調整</li>
+            <li>床頭牌的填寫與更新</li>
+            <li>與檢查室、手術室等單位的聯繫</li>
+            <li>應對病人與家屬的各種詢問</li>
+        </ul>
+        
+        <p>這些瑣碎的事務五花八門，最有效的解決方式就是 <strong>優化流程並提升資訊化程度</strong>，減少人工處理的需求。</p>
+        
+        <h2>最終目標</h2>
+        <p>我希望這個網站能夠成為一個輔助工具，減少護理師在繁瑣行政事務上的時間消耗。在這個資訊化時代，醫院系統應該與時俱進，而不是停留在舊有模式中。如果無法直接改變醫院系統，那麼這些工具就是我能想到的 <strong>最實際的解決方案</strong>，幫助護理師更高效地完成工作，將時間與精力專注在真正重要的護理照護上。</p>
+
+        <p style="font-size: small; color:grey">chatGPT協助修改</p>
+    </div>
+    <script src="javascript/mobile-script.js"></script>
+    
+</body>
+</html>
