@@ -1,0 +1,169 @@
+/* =========================================
+   基本設定 / 配色變數
+   ========================================= */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #222222;
+  --color-text-light: #555555;
+  --color-primary: #4A90D9;   /* 主色：淺藍色 */
+  --color-primary-dark: #3574b0;
+  --color-border: #e0e0e0;
+  --color-section-bg: #f7f9fb;
+
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+
+  --max-width: 720px;
+}
+
+/* Reset 基本設定 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  line-height: 1.4;
+  margin: 0 0 0.6em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   頁首
+   ========================================= */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.brand-en {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-weight: normal;
+}
+
+/* =========================================
+   主視覺區
+   ========================================= */
+.hero {
+  padding: 40px 0;
+  background-color: var(--color-section-bg);
+  text-align: center;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* =========================================
+   內容區塊（下載題本 / 使用說明 / 工具）
+   ========================================= */
+.section {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  color: var(--color-primary-dark);
+}
+
+.guide-list {
+  padding-left: 1.2em;
+}
+
+.guide-list li {
+  margin-bottom: 0.6em;
+}
+
+.coming-soon {
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+/* 按鈕 */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-primary-dark);
+}
+
+/* =========================================
+   頁尾
+   ========================================= */
+.site-footer {
+  padding: 30px 0;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.social-links {
+  margin-bottom: 12px;
+}
+
+.social-links a {
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #999999;
+  margin: 0;
+}
+
+/* =========================================
+   RWD：平板 / 桌機以上加大版面
+   ========================================= */
+@media (min-width: 600px) {
+  .brand {
+    font-size: 1.7rem;
+  }
+
+  .hero-text {
+    font-size: 1.15rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+}
