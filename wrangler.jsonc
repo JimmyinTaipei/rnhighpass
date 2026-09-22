@@ -1,8 +1,17 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rnhighpass",
+  "main": "worker/index.js",
   "compatibility_date": "2026-09-13",
+  // 靜態資產優先命中；/api/* 沒有對應檔案，才會落到 Worker。
   "assets": {
-    "directory": "./"
-  }
+    "directory": "./",
+    "binding": "ASSETS"
+  },
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "rnhighpass-files"
+    }
+  ]
 }

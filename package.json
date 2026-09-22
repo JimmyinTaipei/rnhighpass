@@ -1,0 +1,19 @@
+{
+  "name": "rnhighpass",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "多保命 RN High Pass — 護理國考複習資源網站",
+  "scripts": {
+    "manifest": "node scripts/build-manifest.mjs",
+    "covers": "bash scripts/make-covers.sh",
+    "upload": "bash scripts/upload-r2.sh",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "serve": "node scripts/dev-server.mjs",
+    "test": "node scripts/test-worker.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.136.1"
+  }
+}

@@ -2,3 +2,5 @@
 node_modules/
 nursing_tool/
 .wrangler/
+dist-r2/
+.r2-uploaded.log

@@ -1,0 +1,13 @@
+# 這些不該被當成網站靜態資產上傳。
+# assets.directory 是專案根目錄，所以開發用的檔案要在這裡排除掉。
+node_modules
+dist-r2
+scripts
+worker
+.wrangler
+package.json
+package-lock.json
+wrangler.jsonc
+README.md
+.gitignore
+.assetsignore

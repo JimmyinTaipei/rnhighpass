@@ -1,46 +1,201 @@
 # 多保命 RN High Pass
 
-護理國考分章題本分享網站，免費提供給學弟妹使用。純靜態網站，未來部署到
-Cloudflare Pages 並綁定自訂網域 `rnhighpass.com`。
+護理國考複習資源網站，免費提供給學弟妹使用。純靜態前端 + Cloudflare Worker，
+網域 `rnhighpass.com`。
 
 ## 技術棧
 
-- 純 HTML / CSS / JavaScript，不使用任何框架，不需要 build 工具
-- 可直接部署到 Cloudflare Pages（或任何靜態網站託管服務）
+- 前端：純 HTML / CSS / JavaScript，不使用框架、不需要 build 工具
+- 部署：Cloudflare **Worker + Static Assets**（不是 Pages），設定檔 `wrangler.jsonc`
+- 檔案儲存：Cloudflare **R2**（private bucket，不對外公開）
+
+網站與 API 同源，所以 **不需要設定 CORS，R2 也不用開 public access**。
+
+Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU，
+**Workers 免費方案就夠用**。
+
+## 網站上放什麼
+
+| 類型 | 去向 |
+|---|---|
+| 各科合訂本（22 本，每科詳解／題本各一） | 網站，點擊直接下載 |
+| 考古題 `PAST_EXAM_MIN_TERM` 之後的學期（目前 5 期 25 份） | 網站，點擊直接下載 |
+| 拆開的分章詳解／題本（324 檔） | Google Drive |
+| 更早年份的考古題 | Google Drive |
+
+R2 上傳量因此只有 **47 個檔案 / 171 MB**。Google Drive 的連結設定在
+`assets/data/links.json`，不進 R2、也不需要維護。
 
 ## 目錄結構
 
 ```
 .
-├── index.html          首頁
+├── index.html                首頁（合訂本封面牆 + Drive 導引 + 社群）
+├── downloads/
+│   └── past-exams.html       考古題
+├── worker/index.js           /api/file 單檔下載
+├── scripts/
+│   ├── subjects.mjs          科目主檔與 ASCII 對照表
+│   ├── build-manifest.mjs    來源資料夾 → 正規化 + 產生 manifest
+│   ├── make-covers.sh        抽合訂本第一頁當封面圖
+│   └── upload-r2.sh          批次上傳到 R2（可中斷續傳）
 ├── assets/
-│   ├── css/
-│   │   └── style.css   全站樣式
-│   └── js/
-│       └── main.js     互動功能（目前為空，之後陸續加入）
-└── tools/               各種小工具頁面（例如點滴速率計算機），未來新增
+│   ├── data/manifest.json    檔案清單（產生物，要 commit）
+│   ├── data/links.json       Drive / 社群連結（手動編輯）
+│   ├── css/downloads.css     下載頁樣式
+│   ├── js/past-exams.js      考古題頁邏輯
+│   ├── js/site-links.js      把 links.json 填進頁面
+│   └── images/covers/        11 張科目封面
+└── tools/nursing/            臨床小工具
 ```
 
-新增工具時，直接在 `tools/` 底下建立新的 `.html` 頁面（例如
-`tools/iv-drip-calculator.html`），並在首頁「工具」區塊加上連結卡片即可。
+## 檔案命名規則
 
-## 本機預覽
+**使用者下載到的檔名**（manifest 的 `name`）：
 
-在專案資料夾下執行：
+| 類型 | 格式 | 範例 |
+|---|---|---|
+| 合訂本 | `{序號}_{科目}_{類型}_合訂本.pdf` | `02_病理_詳解_合訂本.pdf` |
+| 考古題 | `{學期}_{考卷}.pdf` | `115-1_基礎醫學.pdf`、`106-2補考_基礎醫學.pdf` |
+
+科目序號一律兩碼，避免破十之後排序錯亂。
+
+**R2 上實際的 key**（manifest 的 `key`）一律是 ASCII：
 
 ```
-python3 -m http.server 8000
+bundles/02_explanation.pdf     → 02_病理_詳解_合訂本.pdf
+bundles/02_workbook.pdf        → 02_病理_題本_合訂本.pdf
+past-exams/115-1_basic.pdf     → 115-1_基礎醫學.pdf
 ```
 
-然後用瀏覽器打開 `http://localhost:8000`。
+> **為什麼 key 不用中文**：`wrangler r2 object put` 會把非 ASCII 的 key
+> 百分比編碼後才存進 R2（v3、v4 實測皆然），但 R2 網頁後台拖拉上傳存的是原始 UTF-8。
+> 兩種編碼混用會讓檔案「明明在 bucket 裡卻抓不到」，而且不會有任何錯誤訊息。
+> 改用 ASCII key 之後，不管用哪個工具上傳結果都一致。
+> 使用者下載到的仍然是上表的中文檔名 —— Worker 會從 manifest 查出 `name`，
+> 再用 `Content-Disposition: filename*=UTF-8''…` 送出。
 
-也可以直接用瀏覽器打開 `index.html`，或使用 VS Code 的 Live Server 擴充功能。
+### 更新檔案要用版本化檔名
+
+**不要用同檔名覆蓋上傳**，否則 Cloudflare CDN 會繼續送舊版本（key 設了一年的
+`immutable` 快取）。請在來源檔名加上 `_v2`、`_v3`：
+
+```
+02_病理_詳解_Ch03_代謝、體液與循環障礙_v2.pdf
+```
+
+`build-manifest.mjs` 會把版本後綴帶進 R2 key（`bundles/02_explanation_v2.pdf`），
+但 `name` 仍然是沒有 `_v2` 的乾淨檔名，所以使用者下載到的檔名不會變。
+
+## 更新流程
+
+來源資料夾預設是 `~/Downloads/0_護理國考分章/07_pdf`。
+
+```sh
+nvm use 22                 # wrangler 需要 Node 22 以上
+npm install
+
+npm run manifest -- --src "/Users/jimmy/Downloads/0_護理國考分章/07_pdf"
+npm run covers             # 封面圖有換才需要重跑
+npm run upload             # 上傳到 R2（可中斷續傳）
+npm run deploy             # 部署網站與 Worker
+git add assets/data/manifest.json && git commit -m "更新檔案清單"
+```
+
+`build-manifest.mjs` 會做三項檢查，任何一項沒過就中止，不會產出半套清單：
+
+1. 每科都要有詳解與題本兩本合訂本
+2. 每個學期的考古題份數必須一致
+3. key 不得重複
+
+（原本還有「題本↔詳解配對」「章節連號」兩項，是為拆開的分章檔設計的；
+分章檔改放 Google Drive 之後就不再需要。）
+
+### 調整考古題範圍
+
+網站上要放到哪一期，改 `scripts/subjects.mjs` 的這一行就好：
+
+```js
+export const PAST_EXAM_MIN_TERM = "114-1";
+```
+
+用「最低學期」而不是寫死清單，之後出現 115-3、116-1 會自動納入。
+
+### 檔名之後又改了怎麼辦
+
+腳本不寫死任何檔名，而是依序套用 `scripts/build-manifest.mjs` 裡的
+`CHAPTER_PATTERNS` / `BUNDLE_PATTERNS` / `PAST_EXAM_PATTERNS`。
+目前同時吃得下合訂本與考古題的新舊兩種命名。
+
+出現新格式時，只要在對應陣列加一條 pattern 就好，**前端與 Worker 都不用改**。
+解析不出來的檔案會被列出來並中止，不會默默漏掉。
+
+改名做到一半、新舊檔並存時，腳本會自動採用比較接近目標格式的那一份，
+並把被略過的舊檔列成警告 —— 舊檔刪掉後警告就會消失。
+
+## 外部連結設定（`assets/data/links.json`）
+
+Google Drive 與社群連結都集中在這個檔案，**手動編輯**，不會被 `npm run manifest` 蓋掉：
+
+```json
+{
+  "drive": { "explanations": "…", "workbooks": "…", "pastExams": "…" },
+  "social": { "threads": "", "instagram": "" }
+}
+```
+
+`assets/js/site-links.js` 會把它填進標了 `data-link="drive.explanations"` 的元素。
+**空字串的連結會自動隱藏**，整個區塊的連結都沒填就把區塊收掉 ——
+所以社群網址補上之前不會出現死連結，補上去也不用改程式。
+
+## R2 設定
+
+```sh
+npx wrangler r2 bucket create rnhighpass-files
+```
+
+**維持 private**：不要開 public access、也不需要設 CORS。所有存取都經由
+Worker 的 `BUCKET` binding，而 Worker 只放行 manifest 裡真的有的 key。
+
+### 大量上傳
+
+`npm run upload` 是用 `wrangler r2 object put` 逐檔上傳，47 個檔案大約一兩分鐘。
+想快一點可以改用 rclone（R2 相容 S3 API）：到 Cloudflare 後台建一組 R2 API Token，
+設定 rclone remote 之後：
+
+```sh
+rclone copy dist-r2/ r2:rnhighpass-files/ --transfers 16 --progress
+```
+
+因為 key 都是 ASCII，rclone 與 wrangler 上傳的結果完全一致，兩種混著用也沒問題。
+
+## 本機開發
+
+```sh
+npm run serve      # http://127.0.0.1:8788
+npm test           # Worker 的單元測試（20 項）
+```
+
+`npm run serve` 用 Node 直接驅動 `worker/index.js`，並把 `dist-r2/` 當成 R2 來讀，
+所以 **執行前要先跑過 `npm run manifest`**。它不需要 Node 22、也不會有
+`wrangler dev` 在根目錄當 assets 時反覆重載的問題，開發時建議用這個。
+
+要跑真正的 workerd 環境時：
+
+```sh
+nvm use 22
+npx wrangler dev
+```
+
+`.assetsignore` 會把 `node_modules`、`dist-r2`、`scripts`、`worker` 等
+排除在靜態資產之外 —— 少了它，`wrangler deploy` 會因為 `node_modules` 裡
+有超過 25 MB 的檔案而失敗。
 
 ## 部署
 
-部署到 Cloudflare Workers（Static Assets），設定檔為 `wrangler.jsonc`：
+```sh
+nvm use 22
+npx wrangler deploy
+```
 
-1. 登入 Cloudflare 帳號：`npx wrangler login`
-2. 執行 `npx wrangler deploy` 即可將整個網站部署上線
-3. 在 Cloudflare dashboard 的 Workers 專案設定中新增 Custom Domain，
-   綁定 `rnhighpass.com`
+Custom Domain `rnhighpass.com` 已在 Cloudflare dashboard 的 Workers 專案設定中綁定。

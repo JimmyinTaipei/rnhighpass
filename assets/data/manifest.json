@@ -1,0 +1,469 @@
+{
+  "generatedAt": "2026-09-22T10:30:00.582Z",
+  "subjects": [
+    {
+      "no": "01",
+      "name": "生解",
+      "fullName": "解剖生理學",
+      "emoji": "🫀",
+      "cover": "assets/images/covers/01_生解.jpg"
+    },
+    {
+      "no": "02",
+      "name": "病理",
+      "fullName": "病理學",
+      "emoji": "🔬",
+      "cover": "assets/images/covers/02_病理.jpg"
+    },
+    {
+      "no": "03",
+      "name": "藥理",
+      "fullName": "藥理學",
+      "emoji": "💊",
+      "cover": "assets/images/covers/03_藥理.jpg"
+    },
+    {
+      "no": "04",
+      "name": "微免",
+      "fullName": "微生物免疫學",
+      "emoji": "🦠",
+      "cover": "assets/images/covers/04_微免.jpg"
+    },
+    {
+      "no": "05",
+      "name": "基護",
+      "fullName": "基本護理學",
+      "emoji": "🩺",
+      "cover": "assets/images/covers/05_基護.jpg"
+    },
+    {
+      "no": "06",
+      "name": "行政",
+      "fullName": "護理行政",
+      "emoji": "📋",
+      "cover": "assets/images/covers/06_行政.jpg"
+    },
+    {
+      "no": "07",
+      "name": "內外",
+      "fullName": "內外科護理學",
+      "emoji": "🏥",
+      "cover": "assets/images/covers/07_內外.jpg"
+    },
+    {
+      "no": "08",
+      "name": "產科",
+      "fullName": "產科護理學",
+      "emoji": "🤰",
+      "cover": "assets/images/covers/08_產科.jpg"
+    },
+    {
+      "no": "09",
+      "name": "兒科",
+      "fullName": "兒科護理學",
+      "emoji": "🧸",
+      "cover": "assets/images/covers/09_兒科.jpg"
+    },
+    {
+      "no": "10",
+      "name": "精神",
+      "fullName": "精神科護理學",
+      "emoji": "🧠",
+      "cover": "assets/images/covers/10_精神.jpg"
+    },
+    {
+      "no": "11",
+      "name": "社區",
+      "fullName": "社區衛生護理學",
+      "emoji": "🏘️",
+      "cover": "assets/images/covers/11_社區.jpg"
+    }
+  ],
+  "prefixes": {
+    "explanations": "explanations",
+    "workbooks": "workbooks",
+    "bundles": "bundles",
+    "pastExams": "past-exams"
+  },
+  "pastExamMinTerm": "114-1",
+  "bundles": [
+    {
+      "key": "bundles/01_explanation.pdf",
+      "name": "01_生解_詳解_合訂本.pdf",
+      "subjectNo": "01",
+      "subject": "生解",
+      "type": "詳解",
+      "size": 6485912
+    },
+    {
+      "key": "bundles/01_workbook.pdf",
+      "name": "01_生解_題本_合訂本.pdf",
+      "subjectNo": "01",
+      "subject": "生解",
+      "type": "題本",
+      "size": 2839815
+    },
+    {
+      "key": "bundles/02_explanation.pdf",
+      "name": "02_病理_詳解_合訂本.pdf",
+      "subjectNo": "02",
+      "subject": "病理",
+      "type": "詳解",
+      "size": 5134138
+    },
+    {
+      "key": "bundles/02_workbook.pdf",
+      "name": "02_病理_題本_合訂本.pdf",
+      "subjectNo": "02",
+      "subject": "病理",
+      "type": "題本",
+      "size": 2549147
+    },
+    {
+      "key": "bundles/03_explanation.pdf",
+      "name": "03_藥理_詳解_合訂本.pdf",
+      "subjectNo": "03",
+      "subject": "藥理",
+      "type": "詳解",
+      "size": 6475574
+    },
+    {
+      "key": "bundles/03_workbook.pdf",
+      "name": "03_藥理_題本_合訂本.pdf",
+      "subjectNo": "03",
+      "subject": "藥理",
+      "type": "題本",
+      "size": 2610542
+    },
+    {
+      "key": "bundles/04_explanation.pdf",
+      "name": "04_微免_詳解_合訂本.pdf",
+      "subjectNo": "04",
+      "subject": "微免",
+      "type": "詳解",
+      "size": 4623218
+    },
+    {
+      "key": "bundles/04_workbook.pdf",
+      "name": "04_微免_題本_合訂本.pdf",
+      "subjectNo": "04",
+      "subject": "微免",
+      "type": "題本",
+      "size": 1801037
+    },
+    {
+      "key": "bundles/05_explanation.pdf",
+      "name": "05_基護_詳解_合訂本.pdf",
+      "subjectNo": "05",
+      "subject": "基護",
+      "type": "詳解",
+      "size": 8044534
+    },
+    {
+      "key": "bundles/05_workbook.pdf",
+      "name": "05_基護_題本_合訂本.pdf",
+      "subjectNo": "05",
+      "subject": "基護",
+      "type": "題本",
+      "size": 3336017
+    },
+    {
+      "key": "bundles/06_explanation.pdf",
+      "name": "06_行政_詳解_合訂本.pdf",
+      "subjectNo": "06",
+      "subject": "行政",
+      "type": "詳解",
+      "size": 3925182
+    },
+    {
+      "key": "bundles/06_workbook.pdf",
+      "name": "06_行政_題本_合訂本.pdf",
+      "subjectNo": "06",
+      "subject": "行政",
+      "type": "題本",
+      "size": 2206949
+    },
+    {
+      "key": "bundles/07_explanation.pdf",
+      "name": "07_內外_詳解_合訂本.pdf",
+      "subjectNo": "07",
+      "subject": "內外",
+      "type": "詳解",
+      "size": 10670261
+    },
+    {
+      "key": "bundles/07_workbook.pdf",
+      "name": "07_內外_題本_合訂本.pdf",
+      "subjectNo": "07",
+      "subject": "內外",
+      "type": "題本",
+      "size": 3807559
+    },
+    {
+      "key": "bundles/08_explanation.pdf",
+      "name": "08_產科_詳解_合訂本.pdf",
+      "subjectNo": "08",
+      "subject": "產科",
+      "type": "詳解",
+      "size": 6096086
+    },
+    {
+      "key": "bundles/08_workbook.pdf",
+      "name": "08_產科_題本_合訂本.pdf",
+      "subjectNo": "08",
+      "subject": "產科",
+      "type": "題本",
+      "size": 2658104
+    },
+    {
+      "key": "bundles/09_explanation.pdf",
+      "name": "09_兒科_詳解_合訂本.pdf",
+      "subjectNo": "09",
+      "subject": "兒科",
+      "type": "詳解",
+      "size": 5848189
+    },
+    {
+      "key": "bundles/09_workbook.pdf",
+      "name": "09_兒科_題本_合訂本.pdf",
+      "subjectNo": "09",
+      "subject": "兒科",
+      "type": "題本",
+      "size": 2496249
+    },
+    {
+      "key": "bundles/10_explanation.pdf",
+      "name": "10_精神_詳解_合訂本.pdf",
+      "subjectNo": "10",
+      "subject": "精神",
+      "type": "詳解",
+      "size": 5165920
+    },
+    {
+      "key": "bundles/10_workbook.pdf",
+      "name": "10_精神_題本_合訂本.pdf",
+      "subjectNo": "10",
+      "subject": "精神",
+      "type": "題本",
+      "size": 2590550
+    },
+    {
+      "key": "bundles/11_explanation.pdf",
+      "name": "11_社區_詳解_合訂本.pdf",
+      "subjectNo": "11",
+      "subject": "社區",
+      "type": "詳解",
+      "size": 6371296
+    },
+    {
+      "key": "bundles/11_workbook.pdf",
+      "name": "11_社區_題本_合訂本.pdf",
+      "subjectNo": "11",
+      "subject": "社區",
+      "type": "題本",
+      "size": 2939585
+    }
+  ],
+  "pastExams": [
+    {
+      "key": "past-exams/115-2_medsurg.pdf",
+      "name": "115-2_內外科護理學.pdf",
+      "term": "115-2",
+      "termSort": 115020,
+      "paper": "內外科護理學",
+      "size": 3107200
+    },
+    {
+      "key": "past-exams/115-2_fundamentals.pdf",
+      "name": "115-2_基本護理與護理行政.pdf",
+      "term": "115-2",
+      "termSort": 115020,
+      "paper": "基本護理與護理行政",
+      "size": 4205448
+    },
+    {
+      "key": "past-exams/115-2_basic.pdf",
+      "name": "115-2_基礎醫學.pdf",
+      "term": "115-2",
+      "termSort": 115020,
+      "paper": "基礎醫學",
+      "size": 2871603
+    },
+    {
+      "key": "past-exams/115-2_obgyn-peds.pdf",
+      "name": "115-2_產科與兒科護理學.pdf",
+      "term": "115-2",
+      "termSort": 115020,
+      "paper": "產科與兒科護理學",
+      "size": 3046298
+    },
+    {
+      "key": "past-exams/115-2_psych-community.pdf",
+      "name": "115-2_精神科與社區衛生護理.pdf",
+      "term": "115-2",
+      "termSort": 115020,
+      "paper": "精神科與社區衛生護理",
+      "size": 2937674
+    },
+    {
+      "key": "past-exams/115-1_medsurg.pdf",
+      "name": "115-1_內外科護理學.pdf",
+      "term": "115-1",
+      "termSort": 115010,
+      "paper": "內外科護理學",
+      "size": 3090732
+    },
+    {
+      "key": "past-exams/115-1_fundamentals.pdf",
+      "name": "115-1_基本護理與護理行政.pdf",
+      "term": "115-1",
+      "termSort": 115010,
+      "paper": "基本護理與護理行政",
+      "size": 4071073
+    },
+    {
+      "key": "past-exams/115-1_basic.pdf",
+      "name": "115-1_基礎醫學.pdf",
+      "term": "115-1",
+      "termSort": 115010,
+      "paper": "基礎醫學",
+      "size": 2839766
+    },
+    {
+      "key": "past-exams/115-1_obgyn-peds.pdf",
+      "name": "115-1_產科與兒科護理學.pdf",
+      "term": "115-1",
+      "termSort": 115010,
+      "paper": "產科與兒科護理學",
+      "size": 3077729
+    },
+    {
+      "key": "past-exams/115-1_psych-community.pdf",
+      "name": "115-1_精神科與社區衛生護理.pdf",
+      "term": "115-1",
+      "termSort": 115010,
+      "paper": "精神科與社區衛生護理",
+      "size": 2869395
+    },
+    {
+      "key": "past-exams/114-3_medsurg.pdf",
+      "name": "114-3_內外科護理學.pdf",
+      "term": "114-3",
+      "termSort": 114030,
+      "paper": "內外科護理學",
+      "size": 3036233
+    },
+    {
+      "key": "past-exams/114-3_fundamentals.pdf",
+      "name": "114-3_基本護理與護理行政.pdf",
+      "term": "114-3",
+      "termSort": 114030,
+      "paper": "基本護理與護理行政",
+      "size": 4216454
+    },
+    {
+      "key": "past-exams/114-3_basic.pdf",
+      "name": "114-3_基礎醫學.pdf",
+      "term": "114-3",
+      "termSort": 114030,
+      "paper": "基礎醫學",
+      "size": 2851746
+    },
+    {
+      "key": "past-exams/114-3_obgyn-peds.pdf",
+      "name": "114-3_產科與兒科護理學.pdf",
+      "term": "114-3",
+      "termSort": 114030,
+      "paper": "產科與兒科護理學",
+      "size": 3023582
+    },
+    {
+      "key": "past-exams/114-3_psych-community.pdf",
+      "name": "114-3_精神科與社區衛生護理.pdf",
+      "term": "114-3",
+      "termSort": 114030,
+      "paper": "精神科與社區衛生護理",
+      "size": 2890426
+    },
+    {
+      "key": "past-exams/114-2_medsurg.pdf",
+      "name": "114-2_內外科護理學.pdf",
+      "term": "114-2",
+      "termSort": 114020,
+      "paper": "內外科護理學",
+      "size": 3101339
+    },
+    {
+      "key": "past-exams/114-2_fundamentals.pdf",
+      "name": "114-2_基本護理與護理行政.pdf",
+      "term": "114-2",
+      "termSort": 114020,
+      "paper": "基本護理與護理行政",
+      "size": 4180935
+    },
+    {
+      "key": "past-exams/114-2_basic.pdf",
+      "name": "114-2_基礎醫學.pdf",
+      "term": "114-2",
+      "termSort": 114020,
+      "paper": "基礎醫學",
+      "size": 2892732
+    },
+    {
+      "key": "past-exams/114-2_obgyn-peds.pdf",
+      "name": "114-2_產科與兒科護理學.pdf",
+      "term": "114-2",
+      "termSort": 114020,
+      "paper": "產科與兒科護理學",
+      "size": 2987320
+    },
+    {
+      "key": "past-exams/114-2_psych-community.pdf",
+      "name": "114-2_精神科與社區衛生護理.pdf",
+      "term": "114-2",
+      "termSort": 114020,
+      "paper": "精神科與社區衛生護理",
+      "size": 2916445
+    },
+    {
+      "key": "past-exams/114-1_medsurg.pdf",
+      "name": "114-1_內外科護理學.pdf",
+      "term": "114-1",
+      "termSort": 114010,
+      "paper": "內外科護理學",
+      "size": 3035598
+    },
+    {
+      "key": "past-exams/114-1_fundamentals.pdf",
+      "name": "114-1_基本護理與護理行政.pdf",
+      "term": "114-1",
+      "termSort": 114010,
+      "paper": "基本護理與護理行政",
+      "size": 4204174
+    },
+    {
+      "key": "past-exams/114-1_basic.pdf",
+      "name": "114-1_基礎醫學.pdf",
+      "term": "114-1",
+      "termSort": 114010,
+      "paper": "基礎醫學",
+      "size": 2892649
+    },
+    {
+      "key": "past-exams/114-1_obgyn-peds.pdf",
+      "name": "114-1_產科與兒科護理學.pdf",
+      "term": "114-1",
+      "termSort": 114010,
+      "paper": "產科與兒科護理學",
+      "size": 3054168
+    },
+    {
+      "key": "past-exams/114-1_psych-community.pdf",
+      "name": "114-1_精神科與社區衛生護理.pdf",
+      "term": "114-1",
+      "termSort": 114010,
+      "paper": "精神科與社區衛生護理",
+      "size": 2879434
+    }
+  ]
+}

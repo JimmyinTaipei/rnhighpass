@@ -71,6 +71,12 @@ a {
   gap: 10px;
 }
 
+/* 子頁的品牌區塊是回首頁的連結，不要套預設的連結色與底線 */
+a.brand-group {
+  text-decoration: none;
+  color: inherit;
+}
+
 .brand-logo {
   height: 40px;
   width: auto;
@@ -178,15 +184,6 @@ a {
   text-align: center;
   color: var(--color-text-light);
   font-size: 0.9rem;
-}
-
-.social-links {
-  margin-bottom: 12px;
-}
-
-.social-links a {
-  margin: 0 8px;
-  text-decoration: none;
 }
 
 .copyright {

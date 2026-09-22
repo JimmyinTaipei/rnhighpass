@@ -1,0 +1,12 @@
+{
+  "_comment": "手動編輯的外部連結設定。空字串的連結會自動隱藏，不會出現死連結。manifest.json 是產生物，這個檔不是，重跑 npm run manifest 不會蓋掉它。",
+  "drive": {
+    "explanations": "https://drive.google.com/drive/folders/1ymPVsZ73S041YzRph06-3mbKDkafMaxs?usp=sharing",
+    "workbooks": "https://drive.google.com/drive/folders/1522HIIxNg4vGEXMBRCvnJqUcSTz1cqJd?usp=sharing",
+    "pastExams": "https://drive.google.com/drive/folders/1LKAcqC_62HC8HfbaaIB0LTjfM4UVOwug?usp=sharing"
+  },
+  "social": {
+    "threads": "",
+    "instagram": ""
+  }
+}
