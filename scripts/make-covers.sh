@@ -13,9 +13,9 @@ BUNDLES="$DIST/合訂本"
 OUT="$ROOT/assets/images/covers"
 
 for cmd in pdftoppm sips; do
-  command -v "$cmd" >/dev/null || { echo "✗ 找不到 $cmd（pdftoppm 請用 brew install poppler）" >&2; exit 1; }
+  command -v "$cmd" >/dev/null || { echo "✗ 找不到 ${cmd}（pdftoppm 請用 brew install poppler）" >&2; exit 1; }
 done
-[ -d "$BUNDLES" ] || { echo "✗ 找不到 $BUNDLES，請先執行 npm run manifest" >&2; exit 1; }
+[ -d "$BUNDLES" ] || { echo "✗ 找不到 ${BUNDLES}，請先執行 npm run manifest" >&2; exit 1; }
 
 mkdir -p "$OUT"
 tmp="$(mktemp -d)"

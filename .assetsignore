@@ -1,5 +1,10 @@
 # 這些不該被當成網站靜態資產上傳。
 # assets.directory 是專案根目錄，所以開發用的檔案要在這裡排除掉。
+#
+# .git 尤其重要：Worker 對非 /api/* 的路徑一律轉給靜態資產，
+# 漏掉 .git 會讓整個版本庫（含歷史紀錄）透過 https://網域/.git/... 被公開存取。
+.git
+.gitignore
 node_modules
 dist-r2
 scripts
@@ -9,5 +14,5 @@ package.json
 package-lock.json
 wrangler.jsonc
 README.md
-.gitignore
 .assetsignore
+.r2-uploaded.log

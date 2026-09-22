@@ -24,7 +24,7 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-[ -d "$DIST" ] || { echo "✗ 找不到 $DIST，請先執行 npm run manifest" >&2; exit 1; }
+[ -d "$DIST" ] || { echo "✗ 找不到 ${DIST}，請先執行 npm run manifest" >&2; exit 1; }
 
 # wrangler 需要 Node 22 以上；這台機器的預設可能是舊版，這裡主動提示。
 NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]')"
@@ -40,7 +40,7 @@ touch "$LOG"
 total=$(find "$DIST" -name "*.pdf" | wc -l | tr -d ' ')
 done_n=0; skip_n=0; fail_n=0; i=0
 
-echo "準備上傳 $total 個檔案到 bucket「$BUCKET」"
+echo "準備上傳 ${total} 個檔案到 bucket「${BUCKET}」"
 echo ""
 
 while IFS= read -r file; do
@@ -65,6 +65,6 @@ while IFS= read -r file; do
 done < <(find "$DIST" -name "*.pdf" | sort)
 
 echo ""
-echo "上傳完成：新增 $done_n．略過 $skip_n．失敗 $fail_n"
+echo "上傳完成：新增 ${done_n}．略過 ${skip_n}．失敗 ${fail_n}"
 [ "$fail_n" -gt 0 ] && { echo "有檔案失敗，重跑這支腳本會只補失敗的部分。" >&2; exit 1; }
 echo "紀錄檔：$(basename "$LOG")（刪掉它或加 --force 可重新全部上傳）"
