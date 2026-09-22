@@ -22,6 +22,10 @@
 
 .bundle-cover {
   width: 100%;
+  /* height 一定要明確寫 auto：<img> 標籤上還留著 width/height 屬性當作
+     載入前的版面佔位提示，兩個維度都有明確數值時 aspect-ratio 不會生效，
+     瀏覽器會直接套用 height 屬性的像素值，把圖片壓扁。 */
+  height: auto;
   /* 對齊合訂本 PDF 實際頁面比例（498.898 × 708.661 pt），封面完整顯示不裁切 */
   aspect-ratio: 498.898 / 708.661;
   object-fit: cover;
@@ -51,16 +55,20 @@
   font-size: 0.78rem;
 }
 
-.bundle-size {
-  color: var(--color-text-light);
-  font-size: 0.78rem;
-  margin: 0;
-}
-
 .bundle-links {
+  /* 上下堆疊而非並排：按鈕文字含檔案大小後最長到 99px，
+     並排在窄欄位一定會被 .bundle-card 的 overflow:hidden 裁掉，
+     堆疊不管欄寬多少都不會超出。 */
   display: flex;
+  flex-direction: column;
   gap: 6px;
   margin-top: auto;
+}
+
+/* .btn-sm 的 flex:1 是給並排（考古題清單）用的水平撐開；
+   這裡改直向排列，蓋掉它避免兩顆按鈕被拉伸成不必要的高度。 */
+.bundle-links .btn-sm {
+  flex: none;
 }
 
 /* 小顆的次要按鈕，用在卡片與清單列裡 */
