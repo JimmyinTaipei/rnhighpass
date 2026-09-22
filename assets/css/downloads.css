@@ -22,7 +22,8 @@
 
 .bundle-cover {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  /* 對齊合訂本 PDF 實際頁面比例（498.898 × 708.661 pt），封面完整顯示不裁切 */
+  aspect-ratio: 498.898 / 708.661;
   object-fit: cover;
   display: block;
   background: var(--color-section-bg);
@@ -48,6 +49,12 @@
   font-weight: normal;
   color: var(--color-text-light);
   font-size: 0.78rem;
+}
+
+.bundle-size {
+  color: var(--color-text-light);
+  font-size: 0.78rem;
+  margin: 0;
 }
 
 .bundle-links {

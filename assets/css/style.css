@@ -208,3 +208,10 @@ a.brand-group {
     font-size: 1.4rem;
   }
 }
+
+/* 桌機螢幕再進一步加寬內容區，手機/平板版面不受影響 */
+@media (min-width: 900px) {
+  :root {
+    --max-width: 1080px;
+  }
+}
