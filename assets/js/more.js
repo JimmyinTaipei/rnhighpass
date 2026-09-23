@@ -127,10 +127,7 @@
     var chip = el("span", "side-chip");
     chip.appendChild(RN.subjectIcon(s.name));
     btn.appendChild(chip);
-    var label = el("span", "side-label");
-    label.appendChild(el("span", "side-name", s.name));
-    label.appendChild(el("small", null, s.no + "　" + s.fullName));
-    btn.appendChild(label);
+    btn.appendChild(el("span", "side-name", s.fullName));
     btn.addEventListener("click", function () {
       if (state.subject === s.no) {
         // 再點一次已選的科目：只收合/展開封面，右側章節不變
@@ -234,10 +231,9 @@
       card.title = c.name;
       card.setAttribute("aria-label", "下載 " + c.name + "（" + RN.formatSize(c.size) + "）");
 
-      var text = el("span", "ch-text");
-      text.appendChild(el("span", "ch-no", "Ch" + c.ch));
-      text.appendChild(el("span", "ch-title", c.chapterTitle));
-      card.appendChild(text);
+      card.appendChild(el("span", "ch-no", c.ch));
+      card.appendChild(el("span", "ch-bar"));
+      card.appendChild(el("span", "ch-title", c.chapterTitle));
 
       var meta = el("span", "ch-meta");
       meta.appendChild(el("span", null, RN.formatSize(c.size)));

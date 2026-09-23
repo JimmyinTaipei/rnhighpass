@@ -49,34 +49,40 @@
     return grid;
   }
 
-  function renderLatestTerm(manifest, panel) {
-    var exams = manifest.pastExams;
-    var latest = exams.reduce(function (best, e) {
-      return !best || e.termSort > best.termSort ? e : best;
-    }, null);
-    if (!latest) return;
+  /** 首頁顯示最近幾期的考古題；更早的在「更多考題」。 */
+  var LATEST_TERMS = 2;
 
-    panel.appendChild(
-      RN.el("p", "tab-note", "最新一期：" + latest.term + "。更早的學期請到「更多考題」。")
-    );
-    var grid = RN.el("div", "cover-grid cover-grid--5");
-    exams
-      .filter(function (e) {
-        return e.term === latest.term;
-      })
-      .forEach(function (e) {
-        grid.appendChild(
-          RN.coverCard({
-            key: e.key,
-            fileName: e.name,
-            size: e.size,
-            cover: e.cover,
-            title: e.paper,
-            sub: e.term,
-          })
-        );
-      });
-    panel.appendChild(grid);
+  function renderLatestTerms(manifest, panel) {
+    // manifest 的考古題已經由新到舊排好，依出現順序取前幾個學期
+    var terms = [];
+    manifest.pastExams.forEach(function (e) {
+      if (terms.indexOf(e.term) === -1) terms.push(e.term);
+    });
+    terms = terms.slice(0, LATEST_TERMS);
+    if (!terms.length) return;
+
+    panel.appendChild(RN.el("p", "tab-note", "最近兩期的考題，更早的學期請到「更多考題」。"));
+    terms.forEach(function (term) {
+      panel.appendChild(RN.el("h3", "term-head", term.replace("補考", " 補考")));
+      var grid = RN.el("div", "cover-grid cover-grid--5");
+      manifest.pastExams
+        .filter(function (e) {
+          return e.term === term;
+        })
+        .forEach(function (e) {
+          grid.appendChild(
+            RN.coverCard({
+              key: e.key,
+              fileName: e.name,
+              size: e.size,
+              cover: e.cover,
+              title: e.paper,
+              sub: e.term,
+            })
+          );
+        });
+      panel.appendChild(grid);
+    });
   }
 
   var initial = location.hash.slice(1);
@@ -92,7 +98,7 @@
         panels[id].appendChild(renderBundles(manifest, TYPE_BY_TAB[id]));
       });
       panels.past.textContent = "";
-      renderLatestTerm(manifest, panels.past);
+      renderLatestTerms(manifest, panels.past);
     })
     .catch(function (err) {
       Object.keys(panels).forEach(function (id) {
