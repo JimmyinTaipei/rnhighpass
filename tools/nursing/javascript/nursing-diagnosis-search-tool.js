@@ -400,7 +400,7 @@ function showAllDiagnosesModal(diagnoses) {
     title.textContent = 'All Medical Diagnoses';
     
     const closeBtn = document.createElement('button');
-    closeBtn.style.color = '#6b7280';
+    closeBtn.style.color = '#6B6A64';
     closeBtn.style.fontSize = '1.5rem';
     closeBtn.style.cursor = 'pointer';
     closeBtn.innerHTML = '&times;';
@@ -437,7 +437,7 @@ function showAllDiagnosesModal(diagnoses) {
             const item = document.createElement('div');
             item.className = 'search-result-item';
             item.textContent = d;
-            item.style.border = '1px solid #e5e7eb';
+            item.style.border = '1px solid #E3E6EC';
             item.style.borderRadius = '0.25rem';
             item.onclick = () => {
                 handleSelectDiagnosis(d);
@@ -451,7 +451,7 @@ function showAllDiagnosesModal(diagnoses) {
             noResults.style.gridColumn = '1 / -1';
             noResults.style.textAlign = 'center';
             noResults.style.padding = '1rem';
-            noResults.style.color = '#6b7280';
+            noResults.style.color = '#6B6A64';
             noResults.textContent = 'No matching diagnoses found';
             list.appendChild(noResults);
         }
@@ -572,7 +572,7 @@ function updateNursingLinksList() {
     const links = Object.entries(diagnosisLinks).sort((a, b) => a[0].localeCompare(b[0]));
     
     if (links.length === 0) {
-        container.innerHTML = '<p style="text-align: center; padding: 0.5rem; color: #6b7280;">No nursing diagnosis links defined</p>';
+        container.innerHTML = '<p style="text-align: center; padding: 0.5rem; color: #6B6A64;">No nursing diagnosis links defined</p>';
         return;
     }
     
@@ -623,7 +623,7 @@ function updateDiagnosisManagementList() {
         .sort();
     
     if (diagnoses.length === 0) {
-        container.innerHTML = '<p style="text-align: center; padding: 1rem; color: #6b7280;">No medical diagnoses found</p>';
+        container.innerHTML = '<p style="text-align: center; padding: 1rem; color: #6B6A64;">No medical diagnoses found</p>';
         return;
     }
     
@@ -712,7 +712,7 @@ function showEditDiagnosisModal(diagnosis) {
     title.textContent = `編輯診斷: ${diagnosis}`;
     
     const closeBtn = document.createElement('button');
-    closeBtn.style.color = '#6b7280';
+    closeBtn.style.color = '#6B6A64';
     closeBtn.style.fontSize = '1.5rem';
     closeBtn.style.cursor = 'pointer';
     closeBtn.innerHTML = '&times;';
@@ -936,7 +936,7 @@ function updateAliasesList() {
     const aliases = Object.entries(diagnosisAliases).sort((a, b) => a[0].localeCompare(b[0]));
     
     if (aliases.length === 0) {
-        container.innerHTML = '<p style="text-align: center; padding: 0.5rem; color: #6b7280;">沒有定義的診斷別名</p>';
+        container.innerHTML = '<p style="text-align: center; padding: 0.5rem; color: #6B6A64;">沒有定義的診斷別名</p>';
         return;
     }
     
@@ -951,7 +951,7 @@ function updateAliasesList() {
         
         const targetText = document.createElement('span');
         targetText.textContent = `→ ${target}`;
-        targetText.style.color = '#3b82f6';
+        targetText.style.color = '#2C5A96';
         targetText.style.fontSize = '0.875rem';
         targetText.style.marginLeft = '0.5rem';
         targetText.title = `Points to: ${target}`;

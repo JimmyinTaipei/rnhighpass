@@ -1,0 +1,46 @@
+/* =========================================
+   臨床工具共用色票
+   比照多保命測驗(rnhighpass-quiz globals.css)的莫蘭迪藍色階，
+   各工具 CSS 開頭 @import 這支，再用 var(--color-*) 取色。
+   ========================================= */
+:root {
+    /* 品牌藍 */
+    --color-light: #D7E1F2;
+    --color-light-soft: #EDF2FA;   /* light 與白色之間，給大面積淡藍底 */
+    --color-mid: #B6CCF0;
+    --color-accent: #6592CD;       /* 邊框、焦點 */
+    --color-deep: #2C5A96;         /* 主按鈕、導覽列、連結 */
+    --color-deep-dark: #1F4474;    /* 主按鈕 hover */
+
+    /* 中性色 */
+    --color-page: #F7F8FB;
+    --color-sidebar: #F1F3F8;
+    --color-card: #FFFFFF;
+    --color-card-border: #E3E6EC;
+    --color-border-strong: #D1D5DD;
+    --color-surface-hover: #ECEEF3;
+    --color-body: #444441;
+    --color-strong: #26262B;
+    --color-muted: #6B6A64;        /* 測驗站的 #888780 當文字對比不足，這裡推深一階 */
+
+    /* 狀態色 */
+    --color-correct: #639922;
+    --color-correct-dark: #4E7A1B;
+    --color-correct-bg: #EAF3DE;
+    --color-correct-mid: #C5DDA5;
+    --color-correct-text: #27500A;
+    --color-warning: #EF9F27;
+    --color-incorrect: #E24B4A;
+    --color-incorrect-dark: #B93A39;
+    --color-incorrect-bg: #FCEBEB;
+
+    /* 科目色票(裝飾 / 分類用，文字與白字底一律用 deep) */
+    --subj-green-deep: #3E7C57;
+    --subj-orange-light: #F9EBE3;
+    --subj-orange-soft: #FDF4EE;
+    --subj-orange-mid: #F8D2B5;
+    --subj-orange-deep: #AD5C28;
+    --subj-orange-dark: #8A4A20;
+    --subj-pink-deep: #B4485C;
+    --subj-purple-deep: #7A4E86;
+}

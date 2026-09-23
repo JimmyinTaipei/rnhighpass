@@ -1,13 +1,15 @@
+@import url("theme.css");
+
 body {
     font-family: 'Microsoft JhengHei', Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--color-page);
+    color: var(--color-body);
 }
 
 h1, h2, h3, h4 {
-    color: #2c3e50;
+    color: var(--color-strong);
 }
 
 .container {
@@ -48,7 +50,7 @@ h1, h2, h3, h4 {
 .patient-info {
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--color-card-border);
 }
 
 .checklist {
@@ -60,7 +62,7 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-sidebar);
     cursor: pointer; /* 讓整個項目可點擊 */
 }
 
@@ -78,7 +80,7 @@ h1, h2, h3, h4 {
 
 .checklist-item .time {
     font-size: 0.8em;
-    color: #718096;
+    color: var(--color-muted);
     min-width: 60px;
     text-align: right;
 }
@@ -87,7 +89,7 @@ h1, h2, h3, h4 {
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #4a5568;
+    color: var(--color-body);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,7 +102,7 @@ h1, h2, h3, h4 {
 }
 
 button {
-    background-color: #4299e1;
+    background-color: var(--color-deep);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -111,23 +113,23 @@ button {
 }
 
 button:hover {
-    background-color: #3182ce;
+    background-color: var(--color-deep);
 }
 
 .completed {
     text-decoration: line-through;
-    color: #a0aec0;
+    color: var(--color-muted);
 }
 
 .delete-btn {
-    background-color: #fc8181;
+    background-color: var(--color-incorrect);
     position: absolute;
     top: 15px;
     right: 15px;
 }
 
 .delete-btn:hover {
-    background-color: #e53e3e;
+    background-color: var(--color-incorrect);
 }
 
 .add-patient-form {
@@ -151,7 +153,7 @@ button:hover {
 .form-group input {
     width: 98%;
     padding: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-card-border);
     border-radius: 4px;
 }
 
@@ -161,7 +163,7 @@ button:hover {
 
 .progress-bar {
     height: 8px;
-    background-color: #edf2f7;
+    background-color: var(--color-card-border);
     border-radius: 4px;
     margin-top: 15px;
     overflow: hidden;
@@ -169,7 +171,7 @@ button:hover {
 
 .progress {
     height: 100%;
-    background-color: #48bb78;
+    background-color: var(--color-correct);
     transition: width 0.3s ease;
 }
 
@@ -178,7 +180,7 @@ button:hover {
     justify-content: space-between;
     margin-top: 5px;
     font-size: 0.9em;
-    color: #718096;
+    color: var(--color-muted);
 }
 
 .shift-selector {
@@ -186,13 +188,13 @@ button:hover {
 }
 
 .shift-btn {
-    background-color: #e2e8f0;
-    color: #4a5568;
+    background-color: var(--color-card-border);
+    color: var(--color-body);
     margin-right: 5px;
 }
 
 .shift-btn.active {
-    background-color: #4299e1;
+    background-color: var(--color-deep);
     color: white;
 }
 
@@ -205,7 +207,7 @@ button:hover {
 .task-input {
     flex-grow: 1;
     padding: 6px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-card-border);
     border-radius: 4px 0 0 4px;
 }
 
@@ -230,34 +232,34 @@ button:hover {
     display: flex;
     align-items: center;
     padding: 8px 10px;
-    background-color: #f8f9fa;
+    background-color: var(--color-page);
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
     position: relative;
-    border-left: 3px solid var(--primary-color, #3498db);
+    border-left: 3px solid var(--primary-color, #6592CD);
 }
 
 .checklist-category:hover {
-    background-color: #e9ecef;
+    background-color: var(--color-surface-hover);
 }
 
 .category-toggle-icon {
     font-size: 10px;
     margin-right: 8px;
-    color: #495057;
+    color: var(--color-body);
     transition: transform 0.2s;
 }
 
 .category-title {
     flex-grow: 1;
     font-weight: 600;
-    color: #495057;
+    color: var(--color-body);
 }
 
 .category-count {
     margin-right: 10px;
-    color: #6c757d;
+    color: var(--color-muted);
     font-size: 0.9em;
 }
 
@@ -282,7 +284,7 @@ button:hover {
 .checklist-category .add-task-btn {
     margin-left: 5px;
     background-color: transparent;
-    color: #6c757d;
+    color: var(--color-muted);
     padding: 2px 6px;
     font-size: 14px;
     line-height: 1;
@@ -296,12 +298,12 @@ button:hover {
 
 .checklist-category .add-task-btn:hover {
     background-color: rgba(0, 0, 0, 0.1);
-    color: #495057;
+    color: var(--color-body);
 }
 
 /* 更新進度條顏色，使其與班別主題一致 */
 .progress {
-    background-color: var(--progress-bar, #3498db);
+    background-color: var(--progress-bar, #2C5A96);
 }
 
 /* 班別特定模板相關樣式 */
@@ -326,20 +328,20 @@ button:hover {
 
 /* 設置shift按鈕顏色變數 */
 :root {
-    --primary-color-rgb: 52, 152, 219; /* 白班藍色的RGB值 */
+    --primary-color-rgb: 44, 90, 150; /* 白班藍色的RGB值 */
 }
 
 /* 根據班別更新RGB值 */
 .shift-d:root {
-    --primary-color-rgb: 52, 152, 219; /* 白班藍色 */
+    --primary-color-rgb: 44, 90, 150; /* 白班藍色 */
 }
 
 .shift-n:root {
-    --primary-color-rgb: 230, 126, 34; /* 小夜橙色 */
+    --primary-color-rgb: 173, 92, 40; /* 小夜橙色 */
 }
 
 .shift-e:root {
-    --primary-color-rgb: 52, 73, 94; /* 大夜深灰色 */
+    --primary-color-rgb: 68, 68, 65; /* 大夜深灰色 */
 }
 
 /* 模板按鈕排列改進 */
@@ -353,7 +355,7 @@ button:hover {
 .selected-templates {
     margin-top: 10px;
     font-size: 14px;
-    color: #718096;
+    color: var(--color-muted);
     padding: 5px 0;
 }
 
@@ -362,14 +364,14 @@ button:hover {
     font-size: 12px;
     padding: 2px 6px;
     margin-left: 5px;
-    background-color: #DBDBDB;
-    color: #555;
+    background-color: var(--color-border-strong);
+    color: var(--color-body);
     border-radius: 3px;
     transition: all 0.2s ease;
 }
 
 .delete-task-btn:hover {
-    background-color: #ff6b6b;
+    background-color: var(--color-incorrect);
     color: white;
 }
 
@@ -384,15 +386,15 @@ button:hover {
 }
 
 .shift-specific-tag.shift-d {
-    background-color: #3498db;
+    background-color: var(--color-deep);
 }
 
 .shift-specific-tag.shift-n {
-    background-color: #e67e22;
+    background-color: var(--subj-orange-deep);
 }
 
 .shift-specific-tag.shift-e {
-    background-color: #34495e;
+    background-color: var(--color-body);
 }
 
 

@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
         timeLabel.style.top = '53px';
         timeLabel.style.right = '0';
         timeLabel.style.transform = 'translateX(50%)';
-        timeLabel.style.backgroundColor = '#e74c3c';
+        timeLabel.style.backgroundColor = '#E24B4A';
         timeLabel.style.color = 'white';
         timeLabel.style.padding = '2px 6px';
         timeLabel.style.borderRadius = '4px';
@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', function() {
         line.style.top = '73px'; // Start below the time label
         line.style.bottom = '0';
         line.style.width = '2px';
-        line.style.backgroundColor = '#e74c3c';
+        line.style.backgroundColor = '#E24B4A';
         line.style.left = '0';
         
         // Add components to the indicator

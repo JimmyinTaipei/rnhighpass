@@ -530,7 +530,7 @@
                     deleteTaskBtn.style.fontSize = '12px';
                     deleteTaskBtn.style.padding = '3px 6px';
                     deleteTaskBtn.style.marginLeft = '5px';
-                    deleteTaskBtn.style.backgroundColor = '#D3D3D3';
+                    deleteTaskBtn.style.backgroundColor = '#D1D5DD';
                     deleteTaskBtn.onclick = function(e) {
                         e.stopPropagation();
                         deleteTask(patientId, shift, item.task, true); // 假設所有任務都可刪除
@@ -908,7 +908,7 @@
         styleElement.textContent = `
         .template-selectors {
             margin-top: 15px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #E3E6EC;
             padding-top: 15px;
         }
 
@@ -920,14 +920,14 @@
         }
 
         .template-btn {
-            background-color: #e2e8f0;
-            color: #4a5568;
+            background-color: #E3E6EC;
+            color: #444441;
             padding: 8px 12px;
             border-radius: 4px;
         }
 
         .template-btn.active {
-            background-color: #4299e1;
+            background-color: #2C5A96;
             color: white;
         }
 
@@ -939,13 +939,13 @@
         .selected-templates {
             margin-top: 10px;
             font-size: 14px;
-            color: #718096;
+            color: #6B6A64;
         }
 
         .patient-templates {
             margin-top: 10px;
             padding-top: 8px;
-            border-top: 1px dashed #e2e8f0;
+            border-top: 1px dashed #E3E6EC;
         }
         `;
         document.head.appendChild(styleElement);
@@ -954,35 +954,35 @@
         const shiftThemes = {
             'D': { // 白班主題
                 name: '白班',
-                primaryColor: '#3498db', // 藍色
-                secondaryColor: '#2980b9',
-                headerBg: '#d6eaf8',
-                cardBorder: '#bde0f7',
-                cardHeader: '#ebf5fb',
-                progressBar: '#3498db',
-                buttonColor: '#3498db',
+                primaryColor: '#2C5A96', // 藍色
+                secondaryColor: '#1F4474',
+                headerBg: '#D7E1F2',
+                cardBorder: '#B6CCF0',
+                cardHeader: '#EDF2FA',
+                progressBar: '#2C5A96',
+                buttonColor: '#2C5A96',
                 icon: '☀️' // 太陽圖示
             },
             'N': { // 小夜主題
                 name: '小夜',
-                primaryColor: '#e67e22', // 橙色
-                secondaryColor: '#d35400',
-                headerBg: '#fdf2e9',
-                cardBorder: '#fad7a0',
-                cardHeader: '#fef5e7',
-                progressBar: '#e67e22',
-                buttonColor: '#e67e22',
+                primaryColor: '#AD5C28', // 橙色
+                secondaryColor: '#8A4A20',
+                headerBg: '#F9EBE3',
+                cardBorder: '#F8D2B5',
+                cardHeader: '#FDF4EE',
+                progressBar: '#AD5C28',
+                buttonColor: '#AD5C28',
                 icon: '🌆' // 黃昏圖示
             },
             'E': { // 大夜主題
                 name: '大夜',
-                primaryColor: '#34495e', // 深藍色/深灰色
-                secondaryColor: '#2c3e50',
-                headerBg: '#ebedef',
-                cardBorder: '#d6dbdf',
-                cardHeader: '#f4f6f7',
-                progressBar: '#34495e',
-                buttonColor: '#34495e',
+                primaryColor: '#444441', // 深藍色/深灰色
+                secondaryColor: '#26262B',
+                headerBg: '#ECEEF3',
+                cardBorder: '#D1D5DD',
+                cardHeader: '#F1F3F8',
+                progressBar: '#444441',
+                buttonColor: '#444441',
                 icon: '🌙' // 月亮圖示
             }
         };
@@ -1050,13 +1050,13 @@
             const styleElement = document.createElement('style');
             styleElement.textContent = `
                 :root {
-                    --primary-color: #3498db;
-                    --secondary-color: #2980b9;
-                    --header-bg: #d6eaf8;
-                    --card-border: #bde0f7;
-                    --card-header: #ebf5fb;
-                    --progress-bar: #3498db;
-                    --button-color: #3498db;
+                    --primary-color: #2C5A96;
+                    --secondary-color: #1F4474;
+                    --header-bg: #D7E1F2;
+                    --card-border: #B6CCF0;
+                    --card-header: #EDF2FA;
+                    --progress-bar: #2C5A96;
+                    --button-color: #2C5A96;
                 }
                 
                 .header {
@@ -1078,8 +1078,8 @@
                 }
                 
                 .shift-btn {
-                    background-color: #e2e8f0;
-                    color: #4a5568;
+                    background-color: #E3E6EC;
+                    color: #444441;
                     transition: all 0.3s ease;
                     margin-right: 5px;
                 }
@@ -1214,34 +1214,34 @@
                 display: flex;
                 align-items: center;
                 padding: 8px 10px;
-                background-color: #f8f9fa;
+                background-color: #F7F8FB;
                 border-radius: 4px;
                 cursor: pointer;
                 transition: background-color 0.2s;
                 position: relative;
-                border-left: 3px solid var(--primary-color, #3498db);
+                border-left: 3px solid var(--primary-color, #6592CD);
             }
 
             .checklist-category:hover {
-                background-color: #e9ecef;
+                background-color: #ECEEF3;
             }
 
             .category-toggle-icon {
                 font-size: 10px;
                 margin-right: 8px;
-                color: #495057;
+                color: #444441;
                 transition: transform 0.2s;
             }
 
             .category-title {
                 flex-grow: 1;
                 font-weight: 600;
-                color: #495057;
+                color: #444441;
             }
 
             .category-count {
                 margin-right: 10px;
-                color: #6c757d;
+                color: #6B6A64;
                 font-size: 0.9em;
             }
 
@@ -1280,7 +1280,7 @@
 
             .checklist-category .add-task-btn:hover {
                 background-color: rgba(0, 0, 0, 0.1);
-                color: #495057;
+                color: #444441;
             }
 
 
@@ -1389,7 +1389,7 @@
                                 newDeleteBtn.style.fontSize = '12px';
                                 newDeleteBtn.style.padding = '3px 6px';
                                 newDeleteBtn.style.marginLeft = '5px';
-                                newDeleteBtn.style.backgroundColor = '#D3D3D3';
+                                newDeleteBtn.style.backgroundColor = '#D1D5DD';
                                 
                                 // 為新按鈕添加點擊事件
                                 newDeleteBtn.onclick = function(e) {

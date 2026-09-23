@@ -1,16 +1,18 @@
+@import url("theme.css");
+
 /* basic style */
 :root {
-    --primary-color: #3498db;
-    --primary-dark: #2980b9;
-    --secondary-color: #e8f4fc;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --danger-color: #e74c3c;
-    --text-color: #2c3e50;
-    --border-color: #ddd;
-    --background-color: #f9f9f9;
+    --primary-color: var(--color-deep);
+    --primary-dark: var(--color-deep-dark);
+    --secondary-color: var(--color-light-soft);
+    --success-color: var(--color-correct);
+    --warning-color: var(--color-warning);
+    --danger-color: var(--color-incorrect);
+    --text-color: var(--color-strong);
+    --border-color: var(--color-card-border);
+    --background-color: var(--color-page);
     --shadow: 0 2px 4px rgba(0,0,0,0.1);
-    --border-radius: 4px;
+    --border-radius: 8px;
 }
 
 body {
@@ -71,7 +73,7 @@ h1, h2, h3 {
 .tab {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #f8f9fa;
+    background-color: var(--color-page);
     border: 1px solid var(--border-color);
     border-bottom: none;
     border-radius: 4px 4px 0 0;
@@ -107,16 +109,16 @@ h1, h2, h3 {
 .sub-tab {
     padding: 8px 15px;
     cursor: pointer;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: var(--color-sidebar);
+    border: 1px solid var(--color-border-strong);
     border-radius: var(--border-radius);
     margin-right: 5px;
 }
 
 .sub-tab.active {
-    background-color: #5dade2;
+    background-color: var(--color-accent);
     color: white;
-    border-color: #5dade2;
+    border-color: var(--color-accent);
 }
 
 .sub-content {
@@ -242,7 +244,7 @@ button:hover {
 }
 
 .flash-circle.active {
-    background-color: #d2e2ec;
+    background-color: var(--color-light);
 }
 
 .flash-controls {
@@ -261,7 +263,7 @@ button:hover {
 .flash-info {
     margin: 10px 0;
     font-style: italic;
-    color: #7f8c8d;
+    color: var(--color-muted);
 }
 
 .flash-title {
@@ -436,12 +438,12 @@ button:hover {
 
 .quick-presets {
     margin-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-card-border);
     padding-top: 15px;
 }
 
 .preset-btn {
-    background-color: #4a90e2;
+    background-color: var(--color-deep);
     margin-bottom: 8px;
     flex: 1;
 }
@@ -467,7 +469,7 @@ button:hover {
 }
 
 .alarm-label {
-    color: #666;
+    color: var(--color-muted);
     flex-grow: 1;
     margin-left: 10px;
 }
@@ -541,7 +543,7 @@ button:hover {
     text-align: left;
     margin: 15px 0;
     padding: 10px;
-    background-color: #f5f5f5;
+    background-color: var(--color-sidebar);
     border-radius: var(--border-radius);
     font-size: 0.9rem;
 }
@@ -567,7 +569,7 @@ button:hover {
 
 /* Section dividers - add borders between each main section */
 .section-divider {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--color-card-border);
     margin: 15px 0;
     padding-bottom: 15px;
     position: relative;
@@ -582,7 +584,7 @@ button:hover {
 .navigation-section {
     text-align: center;
     padding: 10px 0;
-    background-color: #4a4a4a;
+    background-color: var(--color-body);
     color: white;
     margin-bottom: 5px;
     border-radius: 4px;
@@ -739,16 +741,16 @@ button:hover {
         margin-right: 0;
         margin-bottom: 10px;
         text-align: center;
-        border: 1px solid #ddd;
+        border: 1px solid var(--color-card-border);
         border-radius: 8px;
         padding: 12px 15px;
-        background-color: #f8f8f8;
+        background-color: var(--color-page);
         box-shadow: 0 2px 3px rgba(0,0,0,0.1);
     }
     
     .tab.active {
         border-color: var(--primary-color);
-        background-color: #e6f2ff;
+        background-color: var(--color-light-soft);
     }
     
     /* Adjust form elements for mobile */
@@ -786,7 +788,7 @@ button:hover {
     
     /* Add dividers between form groups */
     .calculator-content .form-group {
-        border-bottom: 1px solid #eaeaea;
+        border-bottom: 1px solid var(--color-card-border);
         padding-bottom: 15px;
         margin-bottom: 20px;
     }
@@ -804,21 +806,21 @@ button:hover {
         width: 100%;
         margin-bottom: 10px;
         padding: 10px;
-        border: 1px solid #ddd;
+        border: 1px solid var(--color-card-border);
         border-radius: 6px;
-        background-color: #f9f9f9;
+        background-color: var(--color-page);
     }
     
     /* Make result more visible */
     .result {
-        border: 1px solid #c8e1ff;
+        border: 1px solid var(--color-mid);
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        background-color: #f0f8ff;
+        background-color: var(--color-light-soft);
     }
     
     .result h3 {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid var(--color-card-border);
         padding-bottom: 10px;
         margin-bottom: 15px;
         color: var(--primary-color);
@@ -827,21 +829,21 @@ button:hover {
     /* Timer cards */
     .drtm-timer-card {
         width: 100%;
-        border: 1px solid #ddd;
+        border: 1px solid var(--color-card-border);
         box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         margin-bottom: 20px;
     }
     
     /* Add divider between timer elements */
     .drtm-timer-header {
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--color-card-border);
         padding-bottom: 10px;
         margin-bottom: 15px;
     }
     
     .timer-display {
-        border-top: 1px dashed #eee;
-        border-bottom: 1px dashed #eee;
+        border-top: 1px dashed var(--color-card-border);
+        border-bottom: 1px dashed var(--color-card-border);
         padding: 15px 0;
         margin: 15px 0;
     }

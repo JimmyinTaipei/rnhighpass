@@ -353,7 +353,7 @@ function updateAlarmsList() {
         const alarmItem = document.createElement('div');
         alarmItem.className = 'alarm-item';
         if (alarm.ringing) {
-            alarmItem.style.backgroundColor = '#ffcccb';
+            alarmItem.style.backgroundColor = '#FCEBEB';
         }
         
         const timeSpan = document.createElement('span');

@@ -67,7 +67,7 @@
             // Add close button
             const closeButton = document.createElement('button');
             closeButton.textContent = 'Close';
-            closeButton.style.backgroundColor = '#3498db';
+            closeButton.style.backgroundColor = '#2C5A96';
             closeButton.style.color = 'white';
             closeButton.style.border = 'none';
             closeButton.style.padding = '10px 20px';

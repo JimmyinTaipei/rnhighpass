@@ -12,7 +12,7 @@
                 overlay.style.left = '0';
                 overlay.style.width = '100%';
                 overlay.style.height = '100%';
-                overlay.style.backgroundColor = '#3498db';
+                overlay.style.backgroundColor = '#2C5A96';
                 overlay.style.zIndex = '9999';
                 overlay.style.display = 'flex';
                 overlay.style.justifyContent = 'center';
@@ -30,22 +30,22 @@
                 
                 // Add form content
                 loginForm.innerHTML = `
-                    <h2 style="color: #2c3e50; margin-bottom: 20px;">Nursing Diagnosis Library</h2>
+                    <h2 style="color: #26262B; margin-bottom: 20px;">Nursing Diagnosis Library</h2>
                     <p style="margin-bottom: 20px;">Please enter your password to access the content:</p>
                     
                     <div style="margin-bottom: 20px;">
-                        <input type="password" id="password" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;" placeholder="Enter password">
+                        <input type="password" id="password" style="width: 100%; padding: 12px; border: 1px solid #E3E6EC; border-radius: 4px; font-size: 16px;" placeholder="Enter password">
                     </div>
                     
-                    <div id="error-message" style="color: #e74c3c; margin-bottom: 15px; display: none;">
+                    <div id="error-message" style="color: #E24B4A; margin-bottom: 15px; display: none;">
                         Incorrect password. Please try again.
                     </div>
                     
-                    <button id="login-button" style="background-color: #3498db; color: white; border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%;">
+                    <button id="login-button" style="background-color: #2C5A96; color: white; border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%;">
                         Login
                     </button>
         
-                    <p style="margin-top: 20px; font-size: 12px; color: #7f8c8d;">
+                    <p style="margin-top: 20px; font-size: 12px; color: #6B6A64;">
                         This is a private medical resource. Unauthorized access is prohibited.
                     </p>
                 `;
@@ -105,7 +105,7 @@
             logoutButton.style.position = 'absolute';
             logoutButton.style.top = '10px';
             logoutButton.style.right = '10px';
-            logoutButton.style.backgroundColor = '#e74c3c';
+            logoutButton.style.backgroundColor = '#E24B4A';
             logoutButton.style.color = 'white';
             logoutButton.style.border = 'none';
             logoutButton.style.padding = '5px 10px';
@@ -191,7 +191,7 @@
                     // Add close button
                     const closeButton = document.createElement('button');
                     closeButton.textContent = 'Close';
-                    closeButton.style.backgroundColor = '#3498db';
+                    closeButton.style.backgroundColor = '#2C5A96';
                     closeButton.style.color = 'white';
                     closeButton.style.border = 'none';
                     closeButton.style.padding = '10px 20px';

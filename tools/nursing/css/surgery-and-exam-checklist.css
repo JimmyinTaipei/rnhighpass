@@ -1,9 +1,11 @@
+@import url("theme.css");
+
 body {
     font-family: 'Microsoft JhengHei', Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--color-body);
+    background-color: var(--color-page);
 }
 .container {
     max-width: 1200px;
@@ -14,17 +16,17 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 h1 {
-    color: #2c3e50;
+    color: var(--color-strong);
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 10px;
 }
 h2 {
-    color: #2980b9;
+    color: var(--color-deep-dark);
     margin-top: 20px;
     padding: 10px;
-    background-color: #eef7ff;
-    border-left: 5px solid #3498db;
+    background-color: var(--color-light-soft);
+    border-left: 5px solid var(--color-accent);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -45,7 +47,7 @@ h2.active .toggle-icon:after {
     content: '－';
 }
 h2 .delete-btn {
-    color: #e74c3c;
+    color: var(--color-incorrect);
     font-size: 18px;
     cursor: pointer;
 }
@@ -80,7 +82,7 @@ h2 .delete-btn {
     padding: 5px 0;
 }
 .add-item-btn {
-    background-color: #3498db;
+    background-color: var(--color-deep);
     color: white;
     width: 36px;
     height: 36px;
@@ -94,7 +96,7 @@ h2 .delete-btn {
 }
 .checklist-item {
     padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-card-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,7 +117,7 @@ h2 .delete-btn {
 .delete-item {
     width: 24px;
     height: 24px;
-    background-color: #e74c3c;
+    background-color: var(--color-incorrect);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -142,10 +144,10 @@ h2 .delete-btn {
 }
 .completed {
     text-decoration: line-through;
-    color: #7f8c8d;
+    color: var(--color-muted);
 }
 .button {
-    background-color: #3498db;
+    background-color: var(--color-deep);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -155,25 +157,25 @@ h2 .delete-btn {
     margin: 20px 10px 20px 0;
 }
 .button:hover {
-    background-color: #2980b9;
+    background-color: var(--color-deep-dark);
 }
 .button.danger {
-    background-color: #e74c3c;
+    background-color: var(--color-incorrect);
 }
 .button.danger:hover {
-    background-color: #c0392b;
+    background-color: var(--color-incorrect-dark);
 }
 .button.success {
-    background-color: #2ecc71;
+    background-color: var(--color-correct);
 }
 .button.success:hover {
-    background-color: #27ae60;
+    background-color: var(--color-correct);
 }
 .button.warning {
-    background-color: #f39c12;
+    background-color: var(--color-warning);
 }
 .button.warning:hover {
-    background-color: #d35400;
+    background-color: var(--subj-orange-dark);
 }
 .button-container {
     display: flex;
@@ -183,7 +185,7 @@ h2 .delete-btn {
 .new-template-form {
     margin-top: 30px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--color-page);
     border-radius: 8px;
     display: none;
 }
@@ -201,7 +203,7 @@ h2 .delete-btn {
 .form-group input, .form-group textarea, .form-group select {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-card-border);
     border-radius: 4px;
     font-family: inherit;
 }
@@ -220,7 +222,7 @@ h2 .delete-btn {
     margin-right: 10px;
 }
 .item-row button {
-    background-color: #e74c3c;
+    background-color: var(--color-incorrect);
     color: white;
     border: none;
     border-radius: 50%;
@@ -266,7 +268,7 @@ h2 .delete-btn {
     align-items: center;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #f0f8ff;
+    background-color: var(--color-light-soft);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
@@ -274,7 +276,7 @@ h2 .delete-btn {
     flex-grow: 1;
     margin-right: 10px;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-card-border);
     border-radius: 4px;
     font-family: inherit;
 }
@@ -285,14 +287,14 @@ h2 .delete-btn {
 .import-export-container {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: var(--color-page);
     border-radius: 8px;
-    border: 1px dashed #3498db;
+    border: 1px dashed var(--color-accent);
 }
 .import-export-title {
     font-weight: bold;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: var(--color-strong);
 }
 @media (max-width: 768px) {
     .section {

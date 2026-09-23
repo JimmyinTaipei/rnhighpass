@@ -1,11 +1,13 @@
+@import url("../css/theme.css");
+
 :root {
-    --primary: #2c3e50;
-    --secondary: #3498db;
-    --tertiary: #e74c3c;
-    --background: #f9f9f9;
-    --text: #333;
-    --light-gray: #ecf0f1;
-    --border: #ddd;
+    --primary: var(--color-strong);
+    --secondary: var(--color-deep);
+    --tertiary: var(--color-incorrect);
+    --background: var(--color-page);
+    --text: var(--color-body);
+    --light-gray: var(--color-sidebar);
+    --border: var(--color-card-border);
 }
 
 * {
@@ -106,7 +108,7 @@ li {
 }
 
 .diagnosis-nav li:not(.empty-class):hover {
-    background-color: rgba(52, 152, 219, 0.1);
+    background-color: rgba(44, 90, 150, 0.1);
     border-left: 3px solid var(--secondary);
     padding-left: 7px;
 }
@@ -140,22 +142,22 @@ li {
 }
 
 .tag.independent {
-    background-color: #3498db;
+    background-color: var(--color-deep);
     color: white;
 }
 
 .tag.collaborative {
-    background-color: #e74c3c;
+    background-color: var(--color-incorrect);
     color: white;
 }
 
 .tag.ebn {
-    background-color: #2ecc71;
+    background-color: var(--color-correct);
     color: white;
 }
 
 .tag.eb {
-    background-color: #9b59b6;
+    background-color: var(--subj-purple-deep);
     color: white;
 }
 
@@ -192,7 +194,7 @@ li {
     padding-top: 1rem;
     border-top: 1px solid var(--border);
     font-size: 0.9rem;
-    color: #777;
+    color: var(--color-muted);
 }
 
 .legend {
@@ -228,7 +230,7 @@ li {
 .rationale {
     font-style: italic;
     font-size: 0.95rem;
-    color: #555;
+    color: var(--color-body);
 }
 
 .special-section {
@@ -301,7 +303,7 @@ li {
     font-size: 0.9rem;
     padding-left: 8px;
     border-left: 3px solid var(--secondary);
-    background-color: rgba(52, 152, 219, 0.1);
+    background-color: rgba(44, 90, 150, 0.1);
     padding: 5px 0 5px 8px;
     border-radius: 0 4px 4px 0;
 }
@@ -328,7 +330,7 @@ li {
 }
 
 .diagnosis-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--color-sidebar);
     border-radius: 4px;
 }
 
@@ -387,7 +389,7 @@ li {
 
 .empty-class {
     font-style: italic;
-    color: #777;
+    color: var(--color-muted);
     padding: 5px 0;
     display: flex;
     align-items: center;

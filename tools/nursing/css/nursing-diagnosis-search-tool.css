@@ -1,3 +1,5 @@
+@import url("theme.css");
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -7,8 +9,8 @@
 
 body {
     font-family: 'Microsoft JhengHei', Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--color-page);
+    color: var(--color-body);
     line-height: 1.6;
     padding-top: 80px;
 }
@@ -18,21 +20,21 @@ h1 {
     text-align: center;
     font-weight: bold;
     margin-top: 80px;
-    color: #2c3e50;
+    color: var(--color-strong);
 }
 
 h2 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #2563eb;
+    color: var(--color-deep);
 }
 
 h3 {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: #4b5563;
+    color: var(--color-body);
 }
 
 a {
@@ -57,7 +59,7 @@ ul {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: #3498db;
+    background-color: var(--color-deep);
     position: fixed;
     top: 0px;
     right: 0px;
@@ -82,12 +84,12 @@ main {
 }
 
 footer {
-    background-color: #f3f4f6;
+    background-color: var(--color-sidebar);
     padding: 1rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-card-border);
     margin-top: 2rem;
     text-align: center;
-    color: #6b7280;
+    color: var(--color-muted);
 }
 
 /* Card Components */
@@ -108,27 +110,27 @@ footer {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #4b5563;
+    color: var(--color-body);
 }
 
 .form-input {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--color-border-strong);
     border-radius: 0.375rem;
     outline: none;
     transition: all 0.2s;
 }
 
 .form-input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(101, 146, 205, 0.25);
 }
 
 .form-select {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--color-border-strong);
     border-radius: 0.375rem;
     background-color: white;
     margin-bottom: 0.5rem;
@@ -137,7 +139,7 @@ footer {
 .form-textarea {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--color-border-strong);
     border-radius: 0.375rem;
     min-height: 8rem;
 }
@@ -155,48 +157,48 @@ footer {
 }
 
 .btn-primary {
-    background-color: #3b82f6;
+    background-color: var(--color-deep);
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #2563eb;
+    background-color: var(--color-deep);
 }
 
 .btn-gray {
-    background-color: #e5e7eb;
-    color: #4b5563;
+    background-color: var(--color-card-border);
+    color: var(--color-body);
 }
 
 .btn-gray:hover {
-    background-color: #d1d5db;
+    background-color: var(--color-border-strong);
 }
 
 .btn-danger {
-    background-color: #ef4444;
+    background-color: var(--color-incorrect);
     color: white;
 }
 
 .btn-danger:hover {
-    background-color: #dc2626;
+    background-color: var(--color-incorrect-dark);
 }
 
 .btn-success {
-    background-color: #10b981;
+    background-color: var(--color-correct);
     color: white;
 }
 
 .btn-success:hover {
-    background-color: #059669;
+    background-color: var(--color-correct-dark);
 }
 
 .btn-warning {
-    background-color: #f59e0b;
+    background-color: var(--color-warning);
     color: white;
 }
 
 .btn-warning:hover {
-    background-color: #d97706;
+    background-color: var(--subj-orange-deep);
 }
 
 /* Example Pills */
@@ -208,8 +210,8 @@ footer {
 }
 
 .example-pill {
-    background-color: #dbeafe;
-    color: #1e40af;
+    background-color: var(--color-light);
+    color: var(--color-deep-dark);
     font-size: 0.875rem;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
@@ -218,25 +220,25 @@ footer {
 }
 
 .example-pill:hover {
-    background-color: #bfdbfe;
+    background-color: var(--color-mid);
 }
 
 .example-pill.alias {
-    background-color: #d1fae5;
-    color: #065f46;
+    background-color: var(--color-correct-bg);
+    color: var(--color-correct-text);
 }
 
 .example-pill.alias:hover {
-    background-color: #a7f3d0;
+    background-color: var(--color-correct-mid);
 }
 
 .example-pill.more {
-    background-color: #f3f4f6;
-    color: #4b5563;
+    background-color: var(--color-sidebar);
+    color: var(--color-body);
 }
 
 .example-pill.more:hover {
-    background-color: #e5e7eb;
+    background-color: var(--color-card-border);
 }
 
 /* Search Results */
@@ -251,7 +253,7 @@ footer {
     width: 100%;
     margin-top: 0.25rem;
     background-color: white;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--color-border-strong);
     border-radius: 0.375rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-height: 300px;
@@ -261,7 +263,7 @@ footer {
 .search-result-item {
     padding: 0.75rem;
     cursor: pointer;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--color-card-border);
 }
 
 .search-result-item:last-child {
@@ -269,7 +271,7 @@ footer {
 }
 
 .search-result-item:hover {
-    background-color: #f3f4f6;
+    background-color: var(--color-sidebar);
 }
 
 .search-result-item.alias {
@@ -278,13 +280,13 @@ footer {
 }
 
 .search-result-item.alias:hover {
-    background-color: #ecfdf5;
+    background-color: var(--color-correct-bg);
 }
 
 .alias-indicator {
     margin-left: 0.5rem;
     font-size: 0.875rem;
-    color: #059669;
+    color: var(--color-correct-dark);
 }
 
 /* Diagnosis Result */
@@ -292,11 +294,11 @@ footer {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #1d4ed8;
+    color: var(--color-deep-dark);
 }
 
 .diagnosis-section {
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-card-border);
     padding-top: 1rem;
 }
 
@@ -305,31 +307,31 @@ footer {
 }
 
 .diagnosis-item {
-    background-color: #f9fafb;
+    background-color: var(--color-page);
     padding: 0.75rem;
     border-radius: 0.375rem;
     margin-bottom: 0.5rem;
 }
 
 .diagnosis-link {
-    color: #3182ce;
+    color: var(--color-deep);
     text-decoration: underline;
     cursor: pointer;
 }
 
 .diagnosis-link:hover {
-    color: #2c5282;
+    color: var(--color-deep-dark);
 }
 
 .alias-section {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-card-border);
 }
 
 .alias-title {
     font-weight: 600;
-    color: #4b5563;
+    color: var(--color-body);
     margin-bottom: 0.5rem;
 }
 
@@ -340,8 +342,8 @@ footer {
 }
 
 .alias-tag {
-    background-color: #f3f4f6;
-    color: #4b5563;
+    background-color: var(--color-sidebar);
+    color: var(--color-body);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.875rem;
@@ -380,7 +382,7 @@ footer {
 
 /* Tabs */
 .tabs {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--color-card-border);
     margin-bottom: 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -390,7 +392,7 @@ footer {
     padding: 1rem;
     border-bottom: 2px solid transparent;
     margin-right: 0.5rem;
-    color: #6b7280;
+    color: var(--color-muted);
     cursor: pointer;
     background: none;
     border-top: none;
@@ -399,13 +401,13 @@ footer {
 }
 
 .tab-btn:hover {
-    color: #4b5563;
-    border-bottom-color: #d1d5db;
+    color: var(--color-body);
+    border-bottom-color: var(--color-border-strong);
 }
 
 .tab-btn.active {
-    border-bottom-color: #3b82f6;
-    color: #3b82f6;
+    border-bottom-color: var(--color-accent);
+    color: var(--color-deep);
 }
 
 .tab-content {
@@ -420,13 +422,13 @@ footer {
 .admin-list {
     max-height: 24rem;
     overflow-y: auto;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-card-border);
     border-radius: 0.375rem;
 }
 
 .admin-list-item {
     padding: 0.75rem;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--color-card-border);
 }
 
 .admin-list-item:last-child {
@@ -434,7 +436,7 @@ footer {
 }
 
 .admin-list-item:hover {
-    background-color: #f9fafb;
+    background-color: var(--color-page);
 }
 
 .admin-item-header {
@@ -455,7 +457,7 @@ footer {
 .admin-item-preview {
     margin-top: 0.25rem;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--color-muted);
 }
 
 /* Link List */
@@ -469,7 +471,7 @@ footer {
 }
 
 .link-item:hover {
-    background-color: #f9fafb;
+    background-color: var(--color-page);
 }
 
 .link-text {
@@ -480,7 +482,7 @@ footer {
 }
 
 .link-url {
-    color: #6b7280;
+    color: var(--color-muted);
     font-size: 0.875rem;
     margin-left: 0.5rem;
     flex-grow: 1;
@@ -490,13 +492,13 @@ footer {
 }
 
 .delete-btn {
-    color: #ef4444;
+    color: var(--color-incorrect);
     margin-left: 0.5rem;
     cursor: pointer;
 }
 
 .delete-btn:hover {
-    color: #dc2626;
+    color: var(--color-incorrect-dark);
 }
 
 /* Form actions */
@@ -525,7 +527,7 @@ footer {
 }
 
 .border-top {
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-card-border);
     padding-top: 1rem;
     margin-top: 0.5rem;
 }
@@ -539,7 +541,7 @@ a,
     box-shadow: none !important;
     outline: none !important;
     border-radius: 20px;
-    background-color: #f0f4ff;
+    background-color: var(--color-light-soft);
     padding: 8px 16px;
     margin: 5px;
     display: inline-block;
@@ -584,8 +586,8 @@ label,
 
 /* Style for condition buttons to make them more visually appealing without borders */
 .condition-button {
-    background-color: #f0f4ff;
-    color: #2563eb;
+    background-color: var(--color-light-soft);
+    color: var(--color-deep);
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 16px;
@@ -595,7 +597,7 @@ label,
 }
 
 .condition-button:hover {
-    background-color: #dbeafe;
+    background-color: var(--color-light);
 }
 @media (max-width: 768px) {
     .navigation {
@@ -627,16 +629,16 @@ label,
     flex: 1;
     text-align: center;
     padding: 10px;
-    background-color: #ecf0f1;
+    background-color: var(--color-sidebar);
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-card-border);
     border-bottom: none;
     min-width: 120px;
 }
 
 .tab.active {
-    background-color: #3498db;
+    background-color: var(--color-deep);
     color: white;
 }
 
@@ -655,7 +657,7 @@ label,
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #3498db;
+    background-color: var(--color-deep);
 }
 
 .navigation {

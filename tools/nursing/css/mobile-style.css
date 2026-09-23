@@ -1,3 +1,5 @@
+@import url("theme.css");
+
 /* mobile-menu.css - 將這個文件保存到您的css目錄 */
 
 /* 導航容器樣式 */
@@ -7,7 +9,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #3498db;
+    background-color: var(--color-deep);
 }
 
 /* 導航樣式 */
@@ -77,7 +79,7 @@
         left: 0;
         right: 0;
         flex-direction: column;
-        background-color: #3498db;
+        background-color: var(--color-deep);
         padding: 0;
         gap: 0;
         max-height: 0;
