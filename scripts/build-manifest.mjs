@@ -4,12 +4,12 @@
  *
  * 把來源 PDF 資料夾正規化成 R2 的 canonical key，並產生 assets/data/manifest.json。
  *
- * 「R2 上有什麼」跟「網站顯示什麼」是分開的兩件事：
- *   - dist-r2/（上傳用）收集全部四類：分章詳解、題本、合訂本、全部學期的考古題。
- *   - assets/data/manifest.json（網站用）只寫入合訂本，以及 PAST_EXAM_MIN_TERM
- *     之後的考古題——分章詳解/題本、更早的考古題雖然也上傳了，但 Worker 的
- *     white list 只認 manifest 裡列出的 key，所以不會被網站顯示或存取到。
- *   Google Drive 連結（assets/data/links.json）另外維護，給要整批下載的人。
+ * dist-r2/（上傳用）與 assets/data/manifest.json（網站用）收錄的是同一批檔案：
+ * 分章詳解、分章題本、合訂本、全部學期的考古題。Worker 的 white list 只認
+ * manifest 裡列出的 key。Google Drive 連結（assets/data/links.json）另外維護，
+ * 給要整批下載的人。
+ *
+ * 另外會產生 dist-r2/covers.json（封面圖對照表），給 scripts/make-covers.sh 用。
  *
  *   node scripts/build-manifest.mjs --src "/path/to/07_pdf" [--out dist-r2] [--no-link]
  *
@@ -36,7 +36,6 @@ import {
   TYPE_SLUG,
   PAPER_SLUG,
   termSlug,
-  PAST_EXAM_MIN_TERM,
 } from "./subjects.mjs";
 
 const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
@@ -364,12 +363,13 @@ async function collectPastExams(srcRoot, dirName) {
     });
   }
 
-  // 回傳全部學期——網站要顯示哪個範圍留給呼叫端（main()）決定，
-  // 這裡負責的是「來源資料夾裡實際有什麼」。
-  // 預設由新到舊，補考排在同學期正試之後。
+  // 由新到舊，補考排在同學期正試之後；同一學期內依國考考卷順序（PAPER_SLUG 的順序）。
   const unique = dedupeByKey(items);
   await withContentHash(unique);
-  unique.sort((a, b) => b.termSort - a.termSort || a.paper.localeCompare(b.paper, "zh-Hant"));
+  const paperOrder = Object.keys(PAPER_SLUG);
+  unique.sort(
+    (a, b) => b.termSort - a.termSort || paperOrder.indexOf(a.paper) - paperOrder.indexOf(b.paper)
+  );
   return unique;
 }
 
@@ -486,21 +486,22 @@ async function main() {
     process.exit(1);
   }
 
-  // 網站顯示的子集：只有合訂本 + PAST_EXAM_MIN_TERM 之後的考古題。
-  // 分章詳解/題本、更早的考古題還是會上傳到 R2（見下方 stage(all,...)），
-  // 只是不寫進這份 manifest —— Worker 的 white list 只認 manifest 裡的 key，
-  // 沒列進去就抓不到，網站顯示內容因此不受影響。
-  const minSort = termSortKey(PAST_EXAM_MIN_TERM);
-  const pastExamsSite = pastExamsAll.filter((e) => e.termSort >= minSort);
+  // 封面圖檔名一律 ASCII；由 scripts/make-covers.sh 從 PDF 第一頁產生。
+  const bundleCover = (no, type) => `assets/images/covers/bundles/${no}_${TYPE_SLUG[type]}.jpg`;
+  const examCover = (e) => `assets/images/covers/past-exams/${termSlug(e.term)}_${PAPER_SLUG[e.paper]}.jpg`;
 
   const strip = ({ src, _rank, ...rest }) => rest;
+  const stripChapter = ({ src, _rank, pairId, ...rest }) => rest;
   const manifest = {
     generatedAt: new Date().toISOString(),
-    subjects: SUBJECTS.map((s) => ({ ...s, cover: `assets/images/covers/${s.no}_${s.name}.jpg` })),
+    subjects: SUBJECTS.map((s) => ({
+      ...s,
+      covers: { 詳解: bundleCover(s.no, "詳解"), 題本: bundleCover(s.no, "題本") },
+    })),
     prefixes: PREFIXES,
-    pastExamMinTerm: PAST_EXAM_MIN_TERM,
     bundles: bundles.map(strip),
-    pastExams: pastExamsSite.map(strip),
+    chapters: [...explanations, ...workbooks].map(stripChapter),
+    pastExams: pastExamsAll.map((e) => ({ ...strip(e), cover: examCover(e) })),
   };
 
   const manifestPath = path.join(ROOT, "assets/data/manifest.json");
@@ -512,22 +513,24 @@ async function main() {
   await rm(args.out, { recursive: true, force: true });
   await stage(all, args.out, args.link);
 
+  // 封面對照表：R2 key → 封面圖輸出路徑（詳解、題本合訂本各 11 本 + 每份考古題）。
+  const covers = [
+    ...bundles.map((b) => ({ key: b.key, out: bundleCover(b.subjectNo, b.type), width: 600 })),
+    ...pastExamsAll.map((e) => ({ key: e.key, out: examCover(e), width: 400 })),
+  ];
+  await writeFile(path.join(args.out, "covers.json"), JSON.stringify(covers, null, 2) + "\n", "utf8");
+
   const totalBytes = all.reduce((sum, i) => sum + i.size, 0);
   const allTerms = [...new Set(pastExamsAll.map((e) => e.term))];
-  const siteTerms = [...new Set(pastExamsSite.map((e) => e.term))];
   console.log("\n✓ 一致性檢查全數通過");
   console.log(
-    `  上傳到 R2：分章詳解 ${explanations.length}．題本 ${workbooks.length}．合訂本 ${bundles.length}．` +
-      `考古題 ${pastExamsAll.length}（${allTerms.length} 個學期：${allTerms.join("、")}）`
+    `  分章詳解 ${explanations.length}．題本 ${workbooks.length}．合訂本 ${bundles.length}．` +
+      `考古題 ${pastExamsAll.length}（${allTerms.length} 個學期）`
   );
   console.log(`  合計 ${all.length} 個檔案，${(totalBytes / 1024 ** 2).toFixed(0)} MB`);
-  console.log(
-    `\n  網站顯示：合訂本 ${bundles.length}．考古題 ${pastExamsSite.length}` +
-      `（${siteTerms.length} 個學期：${siteTerms.join("、")}）`
-  );
-  console.log(`  分章詳解／題本、${PAST_EXAM_MIN_TERM} 之前的考古題已上傳但網站不顯示，改導 Google Drive。`);
   console.log(`\n  manifest → ${path.relative(ROOT, manifestPath)}`);
   console.log(`  待上傳   → ${path.relative(ROOT, args.out)}/`);
+  console.log(`  封面清單 → ${path.relative(ROOT, args.out)}/covers.json（npm run covers 使用）`);
 }
 
 main().catch((err) => {

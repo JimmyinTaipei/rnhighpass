@@ -1,246 +1,660 @@
 /* =========================================
-   合訂本封面牆 / 考古題清單 / 外部連結卡
+   題目下載（首頁）/ 更多考題 / 外部連結卡
    沿用 style.css 的色彩與字體變數，只補這裡需要的樣式。
    ========================================= */
 
-/* ---------- 首頁：合訂本封面牆 ---------- */
-.bundle-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 18px;
-  margin-top: 8px;
+/* ---------- 各科配色（比照多保命測驗 globals.css） ----------
+   11 科分 5 大類；元素加上 data-group 後，底下的 --subj-* 會自動換成該類的顏色。
+   accent 只用於邊框/色塊；文字一律用 deep（白底對比 ≥ 4.5:1）。 */
+:root {
+  --subj-light: #D7E1F2;
+  --subj-mid: #B6CCF0;
+  --subj-accent: #6592CD;
+  --subj-deep: #2C5A96;
 }
 
-.bundle-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--color-card);
+[data-group="BM"] { /* 基礎醫學 */
+  --subj-light: #FDE8EC; --subj-mid: #F8BDC9; --subj-accent: #EE8B9C; --subj-deep: #B4485C;
+}
+[data-group="FA"] { /* 基本護理學與護理行政 */
+  --subj-light: #F9EBE3; --subj-mid: #F8D2B5; --subj-accent: #EB986A; --subj-deep: #AD5C28;
+}
+[data-group="MS"] { /* 內外科護理學 */
+  --subj-light: #DAF0E5; --subj-mid: #B8E0C8; --subj-accent: #72B68B; --subj-deep: #3E7C57;
+}
+[data-group="OP"] { /* 產兒科護理學 */
+  --subj-light: #D7E1F2; --subj-mid: #B6CCF0; --subj-accent: #6592CD; --subj-deep: #2C5A96;
+}
+[data-group="PC"] { /* 精神與社區衛生護理學 */
+  --subj-light: #EADEF4; --subj-mid: #D8BEF0; --subj-accent: #B481BB; --subj-deep: #7A4E86;
+}
+
+/* ---------- 分頁列（仿 antd 水平 Menu） ---------- */
+.tabs {
   display: flex;
-  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid var(--color-border);
+  margin: 8px 0 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.bundle-cover {
-  width: 100%;
-  /* height 一定要明確寫 auto：<img> 標籤上還留著 width/height 屬性當作
-     載入前的版面佔位提示，兩個維度都有明確數值時 aspect-ratio 不會生效，
-     瀏覽器會直接套用 height 屬性的像素值，把圖片壓扁。 */
-  height: auto;
-  /* 對齊合訂本 PDF 實際頁面比例（498.898 × 708.661 pt），封面完整顯示不裁切 */
-  aspect-ratio: 498.898 / 708.661;
-  object-fit: cover;
-  display: block;
-  background: var(--color-section-bg);
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 
-.bundle-body {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-}
-
-.bundle-name {
-  font-weight: bold;
-  font-size: 0.95rem;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.bundle-name small {
-  display: block;
-  font-weight: normal;
-  color: var(--color-text-light);
-  font-size: 0.78rem;
-}
-
-.bundle-links {
-  /* 上下堆疊而非並排：按鈕文字含檔案大小後最長到 99px，
-     並排在窄欄位一定會被 .bundle-card 的 overflow:hidden 裁掉，
-     堆疊不管欄寬多少都不會超出。 */
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: auto;
-}
-
-/* .btn-sm 的 flex:1 是給並排（考古題清單）用的水平撐開；
-   這裡改直向排列，蓋掉它避免兩顆按鈕被拉伸成不必要的高度。 */
-.bundle-links .btn-sm {
-  flex: none;
-}
-
-/* 小顆的次要按鈕，用在卡片與清單列裡 */
-.btn-sm {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  border: 1px solid var(--color-accent);
-  color: var(--color-deep);
-  background: var(--color-card);
-  flex: 1;
-  white-space: nowrap;
-}
-
-.btn-sm:hover,
-.btn-sm:focus {
-  background: var(--color-primary);
-  color: var(--color-on-accent);
-}
-
-.btn-sm.is-solid {
-  background: var(--color-primary);
-  color: var(--color-on-accent);
-}
-
-.btn-sm.is-solid:hover,
-.btn-sm.is-solid:focus {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-}
-
-/* ---------- 考古題頁：工具列 ---------- */
-.dl-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.dl-search {
-  flex: 1 1 200px;
-  min-width: 0;
-  padding: 9px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-btn);
+.tab {
+  flex-shrink: 0;
+  padding: 12px 18px;
+  margin-bottom: -1px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
   font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab:hover {
+  color: var(--color-deep);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--color-deep);
+  font-weight: bold;
+  border-bottom-color: var(--color-deep);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+  border-radius: 6px 6px 0 0;
+}
+
+.tab-note {
+  margin: -8px 0 18px;
+  color: var(--color-text-light);
   font-size: 0.92rem;
 }
 
-.dl-search:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: -1px;
+/* ---------- 封面下載卡 ---------- */
+.cover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.dl-linkbtn {
-  background: none;
-  border: none;
-  padding: 6px 8px;
-  font: inherit;
-  font-size: 0.88rem;
-  color: var(--color-primary);
-  cursor: pointer;
-  text-decoration: underline;
+@media (min-width: 600px) {
+  .cover-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
 }
 
-.dl-linkbtn:hover {
-  color: var(--color-primary-dark);
+@media (min-width: 900px) {
+  .cover-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .cover-grid--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
 
-/* ---------- 考古題頁：學期分組 ---------- */
-.dl-group {
+.cover-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--radius-card);
+}
+
+.cover-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.cover-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background: var(--color-section-bg);
+  /* 對齊 PDF 實際頁面比例（498.898 × 708.661 pt），封面完整顯示不裁切 */
+  aspect-ratio: 498.898 / 708.661;
+}
+
+.cover-img {
+  display: block;
+  width: 100%;
+  /* height 一定要 100%：<img> 上留著 width/height 屬性當作載入前的佔位提示，
+     不蓋掉的話瀏覽器會直接套用 height 屬性的像素值，把圖片壓扁。 */
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.cover-btn {
+  position: absolute;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--color-card);
+  color: var(--color-deep);
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s, transform 0.3s, background-color 0.2s, color 0.2s;
+}
+
+.cover-btn svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.cover-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 2px;
+}
+
+.cover-title {
+  font-weight: bold;
+  color: var(--color-strong);
+  line-height: 1.35;
+}
+
+.cover-sub {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+/* 有滑鼠的裝置：平常不顯示按鈕，hover / 鍵盤選到時封面變暗、正中央浮出下載鈕 */
+@media (hover: hover) {
+  .cover-btn {
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  .cover-card:hover .cover-img,
+  .cover-card:focus-visible .cover-img {
+    filter: brightness(0.5);
+    transform: scale(1.03);
+  }
+
+  .cover-card:hover .cover-btn,
+  .cover-card:focus-visible .cover-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .cover-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-on-accent);
+  }
+
+  .cover-card:hover .cover-title {
+    color: var(--color-deep);
+  }
+}
+
+/* 觸控裝置沒有 hover：下載鈕常駐在封面下緣，點整張卡也會下載 */
+@media (hover: none) {
+  .cover-btn {
+    bottom: 10px;
+    transform: translateX(-50%);
+    padding: 7px 14px;
+    font-size: 0.82rem;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .cover-card:active .cover-img {
+    filter: brightness(0.8);
+  }
+}
+
+@media (max-width: 420px) {
+  .cover-btn {
+    padding: 6px 10px;
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover-img,
+  .cover-btn {
+    transition: none;
+  }
+}
+
+/* 「前往更多考題」引導列 */
+.more-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+  padding: 16px 20px;
+  border-radius: var(--radius-card);
+  background: var(--color-section-bg);
+}
+
+.more-cta p {
+  margin: 0;
+}
+
+/* ---------- 更多考題：側欄 + 內容 ---------- */
+.more-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.more-side {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: 6px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
-  margin-bottom: 12px;
-  overflow: hidden;
+  background: var(--color-card);
 }
 
-.dl-group[hidden] {
-  display: none;
-}
-
-.dl-group-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: var(--color-section-bg);
-  cursor: pointer;
+.side-list {
   list-style: none;
-  user-select: none;
+  margin: 0;
+  padding: 0;
 }
 
-.dl-group-head::-webkit-details-marker {
-  display: none;
-}
-
-.dl-group-title {
-  font-weight: bold;
-  flex: 1;
-  min-width: 0;
-}
-
-.dl-group-title small {
-  font-weight: normal;
-  color: var(--color-text-light);
-  font-size: 0.82rem;
-  margin-left: 8px;
-}
-
-.dl-chevron {
-  color: var(--color-text-light);
-  transition: transform 0.15s;
-  font-size: 0.8rem;
-}
-
-.dl-group[open] .dl-chevron {
-  transform: rotate(90deg);
-}
-
-/* ---------- 考古題頁：單列考卷 ---------- */
-.dl-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
+.side-item + .side-item {
   border-top: 1px solid var(--color-border);
 }
 
-.dl-item[hidden] {
-  display: none;
-}
-
-.dl-item-label {
-  flex: 1;
-  min-width: 0;
+.side-trigger {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  font-size: 0.92rem;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 8px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.dl-ch {
-  color: var(--color-primary-dark);
-  font-weight: bold;
-  overflow-wrap: anywhere;
+.side-trigger:hover {
+  background: var(--color-surface-hover);
 }
 
-.dl-size {
-  color: var(--color-text-light);
-  font-size: 0.8rem;
+.side-trigger:focus-visible {
+  outline: 2px solid var(--subj-accent);
+  outline-offset: -2px;
+}
+
+.side-item.is-active .side-trigger {
+  background: var(--subj-light);
+  color: var(--subj-deep);
+}
+
+/* 左側 +/−（仿 shadcn accordion 的 left plus-minus）：打開時直線轉 90° 並淡出變成 − */
+.pm {
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 0.2s;
+}
+
+.pm path:last-child {
+  transform-origin: center;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.side-trigger[aria-expanded="true"] .pm {
+  transform: rotate(180deg);
+}
+
+.side-trigger[aria-expanded="true"] .pm path:last-child {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.side-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--subj-light);
+  color: var(--subj-deep);
+}
+
+.side-item.is-active .side-chip {
+  background: var(--color-card);
+}
+
+.subject-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.side-label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.side-name {
+  font-weight: bold;
+  color: var(--subj-deep);
+}
+
+.side-label small {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+}
+
+/* 展開區：用 grid-template-rows 0fr → 1fr 做高度動畫，不需要 JS 量高度 */
+.side-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease-out;
+}
+
+.side-item.is-open .side-panel {
+  grid-template-rows: 1fr;
+}
+
+.side-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.side-cover {
+  display: block;
+  margin: 8px 8px 12px 34px;
+}
+
+.side-cover .cover-btn {
+  padding: 7px 12px;
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .side-panel,
+  .pm,
+  .pm path:last-child {
+    transition: none;
+  }
+}
+
+/* 歷年考題的學期清單 */
+.side-term {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  font: inherit;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
   font-variant-numeric: tabular-nums;
 }
 
-.dl-item-actions {
+.side-term:hover {
+  background: var(--color-surface-hover);
+}
+
+.side-term:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.side-term[aria-current="true"] {
+  background: var(--color-light);
+  color: var(--color-deep);
+  font-weight: bold;
+}
+
+.side-term small {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  font-weight: normal;
+}
+
+.side-year {
+  padding: 10px 12px 4px;
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+}
+
+/* ---------- 更多考題：右側內容 ---------- */
+.more-main {
+  min-width: 0;
+}
+
+.panel-head {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.panel-head h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--subj-deep);
+}
+
+.panel-head small {
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+}
+
+/* 章節卡（參考多保命測驗「選擇章節」的樣式） */
+.ch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.ch-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.ch-card:hover,
+.ch-card:focus-visible {
+  border-color: var(--subj-accent);
+  background: var(--subj-light);
+  box-shadow: 0 2px 8px rgba(20, 40, 80, 0.08);
+}
+
+.ch-card:focus-visible {
+  outline: 2px solid var(--subj-accent);
+  outline-offset: 2px;
+}
+
+.ch-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ch-no {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.ch-title {
+  font-weight: bold;
+  color: var(--subj-deep);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.ch-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 6px;
   flex-shrink: 0;
-}
-
-.dl-empty {
+  font-size: 0.78rem;
   color: var(--color-text-light);
-  font-style: italic;
-  padding: 20px 0;
+  font-variant-numeric: tabular-nums;
 }
 
-/* ---------- 外部連結卡（Google Drive 導引） ---------- */
+.ch-meta svg {
+  width: 18px;
+  height: 18px;
+  color: var(--subj-deep);
+  opacity: 0.45;
+  transition: opacity 0.2s;
+}
+
+.ch-card:hover .ch-meta svg,
+.ch-card:focus-visible .ch-meta svg {
+  opacity: 1;
+}
+
+/* ---------- 整批下載（Google Drive） ---------- */
+.bulk {
+  margin-top: 36px;
+}
+
+.bulk .link-card {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bulk .link-card.is-inactive {
+  display: none;
+}
+
+.bulk .link-card .btn {
+  align-self: center;
+}
+
+/* ---------- 窄螢幕：側欄改成橫向捲動的標籤列 ---------- */
+@media (max-width: 720px) {
+  .more-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .more-side {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .side-list {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+  }
+
+  .side-item + .side-item {
+    border-top: none;
+  }
+
+  .side-item {
+    flex-shrink: 0;
+  }
+
+  .side-trigger,
+  .side-term {
+    width: auto;
+    padding: 6px 12px 6px 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-card);
+    white-space: nowrap;
+  }
+
+  .side-term {
+    padding: 8px 14px;
+  }
+
+  .side-item.is-active .side-trigger {
+    border-color: var(--subj-accent);
+  }
+
+  .side-term[aria-current="true"] {
+    border-color: var(--color-accent);
+  }
+
+  .side-chip {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+
+  .subject-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .pm,
+  .side-label small,
+  .side-term small,
+  .side-panel,
+  .side-year {
+    display: none;
+  }
+
+  .bulk .link-card .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- 外部連結卡 ---------- */
 .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -263,6 +677,7 @@
 
 .link-card-body {
   flex: 1;
+  min-width: 0;
 }
 
 .link-card-title {
@@ -279,6 +694,12 @@
 
 .link-card .btn {
   align-self: flex-start;
+}
+
+.dl-empty {
+  color: var(--color-text-light);
+  font-style: italic;
+  padding: 20px 0;
 }
 
 /* ---------- 社群連結 ---------- */
@@ -321,27 +742,4 @@
   background: var(--color-section-bg);
   font-size: 0.95rem;
   flex-shrink: 0;
-}
-
-/* ---------- 窄螢幕 ---------- */
-@media (max-width: 600px) {
-  .dl-item {
-    flex-wrap: wrap;
-  }
-
-  /* 手機上不要讓下載鈕撐滿整列，視覺上太重 */
-  .dl-item-actions {
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .dl-item-actions .btn-sm {
-    flex: 0 0 auto;
-    min-width: 76px;
-  }
-
-  .bundle-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 12px;
-  }
 }

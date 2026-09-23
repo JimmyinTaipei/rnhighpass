@@ -112,6 +112,22 @@ console.log("\n[考古題下載]");
   );
 }
 
+/* 2b. 分章檔案單檔下載 */
+console.log("\n[分章下載]");
+{
+  const item = manifest.chapters.find((c) => c.subjectNo === "05" && c.type === "題本" && c.ch === "03");
+  const r = await call(fileUrl(item.key));
+  check(r.status === 200, "回 200", `實際 ${r.status}`);
+  check(
+    r.headers.get("content-disposition").includes(encodeURIComponent(item.name)),
+    "檔名正確",
+    item.name
+  );
+  const oldest = manifest.pastExams.find((e) => e.term === "105-1");
+  const r2 = await call(fileUrl(oldest.key));
+  check(r2.status === 200, "最早學期的考古題也能下載", oldest.name);
+}
+
 /* 3. Range 續傳 */
 console.log("\n[Range 續傳]");
 {
@@ -128,8 +144,8 @@ console.log("\n[存取控制]");
 for (const [key, label] of [
   ["bundles/02_explanation.txt", "非 PDF"],
   ["bundles/99_explanation.pdf", "manifest 裡沒有的 key"],
-  ["explanations/02_Ch03.pdf", "已下架的分章檔案"],
-  ["past-exams/105-1_basic.pdf", "範圍外的舊考古題"],
+  ["explanations/02_Ch03.pdf", "沒有內容雜湊的舊分章 key"],
+  ["past-exams/105-1_basic.pdf", "沒有內容雜湊的舊考古題 key"],
 ]) {
   const r = await call(fileUrl(key));
   check(r.status === 404, `擋下：${label}`, `回 ${r.status}`);
@@ -169,11 +185,13 @@ console.log("\n[打包功能已移除]");
 /* 6. manifest 範圍 */
 console.log("\n[manifest 範圍]");
 {
-  check(!("explanations" in manifest) && !("workbooks" in manifest), "manifest 不含分章資料");
   check(manifest.bundles.length === 22, "22 本合訂本", `實際 ${manifest.bundles.length}`);
+  const types = new Set(manifest.chapters.map((c) => c.type));
+  check(types.has("詳解") && types.has("題本"), "分章同時有詳解與題本", `${manifest.chapters.length} 章`);
   const terms = [...new Set(manifest.pastExams.map((e) => e.term))];
-  check(terms.length === 5, "5 個學期的考古題", terms.join("、"));
-  const keys = [...manifest.bundles, ...manifest.pastExams].map((i) => i.key);
+  check(terms.length === manifest.pastExams.length / 5, "每個學期 5 份考古題", `${terms.length} 個學期`);
+  check(manifest.pastExams.every((e) => e.cover), "每份考古題都有封面路徑");
+  const keys = [...manifest.bundles, ...manifest.chapters, ...manifest.pastExams].map((i) => i.key);
   check(new Set(keys).size === keys.length, "key 無重複");
   check(keys.every((k) => /^[\x20-\x7E]+$/.test(k)), "key 全為 ASCII");
 }

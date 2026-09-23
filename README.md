@@ -16,36 +16,47 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 
 ## 網站上放什麼
 
-| 類型 | 去向 |
+| 頁面 | 內容 |
 |---|---|
-| 各科合訂本（22 本，每科詳解／題本各一） | 網站，點擊直接下載 |
-| 考古題 `PAST_EXAM_MIN_TERM` 之後的學期（目前 5 期 25 份） | 網站，點擊直接下載 |
-| 拆開的分章詳解／題本（324 檔） | Google Drive |
-| 更早年份的考古題 | Google Drive |
+| 首頁 `/`「題目下載」 | 分頁切換：分章詳解合訂本（11 本）、分章題本合訂本（11 本）、最新一期考古題（5 份），點封面直接下載 |
+| 更多考題 `/downloads/more.html` | 分章詳解／題本逐章下載（各 162 章）、全部 26 個學期的考古題（130 份），底下附 Google Drive 整批下載 |
+| 使用教學 `/guide.html`、問題回饋 `/feedback.html` | 使用說明、回饋表單、社群連結 |
 
-R2 上傳量因此只有 **47 個檔案 / 171 MB**。Google Drive 的連結設定在
-`assets/data/links.json`，不進 R2、也不需要維護。
+476 個檔案全部放在 R2、都可以從網站下載。Google Drive 的連結（`assets/data/links.json`）
+留給想一次下載整個資料夾的人。
+
+首頁與更多考題的內容都由 `assets/data/manifest.json` 在瀏覽器端產生，
+**HTML 裡不寫死任何檔案 key**——key 帶內容雜湊，檔案一更新就會變。
 
 ## 目錄結構
 
 ```
 .
-├── index.html                首頁（合訂本封面牆 + Drive 導引 + 社群）
+├── index.html                首頁（題目下載）
 ├── downloads/
-│   └── past-exams.html       考古題
+│   ├── more.html             更多考題
+│   └── past-exams.html       舊網址，轉址到 more.html#past
+├── guide.html                使用教學
+├── feedback.html             問題回饋 + 社群連結
 ├── worker/index.js           /api/file 單檔下載
 ├── scripts/
 │   ├── subjects.mjs          科目主檔與 ASCII 對照表
 │   ├── build-manifest.mjs    來源資料夾 → 正規化 + 產生 manifest
-│   ├── make-covers.sh        抽合訂本第一頁當封面圖
+│   ├── make-covers.sh        抽 PDF 第一頁當封面圖
 │   └── upload-r2.sh          批次上傳到 R2（可中斷續傳）
 ├── assets/
 │   ├── data/manifest.json    檔案清單（產生物，要 commit）
 │   ├── data/links.json       Drive / 社群連結（手動編輯）
-│   ├── css/downloads.css     下載頁樣式
-│   ├── js/past-exams.js      考古題頁邏輯
+│   ├── css/style.css         全站樣式（頁首、漢堡選單、回到頂端）
+│   ├── css/downloads.css     下載頁樣式（分頁、封面卡、側欄、章節卡）
+│   ├── js/main.js            全站共用：漢堡選單、回到頂端、window.RN 小工具
+│   ├── js/home.js            首頁題目下載
+│   ├── js/more.js            更多考題
+│   ├── js/subject-icons.js   11 科 icon（與多保命測驗一致）
 │   ├── js/site-links.js      把 links.json 填進頁面
-│   └── images/covers/        11 張科目封面
+│   └── images/covers/
+│       ├── bundles/          合訂本封面 22 張（{序號}_{explanation|workbook}.jpg）
+│       └── past-exams/       考古題封面 130 張（{學期}_{考卷}.jpg，檔名同 R2 key 的 ASCII 寫法）
 └── tools/nursing/            臨床小工具
 ```
 
@@ -102,30 +113,23 @@ nvm use 22                 # wrangler 需要 Node 22 以上
 npm install
 
 npm run manifest -- --src "/Users/jimmy/Downloads/0_護理國考分章/07_pdf"
-npm run covers             # 封面圖有換才需要重跑
+npm run covers             # 補上缺少的封面（新學期）；封面設計改了要加 -- --force 全部重做
 npm run upload             # 上傳到 R2（可中斷續傳）
 npm run deploy             # 部署網站與 Worker
-git add assets/data/manifest.json && git commit -m "更新檔案清單"
+git add assets/data/manifest.json assets/images/covers && git commit -m "更新檔案清單"
 ```
 
-`build-manifest.mjs` 會做三項檢查，任何一項沒過就中止，不會產出半套清單：
+`build-manifest.mjs` 會做五項檢查，任何一項沒過就中止，不會產出半套清單：
 
-1. 每科都要有詳解與題本兩本合訂本
-2. 每個學期的考古題份數必須一致
-3. key 不得重複
+1. 每一章都要同時有詳解與題本
+2. 每科章節必須從 Ch01 連號、沒有缺口
+3. 每科都要有詳解與題本兩本合訂本
+4. 每個學期的考古題份數必須一致
+5. key 不得重複
 
-（原本還有「題本↔詳解配對」「章節連號」兩項，是為拆開的分章檔設計的；
-分章檔改放 Google Drive 之後就不再需要。）
-
-### 調整考古題範圍
-
-網站上要放到哪一期，改 `scripts/subjects.mjs` 的這一行就好：
-
-```js
-export const PAST_EXAM_MIN_TERM = "114-1";
-```
-
-用「最低學期」而不是寫死清單，之後出現 115-3、116-1 會自動納入。
+封面圖不是從檔名推的：`npm run manifest` 會順便寫出 `dist-r2/covers.json`
+（R2 key → 封面輸出路徑），`npm run covers` 照這份清單用 macOS 內建的
+`qlmanage` + `sips` 抽第一頁，不需要另外安裝 poppler。
 
 ### 檔名之後又改了怎麼辦
 
@@ -165,7 +169,7 @@ Worker 的 `BUCKET` binding，而 Worker 只放行 manifest 裡真的有的 key�
 
 ### 大量上傳
 
-`npm run upload` 是用 `wrangler r2 object put` 逐檔上傳，47 個檔案大約一兩分鐘。
+`npm run upload` 是用 `wrangler r2 object put` 逐檔上傳，476 個檔案大約十幾分鐘（已上傳過的會自動跳過）。
 想快一點可以改用 rclone（R2 相容 S3 API）：到 Cloudflare 後台建一組 R2 API Token，
 設定 rclone remote 之後：
 
@@ -179,7 +183,7 @@ rclone copy dist-r2/ r2:rnhighpass-files/ --transfers 16 --progress
 
 ```sh
 npm run serve      # http://127.0.0.1:8788
-npm test           # Worker 的單元測試（20 項）
+npm test           # Worker 的單元測試（31 項）
 ```
 
 `npm run serve` 用 Node 直接驅動 `worker/index.js`，並把 `dist-r2/` 當成 R2 來讀，

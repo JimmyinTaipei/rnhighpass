@@ -42,12 +42,13 @@ export const TYPE_SLUG = { 詳解: "explanation", 題本: "workbook" };
 /**
  * 考古題的五份考卷 → ASCII。
  * 這五份是國考固定的考卷組成，26 個學期都一樣。
+ * 順序同科目序號（基礎醫學 → 基護行政 → 內外 → 產兒 → 精神社區），網站依此排列。
  * 若之後出現新的考卷名稱，build-manifest 會報錯要求在這裡補上，不會默默略過。
  */
 export const PAPER_SLUG = {
   基礎醫學: "basic",
-  內外科護理學: "medsurg",
   基本護理與護理行政: "fundamentals",
+  內外科護理學: "medsurg",
   產科與兒科護理學: "obgyn-peds",
   精神科與社區衛生護理: "psych-community",
 };
@@ -56,11 +57,3 @@ export const PAPER_SLUG = {
 export function termSlug(term) {
   return term.replace("補考", "makeup");
 }
-
-/**
- * 只有這個學期（含）之後的考古題會放在網站上，更早的導去 Google Drive。
- *
- * 用「最低學期」而不是寫死清單：之後出現 115-3、116-1 會自動納入，不用每年改程式。
- * 要調整網站上的考古題範圍，改這一行就好。
- */
-export const PAST_EXAM_MIN_TERM = "114-1";

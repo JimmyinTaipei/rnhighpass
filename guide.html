@@ -15,18 +15,36 @@
         <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
         <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
       </a>
-      <nav class="main-nav">
-        <a href="/guide.html">使用教學</a>
-        <a href="/#download">合訂本</a>
-        <a href="/downloads/past-exams.html">考古題</a>
-        <a href="/#feedback">問題回饋</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html" aria-current="page">使用教學</a>
+        <a href="/feedback.html">問題回饋</a>
         <a href="/tools/nursing/index.html">臨床工具</a>
         <a href="https://exam.rnhighpass.com">模擬測驗</a>
       </nav>
     </div>
   </header>
 
-  <!-- 使用教學內容之後放在這裡 -->
+  <section class="section">
+    <div class="container">
+      <h2>使用說明</h2>
+      <ul class="guide-list">
+        <li>首頁的「題目下載」是各科合訂本與最新一期考題，點封面就直接下載。</li>
+        <li>想要單獨某一章，或是更早年份的考古題，請到「更多考題」。</li>
+        <li>題本依章節分類，建議搭配課本或講義一起使用。</li>
+        <li>下載後可自行列印或用平板 / 手機閱讀。</li>
+        <li>如發現題目有誤或需要更新，歡迎到「問題回饋」告訴我們。</li>
+        <li>內容僅供學習交流使用，請勿作商業用途。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 詳細的使用教學之後放在這裡 -->
   <section class="section">
     <div class="container">
       <h2>使用教學</h2>
@@ -40,5 +58,6 @@
     </div>
   </footer>
 
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

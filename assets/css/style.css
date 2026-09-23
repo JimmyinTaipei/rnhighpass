@@ -126,6 +126,87 @@ a.brand-group {
   color: var(--color-primary-dark);
 }
 
+/* 目前所在的頁面 */
+.main-nav a[aria-current="page"] {
+  color: var(--color-deep);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+/* 漢堡按鈕：只在窄螢幕顯示（見下方 max-width: 720px） */
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-btn);
+  background: var(--color-card);
+  color: var(--color-strong);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-toggle .icon-close,
+.site-header.is-open .nav-toggle .icon-menu {
+  display: none;
+}
+
+.site-header.is-open .nav-toggle .icon-close {
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .brand-logo {
+    height: 34px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* 收合時整個隱藏；打開時換到下一行、直向排列 */
+  .main-nav {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 6px;
+  }
+
+  .site-header.is-open .main-nav {
+    display: flex;
+  }
+
+  .main-nav a {
+    padding: 12px 4px;
+    border-top: 1px solid var(--color-border);
+    font-size: 1rem;
+  }
+
+  .main-nav a[aria-current="page"] {
+    text-decoration: none;
+    box-shadow: inset 3px 0 0 var(--color-deep);
+    padding-left: 12px;
+  }
+}
+
 /* =========================================
    主視覺區
    ========================================= */
@@ -189,6 +270,72 @@ a.brand-group {
 .btn:hover,
 .btn:focus {
   background-color: var(--color-primary-dark);
+}
+
+/* 次要按鈕（白底、深色框線） */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-btn);
+  background: var(--color-card);
+  color: var(--color-deep);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background: var(--color-light);
+}
+
+/* =========================================
+   回到頂端（main.js 產生，捲動超過 600px 才出現）
+   ========================================= */
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-accent);
+  box-shadow: 0 4px 14px rgba(20, 40, 80, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.to-top:hover,
+.to-top:focus-visible {
+  background: var(--color-primary-dark);
+}
+
+.to-top svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .to-top {
+    transition: none;
+  }
 }
 
 /* =========================================

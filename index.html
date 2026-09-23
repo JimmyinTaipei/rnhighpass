@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>多保命 RN High Pass｜護理國考分章題本</title>
-  <link rel="icon" type="image/png" href="assets/images/多保命.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/downloads.css">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
 </head>
 <body>
 
-  <!-- 頁首 / 品牌 / 導覽選單 -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand-group">
-        <img src="assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
         <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
-      </div>
-      <nav class="main-nav">
-        <a href="guide.html">使用教學</a>
-        <a href="#download">合訂本</a>
-        <a href="/downloads/past-exams.html">考古題</a>
-        <a href="#feedback">問題回饋</a>
-        <a href="tools/nursing/index.html">臨床工具</a>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/" aria-current="page">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
         <a href="https://exam.rnhighpass.com">模擬測驗</a>
       </nav>
     </div>
@@ -38,6 +41,35 @@
     </div>
   </section>
 
+  <!-- 題目下載：三個分頁的封面牆，內容由 assets/js/home.js 依 manifest 產生 -->
+  <section class="section" id="download">
+    <div class="container">
+      <h2>題目下載</h2>
+      <p>各科分章合併成一本，點封面就直接下載。</p>
+
+      <div class="tabs" role="tablist" aria-label="題目類型" id="dl-tabs">
+        <button type="button" class="tab" role="tab" id="tab-explanations" data-tab="explanations" aria-controls="panel-explanations">分章詳解</button>
+        <button type="button" class="tab" role="tab" id="tab-workbooks" data-tab="workbooks" aria-controls="panel-workbooks">分章題本</button>
+        <button type="button" class="tab" role="tab" id="tab-past" data-tab="past" aria-controls="panel-past">歷年考題</button>
+      </div>
+
+      <div role="tabpanel" id="panel-explanations" aria-labelledby="tab-explanations">
+        <p class="dl-empty">載入中…</p>
+      </div>
+      <div role="tabpanel" id="panel-workbooks" aria-labelledby="tab-workbooks" hidden>
+        <p class="dl-empty">載入中…</p>
+      </div>
+      <div role="tabpanel" id="panel-past" aria-labelledby="tab-past" hidden>
+        <p class="dl-empty">載入中…</p>
+      </div>
+
+      <div class="more-cta">
+        <p>只想下載單一章節，或是找更早年份的考古題？</p>
+        <a class="btn-outline" href="/downloads/more.html">前往更多考題 →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- 線上模擬測驗(exam.rnhighpass.com，獨立網站) -->
   <section class="section" id="mock-exam">
     <div class="container">
@@ -46,227 +78,17 @@
         護理師國考改為電腦化測驗，這裡可以先熟悉考試介面與流程：比照考選部的作答畫面，
         每科 60 分鐘、逐題作答、可註記與瀏覽作答情形，交卷後看分數。免登入、直接開始。
       </p>
-      <div class="download-list">
-        <a href="https://exam.rnhighpass.com" class="btn">前往線上模擬測驗</a>
-      </div>
+      <a href="https://exam.rnhighpass.com" class="btn">前往線上模擬測驗</a>
     </div>
   </section>
 
-  <!-- 合訂本快速下載：每科一張封面卡，點擊直接下載整本 -->
-  <section class="section" id="download">
-    <div class="container">
-      <h2>各科合訂本</h2>
-      <p>把各章節合併成一本，點擊就直接下載。想要單獨某一章的檔案，請看下面的分章檔案。</p>
-      <div class="bundle-grid">
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/01_生解.jpg" alt="解剖生理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">解剖生理學<small>01　生解</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/01_explanation_028c27178b.pdf" title="01_生解_詳解_合訂本.pdf">詳解 6.2 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/01_workbook_1c7de61fcb.pdf" title="01_生解_題本_合訂本.pdf">題本 2.7 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/02_病理.jpg" alt="病理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">病理學<small>02　病理</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/02_explanation_e144ac16ae.pdf" title="02_病理_詳解_合訂本.pdf">詳解 4.9 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/02_workbook_f5dc19d864.pdf" title="02_病理_題本_合訂本.pdf">題本 2.4 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/03_藥理.jpg" alt="藥理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">藥理學<small>03　藥理</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/03_explanation_9d55fddf91.pdf" title="03_藥理_詳解_合訂本.pdf">詳解 6.2 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/03_workbook_4e90b7faf4.pdf" title="03_藥理_題本_合訂本.pdf">題本 2.5 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/04_微免.jpg" alt="微生物免疫學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">微生物免疫學<small>04　微免</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/04_explanation_5907fb8ac0.pdf" title="04_微免_詳解_合訂本.pdf">詳解 4.4 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/04_workbook_dadd42c6eb.pdf" title="04_微免_題本_合訂本.pdf">題本 1.7 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/05_基護.jpg" alt="基本護理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">基本護理學<small>05　基護</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/05_explanation_edad52db17.pdf" title="05_基護_詳解_合訂本.pdf">詳解 7.7 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/05_workbook_3c20df2c72.pdf" title="05_基護_題本_合訂本.pdf">題本 3.2 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/06_行政.jpg" alt="護理行政封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">護理行政<small>06　行政</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/06_explanation_6e51bbf8b8.pdf" title="06_行政_詳解_合訂本.pdf">詳解 3.7 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/06_workbook_428e009eed.pdf" title="06_行政_題本_合訂本.pdf">題本 2.1 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/07_內外.jpg" alt="內外科護理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">內外科護理學<small>07　內外</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/07_explanation_fe4cd15b41.pdf" title="07_內外_詳解_合訂本.pdf">詳解 10.2 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/07_workbook_9b9cb4a482.pdf" title="07_內外_題本_合訂本.pdf">題本 3.6 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/08_產科.jpg" alt="產科護理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">產科護理學<small>08　產科</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/08_explanation_6da7c78f69.pdf" title="08_產科_詳解_合訂本.pdf">詳解 5.8 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/08_workbook_91f3f5d700.pdf" title="08_產科_題本_合訂本.pdf">題本 2.5 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/09_兒科.jpg" alt="兒科護理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">兒科護理學<small>09　兒科</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/09_explanation_31f12a3aae.pdf" title="09_兒科_詳解_合訂本.pdf">詳解 5.6 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/09_workbook_f16c316695.pdf" title="09_兒科_題本_合訂本.pdf">題本 2.4 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/10_精神.jpg" alt="精神科護理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">精神科護理學<small>10　精神</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/10_explanation_446278f88c.pdf" title="10_精神_詳解_合訂本.pdf">詳解 4.9 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/10_workbook_4663786f81.pdf" title="10_精神_題本_合訂本.pdf">題本 2.5 MB</a>
-            </div>
-          </div>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-cover" src="/assets/images/covers/11_社區.jpg" alt="社區衛生護理學封面" loading="lazy" width="300" height="426">
-          <div class="bundle-body">
-            <p class="bundle-name">社區衛生護理學<small>11　社區</small></p>
-            <div class="bundle-links">
-            <a class="btn-sm" href="/api/file/bundles/11_explanation_1293864bf8.pdf" title="11_社區_詳解_合訂本.pdf">詳解 6.1 MB</a>
-            <a class="btn-sm" href="/api/file/bundles/11_workbook_d68794b368.pdf" title="11_社區_題本_合訂本.pdf">題本 2.8 MB</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 拆開的分章檔案導去 Google Drive -->
-  <section class="section" id="chapters" data-link-section>
-    <div class="container">
-      <h2>分章檔案（Google Drive）</h2>
-      <p>
-        想要單獨某一章的檔案，可以到 Google Drive 下載。
-        上面的合訂本是把各章節合併成一本，兩邊內容相同。
-      </p>
-      <div class="link-grid">
-        <div class="link-card" data-link-wrap>
-          <div class="link-card-body">
-            <p class="link-card-title">分章詳解</p>
-            <p class="link-card-desc">依章節拆開的詳解，11 科共 162 章。</p>
-          </div>
-          <a class="btn" data-link="drive.explanations" target="_blank" rel="noopener">前往 Google Drive</a>
-        </div>
-        <div class="link-card" data-link-wrap>
-          <div class="link-card-body">
-            <p class="link-card-title">分章題本</p>
-            <p class="link-card-desc">依章節拆開的題本，章節編號與詳解一一對應。</p>
-          </div>
-          <a class="btn" data-link="drive.workbooks" target="_blank" rel="noopener">前往 Google Drive</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 考古題入口 -->
-  <section class="section" id="past-exams">
-    <div class="container">
-      <h2>考古題</h2>
-      <p>近年的護理師國考試題，點擊即可下載；更早年份的放在 Google Drive。</p>
-      <div class="download-list">
-        <a href="/downloads/past-exams.html" class="btn">前往考古題下載</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 使用說明 -->
-  <section class="section" id="guide">
-    <div class="container">
-      <h2>使用說明</h2>
-      <ul class="guide-list">
-        <li>題本依章節分類，建議搭配課本或講義一起使用。</li>
-        <li>下載後可自行列印或用平板 / 手機閱讀。</li>
-        <li>如發現題目有誤或需要更新，歡迎透過社群留言告知。</li>
-        <li>內容僅供學習交流使用，請勿作商業用途。</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 社群連結（網址填在 assets/data/links.json，沒填的會自動隱藏） -->
-  <section class="section" id="social" data-link-section>
-    <div class="container">
-      <h2>追蹤我們</h2>
-      <p>最新的題本更新與考試資訊都會在這裡發布。</p>
-      <div class="social-grid">
-        <a class="social-link" data-link="social.threads" data-link-wrap target="_blank" rel="noopener">
-          <span class="social-icon">@</span>
-          <span class="social-name">Threads</span>
-        </a>
-        <a class="social-link" data-link="social.instagram" data-link-wrap target="_blank" rel="noopener">
-          <span class="social-icon">◎</span>
-          <span class="social-name">Instagram</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 問題回饋 -->
-  <section class="section" id="feedback">
-    <div class="container">
-      <h2>問題回饋</h2>
-      <p>發現題目有誤或有建議，歡迎填寫回饋表單告知我們。</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdthtlA0QfYFPvtfp0Z0ndT23StYGZGmk9ry5WVjZ2Ey2cyxw/viewform?usp=dialog" class="btn" target="_blank" rel="noopener">填寫回饋表單</a>
-    </div>
-  </section>
-
-  <!-- 工具區 -->
-  <section class="section" id="tools">
-    <div class="container">
-      <h2>工具</h2>
-      <p class="coming-soon">敬請期待 🚧</p>
-      <!-- 之後這裡會放各種小工具卡片，例如點滴速率計算機，連結到 /tools/ 底下的頁面 -->
-    </div>
-  </section>
-
-  <!-- 頁尾 / 社群連結 -->
   <footer class="site-footer">
     <div class="container">
       <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
-  <script src="/assets/js/site-links.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/home.js" defer></script>
 </body>
 </html>

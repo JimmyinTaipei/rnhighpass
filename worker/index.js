@@ -34,7 +34,7 @@ function loadManifest(env, baseUrl) {
       if (!res.ok) throw new Error(`讀不到 manifest（${res.status}）`);
       const data = await res.json();
       const names = new Map();
-      for (const group of ["bundles", "pastExams"]) {
+      for (const group of ["bundles", "chapters", "pastExams"]) {
         for (const item of data[group] || []) names.set(item.key, item.name);
       }
       return names;

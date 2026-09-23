@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>更多考題｜多保命 RN High Pass</title>
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html" aria-current="page">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
+        <a href="https://exam.rnhighpass.com">模擬測驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 內容由 assets/js/more.js 依 manifest 產生；目前位置記在網址 hash（#workbooks/05、#past/115-2） -->
+  <section class="section">
+    <div class="container">
+      <h2>更多考題</h2>
+      <p>單一章節的詳解與題本，以及歷年的國考考題，點一下就能下載。</p>
+
+      <div class="tabs" role="tablist" aria-label="題目類型" id="more-tabs">
+        <button type="button" class="tab" role="tab" id="tab-explanations" data-tab="explanations" aria-controls="more-main">分章詳解</button>
+        <button type="button" class="tab" role="tab" id="tab-workbooks" data-tab="workbooks" aria-controls="more-main">分章題本</button>
+        <button type="button" class="tab" role="tab" id="tab-past" data-tab="past" aria-controls="more-main">歷年考題</button>
+      </div>
+
+      <div class="more-layout">
+        <nav class="more-side" id="more-side" aria-label="科目">
+          <p class="dl-empty">載入中…</p>
+        </nav>
+        <div class="more-main" id="more-main" role="tabpanel" aria-live="polite">
+          <p class="dl-empty">載入中…</p>
+        </div>
+      </div>
+
+      <!-- 整批下載：依目前分頁只顯示一張；網址在 assets/data/links.json，沒填的會自動隱藏 -->
+      <div class="bulk" data-link-section>
+        <div class="link-card" data-link-wrap data-bulk="explanations">
+          <div class="link-card-body">
+            <p class="link-card-title">整批下載：分章詳解</p>
+            <p class="link-card-desc">想一次下載多份考題？11 科的分章詳解都放在 Google Drive，可以整個資料夾一起下載。</p>
+          </div>
+          <a class="btn" data-link="drive.explanations" target="_blank" rel="noopener">前往 Google Drive 整批下載</a>
+        </div>
+        <div class="link-card" data-link-wrap data-bulk="workbooks">
+          <div class="link-card-body">
+            <p class="link-card-title">整批下載：分章題本</p>
+            <p class="link-card-desc">想一次下載多份考題？11 科的分章題本都放在 Google Drive，可以整個資料夾一起下載。</p>
+          </div>
+          <a class="btn" data-link="drive.workbooks" target="_blank" rel="noopener">前往 Google Drive 整批下載</a>
+        </div>
+        <div class="link-card" data-link-wrap data-bulk="past">
+          <div class="link-card-body">
+            <p class="link-card-title">整批下載：歷年考題</p>
+            <p class="link-card-desc">想一次下載多份考題？歷年國考考題都放在 Google Drive，可以整個資料夾一起下載。</p>
+          </div>
+          <a class="btn" data-link="drive.pastExams" target="_blank" rel="noopener">前往 Google Drive 整批下載</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/subject-icons.js" defer></script>
+  <script src="/assets/js/more.js" defer></script>
+  <script src="/assets/js/site-links.js" defer></script>
+</body>
+</html>
