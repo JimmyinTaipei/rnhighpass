@@ -63,9 +63,9 @@ R2 上傳量因此只有 **47 個檔案 / 171 MB**。Google Drive 的連結設�
 **R2 上實際的 key**（manifest 的 `key`）一律是 ASCII：
 
 ```
-bundles/02_explanation.pdf     → 02_病理_詳解_合訂本.pdf
-bundles/02_workbook.pdf        → 02_病理_題本_合訂本.pdf
-past-exams/115-1_basic.pdf     → 115-1_基礎醫學.pdf
+bundles/02_explanation_e144ac16ae.pdf     → 02_病理_詳解_合訂本.pdf
+bundles/02_workbook_f5dc19d864.pdf        → 02_病理_題本_合訂本.pdf
+past-exams/115-1_basic_a1b2c3d4e5.pdf     → 115-1_基礎醫學.pdf
 ```
 
 > **為什麼 key 不用中文**：`wrangler r2 object put` 會把非 ASCII 的 key
@@ -75,17 +75,23 @@ past-exams/115-1_basic.pdf     → 115-1_基礎醫學.pdf
 > 使用者下載到的仍然是上表的中文檔名 —— Worker 會從 manifest 查出 `name`，
 > 再用 `Content-Disposition: filename*=UTF-8''…` 送出。
 
-### 更新檔案要用版本化檔名
+### 更新檔案：不用做任何事，正常改完重新產生 manifest 就好
 
-**不要用同檔名覆蓋上傳**，否則 Cloudflare CDN 會繼續送舊版本（key 設了一年的
-`immutable` 快取）。請在來源檔名加上 `_v2`、`_v3`：
+R2 的 key 尾端那串英數字（`_e144ac16ae`）是**檔案內容的雜湊值**，由
+`scripts/build-manifest.mjs` 的 `withContentHash()` 自動算出來、自動加上去
+的——**不需要手動改檔名、不需要加 `_v2`**。檔案內容只要有變，重新跑
+`npm run manifest` 算出來的雜湊就會不一樣，key 自然跟著變成一個新的 URL。
 
-```
-02_病理_詳解_Ch03_代謝、體液與循環障礙_v2.pdf
-```
+這樣設計是為了讓 `Cache-Control: immutable` 這種一年期長快取真正安全：
+key 不變 = 內容保證沒變（雜湊相同代表位元組相同），才能放心讓瀏覽器永遠不重新驗證。
+早期版本曾經用「手動在檔名加 `_v2`」的方式做版本化，但這個機制要求每次改內容都要
+記得手動改檔名——一旦忘記（例如直接覆蓋原檔案重新輸出），檔案內容變了但 key 沒變，
+瀏覽器的 immutable 快取會繼續顯示舊版本、而且完全不會有錯誤訊息提示，非常難察覺。
+改成自動雜湊之後這個風險就不存在了。
 
-`build-manifest.mjs` 會把版本後綴帶進 R2 key（`bundles/02_explanation_v2.pdf`），
-但 `name` 仍然是沒有 `_v2` 的乾淨檔名，所以使用者下載到的檔名不會變。
+> **注意**：因為雜湊是內容決定的，**每次改動來源檔案、重新產生 manifest 後，
+> 對應的 key 都會變成新的**。舊 key 對應的物件不會自動從 R2 刪除（不影響網站，
+> 只是變成沒人引用的孤兒物件），需要的話可以之後手動清理，不影響日常操作。
 
 ## 更新流程
 

@@ -84,7 +84,8 @@ const check = (ok, label, extra = "") => {
 /* 1. 合訂本單檔下載 */
 console.log("\n[合訂本下載]");
 {
-  const item = manifest.bundles.find((b) => b.key === "bundles/02_explanation.pdf");
+  // key 帶內容雜湊，不能寫死字串比對；用邏輯身分（科目+類型）找。
+  const item = manifest.bundles.find((b) => b.subjectNo === "02" && b.type === "詳解");
   const r = await call(fileUrl(item.key));
   const cd = r.headers.get("content-disposition");
   check(r.status === 200, "回 200", `實際 ${r.status}`);
@@ -114,7 +115,8 @@ console.log("\n[考古題下載]");
 /* 3. Range 續傳 */
 console.log("\n[Range 續傳]");
 {
-  const r = await call(fileUrl("bundles/02_explanation.pdf"), { headers: { range: "bytes=100-199" } });
+  const target = manifest.bundles.find((b) => b.subjectNo === "02" && b.type === "詳解");
+  const r = await call(fileUrl(target.key), { headers: { range: "bytes=100-199" } });
   check(r.status === 206, "回 206 Partial Content", `實際 ${r.status}`);
   check(!!r.headers.get("content-range"), "有 content-range", r.headers.get("content-range") || "");
   const body = new Uint8Array(await r.arrayBuffer());
@@ -144,8 +146,9 @@ for (const [raw, label] of [
   check(r.status === 404, `擋下：${label}`, `回 ${r.status}`);
 }
 {
-  notUploaded.add("bundles/01_explanation.pdf");
-  const r = await call(fileUrl("bundles/01_explanation.pdf"));
+  const missingItem = manifest.bundles.find((b) => b.subjectNo === "01" && b.type === "詳解");
+  notUploaded.add(missingItem.key);
+  const r = await call(fileUrl(missingItem.key));
   notUploaded.clear();
   check(r.status === 404, "manifest 有但 R2 沒有 → 404", `回 ${r.status}`);
 }

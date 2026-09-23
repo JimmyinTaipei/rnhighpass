@@ -18,9 +18,14 @@
  * 絕不靜默略過 —— 靜默略過會讓網站少檔案卻沒人發現。
  *
  * 檔名定稿後重跑這支腳本即可，前端與 Worker 都不用動。
+ *
+ * R2 的 key 會自動帶內容雜湊（見 withContentHash()）：檔案內容只要一變，
+ * key 就會跟著變，不需要手動在檔名加 _v2。這也是 Worker 端把 key 設成
+ * 一年期 immutable 快取還能保證安全的原因——key 不變就代表內容真的沒變。
  */
-import { readdir, stat, mkdir, rm, link, copyFile, writeFile } from "node:fs/promises";
+import { readdir, stat, readFile, mkdir, rm, link, copyFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -54,21 +59,23 @@ function parseArgs(argv) {
 
 /* -------------------------------- 工具函式 -------------------------------- */
 
-const VERSION_SUFFIX = /_v\d+$/;          // 版本化檔名：..._v2.pdf
 const CHAPTER_DIR = /^(\d{2})_(.+)$/;     // 來源資料夾：02_病理
 
-/** 由 canonical key 去掉版本後綴，得到給使用者看的乾淨檔名。Worker 端有同樣邏輯。 */
-export function cleanName(fileName) {
-  const ext = path.extname(fileName);
-  const base = fileName.slice(0, -ext.length);
-  return base.replace(VERSION_SUFFIX, "") + ext;
-}
-
-/** 從檔名尾端取出版本後綴（沒有就回 null），讓 manifest 能顯示版本。 */
-function versionOf(fileName) {
-  const base = path.basename(fileName, path.extname(fileName));
-  const m = base.match(VERSION_SUFFIX);
-  return m ? m[0].slice(2) : null;
+/**
+ * 幫一批已經 dedupe 完的項目，把內容雜湊（sha256 前 10 碼）插進 key 尾端。
+ *
+ * 一定要在 dedupeByKey() 之後才呼叫：dedupe 是靠「邏輯識別碼」（例如
+ * bundles/07_explanation.pdf）判斷新舊格式指向的是不是同一份文件，
+ * 如果太早把雜湊混進 key，同一份文件的新舊檔名會因為雜湊不同而被當成
+ * 兩份不同的東西，dedupe 邏輯就失效了。
+ */
+async function withContentHash(items) {
+  for (const item of items) {
+    const buf = await readFile(item.src);
+    const hash = createHash("sha256").update(buf).digest("hex").slice(0, 10);
+    item.key = item.key.replace(/\.pdf$/, `_${hash}.pdf`);
+  }
+  return items;
 }
 
 async function listPdfs(dir) {
@@ -216,10 +223,8 @@ async function collectChapters(srcRoot, dirName, type, prefix) {
     for (const file of await listPdfs(path.join(base, entry.name))) {
       const fileName = path.basename(file);
       const rawBase = path.basename(fileName, ".pdf");
-      const version = versionOf(fileName);
-      const parsedBase = version ? rawBase.replace(VERSION_SUFFIX, "") : rawBase;
 
-      const parsed = tryPatterns(parsedBase, CHAPTER_PATTERNS);
+      const parsed = tryPatterns(rawBase, CHAPTER_PATTERNS);
       if (!parsed) {
         problem(`檔名無法解析（分章）：${path.relative(srcRoot, file)}`);
         continue;
@@ -243,9 +248,10 @@ async function collectChapters(srcRoot, dirName, type, prefix) {
         continue;
       }
 
-      // name：使用者下載到的中文檔名（需求書格式）。key：R2 上的 ASCII 路徑。
+      // name：使用者下載到的中文檔名（需求書格式）。key：R2 上的 ASCII 路徑
+      // （withContentHash() 稍後會在 dedupe 之後幫它加上內容雜湊）。
       const name = `${subject.no}_${subject.name}_${type}_Ch${parsed.ch}_${parsed.title}.pdf`;
-      const key = `${prefix}/${subject.no}_Ch${parsed.ch}${version ? `_v${version}` : ""}.pdf`;
+      const key = `${prefix}/${subject.no}_Ch${parsed.ch}.pdf`;
       const { size } = await stat(file);
 
       items.push({
@@ -260,12 +266,12 @@ async function collectChapters(srcRoot, dirName, type, prefix) {
         pairId: `${subject.no}_Ch${parsed.ch}`,
         size,
         _rank: parsed._rank,
-        ...(version ? { version } : {}),
       });
     }
   }
 
   const unique = dedupeByKey(items);
+  await withContentHash(unique);
   unique.sort((a, b) => a.subjectNo.localeCompare(b.subjectNo) || a.ch.localeCompare(b.ch));
   return unique;
 }
@@ -281,10 +287,8 @@ async function collectBundles(srcRoot, dirNames) {
       for (const file of await listPdfs(path.join(base, entry.name))) {
         const fileName = path.basename(file);
         const rawBase = path.basename(fileName, ".pdf");
-        const version = versionOf(fileName);
-        const parsedBase = version ? rawBase.replace(VERSION_SUFFIX, "") : rawBase;
 
-        const parsed = tryPatterns(parsedBase, BUNDLE_PATTERNS);
+        const parsed = tryPatterns(rawBase, BUNDLE_PATTERNS);
         if (!parsed) {
           problem(`檔名無法解析（合訂本）：${path.relative(srcRoot, file)}`);
           continue;
@@ -296,7 +300,7 @@ async function collectBundles(srcRoot, dirNames) {
         }
 
         const name = `${subject.no}_${subject.name}_${parsed.type}_合訂本.pdf`;
-        const key = `${PREFIXES.bundles}/${subject.no}_${TYPE_SLUG[parsed.type]}${version ? `_v${version}` : ""}.pdf`;
+        const key = `${PREFIXES.bundles}/${subject.no}_${TYPE_SLUG[parsed.type]}.pdf`;
         const { size } = await stat(file);
 
         items.push({
@@ -308,12 +312,12 @@ async function collectBundles(srcRoot, dirNames) {
           type: parsed.type,
           size,
           _rank: parsed._rank,
-          ...(version ? { version } : {}),
         });
       }
     }
   }
   const unique = dedupeByKey(items);
+  await withContentHash(unique);
   unique.sort((a, b) => a.subjectNo.localeCompare(b.subjectNo) || a.type.localeCompare(b.type));
   return unique;
 }
@@ -329,10 +333,8 @@ async function collectPastExams(srcRoot, dirName) {
   for (const file of await listPdfs(base)) {
     const fileName = path.basename(file);
     const rawBase = path.basename(fileName, ".pdf");
-    const version = versionOf(fileName);
-    const parsedBase = version ? rawBase.replace(VERSION_SUFFIX, "") : rawBase;
 
-    const parsed = tryPatterns(parsedBase, PAST_EXAM_PATTERNS);
+    const parsed = tryPatterns(rawBase, PAST_EXAM_PATTERNS);
     if (!parsed) {
       problem(`檔名無法解析（考古題）：${path.relative(srcRoot, file)}`);
       continue;
@@ -347,7 +349,7 @@ async function collectPastExams(srcRoot, dirName) {
       continue;
     }
     const name = `${parsed.term}_${parsed.paper}.pdf`;
-    const key = `${PREFIXES.pastExams}/${termSlug(parsed.term)}_${slug}${version ? `_v${version}` : ""}.pdf`;
+    const key = `${PREFIXES.pastExams}/${termSlug(parsed.term)}_${slug}.pdf`;
     const { size } = await stat(file);
 
     items.push({
@@ -359,7 +361,6 @@ async function collectPastExams(srcRoot, dirName) {
       paper: parsed.paper,
       size,
       _rank: parsed._rank,
-      ...(version ? { version } : {}),
     });
   }
 
@@ -367,6 +368,7 @@ async function collectPastExams(srcRoot, dirName) {
   // 這裡負責的是「來源資料夾裡實際有什麼」。
   // 預設由新到舊，補考排在同學期正試之後。
   const unique = dedupeByKey(items);
+  await withContentHash(unique);
   unique.sort((a, b) => b.termSort - a.termSort || a.paper.localeCompare(b.paper, "zh-Hant"));
   return unique;
 }
