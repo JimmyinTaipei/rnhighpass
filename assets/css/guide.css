@@ -487,6 +487,21 @@ kbd,
   background: #0f1a2e;
 }
 
+.resource-card-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--color-mid), var(--color-deep));
+}
+
+.resource-card-banner svg {
+  width: 56px;
+  height: 56px;
+  stroke: #fff;
+}
+
 .resource-card > div {
   padding: 14px 16px 16px;
 }
