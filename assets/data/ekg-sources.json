@@ -1,0 +1,68 @@
+{
+  "dataset": "PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3)",
+  "url": "https://physionet.org/content/ptb-xl/1.0.3/",
+  "license": "CC BY 4.0",
+  "citation": "Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T. (2022). PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3). PhysioNet. https://doi.org/10.13026/kfzx-aw45",
+  "images": {
+    "normal": {
+      "ecg_id": 7,
+      "scp": "NORM",
+      "caption": "正常 12 導程心電圖（正常竇性節律）",
+      "file": "/assets/images/ekg/ptbxl/normal.svg"
+    },
+    "afib": {
+      "ecg_id": 4117,
+      "scp": "AFIB",
+      "caption": "心房顫動：看不到 P 波，RR 完全不規則",
+      "file": "/assets/images/ekg/ptbxl/afib.svg"
+    },
+    "aflt": {
+      "ecg_id": 23,
+      "scp": "AFLT",
+      "caption": "心房撲動：下方導程（II、III、aVF）的鋸齒狀 F 波",
+      "file": "/assets/images/ekg/ptbxl/aflt.svg"
+    },
+    "rbbb": {
+      "ecg_id": 621,
+      "scp": "CRBBB",
+      "caption": "完全右束支傳導阻滯：V1 的 RSR′、I 與 V6 的寬 S 波",
+      "file": "/assets/images/ekg/ptbxl/rbbb.svg"
+    },
+    "lbbb": {
+      "ecg_id": 286,
+      "scp": "CLBBB",
+      "caption": "完全左束支傳導阻滯：V1 寬而深的 S 波、I 與 V6 寬而有缺口的 R 波",
+      "file": "/assets/images/ekg/ptbxl/lbbb.svg"
+    },
+    "wpw": {
+      "ecg_id": 5303,
+      "scp": "WPW",
+      "caption": "WPW 症候群：PR 短、QRS 起始處的 delta wave",
+      "file": "/assets/images/ekg/ptbxl/wpw.svg"
+    },
+    "lvh": {
+      "ecg_id": 138,
+      "scp": "LVH",
+      "caption": "左心室肥厚：胸前導程電壓很高（V1 的 S + V5/V6 的 R ≥ 35 小格）",
+      "file": "/assets/images/ekg/ptbxl/lvh.svg"
+    },
+    "lafb": {
+      "ecg_id": 41,
+      "scp": "LAFB",
+      "caption": "左前分支阻滯：電軸左偏，II、III、aVF 呈 rS",
+      "file": "/assets/images/ekg/ptbxl/lafb.svg"
+    },
+    "imi": {
+      "ecg_id": 12899,
+      "scp": "IMI",
+      "caption": "急性下壁心肌梗塞：II、III、aVF ST 上升，I、aVL 對側性 ST 下降",
+      "file": "/assets/images/ekg/ptbxl/imi.svg"
+    },
+    "ami": {
+      "ecg_id": 3177,
+      "scp": "ASMI, IMI",
+      "caption": "前壁心肌梗塞：V2–V5 ST 上升、V2–V3 呈 QS 波（下方導程另有陳舊性 Q 波）",
+      "file": "/assets/images/ekg/ptbxl/ami.svg"
+    }
+  }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基礎與判圖｜心電圖教學｜多保命 RN High Pass</title>
+  <meta name="description" content="心臟傳導系統、心電圖各波段的意義與正常值、導程位置、算心跳與判圖流程。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/ekg.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
+        <a href="https://exam.rnhighpass.com">模擬測驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>基礎與判圖</h2>
+      <p class="guide-lead">看懂心電圖只需要一個觀念：每一個波都是「電流走到心臟某個地方」的紀錄。這一頁先把傳導路徑、各波段、導程和判圖流程講清楚，後面的心律不整和傳導阻滯都是從這裡延伸出去的。</p>
+
+      <nav class="tabs" aria-label="心電圖教學分頁">
+        <a class="tab" href="/resources/ekg/index.html">3D 互動心臟</a>
+        <a class="tab" href="/resources/ekg/basics.html" aria-current="page">基礎與判圖</a>
+        <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
+        <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+      </nav>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="本頁目錄">
+          <p class="guide-toc-title">本頁目錄</p>
+          <ol>
+            <li><a href="#conduction">電流怎麼走：心臟傳導系統</a></li>
+            <li><a href="#waves">各波段代表什麼</a></li>
+            <li><a href="#paper">心電圖紙與算心跳</a></li>
+            <li><a href="#leads">導程與電極位置</a></li>
+            <li><a href="#flow">判圖流程</a></li>
+            <li><a href="#normal-12">真實的正常 12 導程心電圖</a></li>
+          </ol>
+        </nav>
+
+        <article class="guide-article">
+          <section id="conduction">
+            <h3>電流怎麼走：心臟傳導系統</h3>
+            <p>心臟的電流不是隨便亂走，而是沿著一條特化的「高速公路」傳下去：</p>
+            <ol class="ekg-flow" aria-label="傳導路徑">
+              <li>SA node（竇房結）</li>
+              <li>結間徑路 → 心房</li>
+              <li>AV node（房室結）</li>
+              <li>His bundle</li>
+              <li>左、右束支</li>
+              <li>Purkinje 纖維 → 心室</li>
+            </ol>
+            <ul>
+              <li><b>SA node</b>：位在上腔靜脈與右心房交界處，是正常的節律點。放電後電流經 3 條結間徑路傳到 AV node，並經 Bachmann bundle 傳到左心房。</li>
+              <li><b>AV node</b>：位在心房與心室的交界。電流在這裡會<b>刻意放慢</b>（AV delay），讓心房先收縮、把血擠進心室後，心室才收縮。這段延遲就是心電圖上的 PR interval。</li>
+              <li><b>His bundle</b> 穿過心房與心室之間的絕緣纖維環，進入心室後分成右束支和左束支（左束支再分成前、後分支）。</li>
+              <li><b>Purkinje 纖維</b>是整條路上傳導最快的（約 4 m/s），能讓兩側心室幾乎同時去極化，所以正常的 QRS 很窄。</li>
+            </ul>
+            <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=nsr">▶ 在 3D 心臟看正常的傳導</a>
+
+            <h4>火車頭理論：誰跳得快誰當老大</h4>
+            <p>傳導系統的每一段都有自己放電的能力（自動性），但平常由速度最快的 SA node 帶頭，其他人跟著跑：</p>
+            <table class="guide-table">
+              <thead><tr><th>節律點</th><th>自身速率</th><th>接手時的心電圖</th></tr></thead>
+              <tbody>
+                <tr><th>SA node</th><td>60–100 次/分</td><td>正常竇性節律</td></tr>
+                <tr><th>AV 交界區</th><td>40–60 次/分</td><td>窄 QRS，P 波倒置、看不到或在 QRS 後</td></tr>
+                <tr><th>心室（Purkinje）</th><td>20–40 次/分</td><td>寬 QRS，前面沒有 P 波</td></tr>
+              </tbody>
+            </table>
+            <ul>
+              <li><b>脫軌（逸搏 escape）</b>：快的節律點停擺了，次快的自動接手 —— 例如 SA node 罷工，換交界區以 40–60 次/分帶頭（交界區節律）。</li>
+              <li><b>異位放電（ectopic）</b>：原本慢的節律點突然變快、超過 SA node，就會搶走主導權 —— 例如心室異位點以 150 次/分放電，就是 VT。</li>
+            </ul>
+
+            <details class="ekg-advanced">
+              <summary>進階：心肌細胞與節律細胞的動作電位</summary>
+              <table class="guide-table">
+                <thead><tr><th>時期</th><th>心肌細胞（工作細胞）</th><th>節律細胞（SA、AV node）</th></tr></thead>
+                <tbody>
+                  <tr><th>Phase 0</th><td>快速 Na⁺ 內流，去極化</td><td>L 型 Ca²⁺ 內流，去極化（較慢）</td></tr>
+                  <tr><th>Phase 1</th><td>Na⁺ 通道關閉、K⁺ 外流，電位微降</td><td>—</td></tr>
+                  <tr><th>Phase 2</th><td>L 型 Ca²⁺ 內流維持高原期，避免強直收縮</td><td>—</td></tr>
+                  <tr><th>Phase 3</th><td>K⁺ 外流，再極化</td><td>K⁺ 外流，再極化</td></tr>
+                  <tr><th>Phase 4</th><td>Na⁺/K⁺ 幫浦維持靜止膜電位</td><td>funny current（Na⁺）與 T 型 Ca²⁺ 讓電位慢慢爬升 → 自動放電</td></tr>
+                </tbody>
+              </table>
+              <p>AV delay 約 0.12–0.20 秒，大部分來自 AV node 本身（約 0.09 秒），其餘來自穿越房室間纖維組織。這就是 PR interval 正常值 3–5 小格的由來。</p>
+            </details>
+          </section>
+
+          <section id="waves">
+            <h3>各波段代表什麼</h3>
+            <figure class="ekg-strip" data-rhythm="nsr" data-seconds="4" data-annotate="pr">
+              <figcaption>正常竇性節律（Lead II）。每個 P 波後面都有一個 QRS，PR 固定在 4 小格。</figcaption>
+            </figure>
+            <table class="guide-table">
+              <thead><tr><th>波段</th><th>代表的電氣活動</th><th>正常值（小格 = 0.04 秒）</th></tr></thead>
+              <tbody>
+                <tr><th>P 波</th><td>心房去極化</td><td>寬 &lt; 3 小格、高 &lt; 2.5 小格（Lead II）<br><small>Lead II 為圓鈍的正波，V1 常為先正後負的雙向波</small></td></tr>
+                <tr><th>PR interval</th><td>從心房開始去極化到心室開始去極化（主要是 AV delay）</td><td>3–5 小格（0.12–0.20 秒）</td></tr>
+                <tr><th>Q 波</th><td>心室中膈去極化（由左往右）</td><td>寬 &lt; 1 小格、深 &lt; 2 小格（或 &lt; R 波的 1/4）</td></tr>
+                <tr><th>QRS</th><td>心室去極化</td><td>&lt; 2.5–3 小格（&lt; 0.10–0.12 秒）</td></tr>
+                <tr><th>ST 段</th><td>心室全部去極化完畢、尚未再極化（沒有電位差）</td><td>與基線同高，J point 上下 &lt; 1 小格</td></tr>
+                <tr><th>T 波</th><td>心室再極化</td><td>與 QRS 同方向；高度 &lt; R 波的 1/2（肢導）</td></tr>
+                <tr><th>QT interval</th><td>心室從去極化到再極化完成的總時間</td><td>約 0.35–0.44 秒，依心跳速率校正（QTc）</td></tr>
+                <tr><th>U 波</th><td>意義不明（可能是 Purkinje 再極化）</td><td>小、常看不到；低血鉀時明顯</td></tr>
+              </tbody>
+            </table>
+            <div class="note">
+              <p class="note-title">心房再極化去哪了？</p>
+              <p>心房也會再極化，但剛好發生在 QRS 期間，被體積大得多的心室去極化蓋掉，所以心電圖上看不到。</p>
+            </div>
+            <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=nsr">▶ 在 3D 心臟逐段看 P → PR → QRS → ST → T</a>
+          </section>
+
+          <section id="paper">
+            <h3>心電圖紙與算心跳</h3>
+            <p>標準走紙速度是 25 mm/秒，校正電壓 10 mm = 1 mV：</p>
+            <ul class="ekg-keys">
+              <li><b>1 小格</b>（1 mm）＝ 橫向 0.04 秒、縱向 0.1 mV</li>
+              <li><b>1 大格</b>（5 小格）＝ 橫向 0.2 秒、縱向 0.5 mV</li>
+              <li>5 大格 ＝ 1 秒；一張標準 12 導程心電圖記錄 10 秒</li>
+            </ul>
+            <h4>算心跳的三種方法</h4>
+            <table class="guide-table">
+              <thead><tr><th>方法</th><th>算法</th><th>適用</th></tr></thead>
+              <tbody>
+                <tr><th>大格法</th><td>300 ÷ 兩個 R 波之間的大格數</td><td>規則節律，最快</td></tr>
+                <tr><th>小格法</th><td>1500 ÷ 兩個 R 波之間的小格數</td><td>規則節律，最準</td></tr>
+                <tr><th>6 秒法</th><td>6 秒（30 大格）內的 QRS 數 × 10<br><small>或 10 秒整張的 QRS 數 × 6</small></td><td><b>不規則節律</b>（例如 AF）</td></tr>
+              </tbody>
+            </table>
+            <p>口訣：R 波間隔 1、2、3、4、5、6 大格，心跳就是 300、150、100、75、60、50 次/分。</p>
+            <p>正常成人心跳 60–100 次/分；&lt; 60 為心搏過慢（bradycardia），&gt; 100 為心搏過速（tachycardia）。</p>
+          </section>
+
+          <section id="leads">
+            <h3>導程與電極位置</h3>
+            <p>每個導程就像一台從不同角度拍心臟的相機。原則只有一條：</p>
+            <div class="note">
+              <p class="note-title">判讀原則</p>
+              <p><b>去極化朝向導程的正極 → 正波；遠離正極 → 負波。</b>再極化的方向相反（再極化朝向正極 → 負波）。</p>
+            </div>
+            <h4>肢體導程（額面）</h4>
+            <ul>
+              <li><b>I、II、III</b>：雙極導程。I 從右手指向左手（0°）、II 從右手指向左腳（+60°）、III 從左手指向左腳（+120°）。</li>
+              <li><b>aVR、aVL、aVF</b>：加壓單極導程，正極分別在右手（−150°）、左手（−30°）、左腳（+90°）。</li>
+              <li>電極顏色（台灣常用 IEC 色碼）：右手紅、左手黃、左腳綠、右腳黑（接地）。</li>
+            </ul>
+            <h4>胸前導程（水平面）</h4>
+            <table class="guide-table">
+              <thead><tr><th>導程</th><th>位置</th></tr></thead>
+              <tbody>
+                <tr><th>V1</th><td>第 4 肋間、胸骨右緣</td></tr>
+                <tr><th>V2</th><td>第 4 肋間、胸骨左緣</td></tr>
+                <tr><th>V3</th><td>V2 與 V4 連線的中點</td></tr>
+                <tr><th>V4</th><td>第 5 肋間、左鎖骨中線</td></tr>
+                <tr><th>V5</th><td>與 V4 同高、左前腋線</td></tr>
+                <tr><th>V6</th><td>與 V4 同高、左腋中線</td></tr>
+              </tbody>
+            </table>
+            <p>貼的順序建議 <b>V1 → V2 → V4 → V3 → V6 → V5</b>（口訣「124365」）：先找好肋間貼 V1、V2、V4，V3 和 V5 都是「中點」，所以要等兩邊都貼好再貼。</p>
+            <h4>導程對應心臟的哪一面</h4>
+            <table class="guide-table">
+              <thead><tr><th>導程</th><th>看的位置</th><th>主要供血</th></tr></thead>
+              <tbody>
+                <tr><th>II、III、aVF</th><td>下壁</td><td>右冠狀動脈（RCA，多數人）</td></tr>
+                <tr><th>I、aVL、V5、V6</th><td>側壁</td><td>左迴旋支（LCx）</td></tr>
+                <tr><th>V1、V2</th><td>中膈</td><td>左前降支（LAD）</td></tr>
+                <tr><th>V3、V4</th><td>前壁</td><td>左前降支（LAD）</td></tr>
+              </tbody>
+            </table>
+            <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=nsr">▶ 在 3D 心臟打開「導程方向」，看 II、V1、V6 從哪裡看心臟</a>
+          </section>
+
+          <section id="flow">
+            <h3>判圖流程</h3>
+            <p>每一張心電圖都照同一個順序看，才不會漏掉東西：</p>
+            <ol class="ekg-flow" aria-label="判圖流程">
+              <li>規律</li><li>速率</li><li>心軸偏移</li><li>心軸旋轉</li><li>P 波</li><li>PR interval</li><li>Q 波</li><li>QRS</li><li>ST 段</li><li>T 波</li>
+            </ol>
+            <table class="guide-table">
+              <thead><tr><th>步驟</th><th>怎麼看</th><th>正常</th></tr></thead>
+              <tbody>
+                <tr><th>1. 規律</th><td>最長的 RR − 最短的 RR</td><td>&lt; 4 小格（0.16 秒）為規則</td></tr>
+                <tr><th>2. 速率</th><td>見上方「算心跳」</td><td>60–100 次/分</td></tr>
+                <tr><th>3. 心軸偏移</th><td>看 Lead I 與 aVF 的 QRS 主波方向（R &gt; S 算正）</td><td>兩個都正 → 正常（正常範圍約 −30° ～ +90°）</td></tr>
+                <tr><th>4. 心軸旋轉</th><td>胸前導程 QRS 由負轉正的位置（transition zone）</td><td>在 V3–V4 之間</td></tr>
+                <tr><th>5–10. 各波段</th><td>依序檢查 P、PR、Q、QRS、ST、T</td><td>見上方「各波段」表格</td></tr>
+              </tbody>
+            </table>
+
+            <h4>心軸：Lead I 與 aVF 快速判斷</h4>
+            <table class="guide-table">
+              <thead><tr><th></th><th>aVF 正</th><th>aVF 負</th></tr></thead>
+              <tbody>
+                <tr><th>Lead I 正</th><td>正常</td><td>看 Lead II：II 正 → 仍屬正常；II 負 → <b>電軸左偏（LAD）</b></td></tr>
+                <tr><th>Lead I 負</th><td><b>電軸右偏（RAD）</b></td><td>極度右偏（extreme axis）</td></tr>
+              </tbody>
+            </table>
+            <p>常見原因：左偏 —— 左心室肥厚、左前分支阻滯（LAFB）、下壁 MI；右偏 —— 右心室肥厚、左後分支阻滯（LPFB）、側壁 MI、肺栓塞。</p>
+
+            <details class="ekg-advanced">
+              <summary>進階：心軸旋轉（transition zone 提早或延後）</summary>
+              <ul>
+                <li><b>逆時鐘旋轉（CCWR，提早轉正，V3 之前）</b>：右心室肥厚、後壁 MI、WPW（部分類型）。</li>
+                <li><b>順時鐘旋轉（CWR，延後轉正，V4 之後）</b>：左心室肥厚、前壁 MI（poor R wave progression）、LBBB、LAFB。</li>
+              </ul>
+            </details>
+          </section>
+
+          <section id="normal-12">
+            <h3>真實的正常 12 導程心電圖</h3>
+            <figure class="ekg-real">
+              <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/normal.svg" alt="正常 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+              <figcaption>正常 12 導程心電圖（正常竇性節律）。上三排各導程 2.5 秒，最下面是 10 秒的 Lead II 節律條。<br><span class="ekg-source">來源：PTB-XL #7（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+            </figure>
+            <p>練習用上面的流程看一遍：規則、約 70 次/分、I 和 aVF 都正（心軸正常）、胸前導程在 V3–V4 附近轉正、P 波和 PR 正常、QRS 窄、ST 平、T 波和 QRS 同方向。</p>
+          </section>
+
+          <nav class="guide-pager" aria-label="上一篇與下一篇">
+            <a class="btn-outline" href="/resources/ekg/index.html">← 3D 互動心臟</a>
+            <a class="btn-outline" href="/resources/ekg/rhythms.html">心律不整 →</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/ekg/strip.js"></script>
+</body>
+</html>

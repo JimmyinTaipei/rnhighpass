@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>缺血・肥厚・電解質｜心電圖教學｜多保命 RN High Pass</title>
+  <meta name="description" content="心肌缺血與梗塞的心電圖變化、MI 定位、心房心室肥大、心包膜炎、電解質與毛地黃的心電圖表現。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/ekg.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
+        <a href="https://exam.rnhighpass.com">模擬測驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>缺血・肥厚・電解質</h2>
+      <p class="guide-lead">這一頁的重點多半在 ST 段與 T 波，也就是「心室再極化」出了問題：缺血、梗塞、心包膜炎、電解質與藥物都會在這裡留下痕跡。下面的單導程節律條是示意圖，真實的 12 導程附在各段落中。</p>
+
+      <nav class="tabs" aria-label="心電圖教學分頁">
+        <a class="tab" href="/resources/ekg/index.html">3D 互動心臟</a>
+        <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
+        <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
+        <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
+        <a class="tab" href="/resources/ekg/ischemia.html" aria-current="page">缺血・肥厚・電解質</a>
+      </nav>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="本頁目錄">
+          <p class="guide-toc-title">本頁目錄</p>
+          <ol>
+            <li><a href="#acs">缺血、損傷、梗塞</a></li>
+            <li><a href="#evolution">心肌梗塞的演變</a></li>
+            <li><a href="#location">MI 定位：哪些導程、哪一面、哪條血管</a></li>
+            <li><a href="#hypertrophy">心房擴大與心室肥厚</a></li>
+            <li><a href="#pericarditis">心包膜炎</a></li>
+            <li><a href="#electrolytes">電解質異常</a></li>
+            <li><a href="#digoxin">毛地黃的作用與中毒</a></li>
+            <li><a href="#drugs">進階：抗心律不整藥物分類</a></li>
+          </ol>
+        </nav>
+
+        <article class="guide-article">
+          <section id="acs">
+            <h3>缺血、損傷、梗塞</h3>
+            <p>冠狀動脈阻塞後，心肌依嚴重程度出現三種變化，在心電圖上各有代表：</p>
+            <table class="guide-table">
+              <thead><tr><th>程度</th><th>心肌狀態</th><th>心電圖</th></tr></thead>
+              <tbody>
+                <tr><th>缺血 ischemia</th><td>供氧不足，可逆</td><td>ST 下降、T 波倒置</td></tr>
+                <tr><th>損傷 injury</th><td>全層受損中</td><td><b>ST 上升</b></td></tr>
+                <tr><th>梗塞 infarction</th><td>心肌壞死，不可逆</td><td><b>病理性 Q 波</b>（寬 ≥ 1 小格或深度 &gt; R 波的 1/4）</td></tr>
+              </tbody>
+            </table>
+            <figure class="ekg-strip" data-rhythm="stemi" data-seconds="4"><figcaption>ST 上升（示意）：J point 明顯高於基線，ST 段呈弓背向上、和 T 波連在一起（墓碑狀）。</figcaption></figure>
+            <figure class="ekg-strip" data-rhythm="st-depression" data-seconds="4"><figcaption>ST 下降＋T 波倒置（示意）：心肌缺血、NSTEMI 或對側性變化。</figcaption></figure>
+
+            <h4>急性冠心症 ACS 的分類</h4>
+            <table class="guide-table">
+              <thead><tr><th></th><th>不穩定型心絞痛</th><th>NSTEMI</th><th>STEMI</th></tr></thead>
+              <tbody>
+                <tr><th>心電圖</th><td>ST 下降、T 倒置，或正常</td><td>ST 下降、T 倒置，或正常</td><td><b>ST 上升</b>（或新發生的 LBBB）</td></tr>
+                <tr><th>心肌酵素（Troponin）</th><td>正常</td><td><b>上升</b></td><td><b>上升</b></td></tr>
+                <tr><th>心肌壞死</th><td>無</td><td>心內膜下</td><td>全層（transmural）</td></tr>
+              </tbody>
+            </table>
+            <p>UA 與 NSTEMI 的心電圖可以一模一樣，要靠心肌酵素區分；STEMI 則是看到 ST 上升就要立刻啟動再灌流治療，不必等酵素。</p>
+          </section>
+
+          <section id="evolution">
+            <h3>心肌梗塞的演變 <span class="ekg-tag ekg-tag-exam">常考</span></h3>
+            <figure class="ekg-strip" data-rhythm="mi-evolution" data-annotate="label"><figcaption>同一個導程在 STEMI 不同時期的樣子（示意）。</figcaption></figure>
+            <ol class="ekg-flow" aria-label="MI 演變順序">
+              <li>T 波高聳（超急性期，數分鐘）</li>
+              <li>ST 上升（數小時）</li>
+              <li>T 波倒置</li>
+              <li>病理性 Q 波出現</li>
+              <li>ST 回到基線，Q 波永久留下</li>
+            </ol>
+            <p>口訣：「<b>T 高 → ST 高 → T 掉 → Q 掉 → ST 回</b>」。陳舊性心肌梗塞只剩下 Q 波，是判斷「以前發生過 MI」的依據。</p>
+            <figure class="ekg-strip" data-rhythm="old-mi" data-seconds="4"><figcaption>陳舊性心肌梗塞（示意）：深而寬的病理性 Q 波。</figcaption></figure>
+          </section>
+
+          <section id="location">
+            <h3>MI 定位：哪些導程、哪一面、哪條血管</h3>
+            <table class="guide-table">
+              <thead><tr><th>梗塞部位</th><th>ST 上升的導程</th><th>通常阻塞的血管</th></tr></thead>
+              <tbody>
+                <tr><th>下壁 inferior</th><td>II、III、aVF</td><td>右冠狀動脈 RCA（少數為 LCx）</td></tr>
+                <tr><th>中膈 septal</th><td>V1、V2</td><td>左前降支 LAD</td></tr>
+                <tr><th>前壁 anterior</th><td>V3、V4</td><td>左前降支 LAD</td></tr>
+                <tr><th>前中膈 anteroseptal</th><td>V1–V4</td><td>左前降支 LAD</td></tr>
+                <tr><th>側壁 lateral</th><td>I、aVL、V5、V6</td><td>左迴旋支 LCx（或 LAD 的對角支）</td></tr>
+                <tr><th>廣泛前壁</th><td>V1–V6、I、aVL</td><td>左前降支近端或左主幹</td></tr>
+                <tr><th>後壁 posterior</th><td>沒有導程直接看得到：V1–V3 <b>ST 下降、R 波變高</b>（鏡像）</td><td>RCA 或 LCx</td></tr>
+                <tr><th>右心室</th><td>右胸導程 V4R ST 上升</td><td>RCA 近端</td></tr>
+              </tbody>
+            </table>
+            <p><b>對側性變化（reciprocal change）</b>：梗塞區對面的導程會出現 ST 下降，例如下壁 MI 時 I、aVL 的 ST 下降。有對側性變化更支持是真的 STEMI，而不是心包膜炎或早期再極化。</p>
+
+            <figure class="ekg-real">
+              <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/imi.svg" alt="急性下壁心肌梗塞的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+              <figcaption>急性下壁心肌梗塞：II、III、aVF 的 ST 上升，I、aVL 對側性 ST 下降。<br><span class="ekg-source">來源：PTB-XL #12899（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+            </figure>
+            <figure class="ekg-real">
+              <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/ami.svg" alt="前壁心肌梗塞的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+              <figcaption>前壁心肌梗塞：V2–V4 的 ST 明顯上升、V2–V3 呈 QS 波（下方導程另有陳舊性 Q 波）。<br><span class="ekg-source">來源：PTB-XL #3177（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+            </figure>
+
+            <div class="note">
+              <p class="note-title">護理重點：疑似 STEMI</p>
+              <ul>
+                <li>胸痛病人到院 <b>10 分鐘內</b>完成 12 導程心電圖；連續心電監測，備好去顫器。</li>
+                <li>依醫囑給 Aspirin（嚼碎）、舌下 Nitroglycerin；血氧 &lt; 90% 才需給氧。</li>
+                <li>Nitroglycerin 前先量血壓：收縮壓過低、<b>右心室梗塞</b>（下壁 MI 要加做右胸導程）、24–48 小時內用過 PDE5 抑制劑（如 Sildenafil）者不可給。</li>
+                <li>抽血追蹤心肌酵素（Troponin），配合緊急心導管（到院至打通血管目標 90 分鐘內）。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="hypertrophy">
+            <h3>心房擴大與心室肥厚</h3>
+            <p>腔室變大，電氣活動就變大、變久：波變高、變寬，電軸也會往肥厚的那一側偏。心房看 P 波（Lead II、V1），心室看 QRS（V1、V5、V6）。</p>
+
+            <div class="ekg-disease" id="rae">
+              <h4>右心房擴大 RAE（肺性 P 波 P pulmonale）</h4>
+              <figure class="ekg-strip" data-rhythm="rae" data-seconds="4"><figcaption>RAE：Lead II 的 P 波又高又尖，超過 2.5 小格。</figcaption></figure>
+              <ul class="ekg-keys"><li>Lead II P 波<b>高 &gt; 2.5 小格</b>、尖，寬度正常；V1 P 波前半（正向）變高。常見於慢性肺病、肺高壓。</li></ul>
+            </div>
+
+            <div class="ekg-disease" id="lae">
+              <h4>左心房擴大 LAE（僧帽 P 波 P mitrale）</h4>
+              <figure class="ekg-strip" data-rhythm="lae" data-lead="II V1" data-seconds="4"><figcaption>LAE：Lead II 的 P 波變寬、有雙峰（M 型）；V1 的 P 波後半負向部分又深又寬。</figcaption></figure>
+              <ul class="ekg-keys"><li>Lead II P 波<b>寬 &gt; 3 小格</b>、有缺口（雙峰）；V1 P 波後半負向部分寬、深都 ≥ 1 小格。常見於僧帽瓣疾病、高血壓。</li></ul>
+            </div>
+
+            <div class="ekg-disease" id="vh">
+              <h4>心室肥厚 RVH、LVH</h4>
+              <table class="guide-table">
+                <thead><tr><th></th><th>右心室肥厚 RVH</th><th>左心室肥厚 LVH</th></tr></thead>
+                <tbody>
+                  <tr><th>胸前導程</th><td>V1 的 R 波變高（R &gt; S）、V6 的 S 波變深（R &lt; S）</td><td>V1 的 S ＋ V5 或 V6 的 R <b>≥ 35 小格</b>（Sokolow–Lyon）</td></tr>
+                  <tr><th>電軸</th><td>右偏</td><td>左偏（或正常）</td></tr>
+                  <tr><th>常合併</th><td>右心房擴大、右側導程 strain</td><td>左心房擴大、左側導程 strain</td></tr>
+                  <tr><th>常見原因</th><td>肺心症、肺動脈狹窄、肺栓塞、先天性心臟病</td><td>高血壓、主動脈瓣狹窄、二尖瓣逆流</td></tr>
+                </tbody>
+              </table>
+              <p><b>Strain pattern</b>：肥厚嚴重時，同側導程出現「緩降急升」的 ST 下降＋不對稱 T 波倒置，代表心肌相對缺氧、負荷過重。</p>
+              <figure class="ekg-real">
+                <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/lvh.svg" alt="左心室肥厚的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+                <figcaption>左心室肥厚：V2–V3 的 S 波很深、V4–V5 的 R 波很高，遠超過 35 小格。<br><span class="ekg-source">來源：PTB-XL #138（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section id="pericarditis">
+            <h3>心包膜炎</h3>
+            <figure class="ekg-strip" data-rhythm="pericarditis" data-seconds="4"><figcaption>急性心包膜炎（示意）：ST 呈凹面向上的上升，PR 段下降。</figcaption></figure>
+            <ul class="ekg-keys">
+              <li><b>廣泛性</b>的 ST 上升（幾乎所有導程，不符合單一血管分布）、ST 呈<b>凹面向上</b>。</li>
+              <li><b>PR 段下降</b>（aVR 則相反，PR 上升）；沒有對側性 ST 下降、不會出現 Q 波。</li>
+              <li>臨床：尖銳胸痛，<b>坐起前傾時減輕</b>、平躺或深吸氣加重；可聽到心包膜摩擦音。</li>
+            </ul>
+            <table class="guide-table">
+              <thead><tr><th></th><th>STEMI</th><th>心包膜炎</th></tr></thead>
+              <tbody>
+                <tr><th>ST 上升分布</th><td>符合單一血管的區域</td><td>廣泛、多數導程</td></tr>
+                <tr><th>ST 形狀</th><td>凸面（弓背向上）</td><td>凹面（像笑臉）</td></tr>
+                <tr><th>對側性 ST 下降</th><td>有</td><td>沒有（只有 aVR、V1 可能下降）</td></tr>
+                <tr><th>PR 段下降</th><td>沒有</td><td>有</td></tr>
+                <tr><th>Q 波</th><td>之後會出現</td><td>不會</td></tr>
+              </tbody>
+            </table>
+            <details class="ekg-advanced">
+              <summary>進階：良性早期再極化（BER）</summary>
+              <p>年輕、健康的人（尤其男性、運動員）常在胸前導程看到凹面向上的 ST 上升，J point 有小缺口（J wave / notching），屬於正常變異。和心包膜炎的區別之一：V6 的 ST 上升高度 ÷ T 波高度 &lt; 0.25 偏向 BER，≥ 0.25 偏向心包膜炎。</p>
+            </details>
+          </section>
+
+          <section id="electrolytes">
+            <h3>電解質異常</h3>
+
+            <div class="ekg-disease" id="hyperk">
+              <h4>高血鉀 <span class="ekg-tag ekg-tag-exam">常考</span></h4>
+              <figure class="ekg-strip" data-rhythm="hyperk" data-seconds="4"><figcaption>高血鉀（示意）：T 波又高又尖、底部窄、左右對稱（帳篷狀）。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>隨血鉀升高依序出現：<b>T 波高尖</b> → P 波變平、PR 延長 → <b>QRS 變寬</b> → 正弦波（sine wave）→ VF 或心搏停止。</li>
+                <li>高血鉀是唯一能單靠心電圖大致判斷嚴重度的電解質異常。常見原因：腎衰竭、組織大量破壞、保鉀利尿劑、ACEI。</li>
+                <li>和超急性期 MI 的高 T 波比較：高血鉀的 T 波<b>窄、尖、對稱、廣泛</b>出現；MI 的 T 波<b>寬、不對稱、只在梗塞區</b>。</li>
+                <li><b>護理重點</b>：心電監測；依醫囑給葡萄糖酸鈣（穩定心肌，不會降血鉀）、胰島素＋葡萄糖（把鉀移進細胞）、降鉀樹脂，嚴重者洗腎。</li>
+              </ul>
+            </div>
+
+            <div class="ekg-disease" id="hypok">
+              <h4>低血鉀</h4>
+              <figure class="ekg-strip" data-rhythm="hypok" data-seconds="4"><figcaption>低血鉀（示意）：T 波變平，後面出現明顯的 U 波，ST 輕微下降。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>T 波變平或倒置、<b>出現 U 波</b>、ST 下降、QT（實為 QU）延長；容易出現早期收縮，嚴重時誘發 TdP。</li>
+                <li>常見原因：嘔吐、腹瀉、利尿劑、低血鎂。低血鉀也會<b>增加毛地黃中毒</b>的風險。</li>
+                <li><b>護理重點</b>：靜脈補鉀<b>絕對不可直接推注</b>，必須稀釋後以輸液幫浦控制速度滴注，並監測心電圖與注射部位。</li>
+              </ul>
+            </div>
+
+            <div class="ekg-disease" id="calcium">
+              <h4>高血鈣與低血鈣</h4>
+              <figure class="ekg-strip" data-rhythm="hyperca" data-seconds="4"><figcaption>高血鈣（示意）：ST 段縮短、QT 變短。</figcaption></figure>
+              <figure class="ekg-strip" data-rhythm="hypoca" data-seconds="4"><figcaption>低血鈣（示意）：ST 段拉長、QT 延長，T 波本身形狀正常。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>鈣影響的是動作電位的高原期（phase 2），也就是 <b>ST 段的長短</b>：高血鈣 → ST 短、<b>QT 短</b>；低血鈣 → ST 長、<b>QT 長</b>。</li>
+                <li>低血鈣常見於副甲狀腺功能低下、甲狀腺手術後、急性胰臟炎、維生素 D 缺乏；高血鈣常見於副甲狀腺功能亢進、惡性腫瘤骨轉移、多發性骨髓瘤。</li>
+              </ul>
+            </div>
+
+            <table class="guide-table">
+              <thead><tr><th>異常</th><th>心電圖重點</th></tr></thead>
+              <tbody>
+                <tr><th>高血鉀</th><td>T 波高尖 → QRS 變寬 → sine wave</td></tr>
+                <tr><th>低血鉀</th><td>T 變平、U 波、ST 下降、QT(U) 延長</td></tr>
+                <tr><th>高血鈣</th><td>ST 短、QT 短</td></tr>
+                <tr><th>低血鈣</th><td>ST 長、QT 長</td></tr>
+                <tr><th>高血鎂</th><td>類似高血鉀：PR、QRS 延長</td></tr>
+                <tr><th>低血鎂</th><td>類似低血鉀：QT 延長，易發生 TdP</td></tr>
+              </tbody>
+            </table>
+
+            <details class="ekg-advanced">
+              <summary>進階：低體溫的 Osborn 波</summary>
+              <p>低體溫時 QRS 結尾（J point）出現向上的駝峰，稱為 J 波或 Osborn 波，並伴隨心搏過慢、QT 延長，嚴重時出現 AF 或 VF。</p>
+            </details>
+          </section>
+
+          <section id="digoxin">
+            <h3>毛地黃的作用與中毒</h3>
+            <figure class="ekg-strip" data-rhythm="digoxin" data-seconds="4"><figcaption>毛地黃作用（示意）：ST 段呈湯匙狀下凹（像倒過來的勾），QT 變短。</figcaption></figure>
+            <ul class="ekg-keys">
+              <li><b>毛地黃作用（治療濃度也會出現）</b>：ST 段「<b>湯匙狀／勾狀</b>」下降、T 波變平或雙向、QT 變短、PR 稍微延長。這不代表中毒。</li>
+              <li><b>毛地黃中毒</b>：幾乎任何心律不整都可能出現，常見有 PVC（二聯律）、各度 AV block、交界區心搏過速、伴隨 AV block 的心房心搏過速。</li>
+              <li>中毒症狀：噁心嘔吐、食慾不振、視覺模糊或看到黃綠色光暈、心跳過慢。</li>
+            </ul>
+            <div class="note">
+              <p class="note-title">護理重點</p>
+              <ul>
+                <li>給藥前測<b>心尖脈一整分鐘</b>：成人 &lt; 60 次/分（或明顯改變節律）先暫停給藥並通知醫師。</li>
+                <li>監測血鉀：<b>低血鉀會增加毛地黃中毒</b>的風險（常與排鉀利尿劑併用）。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="drugs">
+            <h3>進階：抗心律不整藥物分類</h3>
+            <details class="ekg-advanced">
+              <summary>Vaughan–Williams 分類（口訣「鈉、β、鉀、鈣」）</summary>
+              <table class="guide-table">
+                <thead><tr><th>分類</th><th>作用</th><th>代表藥物</th><th>心電圖影響</th></tr></thead>
+                <tbody>
+                  <tr><th>Class I</th><td>鈉離子通道阻斷，影響去極化（再細分 IA、IB、IC）</td><td>IA：Procainamide、Quinidine<br>IB：Lidocaine<br>IC：Flecainide、Propafenone</td><td>IA、IC 使 QRS 變寬；IA 另延長 QT</td></tr>
+                  <tr><th>Class II</th><td>β 阻斷劑，降低交感活性</td><td>Propranolol、Metoprolol、Esmolol</td><td>心跳變慢、PR 延長</td></tr>
+                  <tr><th>Class III</th><td>鉀離子通道阻斷，延長再極化</td><td>Amiodarone、Sotalol</td><td>QT 延長</td></tr>
+                  <tr><th>Class IV</th><td>鈣離子通道阻斷，作用在 SA、AV node</td><td>Verapamil、Diltiazem</td><td>心跳變慢、PR 延長</td></tr>
+                  <tr><th>其他</th><td>—</td><td>Adenosine（短暫阻斷 AV node）、Digoxin、Atropine、硫酸鎂</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </details>
+          </section>
+
+          <nav class="guide-pager" aria-label="上一篇與下一篇">
+            <a class="btn-outline" href="/resources/ekg/blocks.html">← 傳導阻滯</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/ekg/strip.js"></script>
+</body>
+</html>

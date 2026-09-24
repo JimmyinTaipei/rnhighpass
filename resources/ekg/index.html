@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心電圖教學｜多保命 RN High Pass</title>
+  <meta name="description" content="3D 互動心臟：放慢速度看電流怎麼從 SA node 走到心室，並同步對照心電圖的每一個波。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/ekg.css">
+  <script type="importmap">
+    { "imports": { "three": "/assets/vendor/three/three.module.min.js", "three/addons/": "/assets/vendor/three/" } }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
+        <a href="https://exam.rnhighpass.com">模擬測驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>心電圖教學</h2>
+      <p class="guide-lead">心電圖其實就是「電流在心臟裡怎麼走」的紀錄。先在 3D 心臟上把速度放慢，看電流從 SA node 一路走到心室，對照下方心電圖是哪一個波，再去讀各章節會容易很多。</p>
+
+      <nav class="tabs" aria-label="心電圖教學分頁">
+        <a class="tab" href="/resources/ekg/index.html" aria-current="page">3D 互動心臟</a>
+        <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
+        <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
+        <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+      </nav>
+
+      <div class="heart-viewer" id="viewer">
+        <div class="hv-stage-wrap">
+          <div class="hv-stage" aria-label="3D 心臟模型，可拖曳旋轉、滾輪或雙指縮放"></div>
+          <div class="hv-labels" aria-hidden="true"></div>
+          <div class="hv-views" role="group" aria-label="視角">
+            <button type="button" data-view="front">正面</button>
+            <button type="button" data-view="left">左側</button>
+            <button type="button" data-view="inferior">下方</button>
+          </div>
+          <ul class="hv-legend" aria-label="顏色說明">
+            <li><i style="background:#ffec8c"></i>去極化波前</li>
+            <li><i style="background:#f25238"></i>已去極化</li>
+            <li><i style="background:#59b8ff"></i>再極化</li>
+            <li><i style="background:#c8b24a"></i>傳導系統</li>
+          </ul>
+        </div>
+
+        <div class="hv-side">
+          <label class="hv-select-label" for="hv-rhythm">選擇節律</label>
+          <select class="hv-rhythm" id="hv-rhythm"></select>
+          <p class="hv-name"></p>
+          <p class="hv-desc"></p>
+          <p class="hv-desc"><span class="hv-hr"></span> <a class="hv-more" href="#">看文字說明 →</a></p>
+          <fieldset class="hv-toggles">
+            <legend>顯示</legend>
+            <label><input type="checkbox" data-toggle="showMyo" checked> 心肌</label>
+            <label><input type="checkbox" data-toggle="showCond" checked> 傳導系統</label>
+            <label><input type="checkbox" data-toggle="showLabels" checked> 名稱</label>
+            <label><input type="checkbox" data-toggle="showAxis"> 導程方向</label>
+          </fieldset>
+        </div>
+
+        <div class="hv-bottom">
+          <ul class="hv-segs" aria-label="目前波段">
+            <li data-seg="P">P 波</li>
+            <li data-seg="PR">PR 段</li>
+            <li data-seg="QRS">QRS</li>
+            <li data-seg="ST">ST 段</li>
+            <li data-seg="T">T 波</li>
+            <li data-seg="TP">舒張期</li>
+          </ul>
+          <p class="hv-caption" aria-live="polite"></p>
+          <div class="hv-ecg"><canvas aria-label="與 3D 模型同步的心電圖"></canvas></div>
+          <div class="hv-controls">
+            <button type="button" class="hv-btn" data-act="play" aria-pressed="true">
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <span>暫停</span>
+            </button>
+            <button type="button" class="hv-btn hv-btn-ghost" data-act="step">下一段 ›</button>
+            <div class="hv-group" role="group" aria-label="播放速度">
+              <span>速度</span>
+              <button type="button" class="hv-chip" data-speed="0.1" aria-pressed="false">0.1×</button>
+              <button type="button" class="hv-chip" data-speed="0.25" aria-pressed="true">0.25×</button>
+              <button type="button" class="hv-chip" data-speed="0.5" aria-pressed="false">0.5×</button>
+              <button type="button" class="hv-chip" data-speed="1" aria-pressed="false">1×</button>
+            </div>
+            <div class="hv-group" role="group" aria-label="導程">
+              <span>導程</span>
+              <button type="button" class="hv-chip" data-lead="II" aria-pressed="true">II</button>
+              <button type="button" class="hv-chip" data-lead="V1" aria-pressed="false">V1</button>
+              <button type="button" class="hv-chip" data-lead="V6" aria-pressed="false">V6</button>
+            </div>
+            <input type="range" class="hv-time" min="0" max="4800" step="1" value="0" aria-label="時間軸">
+          </div>
+        </div>
+      </div>
+
+      <noscript><p class="note">3D 心臟需要開啟 JavaScript。</p></noscript>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container guide-article">
+      <section id="how">
+        <h3>怎麼使用</h3>
+        <ul>
+          <li><b>旋轉、縮放</b>：拖曳心臟可以旋轉，滾輪或兩指縮放；右上角可以切換正面、左側、下方視角。</li>
+          <li><b>放慢速度</b>：預設是 0.25 倍速。想看清楚電流在 AV node 停頓、或束支阻滯時哪一側比較慢，可以切到 0.1×。</li>
+          <li><b>逐段前進</b>：按「下一段」會暫停，並跳到下一個波段（P → PR → QRS → ST → T），下方的說明會告訴你這時候電流在哪裡。</li>
+          <li><b>顏色</b>：黃白色是正在前進的去極化波前、紅色是已經去極化（正在收縮）、藍色是正在再極化，傳導系統被電流通過時會亮起來。</li>
+          <li><b>導程</b>：切換 II、V1、V6，並打開「導程方向」，可以對照「電流朝向正極 → 正波」的原則，看為什麼 RBBB 在 V1 會出現兔耳朵。</li>
+          <li>心臟是為了教學簡化過的示意模型，形狀與比例不是真實解剖；波形也是示意圖，真實的心電圖請看各章節中的 12 導程範例。</li>
+        </ul>
+      </section>
+
+      <section id="chapters">
+        <h3>各章節</h3>
+        <div class="guide-cards ekg-cards">
+          <a class="guide-card" href="/resources/ekg/basics.html">
+            <div>
+              <p class="guide-card-title">基礎與判圖</p>
+              <p class="guide-card-desc">傳導系統、各波段意義與正常值、心電圖紙、導程位置、判圖流程。</p>
+              <span class="guide-card-more">開始閱讀 →</span>
+            </div>
+          </a>
+          <a class="guide-card" href="/resources/ekg/rhythms.html">
+            <div>
+              <p class="guide-card-title">心律不整</p>
+              <p class="guide-card-desc">竇性、早期收縮、心房撲動與顫動、PSVT、VT、VF，附護理重點。</p>
+              <span class="guide-card-more">開始閱讀 →</span>
+            </div>
+          </a>
+          <a class="guide-card" href="/resources/ekg/blocks.html">
+            <div>
+              <p class="guide-card-title">傳導阻滯</p>
+              <p class="guide-card-desc">SA block、一到三度 AV block、RBBB、LBBB、分支阻滯、WPW。</p>
+              <span class="guide-card-more">開始閱讀 →</span>
+            </div>
+          </a>
+          <a class="guide-card" href="/resources/ekg/ischemia.html">
+            <div>
+              <p class="guide-card-title">缺血・肥厚・電解質</p>
+              <p class="guide-card-desc">MI 演變與定位、心房心室肥大、心包膜炎、鉀鈣異常、毛地黃。</p>
+              <span class="guide-card-more">開始閱讀 →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="credits">
+        <h3>資料來源與授權</h3>
+        <ul class="ekg-credits">
+          <li>3D 心臟模型、動畫與所有節律條（方格紙上的單導程波形）都是本站以程式自行繪製的示意圖。</li>
+          <li>各章節中的真實 12 導程心電圖取自 <a href="https://physionet.org/content/ptb-xl/1.0.3/" rel="noopener">PTB-XL</a>（CC BY 4.0），由本站依原始訊號重新繪製，每張圖下方標有紀錄編號。引用：Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., &amp; Schaeffter, T. (2022). <i>PTB-XL, a large publicly available electrocardiography dataset</i> (version 1.0.3). PhysioNet. https://doi.org/10.13026/kfzx-aw45；Wagner, P. et al. (2020). PTB-XL, a large publicly available electrocardiography dataset. <i>Scientific Data</i>, 7, 154；Goldberger, A. et al. (2000). PhysioBank, PhysioToolkit, and PhysioNet. <i>Circulation</i>, 101(23), e215–e220。</li>
+          <li>3D 繪圖使用 <a href="https://threejs.org/" rel="noopener">three.js</a>（MIT License）。</li>
+          <li>文字內容參考社團心電圖講義重新整理改寫。本頁僅供學習使用，不能取代臨床判斷與正式教科書。</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/ekg/heart3d.js"></script>
+</body>
+</html>

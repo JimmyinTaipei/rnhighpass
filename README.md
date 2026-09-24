@@ -21,6 +21,8 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 | 首頁 `/`「題目下載」 | 分頁切換：分章詳解合訂本（11 本）、分章題本合訂本（11 本）、最新一期考古題（5 份），點封面直接下載 |
 | 更多考題 `/downloads/more.html` | 分章詳解／題本逐章下載（各 162 章）、全部 26 個學期的考古題（130 份），底下附 Google Drive 整批下載 |
 | 使用教學 `/guide.html` | 總覽（網站說明、題號、三個框框、科目對照表），底下分成 `guide/explanations.html`、`guide/workbooks.html`、`guide/past-exams.html` 三個子頁，附實際 PDF 的截圖 |
+| 相關資源 `/resources.html` | 學習資源入口，目前是心電圖教學 |
+| 心電圖教學 `/resources/ekg/` | `index.html` 3D 互動心臟（電流動畫＋同步心電圖），`basics`／`rhythms`／`blocks`／`ischemia` 四個文字章節 |
 | 問題回饋 `/feedback.html` | 回饋表單、社群連結 |
 
 476 個檔案全部放在 R2、都可以從網站下載。Google Drive 的連結（`assets/data/links.json`）
@@ -39,6 +41,8 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 │   └── past-exams.html       舊網址，轉址到 more.html#past
 ├── guide.html                使用教學（總覽）
 ├── guide/                    使用教學子頁：分章詳解、分章題本、歷年考題
+├── resources.html            相關資源（入口卡）
+├── resources/ekg/            心電圖教學：3D 互動心臟 + 四個文字章節
 ├── feedback.html             問題回饋 + 社群連結
 ├── worker/index.js           /api/file 單檔下載
 ├── scripts/
@@ -46,18 +50,26 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 │   ├── build-manifest.mjs    來源資料夾 → 正規化 + 產生 manifest
 │   ├── make-covers.sh        抽 PDF 第一頁當封面圖
 │   ├── make-guide-shots.py   從 PDF 裁出使用教學的截圖
+│   ├── ekg/render-ptbxl.py   從 PTB-XL 抓真實 12 導程心電圖畫成 SVG
 │   └── upload-r2.sh          批次上傳到 R2（可中斷續傳）
 ├── assets/
 │   ├── data/manifest.json    檔案清單（產生物，要 commit）
 │   ├── data/links.json       Drive / 社群連結（手動編輯）
 │   ├── css/style.css         全站樣式（頁首、漢堡選單、回到頂端）
 │   ├── css/downloads.css     下載頁樣式（分頁、封面卡、側欄、章節卡）
-│   ├── css/guide.css         使用教學頁樣式
+│   ├── css/guide.css         使用教學頁樣式（相關資源入口卡也在這）
+│   ├── css/ekg.css           心電圖教學：3D 面板、節律條、疾病段落
 │   ├── js/main.js            全站共用：漢堡選單、回到頂端、window.RN 小工具
 │   ├── js/home.js            首頁題目下載
 │   ├── js/more.js            更多考題
 │   ├── js/subject-icons.js   11 科 icon（與多保命測驗一致）
 │   ├── js/site-links.js      把 links.json 填進頁面
+│   ├── js/ekg/rhythms.js     節律引擎：每種節律的時間軸與波形（3D 與節律條共用）
+│   ├── js/ekg/strip.js       把 <figure data-rhythm> 畫成方格紙上的 SVG 節律條
+│   ├── js/ekg/heart3d.js     3D 互動心臟（three.js）
+│   ├── vendor/three/         three.js（MIT），用 importmap 載入，不需要 build
+│   ├── data/ekg-sources.json 真實心電圖的來源與授權（render-ptbxl.py 產生）
+│   ├── images/ekg/           心電圖教學的圖（ptbxl/ 是真實 12 導程）
 │   ├── images/guide/         使用教學的 PDF 截圖（make-guide-shots.py 產生）
 │   └── images/covers/
 │       ├── bundles/          合訂本封面 22 張（{序號}_{explanation|workbook}.jpg）
@@ -160,6 +172,24 @@ python3 scripts/make-guide-shots.py exp-toc wb-jump # 只重做幾張
 需要 PyMuPDF（`pip install pymupdf`）。裁切範圍是用「上緣文字」到「下緣文字」定位，
 不是寫死座標，排版小幅位移不影響；某張找不到定位文字時會列出來，改 `SHOTS` 裡的文字即可。
 可以點的內部連結會自動用虛線框標出來。
+
+## 心電圖教學（`/resources/ekg/`）
+
+全部是靜態檔案，不需要 build。三種圖的來源與授權：
+
+| 圖 | 來源 | 授權 |
+|---|---|---|
+| 3D 心臟、所有單導程節律條 | 本站程式產生（`heart3d.js`、`strip.js`） | 自有，無限制 |
+| 真實 12 導程（`assets/images/ekg/ptbxl/*.svg`） | PTB-XL，本站依原始訊號重畫 | CC BY 4.0：可商用，**必須標示來源**（每張圖下方與 3D 頁頁尾都有） |
+| three.js | `assets/vendor/three/` | MIT |
+
+**不要**放 CC BY-SA、NC 授權的圖，也不要用社團講義裡的圖（來源多為教科書，版權不明）。
+
+- **新增或修改節律**：在 `assets/js/ekg/rhythms.js` 的 `DEFS` 加一個產生函式（一拍一拍的 P／QRS 時間），
+  節律條直接用 `<figure class="ekg-strip" data-rhythm="新id">`；要在 3D 裡選得到，再到 `heart3d.js` 的 `INFO` 與 `RHYTHM_ORDER` 加一筆。
+- **換真實心電圖**：改 `scripts/ekg/render-ptbxl.py` 的 `RECORDS`（PTB-XL 的 ecg_id），再跑
+  `python3 scripts/ekg/render-ptbxl.py`（需要 numpy，原始訊號快取在 `~/.cache/ptbxl`）。
+- 3D 頁用 `?rhythm=mobitz1` 可以直接開某個節律，`&paused&t=230` 停在某個時間點（截圖、除錯用）。
 
 ## 外部連結設定（`assets/data/links.json`）
 

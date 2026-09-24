@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>傳導阻滯｜心電圖教學｜多保命 RN High Pass</title>
+  <meta name="description" content="SA block、一到三度房室傳導阻滯、左右束支阻滯、分支阻滯與 WPW 預激症候群。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/ekg.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
+        <a href="https://exam.rnhighpass.com">模擬測驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>傳導阻滯</h2>
+      <p class="guide-lead">傳導阻滯是「高速公路」某一段塞車或斷掉。塞在哪裡，就決定心電圖哪一段變長、哪一個波消失。建議搭配 3D 心臟一起看：電流會在阻斷的地方停住。</p>
+
+      <nav class="tabs" aria-label="心電圖教學分頁">
+        <a class="tab" href="/resources/ekg/index.html">3D 互動心臟</a>
+        <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
+        <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
+        <a class="tab" href="/resources/ekg/blocks.html" aria-current="page">傳導阻滯</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+      </nav>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="本頁目錄">
+          <p class="guide-toc-title">本頁目錄</p>
+          <ol>
+            <li><a href="#sa-block">竇房結的問題：Sinus arrest 與 SA block</a></li>
+            <li><a href="#avb1">一度房室傳導阻滯</a></li>
+            <li><a href="#avb2">二度房室傳導阻滯</a></li>
+            <li><a href="#avb3">三度（完全）房室傳導阻滯</a></li>
+            <li><a href="#bbb">束支傳導阻滯 RBBB、LBBB</a></li>
+            <li><a href="#hemiblock">分支阻滯（半阻滯）</a></li>
+            <li><a href="#preexcitation">預激症候群：WPW 與 LGL</a></li>
+          </ol>
+        </nav>
+
+        <article class="guide-article">
+          <section id="sa-block">
+            <h3>竇房結的問題：Sinus arrest 與 SA block</h3>
+            <p>SA node 本身不放電，或放電了卻傳不出去，結果都是「一整拍 P-QRS-T 消失」。差別在停頓的長度：</p>
+
+            <div class="ekg-disease" id="sinus-arrest">
+              <h4>竇性停止 Sinus arrest</h4>
+              <figure class="ekg-strip" data-rhythm="sinus-arrest" data-seconds="7"><figcaption>竇性停止：SA node 突然停擺一段時間，停頓的長度<b>不是</b> PP 間隔的整數倍。</figcaption></figure>
+            </div>
+
+            <div class="ekg-disease" id="sa-block-2">
+              <h4>二度 SA block（type II）</h4>
+              <figure class="ekg-strip" data-rhythm="sa-block-2" data-seconds="7"><figcaption>二度 SA block：SA node 照節奏放電，但偶爾有一次傳不到心房，停頓<b>剛好是 PP 的 2 倍</b>。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>口訣：<b>Type I「縮短 → 消失」、Type II「固定 → 消失」</b>。一度 SA block 在體表心電圖上看不出來，三度則和 sinus arrest 無法區分。</li>
+              </ul>
+            </div>
+
+            <details class="ekg-advanced">
+              <summary>進階：竇房結症候群 Sick sinus syndrome</summary>
+              <p>SA node 本身或它周邊的傳導退化（老化、纖維化、藥物、手術後），可以表現為竇性過慢、竇性停止、SA block，或是<b>快慢症候群</b>（tachy–brady syndrome）：一陣心房顫動等快速心律不整後，接著一段很長的停頓。有症狀者通常需要永久性節律器。</p>
+            </details>
+          </section>
+
+          <section id="avb1">
+            <h3>一度房室傳導阻滯</h3>
+            <div class="ekg-disease">
+              <figure class="ekg-strip" data-rhythm="avb1" data-annotate="pr"><figcaption>一度 AV block：每個 P 都有下傳，但 PR 固定延長到 7.5 小格（0.30 秒）。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li><b>PR &gt; 5 小格（0.20 秒）且固定</b>，每個 P 後面都有 QRS。其實不是「阻斷」，只是 AV node 傳得比較慢。</li>
+                <li>原因：迷走神經張力高、β-blocker、鈣離子阻斷劑、毛地黃、下壁 MI、老化。</li>
+                <li>通常沒有症狀、不需治療，注意是否進展成更高度的阻滯。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=avb1">▶ 在 3D 心臟看電流卡在 AV node</a>
+            </div>
+          </section>
+
+          <section id="avb2">
+            <h3>二度房室傳導阻滯 <span class="ekg-tag ekg-tag-exam">常考</span></h3>
+            <p>有些 P 波傳下去、有些傳不下去（出現「P 後面沒有 QRS」）。分成兩型，重點在<b>掉拍前的 PR 有沒有變化</b>：</p>
+
+            <div class="ekg-disease" id="mobitz1">
+              <h4>Mobitz I（Wenckebach）</h4>
+              <figure class="ekg-strip" data-rhythm="mobitz1" data-seconds="7.2" data-annotate="pr drop"><figcaption>Mobitz I：PR 4 → 6.5 → 8 小格，一拍比一拍長，然後一個 P 沒有下傳；掉拍之後 PR 又回到最短。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li><b>PR 越來越長 → 掉一個 QRS → 重新開始</b>，一組一組重複出現（規則的不規則）。</li>
+                <li>阻斷位置多在 <b>AV node</b>，QRS 窄。常見於下壁 MI、藥物、迷走神經張力高。</li>
+                <li>通常良性、較少進展成三度；有症狀才需處理。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=mobitz1">▶ 在 3D 心臟看 AV node 越來越累</a>
+            </div>
+
+            <div class="ekg-disease" id="mobitz2">
+              <h4>Mobitz II</h4>
+              <figure class="ekg-strip" data-rhythm="mobitz2" data-annotate="pr drop"><figcaption>Mobitz II：PR 固定在 4.5 小格，但每 3 個 P 就有 1 個突然沒有下傳。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li><b>PR 固定不變</b>，卻<b>沒有預警地</b>突然少一個 QRS。</li>
+                <li>阻斷位置在 <b>His bundle 以下</b>（束支），QRS 常合併變寬。常見於前壁 MI。</li>
+                <li><b>危險</b>：可能突然進展成三度 AV block 或心搏停止，通常需要節律器。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=mobitz2">▶ 在 3D 心臟看電流在 His 以下被擋住</a>
+            </div>
+
+            <details class="ekg-advanced">
+              <summary>進階：2:1 AV block 怎麼分型？</summary>
+              <p>每兩個 P 只下傳一個時，沒有「連續兩拍」的 PR 可以比較，單看心電圖無法分辨是 Mobitz I 還是 II。線索：QRS 窄、其他時段出現 Wenckebach 現象 → 偏向 I 型（AV node）；QRS 寬、合併束支阻滯 → 偏向 II 型。確定診斷需要電生理檢查（EPS）。三個以上 P 才下傳一個（3:1、4:1）稱為高度 AV block。</p>
+            </details>
+          </section>
+
+          <section id="avb3">
+            <h3>三度（完全）房室傳導阻滯 <span class="ekg-tag">危急</span></h3>
+            <div class="ekg-disease">
+              <figure class="ekg-strip" data-rhythm="avb3" data-seconds="7" data-annotate="p"><figcaption>三度 AV block：P 波（標 P 處）以 80 次/分規則出現，QRS 以 40 次/分規則出現，兩者完全沒有關係，有的 P 甚至埋在 QRS 或 T 波裡。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>心房的電流<b>完全</b>傳不到心室：P 波規則、QRS 也規則，但<b>各跳各的</b>（房室解離），PR 毫無規律。</li>
+                <li>心室靠下方的逸搏點維持：交界區逸搏 → 窄 QRS、40–60 次/分；心室逸搏 → 寬 QRS、20–40 次/分。</li>
+                <li>心房速率一定比心室快。</li>
+              </ul>
+              <div class="note">
+                <p class="note-title">護理重點</p>
+                <ul>
+                  <li>心輸出量下降：評估意識、血壓、有無暈厥（Adams–Stokes 發作）。</li>
+                  <li>準備經皮節律器（transcutaneous pacing），依醫囑安排暫時性或永久性節律器；阻斷在 His 以下時 Atropine 往往無效。</li>
+                </ul>
+              </div>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=avb3">▶ 在 3D 心臟看心房、心室各跳各的</a>
+            </div>
+
+            <table class="guide-table">
+              <thead><tr><th>AV block</th><th>PR</th><th>QRS 掉拍</th><th>阻斷位置</th><th>危險性</th></tr></thead>
+              <tbody>
+                <tr><th>一度</th><td>固定延長（&gt; 5 小格）</td><td>無</td><td>AV node</td><td>低</td></tr>
+                <tr><th>二度 Mobitz I</th><td>越來越長</td><td>週期性掉一拍</td><td>多在 AV node</td><td>低～中</td></tr>
+                <tr><th>二度 Mobitz II</th><td>固定</td><td>突然掉拍</td><td>His 以下</td><td>高</td></tr>
+                <tr><th>三度</th><td>毫無規律（房室解離）</td><td>P 全部傳不下去</td><td>AV node 或以下</td><td>高</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="bbb">
+            <h3>束支傳導阻滯 RBBB、LBBB</h3>
+            <p>束支斷掉之後，那一側心室只能等另一側的電流「穿過心肌細胞」慢慢傳過來。心肌細胞間的傳導比 Purkinje 慢很多，所以 <b>QRS 變寬（≥ 3 小格，0.12 秒）</b>，而且兩側心室不同步，QRS 會出現兩個尖峰。</p>
+
+            <div class="ekg-disease" id="rbbb">
+              <h4>右束支傳導阻滯 RBBB</h4>
+              <figure class="ekg-strip" data-rhythm="rbbb" data-lead="V1 V6" data-seconds="4"><figcaption>RBBB：V1 呈 rSR′（兔耳朵），V6 有寬而鈍的 S 波。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>QRS ≥ 3 小格；<b>V1、V2 呈 RSR′（M 型、兔耳朵）</b>；I、aVL、V5、V6 有<b>寬鈍的 S 波</b>（slurred S）。</li>
+                <li>V1–V3 常見 T 波倒置（ST-T change），屬於繼發性改變。</li>
+                <li>為什麼：左心室照常先去極化（前面的 R），右心室晚一步被活化，所以 V1 最後又多了一個向上的 R′。</li>
+                <li>可見於正常人，也可見於肺栓塞、右心室肥厚、心房中膈缺損、缺血性心臟病。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=rbbb">▶ 在 3D 心臟看右心室晚一步</a>
+              <figure class="ekg-real">
+                <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/rbbb.svg" alt="右束支傳導阻滯的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+                <figcaption>真實的完全右束支阻滯：V1 的 rSR′、I 與 V6 的寬 S 波。<br><span class="ekg-source">來源：PTB-XL #621（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="ekg-disease" id="lbbb">
+              <h4>左束支傳導阻滯 LBBB</h4>
+              <figure class="ekg-strip" data-rhythm="lbbb" data-lead="V1 V6" data-seconds="4"><figcaption>LBBB：V1 是寬而深的 QS／rS 波，V6 是寬而有缺口的 R 波，T 波方向與 QRS 相反。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>QRS ≥ 3 小格；<b>V1 寬而深的 S 波</b>；I、aVL、V5、V6 <b>寬、有缺口（M 型）的 R 波</b>，且沒有中膈 q 波。</li>
+                <li>左側導程 ST 下降、T 波倒置（與 QRS 方向相反）。</li>
+                <li>為什麼：中膈改成由右往左去極化（左側導程的小 q 消失），左心室最後才慢慢被活化，所以左側導程是一個寬大的 R。</li>
+                <li>LBBB 幾乎都代表有心臟病（高血壓、冠心病、心肌病變、主動脈瓣狹窄）。<b>胸痛合併新出現的 LBBB，要當成 STEMI 處理</b>。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=lbbb">▶ 在 3D 心臟看左心室晚一步</a>
+              <figure class="ekg-real">
+                <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/lbbb.svg" alt="左束支傳導阻滯的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+                <figcaption>真實的完全左束支阻滯：V1–V3 寬而深的 S 波，I、aVL、V6 寬而有缺口的 R 波。<br><span class="ekg-source">來源：PTB-XL #286（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+              </figure>
+              <details class="ekg-advanced">
+                <summary>進階：LBBB 合併 MI（Sgarbossa criteria）</summary>
+                <p>LBBB 本身就會造成 ST-T 改變，使 MI 難以判讀。下列任一項支持合併急性 MI：</p>
+                <ul>
+                  <li>QRS 正向的導程出現<b>同向</b> ST 上升 ≥ 1 mm（5 分）。</li>
+                  <li>V1–V3 出現同向 ST 下降 ≥ 1 mm（3 分）。</li>
+                  <li>QRS 負向的導程出現<b>過度的反向</b> ST 上升（≥ 5 mm，或修正版：ST/S 比值 ≥ 25%）。</li>
+                </ul>
+              </details>
+            </div>
+
+            <table class="guide-table">
+              <thead><tr><th></th><th>RBBB</th><th>LBBB</th></tr></thead>
+              <tbody>
+                <tr><th>QRS 寬度</th><td colspan="2">≥ 3 小格（0.12 秒）；2.5–3 小格稱為不完全阻滯</td></tr>
+                <tr><th>V1</th><td>rSR′（兔耳朵）</td><td>寬而深的 S（QS 或 rS）</td></tr>
+                <tr><th>V6、I</th><td>寬鈍的 S 波</td><td>寬而有缺口的 R 波、沒有 q</td></tr>
+                <tr><th>ST-T 改變</th><td>右側導程（V1–V3）</td><td>左側導程（I、aVL、V5、V6）</td></tr>
+              </tbody>
+            </table>
+            <p>記法：看 V1 最後一個波的方向 —— 往上（R′）是 <b>R</b>BBB，往下（深 S）是 <b>L</b>BBB（方向盤：右轉燈往上撥、左轉燈往下撥）。</p>
+          </section>
+
+          <section id="hemiblock">
+            <h3>分支阻滯（半阻滯）</h3>
+            <p>左束支再分成前分支與後分支。只斷其中一支時，QRS <b>寬度正常</b>，但電流的主要方向改變 → 表現為<b>電軸偏移</b>。</p>
+            <table class="guide-table">
+              <thead><tr><th></th><th>左前分支阻滯 LAFB</th><th>左後分支阻滯 LPFB</th></tr></thead>
+              <tbody>
+                <tr><th>電軸</th><td>左偏（&lt; −45°）</td><td>右偏（&gt; +90°）</td></tr>
+                <tr><th>I、aVL</th><td>qR</td><td>rS</td></tr>
+                <tr><th>II、III、aVF</th><td>rS</td><td>qR</td></tr>
+                <tr><th>QRS 寬度</th><td colspan="2">正常（&lt; 3 小格）</td></tr>
+                <tr><th>頻率</th><td>較常見</td><td>少見，要先排除右心室肥厚等其他右偏原因</td></tr>
+              </tbody>
+            </table>
+            <p>記法：「左前 → 左偏、左後 → 右偏」。RBBB 加上其中一個分支阻滯稱為<b>雙分支阻滯</b>，只剩一條路可走，較容易進展為完全阻滯。</p>
+            <figure class="ekg-real">
+              <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/lafb.svg" alt="左前分支阻滯的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+              <figcaption>真實的左前分支阻滯：I、aVL 正向，II、III、aVF 呈 rS，電軸明顯左偏。<br><span class="ekg-source">來源：PTB-XL #41（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+            </figure>
+          </section>
+
+          <section id="preexcitation">
+            <h3>預激症候群：WPW 與 LGL</h3>
+
+            <div class="ekg-disease" id="wpw">
+              <h4>WPW 症候群（Wolff–Parkinson–White）</h4>
+              <figure class="ekg-strip" data-rhythm="wpw" data-annotate="pr" data-seconds="4"><figcaption>WPW：PR 只有 2 小格，QRS 起始處是一段緩慢爬升的 delta wave，QRS 變寬。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>心房與心室之間多了一條<b>旁路（Kent bundle）</b>，電流不經過 AV node 的延遲，<b>提早</b>進入心室。</li>
+                <li>三大特徵：<b>PR 短（&lt; 3 小格）</b>、<b>delta wave</b>（QRS 起始處變鈍的斜坡）、<b>QRS 變寬</b>；常合併繼發性 ST-T 改變。</li>
+                <li>為什麼有 delta wave：旁路先活化一小塊心室，只能在心肌間慢慢傳（斜坡）；接著正常經 AV node 下來的電流趕到，後半段才又快又尖。</li>
+                <li>旁路加上 AV node 可以形成迴圈 → 容易發作 AVRT（見「心律不整」PSVT 進階）。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=wpw">▶ 在 3D 心臟看 Kent bundle 抄捷徑</a>
+              <figure class="ekg-real">
+                <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/wpw.svg" alt="WPW 症候群的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+                <figcaption>真實的 WPW：PR 短，胸前導程 QRS 起始處可見 delta wave。<br><span class="ekg-source">來源：PTB-XL #5303（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+              </figure>
+              <details class="ekg-advanced">
+                <summary>進階：WPW 合併心房顫動為什麼危險</summary>
+                <p>AV node 平常會擋掉大部分亂流，但旁路沒有這個保護。AF 時心房的高頻電流可經旁路直接衝進心室，心跳可達 250–300 次/分，並可能惡化成 VF。此時<b>不能</b>給會阻斷 AV node 的藥物（Adenosine、β-blocker、鈣離子阻斷劑、毛地黃），反而會讓更多電流改走旁路；不穩定時需電擊整流。</p>
+              </details>
+            </div>
+
+            <div class="ekg-disease" id="lgl">
+              <h4>LGL 症候群（Lown–Ganong–Levine）</h4>
+              <figure class="ekg-strip" data-rhythm="lgl" data-annotate="pr" data-seconds="4"><figcaption>LGL：PR 短，但 QRS 正常，沒有 delta wave。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>旁路（James fiber）繞過 AV node 後<b>接到 His bundle</b>，之後仍走正常傳導系統 → 只有 <b>PR 短</b>，QRS 正常、沒有 delta wave。</li>
+              </ul>
+            </div>
+          </section>
+
+          <nav class="guide-pager" aria-label="上一篇與下一篇">
+            <a class="btn-outline" href="/resources/ekg/rhythms.html">← 心律不整</a>
+            <a class="btn-outline" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質 →</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/ekg/strip.js"></script>
+</body>
+</html>

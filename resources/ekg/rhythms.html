@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心律不整｜心電圖教學｜多保命 RN High Pass</title>
+  <meta name="description" content="竇性、心房、交界區、心室的心律不整：判讀重點、節律條與護理重點。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/ekg.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/tools/nursing/index.html">臨床工具</a>
+        <a href="https://exam.rnhighpass.com">模擬測驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>心律不整</h2>
+      <p class="guide-lead">心律不整就是「火車頭」出了問題：節律點太快、太慢、換人，或是有人插隊提早放電。每一種都附上判讀重點、節律條（Lead II，每小格 0.04 秒）和護理重點，能在 3D 心臟看的也附上連結。</p>
+
+      <nav class="tabs" aria-label="心電圖教學分頁">
+        <a class="tab" href="/resources/ekg/index.html">3D 互動心臟</a>
+        <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
+        <a class="tab" href="/resources/ekg/rhythms.html" aria-current="page">心律不整</a>
+        <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+      </nav>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="本頁目錄">
+          <p class="guide-toc-title">本頁目錄</p>
+          <ol>
+            <li><a href="#classify">先分類：規律嗎？快嗎？QRS 寬嗎？</a></li>
+            <li><a href="#sinus">竇性節律的變化</a></li>
+            <li><a href="#premature">早期收縮（PAC、PJC、PVC）</a></li>
+            <li><a href="#atrial">心房來源的心律不整</a></li>
+            <li><a href="#junctional">交界區與陣發性上心室頻脈</a></li>
+            <li><a href="#ventricular">心室來源的心律不整</a></li>
+          </ol>
+        </nav>
+
+        <article class="guide-article">
+          <section id="classify">
+            <h3>先分類：規律嗎？快嗎？QRS 寬嗎？</h3>
+            <p>拿到一張心律不整，先回答三個問題，範圍馬上縮小：</p>
+            <table class="guide-table">
+              <thead><tr><th>節律</th><th>常見疾病</th></tr></thead>
+              <tbody>
+                <tr><th>規則（Regular）</th><td>竇性過慢／過速、心房撲動（固定比例）、EAT、PSVT、交界區節律、心室自主節律、單型性 VT、一度 AV block</td></tr>
+                <tr><th>規則的不規則<br><small>（有規律可循）</small></th><td>竇性心律不整、二度 SA block、二度 AV block（Mobitz I、II）、二聯律</td></tr>
+                <tr><th>完全不規則<br><small>（irregularly irregular）</small></th><td>心房顫動、MAT、WAP、頻繁的早期收縮、VF、多型性 VT</td></tr>
+              </tbody>
+            </table>
+
+            <h4>心搏過速（&gt; 100 次/分）的鑑別</h4>
+            <table class="guide-table">
+              <thead><tr><th></th><th>規則</th><th>不規則</th></tr></thead>
+              <tbody>
+                <tr><th>窄 QRS</th><td>竇性過速、心房撲動（2:1 時心室約 150）、EAT、PSVT（150–250）</td><td>心房顫動、MAT、比例不固定的心房撲動</td></tr>
+                <tr><th>寬 QRS</th><td>VT（合併束支阻滯的 SVT 也會寬，要鑑別）</td><td>VF、多型性 VT（TdP）、AF 合併束支阻滯或 WPW</td></tr>
+              </tbody>
+            </table>
+            <p>窄 QRS 代表電流還是走正常的 His–Purkinje 下去，問題在心室以上（supraventricular）；寬 QRS 代表心室不是從傳導系統正常地被活化 —— 異位點在心室，或束支有阻斷。</p>
+
+            <details class="ekg-advanced">
+              <summary>進階：心律不整的五種機轉</summary>
+              <ul>
+                <li><b>自動性異常（automaticity / ectopic）</b>：不該放電的細胞在 phase 4 自己去極化，例如 PAC、PVC、EAT。</li>
+                <li><b>折返（reentry）</b>：兩條傳導速度、不反應期不同的路徑形成迴圈，電流一直繞，例如心房撲動、AVNRT、AVRT、MI 後的 VT。</li>
+                <li><b>預激（preexcitation）</b>：多了一條旁路提早活化心室，例如 WPW。</li>
+                <li><b>觸發活性（triggered activity）</b>：再極化還沒完成就又被觸發（afterdepolarization），例如 R on T 引發的 TdP、毛地黃中毒。</li>
+                <li><b>傳導阻滯（conduction block）</b>：見「傳導阻滯」分頁。</li>
+              </ul>
+            </details>
+          </section>
+
+          <section id="sinus">
+            <h3>竇性節律的變化</h3>
+            <p>共同點：<b>每個 QRS 前都有一個正常的 P 波、PR 固定</b>，只是 SA node 的速度或規律性變了。</p>
+
+            <div class="ekg-disease" id="sinus-brady">
+              <h4>竇性心搏過慢 Sinus bradycardia <small>&lt; 60 次/分</small></h4>
+              <figure class="ekg-strip" data-rhythm="sinus-brady"><figcaption>竇性心搏過慢，約 50 次/分。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>常見原因：運動員、睡眠、迷走神經刺激（嘔吐、用力解便）、β-blocker、毛地黃、低體溫、甲狀腺功能低下、顱內壓上升。</li>
+                <li><b>護理重點</b>：無症狀不需處理；有頭暈、低血壓、意識改變等症狀時通知醫師，依醫囑給 Atropine，必要時使用經皮或暫時性節律器。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=sinus-brady">▶ 在 3D 心臟看</a>
+            </div>
+
+            <div class="ekg-disease" id="sinus-tachy">
+              <h4>竇性心搏過速 Sinus tachycardia <small>&gt; 100 次/分</small></h4>
+              <figure class="ekg-strip" data-rhythm="sinus-tachy"><figcaption>竇性心搏過速，120 次/分，P 波與 QRS 都正常。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>通常是身體的代償反應：發燒、疼痛、焦慮、脫水或出血、貧血、缺氧、甲狀腺機能亢進、咖啡因。</li>
+                <li><b>護理重點</b>：找出並處理原因（退燒、止痛、補充體液），而不是直接壓心跳。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=sinus-tachy">▶ 在 3D 心臟看</a>
+            </div>
+
+            <div class="ekg-disease" id="sinus-arrhythmia">
+              <h4>竇性心律不整 Sinus arrhythmia</h4>
+              <figure class="ekg-strip" data-rhythm="sinus-arrhythmia" data-seconds="7"><figcaption>竇性心律不整：P 波都正常，但 RR 間隔忽長忽短（隨呼吸變化）。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>最長與最短的 RR 相差 &gt; 4 小格（0.16 秒），其餘完全正常。</li>
+                <li><b>呼吸性</b>：吸氣時心跳加快、吐氣時變慢，年輕健康的人很常見，屬於正常現象。</li>
+                <li>與呼吸無關、發生在老年人的，要考慮竇房結病變（sick sinus syndrome）。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="premature">
+            <h3>早期收縮（PAC、PJC、PVC）</h3>
+            <p>異位點比 SA node <b>提早</b>放電，插隊產生一個提早出現的搏動。從哪裡放電，決定了這一拍長什麼樣子：</p>
+
+            <div class="ekg-disease" id="pac">
+              <h4>心房早期收縮 PAC <span class="ekg-tag ekg-tag-exam">常考</span></h4>
+              <figure class="ekg-strip" data-rhythm="pac" data-annotate="label"><figcaption>第 4 拍是 PAC：P 波提早出現、形狀和其他 P 波不同，QRS 正常。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>提早出現的 P 波，<b>形狀與竇性 P 不同</b>（可能較尖、雙向或倒置）；後面接<b>正常的窄 QRS</b>。</li>
+                <li>後面的停頓是<b>不完全代償性間歇</b>：異位電流會傳回 SA node 把它「重設」，所以前後兩個竇性 P 的距離 &lt; 2 個 PP。</li>
+                <li>常見誘因：咖啡因、酒精、抽菸、壓力、心房擴大。偶發的通常無害，頻繁出現可能引發心房顫動。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=pac">▶ 在 3D 心臟看</a>
+            </div>
+
+            <div class="ekg-disease" id="pjc">
+              <h4>交界區早期收縮 PJC</h4>
+              <figure class="ekg-strip" data-rhythm="pjc" data-annotate="label"><figcaption>第 4 拍是 PJC：提早出現的窄 QRS，前面緊貼著一個倒置的 P 波。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>提早的<b>窄 QRS</b>，P 波在 Lead II 是<b>倒的</b>（電流從交界區往上逆傳），可能在 QRS 前（PR &lt; 3 小格）、藏在 QRS 裡或跟在 QRS 後。</li>
+              </ul>
+            </div>
+
+            <div class="ekg-disease" id="pvc">
+              <h4>心室早期收縮 PVC <span class="ekg-tag ekg-tag-exam">常考</span></h4>
+              <figure class="ekg-strip" data-rhythm="pvc" data-annotate="label"><figcaption>PVC：提早出現、又寬又怪的 QRS，前面沒有 P 波，T 波方向與 QRS 相反，後面是完全代償性間歇。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>提早出現的<b>寬（≥ 3 小格）、形狀怪異的 QRS</b>，前面<b>沒有 P 波</b>，T 波方向通常與 QRS 相反。</li>
+                <li>後面是<b>完全代償性間歇</b>：SA node 沒被重設，照原本的節奏繼續放電，所以 PVC 前後兩個竇性 QRS 的距離剛好 = 2 個 RR。</li>
+                <li>型態：每隔一拍一個叫<b>二聯律</b>（bigeminy）、每隔兩拍一個叫三聯律（trigeminy）；連續兩個叫 couplet，<b>連續三個以上就是 VT</b>。</li>
+              </ul>
+              <figure class="ekg-strip" data-rhythm="bigeminy" data-annotate="label"><figcaption>心室二聯律：正常搏動與 PVC 交替出現。</figcaption></figure>
+              <div class="note">
+                <p class="note-title">護理重點：危險的 PVC</p>
+                <ul>
+                  <li>每分鐘 &gt; 6 次、<b>多源性</b>（形狀不只一種）、連續出現（couplet、短陣 VT）、<b>R on T</b>（PVC 落在前一拍的 T 波上，易誘發 VT/VF）。</li>
+                  <li>立即評估生命徵象與意識、通知醫師；檢查血鉀、血鎂、缺氧、心肌缺血等可逆原因。</li>
+                </ul>
+              </div>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=pvc">▶ 在 3D 心臟看 PVC 為什麼是寬的</a>
+            </div>
+          </section>
+
+          <section id="atrial">
+            <h3>心房來源的心律不整</h3>
+
+            <div class="ekg-disease" id="afl">
+              <h4>心房撲動 Atrial flutter</h4>
+              <figure class="ekg-strip" data-rhythm="afl"><figcaption>心房撲動 4:1：心房每分鐘約 300 次，基線呈鋸齒狀（F 波），每 4 個 F 波下傳 1 個 QRS。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>機轉：電流在右心房繞著三尖瓣環打轉（大折返迴圈），一圈約 0.2 秒 → 心房約 <b>300 次/分</b>。</li>
+                <li>基線是<b>鋸齒狀的 F 波</b>（II、III、aVF、V1 最明顯），沒有正常 P 波；QRS 窄。</li>
+                <li>AV node 會擋掉一部分：2:1 時心室約 150 次/分、3:1 約 100、4:1 約 75。比例固定時節律規則。</li>
+                <li>看到規則、窄 QRS、心跳剛好 150 左右的心搏過速，要想到 2:1 的心房撲動。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=afl">▶ 在 3D 心臟看電流繞圈</a>
+              <figure class="ekg-real">
+                <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/aflt.svg" alt="心房撲動的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+                <figcaption>真實的心房撲動：III、aVF 的鋸齒狀 F 波最明顯。<br><span class="ekg-source">來源：PTB-XL #23（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="ekg-disease" id="af">
+              <h4>心房顫動 Atrial fibrillation <span class="ekg-tag ekg-tag-exam">常考</span></h4>
+              <figure class="ekg-strip" data-rhythm="af" data-seconds="7"><figcaption>心房顫動：看不到 P 波，基線是細小的抖動（f 波），RR 間隔完全不規則。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>心房內到處都在亂放電（350–600 次/分），沒有一致的去極化 → <b>看不到 P 波</b>，只有細小不規則的 f 波。</li>
+                <li>AV node 不規則地放行 → <b>RR 完全不規則</b>（irregularly irregular），QRS 窄。心跳要用 6 秒法算。</li>
+                <li>後果：① 心房沒有有效收縮，血液在左心耳滯留形成<b>血栓 → 腦中風</b>；② 失去心房收縮對心室充填的貢獻，心輸出量下降。</li>
+              </ul>
+              <div class="note">
+                <p class="note-title">護理重點</p>
+                <ul>
+                  <li>同時測<b>心尖脈與橈動脈脈搏</b>一整分鐘：AF 常有<b>脈搏短絀</b>（心尖脈 &gt; 橈動脈脈），因為有些搏動太弱傳不到手腕。</li>
+                  <li>治療三方向：控制心跳（β-blocker、鈣離子阻斷劑、毛地黃）、恢復節律（Amiodarone、同步電擊整流）、<b>預防中風（抗凝血劑）</b>。</li>
+                  <li>使用抗凝血劑要衛教出血徵象；服用 Warfarin 者須監測 INR，並注意富含維生素 K 的食物攝取要穩定。</li>
+                  <li>AF 持續超過 48 小時，整流前要先確認心房內沒有血栓或已充分抗凝，避免整流後血栓打出去。</li>
+                </ul>
+              </div>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=af">▶ 在 3D 心臟看</a>
+              <figure class="ekg-real">
+                <div class="ekg-strip-scroll"><img src="/assets/images/ekg/ptbxl/afib.svg" alt="心房顫動的 12 導程心電圖" loading="lazy" width="1064" height="504"></div>
+                <figcaption>真實的心房顫動（心室反應偏快）：最下面的 Lead II 可以看到 RR 完全不規則、沒有 P 波。<br><span class="ekg-source">來源：PTB-XL #4117（PhysioNet，CC BY 4.0），本站依原始訊號重新繪製。</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="ekg-disease" id="eat">
+              <h4>異位性心房心搏過速 EAT</h4>
+              <figure class="ekg-strip" data-rhythm="eat"><figcaption>EAT：心房裡單一個異位點快速放電，P 波形狀和竇性不同但每個都一樣，約 140 次/分。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>心跳 &gt; 100、窄 QRS、規則，<b>每個 P 波都長一樣但和正常竇性 P 不同</b>。速度 &lt; 100 時叫異位性心房節律（EAR）。</li>
+              </ul>
+            </div>
+
+            <div class="ekg-disease" id="mat">
+              <h4>多源性心房心搏過速 MAT</h4>
+              <figure class="ekg-strip" data-rhythm="mat" data-seconds="6"><figcaption>MAT：同一導程出現三種以上不同形狀的 P 波，PR 不固定，節律不規則。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>心房有多個異位點輪流放電：同一導程<b>至少三種不同的 P 波</b>、PR 不一、RR 不規則、心跳 &gt; 100。</li>
+                <li>常見於嚴重肺病（COPD）病人。心跳 &lt; 100 的同樣表現叫遊走性心房節律點（WAP）。</li>
+                <li>和 AF 的差別：MAT 看得到清楚的 P 波（只是形狀多樣），AF 完全看不到 P 波。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="junctional">
+            <h3>交界區與陣發性上心室頻脈</h3>
+
+            <div class="ekg-disease" id="junctional-rhythm">
+              <h4>交界區節律 Junctional rhythm</h4>
+              <figure class="ekg-strip" data-rhythm="junctional"><figcaption>交界區節律，50 次/分：QRS 窄，前面是倒置的 P 波、PR 很短。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>SA node 停擺，由 AV 交界區接手（脫軌逸搏），速度 <b>40–60 次/分</b>、規則、<b>窄 QRS</b>。</li>
+                <li>P 波在 Lead II <b>倒置</b>，可能在 QRS 前（PR &lt; 3 小格）、被 QRS 蓋住或在 QRS 後。</li>
+                <li>速度 60–100 叫加速性交界區節律，常見於毛地黃中毒、下壁 MI。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=junctional">▶ 在 3D 心臟看電流往上逆傳</a>
+            </div>
+
+            <div class="ekg-disease" id="psvt">
+              <h4>陣發性上心室頻脈 PSVT <span class="ekg-tag ekg-tag-exam">常考</span></h4>
+              <figure class="ekg-strip" data-rhythm="psvt"><figcaption>PSVT：規則、窄 QRS、約 180 次/分，看不到 P 波（藏在 QRS 裡）。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li><b>突然發作、突然停止</b>（陣發性），心跳 <b>150–250 次/分</b>、絕對規則、窄 QRS、P 波通常看不到或是倒 P。</li>
+                <li>機轉是 AV node 附近的折返迴圈（AVNRT 最常見，其次是經由旁路的 AVRT）。</li>
+              </ul>
+              <div class="note">
+                <p class="note-title">護理重點</p>
+                <ul>
+                  <li>血行動力學穩定時先試<b>迷走神經刺激</b>：Valsalva 操作（閉氣用力）、頸動脈竇按摩（只按單側、先確認沒有頸動脈雜音，老年人慎用）。</li>
+                  <li>無效時依醫囑給 <b>Adenosine</b>：由靠近心臟的靜脈快速推注，<b>立刻接生理食鹽水沖管</b>（半衰期只有幾秒）；事先告知病人可能會有短暫胸悶、心跳停一下的感覺。</li>
+                  <li>不穩定（低血壓、意識改變、胸痛）→ 同步電擊整流。</li>
+                </ul>
+              </div>
+              <details class="ekg-advanced">
+                <summary>進階：AVNRT 與 AVRT</summary>
+                <p>折返要成立需要三個條件：① 兩條傳導路徑形成迴圈；② 兩條路的不反應期不同（快路徑傳得快但恢復慢，慢路徑傳得慢但恢復快）；③ 一個早期收縮剛好在快路徑還沒恢復時進來。</p>
+                <table class="guide-table">
+                  <thead><tr><th>類型</th><th>迴圈</th><th>心電圖</th></tr></thead>
+                  <tbody>
+                    <tr><th>典型 AVNRT（slow–fast）</th><td>AV node 內，慢路徑下傳、快路徑上傳；多由 PAC 誘發</td><td>short RP：倒 P 藏在 QRS 裡或緊接在後（V1 假 r′、II 假 S）</td></tr>
+                    <tr><th>非典型 AVNRT（fast–slow）</th><td>方向相反；多由 PVC 誘發</td><td>long RP：倒 P 離前一個 QRS 較遠</td></tr>
+                    <tr><th>順向 AVRT（orthodromic）</th><td>經 AV node 下傳、經旁路上傳</td><td>窄 QRS，倒 P 在 QRS 後（RP &gt; 2 小格）</td></tr>
+                    <tr><th>逆向 AVRT（antidromic）</th><td>經旁路下傳、經 AV node 上傳</td><td>寬 QRS（像 delta wave），很難和 VT 區分</td></tr>
+                  </tbody>
+                </table>
+                <p>2:1 心房撲動和 PSVT 都可能是「規則、窄、150 左右」：心房撲動在下方導程常看得到正向的 F 波，PSVT 則多半沒有 P 波或是倒 P。</p>
+              </details>
+            </div>
+          </section>
+
+          <section id="ventricular">
+            <h3>心室來源的心律不整</h3>
+
+            <div class="ekg-disease" id="idioventricular">
+              <h4>心室自主節律 Idioventricular rhythm</h4>
+              <figure class="ekg-strip" data-rhythm="idioventricular"><figcaption>心室自主節律，約 38 次/分：寬 QRS、沒有 P 波。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>上方的節律點都失效，由心室自己以 <b>20–40 次/分</b>跳動，QRS 寬、沒有 P 波。常發生在三度 AV block 或瀕死的心臟。</li>
+                <li>這可能是病人<b>唯一</b>的節律，不能用抗心律不整藥把它壓掉。</li>
+              </ul>
+            </div>
+
+            <div class="ekg-disease" id="vt">
+              <h4>心室頻脈 VT <span class="ekg-tag">危急</span></h4>
+              <figure class="ekg-strip" data-rhythm="vt"><figcaption>單型性 VT，約 170 次/分：規則、又寬又快，每個 QRS 形狀一樣，看不到 P 波。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li><b>連續 3 個以上的 PVC</b>，心跳 100–250 次/分，寬 QRS、通常規則。常見於 MI 後的疤痕組織形成折返迴圈。</li>
+                <li>看到「寬而快」的心搏過速，<b>一律先當成 VT 處理</b>。</li>
+              </ul>
+              <div class="note">
+                <p class="note-title">護理重點：先摸脈搏</p>
+                <ul>
+                  <li><b>有脈搏、穩定</b>：依醫囑給抗心律不整藥（如 Amiodarone），持續監測。</li>
+                  <li><b>有脈搏、不穩定</b>：同步電擊整流。</li>
+                  <li><b>無脈搏</b>：立即 CPR、<b>去顫電擊</b>（與 VF 相同處理）。</li>
+                </ul>
+              </div>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=vt">▶ 在 3D 心臟看</a>
+              <details class="ekg-advanced">
+                <summary>進階：VT 與「SVT 合併束支阻滯」怎麼分（Brugada criteria）</summary>
+                <p>依序檢查，任何一步符合就判定為 VT：</p>
+                <ol>
+                  <li>胸前導程完全沒有 RS 型（全部正或全部負，concordance）。</li>
+                  <li>任何一個胸前導程從 R 起點到 S 最低點 &gt; 100 ms。</li>
+                  <li>有房室解離（AV dissociation）：P 波和 QRS 各跳各的。</li>
+                  <li>V1–V2 與 V6 符合 VT 的型態標準。</li>
+                </ol>
+                <p>另外，看到<b>融合波</b>（fusion beat，竇性與心室電流同時活化心室，形狀介於兩者之間）或<b>捕捉波</b>（capture beat，竇性電流偶爾搶到下傳，出現一個正常窄 QRS），幾乎可以確定是 VT。</p>
+              </details>
+            </div>
+
+            <div class="ekg-disease" id="tdp">
+              <h4>多形性心室頻脈 Torsades de pointes <span class="ekg-tag">危急</span></h4>
+              <figure class="ekg-strip" data-rhythm="tdp" data-seconds="6"><figcaption>TdP：QRS 的振幅忽大忽小、方向繞著基線扭轉，像紡錘一樣。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>多形性 VT 的一種，QRS 繞著基線<b>扭轉</b>。發生在 <b>QT 延長</b>的病人，常由落在 T 波上的 PVC（R on T）誘發。</li>
+                <li>QT 延長原因：低血鉀、低血鎂、低血鈣、藥物（如部分抗心律不整藥、抗精神病藥、macrolide 類抗生素）、先天性長 QT 症候群。</li>
+                <li><b>護理重點</b>：依醫囑靜脈給<b>硫酸鎂</b>，停用延長 QT 的藥物、矯正電解質；無脈搏時去顫電擊。</li>
+              </ul>
+            </div>
+
+            <div class="ekg-disease" id="vf">
+              <h4>心室顫動 VF <span class="ekg-tag">危急</span></h4>
+              <figure class="ekg-strip" data-rhythm="vf"><figcaption>VF：完全雜亂、分辨不出 P、QRS、T 的波形。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>心室各處同時亂放電，心臟只是在「顫抖」，<b>沒有心輸出量、摸不到脈搏</b>，病人會立即失去意識。</li>
+                <li><b>護理重點</b>：立即 CPR、盡快<b>去顫電擊</b>（非同步）；依醫囑給 Epinephrine、Amiodarone。每延遲一分鐘電擊，存活率就明顯下降。</li>
+              </ul>
+              <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=vf">▶ 在 3D 心臟看</a>
+            </div>
+
+            <div class="ekg-disease" id="asystole">
+              <h4>心搏停止 Asystole 與無脈搏電氣活動 PEA</h4>
+              <figure class="ekg-strip" data-rhythm="asystole"><figcaption>Asystole：幾乎是一條直線。</figcaption></figure>
+              <ul class="ekg-keys">
+                <li>看到一直線，先確認導程沒有脫落、增益沒有調太低，並<b>換另一個導程</b>確認。</li>
+                <li><b>PEA</b>：螢幕上有規則的電氣活動，但摸不到脈搏。</li>
+                <li>兩者都<b>不能電擊</b>：CPR、依醫囑給 Epinephrine，並找出可逆的原因（缺氧、低血容、酸中毒、高／低血鉀、低體溫、張力性氣胸、心包填塞、中毒、肺栓塞、冠狀動脈栓塞）。</li>
+              </ul>
+            </div>
+
+            <table class="guide-table">
+              <thead><tr><th>無脈搏心跳停止</th><th>節律</th><th>處置</th></tr></thead>
+              <tbody>
+                <tr><th>可電擊</th><td>VF、無脈搏 VT</td><td>CPR ＋ 盡快去顫電擊</td></tr>
+                <tr><th>不可電擊</th><td>Asystole、PEA</td><td>CPR ＋ Epinephrine ＋ 找可逆原因</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="guide-pager" aria-label="上一篇與下一篇">
+            <a class="btn-outline" href="/resources/ekg/basics.html">← 基礎與判圖</a>
+            <a class="btn-outline" href="/resources/ekg/blocks.html">傳導阻滯 →</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/ekg/strip.js"></script>
+</body>
+</html>
