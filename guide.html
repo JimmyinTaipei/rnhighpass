@@ -6,6 +6,8 @@
   <title>使用教學｜多保命 RN High Pass</title>
   <link rel="icon" type="image/png" href="/assets/images/多保命.png">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
 </head>
 <body>
 
@@ -32,7 +34,49 @@
 
   <section class="section">
     <div class="container">
-      <h2>使用說明</h2>
+      <h2>使用教學</h2>
+      <p class="guide-lead">多保命護理分章是為電子版閱讀設計的，裡面藏了不少超連結和小功能。用平板或電腦備考的話，花幾分鐘看完這份教學，複習會順手很多。</p>
+
+      <nav class="tabs" aria-label="使用教學分頁">
+        <a class="tab" href="/guide.html" aria-current="page">總覽</a>
+        <a class="tab" href="/guide/explanations.html">分章詳解</a>
+        <a class="tab" href="/guide/workbooks.html">分章題本</a>
+        <a class="tab" href="/guide/past-exams.html">歷年考題</a>
+      </nav>
+
+      <h3>三種資料，該用哪一種？</h3>
+      <div class="guide-cards">
+        <a class="guide-card" href="/guide/explanations.html">
+          <img src="/assets/images/covers/bundles/01_explanation.jpg" alt="" width="600" height="853" loading="lazy">
+          <div>
+            <p class="guide-card-title">分章詳解</p>
+            <p class="guide-card-desc">依章節整理的考古題，每題附答案與詳解。適合第一輪讀觀念、搞懂每個選項。</p>
+            <span class="guide-card-more">看教學 →</span>
+          </div>
+        </a>
+        <a class="guide-card" href="/guide/workbooks.html">
+          <img src="/assets/images/covers/bundles/11_workbook.jpg" alt="" width="600" height="853" loading="lazy">
+          <div>
+            <p class="guide-card-title">分章題本</p>
+            <p class="guide-card-desc">同樣依章節分類，但沒有詳解，答案集中在章末。適合讀完一章後自己練題、檢驗成果。</p>
+            <span class="guide-card-more">看教學 →</span>
+          </div>
+        </a>
+        <a class="guide-card" href="/guide/past-exams.html">
+          <img src="/assets/images/covers/past-exams/115-1_obgyn-peds.jpg" alt="" width="600" height="853" loading="lazy">
+          <div>
+            <p class="guide-card-title">歷年考題</p>
+            <p class="guide-card-desc">每一期國考的完整考卷，照原本的題序排列，並附答案與詳解。適合看整份考卷的出題方向。</p>
+            <span class="guide-card-more">看教學 →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>網站使用說明</h2>
       <ul class="guide-list">
         <li>首頁的「題目下載」是各科合訂本與最新一期考題，點封面就直接下載。</li>
         <li>想要單獨某一章，或是更早年份的考古題，請到「更多考題」。</li>
@@ -44,11 +88,106 @@
     </div>
   </section>
 
-  <!-- 詳細的使用教學之後放在這裡 -->
   <section class="section">
-    <div class="container">
-      <h2>使用教學</h2>
-      <p class="coming-soon">使用教學準備中，敬請期待 🚧</p>
+    <div class="container guide-article">
+      <h2>三種資料共通的設計</h2>
+      <p>下面這幾項在分章詳解、分章題本、歷年考題裡都一樣，先看懂這些，再看各自的教學會更快。</p>
+
+      <section id="question-id">
+        <h3>題目編號：年份-次數-科目-題號</h3>
+        <p>每一題都會標出它來自哪一次國考，格式是：</p>
+        <ul class="id-parts" aria-label="題號範例 115-2-基醫-1 的拆解">
+          <li><b>115</b><small>年份</small></li>
+          <li><b>2</b><small>第幾次</small></li>
+          <li><b>基醫</b><small>考卷</small></li>
+          <li><b>1</b><small>題號</small></li>
+        </ul>
+        <p>上面的例子 <span class="code">115-2-基醫-1</span> 就是「115 年第二次國考，基礎醫學第 1 題」。補考會多一段，例如 <span class="code">106-2-補考-精社-61</span>。</p>
+        <p>考卷的縮寫共有五種：</p>
+        <ul>
+          <li><b>基醫</b>：基礎醫學</li>
+          <li><b>基護行政</b>：基本護理學與護理行政</li>
+          <li><b>內外</b>：內外科護理學</li>
+          <li><b>產兒</b>：產科與兒科護理學</li>
+          <li><b>精社</b>：精神科與社區衛生護理學</li>
+        </ul>
+
+        <h4>用題號搜尋</h4>
+        <p>在 PDF 裡按 <kbd>⌘</kbd> + <kbd>F</kbd>（Mac、iPad 外接鍵盤）或 <kbd>Ctrl</kbd> + <kbd>F</kbd>（Windows），直接輸入題號就能找到那一題。例如想找 115 年第二次國考基礎醫學第 1 題，輸入 <span class="code">115-2-基醫-1</span> 即可。</p>
+        <p>同樣的方法也能用來找同一次考試的所有題目：輸入 <span class="code">115-2-基醫</span>，就能一題一題跳過去。</p>
+      </section>
+
+      <section id="review-boxes">
+        <h3>三個框框 □ □ □：三輪複習</h3>
+        <p>每一題下方的考題出處（例如 <span class="code">115-2-內外-27</span>）左邊都有三個空白框框，是留給你自己標記用的。建議每刷一輪就用一格：</p>
+        <ul>
+          <li>第一輪寫在第一格，第二輪寫第二格，第三輪寫第三格。</li>
+          <li>答對打 ✓、答錯打 ✗，或是不確定就畫個 △。</li>
+          <li>三輪下來，一眼就能看出哪些題目反覆錯，考前優先複習這些。</li>
+        </ul>
+        <figure class="shot">
+          <a class="shot-link" href="/assets/images/guide/exp-question.png" target="_blank" rel="noopener" title="點擊放大"><img src="/assets/images/guide/exp-question.png" alt="分章詳解中的一題：題目、四個選項，右下角是三個框框、題號 115-2-內外-27 與答案 C" width="807" height="224" loading="lazy"></a>
+          <figcaption>右下角的「□ □ □ | 115-2-內外-27 | C」：三個框框、題號、答案。</figcaption>
+        </figure>
+        <p class="note">用 GoodNotes、Notability 等筆記軟體開啟時，可以直接在框框裡手寫。紙本列印也一樣適用。</p>
+      </section>
+
+      <section id="page-number">
+        <h3>頁碼：每一章各自重新編號</h3>
+        <p>頁尾的頁碼長這樣：<span class="code">生解Ch01-3</span>，意思是「解剖生理學第 1 章的第 3 頁」。每一章都從 1 開始，所以不管你下載的是單章還是合訂本，頁碼都一樣，跟同學討論時說「生解 Ch05 第 12 頁」就能對上。</p>
+        <p>頁首也會印出目前所在的章節名稱，翻到一半也知道自己在哪裡。</p>
+      </section>
+
+      <section id="subjects">
+        <h3>科目對照表</h3>
+        <p>國考 5 張考卷共 11 科。同一張考卷的科目用同一個顏色，每一科的封面都有自己的圖案，檔名開頭的號碼也固定不變。</p>
+        <!-- 待確認：產科封面實際是「抱著寶寶的媽媽」，草稿寫的是「孕婦」 -->
+        <div class="subject-groups">
+          <div class="subject-group" data-group="BM">
+            <div class="subject-group-head">基礎醫學（基醫）<span>粉色</span></div>
+            <ul>
+              <li><img src="/assets/images/covers/bundles/01_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">01</span><span><span class="subject-name">解剖生理學</span><span class="subject-meta">縮寫：生解・圖案：心臟</span></span></li>
+              <li><img src="/assets/images/covers/bundles/02_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">02</span><span><span class="subject-name">病理學</span><span class="subject-meta">縮寫：病理・圖案：顯微鏡</span></span></li>
+              <li><img src="/assets/images/covers/bundles/03_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">03</span><span><span class="subject-name">藥理學</span><span class="subject-meta">縮寫：藥理・圖案：膠囊</span></span></li>
+              <li><img src="/assets/images/covers/bundles/04_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">04</span><span><span class="subject-name">微生物免疫學</span><span class="subject-meta">縮寫：微免・圖案：病毒</span></span></li>
+            </ul>
+          </div>
+          <div class="subject-group" data-group="FA">
+            <div class="subject-group-head">基本護理學與護理行政（基護行政）<span>橘色</span></div>
+            <ul>
+              <li><img src="/assets/images/covers/bundles/05_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">05</span><span><span class="subject-name">基本護理學</span><span class="subject-meta">縮寫：基護・圖案：針筒</span></span></li>
+              <li><img src="/assets/images/covers/bundles/06_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">06</span><span><span class="subject-name">護理行政</span><span class="subject-meta">縮寫：行政・圖案：行事曆</span></span></li>
+            </ul>
+          </div>
+          <div class="subject-group" data-group="MS">
+            <div class="subject-group-head">內外科護理學（內外）<span>綠色</span></div>
+            <ul>
+              <li><img src="/assets/images/covers/bundles/07_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">07</span><span><span class="subject-name">內外科護理學</span><span class="subject-meta">縮寫：內外・圖案：護理師</span></span></li>
+            </ul>
+          </div>
+          <div class="subject-group" data-group="OP">
+            <div class="subject-group-head">產科與兒科護理學（產兒）<span>藍色</span></div>
+            <ul>
+              <li><img src="/assets/images/covers/bundles/08_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">08</span><span><span class="subject-name">產科護理學</span><span class="subject-meta">縮寫：產科・圖案：抱著寶寶的媽媽</span></span></li>
+              <li><img src="/assets/images/covers/bundles/09_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">09</span><span><span class="subject-name">兒科護理學</span><span class="subject-meta">縮寫：兒科・圖案：小朋友塗鴉</span></span></li>
+            </ul>
+          </div>
+          <div class="subject-group" data-group="PC">
+            <div class="subject-group-head">精神科與社區衛生護理學（精社）<span>紫色</span></div>
+            <ul>
+              <li><img src="/assets/images/covers/bundles/10_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">10</span><span><span class="subject-name">精神科護理學</span><span class="subject-meta">縮寫：精神・圖案：大腦</span></span></li>
+              <li><img src="/assets/images/covers/bundles/11_explanation.jpg" alt="" width="600" height="853" loading="lazy"><span class="subject-no">11</span><span><span class="subject-name">社區衛生護理學</span><span class="subject-meta">縮寫：社區・圖案：房子</span></span></li>
+            </ul>
+          </div>
+        </div>
+        <p>科目的顏色會一路延續到內頁：章節標題列、表格、詳解的底色都是同一個色系。</p>
+      </section>
+
+      <section id="preface">
+        <h3>前言與勘誤回報</h3>
+        <p>每份檔案封面後面都有一頁前言，裡面的「多保命網頁」和「勘誤回報表格」都可以直接點。發現錯字、答案有誤或排版問題，歡迎透過表單或網站的<a href="/feedback.html">問題回饋</a>告訴我們；新考題預計在每次釋疑公布後一至二週內更新。</p>
+        <p class="note"><span class="note-title">詳解是 AI 生成的</span>分章詳解與歷年考題裡的詳解大量使用 AI 製作，若有疑問或錯誤，請以國考指定用書為準。</p>
+      </section>
     </div>
   </section>
 

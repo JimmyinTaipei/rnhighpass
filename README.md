@@ -20,7 +20,8 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 |---|---|
 | 首頁 `/`「題目下載」 | 分頁切換：分章詳解合訂本（11 本）、分章題本合訂本（11 本）、最新一期考古題（5 份），點封面直接下載 |
 | 更多考題 `/downloads/more.html` | 分章詳解／題本逐章下載（各 162 章）、全部 26 個學期的考古題（130 份），底下附 Google Drive 整批下載 |
-| 使用教學 `/guide.html`、問題回饋 `/feedback.html` | 使用說明、回饋表單、社群連結 |
+| 使用教學 `/guide.html` | 總覽（網站說明、題號、三個框框、科目對照表），底下分成 `guide/explanations.html`、`guide/workbooks.html`、`guide/past-exams.html` 三個子頁，附實際 PDF 的截圖 |
+| 問題回饋 `/feedback.html` | 回饋表單、社群連結 |
 
 476 個檔案全部放在 R2、都可以從網站下載。Google Drive 的連結（`assets/data/links.json`）
 留給想一次下載整個資料夾的人。
@@ -36,24 +37,28 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 ├── downloads/
 │   ├── more.html             更多考題
 │   └── past-exams.html       舊網址，轉址到 more.html#past
-├── guide.html                使用教學
+├── guide.html                使用教學（總覽）
+├── guide/                    使用教學子頁：分章詳解、分章題本、歷年考題
 ├── feedback.html             問題回饋 + 社群連結
 ├── worker/index.js           /api/file 單檔下載
 ├── scripts/
 │   ├── subjects.mjs          科目主檔與 ASCII 對照表
 │   ├── build-manifest.mjs    來源資料夾 → 正規化 + 產生 manifest
 │   ├── make-covers.sh        抽 PDF 第一頁當封面圖
+│   ├── make-guide-shots.py   從 PDF 裁出使用教學的截圖
 │   └── upload-r2.sh          批次上傳到 R2（可中斷續傳）
 ├── assets/
 │   ├── data/manifest.json    檔案清單（產生物，要 commit）
 │   ├── data/links.json       Drive / 社群連結（手動編輯）
 │   ├── css/style.css         全站樣式（頁首、漢堡選單、回到頂端）
 │   ├── css/downloads.css     下載頁樣式（分頁、封面卡、側欄、章節卡）
+│   ├── css/guide.css         使用教學頁樣式
 │   ├── js/main.js            全站共用：漢堡選單、回到頂端、window.RN 小工具
 │   ├── js/home.js            首頁題目下載
 │   ├── js/more.js            更多考題
 │   ├── js/subject-icons.js   11 科 icon（與多保命測驗一致）
 │   ├── js/site-links.js      把 links.json 填進頁面
+│   ├── images/guide/         使用教學的 PDF 截圖（make-guide-shots.py 產生）
 │   └── images/covers/
 │       ├── bundles/          合訂本封面 22 張（{序號}_{explanation|workbook}.jpg）
 │       └── past-exams/       考古題封面 130 張（{學期}_{考卷}.jpg，檔名同 R2 key 的 ASCII 寫法）
@@ -142,6 +147,19 @@ git add assets/data/manifest.json assets/images/covers && git commit -m "更新�
 
 改名做到一半、新舊檔並存時，腳本會自動採用比較接近目標格式的那一份，
 並把被略過的舊檔列成警告 —— 舊檔刪掉後警告就會消失。
+
+## 使用教學的截圖
+
+`assets/images/guide/*.png` 是從實際 PDF 裁下來的，PDF 改版後重跑一次：
+
+```sh
+python3 scripts/make-guide-shots.py                 # 全部重做
+python3 scripts/make-guide-shots.py exp-toc wb-jump # 只重做幾張
+```
+
+需要 PyMuPDF（`pip install pymupdf`）。裁切範圍是用「上緣文字」到「下緣文字」定位，
+不是寫死座標，排版小幅位移不影響；某張找不到定位文字時會列出來，改 `SHOTS` 裡的文字即可。
+可以點的內部連結會自動用虛線框標出來。
 
 ## 外部連結設定（`assets/data/links.json`）
 
