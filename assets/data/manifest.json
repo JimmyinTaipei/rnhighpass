@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T15:38:05.841Z",
+  "generatedAt": "2026-09-25T04:03:28.358Z",
   "subjects": [
     {
       "no": "01",
@@ -120,4593 +120,4593 @@
   },
   "bundles": [
     {
-      "key": "bundles/01_explanation_028c27178b.pdf",
+      "key": "bundles/01_explanation_4e4acf1e7b.pdf",
       "name": "01_生解_詳解_合訂本.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
-      "size": 6734285
+      "size": 6507829
     },
     {
-      "key": "bundles/01_workbook_1c7de61fcb.pdf",
+      "key": "bundles/01_workbook_bb7be9c228.pdf",
       "name": "01_生解_題本_合訂本.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
-      "size": 2764001
+      "size": 2678407
     },
     {
-      "key": "bundles/02_explanation_e144ac16ae.pdf",
+      "key": "bundles/02_explanation_f2fa2049ae.pdf",
       "name": "02_病理_詳解_合訂本.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
-      "size": 5305020
+      "size": 5070063
     },
     {
-      "key": "bundles/02_workbook_f5dc19d864.pdf",
+      "key": "bundles/02_workbook_c6d1f881ce.pdf",
       "name": "02_病理_題本_合訂本.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
-      "size": 2429250
+      "size": 2219123
     },
     {
-      "key": "bundles/03_explanation_9d55fddf91.pdf",
+      "key": "bundles/03_explanation_d0b96eb792.pdf",
       "name": "03_藥理_詳解_合訂本.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
-      "size": 6737603
+      "size": 6454490
     },
     {
-      "key": "bundles/03_workbook_4e90b7faf4.pdf",
+      "key": "bundles/03_workbook_e5b771883a.pdf",
       "name": "03_藥理_題本_合訂本.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
-      "size": 2617358
+      "size": 2392883
     },
     {
-      "key": "bundles/04_explanation_5907fb8ac0.pdf",
+      "key": "bundles/04_explanation_78dc6cdc06.pdf",
       "name": "04_微免_詳解_合訂本.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
-      "size": 4788725
+      "size": 4577593
     },
     {
-      "key": "bundles/04_workbook_dadd42c6eb.pdf",
+      "key": "bundles/04_workbook_4a76446a3d.pdf",
       "name": "04_微免_題本_合訂本.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
-      "size": 1811320
+      "size": 1611466
     },
     {
-      "key": "bundles/05_explanation_edad52db17.pdf",
+      "key": "bundles/05_explanation_a3d3aa7e3f.pdf",
       "name": "05_基護_詳解_合訂本.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
-      "size": 8379848
+      "size": 8180130
     },
     {
-      "key": "bundles/05_workbook_3c20df2c72.pdf",
+      "key": "bundles/05_workbook_47391b03c0.pdf",
       "name": "05_基護_題本_合訂本.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
-      "size": 3334808
+      "size": 3080275
     },
     {
-      "key": "bundles/06_explanation_6e51bbf8b8.pdf",
+      "key": "bundles/06_explanation_11244ef541.pdf",
       "name": "06_行政_詳解_合訂本.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
-      "size": 4046877
+      "size": 3795135
     },
     {
-      "key": "bundles/06_workbook_428e009eed.pdf",
+      "key": "bundles/06_workbook_856c257a6b.pdf",
       "name": "06_行政_題本_合訂本.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
-      "size": 2129111
+      "size": 1917569
     },
     {
-      "key": "bundles/07_explanation_fe4cd15b41.pdf",
+      "key": "bundles/07_explanation_14a14cf194.pdf",
       "name": "07_內外_詳解_合訂本.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
-      "size": 11162608
+      "size": 11096525
     },
     {
-      "key": "bundles/07_workbook_9b9cb4a482.pdf",
+      "key": "bundles/07_workbook_8c4fc96c00.pdf",
       "name": "07_內外_題本_合訂本.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
-      "size": 3779195
+      "size": 3646764
     },
     {
-      "key": "bundles/08_explanation_6da7c78f69.pdf",
+      "key": "bundles/08_explanation_840e9f12a2.pdf",
       "name": "08_產科_詳解_合訂本.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
-      "size": 6299138
+      "size": 6029230
     },
     {
-      "key": "bundles/08_workbook_91f3f5d700.pdf",
+      "key": "bundles/08_workbook_cfe533e67f.pdf",
       "name": "08_產科_題本_合訂本.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
-      "size": 2637205
+      "size": 2898544
     },
     {
-      "key": "bundles/09_explanation_31f12a3aae.pdf",
+      "key": "bundles/09_explanation_6a570a68eb.pdf",
       "name": "09_兒科_詳解_合訂本.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
-      "size": 6073001
+      "size": 5868259
     },
     {
-      "key": "bundles/09_workbook_f16c316695.pdf",
+      "key": "bundles/09_workbook_d5ea0913f4.pdf",
       "name": "09_兒科_題本_合訂本.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
-      "size": 2511374
+      "size": 2246728
     },
     {
-      "key": "bundles/10_explanation_446278f88c.pdf",
+      "key": "bundles/10_explanation_ec28191398.pdf",
       "name": "10_精神_詳解_合訂本.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
-      "size": 5361851
+      "size": 5108460
     },
     {
-      "key": "bundles/10_workbook_4663786f81.pdf",
+      "key": "bundles/10_workbook_11c9b205e1.pdf",
       "name": "10_精神_題本_合訂本.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
-      "size": 2620924
+      "size": 2371435
     },
     {
-      "key": "bundles/11_explanation_1293864bf8.pdf",
+      "key": "bundles/11_explanation_933ace1a12.pdf",
       "name": "11_社區_詳解_合訂本.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
-      "size": 6612503
+      "size": 6334389
     },
     {
-      "key": "bundles/11_workbook_d68794b368.pdf",
+      "key": "bundles/11_workbook_ee7896857c.pdf",
       "name": "11_社區_題本_合訂本.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
-      "size": 2944407
+      "size": 2756000
     }
   ],
   "chapters": [
     {
-      "key": "explanations/01_Ch01_e9f76b18c5.pdf",
+      "key": "explanations/01_Ch01_32ae0d0e6a.pdf",
       "name": "01_生解_詳解_Ch01_緒論、細胞組織與生化.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論、細胞組織與生化",
-      "size": 1645400
+      "size": 1524915
     },
     {
-      "key": "explanations/01_Ch02_eaf9fd1f59.pdf",
+      "key": "explanations/01_Ch02_d807117ed7.pdf",
       "name": "01_生解_詳解_Ch02_皮膚系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "皮膚系統",
-      "size": 1481582
+      "size": 1376716
     },
     {
-      "key": "explanations/01_Ch03_e92192d7e7.pdf",
+      "key": "explanations/01_Ch03_f04d47eafd.pdf",
       "name": "01_生解_詳解_Ch03_骨骼系統與關節.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "骨骼系統與關節",
-      "size": 1626637
+      "size": 1497634
     },
     {
-      "key": "explanations/01_Ch04_f26f53959d.pdf",
+      "key": "explanations/01_Ch04_825db6fc12.pdf",
       "name": "01_生解_詳解_Ch04_肌肉系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "肌肉系統",
-      "size": 1803674
+      "size": 1648578
     },
     {
-      "key": "explanations/01_Ch05_fb7058b5d9.pdf",
+      "key": "explanations/01_Ch05_e99707c271.pdf",
       "name": "01_生解_詳解_Ch05_神經系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "神經系統",
-      "size": 2528552
+      "size": 2302802
     },
     {
-      "key": "explanations/01_Ch06_e479f979c3.pdf",
+      "key": "explanations/01_Ch06_c3e34f9ef0.pdf",
       "name": "01_生解_詳解_Ch06_感覺器官.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "感覺器官",
-      "size": 1591236
+      "size": 1464113
     },
     {
-      "key": "explanations/01_Ch07_afa614ffcd.pdf",
+      "key": "explanations/01_Ch07_0ba968c451.pdf",
       "name": "01_生解_詳解_Ch07_血液、心血管與淋巴系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "血液、心血管與淋巴系統",
-      "size": 2476456
+      "size": 2281903
     },
     {
-      "key": "explanations/01_Ch08_b6e42193c6.pdf",
+      "key": "explanations/01_Ch08_303acb1292.pdf",
       "name": "01_生解_詳解_Ch08_呼吸系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "呼吸系統",
-      "size": 1794748
+      "size": 1642437
     },
     {
-      "key": "explanations/01_Ch09_0c7d498ce4.pdf",
+      "key": "explanations/01_Ch09_5f7df170fb.pdf",
       "name": "01_生解_詳解_Ch09_消化系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "消化系統",
-      "size": 2019846
+      "size": 1859416
     },
     {
-      "key": "explanations/01_Ch10_3e9e554c8f.pdf",
+      "key": "explanations/01_Ch10_f7805b4b5f.pdf",
       "name": "01_生解_詳解_Ch10_泌尿系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "泌尿系統",
-      "size": 1774040
+      "size": 1636659
     },
     {
-      "key": "explanations/01_Ch11_603d261043.pdf",
+      "key": "explanations/01_Ch11_c99d995eb5.pdf",
       "name": "01_生解_詳解_Ch11_體液、電解質與酸鹼平衡.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "體液、電解質與酸鹼平衡",
-      "size": 1817543
+      "size": 1695942
     },
     {
-      "key": "explanations/01_Ch12_36d6d1f51e.pdf",
+      "key": "explanations/01_Ch12_d409d8b211.pdf",
       "name": "01_生解_詳解_Ch12_內分泌系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "內分泌系統",
-      "size": 2077642
+      "size": 1909831
     },
     {
-      "key": "explanations/01_Ch13_b5e571f8a8.pdf",
+      "key": "explanations/01_Ch13_25f3fe72e3.pdf",
       "name": "01_生解_詳解_Ch13_生殖系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "生殖系統",
-      "size": 1910449
+      "size": 1750690
     },
     {
-      "key": "explanations/01_Ch14_36a0a5a549.pdf",
+      "key": "explanations/01_Ch14_7afbf98234.pdf",
       "name": "01_生解_詳解_Ch14_胚胎學.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "胚胎學",
-      "size": 1519169
+      "size": 1404520
     },
     {
-      "key": "explanations/02_Ch01_161ccd616f.pdf",
+      "key": "explanations/02_Ch01_5dc2a231fb.pdf",
       "name": "02_病理_詳解_Ch01_緒論與細胞傷害、適應.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論與細胞傷害、適應",
-      "size": 1514594
+      "size": 1403839
     },
     {
-      "key": "explanations/02_Ch02_a86ecad7e9.pdf",
+      "key": "explanations/02_Ch02_dab38eab49.pdf",
       "name": "02_病理_詳解_Ch02_發炎與修復.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "發炎與修復",
-      "size": 1619193
+      "size": 1492747
     },
     {
-      "key": "explanations/02_Ch03_8e26f4d037.pdf",
+      "key": "explanations/02_Ch03_c67af5045d.pdf",
       "name": "02_病理_詳解_Ch03_代謝、體液與循環障礙.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "代謝、體液與循環障礙",
-      "size": 1717863
+      "size": 1582581
     },
     {
-      "key": "explanations/02_Ch04_e50d410928.pdf",
+      "key": "explanations/02_Ch04_6d064344cc.pdf",
       "name": "02_病理_詳解_Ch04_腫瘤概論.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "腫瘤概論",
-      "size": 1838920
+      "size": 1694129
     },
     {
-      "key": "explanations/02_Ch05_ddb085e4fb.pdf",
+      "key": "explanations/02_Ch05_67c807aadb.pdf",
       "name": "02_病理_詳解_Ch05_免疫系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "免疫系統疾病",
-      "size": 1833458
+      "size": 1683978
     },
     {
-      "key": "explanations/02_Ch06_0536b9e2ee.pdf",
+      "key": "explanations/02_Ch06_d888120b89.pdf",
       "name": "02_病理_詳解_Ch06_遺傳與基因疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "遺傳與基因疾病",
-      "size": 1785721
+      "size": 1635525
     },
     {
-      "key": "explanations/02_Ch07_0cc4f41d47.pdf",
+      "key": "explanations/02_Ch07_40520541d5.pdf",
       "name": "02_病理_詳解_Ch07_環境傷害與營養疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "環境傷害與營養疾病",
-      "size": 1728795
+      "size": 1570448
     },
     {
-      "key": "explanations/02_Ch08_4c9731b1de.pdf",
+      "key": "explanations/02_Ch08_d776e1c399.pdf",
       "name": "02_病理_詳解_Ch08_感染性疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "感染性疾病",
-      "size": 1536163
+      "size": 1423063
     },
     {
-      "key": "explanations/02_Ch09_71ce934a4c.pdf",
+      "key": "explanations/02_Ch09_88579c1d7b.pdf",
       "name": "02_病理_詳解_Ch09_心臟血管系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "心臟血管系統疾病",
-      "size": 1747799
+      "size": 1593841
     },
     {
-      "key": "explanations/02_Ch10_46b11af30d.pdf",
+      "key": "explanations/02_Ch10_c06ae4bd66.pdf",
       "name": "02_病理_詳解_Ch10_血液、造血與淋巴系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "血液、造血與淋巴系統疾病",
-      "size": 1871517
+      "size": 1715694
     },
     {
-      "key": "explanations/02_Ch11_6d51409cc7.pdf",
+      "key": "explanations/02_Ch11_d59a73c9f3.pdf",
       "name": "02_病理_詳解_Ch11_呼吸系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "呼吸系統疾病",
-      "size": 1709078
+      "size": 1576696
     },
     {
-      "key": "explanations/02_Ch12_d0d2aeb062.pdf",
+      "key": "explanations/02_Ch12_e4babff073.pdf",
       "name": "02_病理_詳解_Ch12_消化道疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "消化道疾病",
-      "size": 1750308
+      "size": 1596991
     },
     {
-      "key": "explanations/02_Ch13_6af476031b.pdf",
+      "key": "explanations/02_Ch13_fbd4065ecb.pdf",
       "name": "02_病理_詳解_Ch13_肝、膽、胰疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "肝、膽、胰疾病",
-      "size": 1643391
+      "size": 1515777
     },
     {
-      "key": "explanations/02_Ch14_2f0b342c93.pdf",
+      "key": "explanations/02_Ch14_2a51d5dcab.pdf",
       "name": "02_病理_詳解_Ch14_泌尿系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "泌尿系統疾病",
-      "size": 1749788
+      "size": 1601039
     },
     {
-      "key": "explanations/02_Ch15_0752714857.pdf",
+      "key": "explanations/02_Ch15_1270bc1dfb.pdf",
       "name": "02_病理_詳解_Ch15_生殖系統與乳房疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "15",
       "chapterTitle": "生殖系統與乳房疾病",
-      "size": 1653209
+      "size": 1540280
     },
     {
-      "key": "explanations/02_Ch16_78fa4e5721.pdf",
+      "key": "explanations/02_Ch16_4d27341d9c.pdf",
       "name": "02_病理_詳解_Ch16_內分泌系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "16",
       "chapterTitle": "內分泌系統疾病",
-      "size": 1609680
+      "size": 1484955
     },
     {
-      "key": "explanations/02_Ch17_96d263b4a0.pdf",
+      "key": "explanations/02_Ch17_1674545c20.pdf",
       "name": "02_病理_詳解_Ch17_骨骼、關節、軟組織與皮膚系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "17",
       "chapterTitle": "骨骼、關節、軟組織與皮膚系統疾病",
-      "size": 1569580
+      "size": 1449953
     },
     {
-      "key": "explanations/02_Ch18_ba0439a409.pdf",
+      "key": "explanations/02_Ch18_77cf80cc35.pdf",
       "name": "02_病理_詳解_Ch18_感官與神經系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "詳解",
       "ch": "18",
       "chapterTitle": "感官與神經系統疾病",
-      "size": 1734501
+      "size": 1582758
     },
     {
-      "key": "explanations/03_Ch01_5fa01ae13e.pdf",
+      "key": "explanations/03_Ch01_8f50965f0f.pdf",
       "name": "03_藥理_詳解_Ch01_藥理學總論與藥物動力_藥效學.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "藥理學總論與藥物動力_藥效學",
-      "size": 1297461
+      "size": 1170578
     },
     {
-      "key": "explanations/03_Ch02_a8d2d7f5af.pdf",
+      "key": "explanations/03_Ch02_e8d7863465.pdf",
       "name": "03_藥理_詳解_Ch02_自主神經系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "自主神經系統藥物",
-      "size": 1636508
+      "size": 1478625
     },
     {
-      "key": "explanations/03_Ch03_54c68ae51f.pdf",
+      "key": "explanations/03_Ch03_47f81a6501.pdf",
       "name": "03_藥理_詳解_Ch03_中樞神經與精神科藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "中樞神經與精神科藥物",
-      "size": 1904153
+      "size": 1704165
     },
     {
-      "key": "explanations/03_Ch04_45ad17b265.pdf",
+      "key": "explanations/03_Ch04_83de196b57.pdf",
       "name": "03_藥理_詳解_Ch04_止痛藥與麻醉藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "止痛藥與麻醉藥物",
-      "size": 1864794
+      "size": 1667354
     },
     {
-      "key": "explanations/03_Ch05_dbb69baac8.pdf",
+      "key": "explanations/03_Ch05_40d015abc8.pdf",
       "name": "03_藥理_詳解_Ch05_自泌素、抗過敏與呼吸系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "自泌素、抗過敏與呼吸系統藥物",
-      "size": 1512915
+      "size": 1350695
     },
     {
-      "key": "explanations/03_Ch06_26edb73db9.pdf",
+      "key": "explanations/03_Ch06_51e4d5047c.pdf",
       "name": "03_藥理_詳解_Ch06_消化系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "消化系統藥物",
-      "size": 1321346
+      "size": 1190965
     },
     {
-      "key": "explanations/03_Ch07_1d5c88c2d9.pdf",
+      "key": "explanations/03_Ch07_6683363572.pdf",
       "name": "03_藥理_詳解_Ch07_泌尿系統與利尿劑.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "泌尿系統與利尿劑",
-      "size": 1415398
+      "size": 1259778
     },
     {
-      "key": "explanations/03_Ch08_ac08642035.pdf",
+      "key": "explanations/03_Ch08_ac2889ec45.pdf",
       "name": "03_藥理_詳解_Ch08_心血管藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "心血管藥物",
-      "size": 1786178
+      "size": 1609384
     },
     {
-      "key": "explanations/03_Ch09_0a64a2f3cb.pdf",
+      "key": "explanations/03_Ch09_66f5dd8232.pdf",
       "name": "03_藥理_詳解_Ch09_血液系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "血液系統藥物",
-      "size": 1548913
+      "size": 1393694
     },
     {
-      "key": "explanations/03_Ch10_9102ee8775.pdf",
+      "key": "explanations/03_Ch10_40bb077891.pdf",
       "name": "03_藥理_詳解_Ch10_內分泌與新陳代謝藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "內分泌與新陳代謝藥物",
-      "size": 1918640
+      "size": 1719438
     },
     {
-      "key": "explanations/03_Ch11_a411be46db.pdf",
+      "key": "explanations/03_Ch11_be52b48c5e.pdf",
       "name": "03_藥理_詳解_Ch11_抗細菌藥物與抗感染藥.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "抗細菌藥物與抗感染藥",
-      "size": 2032165
+      "size": 1799981
     },
     {
-      "key": "explanations/03_Ch12_c99977621d.pdf",
+      "key": "explanations/03_Ch12_4283bbcb98.pdf",
       "name": "03_藥理_詳解_Ch12_癌症藥物與免疫製劑.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "癌症藥物與免疫製劑",
-      "size": 1734528
+      "size": 1535620
     },
     {
-      "key": "explanations/03_Ch13_6d65f0425a.pdf",
+      "key": "explanations/03_Ch13_53a4ad1037.pdf",
       "name": "03_藥理_詳解_Ch13_毒理學、成癮藥物與生物製劑.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "毒理學、成癮藥物與生物製劑",
-      "size": 1609206
+      "size": 1433618
     },
     {
-      "key": "explanations/04_Ch01_1d26dcfebb.pdf",
+      "key": "explanations/04_Ch01_9ba29160df.pdf",
       "name": "04_微免_詳解_Ch01_微生物學總論與微生物控制.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "微生物學總論與微生物控制",
-      "size": 914692
+      "size": 800582
     },
     {
-      "key": "explanations/04_Ch02_cc22a0c3f3.pdf",
+      "key": "explanations/04_Ch02_31e3542607.pdf",
       "name": "04_微免_詳解_Ch02_先天與後天免疫系統.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "先天與後天免疫系統",
-      "size": 1376638
+      "size": 1223131
     },
     {
-      "key": "explanations/04_Ch03_9d2486dd61.pdf",
+      "key": "explanations/04_Ch03_ba34f16d07.pdf",
       "name": "04_微免_詳解_Ch03_免疫異常與疫苗應用.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "免疫異常與疫苗應用",
-      "size": 1482354
+      "size": 1322189
     },
     {
-      "key": "explanations/04_Ch04_55abe6235b.pdf",
+      "key": "explanations/04_Ch04_1817070807.pdf",
       "name": "04_微免_詳解_Ch04_細菌學總論與致病機制.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "細菌學總論與致病機制",
-      "size": 902559
+      "size": 800067
     },
     {
-      "key": "explanations/04_Ch05_f6389efbd8.pdf",
+      "key": "explanations/04_Ch05_27f3a84e42.pdf",
       "name": "04_微免_詳解_Ch05_革蘭氏陽性球菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "革蘭氏陽性球菌",
-      "size": 1164808
+      "size": 1011783
     },
     {
-      "key": "explanations/04_Ch06_7ab20cade2.pdf",
+      "key": "explanations/04_Ch06_e53dc1507b.pdf",
       "name": "04_微免_詳解_Ch06_革蘭氏陽性桿菌與分枝桿菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "革蘭氏陽性桿菌與分枝桿菌",
-      "size": 1029271
+      "size": 895357
     },
     {
-      "key": "explanations/04_Ch07_8ca5848616.pdf",
+      "key": "explanations/04_Ch07_c811c7d60e.pdf",
       "name": "04_微免_詳解_Ch07_革蘭氏陰性球菌與腸內桿菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "革蘭氏陰性球菌與腸內桿菌",
-      "size": 1181896
+      "size": 1022337
     },
     {
-      "key": "explanations/04_Ch08_dff5b985b4.pdf",
+      "key": "explanations/04_Ch08_af8ed7b317.pdf",
       "name": "04_微免_詳解_Ch08_其他革蘭氏陰性桿菌與弧菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "其他革蘭氏陰性桿菌與弧菌",
-      "size": 1133891
+      "size": 993360
     },
     {
-      "key": "explanations/04_Ch09_f33f237d1d.pdf",
+      "key": "explanations/04_Ch09_d0f56ebc9d.pdf",
       "name": "04_微免_詳解_Ch09_厭氧菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "厭氧菌",
-      "size": 1051749
+      "size": 920569
     },
     {
-      "key": "explanations/04_Ch10_f83a7a2857.pdf",
+      "key": "explanations/04_Ch10_b8e6118117.pdf",
       "name": "04_微免_詳解_Ch10_特殊病原菌（螺旋體、黴漿菌、立克次體、披衣菌）.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "特殊病原菌（螺旋體、黴漿菌、立克次體、披衣菌）",
-      "size": 1065228
+      "size": 939258
     },
     {
-      "key": "explanations/04_Ch11_246c32af81.pdf",
+      "key": "explanations/04_Ch11_62d2c1eb23.pdf",
       "name": "04_微免_詳解_Ch11_病毒學總論與DNA病毒.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "病毒學總論與DNA病毒",
-      "size": 1286597
+      "size": 1130058
     },
     {
-      "key": "explanations/04_Ch12_d70125fcee.pdf",
+      "key": "explanations/04_Ch12_77230b572e.pdf",
       "name": "04_微免_詳解_Ch12_RNA病毒.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "RNA病毒",
-      "size": 1343020
+      "size": 1173833
     },
     {
-      "key": "explanations/04_Ch13_827cf5cf1a.pdf",
+      "key": "explanations/04_Ch13_61ed9aa2f1.pdf",
       "name": "04_微免_詳解_Ch13_肝炎病毒、反轉錄病毒與變性蛋白質.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "肝炎病毒、反轉錄病毒與變性蛋白質",
-      "size": 1215929
+      "size": 1064705
     },
     {
-      "key": "explanations/04_Ch14_540f1d62fb.pdf",
+      "key": "explanations/04_Ch14_f15f42dcd3.pdf",
       "name": "04_微免_詳解_Ch14_真菌學.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "真菌學",
-      "size": 1023232
+      "size": 895562
     },
     {
-      "key": "explanations/04_Ch15_58bd098d05.pdf",
+      "key": "explanations/04_Ch15_5cc5cb98a4.pdf",
       "name": "04_微免_詳解_Ch15_寄生蟲學.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "詳解",
       "ch": "15",
       "chapterTitle": "寄生蟲學",
-      "size": 1237393
+      "size": 1064138
     },
     {
-      "key": "explanations/05_Ch01_aae3072b65.pdf",
+      "key": "explanations/05_Ch01_10e6988669.pdf",
       "name": "05_基護_詳解_Ch01_緒論.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論",
-      "size": 1526336
+      "size": 1348397
     },
     {
-      "key": "explanations/05_Ch02_b23fad1b50.pdf",
+      "key": "explanations/05_Ch02_e0a0992dae.pdf",
       "name": "05_基護_詳解_Ch02_醫療環境.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "醫療環境",
-      "size": 1587436
+      "size": 1415956
     },
     {
-      "key": "explanations/05_Ch03_98e14f1e5b.pdf",
+      "key": "explanations/05_Ch03_cc66e79ec9.pdf",
       "name": "05_基護_詳解_Ch03_觀察與溝通.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "觀察與溝通",
-      "size": 1583357
+      "size": 1414125
     },
     {
-      "key": "explanations/05_Ch04_854f5ba60b.pdf",
+      "key": "explanations/05_Ch04_1b867163c1.pdf",
       "name": "05_基護_詳解_Ch04_護理記錄.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "護理記錄",
-      "size": 1387317
+      "size": 1262071
     },
     {
-      "key": "explanations/05_Ch05_6e6488c7fc.pdf",
+      "key": "explanations/05_Ch05_c77918ba59.pdf",
       "name": "05_基護_詳解_Ch05_感染控制.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "感染控制",
-      "size": 1936201
+      "size": 1748379
     },
     {
-      "key": "explanations/05_Ch06_f3ca782072.pdf",
+      "key": "explanations/05_Ch06_b513d3b993.pdf",
       "name": "05_基護_詳解_Ch06_護理過程.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "護理過程",
-      "size": 1472183
+      "size": 1325156
     },
     {
-      "key": "explanations/05_Ch07_e355f44247.pdf",
+      "key": "explanations/05_Ch07_1cef8b9591.pdf",
       "name": "05_基護_詳解_Ch07_舒適的需要.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "舒適的需要",
-      "size": 1962326
+      "size": 1777595
     },
     {
-      "key": "explanations/05_Ch08_2a5de736d1.pdf",
+      "key": "explanations/05_Ch08_8ce87713f8.pdf",
       "name": "05_基護_詳解_Ch08_活動與運動.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "活動與運動",
-      "size": 1490556
+      "size": 1387825
     },
     {
-      "key": "explanations/05_Ch09_022f2c10e1.pdf",
+      "key": "explanations/05_Ch09_5d19bc7885.pdf",
       "name": "05_基護_詳解_Ch09_休息與睡眠.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "休息與睡眠",
-      "size": 1188420
+      "size": 1074858
     },
     {
-      "key": "explanations/05_Ch10_5449c7cccc.pdf",
+      "key": "explanations/05_Ch10_ace0ede2b8.pdf",
       "name": "05_基護_詳解_Ch10_生命徵象.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "生命徵象",
-      "size": 2044769
+      "size": 1841908
     },
     {
-      "key": "explanations/05_Ch11_caebba197c.pdf",
+      "key": "explanations/05_Ch11_b2aebb71c3.pdf",
       "name": "05_基護_詳解_Ch11_冷熱療法.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "冷熱療法",
-      "size": 1627358
+      "size": 1463569
     },
     {
-      "key": "explanations/05_Ch12_8fed640501.pdf",
+      "key": "explanations/05_Ch12_09f21db6f3.pdf",
       "name": "05_基護_詳解_Ch12_營養的需要.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "營養的需要",
-      "size": 1956743
+      "size": 1744297
     },
     {
-      "key": "explanations/05_Ch13_3d3f3c7632.pdf",
+      "key": "explanations/05_Ch13_3f5d3a83f8.pdf",
       "name": "05_基護_詳解_Ch13_給藥法.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "給藥法",
-      "size": 2384614
+      "size": 2180186
     },
     {
-      "key": "explanations/05_Ch14_8e14db4c0d.pdf",
+      "key": "explanations/05_Ch14_4cab387f48.pdf",
       "name": "05_基護_詳解_Ch14_體液供給.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "體液供給",
-      "size": 1826089
+      "size": 1656798
     },
     {
-      "key": "explanations/05_Ch15_da12f93f2c.pdf",
+      "key": "explanations/05_Ch15_6674c3d2aa.pdf",
       "name": "05_基護_詳解_Ch15_排泄需要.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "15",
       "chapterTitle": "排泄需要",
-      "size": 1899640
+      "size": 1709863
     },
     {
-      "key": "explanations/05_Ch16_5a9c530fff.pdf",
+      "key": "explanations/05_Ch16_747b6b356c.pdf",
       "name": "05_基護_詳解_Ch16_繃帶束帶的運用.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "16",
       "chapterTitle": "繃帶束帶的運用",
-      "size": 1197227
+      "size": 1096508
     },
     {
-      "key": "explanations/05_Ch17_1b7a64f941.pdf",
+      "key": "explanations/05_Ch17_269504f167.pdf",
       "name": "05_基護_詳解_Ch17_臨終病人的護理.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "17",
       "chapterTitle": "臨終病人的護理",
-      "size": 1738124
+      "size": 1604340
     },
     {
-      "key": "explanations/05_Ch18_370e676453.pdf",
+      "key": "explanations/05_Ch18_b3a8a57f1b.pdf",
       "name": "05_基護_詳解_Ch18_出入院護理與檢體收集.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "詳解",
       "ch": "18",
       "chapterTitle": "出入院護理與檢體收集",
-      "size": 1598043
+      "size": 1432099
     },
     {
-      "key": "explanations/06_Ch01_f49048a34f.pdf",
+      "key": "explanations/06_Ch01_cab4d04d5c.pdf",
       "name": "06_行政_詳解_Ch01_緒論與管理理論.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論與管理理論",
-      "size": 1491256
+      "size": 1376238
     },
     {
-      "key": "explanations/06_Ch02_a928c5b3e6.pdf",
+      "key": "explanations/06_Ch02_0cf94abb05.pdf",
       "name": "06_行政_詳解_Ch02_規劃與營運決策.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "規劃與營運決策",
-      "size": 1616719
+      "size": 1480624
     },
     {
-      "key": "explanations/06_Ch03_8c10752ee2.pdf",
+      "key": "explanations/06_Ch03_8a29c727e1.pdf",
       "name": "06_行政_詳解_Ch03_組織結構與照護模式.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "組織結構與照護模式",
-      "size": 1522056
+      "size": 1407788
     },
     {
-      "key": "explanations/06_Ch04_da442ea252.pdf",
+      "key": "explanations/06_Ch04_6528373d3f.pdf",
       "name": "06_行政_詳解_Ch04_人力資源管理與排班.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "人力資源管理與排班",
-      "size": 1820809
+      "size": 1671124
     },
     {
-      "key": "explanations/06_Ch05_a562c17f20.pdf",
+      "key": "explanations/06_Ch05_796c734007.pdf",
       "name": "06_行政_詳解_Ch05_領導統御與溝通激勵.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "領導統御與溝通激勵",
-      "size": 1792508
+      "size": 1634905
     },
     {
-      "key": "explanations/06_Ch06_d1a310abad.pdf",
+      "key": "explanations/06_Ch06_ff65f0a602.pdf",
       "name": "06_行政_詳解_Ch06_財務預算與成本控制.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "財務預算與成本控制",
-      "size": 1390566
+      "size": 1292520
     },
     {
-      "key": "explanations/06_Ch07_7d0f972797.pdf",
+      "key": "explanations/06_Ch07_4d005b77fd.pdf",
       "name": "06_行政_詳解_Ch07_護理品質管理與護理資訊.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "護理品質管理與護理資訊",
-      "size": 1592193
+      "size": 1451673
     },
     {
-      "key": "explanations/06_Ch08_b7595616fa.pdf",
+      "key": "explanations/06_Ch08_09a4d21879.pdf",
       "name": "06_行政_詳解_Ch08_倫理法律與醫院安全環境.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "倫理法律與醫院安全環境",
-      "size": 2071758
+      "size": 1870511
     },
     {
-      "key": "explanations/07_Ch01_a78973903e.pdf",
+      "key": "explanations/07_Ch01_91f8e0b130.pdf",
       "name": "07_內外_詳解_Ch01_緒論、老年人與瀕死護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論、老年人與瀕死護理",
-      "size": 1391130
+      "size": 1254285
     },
     {
-      "key": "explanations/07_Ch02_b6102ebf79.pdf",
+      "key": "explanations/07_Ch02_b192e1eb52.pdf",
       "name": "07_內外_詳解_Ch02_免疫系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "免疫系統疾病",
-      "size": 1887489
+      "size": 1696334
     },
     {
-      "key": "explanations/07_Ch03_61febe906c.pdf",
+      "key": "explanations/07_Ch03_90972facf7.pdf",
       "name": "07_內外_詳解_Ch03_癌症護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "癌症護理",
-      "size": 2220333
+      "size": 2017930
     },
     {
-      "key": "explanations/07_Ch04_b9b8b5ac05.pdf",
+      "key": "explanations/07_Ch04_14ff17ec50.pdf",
       "name": "07_內外_詳解_Ch04_體液、電解質與酸鹼不平衡之護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "體液、電解質與酸鹼不平衡之護理",
-      "size": 1972094
+      "size": 1802960
     },
     {
-      "key": "explanations/07_Ch05_c43eb5d926.pdf",
+      "key": "explanations/07_Ch05_a09aabe6a3.pdf",
       "name": "07_內外_詳解_Ch05_傳染病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "傳染病",
-      "size": 1714725
+      "size": 1541937
     },
     {
-      "key": "explanations/07_Ch06_f3ed5bc5a6.pdf",
+      "key": "explanations/07_Ch06_56b8cf6c07.pdf",
       "name": "07_內外_詳解_Ch06_急重症與疼痛護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "急重症與疼痛護理",
-      "size": 2112969
+      "size": 1907245
     },
     {
-      "key": "explanations/07_Ch07_736238635a.pdf",
+      "key": "explanations/07_Ch07_349a07f708.pdf",
       "name": "07_內外_詳解_Ch07_消化系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "消化系統疾病",
-      "size": 2341949
+      "size": 2124130
     },
     {
-      "key": "explanations/07_Ch08_fd15bbaa58.pdf",
+      "key": "explanations/07_Ch08_2c76d665ca.pdf",
       "name": "07_內外_詳解_Ch08_內分泌系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "內分泌系統疾病",
-      "size": 2530251
+      "size": 2331917
     },
     {
-      "key": "explanations/07_Ch09_2860eaa694.pdf",
+      "key": "explanations/07_Ch09_fe4bf94f3c.pdf",
       "name": "07_內外_詳解_Ch09_呼吸系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "呼吸系統疾病",
-      "size": 2203210
+      "size": 2026351
     },
     {
-      "key": "explanations/07_Ch10_4e76bf07ea.pdf",
+      "key": "explanations/07_Ch10_bc9befe3dd.pdf",
       "name": "07_內外_詳解_Ch10_腎臟與泌尿系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "腎臟與泌尿系統疾病",
-      "size": 2375916
+      "size": 2147424
     },
     {
-      "key": "explanations/07_Ch11_4d81a2c282.pdf",
+      "key": "explanations/07_Ch11_ed13767cb9.pdf",
       "name": "07_內外_詳解_Ch11_生殖系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "生殖系統疾病",
-      "size": 1399898
+      "size": 1308496
     },
     {
-      "key": "explanations/07_Ch12_66cbfe6399.pdf",
+      "key": "explanations/07_Ch12_3d26af347d.pdf",
       "name": "07_內外_詳解_Ch12_皮膚疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "皮膚疾病",
-      "size": 1875672
+      "size": 1691359
     },
     {
-      "key": "explanations/07_Ch13_7b6cd5790b.pdf",
+      "key": "explanations/07_Ch13_1d3dfd3d18.pdf",
       "name": "07_內外_詳解_Ch13_心血管系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "心血管系統疾病",
-      "size": 2516505
+      "size": 2329026
     },
     {
-      "key": "explanations/07_Ch14_b65b2fed26.pdf",
+      "key": "explanations/07_Ch14_ed1526642b.pdf",
       "name": "07_內外_詳解_Ch14_血液系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "血液系統疾病",
-      "size": 1905511
+      "size": 1728939
     },
     {
-      "key": "explanations/07_Ch15_ece2cdf5d6.pdf",
+      "key": "explanations/07_Ch15_2f2fb0b563.pdf",
       "name": "07_內外_詳解_Ch15_神經系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "15",
       "chapterTitle": "神經系統疾病",
-      "size": 2473042
+      "size": 2312411
     },
     {
-      "key": "explanations/07_Ch16_f55d3a8f23.pdf",
+      "key": "explanations/07_Ch16_336b41582e.pdf",
       "name": "07_內外_詳解_Ch16_肌肉骨骼系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "16",
       "chapterTitle": "肌肉骨骼系統疾病",
-      "size": 1976544
+      "size": 1804804
     },
     {
-      "key": "explanations/07_Ch17_234b155fec.pdf",
+      "key": "explanations/07_Ch17_50932223c7.pdf",
       "name": "07_內外_詳解_Ch17_感覺機能與眼耳鼻喉科疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "詳解",
       "ch": "17",
       "chapterTitle": "感覺機能與眼耳鼻喉科疾病",
-      "size": 1756463
+      "size": 1565352
     },
     {
-      "key": "explanations/08_Ch01_baac7ce7ea.pdf",
+      "key": "explanations/08_Ch01_0410de9f29.pdf",
       "name": "08_產科_詳解_Ch01_緒論.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論",
-      "size": 1351995
+      "size": 1238694
     },
     {
-      "key": "explanations/08_Ch02_bae609bc9e.pdf",
+      "key": "explanations/08_Ch02_2aa8a81196.pdf",
       "name": "08_產科_詳解_Ch02_生殖系統及受孕.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "生殖系統及受孕",
-      "size": 1372623
+      "size": 1250597
     },
     {
-      "key": "explanations/08_Ch03_c00fb0443e.pdf",
+      "key": "explanations/08_Ch03_93ba1b72b2.pdf",
       "name": "08_產科_詳解_Ch03_妊娠期的診斷與評估.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "妊娠期的診斷與評估",
-      "size": 1667006
+      "size": 1500911
     },
     {
-      "key": "explanations/08_Ch04_625f5b4b98.pdf",
+      "key": "explanations/08_Ch04_e7e5e745c5.pdf",
       "name": "08_產科_詳解_Ch04_妊娠期婦女的生理及心理變化.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "妊娠期婦女的生理及心理變化",
-      "size": 1531730
+      "size": 1373512
     },
     {
-      "key": "explanations/08_Ch05_5f0834f2f0.pdf",
+      "key": "explanations/08_Ch05_8a4daaaf4b.pdf",
       "name": "08_產科_詳解_Ch05_妊娠期之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "妊娠期之護理",
-      "size": 1707968
+      "size": 1533520
     },
     {
-      "key": "explanations/08_Ch06_3f3c4b5597.pdf",
+      "key": "explanations/08_Ch06_29222ef05d.pdf",
       "name": "08_產科_詳解_Ch06_分娩過程與娩出階段.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "分娩過程與娩出階段",
-      "size": 1408801
+      "size": 1288689
     },
     {
-      "key": "explanations/08_Ch07_f4373deef4.pdf",
+      "key": "explanations/08_Ch07_133b6db77d.pdf",
       "name": "08_產科_詳解_Ch07_待產及分娩期之護理評估及護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "待產及分娩期之護理評估及護理",
-      "size": 2389139
+      "size": 2203330
     },
     {
-      "key": "explanations/08_Ch08_abf76ec8cd.pdf",
+      "key": "explanations/08_Ch08_6726db7cfb.pdf",
       "name": "08_產科_詳解_Ch08_產後期之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "產後期之護理",
-      "size": 2274448
+      "size": 2065247
     },
     {
-      "key": "explanations/08_Ch09_ee824e8442.pdf",
+      "key": "explanations/08_Ch09_1951eaccbd.pdf",
       "name": "08_產科_詳解_Ch09_新生兒的評估與護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "新生兒的評估與護理",
-      "size": 1899802
+      "size": 1710021
     },
     {
-      "key": "explanations/08_Ch10_b48903197e.pdf",
+      "key": "explanations/08_Ch10_6edd57d77a.pdf",
       "name": "08_產科_詳解_Ch10_高危險妊娠之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "高危險妊娠之護理",
-      "size": 1951843
+      "size": 1778224
     },
     {
-      "key": "explanations/08_Ch11_4f6d173132.pdf",
+      "key": "explanations/08_Ch11_9b5c7aefc7.pdf",
       "name": "08_產科_詳解_Ch11_分娩期異常之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "分娩期異常之護理",
-      "size": 1728355
+      "size": 1608019
     },
     {
-      "key": "explanations/08_Ch12_17e3ad67e8.pdf",
+      "key": "explanations/08_Ch12_432b84dc3d.pdf",
       "name": "08_產科_詳解_Ch12_產後期異常之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "產後期異常之護理",
-      "size": 1415209
+      "size": 1295059
     },
     {
-      "key": "explanations/08_Ch13_100ef2bd7d.pdf",
+      "key": "explanations/08_Ch13_e1cce2df0b.pdf",
       "name": "08_產科_詳解_Ch13_婦科常見疾病.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "婦科常見疾病",
-      "size": 2078837
+      "size": 1868522
     },
     {
-      "key": "explanations/09_Ch01_93c97e233d.pdf",
+      "key": "explanations/09_Ch01_69ccebdcaf.pdf",
       "name": "09_兒科_詳解_Ch01_緒論.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論",
-      "size": 791774
+      "size": 702438
     },
     {
-      "key": "explanations/09_Ch02_69f2787d49.pdf",
+      "key": "explanations/09_Ch02_e67310651f.pdf",
       "name": "09_兒科_詳解_Ch02_兒童的生長與發展.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "兒童的生長與發展",
-      "size": 1529481
+      "size": 1337732
     },
     {
-      "key": "explanations/09_Ch03_a5323a957b.pdf",
+      "key": "explanations/09_Ch03_8832155153.pdf",
       "name": "09_兒科_詳解_Ch03_新生兒及其護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "新生兒及其護理",
-      "size": 1459640
+      "size": 1349183
     },
     {
-      "key": "explanations/09_Ch04_59b84549d7.pdf",
+      "key": "explanations/09_Ch04_91dfc70e07.pdf",
       "name": "09_兒科_詳解_Ch04_高危險新生兒之護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "高危險新生兒之護理",
-      "size": 1243786
+      "size": 1101428
     },
     {
-      "key": "explanations/09_Ch05_7f1ea9f2f1.pdf",
+      "key": "explanations/09_Ch05_a998c82c8d.pdf",
       "name": "09_兒科_詳解_Ch05_住院兒童之反應及其護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "住院兒童之反應及其護理",
-      "size": 1344118
+      "size": 1171163
     },
     {
-      "key": "explanations/09_Ch06_94a690ed28.pdf",
+      "key": "explanations/09_Ch06_b6d8cf448e.pdf",
       "name": "09_兒科_詳解_Ch06_瀕死兒童之護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "瀕死兒童之護理",
-      "size": 1035066
+      "size": 886184
     },
     {
-      "key": "explanations/09_Ch07_a7ae5192b1.pdf",
+      "key": "explanations/09_Ch07_270df5917a.pdf",
       "name": "09_兒科_詳解_Ch07_兒童傳染病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "兒童傳染病",
-      "size": 1372814
+      "size": 1213753
     },
     {
-      "key": "explanations/09_Ch08_a8d505510b.pdf",
+      "key": "explanations/09_Ch08_feeafb4edc.pdf",
       "name": "09_兒科_詳解_Ch08_兒童呼吸系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "兒童呼吸系統疾病",
-      "size": 1328062
+      "size": 1156825
     },
     {
-      "key": "explanations/09_Ch09_821454e4da.pdf",
+      "key": "explanations/09_Ch09_a61f1ba621.pdf",
       "name": "09_兒科_詳解_Ch09_兒童循環系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "兒童循環系統疾病",
-      "size": 1242998
+      "size": 1094797
     },
     {
-      "key": "explanations/09_Ch10_5fb74ff0f2.pdf",
+      "key": "explanations/09_Ch10_5905af45ac.pdf",
       "name": "09_兒科_詳解_Ch10_兒童血液疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "兒童血液疾病",
-      "size": 1148458
+      "size": 1001271
     },
     {
-      "key": "explanations/09_Ch11_045351fa1c.pdf",
+      "key": "explanations/09_Ch11_20a5df3ce9.pdf",
       "name": "09_兒科_詳解_Ch11_兒童消化系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "兒童消化系統疾病",
-      "size": 1267575
+      "size": 1107544
     },
     {
-      "key": "explanations/09_Ch12_5c6feb4185.pdf",
+      "key": "explanations/09_Ch12_9516e173ba.pdf",
       "name": "09_兒科_詳解_Ch12_兒童泌尿生殖系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "兒童泌尿生殖系統疾病",
-      "size": 1125104
+      "size": 964627
     },
     {
-      "key": "explanations/09_Ch13_2a776dd8dc.pdf",
+      "key": "explanations/09_Ch13_e5eb33ba7f.pdf",
       "name": "09_兒科_詳解_Ch13_兒童神經系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "兒童神經系統疾病",
-      "size": 1264409
+      "size": 1110553
     },
     {
-      "key": "explanations/09_Ch14_981015f745.pdf",
+      "key": "explanations/09_Ch14_1a8fdc2379.pdf",
       "name": "09_兒科_詳解_Ch14_兒童免疫及肌肉骨骼系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "兒童免疫及肌肉骨骼系統疾病",
-      "size": 1024281
+      "size": 889582
     },
     {
-      "key": "explanations/09_Ch15_db72000235.pdf",
+      "key": "explanations/09_Ch15_76038973de.pdf",
       "name": "09_兒科_詳解_Ch15_兒童內分泌系統疾病與慢性病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "15",
       "chapterTitle": "兒童內分泌系統疾病與慢性病",
-      "size": 1257752
+      "size": 1083961
     },
     {
-      "key": "explanations/09_Ch16_e494db4388.pdf",
+      "key": "explanations/09_Ch16_a1daef0a25.pdf",
       "name": "09_兒科_詳解_Ch16_兒童事故傷害及其護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "16",
       "chapterTitle": "兒童事故傷害及其護理",
-      "size": 1337533
+      "size": 1148831
     },
     {
-      "key": "explanations/09_Ch17_dbf4e25f97.pdf",
+      "key": "explanations/09_Ch17_d6f02d8792.pdf",
       "name": "09_兒科_詳解_Ch17_兒童、青少年發展及心理社會健康問題之護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "17",
       "chapterTitle": "兒童、青少年發展及心理社會健康問題之護理",
-      "size": 1097003
+      "size": 947179
     },
     {
-      "key": "explanations/09_Ch18_1886146652.pdf",
+      "key": "explanations/09_Ch18_82e114c47d.pdf",
       "name": "09_兒科_詳解_Ch18_兒童癌症.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "詳解",
       "ch": "18",
       "chapterTitle": "兒童癌症",
-      "size": 1274862
+      "size": 1104099
     },
     {
-      "key": "explanations/10_Ch01_80129100af.pdf",
+      "key": "explanations/10_Ch01_f9f8cb14ce.pdf",
       "name": "10_精神_詳解_Ch01_精神醫學與護理的發展史及基本概念.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "精神醫學與護理的發展史及基本概念",
-      "size": 1207444
+      "size": 1083766
     },
     {
-      "key": "explanations/10_Ch02_2c419de8a1.pdf",
+      "key": "explanations/10_Ch02_c005d4b2c7.pdf",
       "name": "10_精神_詳解_Ch02_精神科護理的倫理與法律觀.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "精神科護理的倫理與法律觀",
-      "size": 1271652
+      "size": 1147071
     },
     {
-      "key": "explanations/10_Ch03_175c1622d4.pdf",
+      "key": "explanations/10_Ch03_c5faf82d15.pdf",
       "name": "10_精神_詳解_Ch03_精神疾病的病因、症狀、診斷與分類.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "精神疾病的病因、症狀、診斷與分類",
-      "size": 1562831
+      "size": 1391958
     },
     {
-      "key": "explanations/10_Ch04_244f2ccac4.pdf",
+      "key": "explanations/10_Ch04_41f559acff.pdf",
       "name": "10_精神_詳解_Ch04_治療性溝通與人際關係.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "治療性溝通與人際關係",
-      "size": 1574509
+      "size": 1402724
     },
     {
-      "key": "explanations/10_Ch05_919133e37b.pdf",
+      "key": "explanations/10_Ch05_11a77e8f9c.pdf",
       "name": "10_精神_詳解_Ch05_肌體治療.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "肌體治療",
-      "size": 1441019
+      "size": 1282767
     },
     {
-      "key": "explanations/10_Ch06_26cab67176.pdf",
+      "key": "explanations/10_Ch06_2f65021cff.pdf",
       "name": "10_精神_詳解_Ch06_精神科常用的治療方法.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "精神科常用的治療方法",
-      "size": 1610042
+      "size": 1445039
     },
     {
-      "key": "explanations/10_Ch07_fc5774611e.pdf",
+      "key": "explanations/10_Ch07_bc8a1b9788.pdf",
       "name": "10_精神_詳解_Ch07_思考障礙病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "思考障礙病人的護理",
-      "size": 1609978
+      "size": 1444156
     },
     {
-      "key": "explanations/10_Ch08_4a46f16b87.pdf",
+      "key": "explanations/10_Ch08_3b2d6150af.pdf",
       "name": "10_精神_詳解_Ch08_雙相情緒障礙症病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "雙相情緒障礙症病人的護理",
-      "size": 1610014
+      "size": 1433821
     },
     {
-      "key": "explanations/10_Ch09_b7afe596a0.pdf",
+      "key": "explanations/10_Ch09_3e6a0dc0d7.pdf",
       "name": "10_精神_詳解_Ch09_焦慮障礙、強迫症和創傷及壓力相關障礙病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "焦慮障礙、強迫症和創傷及壓力相關障礙病人的護理",
-      "size": 1397845
+      "size": 1245233
     },
     {
-      "key": "explanations/10_Ch10_9eb2d26413.pdf",
+      "key": "explanations/10_Ch10_68c645d197.pdf",
       "name": "10_精神_詳解_Ch10_身體症狀障礙症與解離症病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "身體症狀障礙症與解離症病人的護理",
-      "size": 1089984
+      "size": 991545
     },
     {
-      "key": "explanations/10_Ch11_a3576fe2bf.pdf",
+      "key": "explanations/10_Ch11_647a616d3a.pdf",
       "name": "10_精神_詳解_Ch11_人格障礙病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "人格障礙病人的護理",
-      "size": 1165719
+      "size": 1045092
     },
     {
-      "key": "explanations/10_Ch12_8ead117023.pdf",
+      "key": "explanations/10_Ch12_149a52a88b.pdf",
       "name": "10_精神_詳解_Ch12_其他精神科疾病的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "其他精神科疾病的護理",
-      "size": 1956218
+      "size": 1752396
     },
     {
-      "key": "explanations/10_Ch13_954d1fdf50.pdf",
+      "key": "explanations/10_Ch13_043fbfae1b.pdf",
       "name": "10_精神_詳解_Ch13_危機處理與意外事件的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "危機處理與意外事件的護理",
-      "size": 1750321
+      "size": 1556800
     },
     {
-      "key": "explanations/11_Ch01_ee5df5bde8.pdf",
+      "key": "explanations/11_Ch01_2d487692c8.pdf",
       "name": "11_社區_詳解_Ch01_緒論與衛生行政體系.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "01",
       "chapterTitle": "緒論與衛生行政體系",
-      "size": 1773459
+      "size": 1624178
     },
     {
-      "key": "explanations/11_Ch02_e7103e64b3.pdf",
+      "key": "explanations/11_Ch02_d67f76929c.pdf",
       "name": "11_社區_詳解_Ch02_流行病學.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "02",
       "chapterTitle": "流行病學",
-      "size": 1802614
+      "size": 1670080
     },
     {
-      "key": "explanations/11_Ch03_259451bd57.pdf",
+      "key": "explanations/11_Ch03_9201ab9697.pdf",
       "name": "11_社區_詳解_Ch03_生命統計.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "03",
       "chapterTitle": "生命統計",
-      "size": 1513914
+      "size": 1420789
     },
     {
-      "key": "explanations/11_Ch04_a9c69c1e7f.pdf",
+      "key": "explanations/11_Ch04_5e5b5b2a26.pdf",
       "name": "11_社區_詳解_Ch04_衛生教育與健康促進.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "04",
       "chapterTitle": "衛生教育與健康促進",
-      "size": 2019716
+      "size": 1862922
     },
     {
-      "key": "explanations/11_Ch05_5193940fda.pdf",
+      "key": "explanations/11_Ch05_9ae8b345f5.pdf",
       "name": "11_社區_詳解_Ch05_社區評估與社區健康營造.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "05",
       "chapterTitle": "社區評估與社區健康營造",
-      "size": 1753750
+      "size": 1603468
     },
     {
-      "key": "explanations/11_Ch06_b63d85f62c.pdf",
+      "key": "explanations/11_Ch06_2ec1cf7bb2.pdf",
       "name": "11_社區_詳解_Ch06_家庭評估與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "06",
       "chapterTitle": "家庭評估與護理",
-      "size": 1777332
+      "size": 1625466
     },
     {
-      "key": "explanations/11_Ch07_edae97fc3c.pdf",
+      "key": "explanations/11_Ch07_13c493342f.pdf",
       "name": "11_社區_詳解_Ch07_婦幼衛生.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "07",
       "chapterTitle": "婦幼衛生",
-      "size": 1963771
+      "size": 1765353
     },
     {
-      "key": "explanations/11_Ch08_fc3ec10002.pdf",
+      "key": "explanations/11_Ch08_35306ce81d.pdf",
       "name": "11_社區_詳解_Ch08_中老年人的護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "08",
       "chapterTitle": "中老年人的護理",
-      "size": 1780871
+      "size": 1617971
     },
     {
-      "key": "explanations/11_Ch09_6b9ab132fb.pdf",
+      "key": "explanations/11_Ch09_013c62e10c.pdf",
       "name": "11_社區_詳解_Ch09_慢性疾病的護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "09",
       "chapterTitle": "慢性疾病的護理",
-      "size": 1777947
+      "size": 1617333
     },
     {
-      "key": "explanations/11_Ch10_a24e886e47.pdf",
+      "key": "explanations/11_Ch10_1f0bc0b12d.pdf",
       "name": "11_社區_詳解_Ch10_長期照護.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "10",
       "chapterTitle": "長期照護",
-      "size": 1843861
+      "size": 1712791
     },
     {
-      "key": "explanations/11_Ch11_ab888926ef.pdf",
+      "key": "explanations/11_Ch11_c58c6b528f.pdf",
       "name": "11_社區_詳解_Ch11_社區心理衛生與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "11",
       "chapterTitle": "社區心理衛生與護理",
-      "size": 1670220
+      "size": 1580353
     },
     {
-      "key": "explanations/11_Ch12_104512df72.pdf",
+      "key": "explanations/11_Ch12_96f6294aef.pdf",
       "name": "11_社區_詳解_Ch12_學校衛生與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "12",
       "chapterTitle": "學校衛生與護理",
-      "size": 1708263
+      "size": 1551157
     },
     {
-      "key": "explanations/11_Ch13_7d68a95b5f.pdf",
+      "key": "explanations/11_Ch13_87395e109b.pdf",
       "name": "11_社區_詳解_Ch13_職業衛生與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "13",
       "chapterTitle": "職業衛生與護理",
-      "size": 1706983
+      "size": 1552153
     },
     {
-      "key": "explanations/11_Ch14_e49de226de.pdf",
+      "key": "explanations/11_Ch14_11f28bec41.pdf",
       "name": "11_社區_詳解_Ch14_傳染病防治與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "14",
       "chapterTitle": "傳染病防治與護理",
-      "size": 2099950
+      "size": 1902556
     },
     {
-      "key": "explanations/11_Ch15_48857042ab.pdf",
+      "key": "explanations/11_Ch15_c251ff68dc.pdf",
       "name": "11_社區_詳解_Ch15_環境衛生與食品衛生.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "詳解",
       "ch": "15",
       "chapterTitle": "環境衛生與食品衛生",
-      "size": 2056664
+      "size": 1844750
     },
     {
-      "key": "workbooks/01_Ch01_a782c1552e.pdf",
+      "key": "workbooks/01_Ch01_61e03c6689.pdf",
       "name": "01_生解_題本_Ch01_緒論、細胞組織與生化.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論、細胞組織與生化",
-      "size": 1265762
+      "size": 1199403
     },
     {
-      "key": "workbooks/01_Ch02_156b078ad3.pdf",
+      "key": "workbooks/01_Ch02_a6d1984a0d.pdf",
       "name": "01_生解_題本_Ch02_皮膚系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "皮膚系統",
-      "size": 1196871
+      "size": 1144496
     },
     {
-      "key": "workbooks/01_Ch03_2635ab3803.pdf",
+      "key": "workbooks/01_Ch03_ad1ed94e5c.pdf",
       "name": "01_生解_題本_Ch03_骨骼系統與關節.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "骨骼系統與關節",
-      "size": 1238036
+      "size": 1179958
     },
     {
-      "key": "workbooks/01_Ch04_a04124e706.pdf",
+      "key": "workbooks/01_Ch04_efd3561910.pdf",
       "name": "01_生解_題本_Ch04_肌肉系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "肌肉系統",
-      "size": 1320094
+      "size": 1239896
     },
     {
-      "key": "workbooks/01_Ch05_3480112a54.pdf",
+      "key": "workbooks/01_Ch05_0521483fdc.pdf",
       "name": "01_生解_題本_Ch05_神經系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "神經系統",
-      "size": 1671331
+      "size": 1514672
     },
     {
-      "key": "workbooks/01_Ch06_6d63e8a9ef.pdf",
+      "key": "workbooks/01_Ch06_4aaefb322e.pdf",
       "name": "01_生解_題本_Ch06_感覺器官.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "感覺器官",
-      "size": 1230321
+      "size": 1173186
     },
     {
-      "key": "workbooks/01_Ch07_a3c8853b08.pdf",
+      "key": "workbooks/01_Ch07_cb424ba18d.pdf",
       "name": "01_生解_題本_Ch07_血液、心血管與淋巴系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "血液、心血管與淋巴系統",
-      "size": 1542856
+      "size": 1553501
     },
     {
-      "key": "workbooks/01_Ch08_43b61ff52f.pdf",
+      "key": "workbooks/01_Ch08_7db6b87368.pdf",
       "name": "01_生解_題本_Ch08_呼吸系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "呼吸系統",
-      "size": 1350171
+      "size": 1265391
     },
     {
-      "key": "workbooks/01_Ch09_8e09f6ff7b.pdf",
+      "key": "workbooks/01_Ch09_00ca793e84.pdf",
       "name": "01_生解_題本_Ch09_消化系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "消化系統",
-      "size": 1390724
+      "size": 1301571
     },
     {
-      "key": "workbooks/01_Ch10_b7839459de.pdf",
+      "key": "workbooks/01_Ch10_5a387d45c1.pdf",
       "name": "01_生解_題本_Ch10_泌尿系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "泌尿系統",
-      "size": 1297743
+      "size": 1223118
     },
     {
-      "key": "workbooks/01_Ch11_f34aa5e038.pdf",
+      "key": "workbooks/01_Ch11_1d9fd382f5.pdf",
       "name": "01_生解_題本_Ch11_體液、電解質與酸鹼平衡.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "體液、電解質與酸鹼平衡",
-      "size": 1298488
+      "size": 1233244
     },
     {
-      "key": "workbooks/01_Ch12_3d96f4bea9.pdf",
+      "key": "workbooks/01_Ch12_2d333b6cb4.pdf",
       "name": "01_生解_題本_Ch12_內分泌系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "內分泌系統",
-      "size": 1407835
+      "size": 1316707
     },
     {
-      "key": "workbooks/01_Ch13_51d6f5f153.pdf",
+      "key": "workbooks/01_Ch13_d7bd4a47fd.pdf",
       "name": "01_生解_題本_Ch13_生殖系統.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "生殖系統",
-      "size": 1372984
+      "size": 1285000
     },
     {
-      "key": "workbooks/01_Ch14_74c602dfa7.pdf",
+      "key": "workbooks/01_Ch14_a7aabb8318.pdf",
       "name": "01_生解_題本_Ch14_胚胎學.pdf",
       "subjectNo": "01",
       "subject": "生解",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "胚胎學",
-      "size": 1212817
+      "size": 1158660
     },
     {
-      "key": "workbooks/02_Ch01_7bf2c3d65e.pdf",
+      "key": "workbooks/02_Ch01_d231017c3c.pdf",
       "name": "02_病理_題本_Ch01_緒論與細胞傷害、適應.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論與細胞傷害、適應",
-      "size": 1207850
+      "size": 1165521
     },
     {
-      "key": "workbooks/02_Ch02_e61df84c77.pdf",
+      "key": "workbooks/02_Ch02_5861b6f042.pdf",
       "name": "02_病理_題本_Ch02_發炎與修復.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "發炎與修復",
-      "size": 1249641
+      "size": 1194064
     },
     {
-      "key": "workbooks/02_Ch03_4f3ba269c6.pdf",
+      "key": "workbooks/02_Ch03_3042c5ff60.pdf",
       "name": "02_病理_題本_Ch03_代謝、體液與循環障礙.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "代謝、體液與循環障礙",
-      "size": 1335571
+      "size": 1257577
     },
     {
-      "key": "workbooks/02_Ch04_2c566a2d32.pdf",
+      "key": "workbooks/02_Ch04_a28519b9c7.pdf",
       "name": "02_病理_題本_Ch04_腫瘤概論.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "腫瘤概論",
-      "size": 1356092
+      "size": 1274599
     },
     {
-      "key": "workbooks/02_Ch05_5798aef2b8.pdf",
+      "key": "workbooks/02_Ch05_14731a5010.pdf",
       "name": "02_病理_題本_Ch05_免疫系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "免疫系統疾病",
-      "size": 1337890
+      "size": 1260641
     },
     {
-      "key": "workbooks/02_Ch06_5f88bba032.pdf",
+      "key": "workbooks/02_Ch06_e367efa96e.pdf",
       "name": "02_病理_題本_Ch06_遺傳與基因疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "遺傳與基因疾病",
-      "size": 1384881
+      "size": 1296145
     },
     {
-      "key": "workbooks/02_Ch07_680fac7454.pdf",
+      "key": "workbooks/02_Ch07_e67b3e72e3.pdf",
       "name": "02_病理_題本_Ch07_環境傷害與營養疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "環境傷害與營養疾病",
-      "size": 1296460
+      "size": 1221466
     },
     {
-      "key": "workbooks/02_Ch08_c0bedff414.pdf",
+      "key": "workbooks/02_Ch08_ad4e6f083f.pdf",
       "name": "02_病理_題本_Ch08_感染性疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "感染性疾病",
-      "size": 1204470
+      "size": 1157318
     },
     {
-      "key": "workbooks/02_Ch09_f06b4ca27d.pdf",
+      "key": "workbooks/02_Ch09_d46024743b.pdf",
       "name": "02_病理_題本_Ch09_心臟血管系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "心臟血管系統疾病",
-      "size": 1315763
+      "size": 1239183
     },
     {
-      "key": "workbooks/02_Ch10_490324d9cf.pdf",
+      "key": "workbooks/02_Ch10_e39fac8390.pdf",
       "name": "02_病理_題本_Ch10_血液、造血與淋巴系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "血液、造血與淋巴系統疾病",
-      "size": 1348698
+      "size": 1268175
     },
     {
-      "key": "workbooks/02_Ch11_1374da4ad8.pdf",
+      "key": "workbooks/02_Ch11_15a3759114.pdf",
       "name": "02_病理_題本_Ch11_呼吸系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "呼吸系統疾病",
-      "size": 1316202
+      "size": 1239897
     },
     {
-      "key": "workbooks/02_Ch12_7f47927cc3.pdf",
+      "key": "workbooks/02_Ch12_2a10a4091d.pdf",
       "name": "02_病理_題本_Ch12_消化道疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "消化道疾病",
-      "size": 1326282
+      "size": 1249570
     },
     {
-      "key": "workbooks/02_Ch13_e3f631c1c5.pdf",
+      "key": "workbooks/02_Ch13_1e38ed0a65.pdf",
       "name": "02_病理_題本_Ch13_肝、膽、胰疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "肝、膽、胰疾病",
-      "size": 1268059
+      "size": 1211456
     },
     {
-      "key": "workbooks/02_Ch14_22b0670fc3.pdf",
+      "key": "workbooks/02_Ch14_1af7f75507.pdf",
       "name": "02_病理_題本_Ch14_泌尿系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "泌尿系統疾病",
-      "size": 1313458
+      "size": 1240948
     },
     {
-      "key": "workbooks/02_Ch15_1fa1540183.pdf",
+      "key": "workbooks/02_Ch15_1771da615e.pdf",
       "name": "02_病理_題本_Ch15_生殖系統與乳房疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "15",
       "chapterTitle": "生殖系統與乳房疾病",
-      "size": 1287789
+      "size": 1228374
     },
     {
-      "key": "workbooks/02_Ch16_cd263e7e25.pdf",
+      "key": "workbooks/02_Ch16_9942a530be.pdf",
       "name": "02_病理_題本_Ch16_內分泌系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "16",
       "chapterTitle": "內分泌系統疾病",
-      "size": 1243094
+      "size": 1190723
     },
     {
-      "key": "workbooks/02_Ch17_6770da21cb.pdf",
+      "key": "workbooks/02_Ch17_9e44f53382.pdf",
       "name": "02_病理_題本_Ch17_骨骼、關節、軟組織與皮膚系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "17",
       "chapterTitle": "骨骼、關節、軟組織與皮膚系統疾病",
-      "size": 1251747
+      "size": 1198667
     },
     {
-      "key": "workbooks/02_Ch18_af589fb4a9.pdf",
+      "key": "workbooks/02_Ch18_8f51754716.pdf",
       "name": "02_病理_題本_Ch18_感官與神經系統疾病.pdf",
       "subjectNo": "02",
       "subject": "病理",
       "type": "題本",
       "ch": "18",
       "chapterTitle": "感官與神經系統疾病",
-      "size": 1319561
+      "size": 1241850
     },
     {
-      "key": "workbooks/03_Ch01_d68c3dd673.pdf",
+      "key": "workbooks/03_Ch01_8de58bd688.pdf",
       "name": "03_藥理_題本_Ch01_藥理學總論與藥物動力_藥效學.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "藥理學總論與藥物動力_藥效學",
-      "size": 930639
+      "size": 882887
     },
     {
-      "key": "workbooks/03_Ch02_ff559ae628.pdf",
+      "key": "workbooks/03_Ch02_a42d315408.pdf",
       "name": "03_藥理_題本_Ch02_自主神經系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "自主神經系統藥物",
-      "size": 1054338
+      "size": 962860
     },
     {
-      "key": "workbooks/03_Ch03_2aaee53ed3.pdf",
+      "key": "workbooks/03_Ch03_7de63b38c6.pdf",
       "name": "03_藥理_題本_Ch03_中樞神經與精神科藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "中樞神經與精神科藥物",
-      "size": 1258611
+      "size": 1129052
     },
     {
-      "key": "workbooks/03_Ch04_fc81bc499a.pdf",
+      "key": "workbooks/03_Ch04_32f0d6738d.pdf",
       "name": "03_藥理_題本_Ch04_止痛藥與麻醉藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "止痛藥與麻醉藥物",
-      "size": 1187024
+      "size": 1065509
     },
     {
-      "key": "workbooks/03_Ch05_d80a0550d1.pdf",
+      "key": "workbooks/03_Ch05_5c08be82ea.pdf",
       "name": "03_藥理_題本_Ch05_自泌素、抗過敏與呼吸系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "自泌素、抗過敏與呼吸系統藥物",
-      "size": 1045629
+      "size": 956288
     },
     {
-      "key": "workbooks/03_Ch06_412040a340.pdf",
+      "key": "workbooks/03_Ch06_16679a3835.pdf",
       "name": "03_藥理_題本_Ch06_消化系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "消化系統藥物",
-      "size": 957809
+      "size": 878151
     },
     {
-      "key": "workbooks/03_Ch07_ae9d96fca7.pdf",
+      "key": "workbooks/03_Ch07_a3291efcd3.pdf",
       "name": "03_藥理_題本_Ch07_泌尿系統與利尿劑.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "泌尿系統與利尿劑",
-      "size": 971617
+      "size": 887860
     },
     {
-      "key": "workbooks/03_Ch08_469c6f22e8.pdf",
+      "key": "workbooks/03_Ch08_2bfb446944.pdf",
       "name": "03_藥理_題本_Ch08_心血管藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "心血管藥物",
-      "size": 1134050
+      "size": 1020581
     },
     {
-      "key": "workbooks/03_Ch09_2d6f142035.pdf",
+      "key": "workbooks/03_Ch09_5ae45aa1c1.pdf",
       "name": "03_藥理_題本_Ch09_血液系統藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "血液系統藥物",
-      "size": 1092295
+      "size": 982711
     },
     {
-      "key": "workbooks/03_Ch10_b7cf0589ee.pdf",
+      "key": "workbooks/03_Ch10_4fdfff8865.pdf",
       "name": "03_藥理_題本_Ch10_內分泌與新陳代謝藥物.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "內分泌與新陳代謝藥物",
-      "size": 1221516
+      "size": 1094652
     },
     {
-      "key": "workbooks/03_Ch11_d9ce7090e1.pdf",
+      "key": "workbooks/03_Ch11_4e281bb6de.pdf",
       "name": "03_藥理_題本_Ch11_抗細菌藥物與抗感染藥.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "抗細菌藥物與抗感染藥",
-      "size": 1260747
+      "size": 1114310
     },
     {
-      "key": "workbooks/03_Ch12_43bff44f41.pdf",
+      "key": "workbooks/03_Ch12_0404371dae.pdf",
       "name": "03_藥理_題本_Ch12_癌症藥物與免疫製劑.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "癌症藥物與免疫製劑",
-      "size": 1097657
+      "size": 986265
     },
     {
-      "key": "workbooks/03_Ch13_9f023bc714.pdf",
+      "key": "workbooks/03_Ch13_958884adcd.pdf",
       "name": "03_藥理_題本_Ch13_毒理學、成癮藥物與生物製劑.pdf",
       "subjectNo": "03",
       "subject": "藥理",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "毒理學、成癮藥物與生物製劑",
-      "size": 1094955
+      "size": 985914
     },
     {
-      "key": "workbooks/04_Ch01_a48164b406.pdf",
+      "key": "workbooks/04_Ch01_d15aa63170.pdf",
       "name": "04_微免_題本_Ch01_微生物學總論與微生物控制.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "微生物學總論與微生物控制",
-      "size": 634267
+      "size": 577481
     },
     {
-      "key": "workbooks/04_Ch02_129721a117.pdf",
+      "key": "workbooks/04_Ch02_d34ac6de8f.pdf",
       "name": "04_微免_題本_Ch02_先天與後天免疫系統.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "先天與後天免疫系統",
-      "size": 779884
+      "size": 696942
     },
     {
-      "key": "workbooks/04_Ch03_a8468a2a74.pdf",
+      "key": "workbooks/04_Ch03_5428ca5111.pdf",
       "name": "04_微免_題本_Ch03_免疫異常與疫苗應用.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "免疫異常與疫苗應用",
-      "size": 853156
+      "size": 745403
     },
     {
-      "key": "workbooks/04_Ch04_f241cd2303.pdf",
+      "key": "workbooks/04_Ch04_5c137aed65.pdf",
       "name": "04_微免_題本_Ch04_細菌學總論與致病機制.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "細菌學總論與致病機制",
-      "size": 586600
+      "size": 540756
     },
     {
-      "key": "workbooks/04_Ch05_4cab0db404.pdf",
+      "key": "workbooks/04_Ch05_6e9b7754c2.pdf",
       "name": "04_微免_題本_Ch05_革蘭氏陽性球菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "革蘭氏陽性球菌",
-      "size": 710395
+      "size": 640066
     },
     {
-      "key": "workbooks/04_Ch06_9d8782fbfe.pdf",
+      "key": "workbooks/04_Ch06_7ca2fcbf33.pdf",
       "name": "04_微免_題本_Ch06_革蘭氏陽性桿菌與分枝桿菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "革蘭氏陽性桿菌與分枝桿菌",
-      "size": 647782
+      "size": 589440
     },
     {
-      "key": "workbooks/04_Ch07_9800cd8ec8.pdf",
+      "key": "workbooks/04_Ch07_c71a8f3fba.pdf",
       "name": "04_微免_題本_Ch07_革蘭氏陰性球菌與腸內桿菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "革蘭氏陰性球菌與腸內桿菌",
-      "size": 703674
+      "size": 629905
     },
     {
-      "key": "workbooks/04_Ch08_4f043fa357.pdf",
+      "key": "workbooks/04_Ch08_7780f57cce.pdf",
       "name": "04_微免_題本_Ch08_其他革蘭氏陰性桿菌與弧菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "其他革蘭氏陰性桿菌與弧菌",
-      "size": 699289
+      "size": 626786
     },
     {
-      "key": "workbooks/04_Ch09_c70b2aa11f.pdf",
+      "key": "workbooks/04_Ch09_2a71c5a076.pdf",
       "name": "04_微免_題本_Ch09_厭氧菌.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "厭氧菌",
-      "size": 654188
+      "size": 601262
     },
     {
-      "key": "workbooks/04_Ch10_b33e552c83.pdf",
+      "key": "workbooks/04_Ch10_992165ee43.pdf",
       "name": "04_微免_題本_Ch10_特殊病原菌（螺旋體、黴漿菌、立克次體、披衣菌）.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "特殊病原菌（螺旋體、黴漿菌、立克次體、披衣菌）",
-      "size": 722130
+      "size": 647043
     },
     {
-      "key": "workbooks/04_Ch11_9098da9487.pdf",
+      "key": "workbooks/04_Ch11_9478ebb8b4.pdf",
       "name": "04_微免_題本_Ch11_病毒學總論與DNA病毒.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "病毒學總論與DNA病毒",
-      "size": 770211
+      "size": 680355
     },
     {
-      "key": "workbooks/04_Ch12_e215c4fcc9.pdf",
+      "key": "workbooks/04_Ch12_e1d25e40d3.pdf",
       "name": "04_微免_題本_Ch12_RNA病毒.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "RNA病毒",
-      "size": 770329
+      "size": 686317
     },
     {
-      "key": "workbooks/04_Ch13_e37f7e45a2.pdf",
+      "key": "workbooks/04_Ch13_abaea09266.pdf",
       "name": "04_微免_題本_Ch13_肝炎病毒、反轉錄病毒與變性蛋白質.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "肝炎病毒、反轉錄病毒與變性蛋白質",
-      "size": 737517
+      "size": 656944
     },
     {
-      "key": "workbooks/04_Ch14_59bb582325.pdf",
+      "key": "workbooks/04_Ch14_b24ba0bec4.pdf",
       "name": "04_微免_題本_Ch14_真菌學.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "真菌學",
-      "size": 634057
+      "size": 577816
     },
     {
-      "key": "workbooks/04_Ch15_bf31ca62c1.pdf",
+      "key": "workbooks/04_Ch15_db1a04d5fc.pdf",
       "name": "04_微免_題本_Ch15_寄生蟲學.pdf",
       "subjectNo": "04",
       "subject": "微免",
       "type": "題本",
       "ch": "15",
       "chapterTitle": "寄生蟲學",
-      "size": 747273
+      "size": 659461
     },
     {
-      "key": "workbooks/05_Ch01_507a1079a9.pdf",
+      "key": "workbooks/05_Ch01_1dafb40ffd.pdf",
       "name": "05_基護_題本_Ch01_緒論.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論",
-      "size": 1170059
+      "size": 1056754
     },
     {
-      "key": "workbooks/05_Ch02_2980ea10ee.pdf",
+      "key": "workbooks/05_Ch02_535a1f59d8.pdf",
       "name": "05_基護_題本_Ch02_醫療環境.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "醫療環境",
-      "size": 1171472
+      "size": 1056108
     },
     {
-      "key": "workbooks/05_Ch03_c52b3ff141.pdf",
+      "key": "workbooks/05_Ch03_6863f6c540.pdf",
       "name": "05_基護_題本_Ch03_觀察與溝通.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "觀察與溝通",
-      "size": 1219719
+      "size": 1102246
     },
     {
-      "key": "workbooks/05_Ch04_e641ff5761.pdf",
+      "key": "workbooks/05_Ch04_f9863713d8.pdf",
       "name": "05_基護_題本_Ch04_護理記錄.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "護理記錄",
-      "size": 1074776
+      "size": 990050
     },
     {
-      "key": "workbooks/05_Ch05_1ab24a27ad.pdf",
+      "key": "workbooks/05_Ch05_baabc33c38.pdf",
       "name": "05_基護_題本_Ch05_感染控制.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "感染控制",
-      "size": 1347132
+      "size": 1201100
     },
     {
-      "key": "workbooks/05_Ch06_5dd398b09d.pdf",
+      "key": "workbooks/05_Ch06_830f24b188.pdf",
       "name": "05_基護_題本_Ch06_護理過程.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "護理過程",
-      "size": 1162895
+      "size": 1050564
     },
     {
-      "key": "workbooks/05_Ch07_84d588638e.pdf",
+      "key": "workbooks/05_Ch07_81dc07ab3c.pdf",
       "name": "05_基護_題本_Ch07_舒適的需要.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "舒適的需要",
-      "size": 1331424
+      "size": 1199148
     },
     {
-      "key": "workbooks/05_Ch08_8452dda53a.pdf",
+      "key": "workbooks/05_Ch08_70306113c5.pdf",
       "name": "05_基護_題本_Ch08_活動與運動.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "活動與運動",
-      "size": 1118434
+      "size": 1054150
     },
     {
-      "key": "workbooks/05_Ch09_7daab7267a.pdf",
+      "key": "workbooks/05_Ch09_061f2abdc0.pdf",
       "name": "05_基護_題本_Ch09_休息與睡眠.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "休息與睡眠",
-      "size": 973599
+      "size": 924253
     },
     {
-      "key": "workbooks/05_Ch10_d1c8358b2d.pdf",
+      "key": "workbooks/05_Ch10_aa4032be3e.pdf",
       "name": "05_基護_題本_Ch10_生命徵象.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "生命徵象",
-      "size": 1347898
+      "size": 1210861
     },
     {
-      "key": "workbooks/05_Ch11_c673877bb6.pdf",
+      "key": "workbooks/05_Ch11_06f7b7356e.pdf",
       "name": "05_基護_題本_Ch11_冷熱療法.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "冷熱療法",
-      "size": 1194012
+      "size": 1092320
     },
     {
-      "key": "workbooks/05_Ch12_dcd1a5a21f.pdf",
+      "key": "workbooks/05_Ch12_b243aa6021.pdf",
       "name": "05_基護_題本_Ch12_營養的需要.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "營養的需要",
-      "size": 1331336
+      "size": 1188919
     },
     {
-      "key": "workbooks/05_Ch13_8bf8549515.pdf",
+      "key": "workbooks/05_Ch13_0a98722705.pdf",
       "name": "05_基護_題本_Ch13_給藥法.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "給藥法",
-      "size": 1493873
+      "size": 1330186
     },
     {
-      "key": "workbooks/05_Ch14_ce3ab349d0.pdf",
+      "key": "workbooks/05_Ch14_f5191a20fe.pdf",
       "name": "05_基護_題本_Ch14_體液供給.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "體液供給",
-      "size": 1235285
+      "size": 1118556
     },
     {
-      "key": "workbooks/05_Ch15_2746cb83f6.pdf",
+      "key": "workbooks/05_Ch15_c2a03a6f6a.pdf",
       "name": "05_基護_題本_Ch15_排泄需要.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "15",
       "chapterTitle": "排泄需要",
-      "size": 1279242
+      "size": 1156149
     },
     {
-      "key": "workbooks/05_Ch16_22b6db90dc.pdf",
+      "key": "workbooks/05_Ch16_362829ba3c.pdf",
       "name": "05_基護_題本_Ch16_繃帶束帶的運用.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "16",
       "chapterTitle": "繃帶束帶的運用",
-      "size": 982930
+      "size": 924787
     },
     {
-      "key": "workbooks/05_Ch17_d2f89ddb3d.pdf",
+      "key": "workbooks/05_Ch17_399f812448.pdf",
       "name": "05_基護_題本_Ch17_臨終病人的護理.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "17",
       "chapterTitle": "臨終病人的護理",
-      "size": 1305199
+      "size": 1174777
     },
     {
-      "key": "workbooks/05_Ch18_4032699ee6.pdf",
+      "key": "workbooks/05_Ch18_b6d3aca586.pdf",
       "name": "05_基護_題本_Ch18_出入院護理與檢體收集.pdf",
       "subjectNo": "05",
       "subject": "基護",
       "type": "題本",
       "ch": "18",
       "chapterTitle": "出入院護理與檢體收集",
-      "size": 1194010
+      "size": 1079504
     },
     {
-      "key": "workbooks/06_Ch01_2fa52b94c9.pdf",
+      "key": "workbooks/06_Ch01_8047a928f0.pdf",
       "name": "06_行政_題本_Ch01_緒論與管理理論.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論與管理理論",
-      "size": 1221962
+      "size": 1142039
     },
     {
-      "key": "workbooks/06_Ch02_abe597b31c.pdf",
+      "key": "workbooks/06_Ch02_4759a171db.pdf",
       "name": "06_行政_題本_Ch02_規劃與營運決策.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "規劃與營運決策",
-      "size": 1288626
+      "size": 1198783
     },
     {
-      "key": "workbooks/06_Ch03_bdae77ee93.pdf",
+      "key": "workbooks/06_Ch03_8a856d6f40.pdf",
       "name": "06_行政_題本_Ch03_組織結構與照護模式.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "組織結構與照護模式",
-      "size": 1205873
+      "size": 1132331
     },
     {
-      "key": "workbooks/06_Ch04_33fa10791c.pdf",
+      "key": "workbooks/06_Ch04_cbe912cb14.pdf",
       "name": "06_行政_題本_Ch04_人力資源管理與排班.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "人力資源管理與排班",
-      "size": 1377948
+      "size": 1265533
     },
     {
-      "key": "workbooks/06_Ch05_5b217fcefb.pdf",
+      "key": "workbooks/06_Ch05_eb7d018fce.pdf",
       "name": "06_行政_題本_Ch05_領導統御與溝通激勵.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "領導統御與溝通激勵",
-      "size": 1378755
+      "size": 1263487
     },
     {
-      "key": "workbooks/06_Ch06_0753e56812.pdf",
+      "key": "workbooks/06_Ch06_dca692a931.pdf",
       "name": "06_行政_題本_Ch06_財務預算與成本控制.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "財務預算與成本控制",
-      "size": 1146063
+      "size": 1090332
     },
     {
-      "key": "workbooks/06_Ch07_554083174c.pdf",
+      "key": "workbooks/06_Ch07_12771ed392.pdf",
       "name": "06_行政_題本_Ch07_護理品質管理與護理資訊.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "護理品質管理與護理資訊",
-      "size": 1279348
+      "size": 1175526
     },
     {
-      "key": "workbooks/06_Ch08_7de68b3f80.pdf",
+      "key": "workbooks/06_Ch08_0b1fa8fe57.pdf",
       "name": "06_行政_題本_Ch08_倫理法律與醫院安全環境.pdf",
       "subjectNo": "06",
       "subject": "行政",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "倫理法律與醫院安全環境",
-      "size": 1480880
+      "size": 1338859
     },
     {
-      "key": "workbooks/07_Ch01_02269d5550.pdf",
+      "key": "workbooks/07_Ch01_6c8ab54d08.pdf",
       "name": "07_內外_題本_Ch01_緒論、老年人與瀕死護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論、老年人與瀕死護理",
-      "size": 1135027
+      "size": 1049375
     },
     {
-      "key": "workbooks/07_Ch02_f76ca645b9.pdf",
+      "key": "workbooks/07_Ch02_84e4a65fb6.pdf",
       "name": "07_內外_題本_Ch02_免疫系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "免疫系統疾病",
-      "size": 1307662
+      "size": 1187232
     },
     {
-      "key": "workbooks/07_Ch03_5adb3b0552.pdf",
+      "key": "workbooks/07_Ch03_e2eebaea09.pdf",
       "name": "07_內外_題本_Ch03_癌症護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "癌症護理",
-      "size": 1450294
+      "size": 1303755
     },
     {
-      "key": "workbooks/07_Ch04_9cd8caa393.pdf",
+      "key": "workbooks/07_Ch04_95da049c46.pdf",
       "name": "07_內外_題本_Ch04_體液、電解質與酸鹼不平衡之護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "體液、電解質與酸鹼不平衡之護理",
-      "size": 1301825
+      "size": 1186446
     },
     {
-      "key": "workbooks/07_Ch05_4e0c76ae2e.pdf",
+      "key": "workbooks/07_Ch05_8c5438c7ab.pdf",
       "name": "07_內外_題本_Ch05_傳染病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "傳染病",
-      "size": 1186661
+      "size": 1095041
     },
     {
-      "key": "workbooks/07_Ch06_d0961d3292.pdf",
+      "key": "workbooks/07_Ch06_a2acec77d8.pdf",
       "name": "07_內外_題本_Ch06_急重症與疼痛護理.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "急重症與疼痛護理",
-      "size": 1406608
+      "size": 1263002
     },
     {
-      "key": "workbooks/07_Ch07_f43e90fa2b.pdf",
+      "key": "workbooks/07_Ch07_fa82b13cdc.pdf",
       "name": "07_內外_題本_Ch07_消化系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "消化系統疾病",
-      "size": 1478518
+      "size": 1328804
     },
     {
-      "key": "workbooks/07_Ch08_102c3ad373.pdf",
+      "key": "workbooks/07_Ch08_34460a5cfd.pdf",
       "name": "07_內外_題本_Ch08_內分泌系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "內分泌系統疾病",
-      "size": 1543476
+      "size": 1392790
     },
     {
-      "key": "workbooks/07_Ch09_ed8c810aa3.pdf",
+      "key": "workbooks/07_Ch09_1f52536c44.pdf",
       "name": "07_內外_題本_Ch09_呼吸系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "呼吸系統疾病",
-      "size": 1446160
+      "size": 1315988
     },
     {
-      "key": "workbooks/07_Ch10_fa2d29eb56.pdf",
+      "key": "workbooks/07_Ch10_99dcb26ee6.pdf",
       "name": "07_內外_題本_Ch10_腎臟與泌尿系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "腎臟與泌尿系統疾病",
-      "size": 1448962
+      "size": 1308689
     },
     {
-      "key": "workbooks/07_Ch11_463cff8caa.pdf",
+      "key": "workbooks/07_Ch11_43a6f8133b.pdf",
       "name": "07_內外_題本_Ch11_生殖系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "生殖系統疾病",
-      "size": 1051603
+      "size": 1013136
     },
     {
-      "key": "workbooks/07_Ch12_7c5712bab8.pdf",
+      "key": "workbooks/07_Ch12_e4cbe263e8.pdf",
       "name": "07_內外_題本_Ch12_皮膚疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "皮膚疾病",
-      "size": 1314749
+      "size": 1203342
     },
     {
-      "key": "workbooks/07_Ch13_1f760087e5.pdf",
+      "key": "workbooks/07_Ch13_1b33cdb910.pdf",
       "name": "07_內外_題本_Ch13_心血管系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "心血管系統疾病",
-      "size": 1533913
+      "size": 1474970
     },
     {
-      "key": "workbooks/07_Ch14_da0bb8327f.pdf",
+      "key": "workbooks/07_Ch14_854c0bc53c.pdf",
       "name": "07_內外_題本_Ch14_血液系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "血液系統疾病",
-      "size": 1273773
+      "size": 1161148
     },
     {
-      "key": "workbooks/07_Ch15_85188379e1.pdf",
+      "key": "workbooks/07_Ch15_72b4b37852.pdf",
       "name": "07_內外_題本_Ch15_神經系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "15",
       "chapterTitle": "神經系統疾病",
-      "size": 1555561
+      "size": 1407039
     },
     {
-      "key": "workbooks/07_Ch16_cb17f41d13.pdf",
+      "key": "workbooks/07_Ch16_3bf636d358.pdf",
       "name": "07_內外_題本_Ch16_肌肉骨骼系統疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "16",
       "chapterTitle": "肌肉骨骼系統疾病",
-      "size": 1370277
+      "size": 1247614
     },
     {
-      "key": "workbooks/07_Ch17_f39d835864.pdf",
+      "key": "workbooks/07_Ch17_9432e1b6a5.pdf",
       "name": "07_內外_題本_Ch17_感覺機能與眼耳鼻喉科疾病.pdf",
       "subjectNo": "07",
       "subject": "內外",
       "type": "題本",
       "ch": "17",
       "chapterTitle": "感覺機能與眼耳鼻喉科疾病",
-      "size": 1247062
+      "size": 1136719
     },
     {
-      "key": "workbooks/08_Ch01_22ab525a59.pdf",
+      "key": "workbooks/08_Ch01_d8f46a44be.pdf",
       "name": "08_產科_題本_Ch01_緒論.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論",
-      "size": 1115325
+      "size": 1037827
     },
     {
-      "key": "workbooks/08_Ch02_3b1a8411d7.pdf",
+      "key": "workbooks/08_Ch02_a3484b7d27.pdf",
       "name": "08_產科_題本_Ch02_生殖系統及受孕.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "生殖系統及受孕",
-      "size": 1093732
+      "size": 1024614
     },
     {
-      "key": "workbooks/08_Ch03_73d7b981ab.pdf",
+      "key": "workbooks/08_Ch03_f1ed1e75ce.pdf",
       "name": "08_產科_題本_Ch03_妊娠期的診斷與評估.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "妊娠期的診斷與評估",
-      "size": 1248183
+      "size": 1149196
     },
     {
-      "key": "workbooks/08_Ch04_5ef1b68a78.pdf",
+      "key": "workbooks/08_Ch04_977f1506be.pdf",
       "name": "08_產科_題本_Ch04_妊娠期婦女的生理及心理變化.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "妊娠期婦女的生理及心理變化",
-      "size": 1230332
+      "size": 1117517
     },
     {
-      "key": "workbooks/08_Ch05_6e4d9e6fc7.pdf",
+      "key": "workbooks/08_Ch05_920e6cf067.pdf",
       "name": "08_產科_題本_Ch05_妊娠期之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "妊娠期之護理",
-      "size": 1251485
+      "size": 1139458
     },
     {
-      "key": "workbooks/08_Ch06_6a0c8c88e1.pdf",
+      "key": "workbooks/08_Ch06_7577aa95ba.pdf",
       "name": "08_產科_題本_Ch06_分娩過程與娩出階段.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "分娩過程與娩出階段",
-      "size": 1122211
+      "size": 1055106
     },
     {
-      "key": "workbooks/08_Ch07_580ae9c84f.pdf",
+      "key": "workbooks/08_Ch07_9b3447cb2e.pdf",
       "name": "08_產科_題本_Ch07_待產及分娩期之護理評估及護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "待產及分娩期之護理評估及護理",
-      "size": 1388785
+      "size": 1669761
     },
     {
-      "key": "workbooks/08_Ch08_1ed3d1c49c.pdf",
+      "key": "workbooks/08_Ch08_c2c59fbd11.pdf",
       "name": "08_產科_題本_Ch08_產後期之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "產後期之護理",
-      "size": 1540522
+      "size": 1471638
     },
     {
-      "key": "workbooks/08_Ch09_83eaaa44f1.pdf",
+      "key": "workbooks/08_Ch09_f7940cd49b.pdf",
       "name": "08_產科_題本_Ch09_新生兒的評估與護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "新生兒的評估與護理",
-      "size": 1356087
+      "size": 1233868
     },
     {
-      "key": "workbooks/08_Ch10_68e0385a95.pdf",
+      "key": "workbooks/08_Ch10_f2b19384e8.pdf",
       "name": "08_產科_題本_Ch10_高危險妊娠之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "高危險妊娠之護理",
-      "size": 1323605
+      "size": 1226944
     },
     {
-      "key": "workbooks/08_Ch11_d6b9ba979b.pdf",
+      "key": "workbooks/08_Ch11_8aa8f6484f.pdf",
       "name": "08_產科_題本_Ch11_分娩期異常之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "分娩期異常之護理",
-      "size": 1108377
+      "size": 1371101
     },
     {
-      "key": "workbooks/08_Ch12_d81aabc9bc.pdf",
+      "key": "workbooks/08_Ch12_6c4a346a12.pdf",
       "name": "08_產科_題本_Ch12_產後期異常之護理.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "產後期異常之護理",
-      "size": 1143107
+      "size": 1066166
     },
     {
-      "key": "workbooks/08_Ch13_57c13ff25f.pdf",
+      "key": "workbooks/08_Ch13_9530bf7c78.pdf",
       "name": "08_產科_題本_Ch13_婦科常見疾病.pdf",
       "subjectNo": "08",
       "subject": "產科",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "婦科常見疾病",
-      "size": 1413053
+      "size": 1266643
     },
     {
-      "key": "workbooks/09_Ch01_ebe2398b36.pdf",
+      "key": "workbooks/09_Ch01_0e3aace9d0.pdf",
       "name": "09_兒科_題本_Ch01_緒論.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論",
-      "size": 633867
+      "size": 577453
     },
     {
-      "key": "workbooks/09_Ch02_de6889ba86.pdf",
+      "key": "workbooks/09_Ch02_0021c21dac.pdf",
       "name": "09_兒科_題本_Ch02_兒童的生長與發展.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "兒童的生長與發展",
-      "size": 1008860
+      "size": 864773
     },
     {
-      "key": "workbooks/09_Ch03_c2c995dfb4.pdf",
+      "key": "workbooks/09_Ch03_312cadbf27.pdf",
       "name": "09_兒科_題本_Ch03_新生兒及其護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "新生兒及其護理",
-      "size": 905958
+      "size": 822173
     },
     {
-      "key": "workbooks/09_Ch04_c7b507f8e8.pdf",
+      "key": "workbooks/09_Ch04_518de1cb1e.pdf",
       "name": "09_兒科_題本_Ch04_高危險新生兒之護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "高危險新生兒之護理",
-      "size": 898613
+      "size": 782500
     },
     {
-      "key": "workbooks/09_Ch05_6353d14e59.pdf",
+      "key": "workbooks/09_Ch05_ac8d2b0c10.pdf",
       "name": "09_兒科_題本_Ch05_住院兒童之反應及其護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "住院兒童之反應及其護理",
-      "size": 907371
+      "size": 785506
     },
     {
-      "key": "workbooks/09_Ch06_de6c7927da.pdf",
+      "key": "workbooks/09_Ch06_93d6dbcf1d.pdf",
       "name": "09_兒科_題本_Ch06_瀕死兒童之護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "瀕死兒童之護理",
-      "size": 770214
+      "size": 676512
     },
     {
-      "key": "workbooks/09_Ch07_f3379e9f03.pdf",
+      "key": "workbooks/09_Ch07_f0139c6680.pdf",
       "name": "09_兒科_題本_Ch07_兒童傳染病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "兒童傳染病",
-      "size": 863949
+      "size": 761055
     },
     {
-      "key": "workbooks/09_Ch08_2175cc5a94.pdf",
+      "key": "workbooks/09_Ch08_227aed351b.pdf",
       "name": "09_兒科_題本_Ch08_兒童呼吸系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "兒童呼吸系統疾病",
-      "size": 903285
+      "size": 779735
     },
     {
-      "key": "workbooks/09_Ch09_a67397f204.pdf",
+      "key": "workbooks/09_Ch09_6fec53eda9.pdf",
       "name": "09_兒科_題本_Ch09_兒童循環系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "兒童循環系統疾病",
-      "size": 805201
+      "size": 713968
     },
     {
-      "key": "workbooks/09_Ch10_e9c29d8dbe.pdf",
+      "key": "workbooks/09_Ch10_4265dac0a0.pdf",
       "name": "09_兒科_題本_Ch10_兒童血液疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "兒童血液疾病",
-      "size": 760191
+      "size": 677178
     },
     {
-      "key": "workbooks/09_Ch11_1ea3d19760.pdf",
+      "key": "workbooks/09_Ch11_5a52845c62.pdf",
       "name": "09_兒科_題本_Ch11_兒童消化系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "兒童消化系統疾病",
-      "size": 845826
+      "size": 731822
     },
     {
-      "key": "workbooks/09_Ch12_abd4253c95.pdf",
+      "key": "workbooks/09_Ch12_410ef5e615.pdf",
       "name": "09_兒科_題本_Ch12_兒童泌尿生殖系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "兒童泌尿生殖系統疾病",
-      "size": 757699
+      "size": 667958
     },
     {
-      "key": "workbooks/09_Ch13_4b25e1c8fa.pdf",
+      "key": "workbooks/09_Ch13_f98df20815.pdf",
       "name": "09_兒科_題本_Ch13_兒童神經系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "兒童神經系統疾病",
-      "size": 884524
+      "size": 768276
     },
     {
-      "key": "workbooks/09_Ch14_38edc6d351.pdf",
+      "key": "workbooks/09_Ch14_16e7edca61.pdf",
       "name": "09_兒科_題本_Ch14_兒童免疫及肌肉骨骼系統疾病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "兒童免疫及肌肉骨骼系統疾病",
-      "size": 745289
+      "size": 659764
     },
     {
-      "key": "workbooks/09_Ch15_c7e5666781.pdf",
+      "key": "workbooks/09_Ch15_d569db993c.pdf",
       "name": "09_兒科_題本_Ch15_兒童內分泌系統疾病與慢性病.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "15",
       "chapterTitle": "兒童內分泌系統疾病與慢性病",
-      "size": 835227
+      "size": 720868
     },
     {
-      "key": "workbooks/09_Ch16_bb33bebfcf.pdf",
+      "key": "workbooks/09_Ch16_60c27c6a0d.pdf",
       "name": "09_兒科_題本_Ch16_兒童事故傷害及其護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "16",
       "chapterTitle": "兒童事故傷害及其護理",
-      "size": 895801
+      "size": 771654
     },
     {
-      "key": "workbooks/09_Ch17_ccea743dfc.pdf",
+      "key": "workbooks/09_Ch17_26c4ec6b21.pdf",
       "name": "09_兒科_題本_Ch17_兒童、青少年發展及心理社會健康問題之護理.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "17",
       "chapterTitle": "兒童、青少年發展及心理社會健康問題之護理",
-      "size": 815559
+      "size": 704144
     },
     {
-      "key": "workbooks/09_Ch18_0e7a189792.pdf",
+      "key": "workbooks/09_Ch18_f72aaf8944.pdf",
       "name": "09_兒科_題本_Ch18_兒童癌症.pdf",
       "subjectNo": "09",
       "subject": "兒科",
       "type": "題本",
       "ch": "18",
       "chapterTitle": "兒童癌症",
-      "size": 821691
+      "size": 712377
     },
     {
-      "key": "workbooks/10_Ch01_8b1a666965.pdf",
+      "key": "workbooks/10_Ch01_bc02f75e71.pdf",
       "name": "10_精神_題本_Ch01_精神醫學與護理的發展史及基本概念.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "精神醫學與護理的發展史及基本概念",
-      "size": 960126
+      "size": 880581
     },
     {
-      "key": "workbooks/10_Ch02_8374ba20e2.pdf",
+      "key": "workbooks/10_Ch02_1f0c51bc5c.pdf",
       "name": "10_精神_題本_Ch02_精神科護理的倫理與法律觀.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "精神科護理的倫理與法律觀",
-      "size": 1007272
+      "size": 920198
     },
     {
-      "key": "workbooks/10_Ch03_21462053b0.pdf",
+      "key": "workbooks/10_Ch03_2ab87cab04.pdf",
       "name": "10_精神_題本_Ch03_精神疾病的病因、症狀、診斷與分類.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "精神疾病的病因、症狀、診斷與分類",
-      "size": 1174863
+      "size": 1050501
     },
     {
-      "key": "workbooks/10_Ch04_2287ffd892.pdf",
+      "key": "workbooks/10_Ch04_11638151c8.pdf",
       "name": "10_精神_題本_Ch04_治療性溝通與人際關係.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "治療性溝通與人際關係",
-      "size": 1222418
+      "size": 1081825
     },
     {
-      "key": "workbooks/10_Ch05_4ef849d22a.pdf",
+      "key": "workbooks/10_Ch05_d72dccd1b9.pdf",
       "name": "10_精神_題本_Ch05_肌體治療.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "肌體治療",
-      "size": 1083933
+      "size": 980197
     },
     {
-      "key": "workbooks/10_Ch06_dd3b67b6f4.pdf",
+      "key": "workbooks/10_Ch06_4e51350771.pdf",
       "name": "10_精神_題本_Ch06_精神科常用的治療方法.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "精神科常用的治療方法",
-      "size": 1196136
+      "size": 1071421
     },
     {
-      "key": "workbooks/10_Ch07_97ca440b23.pdf",
+      "key": "workbooks/10_Ch07_051e31f064.pdf",
       "name": "10_精神_題本_Ch07_思考障礙病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "思考障礙病人的護理",
-      "size": 1224163
+      "size": 1089164
     },
     {
-      "key": "workbooks/10_Ch08_e9b57fa30b.pdf",
+      "key": "workbooks/10_Ch08_ba309b5dfd.pdf",
       "name": "10_精神_題本_Ch08_雙相情緒障礙症病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "雙相情緒障礙症病人的護理",
-      "size": 1235579
+      "size": 1096965
     },
     {
-      "key": "workbooks/10_Ch09_4fbb7927a6.pdf",
+      "key": "workbooks/10_Ch09_6b2c38c510.pdf",
       "name": "10_精神_題本_Ch09_焦慮障礙、強迫症和創傷及壓力相關障礙病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "焦慮障礙、強迫症和創傷及壓力相關障礙病人的護理",
-      "size": 1100787
+      "size": 987537
     },
     {
-      "key": "workbooks/10_Ch10_8a2c9659c3.pdf",
+      "key": "workbooks/10_Ch10_ceea03485e.pdf",
       "name": "10_精神_題本_Ch10_身體症狀障礙症與解離症病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "身體症狀障礙症與解離症病人的護理",
-      "size": 891932
+      "size": 834544
     },
     {
-      "key": "workbooks/10_Ch11_d584746e7d.pdf",
+      "key": "workbooks/10_Ch11_36c19fff05.pdf",
       "name": "10_精神_題本_Ch11_人格障礙病人的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "人格障礙病人的護理",
-      "size": 972303
+      "size": 889196
     },
     {
-      "key": "workbooks/10_Ch12_220ef25321.pdf",
+      "key": "workbooks/10_Ch12_26e53cd3c5.pdf",
       "name": "10_精神_題本_Ch12_其他精神科疾病的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "其他精神科疾病的護理",
-      "size": 1350510
+      "size": 1194424
     },
     {
-      "key": "workbooks/10_Ch13_8719603bd9.pdf",
+      "key": "workbooks/10_Ch13_91d47fe47b.pdf",
       "name": "10_精神_題本_Ch13_危機處理與意外事件的護理.pdf",
       "subjectNo": "10",
       "subject": "精神",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "危機處理與意外事件的護理",
-      "size": 1275064
+      "size": 1126344
     },
     {
-      "key": "workbooks/11_Ch01_35ccb739f3.pdf",
+      "key": "workbooks/11_Ch01_119697dbba.pdf",
       "name": "11_社區_題本_Ch01_緒論與衛生行政體系.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "01",
       "chapterTitle": "緒論與衛生行政體系",
-      "size": 1399809
+      "size": 1291328
     },
     {
-      "key": "workbooks/11_Ch02_d697643653.pdf",
+      "key": "workbooks/11_Ch02_b4f7212211.pdf",
       "name": "11_社區_題本_Ch02_流行病學.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "02",
       "chapterTitle": "流行病學",
-      "size": 1367659
+      "size": 1276431
     },
     {
-      "key": "workbooks/11_Ch03_49f8343967.pdf",
+      "key": "workbooks/11_Ch03_5dc11cc72e.pdf",
       "name": "11_社區_題本_Ch03_生命統計.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "03",
       "chapterTitle": "生命統計",
-      "size": 1222867
+      "size": 1167884
     },
     {
-      "key": "workbooks/11_Ch04_fe80eecbfe.pdf",
+      "key": "workbooks/11_Ch04_e0d2bfb157.pdf",
       "name": "11_社區_題本_Ch04_衛生教育與健康促進.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "04",
       "chapterTitle": "衛生教育與健康促進",
-      "size": 1513177
+      "size": 1390567
     },
     {
-      "key": "workbooks/11_Ch05_099436ff1b.pdf",
+      "key": "workbooks/11_Ch05_7fb84d4a8d.pdf",
       "name": "11_社區_題本_Ch05_社區評估與社區健康營造.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "05",
       "chapterTitle": "社區評估與社區健康營造",
-      "size": 1377193
+      "size": 1282446
     },
     {
-      "key": "workbooks/11_Ch06_f275196e36.pdf",
+      "key": "workbooks/11_Ch06_60416f38f5.pdf",
       "name": "11_社區_題本_Ch06_家庭評估與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "06",
       "chapterTitle": "家庭評估與護理",
-      "size": 1390334
+      "size": 1351634
     },
     {
-      "key": "workbooks/11_Ch07_43021e8f05.pdf",
+      "key": "workbooks/11_Ch07_77f13d6100.pdf",
       "name": "11_社區_題本_Ch07_婦幼衛生.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "07",
       "chapterTitle": "婦幼衛生",
-      "size": 1448112
+      "size": 1329566
     },
     {
-      "key": "workbooks/11_Ch08_21bea73e24.pdf",
+      "key": "workbooks/11_Ch08_cd48642bc9.pdf",
       "name": "11_社區_題本_Ch08_中老年人的護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "08",
       "chapterTitle": "中老年人的護理",
-      "size": 1399204
+      "size": 1290905
     },
     {
-      "key": "workbooks/11_Ch09_8ec6294146.pdf",
+      "key": "workbooks/11_Ch09_bdc269aeb0.pdf",
       "name": "11_社區_題本_Ch09_慢性疾病的護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "09",
       "chapterTitle": "慢性疾病的護理",
-      "size": 1407034
+      "size": 1295436
     },
     {
-      "key": "workbooks/11_Ch10_7491e467b8.pdf",
+      "key": "workbooks/11_Ch10_87a69f2078.pdf",
       "name": "11_社區_題本_Ch10_長期照護.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "10",
       "chapterTitle": "長期照護",
-      "size": 1424280
+      "size": 1321831
     },
     {
-      "key": "workbooks/11_Ch11_0eaa7f9767.pdf",
+      "key": "workbooks/11_Ch11_7ee0bfe856.pdf",
       "name": "11_社區_題本_Ch11_社區心理衛生與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "11",
       "chapterTitle": "社區心理衛生與護理",
-      "size": 1354962
+      "size": 1269639
     },
     {
-      "key": "workbooks/11_Ch12_5aeb412bce.pdf",
+      "key": "workbooks/11_Ch12_b0e49b2da9.pdf",
       "name": "11_社區_題本_Ch12_學校衛生與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "12",
       "chapterTitle": "學校衛生與護理",
-      "size": 1341385
+      "size": 1249267
     },
     {
-      "key": "workbooks/11_Ch13_6c2ec800df.pdf",
+      "key": "workbooks/11_Ch13_56ac0ea5ac.pdf",
       "name": "11_社區_題本_Ch13_職業衛生與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "13",
       "chapterTitle": "職業衛生與護理",
-      "size": 1314978
+      "size": 1228405
     },
     {
-      "key": "workbooks/11_Ch14_6469a79143.pdf",
+      "key": "workbooks/11_Ch14_d6dbe22ce2.pdf",
       "name": "11_社區_題本_Ch14_傳染病防治與護理.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "14",
       "chapterTitle": "傳染病防治與護理",
-      "size": 1479339
+      "size": 1360301
     },
     {
-      "key": "workbooks/11_Ch15_b56c857750.pdf",
+      "key": "workbooks/11_Ch15_d9bb60c72a.pdf",
       "name": "11_社區_題本_Ch15_環境衛生與食品衛生.pdf",
       "subjectNo": "11",
       "subject": "社區",
       "type": "題本",
       "ch": "15",
       "chapterTitle": "環境衛生與食品衛生",
-      "size": 1433543
+      "size": 1319588
     }
   ],
   "pastExams": [
     {
-      "key": "past-exams/115-2_basic_482755a3c4.pdf",
+      "key": "past-exams/115-2_basic_67595b2904.pdf",
       "name": "115-2_基礎醫學.pdf",
       "term": "115-2",
       "termSort": 115020,
       "paper": "基礎醫學",
-      "size": 2890936,
+      "size": 2707715,
       "cover": "assets/images/covers/past-exams/115-2_basic.jpg"
     },
     {
-      "key": "past-exams/115-2_fundamentals_975510d4e2.pdf",
-      "name": "115-2_基本護理與護理行政.pdf",
+      "key": "past-exams/115-2_fundamentals_38d3bb7ff7.pdf",
+      "name": "115-2_基本護理學與護理行政.pdf",
       "term": "115-2",
       "termSort": 115020,
-      "paper": "基本護理與護理行政",
-      "size": 3672074,
+      "paper": "基本護理學與護理行政",
+      "size": 3463138,
       "cover": "assets/images/covers/past-exams/115-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/115-2_medsurg_feb587e0b5.pdf",
+      "key": "past-exams/115-2_medsurg_bf7110b839.pdf",
       "name": "115-2_內外科護理學.pdf",
       "term": "115-2",
       "termSort": 115020,
       "paper": "內外科護理學",
-      "size": 3125184,
+      "size": 2938837,
       "cover": "assets/images/covers/past-exams/115-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/115-2_obgyn-peds_777ba149ce.pdf",
-      "name": "115-2_產科與兒科護理學.pdf",
+      "key": "past-exams/115-2_obgyn-peds_12d9c6bcce.pdf",
+      "name": "115-2_產兒科護理學.pdf",
       "term": "115-2",
       "termSort": 115020,
-      "paper": "產科與兒科護理學",
-      "size": 3069876,
+      "paper": "產兒科護理學",
+      "size": 2861522,
       "cover": "assets/images/covers/past-exams/115-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/115-2_psych-community_8d880ef869.pdf",
+      "key": "past-exams/115-2_psych-community_29f0c773c5.pdf",
       "name": "115-2_精神科與社區衛生護理.pdf",
       "term": "115-2",
       "termSort": 115020,
       "paper": "精神科與社區衛生護理",
-      "size": 2954198,
+      "size": 2750781,
       "cover": "assets/images/covers/past-exams/115-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/115-1_basic_ac33da062d.pdf",
+      "key": "past-exams/115-1_basic_36b1150d8d.pdf",
       "name": "115-1_基礎醫學.pdf",
       "term": "115-1",
       "termSort": 115010,
       "paper": "基礎醫學",
-      "size": 2860012,
+      "size": 2686437,
       "cover": "assets/images/covers/past-exams/115-1_basic.jpg"
     },
     {
-      "key": "past-exams/115-1_fundamentals_c261d69d35.pdf",
-      "name": "115-1_基本護理與護理行政.pdf",
+      "key": "past-exams/115-1_fundamentals_b428bd7e50.pdf",
+      "name": "115-1_基本護理學與護理行政.pdf",
       "term": "115-1",
       "termSort": 115010,
-      "paper": "基本護理與護理行政",
-      "size": 3537072,
+      "paper": "基本護理學與護理行政",
+      "size": 3355847,
       "cover": "assets/images/covers/past-exams/115-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/115-1_medsurg_a7c8c012ce.pdf",
+      "key": "past-exams/115-1_medsurg_2ea981b26f.pdf",
       "name": "115-1_內外科護理學.pdf",
       "term": "115-1",
       "termSort": 115010,
       "paper": "內外科護理學",
-      "size": 3108313,
+      "size": 2919863,
       "cover": "assets/images/covers/past-exams/115-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/115-1_obgyn-peds_bd664fcb8a.pdf",
-      "name": "115-1_產科與兒科護理學.pdf",
+      "key": "past-exams/115-1_obgyn-peds_f24acac834.pdf",
+      "name": "115-1_產兒科護理學.pdf",
       "term": "115-1",
       "termSort": 115010,
-      "paper": "產科與兒科護理學",
-      "size": 3095416,
+      "paper": "產兒科護理學",
+      "size": 2890360,
       "cover": "assets/images/covers/past-exams/115-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/115-1_psych-community_170a17a66e.pdf",
+      "key": "past-exams/115-1_psych-community_5fd3be19c5.pdf",
       "name": "115-1_精神科與社區衛生護理.pdf",
       "term": "115-1",
       "termSort": 115010,
       "paper": "精神科與社區衛生護理",
-      "size": 2886104,
+      "size": 2702210,
       "cover": "assets/images/covers/past-exams/115-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/114-3_basic_9831166860.pdf",
+      "key": "past-exams/114-3_basic_8e3ce5ed55.pdf",
       "name": "114-3_基礎醫學.pdf",
       "term": "114-3",
       "termSort": 114030,
       "paper": "基礎醫學",
-      "size": 2870370,
+      "size": 2680093,
       "cover": "assets/images/covers/past-exams/114-3_basic.jpg"
     },
     {
-      "key": "past-exams/114-3_fundamentals_4a2abdff43.pdf",
-      "name": "114-3_基本護理與護理行政.pdf",
+      "key": "past-exams/114-3_fundamentals_b9ad34c82b.pdf",
+      "name": "114-3_基本護理學與護理行政.pdf",
       "term": "114-3",
       "termSort": 114030,
-      "paper": "基本護理與護理行政",
-      "size": 3683324,
+      "paper": "基本護理學與護理行政",
+      "size": 3482645,
       "cover": "assets/images/covers/past-exams/114-3_fundamentals.jpg"
     },
     {
-      "key": "past-exams/114-3_medsurg_18499d9f3f.pdf",
+      "key": "past-exams/114-3_medsurg_05bf6115b9.pdf",
       "name": "114-3_內外科護理學.pdf",
       "term": "114-3",
       "termSort": 114030,
       "paper": "內外科護理學",
-      "size": 3053109,
+      "size": 2856701,
       "cover": "assets/images/covers/past-exams/114-3_medsurg.jpg"
     },
     {
-      "key": "past-exams/114-3_obgyn-peds_ccd5176afe.pdf",
-      "name": "114-3_產科與兒科護理學.pdf",
+      "key": "past-exams/114-3_obgyn-peds_6236511289.pdf",
+      "name": "114-3_產兒科護理學.pdf",
       "term": "114-3",
       "termSort": 114030,
-      "paper": "產科與兒科護理學",
-      "size": 3040648,
+      "paper": "產兒科護理學",
+      "size": 2842347,
       "cover": "assets/images/covers/past-exams/114-3_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/114-3_psych-community_05239496f9.pdf",
+      "key": "past-exams/114-3_psych-community_4bb5fcf516.pdf",
       "name": "114-3_精神科與社區衛生護理.pdf",
       "term": "114-3",
       "termSort": 114030,
       "paper": "精神科與社區衛生護理",
-      "size": 2909201,
+      "size": 2705727,
       "cover": "assets/images/covers/past-exams/114-3_psych-community.jpg"
     },
     {
-      "key": "past-exams/114-2_basic_f4d942a9f3.pdf",
+      "key": "past-exams/114-2_basic_70a2a52ab2.pdf",
       "name": "114-2_基礎醫學.pdf",
       "term": "114-2",
       "termSort": 114020,
       "paper": "基礎醫學",
-      "size": 2911579,
+      "size": 2734703,
       "cover": "assets/images/covers/past-exams/114-2_basic.jpg"
     },
     {
-      "key": "past-exams/114-2_fundamentals_f77abf7385.pdf",
-      "name": "114-2_基本護理與護理行政.pdf",
+      "key": "past-exams/114-2_fundamentals_daed3844d2.pdf",
+      "name": "114-2_基本護理學與護理行政.pdf",
       "term": "114-2",
       "termSort": 114020,
-      "paper": "基本護理與護理行政",
-      "size": 3647812,
+      "paper": "基本護理學與護理行政",
+      "size": 3444561,
       "cover": "assets/images/covers/past-exams/114-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/114-2_medsurg_db47f3c393.pdf",
+      "key": "past-exams/114-2_medsurg_12eb70f7ae.pdf",
       "name": "114-2_內外科護理學.pdf",
       "term": "114-2",
       "termSort": 114020,
       "paper": "內外科護理學",
-      "size": 3118823,
+      "size": 2923933,
       "cover": "assets/images/covers/past-exams/114-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/114-2_obgyn-peds_ca811e5679.pdf",
-      "name": "114-2_產科與兒科護理學.pdf",
+      "key": "past-exams/114-2_obgyn-peds_cbbc5be2be.pdf",
+      "name": "114-2_產兒科護理學.pdf",
       "term": "114-2",
       "termSort": 114020,
-      "paper": "產科與兒科護理學",
-      "size": 3005088,
+      "paper": "產兒科護理學",
+      "size": 2810779,
       "cover": "assets/images/covers/past-exams/114-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/114-2_psych-community_19e5cc0e88.pdf",
+      "key": "past-exams/114-2_psych-community_dce9abea87.pdf",
       "name": "114-2_精神科與社區衛生護理.pdf",
       "term": "114-2",
       "termSort": 114020,
       "paper": "精神科與社區衛生護理",
-      "size": 2933997,
+      "size": 2738394,
       "cover": "assets/images/covers/past-exams/114-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/114-1_basic_3b54150d35.pdf",
+      "key": "past-exams/114-1_basic_2cf730f6a4.pdf",
       "name": "114-1_基礎醫學.pdf",
       "term": "114-1",
       "termSort": 114010,
       "paper": "基礎醫學",
-      "size": 2909833,
+      "size": 2728716,
       "cover": "assets/images/covers/past-exams/114-1_basic.jpg"
     },
     {
-      "key": "past-exams/114-1_fundamentals_a85febd143.pdf",
-      "name": "114-1_基本護理與護理行政.pdf",
+      "key": "past-exams/114-1_fundamentals_0654cbc77c.pdf",
+      "name": "114-1_基本護理學與護理行政.pdf",
       "term": "114-1",
       "termSort": 114010,
-      "paper": "基本護理與護理行政",
-      "size": 3671294,
+      "paper": "基本護理學與護理行政",
+      "size": 3459523,
       "cover": "assets/images/covers/past-exams/114-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/114-1_medsurg_081a3c8cb8.pdf",
+      "key": "past-exams/114-1_medsurg_06d486b2b6.pdf",
       "name": "114-1_內外科護理學.pdf",
       "term": "114-1",
       "termSort": 114010,
       "paper": "內外科護理學",
-      "size": 3051754,
+      "size": 2869601,
       "cover": "assets/images/covers/past-exams/114-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/114-1_obgyn-peds_07d8f9e9a7.pdf",
-      "name": "114-1_產科與兒科護理學.pdf",
+      "key": "past-exams/114-1_obgyn-peds_a1d8730b03.pdf",
+      "name": "114-1_產兒科護理學.pdf",
       "term": "114-1",
       "termSort": 114010,
-      "paper": "產科與兒科護理學",
-      "size": 3074797,
+      "paper": "產兒科護理學",
+      "size": 2863036,
       "cover": "assets/images/covers/past-exams/114-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/114-1_psych-community_72274a6883.pdf",
+      "key": "past-exams/114-1_psych-community_daabe07a2e.pdf",
       "name": "114-1_精神科與社區衛生護理.pdf",
       "term": "114-1",
       "termSort": 114010,
       "paper": "精神科與社區衛生護理",
-      "size": 2896393,
+      "size": 2690719,
       "cover": "assets/images/covers/past-exams/114-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/113-3_basic_11a752436a.pdf",
+      "key": "past-exams/113-3_basic_22c6e38002.pdf",
       "name": "113-3_基礎醫學.pdf",
       "term": "113-3",
       "termSort": 113030,
       "paper": "基礎醫學",
-      "size": 2852092,
+      "size": 2701184,
       "cover": "assets/images/covers/past-exams/113-3_basic.jpg"
     },
     {
-      "key": "past-exams/113-3_fundamentals_805e2d260d.pdf",
-      "name": "113-3_基本護理與護理行政.pdf",
+      "key": "past-exams/113-3_fundamentals_7a4db24bbb.pdf",
+      "name": "113-3_基本護理學與護理行政.pdf",
       "term": "113-3",
       "termSort": 113030,
-      "paper": "基本護理與護理行政",
-      "size": 3603865,
+      "paper": "基本護理學與護理行政",
+      "size": 3407397,
       "cover": "assets/images/covers/past-exams/113-3_fundamentals.jpg"
     },
     {
-      "key": "past-exams/113-3_medsurg_d5490c74d6.pdf",
+      "key": "past-exams/113-3_medsurg_eedc8ce83a.pdf",
       "name": "113-3_內外科護理學.pdf",
       "term": "113-3",
       "termSort": 113030,
       "paper": "內外科護理學",
-      "size": 3088374,
+      "size": 2894801,
       "cover": "assets/images/covers/past-exams/113-3_medsurg.jpg"
     },
     {
-      "key": "past-exams/113-3_obgyn-peds_7448294ab9.pdf",
-      "name": "113-3_產科與兒科護理學.pdf",
+      "key": "past-exams/113-3_obgyn-peds_cea56a48d0.pdf",
+      "name": "113-3_產兒科護理學.pdf",
       "term": "113-3",
       "termSort": 113030,
-      "paper": "產科與兒科護理學",
-      "size": 3036086,
+      "paper": "產兒科護理學",
+      "size": 2833425,
       "cover": "assets/images/covers/past-exams/113-3_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/113-3_psych-community_d1acb74dfb.pdf",
+      "key": "past-exams/113-3_psych-community_ad880cce69.pdf",
       "name": "113-3_精神科與社區衛生護理.pdf",
       "term": "113-3",
       "termSort": 113030,
       "paper": "精神科與社區衛生護理",
-      "size": 2964341,
+      "size": 2757278,
       "cover": "assets/images/covers/past-exams/113-3_psych-community.jpg"
     },
     {
-      "key": "past-exams/113-2_basic_7a28f68c35.pdf",
+      "key": "past-exams/113-2_basic_cbda465597.pdf",
       "name": "113-2_基礎醫學.pdf",
       "term": "113-2",
       "termSort": 113020,
       "paper": "基礎醫學",
-      "size": 2863827,
+      "size": 2672171,
       "cover": "assets/images/covers/past-exams/113-2_basic.jpg"
     },
     {
-      "key": "past-exams/113-2_fundamentals_2411d31e25.pdf",
-      "name": "113-2_基本護理與護理行政.pdf",
+      "key": "past-exams/113-2_fundamentals_003479bf67.pdf",
+      "name": "113-2_基本護理學與護理行政.pdf",
       "term": "113-2",
       "termSort": 113020,
-      "paper": "基本護理與護理行政",
-      "size": 3680094,
+      "paper": "基本護理學與護理行政",
+      "size": 3472470,
       "cover": "assets/images/covers/past-exams/113-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/113-2_medsurg_73675c575f.pdf",
+      "key": "past-exams/113-2_medsurg_112058602b.pdf",
       "name": "113-2_內外科護理學.pdf",
       "term": "113-2",
       "termSort": 113020,
       "paper": "內外科護理學",
-      "size": 3142456,
+      "size": 2953763,
       "cover": "assets/images/covers/past-exams/113-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/113-2_obgyn-peds_c874d9b85e.pdf",
-      "name": "113-2_產科與兒科護理學.pdf",
+      "key": "past-exams/113-2_obgyn-peds_bb7add5a3c.pdf",
+      "name": "113-2_產兒科護理學.pdf",
       "term": "113-2",
       "termSort": 113020,
-      "paper": "產科與兒科護理學",
-      "size": 2963457,
+      "paper": "產兒科護理學",
+      "size": 2760430,
       "cover": "assets/images/covers/past-exams/113-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/113-2_psych-community_ba228e157c.pdf",
+      "key": "past-exams/113-2_psych-community_1e45e6c868.pdf",
       "name": "113-2_精神科與社區衛生護理.pdf",
       "term": "113-2",
       "termSort": 113020,
       "paper": "精神科與社區衛生護理",
-      "size": 2885240,
+      "size": 2675689,
       "cover": "assets/images/covers/past-exams/113-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/113-1_basic_e4a11ccc4c.pdf",
+      "key": "past-exams/113-1_basic_e7c246bad6.pdf",
       "name": "113-1_基礎醫學.pdf",
       "term": "113-1",
       "termSort": 113010,
       "paper": "基礎醫學",
-      "size": 2935069,
+      "size": 2743149,
       "cover": "assets/images/covers/past-exams/113-1_basic.jpg"
     },
     {
-      "key": "past-exams/113-1_fundamentals_37615c565f.pdf",
-      "name": "113-1_基本護理與護理行政.pdf",
+      "key": "past-exams/113-1_fundamentals_1e7631fa67.pdf",
+      "name": "113-1_基本護理學與護理行政.pdf",
       "term": "113-1",
       "termSort": 113010,
-      "paper": "基本護理與護理行政",
-      "size": 3635433,
+      "paper": "基本護理學與護理行政",
+      "size": 3435485,
       "cover": "assets/images/covers/past-exams/113-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/113-1_medsurg_daedda026f.pdf",
+      "key": "past-exams/113-1_medsurg_cfa421971b.pdf",
       "name": "113-1_內外科護理學.pdf",
       "term": "113-1",
       "termSort": 113010,
       "paper": "內外科護理學",
-      "size": 3095637,
+      "size": 2907217,
       "cover": "assets/images/covers/past-exams/113-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/113-1_obgyn-peds_e2044b2191.pdf",
-      "name": "113-1_產科與兒科護理學.pdf",
+      "key": "past-exams/113-1_obgyn-peds_dec4a938e7.pdf",
+      "name": "113-1_產兒科護理學.pdf",
       "term": "113-1",
       "termSort": 113010,
-      "paper": "產科與兒科護理學",
-      "size": 3058511,
+      "paper": "產兒科護理學",
+      "size": 2863120,
       "cover": "assets/images/covers/past-exams/113-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/113-1_psych-community_63a9d888b6.pdf",
+      "key": "past-exams/113-1_psych-community_470f7fe706.pdf",
       "name": "113-1_精神科與社區衛生護理.pdf",
       "term": "113-1",
       "termSort": 113010,
       "paper": "精神科與社區衛生護理",
-      "size": 2879700,
+      "size": 2682625,
       "cover": "assets/images/covers/past-exams/113-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/112-3_basic_0ddcbbdd4d.pdf",
+      "key": "past-exams/112-3_basic_c2cd3dad57.pdf",
       "name": "112-3_基礎醫學.pdf",
       "term": "112-3",
       "termSort": 112030,
       "paper": "基礎醫學",
-      "size": 2844165,
+      "size": 2650827,
       "cover": "assets/images/covers/past-exams/112-3_basic.jpg"
     },
     {
-      "key": "past-exams/112-3_fundamentals_d11becd1c4.pdf",
-      "name": "112-3_基本護理與護理行政.pdf",
+      "key": "past-exams/112-3_fundamentals_d03e49dcbe.pdf",
+      "name": "112-3_基本護理學與護理行政.pdf",
       "term": "112-3",
       "termSort": 112030,
-      "paper": "基本護理與護理行政",
-      "size": 3603144,
+      "paper": "基本護理學與護理行政",
+      "size": 3402950,
       "cover": "assets/images/covers/past-exams/112-3_fundamentals.jpg"
     },
     {
-      "key": "past-exams/112-3_medsurg_520e9cf0e0.pdf",
+      "key": "past-exams/112-3_medsurg_a362b7be9f.pdf",
       "name": "112-3_內外科護理學.pdf",
       "term": "112-3",
       "termSort": 112030,
       "paper": "內外科護理學",
-      "size": 3045331,
+      "size": 2864536,
       "cover": "assets/images/covers/past-exams/112-3_medsurg.jpg"
     },
     {
-      "key": "past-exams/112-3_obgyn-peds_b99cecab6e.pdf",
-      "name": "112-3_產科與兒科護理學.pdf",
+      "key": "past-exams/112-3_obgyn-peds_38ea18025c.pdf",
+      "name": "112-3_產兒科護理學.pdf",
       "term": "112-3",
       "termSort": 112030,
-      "paper": "產科與兒科護理學",
-      "size": 2994073,
+      "paper": "產兒科護理學",
+      "size": 2793497,
       "cover": "assets/images/covers/past-exams/112-3_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/112-3_psych-community_54e70987bc.pdf",
+      "key": "past-exams/112-3_psych-community_13de252c54.pdf",
       "name": "112-3_精神科與社區衛生護理.pdf",
       "term": "112-3",
       "termSort": 112030,
       "paper": "精神科與社區衛生護理",
-      "size": 2942314,
+      "size": 2731825,
       "cover": "assets/images/covers/past-exams/112-3_psych-community.jpg"
     },
     {
-      "key": "past-exams/112-2_basic_c237992f89.pdf",
+      "key": "past-exams/112-2_basic_05563d8df4.pdf",
       "name": "112-2_基礎醫學.pdf",
       "term": "112-2",
       "termSort": 112020,
       "paper": "基礎醫學",
-      "size": 2839822,
+      "size": 2661730,
       "cover": "assets/images/covers/past-exams/112-2_basic.jpg"
     },
     {
-      "key": "past-exams/112-2_fundamentals_36be6859f0.pdf",
-      "name": "112-2_基本護理與護理行政.pdf",
+      "key": "past-exams/112-2_fundamentals_c2f3231b70.pdf",
+      "name": "112-2_基本護理學與護理行政.pdf",
       "term": "112-2",
       "termSort": 112020,
-      "paper": "基本護理與護理行政",
-      "size": 3919430,
+      "paper": "基本護理學與護理行政",
+      "size": 3694080,
       "cover": "assets/images/covers/past-exams/112-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/112-2_medsurg_359e26c7c7.pdf",
+      "key": "past-exams/112-2_medsurg_1df6b90b31.pdf",
       "name": "112-2_內外科護理學.pdf",
       "term": "112-2",
       "termSort": 112020,
       "paper": "內外科護理學",
-      "size": 3269313,
+      "size": 3061095,
       "cover": "assets/images/covers/past-exams/112-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/112-2_obgyn-peds_fff9c61f37.pdf",
-      "name": "112-2_產科與兒科護理學.pdf",
+      "key": "past-exams/112-2_obgyn-peds_71c073dd06.pdf",
+      "name": "112-2_產兒科護理學.pdf",
       "term": "112-2",
       "termSort": 112020,
-      "paper": "產科與兒科護理學",
-      "size": 3226086,
+      "paper": "產兒科護理學",
+      "size": 2992187,
       "cover": "assets/images/covers/past-exams/112-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/112-2_psych-community_7612171a79.pdf",
+      "key": "past-exams/112-2_psych-community_8e933ef2e6.pdf",
       "name": "112-2_精神科與社區衛生護理.pdf",
       "term": "112-2",
       "termSort": 112020,
       "paper": "精神科與社區衛生護理",
-      "size": 3089045,
+      "size": 2872245,
       "cover": "assets/images/covers/past-exams/112-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/112-1_basic_ddecbafa3f.pdf",
+      "key": "past-exams/112-1_basic_c0c87fb294.pdf",
       "name": "112-1_基礎醫學.pdf",
       "term": "112-1",
       "termSort": 112010,
       "paper": "基礎醫學",
-      "size": 2849859,
+      "size": 2699250,
       "cover": "assets/images/covers/past-exams/112-1_basic.jpg"
     },
     {
-      "key": "past-exams/112-1_fundamentals_39c208a320.pdf",
-      "name": "112-1_基本護理與護理行政.pdf",
+      "key": "past-exams/112-1_fundamentals_991076bf58.pdf",
+      "name": "112-1_基本護理學與護理行政.pdf",
       "term": "112-1",
       "termSort": 112010,
-      "paper": "基本護理與護理行政",
-      "size": 3796353,
+      "paper": "基本護理學與護理行政",
+      "size": 3595803,
       "cover": "assets/images/covers/past-exams/112-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/112-1_medsurg_dc6364565d.pdf",
+      "key": "past-exams/112-1_medsurg_e7486fffa4.pdf",
       "name": "112-1_內外科護理學.pdf",
       "term": "112-1",
       "termSort": 112010,
       "paper": "內外科護理學",
-      "size": 3303276,
+      "size": 3099734,
       "cover": "assets/images/covers/past-exams/112-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/112-1_obgyn-peds_91a8391df3.pdf",
-      "name": "112-1_產科與兒科護理學.pdf",
+      "key": "past-exams/112-1_obgyn-peds_f558b18459.pdf",
+      "name": "112-1_產兒科護理學.pdf",
       "term": "112-1",
       "termSort": 112010,
-      "paper": "產科與兒科護理學",
-      "size": 3292017,
+      "paper": "產兒科護理學",
+      "size": 3055836,
       "cover": "assets/images/covers/past-exams/112-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/112-1_psych-community_4dd7e577d5.pdf",
+      "key": "past-exams/112-1_psych-community_40a689e430.pdf",
       "name": "112-1_精神科與社區衛生護理.pdf",
       "term": "112-1",
       "termSort": 112010,
       "paper": "精神科與社區衛生護理",
-      "size": 3009642,
+      "size": 2813754,
       "cover": "assets/images/covers/past-exams/112-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/111-2_basic_56416353b4.pdf",
+      "key": "past-exams/111-2_basic_40dd6367fb.pdf",
       "name": "111-2_基礎醫學.pdf",
       "term": "111-2",
       "termSort": 111020,
       "paper": "基礎醫學",
-      "size": 2868691,
+      "size": 2682967,
       "cover": "assets/images/covers/past-exams/111-2_basic.jpg"
     },
     {
-      "key": "past-exams/111-2_fundamentals_5dd5c8e23b.pdf",
-      "name": "111-2_基本護理與護理行政.pdf",
+      "key": "past-exams/111-2_fundamentals_8409ad6022.pdf",
+      "name": "111-2_基本護理學與護理行政.pdf",
       "term": "111-2",
       "termSort": 111020,
-      "paper": "基本護理與護理行政",
-      "size": 3877637,
+      "paper": "基本護理學與護理行政",
+      "size": 3673969,
       "cover": "assets/images/covers/past-exams/111-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/111-2_medsurg_f01513f23c.pdf",
+      "key": "past-exams/111-2_medsurg_15842dad83.pdf",
       "name": "111-2_內外科護理學.pdf",
       "term": "111-2",
       "termSort": 111020,
       "paper": "內外科護理學",
-      "size": 3234190,
+      "size": 3044291,
       "cover": "assets/images/covers/past-exams/111-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/111-2_obgyn-peds_902e782953.pdf",
-      "name": "111-2_產科與兒科護理學.pdf",
+      "key": "past-exams/111-2_obgyn-peds_c358aeec84.pdf",
+      "name": "111-2_產兒科護理學.pdf",
       "term": "111-2",
       "termSort": 111020,
-      "paper": "產科與兒科護理學",
-      "size": 3133420,
+      "paper": "產兒科護理學",
+      "size": 2939222,
       "cover": "assets/images/covers/past-exams/111-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/111-2_psych-community_858eb2a797.pdf",
+      "key": "past-exams/111-2_psych-community_7c25c43018.pdf",
       "name": "111-2_精神科與社區衛生護理.pdf",
       "term": "111-2",
       "termSort": 111020,
       "paper": "精神科與社區衛生護理",
-      "size": 3100460,
+      "size": 2873118,
       "cover": "assets/images/covers/past-exams/111-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/111-1_basic_2129099e2b.pdf",
+      "key": "past-exams/111-1_basic_45ef03cb50.pdf",
       "name": "111-1_基礎醫學.pdf",
       "term": "111-1",
       "termSort": 111010,
       "paper": "基礎醫學",
-      "size": 2999839,
+      "size": 2803218,
       "cover": "assets/images/covers/past-exams/111-1_basic.jpg"
     },
     {
-      "key": "past-exams/111-1_fundamentals_2aaab7bb6f.pdf",
-      "name": "111-1_基本護理與護理行政.pdf",
+      "key": "past-exams/111-1_fundamentals_eb28f44833.pdf",
+      "name": "111-1_基本護理學與護理行政.pdf",
       "term": "111-1",
       "termSort": 111010,
-      "paper": "基本護理與護理行政",
-      "size": 3870341,
+      "paper": "基本護理學與護理行政",
+      "size": 3639604,
       "cover": "assets/images/covers/past-exams/111-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/111-1_medsurg_a5c3a52348.pdf",
+      "key": "past-exams/111-1_medsurg_d30b5dad34.pdf",
       "name": "111-1_內外科護理學.pdf",
       "term": "111-1",
       "termSort": 111010,
       "paper": "內外科護理學",
-      "size": 3202924,
+      "size": 3006504,
       "cover": "assets/images/covers/past-exams/111-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/111-1_obgyn-peds_35493a19ff.pdf",
-      "name": "111-1_產科與兒科護理學.pdf",
+      "key": "past-exams/111-1_obgyn-peds_99ef79fdd9.pdf",
+      "name": "111-1_產兒科護理學.pdf",
       "term": "111-1",
       "termSort": 111010,
-      "paper": "產科與兒科護理學",
-      "size": 3213206,
+      "paper": "產兒科護理學",
+      "size": 2994602,
       "cover": "assets/images/covers/past-exams/111-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/111-1_psych-community_c95be5db18.pdf",
+      "key": "past-exams/111-1_psych-community_01bd4401e1.pdf",
       "name": "111-1_精神科與社區衛生護理.pdf",
       "term": "111-1",
       "termSort": 111010,
       "paper": "精神科與社區衛生護理",
-      "size": 3089250,
+      "size": 2869081,
       "cover": "assets/images/covers/past-exams/111-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/110-2_basic_6b92584dea.pdf",
+      "key": "past-exams/110-2_basic_4b719da563.pdf",
       "name": "110-2_基礎醫學.pdf",
       "term": "110-2",
       "termSort": 110020,
       "paper": "基礎醫學",
-      "size": 3096483,
+      "size": 2898459,
       "cover": "assets/images/covers/past-exams/110-2_basic.jpg"
     },
     {
-      "key": "past-exams/110-2_fundamentals_0016993bb5.pdf",
-      "name": "110-2_基本護理與護理行政.pdf",
+      "key": "past-exams/110-2_fundamentals_0c64cbb567.pdf",
+      "name": "110-2_基本護理學與護理行政.pdf",
       "term": "110-2",
       "termSort": 110020,
-      "paper": "基本護理與護理行政",
-      "size": 3870091,
+      "paper": "基本護理學與護理行政",
+      "size": 3652730,
       "cover": "assets/images/covers/past-exams/110-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/110-2_medsurg_be629406db.pdf",
+      "key": "past-exams/110-2_medsurg_0406a75051.pdf",
       "name": "110-2_內外科護理學.pdf",
       "term": "110-2",
       "termSort": 110020,
       "paper": "內外科護理學",
-      "size": 3210131,
+      "size": 3009158,
       "cover": "assets/images/covers/past-exams/110-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/110-2_obgyn-peds_5aeb531bfd.pdf",
-      "name": "110-2_產科與兒科護理學.pdf",
+      "key": "past-exams/110-2_obgyn-peds_a07ddcd828.pdf",
+      "name": "110-2_產兒科護理學.pdf",
       "term": "110-2",
       "termSort": 110020,
-      "paper": "產科與兒科護理學",
-      "size": 3282720,
+      "paper": "產兒科護理學",
+      "size": 3050349,
       "cover": "assets/images/covers/past-exams/110-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/110-2_psych-community_c7845848f5.pdf",
+      "key": "past-exams/110-2_psych-community_1afdab9654.pdf",
       "name": "110-2_精神科與社區衛生護理.pdf",
       "term": "110-2",
       "termSort": 110020,
       "paper": "精神科與社區衛生護理",
-      "size": 3033552,
+      "size": 2825453,
       "cover": "assets/images/covers/past-exams/110-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/110-1_basic_21ca17cd7c.pdf",
+      "key": "past-exams/110-1_basic_a10a5ae6cb.pdf",
       "name": "110-1_基礎醫學.pdf",
       "term": "110-1",
       "termSort": 110010,
       "paper": "基礎醫學",
-      "size": 3002082,
+      "size": 2802638,
       "cover": "assets/images/covers/past-exams/110-1_basic.jpg"
     },
     {
-      "key": "past-exams/110-1_fundamentals_01609bf294.pdf",
-      "name": "110-1_基本護理與護理行政.pdf",
+      "key": "past-exams/110-1_fundamentals_01fb84200d.pdf",
+      "name": "110-1_基本護理學與護理行政.pdf",
       "term": "110-1",
       "termSort": 110010,
-      "paper": "基本護理與護理行政",
-      "size": 3872462,
+      "paper": "基本護理學與護理行政",
+      "size": 3636419,
       "cover": "assets/images/covers/past-exams/110-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/110-1_medsurg_050a47ae95.pdf",
+      "key": "past-exams/110-1_medsurg_9bd856ee37.pdf",
       "name": "110-1_內外科護理學.pdf",
       "term": "110-1",
       "termSort": 110010,
       "paper": "內外科護理學",
-      "size": 3204661,
+      "size": 3005624,
       "cover": "assets/images/covers/past-exams/110-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/110-1_obgyn-peds_42187b2f92.pdf",
-      "name": "110-1_產科與兒科護理學.pdf",
+      "key": "past-exams/110-1_obgyn-peds_9e70c5ab7a.pdf",
+      "name": "110-1_產兒科護理學.pdf",
       "term": "110-1",
       "termSort": 110010,
-      "paper": "產科與兒科護理學",
-      "size": 3167823,
+      "paper": "產兒科護理學",
+      "size": 2952368,
       "cover": "assets/images/covers/past-exams/110-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/110-1_psych-community_f58ed0db5f.pdf",
+      "key": "past-exams/110-1_psych-community_5ce2617a75.pdf",
       "name": "110-1_精神科與社區衛生護理.pdf",
       "term": "110-1",
       "termSort": 110010,
       "paper": "精神科與社區衛生護理",
-      "size": 3102881,
+      "size": 2880896,
       "cover": "assets/images/covers/past-exams/110-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/109-2_basic_a7cda6fe70.pdf",
+      "key": "past-exams/109-2_basic_03f97ebb2a.pdf",
       "name": "109-2_基礎醫學.pdf",
       "term": "109-2",
       "termSort": 109020,
       "paper": "基礎醫學",
-      "size": 3038811,
+      "size": 2827523,
       "cover": "assets/images/covers/past-exams/109-2_basic.jpg"
     },
     {
-      "key": "past-exams/109-2_fundamentals_2fd3feb5b6.pdf",
-      "name": "109-2_基本護理與護理行政.pdf",
+      "key": "past-exams/109-2_fundamentals_042c1bafd7.pdf",
+      "name": "109-2_基本護理學與護理行政.pdf",
       "term": "109-2",
       "termSort": 109020,
-      "paper": "基本護理與護理行政",
-      "size": 3936743,
+      "paper": "基本護理學與護理行政",
+      "size": 3696342,
       "cover": "assets/images/covers/past-exams/109-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/109-2_medsurg_62d413be4f.pdf",
+      "key": "past-exams/109-2_medsurg_ed2f5256d9.pdf",
       "name": "109-2_內外科護理學.pdf",
       "term": "109-2",
       "termSort": 109020,
       "paper": "內外科護理學",
-      "size": 3203001,
+      "size": 3014698,
       "cover": "assets/images/covers/past-exams/109-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/109-2_obgyn-peds_7a6825acc2.pdf",
-      "name": "109-2_產科與兒科護理學.pdf",
+      "key": "past-exams/109-2_obgyn-peds_72963acf24.pdf",
+      "name": "109-2_產兒科護理學.pdf",
       "term": "109-2",
       "termSort": 109020,
-      "paper": "產科與兒科護理學",
-      "size": 3254318,
+      "paper": "產兒科護理學",
+      "size": 3029033,
       "cover": "assets/images/covers/past-exams/109-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/109-2_psych-community_bf2ce5249d.pdf",
+      "key": "past-exams/109-2_psych-community_daeba9c47b.pdf",
       "name": "109-2_精神科與社區衛生護理.pdf",
       "term": "109-2",
       "termSort": 109020,
       "paper": "精神科與社區衛生護理",
-      "size": 3062608,
+      "size": 2837168,
       "cover": "assets/images/covers/past-exams/109-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/109-1_basic_e0fac2d0cc.pdf",
+      "key": "past-exams/109-1_basic_141d0fbd6f.pdf",
       "name": "109-1_基礎醫學.pdf",
       "term": "109-1",
       "termSort": 109010,
       "paper": "基礎醫學",
-      "size": 3034398,
+      "size": 2824019,
       "cover": "assets/images/covers/past-exams/109-1_basic.jpg"
     },
     {
-      "key": "past-exams/109-1_fundamentals_9292c74098.pdf",
-      "name": "109-1_基本護理與護理行政.pdf",
+      "key": "past-exams/109-1_fundamentals_2aff6e4af5.pdf",
+      "name": "109-1_基本護理學與護理行政.pdf",
       "term": "109-1",
       "termSort": 109010,
-      "paper": "基本護理與護理行政",
-      "size": 3806958,
+      "paper": "基本護理學與護理行政",
+      "size": 3603637,
       "cover": "assets/images/covers/past-exams/109-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/109-1_medsurg_bfa7174add.pdf",
+      "key": "past-exams/109-1_medsurg_5ca82e3c01.pdf",
       "name": "109-1_內外科護理學.pdf",
       "term": "109-1",
       "termSort": 109010,
       "paper": "內外科護理學",
-      "size": 3262515,
+      "size": 3057095,
       "cover": "assets/images/covers/past-exams/109-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/109-1_obgyn-peds_5338d03573.pdf",
-      "name": "109-1_產科與兒科護理學.pdf",
+      "key": "past-exams/109-1_obgyn-peds_effeacba8b.pdf",
+      "name": "109-1_產兒科護理學.pdf",
       "term": "109-1",
       "termSort": 109010,
-      "paper": "產科與兒科護理學",
-      "size": 3134250,
+      "paper": "產兒科護理學",
+      "size": 2918371,
       "cover": "assets/images/covers/past-exams/109-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/109-1_psych-community_a72bbf6f5a.pdf",
+      "key": "past-exams/109-1_psych-community_2c0d7124a5.pdf",
       "name": "109-1_精神科與社區衛生護理.pdf",
       "term": "109-1",
       "termSort": 109010,
       "paper": "精神科與社區衛生護理",
-      "size": 3096946,
+      "size": 2870954,
       "cover": "assets/images/covers/past-exams/109-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/108-2_basic_f1fd337a2c.pdf",
+      "key": "past-exams/108-2_basic_ba2a4a0397.pdf",
       "name": "108-2_基礎醫學.pdf",
       "term": "108-2",
       "termSort": 108020,
       "paper": "基礎醫學",
-      "size": 3096085,
+      "size": 2904973,
       "cover": "assets/images/covers/past-exams/108-2_basic.jpg"
     },
     {
-      "key": "past-exams/108-2_fundamentals_34bca9f7b4.pdf",
-      "name": "108-2_基本護理與護理行政.pdf",
+      "key": "past-exams/108-2_fundamentals_67a755f339.pdf",
+      "name": "108-2_基本護理學與護理行政.pdf",
       "term": "108-2",
       "termSort": 108020,
-      "paper": "基本護理與護理行政",
-      "size": 3829405,
+      "paper": "基本護理學與護理行政",
+      "size": 3608623,
       "cover": "assets/images/covers/past-exams/108-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/108-2_medsurg_4bd84c3554.pdf",
+      "key": "past-exams/108-2_medsurg_6a45879dd6.pdf",
       "name": "108-2_內外科護理學.pdf",
       "term": "108-2",
       "termSort": 108020,
       "paper": "內外科護理學",
-      "size": 3238833,
+      "size": 3050377,
       "cover": "assets/images/covers/past-exams/108-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/108-2_obgyn-peds_47842edf92.pdf",
-      "name": "108-2_產科與兒科護理學.pdf",
+      "key": "past-exams/108-2_obgyn-peds_45e4984425.pdf",
+      "name": "108-2_產兒科護理學.pdf",
       "term": "108-2",
       "termSort": 108020,
-      "paper": "產科與兒科護理學",
-      "size": 3521415,
+      "paper": "產兒科護理學",
+      "size": 3294549,
       "cover": "assets/images/covers/past-exams/108-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/108-2_psych-community_5fed5ed423.pdf",
+      "key": "past-exams/108-2_psych-community_944a785e44.pdf",
       "name": "108-2_精神科與社區衛生護理.pdf",
       "term": "108-2",
       "termSort": 108020,
       "paper": "精神科與社區衛生護理",
-      "size": 3082948,
+      "size": 2879830,
       "cover": "assets/images/covers/past-exams/108-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/108-1_basic_c9190d5223.pdf",
+      "key": "past-exams/108-1_basic_7cb2188847.pdf",
       "name": "108-1_基礎醫學.pdf",
       "term": "108-1",
       "termSort": 108010,
       "paper": "基礎醫學",
-      "size": 2998913,
+      "size": 2805027,
       "cover": "assets/images/covers/past-exams/108-1_basic.jpg"
     },
     {
-      "key": "past-exams/108-1_fundamentals_fec246a177.pdf",
-      "name": "108-1_基本護理與護理行政.pdf",
+      "key": "past-exams/108-1_fundamentals_42bab4b88c.pdf",
+      "name": "108-1_基本護理學與護理行政.pdf",
       "term": "108-1",
       "termSort": 108010,
-      "paper": "基本護理與護理行政",
-      "size": 3892853,
+      "paper": "基本護理學與護理行政",
+      "size": 3652974,
       "cover": "assets/images/covers/past-exams/108-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/108-1_medsurg_1da2f6fd62.pdf",
+      "key": "past-exams/108-1_medsurg_8b3359d265.pdf",
       "name": "108-1_內外科護理學.pdf",
       "term": "108-1",
       "termSort": 108010,
       "paper": "內外科護理學",
-      "size": 3278459,
+      "size": 3082115,
       "cover": "assets/images/covers/past-exams/108-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/108-1_obgyn-peds_a272e9ef0f.pdf",
-      "name": "108-1_產科與兒科護理學.pdf",
+      "key": "past-exams/108-1_obgyn-peds_65063147fc.pdf",
+      "name": "108-1_產兒科護理學.pdf",
       "term": "108-1",
       "termSort": 108010,
-      "paper": "產科與兒科護理學",
-      "size": 3231543,
+      "paper": "產兒科護理學",
+      "size": 2994941,
       "cover": "assets/images/covers/past-exams/108-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/108-1_psych-community_f2f1f829fb.pdf",
+      "key": "past-exams/108-1_psych-community_c48e341bf3.pdf",
       "name": "108-1_精神科與社區衛生護理.pdf",
       "term": "108-1",
       "termSort": 108010,
       "paper": "精神科與社區衛生護理",
-      "size": 2987584,
+      "size": 2776932,
       "cover": "assets/images/covers/past-exams/108-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/107-2_basic_fb62c487c1.pdf",
+      "key": "past-exams/107-2_basic_057df34046.pdf",
       "name": "107-2_基礎醫學.pdf",
       "term": "107-2",
       "termSort": 107020,
       "paper": "基礎醫學",
-      "size": 3105202,
+      "size": 2900017,
       "cover": "assets/images/covers/past-exams/107-2_basic.jpg"
     },
     {
-      "key": "past-exams/107-2_fundamentals_d6ab094366.pdf",
-      "name": "107-2_基本護理與護理行政.pdf",
+      "key": "past-exams/107-2_fundamentals_4eedbad079.pdf",
+      "name": "107-2_基本護理學與護理行政.pdf",
       "term": "107-2",
       "termSort": 107020,
-      "paper": "基本護理與護理行政",
-      "size": 3875539,
+      "paper": "基本護理學與護理行政",
+      "size": 3638816,
       "cover": "assets/images/covers/past-exams/107-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/107-2_medsurg_7e744b321c.pdf",
+      "key": "past-exams/107-2_medsurg_329bc4a5b0.pdf",
       "name": "107-2_內外科護理學.pdf",
       "term": "107-2",
       "termSort": 107020,
       "paper": "內外科護理學",
-      "size": 3268732,
+      "size": 3060007,
       "cover": "assets/images/covers/past-exams/107-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/107-2_obgyn-peds_4d8c9c3748.pdf",
-      "name": "107-2_產科與兒科護理學.pdf",
+      "key": "past-exams/107-2_obgyn-peds_74015c50a9.pdf",
+      "name": "107-2_產兒科護理學.pdf",
       "term": "107-2",
       "termSort": 107020,
-      "paper": "產科與兒科護理學",
-      "size": 3157455,
+      "paper": "產兒科護理學",
+      "size": 2951072,
       "cover": "assets/images/covers/past-exams/107-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/107-2_psych-community_a18660625f.pdf",
+      "key": "past-exams/107-2_psych-community_175acc00f4.pdf",
       "name": "107-2_精神科與社區衛生護理.pdf",
       "term": "107-2",
       "termSort": 107020,
       "paper": "精神科與社區衛生護理",
-      "size": 3056332,
+      "size": 2843313,
       "cover": "assets/images/covers/past-exams/107-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/107-1_basic_7f6edc42a6.pdf",
+      "key": "past-exams/107-1_basic_0c909afbc3.pdf",
       "name": "107-1_基礎醫學.pdf",
       "term": "107-1",
       "termSort": 107010,
       "paper": "基礎醫學",
-      "size": 3069495,
+      "size": 2871064,
       "cover": "assets/images/covers/past-exams/107-1_basic.jpg"
     },
     {
-      "key": "past-exams/107-1_fundamentals_130a74b075.pdf",
-      "name": "107-1_基本護理與護理行政.pdf",
+      "key": "past-exams/107-1_fundamentals_c8a2242e5f.pdf",
+      "name": "107-1_基本護理學與護理行政.pdf",
       "term": "107-1",
       "termSort": 107010,
-      "paper": "基本護理與護理行政",
-      "size": 3746601,
+      "paper": "基本護理學與護理行政",
+      "size": 3539928,
       "cover": "assets/images/covers/past-exams/107-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/107-1_medsurg_1d6a5469d3.pdf",
+      "key": "past-exams/107-1_medsurg_a048f4ac35.pdf",
       "name": "107-1_內外科護理學.pdf",
       "term": "107-1",
       "termSort": 107010,
       "paper": "內外科護理學",
-      "size": 3362210,
+      "size": 3142623,
       "cover": "assets/images/covers/past-exams/107-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/107-1_obgyn-peds_7ac860b33d.pdf",
-      "name": "107-1_產科與兒科護理學.pdf",
+      "key": "past-exams/107-1_obgyn-peds_397efd128d.pdf",
+      "name": "107-1_產兒科護理學.pdf",
       "term": "107-1",
       "termSort": 107010,
-      "paper": "產科與兒科護理學",
-      "size": 3163848,
+      "paper": "產兒科護理學",
+      "size": 2946561,
       "cover": "assets/images/covers/past-exams/107-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/107-1_psych-community_c3eebfde6c.pdf",
+      "key": "past-exams/107-1_psych-community_a560680f52.pdf",
       "name": "107-1_精神科與社區衛生護理.pdf",
       "term": "107-1",
       "termSort": 107010,
       "paper": "精神科與社區衛生護理",
-      "size": 2959850,
+      "size": 2774888,
       "cover": "assets/images/covers/past-exams/107-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/106-2makeup_basic_f8a5fe76a6.pdf",
+      "key": "past-exams/106-2makeup_basic_c39230cd1f.pdf",
       "name": "106-2補考_基礎醫學.pdf",
       "term": "106-2補考",
       "termSort": 106021,
       "paper": "基礎醫學",
-      "size": 2999069,
+      "size": 2794687,
       "cover": "assets/images/covers/past-exams/106-2makeup_basic.jpg"
     },
     {
-      "key": "past-exams/106-2makeup_fundamentals_2b829e1cd1.pdf",
-      "name": "106-2補考_基本護理與護理行政.pdf",
+      "key": "past-exams/106-2makeup_fundamentals_d0293615c7.pdf",
+      "name": "106-2補考_基本護理學與護理行政.pdf",
       "term": "106-2補考",
       "termSort": 106021,
-      "paper": "基本護理與護理行政",
-      "size": 3836132,
+      "paper": "基本護理學與護理行政",
+      "size": 3607668,
       "cover": "assets/images/covers/past-exams/106-2makeup_fundamentals.jpg"
     },
     {
-      "key": "past-exams/106-2makeup_medsurg_6cab5d39e0.pdf",
+      "key": "past-exams/106-2makeup_medsurg_8d46c33e91.pdf",
       "name": "106-2補考_內外科護理學.pdf",
       "term": "106-2補考",
       "termSort": 106021,
       "paper": "內外科護理學",
-      "size": 3423767,
+      "size": 3203300,
       "cover": "assets/images/covers/past-exams/106-2makeup_medsurg.jpg"
     },
     {
-      "key": "past-exams/106-2makeup_obgyn-peds_88eb4ebbba.pdf",
-      "name": "106-2補考_產科與兒科護理學.pdf",
+      "key": "past-exams/106-2makeup_obgyn-peds_a7909f1849.pdf",
+      "name": "106-2補考_產兒科護理學.pdf",
       "term": "106-2補考",
       "termSort": 106021,
-      "paper": "產科與兒科護理學",
-      "size": 3223865,
+      "paper": "產兒科護理學",
+      "size": 2999695,
       "cover": "assets/images/covers/past-exams/106-2makeup_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/106-2makeup_psych-community_31f98e51e7.pdf",
+      "key": "past-exams/106-2makeup_psych-community_64c60e90f3.pdf",
       "name": "106-2補考_精神科與社區衛生護理.pdf",
       "term": "106-2補考",
       "termSort": 106021,
       "paper": "精神科與社區衛生護理",
-      "size": 3100415,
+      "size": 2870011,
       "cover": "assets/images/covers/past-exams/106-2makeup_psych-community.jpg"
     },
     {
-      "key": "past-exams/106-2_basic_c99f54c899.pdf",
+      "key": "past-exams/106-2_basic_d824d37d1a.pdf",
       "name": "106-2_基礎醫學.pdf",
       "term": "106-2",
       "termSort": 106020,
       "paper": "基礎醫學",
-      "size": 2992698,
+      "size": 2798799,
       "cover": "assets/images/covers/past-exams/106-2_basic.jpg"
     },
     {
-      "key": "past-exams/106-2_fundamentals_55ea54a92e.pdf",
-      "name": "106-2_基本護理與護理行政.pdf",
+      "key": "past-exams/106-2_fundamentals_9136eaf0d5.pdf",
+      "name": "106-2_基本護理學與護理行政.pdf",
       "term": "106-2",
       "termSort": 106020,
-      "paper": "基本護理與護理行政",
-      "size": 3791441,
+      "paper": "基本護理學與護理行政",
+      "size": 3573076,
       "cover": "assets/images/covers/past-exams/106-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/106-2_medsurg_48c1156b56.pdf",
+      "key": "past-exams/106-2_medsurg_d00bff75b1.pdf",
       "name": "106-2_內外科護理學.pdf",
       "term": "106-2",
       "termSort": 106020,
       "paper": "內外科護理學",
-      "size": 3240764,
+      "size": 3043199,
       "cover": "assets/images/covers/past-exams/106-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/106-2_obgyn-peds_57eaaf3d18.pdf",
-      "name": "106-2_產科與兒科護理學.pdf",
+      "key": "past-exams/106-2_obgyn-peds_7068c91481.pdf",
+      "name": "106-2_產兒科護理學.pdf",
       "term": "106-2",
       "termSort": 106020,
-      "paper": "產科與兒科護理學",
-      "size": 3155518,
+      "paper": "產兒科護理學",
+      "size": 2947034,
       "cover": "assets/images/covers/past-exams/106-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/106-2_psych-community_e127c2b9a0.pdf",
+      "key": "past-exams/106-2_psych-community_07aed508d2.pdf",
       "name": "106-2_精神科與社區衛生護理.pdf",
       "term": "106-2",
       "termSort": 106020,
       "paper": "精神科與社區衛生護理",
-      "size": 3013194,
+      "size": 2809016,
       "cover": "assets/images/covers/past-exams/106-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/106-1_basic_7e1e1c04aa.pdf",
+      "key": "past-exams/106-1_basic_017ac29985.pdf",
       "name": "106-1_基礎醫學.pdf",
       "term": "106-1",
       "termSort": 106010,
       "paper": "基礎醫學",
-      "size": 3076007,
+      "size": 2877535,
       "cover": "assets/images/covers/past-exams/106-1_basic.jpg"
     },
     {
-      "key": "past-exams/106-1_fundamentals_7a3bfeb1ee.pdf",
-      "name": "106-1_基本護理與護理行政.pdf",
+      "key": "past-exams/106-1_fundamentals_1b7c1b8b5b.pdf",
+      "name": "106-1_基本護理學與護理行政.pdf",
       "term": "106-1",
       "termSort": 106010,
-      "paper": "基本護理與護理行政",
-      "size": 3878477,
+      "paper": "基本護理學與護理行政",
+      "size": 3647285,
       "cover": "assets/images/covers/past-exams/106-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/106-1_medsurg_9243697ca2.pdf",
+      "key": "past-exams/106-1_medsurg_4e15d7ac4a.pdf",
       "name": "106-1_內外科護理學.pdf",
       "term": "106-1",
       "termSort": 106010,
       "paper": "內外科護理學",
-      "size": 3383950,
+      "size": 3162965,
       "cover": "assets/images/covers/past-exams/106-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/106-1_obgyn-peds_de6ddc417b.pdf",
-      "name": "106-1_產科與兒科護理學.pdf",
+      "key": "past-exams/106-1_obgyn-peds_eb29e0e85e.pdf",
+      "name": "106-1_產兒科護理學.pdf",
       "term": "106-1",
       "termSort": 106010,
-      "paper": "產科與兒科護理學",
-      "size": 3191870,
+      "paper": "產兒科護理學",
+      "size": 2970242,
       "cover": "assets/images/covers/past-exams/106-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/106-1_psych-community_a2cbefaee0.pdf",
+      "key": "past-exams/106-1_psych-community_0e33edfe5c.pdf",
       "name": "106-1_精神科與社區衛生護理.pdf",
       "term": "106-1",
       "termSort": 106010,
       "paper": "精神科與社區衛生護理",
-      "size": 3003869,
+      "size": 2790074,
       "cover": "assets/images/covers/past-exams/106-1_psych-community.jpg"
     },
     {
-      "key": "past-exams/105-2_basic_ad286ba7c9.pdf",
+      "key": "past-exams/105-2_basic_a8098a110b.pdf",
       "name": "105-2_基礎醫學.pdf",
       "term": "105-2",
       "termSort": 105020,
       "paper": "基礎醫學",
-      "size": 3094349,
+      "size": 2903556,
       "cover": "assets/images/covers/past-exams/105-2_basic.jpg"
     },
     {
-      "key": "past-exams/105-2_fundamentals_ffdb7cbccd.pdf",
-      "name": "105-2_基本護理與護理行政.pdf",
+      "key": "past-exams/105-2_fundamentals_af3979b191.pdf",
+      "name": "105-2_基本護理學與護理行政.pdf",
       "term": "105-2",
       "termSort": 105020,
-      "paper": "基本護理與護理行政",
-      "size": 3833163,
+      "paper": "基本護理學與護理行政",
+      "size": 3600668,
       "cover": "assets/images/covers/past-exams/105-2_fundamentals.jpg"
     },
     {
-      "key": "past-exams/105-2_medsurg_8c905d9a94.pdf",
+      "key": "past-exams/105-2_medsurg_40f63a3b8a.pdf",
       "name": "105-2_內外科護理學.pdf",
       "term": "105-2",
       "termSort": 105020,
       "paper": "內外科護理學",
-      "size": 3250033,
+      "size": 3051381,
       "cover": "assets/images/covers/past-exams/105-2_medsurg.jpg"
     },
     {
-      "key": "past-exams/105-2_obgyn-peds_f6815e1bd2.pdf",
-      "name": "105-2_產科與兒科護理學.pdf",
+      "key": "past-exams/105-2_obgyn-peds_5585553b76.pdf",
+      "name": "105-2_產兒科護理學.pdf",
       "term": "105-2",
       "termSort": 105020,
-      "paper": "產科與兒科護理學",
-      "size": 3271957,
+      "paper": "產兒科護理學",
+      "size": 3039147,
       "cover": "assets/images/covers/past-exams/105-2_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/105-2_psych-community_35681bad70.pdf",
+      "key": "past-exams/105-2_psych-community_c868f6a4aa.pdf",
       "name": "105-2_精神科與社區衛生護理.pdf",
       "term": "105-2",
       "termSort": 105020,
       "paper": "精神科與社區衛生護理",
-      "size": 3111933,
+      "size": 2888210,
       "cover": "assets/images/covers/past-exams/105-2_psych-community.jpg"
     },
     {
-      "key": "past-exams/105-1_basic_7c8b366d9d.pdf",
+      "key": "past-exams/105-1_basic_2d8c6b543b.pdf",
       "name": "105-1_基礎醫學.pdf",
       "term": "105-1",
       "termSort": 105010,
       "paper": "基礎醫學",
-      "size": 2968273,
+      "size": 2786255,
       "cover": "assets/images/covers/past-exams/105-1_basic.jpg"
     },
     {
-      "key": "past-exams/105-1_fundamentals_60b16e260d.pdf",
-      "name": "105-1_基本護理與護理行政.pdf",
+      "key": "past-exams/105-1_fundamentals_50e1adbe74.pdf",
+      "name": "105-1_基本護理學與護理行政.pdf",
       "term": "105-1",
       "termSort": 105010,
-      "paper": "基本護理與護理行政",
-      "size": 3901483,
+      "paper": "基本護理學與護理行政",
+      "size": 3658523,
       "cover": "assets/images/covers/past-exams/105-1_fundamentals.jpg"
     },
     {
-      "key": "past-exams/105-1_medsurg_ce0e97a5c1.pdf",
+      "key": "past-exams/105-1_medsurg_92a9c38119.pdf",
       "name": "105-1_內外科護理學.pdf",
       "term": "105-1",
       "termSort": 105010,
       "paper": "內外科護理學",
-      "size": 3260190,
+      "size": 3063352,
       "cover": "assets/images/covers/past-exams/105-1_medsurg.jpg"
     },
     {
-      "key": "past-exams/105-1_obgyn-peds_051fc5250c.pdf",
-      "name": "105-1_產科與兒科護理學.pdf",
+      "key": "past-exams/105-1_obgyn-peds_1930380945.pdf",
+      "name": "105-1_產兒科護理學.pdf",
       "term": "105-1",
       "termSort": 105010,
-      "paper": "產科與兒科護理學",
-      "size": 3190581,
+      "paper": "產兒科護理學",
+      "size": 2968504,
       "cover": "assets/images/covers/past-exams/105-1_obgyn-peds.jpg"
     },
     {
-      "key": "past-exams/105-1_psych-community_108f13ccb5.pdf",
+      "key": "past-exams/105-1_psych-community_3fff959806.pdf",
       "name": "105-1_精神科與社區衛生護理.pdf",
       "term": "105-1",
       "termSort": 105010,
       "paper": "精神科與社區衛生護理",
-      "size": 3114419,
+      "size": 2882559,
       "cover": "assets/images/covers/past-exams/105-1_psych-community.jpg"
     }
   ]

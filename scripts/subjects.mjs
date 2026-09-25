@@ -47,9 +47,9 @@ export const TYPE_SLUG = { 詳解: "explanation", 題本: "workbook" };
  */
 export const PAPER_SLUG = {
   基礎醫學: "basic",
-  基本護理與護理行政: "fundamentals",
+  基本護理學與護理行政: "fundamentals",
   內外科護理學: "medsurg",
-  產科與兒科護理學: "obgyn-peds",
+  產兒科護理學: "obgyn-peds",
   精神科與社區衛生護理: "psych-community",
 };
 
