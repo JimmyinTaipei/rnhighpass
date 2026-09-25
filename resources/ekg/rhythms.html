@@ -44,7 +44,9 @@
         <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
         <a class="tab" href="/resources/ekg/rhythms.html" aria-current="page">心律不整</a>
         <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
-        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血與梗塞</a>
+        <a class="tab" href="/resources/ekg/electrolytes.html">肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/acls.html">ACLS 流程</a>
       </nav>
 
       <div class="guide-layout">
@@ -104,7 +106,7 @@
               <figure class="ekg-strip" data-rhythm="sinus-brady"><figcaption>竇性心搏過慢，約 50 次/分。</figcaption></figure>
               <ul class="ekg-keys">
                 <li>常見原因：運動員、睡眠、迷走神經刺激（嘔吐、用力解便）、β-blocker、毛地黃、低體溫、甲狀腺功能低下、顱內壓上升。</li>
-                <li><b>護理重點</b>：無症狀不需處理；有頭暈、低血壓、意識改變等症狀時通知醫師，依醫囑給 Atropine，必要時使用經皮或暫時性節律器。</li>
+                <li><b>護理重點</b>：無症狀不需處理；有頭暈、低血壓、意識改變等症狀時通知醫師，依醫囑給 Atropine（2025 版：每次 1 mg、每 3–5 分鐘、總量最多 3 mg），無效時使用經皮節律器或 Dopamine／Epinephrine 滴注。流程見「<a href="/resources/ekg/acls.html#brady">ACLS 流程 → 心搏過緩</a>」。</li>
               </ul>
               <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=sinus-brady">▶ 在 3D 心臟看</a>
             </div>
@@ -254,30 +256,38 @@
               <figure class="ekg-strip" data-rhythm="psvt"><figcaption>PSVT：規則、窄 QRS、約 180 次/分，看不到 P 波（藏在 QRS 裡）。</figcaption></figure>
               <ul class="ekg-keys">
                 <li><b>突然發作、突然停止</b>（陣發性），心跳 <b>150–250 次/分</b>、絕對規則、窄 QRS、P 波通常看不到或是倒 P。</li>
-                <li>機轉是 AV node 附近的折返迴圈（AVNRT 最常見，其次是經由旁路的 AVRT）。</li>
+                <li>機轉是 AV node 附近的折返迴圈：<b>AVNRT</b>（最常見，迴圈在 AV node 裡）或 <b>AVRT</b>（迴圈經過心房與心室之間的旁路，例如 WPW）。見下方圖解。</li>
               </ul>
               <div class="note">
                 <p class="note-title">護理重點</p>
                 <ul>
                   <li>血行動力學穩定時先試<b>迷走神經刺激</b>：Valsalva 操作（閉氣用力）、頸動脈竇按摩（只按單側、先確認沒有頸動脈雜音，老年人慎用）。</li>
-                  <li>無效時依醫囑給 <b>Adenosine</b>：由靠近心臟的靜脈快速推注，<b>立刻接生理食鹽水沖管</b>（半衰期只有幾秒）；事先告知病人可能會有短暫胸悶、心跳停一下的感覺。</li>
-                  <li>不穩定（低血壓、意識改變、胸痛）→ 同步電擊整流。</li>
+                  <li>無效時依醫囑給 <b>Adenosine</b>：第一劑 6 mg、需要時第二劑 12 mg，由靠近心臟的靜脈快速推注，<b>立刻接生理食鹽水沖管</b>（半衰期只有幾秒）；事先告知病人可能會有短暫胸悶、心跳停一下的感覺。</li>
+                  <li>不穩定（低血壓、意識改變、休克、缺血性胸痛、急性心衰竭）→ 同步電擊整流。完整流程見「<a href="/resources/ekg/acls.html#tachy">ACLS 流程 → 心搏過速</a>」。</li>
                 </ul>
               </div>
-              <details class="ekg-advanced">
-                <summary>進階：AVNRT 與 AVRT</summary>
-                <p>折返要成立需要三個條件：① 兩條傳導路徑形成迴圈；② 兩條路的不反應期不同（快路徑傳得快但恢復慢，慢路徑傳得慢但恢復快）；③ 一個早期收縮剛好在快路徑還沒恢復時進來。</p>
-                <table class="guide-table">
-                  <thead><tr><th>類型</th><th>迴圈</th><th>心電圖</th></tr></thead>
-                  <tbody>
-                    <tr><th>典型 AVNRT（slow–fast）</th><td>AV node 內，慢路徑下傳、快路徑上傳；多由 PAC 誘發</td><td>short RP：倒 P 藏在 QRS 裡或緊接在後（V1 假 r′、II 假 S）</td></tr>
-                    <tr><th>非典型 AVNRT（fast–slow）</th><td>方向相反；多由 PVC 誘發</td><td>long RP：倒 P 離前一個 QRS 較遠</td></tr>
-                    <tr><th>順向 AVRT（orthodromic）</th><td>經 AV node 下傳、經旁路上傳</td><td>窄 QRS，倒 P 在 QRS 後（RP &gt; 2 小格）</td></tr>
-                    <tr><th>逆向 AVRT（antidromic）</th><td>經旁路下傳、經 AV node 上傳</td><td>寬 QRS（像 delta wave），很難和 VT 區分</td></tr>
-                  </tbody>
-                </table>
-                <p>2:1 心房撲動和 PSVT 都可能是「規則、窄、150 左右」：心房撲動在下方導程常看得到正向的 F 波，PSVT 則多半沒有 P 波或是倒 P。</p>
-              </details>
+              <h4 id="avnrt-avrt">圖解：AVNRT 與 AVRT</h4>
+              <p>折返（reentry）要成立需要三個條件：① 兩條傳導路徑接成一個迴圈；② 兩條路的不反應期不同（<b>快路徑傳得快、但恢復得慢；慢路徑傳得慢、但恢復得快</b>）；③ 一個早期收縮剛好在快路徑還沒恢復時進來，只好先走慢路徑，走完時快路徑已經恢復，電流就從快路徑繞回去，一圈又一圈。紅點就是在迴圈裡繞的電流：</p>
+              <div class="ekg-diagram-row">
+                <figure class="ekg-diagram" data-diagram="circuit-avnrt"><figcaption></figcaption></figure>
+                <figure class="ekg-diagram" data-diagram="circuit-avnrt-atypical"><figcaption></figcaption></figure>
+                <figure class="ekg-diagram" data-diagram="circuit-avrt-ortho"><figcaption></figcaption></figure>
+                <figure class="ekg-diagram" data-diagram="circuit-avrt-anti"><figcaption></figcaption></figure>
+              </div>
+              <p>節律條上的差別在<b>逆傳 P 波的位置</b>與 <b>QRS 寬度</b>：</p>
+              <figure class="ekg-strip" data-rhythm="avnrt" data-lead="II V1" data-seconds="3"><figcaption>典型 AVNRT：逆傳 P 緊貼在 QRS 尾巴 —— Lead II 看起來像多了一個小 S 波（假 S），V1 像多了一個小 r′（假 r′）。</figcaption></figure>
+              <figure class="ekg-strip" data-rhythm="avrt-ortho" data-lead="II" data-seconds="3"><figcaption>順向 AVRT：窄 QRS，倒 P 落在 ST 段上，離 QRS 超過 2 小格（RP 較長）。</figcaption></figure>
+              <figure class="ekg-strip" data-rhythm="avrt-anti" data-lead="II" data-seconds="3"><figcaption>逆向 AVRT：心室經旁路被完全預激，又寬又快，外觀和 VT 幾乎一樣。</figcaption></figure>
+              <table class="guide-table">
+                <thead><tr><th>類型</th><th>迴圈</th><th>心電圖</th></tr></thead>
+                <tbody>
+                  <tr><th>典型 AVNRT（slow–fast）<br><small>最常見</small></th><td>AV node 內，慢路徑下傳、快路徑上傳；多由 PAC 誘發</td><td>窄 QRS；short RP：倒 P 藏在 QRS 裡或緊接在後（V1 假 r′、II 假 S）</td></tr>
+                  <tr><th>非典型 AVNRT（fast–slow）</th><td>方向相反；多由 PVC 誘發</td><td>窄 QRS；long RP：倒 P 離前一個 QRS 較遠</td></tr>
+                  <tr><th>順向 AVRT（orthodromic）</th><td>經 AV node 下傳、經旁路上傳</td><td>窄 QRS；倒 P 在 ST 段（RP &gt; 2 小格）</td></tr>
+                  <tr><th>逆向 AVRT（antidromic）</th><td>經旁路下傳、經 AV node 上傳</td><td><b>寬 QRS</b>，很難和 VT 區分</td></tr>
+                </tbody>
+              </table>
+              <p>2:1 心房撲動和 PSVT 都可能是「規則、窄、150 左右」：心房撲動在下方導程常看得到正向的 F 波，PSVT 則多半沒有 P 波或是倒 P。平常的 WPW 心電圖（delta wave）見「<a href="/resources/ekg/blocks.html#wpw">傳導阻滯 → WPW</a>」。</p>
             </div>
           </section>
 
@@ -303,7 +313,7 @@
               <div class="note">
                 <p class="note-title">護理重點：先摸脈搏</p>
                 <ul>
-                  <li><b>有脈搏、穩定</b>：依醫囑給抗心律不整藥（如 Amiodarone），持續監測。</li>
+                  <li><b>有脈搏、穩定</b>：做 12 導程、依醫囑給抗心律不整藥（Amiodarone、Procainamide 或 Sotalol）；只有<b>規則、單形性</b>的寬 QRS 才可以試 Adenosine。</li>
                   <li><b>有脈搏、不穩定</b>：同步電擊整流。</li>
                   <li><b>無脈搏</b>：立即 CPR、<b>去顫電擊</b>（與 VF 相同處理）。</li>
                 </ul>
@@ -328,7 +338,7 @@
               <ul class="ekg-keys">
                 <li>多形性 VT 的一種，QRS 繞著基線<b>扭轉</b>。發生在 <b>QT 延長</b>的病人，常由落在 T 波上的 PVC（R on T）誘發。</li>
                 <li>QT 延長原因：低血鉀、低血鎂、低血鈣、藥物（如部分抗心律不整藥、抗精神病藥、macrolide 類抗生素）、先天性長 QT 症候群。</li>
-                <li><b>護理重點</b>：依醫囑靜脈給<b>硫酸鎂</b>，停用延長 QT 的藥物、矯正電解質；無脈搏時去顫電擊。</li>
+                <li><b>護理重點</b>：多形性 VT 一律當成<b>不穩定</b> —— 立即以高能量<b>非同步電擊</b>（去顫）。QT 延長造成的 TdP 可依醫囑給<b>硫酸鎂</b>（QT 正常的多形性 VT 則不建議），並停用延長 QT 的藥物、矯正低血鉀／低血鎂。</li>
               </ul>
             </div>
 
@@ -359,6 +369,7 @@
                 <tr><th>不可電擊</th><td>Asystole、PEA</td><td>CPR ＋ Epinephrine ＋ 找可逆原因</td></tr>
               </tbody>
             </table>
+            <p>完整的急救流程（藥物劑量、電擊能量）見「<a href="/resources/ekg/acls.html">ACLS 流程</a>」（依 2025 AHA 指引重繪）。</p>
           </section>
 
           <nav class="guide-pager" aria-label="上一篇與下一篇">
@@ -378,5 +389,6 @@
 
   <script src="/assets/js/main.js" defer></script>
   <script type="module" src="/assets/js/ekg/strip.js"></script>
+  <script type="module" src="/assets/js/ekg/diagrams.js"></script>
 </body>
 </html>

@@ -605,3 +605,288 @@ text.ekg-mark-alert {
     font-size: 0.9rem;
   }
 }
+
+/* ---------- 自繪示意圖（diagrams.js） ---------- */
+.ekg-diagram {
+  margin: 16px 0 20px;
+}
+
+.ekg-diagram figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.ekg-dsvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+}
+
+.ekg-diagram-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .ekg-diagram-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ekg-diagram-row .ekg-diagram {
+    margin: 0;
+  }
+}
+
+.cd-label { font-size: 13px; font-weight: bold; fill: var(--color-strong); }
+.cd-title { font-size: 14px; font-weight: bold; fill: var(--color-deep); }
+.cd-small { font-size: 11px; fill: #5a6070; }
+.cd-tiny { font-size: 9px; fill: #7b8494; }
+.cd-atrium { fill: #fdf0ee; stroke: #ecc7c0; }
+.cd-ventricle { fill: #fbe4e0; stroke: #e7b5ac; }
+.cd-ring { stroke: #9aa3b2; stroke-width: 4; stroke-dasharray: 2 5; stroke-linecap: round; }
+.cd-path { fill: none; stroke: #c9ae4a; stroke-width: 5; stroke-linecap: round; }
+.cd-kent { stroke: #e0a35a; }
+.cd-node { fill: #c9ae4a; }
+.cd-loop { fill: none; stroke: #d64545; stroke-width: 2.4; stroke-dasharray: 7 5; }
+.cd-arrow { fill: #d64545; }
+.cd-exit { fill: none; stroke: #7b8494; stroke-width: 1.8; stroke-dasharray: 3 3; }
+.cd-dot { fill: #fff27a; stroke: #d64545; stroke-width: 2; }
+
+.hx-lead,
+.hx-pos { fill: none; stroke: #2c5a96; stroke-width: 2.4; }
+.hx-neg { fill: none; stroke: #9aa3b2; stroke-width: 1.4; stroke-dasharray: 4 4; }
+.hx-name { font-size: 13px; font-weight: bold; fill: #2c5a96; }
+.hx-elec { fill: #fff; stroke: #2c5a96; stroke-width: 2; }
+.hx-normal { fill: rgba(101, 146, 205, 0.16); }
+.hx-vector { stroke: #d64545; stroke-width: 3.4; }
+.hx-vtext { fill: #d64545; }
+
+.ekg-diagram[data-diagram="chest-leads"] .ekg-dsvg {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.ch-body { fill: #fbeee6; stroke: #d9bfae; stroke-width: 1.5; }
+.ch-bone { fill: none; stroke: #c9b2a2; stroke-width: 5; stroke-linecap: round; }
+.ch-sternum { fill: #efdcd0; stroke: #d0b6a5; }
+.ch-rib { fill: none; stroke: #e2cbbb; stroke-width: 2; }
+.ch-guide { stroke: #9aa3b2; stroke-width: 1; stroke-dasharray: 3 4; }
+.ch-dot { stroke: #444; stroke-width: 1.6; }
+.ch-name { font-size: 12px; font-weight: bold; fill: var(--color-strong); }
+
+.ekg-scheme {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+
+.ekg-scheme button,
+.terr-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.ekg-scheme button[aria-pressed="true"] {
+  background: var(--color-deep);
+  border-color: var(--color-deep);
+  color: #fff;
+}
+
+/* 冠狀動脈分區 */
+.terr-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+}
+
+.terr-wrap .ekg-dsvg {
+  border: 0;
+}
+
+@media (min-width: 720px) {
+  .terr-wrap {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
+.terr-heart { fill: #fbe4e0; stroke: #e2b3aa; stroke-width: 2; }
+.terr-aorta { fill: none; stroke: #efcfc8; stroke-width: 14; stroke-linecap: round; }
+.terr-artery { fill: none; stroke-width: 6; stroke-linecap: round; cursor: pointer; transition: opacity 0.2s, stroke-width 0.2s; }
+.terr-aname { pointer-events: none; }
+.terr-cell { cursor: pointer; transition: opacity 0.2s; }
+.terr-cell rect { stroke: #fff; stroke-width: 2; }
+.terr-lead { font-size: 16px; font-weight: bold; fill: #fff; pointer-events: none; }
+.terr-zone { font-size: 11px; fill: rgba(255, 255, 255, 0.9); pointer-events: none; }
+.terr-cell:focus-visible { outline: none; }
+.terr-cell:focus-visible rect { stroke: var(--color-strong); stroke-width: 3; }
+
+.has-sel .terr-cell:not(.is-on):not(.is-recip),
+.has-sel .terr-artery:not(.is-on) {
+  opacity: 0.22;
+}
+
+.terr-cell.is-recip rect {
+  stroke: var(--color-strong);
+  stroke-width: 2.5;
+  stroke-dasharray: 5 4;
+}
+
+.terr-artery.is-on {
+  stroke-width: 9;
+}
+
+.terr-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 8px;
+}
+
+.terr-btn {
+  border-color: var(--zc, var(--color-border));
+}
+
+.terr-btn[aria-pressed="true"] {
+  background: var(--zc, var(--color-deep));
+  border-color: var(--zc, var(--color-deep));
+  color: #fff;
+}
+
+.terr-info {
+  margin: 0;
+  min-height: 4.8em;
+  font-size: 0.92rem;
+}
+
+.terr-recip-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+/* ---------- ACLS 流程圖 ---------- */
+.flow {
+  margin: 16px 0 24px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-card);
+}
+
+.flow-title {
+  margin: 0 0 10px;
+  font-weight: bold;
+  color: var(--color-deep);
+}
+
+.flow-step {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 14px;
+  max-width: 560px;
+  border: 1.5px solid var(--color-mid);
+  border-radius: 8px;
+  background: #f7f9fd;
+  font-size: 0.92rem;
+}
+
+.flow-step + .flow-step,
+.flow-step + .flow-split,
+.flow-split + .flow-step {
+  margin-top: 26px;
+}
+
+.flow-step + .flow-step::before,
+.flow-split + .flow-step::before,
+.flow-step + .flow-split::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -24px;
+  height: 20px;
+  border-left: 2px solid var(--color-mid);
+}
+
+.flow-split {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .flow-split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.flow-split .flow-step + .flow-step {
+  margin-top: 14px;
+}
+
+.flow-q {
+  border-color: #e0a35a;
+  background: #fff7ec;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flow-go {
+  border-color: #d64545;
+  background: #fdf0ee;
+}
+
+.flow-ok {
+  border-color: #3a9a6a;
+  background: #eef8f2;
+}
+
+.flow-branch {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--color-text-light);
+}
+
+.flow-step ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+}
+
+.flow-step li {
+  margin-bottom: 2px;
+}
+
+.flow-doses {
+  margin-top: 12px;
+  font-size: 0.88rem;
+}
+
+/* 手機上多欄表格（例如 ACS 分類）縮小留白，避免撐出橫向捲動 */
+@media (max-width: 520px) {
+  .guide-article .guide-table th,
+  .guide-article .guide-table td {
+    padding: 6px 6px;
+    font-size: 0.84rem;
+    overflow-wrap: anywhere;
+  }
+}

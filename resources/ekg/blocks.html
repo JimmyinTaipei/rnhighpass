@@ -44,7 +44,9 @@
         <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
         <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
         <a class="tab" href="/resources/ekg/blocks.html" aria-current="page">傳導阻滯</a>
-        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血與梗塞</a>
+        <a class="tab" href="/resources/ekg/electrolytes.html">肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/acls.html">ACLS 流程</a>
       </nav>
 
       <div class="guide-layout">
@@ -55,6 +57,7 @@
             <li><a href="#avb1">一度房室傳導阻滯</a></li>
             <li><a href="#avb2">二度房室傳導阻滯</a></li>
             <li><a href="#avb3">三度（完全）房室傳導阻滯</a></li>
+            <li><a href="#sa-vs-av">SA block 與 AV block 比較</a></li>
             <li><a href="#bbb">束支傳導阻滯 RBBB、LBBB</a></li>
             <li><a href="#hemiblock">分支阻滯（半阻滯）</a></li>
             <li><a href="#preexcitation">預激症候群：WPW 與 LGL</a></li>
@@ -158,6 +161,33 @@
                 <tr><th>三度</th><td>毫無規律（房室解離）</td><td>P 全部傳不下去</td><td>AV node 或以下</td><td>高</td></tr>
               </tbody>
             </table>
+          </section>
+
+          <section id="sa-vs-av">
+            <h3>SA block 與 AV block 比較</h3>
+            <p>兩者的「度數」定義一樣（一度＝變慢、二度＝偶爾傳不過去、三度＝完全傳不過去），差別在<b>卡在哪一段</b>，所以消失的東西不一樣：</p>
+            <ul class="ekg-keys">
+              <li><b>SA block</b>：電流卡在 SA node 與心房之間 → 心房根本沒有被活化 → <b>整組 P-QRS-T 一起消失</b>。要看 <b>PP 間隔</b>。</li>
+              <li><b>AV block</b>：心房已經去極化（P 波在），電流卡在 AV node 或以下 → <b>P 還在、後面的 QRS 不見</b>。要看 <b>PR 間隔</b>。</li>
+            </ul>
+            <table class="guide-table">
+              <thead><tr><th>度數</th><th>SA block（看 PP）</th><th>AV block（看 PR）</th></tr></thead>
+              <tbody>
+                <tr><th>一度</th><td>SA node 到心房傳得慢，但體表心電圖<b>看不出來</b></td><td><b>PR &gt; 5 小格</b>且固定，每個 P 都有 QRS</td></tr>
+                <tr><th>二度 I 型</th><td><b>PP 越來越短</b> → 整組消失（停頓 &lt; 前一個 PP 的 2 倍）</td><td><b>PR 越來越長</b> → 一個 P 後面沒有 QRS（Wenckebach）</td></tr>
+                <tr><th>二度 II 型</th><td>PP 固定 → 突然整組消失，停頓<b>剛好是 PP 的 2 倍</b>（或整數倍）</td><td>PR 固定 → 突然一個 P 後面沒有 QRS</td></tr>
+                <tr><th>三度</th><td>完全沒有 P 波，由交界區或心室逸搏接手；和 sinus arrest 無法區分</td><td>P 與 QRS 各跳各的（房室解離），心室由逸搏點維持</td></tr>
+              </tbody>
+            </table>
+            <p>口訣：<b>SA 看 PP、AV 看 PR；I 型「漸變 → 消失」、II 型「固定 → 消失」</b>。SA 的 I 型是 PP 漸漸<b>變短</b>，AV 的 I 型是 PR 漸漸<b>變長</b>。</p>
+
+            <h4>二度 I 型：SA vs AV</h4>
+            <figure class="ekg-strip" data-rhythm="sa-block-1" data-seconds="7" data-annotate="pp"><figcaption>二度 SA block I 型：PP 從 24 → 21.5 → 20.5 小格越來越短，接著整組 P-QRS-T 消失（停頓 39 小格，比 2 × 20.5 短）。</figcaption></figure>
+            <figure class="ekg-strip" data-rhythm="mobitz1" data-seconds="7.2" data-annotate="pr drop"><figcaption>二度 AV block I 型（Wenckebach）：PR 越來越長，接著一個 P 後面沒有 QRS —— 注意 P 波還在。</figcaption></figure>
+
+            <h4>二度 II 型：SA vs AV</h4>
+            <figure class="ekg-strip" data-rhythm="sa-block-2" data-seconds="7" data-annotate="pp"><figcaption>二度 SA block II 型：PP 固定 20 小格，突然整組消失，停頓剛好 40 小格（2 倍）。</figcaption></figure>
+            <figure class="ekg-strip" data-rhythm="mobitz2" data-annotate="pr drop"><figcaption>二度 AV block II 型：PR 固定，突然一個 P 後面沒有 QRS。</figcaption></figure>
           </section>
 
           <section id="bbb">
@@ -271,7 +301,7 @@
 
           <nav class="guide-pager" aria-label="上一篇與下一篇">
             <a class="btn-outline" href="/resources/ekg/rhythms.html">← 心律不整</a>
-            <a class="btn-outline" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質 →</a>
+            <a class="btn-outline" href="/resources/ekg/ischemia.html">缺血與梗塞 →</a>
           </nav>
         </article>
       </div>
@@ -286,5 +316,6 @@
 
   <script src="/assets/js/main.js" defer></script>
   <script type="module" src="/assets/js/ekg/strip.js"></script>
+  <script type="module" src="/assets/js/ekg/diagrams.js"></script>
 </body>
 </html>

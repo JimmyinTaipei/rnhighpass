@@ -4,7 +4,7 @@
  * data-rhythm   節律 id（見 rhythms.js）
  * data-lead     導程，預設 II；可以寫 "V1 V6" 一次畫兩條
  * data-seconds  顯示秒數，預設 6
- * data-annotate 標註，空白分隔：pr（標 PR 格數）、drop（標未下傳的 P）、p（標出每個 P 波）、label（拍子名稱）
+ * data-annotate 標註，空白分隔：pr（標 PR 格數）、drop（標未下傳的 P）、p（標出每個 P 波）、label（拍子名稱）、pp（標 PP 格數）
  *
  * 標準走紙速度 25 mm/s、10 mm/mV：1 小格 = 1 mm = 40 ms = 0.1 mV。
  */
@@ -66,6 +66,16 @@ function drawLead(r, lead, seconds, annotate) {
   }
   var yLow = H - 5 * MM; // 下方標註區：括號在這條線，文字在它下面
   var has = function (k) { return annotate.indexOf(k) >= 0; };
+  if (has("pp")) {
+    // PP 間隔（SA block 用）：相鄰兩個 P 波起點之間標格數
+    var ps = beats.filter(function (o) { return o.b.p; }).map(function (o) { return o.b.p.t + o.off; })
+      .sort(function (a, b) { return a - b; }).filter(function (t) { return t <= dur; });
+    for (var q = 0; q + 1 < ps.length; q++) {
+      var a0 = X(ps[q]), a1 = X(ps[q + 1]);
+      svg.appendChild(node("path", { d: "M" + (a0 + 2) + " " + (yLow - 6) + "v6H" + (a1 - 2) + "v-6", class: "ekg-mark" }));
+      svg.appendChild(node("text", { x: (a0 + a1) / 2, y: yLow + 3.8 * MM, class: "ekg-mark-text" }, (Math.round((ps[q + 1] - ps[q]) / 40 * 2) / 2) + " 格"));
+    }
+  }
   beats.forEach(function (o) {
     var b = o.b, off = o.off;
     if (has("pr") && b.p && b.qrs && b.qrs.t + off <= dur) {

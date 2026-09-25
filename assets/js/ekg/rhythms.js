@@ -273,6 +273,14 @@ var DEFS = {
     return r;
   },
   psvt: function () { return regular({ pp: 330, n: 15, noP: true }); },
+  // AVNRT（典型）：逆傳 P 緊貼在 QRS 尾巴（V1 假 r′、II 假 S），RP 很短
+  avnrt: function () { return retroAfter(330, 15, 45, "normal"); },
+  // 順向 AVRT：逆傳 P 走旁路回心房要比較久 → 倒 P 落在 ST 段，RP > 2 小格
+  "avrt-ortho": function () { return retroAfter(330, 15, 120, "normal"); },
+  // 逆向 AVRT：經旁路下傳，心室完全預激 → 又寬又快，很像 VT
+  "avrt-anti": function () { return retroAfter(330, 15, null, "vt"); },
+  // 2° SA block type I：PP 一拍比一拍短，接著一次停頓（短於前一個 PP 的兩倍）
+  "sa-block-1": function () { return seqPP([960, 860, 820, 1560, 960, 860, 820, 1560], {}); },
   vt: function () { return regular({ pp: 350, n: 14, noP: true, morph: "vt" }); },
   vf: function () { return { L: 4800, beats: [], ventricular: "vf" }; },
   asystole: function () { return { L: 4800, beats: [], ventricular: "asystole" }; },
@@ -317,6 +325,16 @@ var MODS = {
   pericarditis: { st: 0.16, stShape: "concave", pr: -0.06 },
   digoxin: { st: -0.14, stShape: "scoop", tAmp: 0.4, qt: 330 }
 };
+
+/** 規則心搏過速，逆傳 P 在 QRS 起點後 rp ms 出現（rp 為 null 表示看不到 P）。 */
+function retroAfter(pp, n, rp, morph) {
+  var beats = [];
+  for (var i = 0; i < n; i++) {
+    var t = 60 + i * pp;
+    beats.push({ p: rp == null ? null : { t: t + rp, shape: "retro", origin: "retro" }, qrs: { t: t, morph: morph } });
+  }
+  return { L: n * pp, beats: beats };
+}
 
 function seqPP(pps, o) {
   var r = { L: 0, beats: [] }, t = 60;

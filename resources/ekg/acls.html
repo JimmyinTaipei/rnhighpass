@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACLS 流程｜心電圖教學｜多保命 RN High Pass</title>
+  <meta name="description" content="依 2025 AHA 指引重繪的成人心跳停止、心搏過緩、心搏過速流程，以及和心電圖判讀有關的重點與 2025 年版變更。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/ekg.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="https://exam.rnhighpass.com">國考模擬測驗</a>
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>ACLS 流程（2025 AHA 指引）</h2>
+      <p class="guide-lead">急救時心電圖判讀只需要回答幾個問題：摸得到脈搏嗎？可以電擊嗎？太慢還是太快？QRS 寬還是窄？規則嗎？下面三張流程圖依 2025 AHA 指引重新整理（台灣從 2026 年起的 ACLS 課程採用這一版），實際處置請以醫院規範與正式課程為準。</p>
+
+      <nav class="tabs" aria-label="心電圖教學分頁">
+        <a class="tab" href="/resources/ekg/index.html">3D 互動心臟</a>
+        <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
+        <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
+        <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血與梗塞</a>
+        <a class="tab" href="/resources/ekg/electrolytes.html">肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/acls.html" aria-current="page">ACLS 流程</a>
+      </nav>
+
+      <div class="guide-layout">
+        <nav class="guide-toc" aria-label="本頁目錄">
+          <p class="guide-toc-title">本頁目錄</p>
+          <ol>
+            <li><a href="#overview">先分三條路</a></li>
+            <li><a href="#arrest">成人心跳停止（VF／pVT／Asystole／PEA）</a></li>
+            <li><a href="#brady">成人心搏過緩（有脈搏）</a></li>
+            <li><a href="#tachy">成人心搏過速（有脈搏）</a></li>
+            <li><a href="#changes">2025 年版和心電圖判讀有關的變化</a></li>
+            <li><a href="#sources">出處</a></li>
+          </ol>
+        </nav>
+
+        <article class="guide-article">
+          <section id="overview">
+            <h3>先分三條路</h3>
+            <table class="guide-table">
+              <thead><tr><th>病人狀態</th><th>看的心電圖</th><th>流程</th></tr></thead>
+              <tbody>
+                <tr><th>沒有脈搏</th><td>VF、無脈搏 VT → 可電擊<br>Asystole、PEA → 不可電擊</td><td><a href="#arrest">心跳停止</a></td></tr>
+                <tr><th>有脈搏、太慢</th><td>通常 &lt; 50 次/分：竇性過慢、二度／三度 AV block、交界區或心室逸搏</td><td><a href="#brady">心搏過緩</a></td></tr>
+                <tr><th>有脈搏、太快</th><td>通常 ≥ 150 次/分：先分 QRS 寬窄、規則與否</td><td><a href="#tachy">心搏過速</a></td></tr>
+              </tbody>
+            </table>
+            <p>有脈搏的兩條路，第一個問題都一樣：<b>這個心跳有沒有造成「心肺功能受損」</b> —— 低血壓、急性意識改變、休克徵象、缺血性胸痛、急性心衰竭。有 → 不穩定，直接處理；沒有 → 穩定，有時間做 12 導程、找原因。</p>
+          </section>
+
+          <section id="arrest">
+            <h3>成人心跳停止（VF／pVT／Asystole／PEA）</h3>
+            <div class="flow">
+              <p class="flow-title">成人心跳停止</p>
+              <div class="flow-step flow-go">開始 CPR：給氧、球囊面罩通氣，接上監視器／去顫器</div>
+              <div class="flow-step flow-q">可以電擊的節律嗎？</div>
+              <div class="flow-split">
+                <div>
+                  <div class="flow-step"><span class="flow-branch">是：<a href="/resources/ekg/rhythms.html#vf">VF</a>／<a href="/resources/ekg/rhythms.html#vt">無脈搏 VT</a></span>電擊一次 → 立刻 CPR 2 分鐘，建立 IV（不行再 IO）</div>
+                  <div class="flow-step">再檢查節律，仍可電擊 → 電擊 → CPR 2 分鐘<br><b>Epinephrine 每 3–5 分鐘</b>；考慮進階呼吸道、波形二氧化碳監測</div>
+                  <div class="flow-step">仍可電擊 → 電擊 → CPR 2 分鐘<br><b>Amiodarone 或 Lidocaine</b>；治療可逆原因</div>
+                </div>
+                <div>
+                  <div class="flow-step"><span class="flow-branch">否：<a href="/resources/ekg/rhythms.html#asystole">Asystole／PEA</a></span><b>盡快給 Epinephrine</b></div>
+                  <div class="flow-step">CPR 2 分鐘，建立 IV／IO；Epinephrine 每 3–5 分鐘；考慮進階呼吸道</div>
+                  <div class="flow-step">再檢查節律：變成可電擊 → 走左邊；仍不可電擊 → CPR 2 分鐘、治療可逆原因</div>
+                </div>
+              </div>
+              <div class="flow-step flow-ok">有 ROSC（恢復自發循環）→ 復甦後照護；沒有 → 繼續循環，並評估是否繼續急救</div>
+              <div class="flow-doses">
+                <table class="guide-table">
+                  <tbody>
+                    <tr><th>CPR 品質</th><td>按壓 100–120 次/分、深度至少 5 cm、完全回彈、盡量不中斷；每 2 分鐘換人；無進階呼吸道 30:2，有進階呼吸道每 6 秒給 1 口氣（每分鐘 10 次）並持續按壓</td></tr>
+                    <tr><th>電擊能量</th><td>雙相波：依廠商建議（例如首次 120–200 J），不知道就用最大能量；之後相同或更高。單相波：360 J</td></tr>
+                    <tr><th>Epinephrine</th><td>1 mg IV／IO，每 3–5 分鐘</td></tr>
+                    <tr><th>Amiodarone</th><td>第一劑 300 mg，第二劑 150 mg</td></tr>
+                    <tr><th>Lidocaine</th><td>第一劑 1–1.5 mg/kg，第二劑 0.5–0.75 mg/kg</td></tr>
+                    <tr><th>可逆原因 5H5T</th><td>低血容、缺氧、酸中毒（H⁺）、高／低血鉀、低體溫；張力性氣胸、心包填塞、中毒、肺栓塞、冠狀動脈栓塞</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="note">
+              <p class="note-title">判讀重點</p>
+              <ul>
+                <li>先確認<b>沒有脈搏</b>再用這個流程。有脈搏的 VT 走「心搏過速」。</li>
+                <li>看到一直線（asystole）先確認導程沒有脫落、增益沒有調太小，並換另一個導程確認 —— 細小的 VF 可能看起來像直線。</li>
+                <li>螢幕上有規則的 QRS 卻摸不到脈搏＝PEA，不能電擊。</li>
+                <li><b>多形性 VT 一律視為不穩定</b>：立即以高能量（最大設定）非同步電擊。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="brady">
+            <h3>成人心搏過緩（有脈搏）</h3>
+            <div class="flow">
+              <p class="flow-title">成人心搏過緩（通常心跳 &lt; 50 次/分）</p>
+              <div class="flow-step">評估心跳是否符合臨床狀況；維持呼吸道、給氧、需要時正壓通氣；接監視器、測血壓與血氧、建立 IV、<b>做 12 導程</b></div>
+              <div class="flow-step flow-q">造成心肺功能受損嗎？<br><small>低血壓、急性意識改變、休克、缺血性胸痛、急性心衰竭</small></div>
+              <div class="flow-split">
+                <div>
+                  <div class="flow-step flow-ok"><span class="flow-branch">否</span>監測、觀察，找出並治療原因</div>
+                </div>
+                <div>
+                  <div class="flow-step flow-go"><span class="flow-branch">是</span><b>Atropine</b></div>
+                  <div class="flow-step">Atropine 無效：<b>經皮節律器</b>，和／或 <b>Dopamine 或 Epinephrine 持續滴注</b></div>
+                  <div class="flow-step">考慮會診專家、經靜脈節律器</div>
+                </div>
+              </div>
+              <div class="flow-doses">
+                <table class="guide-table">
+                  <tbody>
+                    <tr><th>Atropine</th><td>每次 <b>1 mg</b> IV，每 3–5 分鐘，總量最多 3 mg</td></tr>
+                    <tr><th>Dopamine</th><td>5–20 mcg/kg/min 滴注，依反應調整，好轉時慢慢減量</td></tr>
+                    <tr><th>Epinephrine</th><td>2–10 mcg/min 滴注，依反應調整</td></tr>
+                    <tr><th>常見原因</th><td>心肌缺血／梗塞、藥物（鈣離子阻斷劑、β-blocker、毛地黃）、缺氧、電解質異常（如高血鉀）</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="note">
+              <p class="note-title">判讀重點</p>
+              <ul>
+                <li>用 12 導程分辨是哪一種：<a href="/resources/ekg/rhythms.html#sinus-brady">竇性過慢</a>、<a href="/resources/ekg/blocks.html#avb2">二度</a>或<a href="/resources/ekg/blocks.html#avb3">三度 AV block</a>、逸搏節律。</li>
+                <li>阻斷在 His 以下（Mobitz II、寬 QRS 逸搏的三度 AV block）時 Atropine 常常無效，要盡早準備節律器。</li>
+                <li>心臟移植後的病人 Atropine 可能無效（去神經支配）。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="tachy">
+            <h3>成人心搏過速（有脈搏）</h3>
+            <div class="flow">
+              <p class="flow-title">成人心搏過速（通常心跳 ≥ 150 次/分才是心律不整本身造成）</p>
+              <div class="flow-step">維持呼吸道、低血氧才給氧；持續心電監測辨認節律、測血壓與血氧；建立 IV；<b>可以的話做 12 導程</b></div>
+              <div class="flow-step flow-q">持續的心搏過速造成心肺功能受損嗎？<br><small>低血壓、急性意識改變、休克、缺血性胸痛、急性心衰竭</small></div>
+              <div class="flow-split">
+                <div>
+                  <div class="flow-step flow-go"><span class="flow-branch">是（不穩定）</span><b>同步電擊整流</b><br>可以的話先鎮靜；規則的窄 QRS 可先考慮 Adenosine</div>
+                  <div class="flow-step">無效：找原因、下一次提高能量、加上抗心律不整藥、會診專家</div>
+                </div>
+                <div>
+                  <div class="flow-step flow-q"><span class="flow-branch">否（穩定）</span>QRS 寬嗎？（≥ 0.12 秒，3 小格）</div>
+                  <div class="flow-step"><span class="flow-branch">寬 QRS</span>只有<b>規則、單形性</b>才考慮 Adenosine；抗心律不整藥滴注；會診專家</div>
+                  <div class="flow-step"><span class="flow-branch">窄 QRS</span>規則 → <b>迷走神經刺激</b>、<b>Adenosine</b>；β-blocker 或鈣離子阻斷劑；考慮會診專家</div>
+                </div>
+              </div>
+              <div class="flow-doses">
+                <table class="guide-table">
+                  <tbody>
+                    <tr><th>同步電擊能量</th><td>依機型建議能量；不知道就用最大設定。2025 版建議心房顫動、心房撲動一開始就用 <b>200 J</b>（雙相波）</td></tr>
+                    <tr><th>Adenosine</th><td>第一劑 <b>6 mg</b> 快速 IV 推注，立刻用生理食鹽水沖；需要時第二劑 <b>12 mg</b></td></tr>
+                    <tr><th>Procainamide</th><td>20–50 mg/min，直到心律不整停止、血壓下降、QRS 變寬超過 50% 或總量達 17 mg/kg；維持 1–4 mg/min。QT 延長或心衰竭避免使用</td></tr>
+                    <tr><th>Amiodarone</th><td>第一劑 150 mg，10 分鐘內滴完；VT 再發可重複；之後前 6 小時 1 mg/min 維持</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="note">
+              <p class="note-title">判讀重點</p>
+              <ul>
+                <li><b>窄而規則</b>：<a href="/resources/ekg/rhythms.html#sinus-tachy">竇性過速</a>（找原因，不要電）、<a href="/resources/ekg/rhythms.html#psvt">PSVT</a>（迷走神經刺激、Adenosine 很有效）、<a href="/resources/ekg/rhythms.html#afl">2:1 心房撲動</a>（Adenosine 會短暫讓 F 波露出來）。</li>
+                <li><b>窄而不規則</b>：多半是<a href="/resources/ekg/rhythms.html#af">心房顫動</a>，重點是控制心跳與預防中風。</li>
+                <li><b>寬而規則</b>：先當成 <a href="/resources/ekg/rhythms.html#vt">VT</a>。</li>
+                <li><b>不穩定、不規則或多形性</b>的寬 QRS 心搏過速<b>不能給 Adenosine</b>（可能造成嚴重低血壓或誘發 VF）；寬 QRS 心搏過速也不要給 Verapamil、Diltiazem。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="changes">
+            <h3>2025 年版和心電圖判讀有關的變化</h3>
+            <ul>
+              <li><b>不常規給鈣、碳酸氫鈉、鎂</b>：除非有明確原因（例如高血鉀、TdP）。</li>
+              <li><b>Epinephrine 的時機</b>：不可電擊節律盡早給；可電擊節律在前幾次電擊沒有成功後才給。</li>
+              <li><b>給藥路徑</b>：IV 優先，建立不了或會延遲時再用 IO。</li>
+              <li><b>心搏過緩</b>：Atropine 每次 1 mg（舊版 0.5 mg），無效時節律器與 Dopamine／Epinephrine 滴注並列，盡快升級處置。</li>
+              <li><b>心房顫動／撲動整流</b>：一開始就用較高能量（200 J）。</li>
+              <li><b>多形性 VT</b>：一律視為不穩定，立即高能量非同步電擊；硫酸鎂只用在 QT 延長造成的 TdP。</li>
+              <li><b>心跳停止後</b>：做 12 導程找缺血與心律不整；持續 ST 上升、心因性休克、反覆的心室心律不整要考慮緊急心導管。</li>
+            </ul>
+          </section>
+
+          <section id="sources">
+            <h3>出處</h3>
+            <ul class="ekg-credits">
+              <li>American Heart Association. <i>2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care</i>, Part 9: Adult Advanced Life Support. Circulation, 2025. doi:10.1161/CIR.0000000000001376</li>
+              <li>American Heart Association. <i>Adult Cardiac Arrest, Bradycardia With a Pulse, Tachyarrhythmia With a Pulse, and Acute Coronary Syndromes Algorithms</i>（2025）。</li>
+              <li>本頁流程圖為本站依指引內容自行重繪的簡化版，不是 AHA 原圖；教學用途，實際處置以醫院規範、醫囑與正式 ACLS 課程為準。</li>
+            </ul>
+          </section>
+
+          <nav class="guide-pager" aria-label="上一篇與下一篇">
+            <a class="btn-outline" href="/resources/ekg/electrolytes.html">← 肥厚・電解質</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/ekg/strip.js"></script>
+  <script type="module" src="/assets/js/ekg/diagrams.js"></script>
+</body>
+</html>

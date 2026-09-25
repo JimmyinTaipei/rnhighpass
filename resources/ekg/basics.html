@@ -44,7 +44,9 @@
         <a class="tab" href="/resources/ekg/basics.html" aria-current="page">基礎與判圖</a>
         <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
         <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
-        <a class="tab" href="/resources/ekg/ischemia.html">缺血・肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/ischemia.html">缺血與梗塞</a>
+        <a class="tab" href="/resources/ekg/electrolytes.html">肥厚・電解質</a>
+        <a class="tab" href="/resources/ekg/acls.html">ACLS 流程</a>
       </nav>
 
       <div class="guide-layout">
@@ -54,8 +56,11 @@
             <li><a href="#conduction">電流怎麼走：心臟傳導系統</a></li>
             <li><a href="#waves">各波段代表什麼</a></li>
             <li><a href="#paper">心電圖紙與算心跳</a></li>
-            <li><a href="#leads">導程與電極位置</a></li>
+            <li><a href="#leads">導程原理：正極在哪裡？</a></li>
+            <li><a href="#electrodes">電極怎麼貼、顏色怎麼記</a></li>
+            <li><a href="#monitor">床邊監視器：3 導程與 5 導程</a></li>
             <li><a href="#flow">判圖流程</a></li>
+            <li><a href="#twelve-lead">12 導程怎麼讀、什麼時候一定要做</a></li>
             <li><a href="#normal-12">真實的正常 12 導程心電圖</a></li>
           </ol>
         </nav>
@@ -158,19 +163,59 @@
           </section>
 
           <section id="leads">
-            <h3>導程與電極位置</h3>
-            <p>每個導程就像一台從不同角度拍心臟的相機。原則只有一條：</p>
+            <h3>導程原理：正極在哪裡？</h3>
+            <p>每個導程就像一台從固定方向拍心臟的相機，相機放在導程的<b>正極</b>那一端。判讀只需要一條規則：</p>
             <div class="note">
               <p class="note-title">判讀原則</p>
-              <p><b>去極化朝向導程的正極 → 正波；遠離正極 → 負波。</b>再極化的方向相反（再極化朝向正極 → 負波）。</p>
+              <p><b>去極化電流朝著正極走 → 向上的正波；背離正極 → 向下的負波；和導程垂直 → 上下一樣大（雙向波）。</b>再極化剛好相反。</p>
             </div>
-            <h4>肢體導程（額面）</h4>
+            <figure class="ekg-diagram" data-diagram="hexaxial">
+              <figcaption>左：Einthoven 三角，箭頭指向正極。右：把六個肢體導程平移到同一個中心就是六軸參考系統；角度以 Lead I（指向左手）為 0°，往下（順時針）為正。本站自行繪製。</figcaption>
+            </figure>
+            <h4>肢體導程（額面：上下左右）</h4>
+            <p>下表的「左、右」都是指<b>病人身體的左右</b>（面對病人時，病人的左邊在你的右手邊，所以圖上的左手 LA 畫在右邊）。</p>
+            <table class="guide-table">
+              <thead><tr><th>導程</th><th>負極 → 正極</th><th>正極方向</th><th>角度</th></tr></thead>
+              <tbody>
+                <tr><th>I</th><td>右手 → 左手</td><td>往<b>左</b></td><td>0°</td></tr>
+                <tr><th>II</th><td>右手 → 左腳</td><td>往<b>左下</b></td><td>+60°</td></tr>
+                <tr><th>III</th><td>左手 → 左腳</td><td>往<b>右下</b></td><td>+120°</td></tr>
+                <tr><th>aVR</th><td>（中心）→ 右手</td><td>往<b>右上</b></td><td>−150°</td></tr>
+                <tr><th>aVL</th><td>（中心）→ 左手</td><td>往<b>左上</b></td><td>−30°</td></tr>
+                <tr><th>aVF</th><td>（中心）→ 左腳</td><td>往<b>正下方</b></td><td>+90°</td></tr>
+              </tbody>
+            </table>
             <ul>
-              <li><b>I、II、III</b>：雙極導程。I 從右手指向左手（0°）、II 從右手指向左腳（+60°）、III 從左手指向左腳（+120°）。</li>
-              <li><b>aVR、aVL、aVF</b>：加壓單極導程，正極分別在右手（−150°）、左手（−30°）、左腳（+90°）。</li>
-              <li>電極顏色（台灣常用 IEC 色碼）：右手紅、左手黃、左腳綠、右腳黑（接地）。</li>
+              <li>所以 <b>II、III、aVF 的正極都在下面（左腳）</b>，合稱「下方導程」，看的是心臟下壁；<b>I、aVL 的正極在左上</b>，看側壁。</li>
+              <li>正常心室電流從右上往左下走（約 +60°），剛好朝著 Lead II 的正極 → <b>Lead II 的 QRS 最高、P 波最清楚</b>，所以監視器預設看 Lead II；反過來它正好背離 aVR 的正極 → <b>aVR 幾乎全是負波</b>。</li>
+              <li>I、II、III 是雙極導程（兩個電極相減）；aVR、aVL、aVF 是加壓單極導程（一個電極對其他電極的平均）。</li>
             </ul>
-            <h4>胸前導程（水平面）</h4>
+            <h4>胸前導程（水平面：前後左右）</h4>
+            <p>V1–V6 的正極就是貼在胸前的那顆電極，由右前（V1）一路排到左側（V6）。V1 在右心室前方、V6 在左心室側面，所以正常時 V1 的 QRS 以負波為主、V6 以正波為主，中間 V3–V4 左右轉正（transition zone）。</p>
+            <h4>導程對應心臟的哪一面</h4>
+            <table class="guide-table">
+              <thead><tr><th>導程</th><th>看的位置</th><th>主要供血</th></tr></thead>
+              <tbody>
+                <tr><th>II、III、aVF</th><td>下壁</td><td>右冠狀動脈（RCA，多數人）</td></tr>
+                <tr><th>I、aVL、V5、V6</th><td>側壁</td><td>左迴旋支（LCx）</td></tr>
+                <tr><th>V1、V2</th><td>中膈</td><td>左前降支（LAD）</td></tr>
+                <tr><th>V3、V4</th><td>前壁</td><td>左前降支（LAD）</td></tr>
+              </tbody>
+            </table>
+            <p>彩色的分區圖與冠狀動脈對照，請看「<a href="/resources/ekg/ischemia.html#territory">缺血與梗塞 → 冠狀動脈與 12 導程分區</a>」。</p>
+            <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=nsr">▶ 在 3D 心臟打開「導程方向」，看 II、V1、V6 從哪裡看心臟</a>
+          </section>
+
+          <section id="electrodes">
+            <h3>電極怎麼貼、顏色怎麼記</h3>
+            <figure class="ekg-diagram" data-diagram="chest-leads">
+              <div class="ekg-scheme" role="group" aria-label="電極顏色標準">
+                <button type="button" data-scheme="iec" aria-pressed="true">IEC（台灣多數機型）</button>
+                <button type="button" data-scheme="aha" aria-pressed="false">AHA（美規）</button>
+              </div>
+              <figcaption>12 導程電極位置（面對病人，病人的右手在畫面左邊）。圓點顏色可切換兩種標準。本站自行繪製。</figcaption>
+            </figure>
+            <h4>胸前導程位置</h4>
             <table class="guide-table">
               <thead><tr><th>導程</th><th>位置</th></tr></thead>
               <tbody>
@@ -182,18 +227,52 @@
                 <tr><th>V6</th><td>與 V4 同高、左腋中線</td></tr>
               </tbody>
             </table>
-            <p>貼的順序建議 <b>V1 → V2 → V4 → V3 → V6 → V5</b>（口訣「124365」）：先找好肋間貼 V1、V2、V4，V3 和 V5 都是「中點」，所以要等兩邊都貼好再貼。</p>
-            <h4>導程對應心臟的哪一面</h4>
+            <ul>
+              <li>找肋間：先摸到胸骨角（Louis angle，胸骨柄與胸骨體交界的突起），旁邊就是第 2 肋骨，往下數到第 4 肋間貼 V1、V2。</li>
+              <li>貼的順序建議 <b>V1 → V2 → V4 → V3 → V6 → V5</b>（口訣「124365」）：V3 和 V5 都是「中點」，要等兩邊貼好再貼。</li>
+              <li>肢體電極貼在四肢（手腕、腳踝內側或上臂、大腿），避開骨突；左右貼反會讓 Lead I 整個倒過來。</li>
+            </ul>
+
+            <h4>電極顏色</h4>
             <table class="guide-table">
-              <thead><tr><th>導程</th><th>看的位置</th><th>主要供血</th></tr></thead>
+              <thead><tr><th>位置</th><th>IEC（台灣多數機型）</th><th>AHA（美規）</th></tr></thead>
               <tbody>
-                <tr><th>II、III、aVF</th><td>下壁</td><td>右冠狀動脈（RCA，多數人）</td></tr>
-                <tr><th>I、aVL、V5、V6</th><td>側壁</td><td>左迴旋支（LCx）</td></tr>
-                <tr><th>V1、V2</th><td>中膈</td><td>左前降支（LAD）</td></tr>
-                <tr><th>V3、V4</th><td>前壁</td><td>左前降支（LAD）</td></tr>
+                <tr><th>右手 RA</th><td>紅</td><td>白</td></tr>
+                <tr><th>左手 LA</th><td>黃</td><td>黑</td></tr>
+                <tr><th>左腳 LL</th><td>綠</td><td>紅</td></tr>
+                <tr><th>右腳 RL（接地）</th><td>黑</td><td>綠</td></tr>
+                <tr><th>V1–V6</th><td>紅、黃、綠、棕、黑、紫</td><td>紅、黃、綠、藍、橘、紫</td></tr>
               </tbody>
             </table>
-            <a class="ekg-3d-link" href="/resources/ekg/index.html?rhythm=nsr">▶ 在 3D 心臟打開「導程方向」，看 II、V1、V6 從哪裡看心臟</a>
+            <div class="note">
+              <p class="note-title">記法</p>
+              <ul>
+                <li><b>IEC：「紅黃綠黑」從右手開始順時針</b> —— 面對病人，右手紅 → 左手黃 → 左腳綠 → 右腳黑，像紅綠燈從上面數下來，最後黑色接地。</li>
+                <li><b>AHA：「White on right, smoke over fire, clouds over grass」</b> —— 白色在右手；左邊是黑色（煙）在紅色（火）上面 → 左手黑、左腳紅；右邊是白色（雲）在綠色（草地）上面 → 右腳綠。</li>
+                <li>胸前導程兩套的前三個都是<b>紅、黃、綠</b>，只有 V4–V6 不同。</li>
+                <li>顏色只是輔助，每條導線頭上都印有 RA、LA、V1… 或 R、L、F、N、C1… 字樣，以字樣為準。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="monitor">
+            <h3>床邊監視器：3 導程與 5 導程</h3>
+            <p>病房與加護病房的連續心電監測不需要貼滿 10 顆電極，常見的是 3 導程或 5 導程，電極貼在軀幹上（不貼四肢，病人活動時較不受干擾）：</p>
+            <table class="guide-table">
+              <thead><tr><th>電極</th><th>位置</th><th>IEC／AHA 顏色</th></tr></thead>
+              <tbody>
+                <tr><th>RA</th><td>右鎖骨下方</td><td>紅／白</td></tr>
+                <tr><th>LA</th><td>左鎖骨下方</td><td>黃／黑</td></tr>
+                <tr><th>LL</th><td>左下肋緣或左下腹</td><td>綠／紅</td></tr>
+                <tr><th>RL（5 導程才有）</th><td>右下肋緣或右下腹</td><td>黑／綠</td></tr>
+                <tr><th>V／C（5 導程才有）</th><td>通常貼 V1 位置（第 4 肋間胸骨右緣）</td><td>白／棕</td></tr>
+              </tbody>
+            </table>
+            <ul>
+              <li><b>3 導程</b>只能看 I、II、III 其中一條，最常選 <b>Lead II</b>（P 波最清楚）。</li>
+              <li><b>5 導程</b>多了一個胸前電極，可以同時看 Lead II 和 <b>V1</b>：V1 最適合分辨束支阻滯（RBBB 的兔耳朵）、寬 QRS 心搏過速，也看得到 P 波。</li>
+              <li>貼之前清潔、擦乾皮膚（必要時剃毛），避開骨突與肌肉多的地方；波形雜訊多時先檢查電極有沒有乾掉或脫落。</li>
+            </ul>
           </section>
 
           <section id="flow">
@@ -232,6 +311,57 @@
             </details>
           </section>
 
+          <section id="twelve-lead">
+            <h3>12 導程怎麼讀、什麼時候一定要做</h3>
+            <p>拿到一張 12 導程，照上面的判圖流程走，只是每一步要知道<b>看哪幾個導程</b>：</p>
+            <table class="guide-table">
+              <thead><tr><th>步驟</th><th>看哪裡</th><th>在找什麼</th></tr></thead>
+              <tbody>
+                <tr><th>1. 規律、速率</th><td>最下面的 Lead II 長條（10 秒）</td><td>RR 規不規則、心跳幾下；P 與 QRS 的關係</td></tr>
+                <tr><th>2. 電軸</th><td>I、aVF（必要時 II）</td><td>電軸左偏／右偏 → 分支阻滯、心室肥厚</td></tr>
+                <tr><th>3. P 波</th><td>II、V1</td><td>竇性與否、心房擴大</td></tr>
+                <tr><th>4. PR</th><td>II</td><td>AV block（長）、預激（短）</td></tr>
+                <tr><th>5. QRS 寬度與形狀</th><td>V1、V6（再看 I、aVL）</td><td>束支阻滯、WPW、心室肥厚（電壓）、病理性 Q 波</td></tr>
+                <tr><th>6. 胸導 R 波</th><td>V1 → V6</td><td>transition 位置、R 波有沒有正常長高</td></tr>
+                <tr><th>7. ST 段</th><td>12 個導程逐一看，<b>成組</b>比較</td><td>哪一區上升、對側有沒有下降 → 定位與冠狀動脈</td></tr>
+                <tr><th>8. T 波、QT</th><td>全部導程</td><td>缺血、電解質、藥物；QT 延長</td></tr>
+              </tbody>
+            </table>
+
+            <h4>Lead II 就夠，還是一定要 12 導程？</h4>
+            <table class="guide-table">
+              <thead><tr><th>監視器（Lead II，最好加上 V1）就能判斷</th><th>一定要做 12 導程</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <ul>
+                      <li>心跳速率、規則與否</li>
+                      <li>竇性過慢／過速、竇性心律不整</li>
+                      <li>PAC、PJC、PVC（二聯律、R on T）</li>
+                      <li>心房撲動、心房顫動</li>
+                      <li>PSVT</li>
+                      <li>SA block、各度 AV block（看 P 與 QRS 的關係）</li>
+                      <li>VT、VF、TdP、Asystole</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li><b>胸痛、疑似 ACS</b>：ST 變化要成組看、要找對側性變化、要定位</li>
+                      <li>束支阻滯（需要 V1、V6）與分支阻滯（需要電軸）</li>
+                      <li>心房擴大、心室肥厚</li>
+                      <li>WPW 的 delta wave（只有部分導程明顯）</li>
+                      <li>心包膜炎（廣泛性 ST 上升）</li>
+                      <li><b>寬 QRS 心搏過速</b>：VT 與 SVT 合併束支阻滯的鑑別</li>
+                      <li>準確量 QT、懷疑電解質異常（高血鉀的尖 T 在胸導最明顯）</li>
+                      <li>任何心律不整的「第一次」與治療後的紀錄</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>簡單說：<b>節律問題（快慢、規不規則、有沒有下傳）看一條就夠；位置與形狀的問題（哪裡缺血、哪條束支、哪一側肥大）一定要 12 條一起看。</b>監視器上看到新出現的心律不整或 ST 變化，都應該補一張 12 導程。</p>
+          </section>
+
           <section id="normal-12">
             <h3>真實的正常 12 導程心電圖</h3>
             <figure class="ekg-real">
@@ -258,5 +388,6 @@
 
   <script src="/assets/js/main.js" defer></script>
   <script type="module" src="/assets/js/ekg/strip.js"></script>
+  <script type="module" src="/assets/js/ekg/diagrams.js"></script>
 </body>
 </html>

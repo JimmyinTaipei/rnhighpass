@@ -22,7 +22,7 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 | 更多考題 `/downloads/more.html` | 分章詳解／題本逐章下載（各 162 章）、全部 26 個學期的考古題（130 份），底下附 Google Drive 整批下載 |
 | 使用教學 `/guide.html` | 總覽（網站說明、題號、三個框框、科目對照表），底下分成 `guide/explanations.html`、`guide/workbooks.html`、`guide/past-exams.html`、`guide/mock-exam.html`（國考模擬測驗）四個子頁，附實際 PDF 的截圖 |
 | 相關資源 `/resources.html` | 學習資源入口，目前是心電圖教學 |
-| 心電圖教學 `/resources/ekg/` | `index.html` 3D 互動心臟（電流動畫＋同步心電圖），`basics`／`rhythms`／`blocks`／`ischemia` 四個文字章節 |
+| 心電圖教學 `/resources/ekg/` | `index.html` 3D 互動心臟（電流動畫＋同步心電圖），`basics`／`rhythms`／`blocks`／`ischemia`／`electrolytes`／`acls` 六個文字章節 |
 | 問題回饋 `/feedback.html` | 回饋表單、社群連結 |
 
 476 個檔案全部放在 R2、都可以從網站下載。Google Drive 的連結（`assets/data/links.json`）
@@ -67,6 +67,7 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 │   ├── js/ekg/rhythms.js     節律引擎：每種節律的時間軸與波形（3D 與節律條共用）
 │   ├── js/ekg/strip.js       把 <figure data-rhythm> 畫成方格紙上的 SVG 節律條
 │   ├── js/ekg/heart3d.js     3D 互動心臟（three.js）
+│   ├── js/ekg/diagrams.js    自繪示意圖：AVNRT/AVRT 迴圈、六軸系統、電極位置、冠狀動脈分區
 │   ├── vendor/three/         three.js（MIT），用 importmap 載入，不需要 build
 │   ├── data/ekg-sources.json 真實心電圖的來源與授權（render-ptbxl.py 產生）
 │   ├── images/ekg/           心電圖教學的圖（ptbxl/ 是真實 12 導程）
@@ -179,11 +180,12 @@ python3 scripts/make-guide-shots.py exp-toc wb-jump # 只重做幾張
 
 | 圖 | 來源 | 授權 |
 |---|---|---|
-| 3D 心臟、所有單導程節律條 | 本站程式產生（`heart3d.js`、`strip.js`） | 自有，無限制 |
+| 3D 心臟、所有單導程節律條、示意圖 | 本站程式產生（`heart3d.js`、`strip.js`、`diagrams.js`） | 自有，無限制 |
 | 真實 12 導程（`assets/images/ekg/ptbxl/*.svg`） | PTB-XL，本站依原始訊號重畫 | CC BY 4.0：可商用，**必須標示來源**（每張圖下方與 3D 頁頁尾都有） |
 | three.js | `assets/vendor/three/` | MIT |
 
 **不要**放 CC BY-SA、NC 授權的圖，也不要用社團講義裡的圖（來源多為教科書，版權不明）。
+ACLS 流程（`acls.html`）是依 2025 AHA 指引內容自行重繪的 HTML 流程圖，不是 AHA 原圖；指引改版時要逐項核對劑量與能量。
 
 - **新增或修改節律**：在 `assets/js/ekg/rhythms.js` 的 `DEFS` 加一個產生函式（一拍一拍的 P／QRS 時間），
   節律條直接用 `<figure class="ekg-strip" data-rhythm="新id">`；要在 3D 裡選得到，再到 `heart3d.js` 的 `INFO` 與 `RHYTHM_ORDER` 加一筆。
