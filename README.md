@@ -20,7 +20,7 @@ Worker 只做單檔下載（把 R2 的串流轉手出去），幾乎不耗 CPU�
 |---|---|
 | 首頁 `/`「題目下載」 | 分頁切換：分章詳解合訂本（11 本）、分章題本合訂本（11 本）、最新一期考古題（5 份），點封面直接下載 |
 | 更多考題 `/downloads/more.html` | 分章詳解／題本逐章下載（各 162 章）、全部 26 個學期的考古題（130 份），底下附 Google Drive 整批下載 |
-| 使用教學 `/guide.html` | 總覽（網站說明、題號、三個框框、科目對照表），底下分成 `guide/explanations.html`、`guide/workbooks.html`、`guide/past-exams.html` 三個子頁，附實際 PDF 的截圖 |
+| 使用教學 `/guide.html` | 總覽（網站說明、題號、三個框框、科目對照表），底下分成 `guide/explanations.html`、`guide/workbooks.html`、`guide/past-exams.html`、`guide/mock-exam.html`（國考模擬測驗）四個子頁，附實際 PDF 的截圖 |
 | 相關資源 `/resources.html` | 學習資源入口，目前是心電圖教學 |
 | 心電圖教學 `/resources/ekg/` | `index.html` 3D 互動心臟（電流動畫＋同步心電圖），`basics`／`rhythms`／`blocks`／`ischemia` 四個文字章節 |
 | 問題回饋 `/feedback.html` | 回饋表單、社群連結 |

@@ -37,6 +37,8 @@ def seg(path, page, top, bottom, highlight=False, pad_top=PAD):
     """一段裁切：path 的第 page 頁（從 0 起算），從 top 文字的上緣到 bottom 文字的下緣。
 
     top / bottom 可以是字串，或 (字串, 第幾個符合) 的 tuple。
+    page 給 None 時自動找「同一頁上 top 在 bottom 上方」的第一頁，
+    PDF 重排後頁碼變了也不用改這裡。
     緊貼在頁首下方的段落把 pad_top 調小，才不會切到頁首文字。
     """
     return dict(path=path, page=page, top=top, bottom=bottom, highlight=highlight, pad_top=pad_top)
@@ -72,6 +74,8 @@ SHOTS = {
                           "躁期病人常因注意力", "■ 參考", highlight=True)],
     "exp-continuation": [seg(f"{EXP}/10_精神/10_精神_詳解_Ch08_雙相情緒障礙症病人的護理.pdf", 28,
                              "承上題（", "114-3-精社-12", highlight=True)],
+    "exp-notable": [seg(f"{EXP}/05_基護/05_基護_詳解_Ch04_護理記錄.pdf", None,
+                        "值得注意的選項", "爭取送分")],
     # ---------- 分章題本 ----------
     "wb-jump": [seg(f"{WB}/11_社區/11_社區_題本_Ch02_流行病學.pdf", 5,
                     "為降低感染", "跳至答案區", highlight=True)],
@@ -97,6 +101,17 @@ def find(page, spec, edge):
     return hits[nth].y0 if edge == "top" else hits[nth].y1
 
 
+def find_page(doc, top, bottom):
+    """找出第一個「top 與 bottom 都在、且 top 在 bottom 上方」的頁面。"""
+    for page in doc:
+        try:
+            if find(page, top, "top") < find(page, bottom, "bottom"):
+                return page.number
+        except NotFound:
+            continue
+    raise NotFound(f"整份檔案找不到同時含有「{top}」與「{bottom}」的頁面")
+
+
 def content_x(page, y0, y1):
     """y0~y1 之間實際有內容（文字或色塊）的左右範圍；左右頁邊界不同，所以用量的。"""
     xs0, xs1 = [], []
@@ -120,7 +135,9 @@ def resolve(docs, src, s):
             raise NotFound(f"找不到檔案 {s['path']}")
         docs[path] = fitz.open(path)
     doc = docs[path]
-    page = doc[s["page"]]
+    page_no = s["page"] if s["page"] is not None else find_page(doc, s["top"], s["bottom"])
+    s["page"] = page_no  # make() 疊圖時要用同一頁
+    page = doc[page_no]
     y0 = find(page, s["top"], "top") - s["pad_top"]
     y1 = find(page, s["bottom"], "bottom") + PAD_BOTTOM
     if y1 <= y0:

@@ -38,7 +38,7 @@ a.tab[aria-current="page"] {
 
 @media (min-width: 720px) {
   .guide-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -72,6 +72,24 @@ a.tab[aria-current="page"] {
   height: auto;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* 沒有 PDF 封面的入口卡（國考模擬測驗）用 icon 佔同樣的位置 */
+.guide-card-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 91px;
+  border-radius: 4px;
+  background: var(--color-light);
+  color: var(--color-deep);
+}
+
+.guide-card-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .guide-card-title {
@@ -508,4 +526,32 @@ kbd,
 
 .guide-lead + .resource-cards {
   margin-top: 20px;
+}
+
+/* ---------- 國考模擬測驗：輔助作答註記 ▲ ● ■（顏色比照 rnhighpass-quiz globals.css） ---------- */
+.mark {
+  font-style: normal;
+}
+
+.mark-triangle {
+  color: #EF9F27;
+}
+
+.mark-circle {
+  color: #E24B4A;
+}
+
+.mark-square {
+  color: #6592CD;
+}
+
+.guide-article .mark-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.mark-list .mark {
+  display: inline-block;
+  width: 1.4em;
+  font-size: 1.05em;
 }
