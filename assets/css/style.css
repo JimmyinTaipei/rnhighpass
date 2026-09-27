@@ -377,3 +377,24 @@ a.brand-group {
     --max-width: 1080px;
   }
 }
+
+/* 頁尾社群連結 */
+.footer-social {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+}
+
+.footer-social a {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.footer-social span {
+  margin: 0 6px;
+}
