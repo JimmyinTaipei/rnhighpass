@@ -191,6 +191,19 @@
   color: var(--color-text-light);
 }
 
+/* 載入中的佔位卡：尺寸跟真的封面卡一樣，只是空白 */
+.cover-card--skeleton .cover-title,
+.cover-card--skeleton .cover-sub {
+  align-self: flex-start;
+  min-width: 60%;
+  border-radius: 4px;
+  background: var(--color-section-bg);
+}
+
+.cover-card--skeleton .cover-sub {
+  min-width: 80%;
+}
+
 /* 有滑鼠的裝置：平常不顯示按鈕，hover / 鍵盤選到時封面變暗、正中央浮出下載鈕 */
 @media (hover: hover) {
   .cover-btn {

@@ -28,9 +28,33 @@
     if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
   }
 
+  /** 國考 11 科，每科一本合訂本。 */
+  var BUNDLE_COUNT = 11;
+  var EAGER_COVERS = 4;
+
+  /**
+   * manifest 還沒回來前先排好同樣大小的空白卡片，
+   * 不然封面牆一出現，下面的「更多考題」「模擬測驗」會整塊被往下推（CLS）。
+   */
+  function renderSkeleton() {
+    var grid = RN.el("div", "cover-grid cover-grid--4");
+    grid.setAttribute("aria-busy", "true");
+    grid.setAttribute("aria-hidden", "true");
+    for (var i = 0; i < BUNDLE_COUNT; i++) {
+      var card = RN.el("div", "cover-card cover-card--skeleton");
+      card.appendChild(RN.el("span", "cover-media"));
+      var meta = RN.el("span", "cover-meta");
+      meta.appendChild(RN.el("span", "cover-title", "\u3000"));
+      meta.appendChild(RN.el("span", "cover-sub", "\u3000"));
+      card.appendChild(meta);
+      grid.appendChild(card);
+    }
+    return grid;
+  }
+
   function renderBundles(manifest, type) {
     var grid = RN.el("div", "cover-grid cover-grid--4");
-    manifest.subjects.forEach(function (s) {
+    manifest.subjects.forEach(function (s, i) {
       var bundle = manifest.bundles.find(function (b) {
         return b.subjectNo === s.no && b.type === type;
       });
@@ -43,6 +67,7 @@
           cover: s.covers[type],
           title: s.fullName,
           sub: s.no + "　" + s.name + "・" + type + "合訂本",
+          eager: i < EAGER_COVERS,
         })
       );
     });
@@ -89,6 +114,13 @@
   show(panels[initial] ? initial : "explanations");
   window.addEventListener("hashchange", function () {
     if (panels[location.hash.slice(1)]) show(location.hash.slice(1));
+  });
+
+  // 預設分頁的佔位卡已經寫在 index.html；其他分頁（網址帶 #workbooks 時）在這裡補
+  Object.keys(TYPE_BY_TAB).forEach(function (id) {
+    if (panels[id].querySelector(".cover-card--skeleton")) return;
+    panels[id].textContent = "";
+    panels[id].appendChild(renderSkeleton());
   });
 
   RN.loadManifest()

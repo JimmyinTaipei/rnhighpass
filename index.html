@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" href="/assets/images/多保命.png">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/downloads.css">
+  <!-- 封面牆靠 manifest 產生，提早開始下載，封面才不會等 JS 跑完才出現 -->
+  <link rel="preload" href="/assets/data/manifest.json" as="fetch" crossorigin>
 </head>
 <body>
 
@@ -55,8 +57,22 @@
         <button type="button" class="tab" role="tab" id="tab-past" data-tab="past" aria-controls="panel-past">歷年考題</button>
       </div>
 
+      <!-- 預設分頁先放 11 張空白佔位卡（同 home.js 的 renderSkeleton），
+           JS 還沒跑完前版面高度就已經固定，下面的區塊不會被往下推 -->
       <div role="tabpanel" id="panel-explanations" aria-labelledby="tab-explanations">
-        <p class="dl-empty">載入中…</p>
+        <div class="cover-grid cover-grid--4" aria-busy="true" aria-hidden="true">
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+          <div class="cover-card cover-card--skeleton"><span class="cover-media"></span><span class="cover-meta"><span class="cover-title">　</span><span class="cover-sub">　</span></span></div>
+        </div>
       </div>
       <div role="tabpanel" id="panel-workbooks" aria-labelledby="tab-workbooks" hidden>
         <p class="dl-empty">載入中…</p>

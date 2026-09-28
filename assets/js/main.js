@@ -76,7 +76,9 @@
     var img = el("img", "cover-img");
     img.src = "/" + opts.cover;
     img.alt = "";
-    img.loading = "lazy";
+    // 第一排封面在首屏內，lazy 會延後到版面排好才載，拖慢 LCP
+    img.loading = opts.eager ? "eager" : "lazy";
+    if (opts.eager) img.setAttribute("fetchpriority", "high");
     img.width = 600;
     img.height = 852;
     media.appendChild(img);
