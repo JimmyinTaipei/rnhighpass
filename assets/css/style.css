@@ -126,6 +126,12 @@ a.brand-group {
   color: var(--color-primary-dark);
 }
 
+/* 還沒開放的項目（多保命測驗）：灰字 */
+.main-nav a.nav-soon {
+  color: #8E8D87;
+  font-weight: 400;
+}
+
 /* 目前所在的頁面 */
 .main-nav a[aria-current="page"] {
   color: var(--color-deep);
