@@ -124,6 +124,7 @@ function resetMuscle() {
 function updatePupilSize(side, size) {
     const percentage = parseInt(size) * 10 + 10; // Calculate percentage (1mm = 20%, 9mm = 100%)
     const pupilInner = document.getElementById(side + 'PupilInner');
+    if (!pupilInner) return; // 頁面上沒有瞳孔互動區塊時略過，避免中斷後面的初始化(例如手機選單)
     
     pupilInner.style.width = percentage + '%';
     pupilInner.style.height = percentage + '%';

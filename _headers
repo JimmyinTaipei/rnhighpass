@@ -1,0 +1,5 @@
+# Cloudflare 靜態資產的回應標頭（Worker 產生的 /api/file 回應不受影響）
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN

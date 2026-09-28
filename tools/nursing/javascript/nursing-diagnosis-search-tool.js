@@ -2,8 +2,8 @@
 async function initializeDatabase() {
     try {
         // Try to load from external JSON files first
-        const medicalResponse = await fetch('nursing-diagnosis-data.json');
-        const linksResponse = await fetch('nursing-diagnosis-links.json');
+        const medicalResponse = await fetch('json/medical-nursing-diagnoses.json');
+        const linksResponse = await fetch('json/nursing-diagnosis-links.json');
         
         if (medicalResponse.ok && linksResponse.ok) {
             diagnosisDatabase = await medicalResponse.json();

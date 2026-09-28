@@ -2,6 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/assets/images/多保命.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>護理診斷查詢工具</title>
     <!-- Mobile style CSS -->
@@ -315,8 +316,8 @@
         async function initializeDatabase() {
             try {
                 // Try to load from external JSON files first
-                const medicalResponse = await fetch('nursing-diagnosis-data.json');
-                const linksResponse = await fetch('nursing-diagnosis-links.json');
+                const medicalResponse = await fetch('json/medical-nursing-diagnoses.json');
+                const linksResponse = await fetch('json/nursing-diagnosis-links.json');
                 
                 if (medicalResponse.ok && linksResponse.ok) {
                     diagnosisDatabase = await medicalResponse.json();
