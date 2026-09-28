@@ -1,7 +1,7 @@
 // 裝飾與單張模式：?slide=N 只顯示第 N 張（給 headless Chrome 截圖用）
 (function () {
   const NS = 'http://www.w3.org/2000/svg';
-  const MID = '#B6CCF0', PAPER = '#F4F7FC', GOLD = '#E3B04B';
+  const MID = '#B6CCF0', PAPER = '#F4F7FC', GOLD = '#E3B04B'; // 裝飾用 logo 金，不跟標籤的亮黃
 
   // 青海波：一列一列往下畫，後畫的蓋住前一列，才會有魚鱗疊壓的效果
   function seigaiha(w, h) {
@@ -43,6 +43,12 @@
     const a = cloud(i === 0 ? 280 : 220, 1);
     a.style.right = '-36px'; a.style.top = i === 0 ? '330px' : '130px';
     slide.appendChild(a);
+  });
+
+  // 截圖裁切框的比例（原圖 2560×1600）
+  document.querySelectorAll('.ss').forEach((el) => {
+    const v = (k) => parseFloat(el.style.getPropertyValue(k));
+    el.style.aspectRatio = String((v('--w') * 2560) / (v('--h') * 1600));
   });
 
   const n = parseInt(new URLSearchParams(location.search).get('slide'), 10);

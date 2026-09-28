@@ -7,9 +7,11 @@
   --mid: #B6CCF0;
   --light: #D7E1F2;
   --paper: #EEF3FB;
-  --gold: #E3B04B;
-  --gold-line: #C9962E;
-  --gold-soft: #FBF1DA;
+  /* 亮黃：標籤、螢光底線；雲朵與波紋的金線另外用 --gold-deco，維持 logo 的金色 */
+  --gold: #F8D85E;
+  --gold-line: #E2B832;
+  --gold-soft: #FDF3C4;
+  --gold-deco: #E3B04B;
   --text: #26262B;
   --muted: #6B6A64;
   --font: "PingFang TC", "Noto Sans TC", "Heiti TC", sans-serif;
@@ -56,7 +58,7 @@ h2 {
 }
 em {
   font-style: normal; color: var(--deep);
-  background: linear-gradient(transparent 62%, rgba(227,176,75,.55) 62%);
+  background: linear-gradient(transparent 62%, rgba(248,216,94,.85) 62%);
 }
 
 .foot {
@@ -120,10 +122,10 @@ em {
 .cover .foot span { background: rgba(255,255,255,.9); padding: 4px 16px; border-radius: 999px; }
 
 /* 2 說明 */
-.prose { padding: 40px 46px; font-size: 34px; line-height: 1.75; }
+.prose { padding: 36px 44px; font-size: 32px; line-height: 1.7; }
 .prose p + p { margin-top: 18px; }
 .prose b { color: var(--deep); }
-.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 30px 0 56px; }
 .feat { background: #fff; border-radius: 24px; padding: 30px 16px 26px; text-align: center; border: 2px solid rgba(182,204,240,.7); }
 .badge {
   width: 118px; height: 118px; margin: 0 auto 16px; border-radius: 50%;
@@ -167,7 +169,7 @@ em {
 .steps span { font-size: 24px; color: var(--muted); }
 
 /* 6 PDF 功能 */
-.grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .tile { background: #fff; border-radius: 26px; padding: 22px 22px 26px; border: 2px solid rgba(182,204,240,.7); box-shadow: 0 8px 22px rgba(44,90,150,.08); }
 .tile h3 { font-size: 36px; color: var(--deep); margin: 18px 0 6px; }
 .tile p { font-size: 25px; color: var(--muted); line-height: 1.5; }
@@ -194,9 +196,9 @@ em {
 .pair .shot { padding: 18px; }
 
 /* 8 工具 */
-.tools { display: flex; flex-direction: column; gap: 22px; }
+.tools { display: flex; flex-direction: column; gap: 22px; margin-bottom: 40px; }
 .tool { background: #fff; border-radius: 26px; padding: 30px 38px; border: 2px solid rgba(182,204,240,.7); }
-.tool.hl { border: 4px solid var(--gold); box-shadow: 0 10px 30px rgba(201,150,46,.18); }
+.tool.hl { border: 4px solid var(--gold); box-shadow: 0 10px 30px rgba(226,184,50,.22); }
 .tool .head { display: flex; align-items: center; gap: 18px; margin-bottom: 12px; }
 .tool h3 { font-size: 44px; color: var(--deep); }
 .tool .tag { font-size: 24px; padding: 4px 18px; }
@@ -211,7 +213,7 @@ em {
 .lead { font-size: 38px; font-weight: 700; color: var(--deep-dark); margin-top: 40px; letter-spacing: .06em; }
 .url {
   font-size: 88px; font-weight: 900; color: var(--deep); letter-spacing: .01em; margin: 6px 0 36px;
-  background: linear-gradient(transparent 68%, rgba(227,176,75,.55) 68%);
+  background: linear-gradient(transparent 68%, rgba(248,216,94,.85) 68%);
 }
 .checklist { padding: 30px 50px; text-align: left; }
 .checklist p { font-size: 32px; line-height: 1.9; font-weight: 600; }
@@ -219,3 +221,89 @@ em {
 .cta .fine { margin-top: 14px; }
 .shot.clip { overflow: hidden; padding-top: 10px; }
 .shot.clip img { margin-top: -14px; }
+
+/* 第 6 張：實際 PDF 題目（上）＋題號那一列放大（下），金框圈出三個小方格 */
+.vis.real { flex-direction: column; gap: 12px; padding: 0 14px; }
+.vis.real .frame { position: relative; width: 100%; background: #fff; border-radius: 8px; padding: 8px 6px; }
+.vis.real .frame img { display: block; width: 100%; }
+.vis.real .ring {
+  position: absolute; border: 3px solid var(--gold-line); border-radius: 8px;
+  box-shadow: 0 0 0 3px rgba(248,216,94,.5);
+}
+.vis.real .frame .ring { left: 64.5%; top: 76%; width: 15%; height: 19%; }
+/* 原圖 807×231，取 x 490–807、y 193–231 這段放大 1.15 倍 */
+.vis.real .zoom {
+  position: relative; width: 100%; height: 46px; overflow: hidden;
+  background: #fff; border-radius: 8px; border: 2px solid var(--mid);
+}
+.vis.real .zoom img { display: block; width: 928px; max-width: none; margin: -222px 0 0 -563px; }
+.vis.real .zoom .ring { left: 63px; top: 4px; width: 102px; height: 34px; }
+.cover .brand { margin-bottom: 110px; }
+
+/* ===== 第二篇：網站截圖 ===== */
+/* 截圖裁切：原圖 2560×1600，--x --y --w --h 是佔原圖的比例 */
+.ss {
+  position: relative; width: 100%; overflow: hidden;
+  /* 高度由 social.js 依 --w --h 算出 aspect-ratio */
+}
+.ss img {
+  position: absolute; max-width: none;
+  width: calc(100% / var(--w)); height: calc(100% / var(--h));
+  left: calc(-100% * var(--x) / var(--w)); top: calc(-100% * var(--y) / var(--h));
+}
+/* 瀏覽器外框 */
+.browser {
+  background: #fff; border-radius: 20px; overflow: hidden;
+  border: 2px solid rgba(182,204,240,.9); box-shadow: 0 12px 32px rgba(44,90,150,.14);
+  flex-shrink: 0;
+}
+.browser.narrow { width: 780px; align-self: center; }
+.browser .bar {
+  display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px;
+  background: var(--paper); border-bottom: 2px solid rgba(182,204,240,.6);
+}
+.browser .bar i { width: 12px; height: 12px; border-radius: 50%; background: var(--mid); }
+.browser .bar span { margin-left: 12px; font-size: 20px; font-weight: 600; color: var(--accent); }
+.browser.slim { width: 760px; align-self: center; padding: 6px 10px; }
+.browser.tilt {
+  position: absolute !important; left: 150px; right: -50px; bottom: 105px; z-index: 2 !important;
+  transform: rotate(-4deg);
+}
+.h1-sm { font-size: 124px !important; }
+.cover .brand.tight { margin-bottom: 60px; }
+.badge.s3 { font-size: 28px; letter-spacing: -.02em; }
+.cover .tags { margin-bottom: 20px; }
+
+/* 開始考試的流程 */
+.flow { list-style: none; counter-reset: f; margin-top: 26px; display: grid; gap: 12px; }
+.flow li {
+  counter-increment: f; position: relative; padding: 10px 20px 10px 76px;
+  background: #fff; border-radius: 18px; border: 2px solid rgba(182,204,240,.7);
+  display: flex; flex-direction: column;
+}
+.flow li::before {
+  content: counter(f); position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--deep); color: #fff; font-weight: 800; font-size: 22px;
+}
+.flow b { font-size: 29px; color: var(--deep); }
+.flow span { font-size: 24px; color: var(--muted); }
+
+/* ▲●■ */
+.marks { display: grid; gap: 16px; margin-top: 30px; }
+.mk {
+  display: grid; grid-template-columns: 84px 1fr auto; align-items: center; gap: 18px;
+  background: #fff; border-radius: 22px; padding: 22px 26px; border: 2px solid rgba(182,204,240,.7);
+}
+.mk:first-child { border: 4px solid var(--gold); }
+.mk .sym { font-size: 60px; line-height: 1; text-align: center; }
+.mk .tri { color: #E39A1E; } .mk .ci { color: #D64545; } .mk .sq { color: var(--accent); }
+.mk b { display: block; font-size: 32px; color: var(--deep); }
+.mk span { font-size: 25px; color: var(--muted); }
+.mk .order {
+  font-style: normal; font-size: 26px; font-weight: 800; color: var(--deep);
+  background: var(--paper); border-radius: 999px; padding: 6px 16px;
+}
+.mk:first-child .order { background: var(--gold); color: #3A2A06; }
+
+.url-sm { font-size: 76px !important; }
