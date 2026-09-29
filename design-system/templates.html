@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>多保命 社群圖範本</title>
+<link rel="stylesheet" href="../social/social.css">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="print.css" media="print">
+<style>
+  /* 頁碼「/ 08」：改總頁數只要改這裡 */
+  body { --total: "08"; }
+  .ph { color: var(--muted); }
+  .quote { font-size: 56px; font-weight: 700; line-height: 1.5; color: var(--deep); padding: 56px 50px; text-align: center; }
+  .quote small { display: block; margin-top: 24px; font-size: 28px; color: var(--muted); font-weight: 500; }
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .vs .col { padding: 34px 30px; }
+  .vs h3 { font-size: 40px; color: var(--deep); margin-bottom: 14px; }
+  .vs ul { list-style: none; display: grid; gap: 12px; }
+  .vs li { font-size: 29px; line-height: 1.5; padding-left: 30px; position: relative; }
+  .vs li::before { content: ""; position: absolute; left: 2px; top: 15px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+  .vs .col.hl { border: 4px solid var(--gold); box-shadow: var(--shadow-gold); }
+  .vs .col.hl li::before { background: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- T1 封面 -->
+<section class="slide cover">
+  <div class="brand"><img src="../assets/images/多保命.png" alt=""><span>多保命 RN High Pass</span></div>
+  <span class="pill">標籤文字</span>
+  <h1>主標題<br>最多兩行</h1>
+  <p class="sub">副標題：一句話說明內容・可分段用「・」</p>
+  <div class="tags"><span class="tag gold big">重點標籤</span><span class="tag big">次要標籤</span></div>
+  <div class="fan">
+    <img src="../assets/images/covers/bundles/01_explanation.jpg" alt="">
+    <img src="../assets/images/covers/bundles/05_explanation.jpg" alt="">
+    <img src="../assets/images/covers/bundles/07_explanation.jpg" alt="">
+    <img src="../assets/images/covers/bundles/08_explanation.jpg" alt="">
+    <img src="../assets/images/covers/bundles/10_explanation.jpg" alt="">
+  </div>
+  <div class="waves"></div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T2 說明頁：標題 + 文字卡 + 三特色 -->
+<section class="slide">
+  <div class="num">02</div>
+  <div class="kicker">小標題</div>
+  <h2>標題最多兩行<br>重點用<em>螢光筆</em></h2>
+  <div class="card prose"><p>內文 32px，行高 1.7。一段講一件事，最多兩段。</p><p>重點可以<b>加粗變藍</b>。</p></div>
+  <div class="trio">
+    <div class="feat"><div class="badge gold">免費</div><h3>特色一</h3><p>說明兩行<br>以內</p></div>
+    <div class="feat"><div class="badge">PDF</div><h3>特色二</h3><p>說明兩行<br>以內</p></div>
+    <div class="feat"><div class="badge">分章</div><h3>特色三</h3><p>說明兩行<br>以內</p></div>
+  </div>
+  <div class="swipe">往右滑，看更多 →</div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T3 數字頁：三格統計 + 條列 -->
+<section class="slide">
+  <div class="num">03</div>
+  <div class="kicker">數字一覽</div>
+  <h2>用數字說明<br>一眼看懂</h2>
+  <div class="stats">
+    <div><b>11</b><span>科目</span></div>
+    <div><b>162</b><span>章</span></div>
+    <div><b>26</b><span>次國考</span></div>
+  </div>
+  <ul class="points">
+    <li><b>條列重點一</b>：補充說明，最多兩行</li>
+    <li><b>條列重點二</b>：補充說明，最多兩行</li>
+    <li><b>條列重點三</b>：補充說明，最多兩行</li>
+  </ul>
+  <p class="note">底部備註一句話</p>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T4 截圖頁：瀏覽器外框 / 一般截圖框 -->
+<section class="slide">
+  <div class="num">04</div>
+  <div class="kicker">畫面示範</div>
+  <h2>截圖放這裡<br>旁邊補<em>一句話</em></h2>
+  <div class="browser">
+    <div class="bar"><i></i><i></i><i></i><span>rnhighpass.com</span></div>
+    <img src="../assets/images/guide/exp-chapter-map.png" alt="" style="display:block;width:100%">
+  </div>
+  <p class="note">截圖說明（可換成 .shot 白卡框）</p>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T5 雙欄比較 -->
+<section class="slide">
+  <div class="num">05</div>
+  <div class="kicker">比較</div>
+  <h2>A 和 B<br>差在哪裡</h2>
+  <div class="vs">
+    <div class="card col"><h3>選項 A</h3><ul><li>特點一</li><li>特點二</li><li>特點三</li></ul></div>
+    <div class="card col hl"><h3>選項 B</h3><ul><li>特點一</li><li>特點二</li><li>特點三</li></ul></div>
+  </div>
+  <p class="note">金框 = 推薦 / 重點那一欄</p>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T6 步驟 / 流程 -->
+<section class="slide">
+  <div class="num">06</div>
+  <div class="kicker">怎麼做</div>
+  <h2>三個步驟<br>就完成</h2>
+  <ol class="flow">
+    <li><b>步驟一</b><span>一行說明</span></li>
+    <li><b>步驟二</b><span>一行說明</span></li>
+    <li><b>步驟三</b><span>一行說明</span></li>
+    <li><b>步驟四</b><span>一行說明</span></li>
+  </ol>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T7 工具卡：一般卡 + 金框重點卡 -->
+<section class="slide">
+  <div class="num">07</div>
+  <div class="kicker">功能介紹</div>
+  <h2>功能卡片<br>一張講一個</h2>
+  <div class="tools">
+    <div class="tool hl"><div class="head"><h3>重點功能</h3><span class="tag gold">NEW</span></div><ul><li>說明一</li><li>說明二</li></ul></div>
+    <div class="tool"><div class="head"><h3>一般功能</h3><span class="tag">免費</span></div><ul><li>說明一</li><li>說明二</li></ul></div>
+  </div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- T8 CTA 結尾 -->
+<section class="slide cta">
+  <img class="omamori" src="../assets/images/多保命.png" alt="">
+  <p class="lead">想看更多？來這裡</p>
+  <p class="url">rnhighpass.com</p>
+  <div class="card checklist"><p>✔ 條件一<br>✔ 條件二<br>✔ 條件三</p></div>
+  <p class="bless">祝大家 多保命・高分上榜</p>
+  <p class="fine">免責聲明一行，字級 24px</p>
+  <div class="waves"></div>
+</section>
+
+<script src="../social/social.js"></script>
+</body>
+</html>

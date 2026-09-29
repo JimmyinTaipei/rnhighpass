@@ -14,7 +14,7 @@
   --gold-deco: #E3B04B;
   --text: #26262B;
   --muted: #6B6A64;
-  --font: "PingFang TC", "Noto Sans TC", "Heiti TC", sans-serif;
+  --font: "Noto Sans TC", "PingFang TC", "Heiti TC", sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,7 +44,7 @@ body.single .slide.on { display: flex; }
   position: absolute; top: 56px; right: 84px;
   font-size: 26px; font-weight: 600; letter-spacing: .12em; color: var(--accent);
 }
-.num::after { content: " / 09"; color: var(--mid); }
+.num::after { content: " / " var(--total, "09"); color: var(--mid); }
 .kicker {
   align-self: flex-start;
   font-size: 30px; font-weight: 600; color: var(--accent);

@@ -1,0 +1,44 @@
+/* 多保命 Design Tokens — 社群圖與網站共用的單一來源
+   社群圖畫布 1080×1350（IG / Threads 4:5）。網站用時字級請看 GUIDE.md 的縮放表。
+   social/social.css 目前仍自帶同一份數值；日後新版面請直接 @import 本檔。 */
+:root {
+  /* 藍（與網站 style.css、測驗站同一色階） */
+  --deep: #2C5A96;        /* 標題、主按鈕、重點文字 */
+  --deep-dark: #1F4474;   /* 副標、hover */
+  --accent: #6592CD;      /* 小標、頁碼、圓點 */
+  --mid: #B6CCF0;         /* 邊框、分隔 */
+  --light: #D7E1F2;       /* 背景上緣 */
+  --paper: #EEF3FB;       /* 背景中段、淺色底塊 */
+  /* 金（御守 logo）— 只做點綴，不做大面積 */
+  --gold: #F8D85E;        /* 標籤、螢光底線、圓點 */
+  --gold-line: #E2B832;   /* 金色元件的邊線 */
+  --gold-soft: #FDF3C4;
+  --gold-deco: #E3B04B;   /* 祥雲、青海波描邊 */
+  --on-gold: #3A2A06;     /* 金底上的文字 */
+  /* 文字 */
+  --text: #26262B;
+  --muted: #6B6A64;
+  /* 符號色（▲●■ 等） */
+  --red: #D64545; --orange: #E39A1E;
+  /* 科目色（網站下載頁 data-group） */
+  --bm: #B4485C; --fa: #AD5C28; --ms: #3E7C57; --op: #2C5A96; --pc: #7A4E86;
+
+  --bg-gradient: linear-gradient(180deg, #D7E1F2 0%, #EEF3FB 55%, #F7F9FD 100%);
+
+  --font: "Noto Sans TC", "PingFang TC", "Heiti TC", sans-serif;
+  /* 字重：只用 400 / 500 / 700 / 900（Canva 與 Google Fonts 都有） */
+
+  /* 社群圖字級（px，1080 寬畫布） */
+  --fs-cover: 150px; --fs-cover-sm: 124px;
+  --fs-h2: 76px; --fs-cta-url: 88px;
+  --fs-h3: 44px; --fs-lead: 36px;
+  --fs-kicker: 30px; --fs-body: 32px; --fs-list: 29px;
+  --fs-caption: 25px; --fs-min: 24px;
+
+  /* 版面 */
+  --pad-x: 84px; --pad-top: 92px; --foot-bottom: 48px;
+  --radius-lg: 28px; --radius-md: 22px; --radius-sm: 12px; --radius-pill: 999px;
+  --border-card: 2px solid rgba(182,204,240,.7);
+  --shadow-card: 0 10px 30px rgba(44,90,150,.10);
+  --shadow-gold: 0 10px 30px rgba(226,184,50,.22);
+}

@@ -1,0 +1,4 @@
+/* 給 export.sh 輸出 PDF 用：一張 slide = 一頁 1080×1350 */
+@page { size: 1080px 1350px; margin: 0; }
+html, body { background: none !important; }
+.slide { margin: 0 !important; break-after: page; }
