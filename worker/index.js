@@ -37,6 +37,19 @@ function loadManifest(env, baseUrl) {
       for (const group of ["bundles", "chapters", "pastExams"]) {
         for (const item of data[group] || []) names.set(item.key, item.name);
       }
+      // 相關資源的額外下載檔（scripts/build-extras.mjs 產生）。讀不到只略過，不影響主要下載。
+      try {
+        const ex = await env.ASSETS.fetch(new URL("/assets/data/extras.json", baseUrl));
+        if (ex.ok) {
+          const extras = await ex.json();
+          for (const items of Object.values(extras)) {
+            if (!Array.isArray(items)) continue;
+            for (const item of items) if (item.key && item.name) names.set(item.key, item.name);
+          }
+        }
+      } catch {
+        /* extras.json 壞掉或不存在 */
+      }
       return names;
     })().catch((err) => {
       manifestPromise = null; // 失敗不要一直沿用壞掉的快取

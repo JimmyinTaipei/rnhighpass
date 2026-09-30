@@ -12,13 +12,14 @@ const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const DIST = path.join(ROOT, "dist-r2");
 
 const manifest = JSON.parse(await readFile(path.join(ROOT, "assets/data/manifest.json"), "utf8"));
+const extras = JSON.parse(await readFile(path.join(ROOT, "assets/data/extras.json"), "utf8"));
 const notUploaded = new Set();
 
 const env = {
   ASSETS: {
     async fetch(req) {
       const p = new URL(req.url ?? req).pathname;
-      if (p === "/assets/data/manifest.json") {
+      if (p === "/assets/data/manifest.json" || p === "/assets/data/extras.json") {
         return new Response(await readFile(path.join(ROOT, p.slice(1))), { status: 200 });
       }
       return new Response("static", { status: 200 });
@@ -194,6 +195,30 @@ console.log("\n[manifest 範圍]");
   const keys = [...manifest.bundles, ...manifest.chapters, ...manifest.pastExams].map((i) => i.key);
   check(new Set(keys).size === keys.length, "key 無重複");
   check(keys.every((k) => /^[\x20-\x7E]+$/.test(k)), "key 全為 ASCII");
+}
+
+/* 7. 相關資源額外下載（extras.json） */
+console.log("\n[相關資源：醫事國考生化]");
+{
+  const list = extras.biochem || [];
+  check(list.length === 8, "8 份檔案（4 冊 × 詳解／題本）", `實際 ${list.length}`);
+  for (const type of ["詳解", "題本"]) {
+    const books = list.filter((i) => i.type === type).map((i) => i.book).sort().join();
+    check(books === "1,2,3,4", `${type} 有 B1–B4`, books);
+  }
+  check(list.every((i) => /^[\x20-\x7E]+$/.test(i.key)), "key 全為 ASCII");
+  check(list.every((i) => /_[0-9a-f]{10}\.pdf$/.test(i.key)), "key 帶內容雜湊");
+  const item = list.find((i) => i.book === 2 && i.type === "詳解");
+  const r = await call(fileUrl(item.key));
+  const cd = r.headers.get("content-disposition") || "";
+  check(r.status === 200, "可以下載", `實際 ${r.status}`);
+  check(cd.includes(encodeURIComponent(item.name)), "中文檔名正確", item.name);
+  const body = new Uint8Array(await r.arrayBuffer());
+  check(body.length === item.size, "大小與 extras.json 一致", `${body.length} vs ${item.size}`);
+  const bad = await call(fileUrl("extras/biochem/b9_explanation_0000000000.pdf"));
+  check(bad.status === 404, "extras.json 沒列的 key → 404", `回 ${bad.status}`);
+  const all = [...manifest.bundles, ...manifest.chapters, ...manifest.pastExams, ...list].map((i) => i.key);
+  check(new Set(all).size === all.length, "與 manifest 的 key 無重複");
 }
 
 console.log(`\n${fail === 0 ? "✓" : "✗"} ${pass} 通過，${fail} 失敗\n`);

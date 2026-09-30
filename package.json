@@ -7,6 +7,7 @@
   "scripts": {
     "manifest": "node scripts/build-manifest.mjs",
     "covers": "bash scripts/make-covers.sh",
+    "extras": "node scripts/build-extras.mjs",
     "upload": "bash scripts/upload-r2.sh",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",

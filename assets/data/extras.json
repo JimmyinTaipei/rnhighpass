@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-09-30T05:53:17.190Z",
+  "biochem": [
+    {
+      "key": "extras/biochem/b1_explanation_9a7d363414.pdf",
+      "name": "醫事國考生化_B1詳解_生物分子與蛋白質酵素.pdf",
+      "book": 1,
+      "bookName": "生物分子與蛋白質酵素",
+      "type": "詳解",
+      "size": 3555503,
+      "cover": "assets/images/covers/extras/biochem/b1_explanation.jpg"
+    },
+    {
+      "key": "extras/biochem/b2_explanation_6ccc9da3ab.pdf",
+      "name": "醫事國考生化_B2詳解_代謝生化與維生素.pdf",
+      "book": 2,
+      "bookName": "代謝生化與維生素",
+      "type": "詳解",
+      "size": 3318765,
+      "cover": "assets/images/covers/extras/biochem/b2_explanation.jpg"
+    },
+    {
+      "key": "extras/biochem/b3_explanation_5610667453.pdf",
+      "name": "醫事國考生化_B3詳解_細胞膜訊息與生醫專題.pdf",
+      "book": 3,
+      "bookName": "細胞膜訊息與生醫專題",
+      "type": "詳解",
+      "size": 1493400,
+      "cover": "assets/images/covers/extras/biochem/b3_explanation.jpg"
+    },
+    {
+      "key": "extras/biochem/b4_explanation_d1882d8fac.pdf",
+      "name": "醫事國考生化_B4詳解_分子生物學與生物技術.pdf",
+      "book": 4,
+      "bookName": "分子生物學與生物技術",
+      "type": "詳解",
+      "size": 2108755,
+      "cover": "assets/images/covers/extras/biochem/b4_explanation.jpg"
+    },
+    {
+      "key": "extras/biochem/b1_workbook_c0556fc66e.pdf",
+      "name": "醫事國考生化_B1題本_生物分子與蛋白質酵素.pdf",
+      "book": 1,
+      "bookName": "生物分子與蛋白質酵素",
+      "type": "題本",
+      "size": 2484949,
+      "cover": "assets/images/covers/extras/biochem/b1_workbook.jpg"
+    },
+    {
+      "key": "extras/biochem/b2_workbook_b83d204f9d.pdf",
+      "name": "醫事國考生化_B2題本_代謝生化與維生素.pdf",
+      "book": 2,
+      "bookName": "代謝生化與維生素",
+      "type": "題本",
+      "size": 2093141,
+      "cover": "assets/images/covers/extras/biochem/b2_workbook.jpg"
+    },
+    {
+      "key": "extras/biochem/b3_workbook_a89036f8ac.pdf",
+      "name": "醫事國考生化_B3題本_細胞膜訊息與生醫專題.pdf",
+      "book": 3,
+      "bookName": "細胞膜訊息與生醫專題",
+      "type": "題本",
+      "size": 1166991,
+      "cover": "assets/images/covers/extras/biochem/b3_workbook.jpg"
+    },
+    {
+      "key": "extras/biochem/b4_workbook_cf61ba0acb.pdf",
+      "name": "醫事國考生化_B4題本_分子生物學與生物技術.pdf",
+      "book": 4,
+      "bookName": "分子生物學與生物技術",
+      "type": "題本",
+      "size": 1538073,
+      "cover": "assets/images/covers/extras/biochem/b4_workbook.jpg"
+    }
+  ]
+}

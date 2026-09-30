@@ -145,6 +145,21 @@ git add assets/data/manifest.json assets/images/covers && git commit -m "更新�
 4. 每個學期的考古題份數必須一致
 5. key 不得重複
 
+### 相關資源的額外下載（醫事國考生化）
+
+「相關資源 › 醫事國考生化」的 8 份 PDF（4 冊 × 詳解／題本）不在 `manifest.json` 裡，
+而是另一份 `assets/data/extras.json`，因為 `npm run manifest` 每次都會整份重寫 manifest。
+Worker 會同時讀這兩份當下載白名單。來源是後醫專案的分享版 PDF：
+
+```sh
+npm run extras -- --src "/Users/jimmy/Library/Mobile Documents/com~apple~CloudDocs/後醫/08_考古題與模擬考/82_考題整理/08_share/pdf"
+npm run upload
+git add assets/data/extras.json assets/images/covers/extras
+```
+
+`npm run extras` 會算雜湊 key、把 PDF 放進 `dist-r2/extras/biochem/`、並從第一頁做封面。
+**`npm run manifest` 會清空 `dist-r2/`**：之後若要重新上傳這 8 份，先再跑一次 `npm run extras`。
+
 封面圖不是從檔名推的：`npm run manifest` 會順便寫出 `dist-r2/covers.json`
 （R2 key → 封面輸出路徑），`npm run covers` 照這份清單用 macOS 內建的
 `qlmanage` + `sips` 抽第一頁，不需要另外安裝 poppler。
