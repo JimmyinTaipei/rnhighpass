@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-09-30T05:53:17.190Z",
+  "generatedAt": "2026-09-30T06:17:45.468Z",
   "biochem": [
     {
-      "key": "extras/biochem/b1_explanation_9a7d363414.pdf",
+      "key": "extras/biochem/b1_explanation_edc906bdac.pdf",
       "name": "醫事國考生化_B1詳解_生物分子與蛋白質酵素.pdf",
       "book": 1,
       "bookName": "生物分子與蛋白質酵素",
       "type": "詳解",
-      "size": 3555503,
+      "size": 3319543,
       "cover": "assets/images/covers/extras/biochem/b1_explanation.jpg"
     },
     {
-      "key": "extras/biochem/b2_explanation_6ccc9da3ab.pdf",
+      "key": "extras/biochem/b2_explanation_556a72dfbe.pdf",
       "name": "醫事國考生化_B2詳解_代謝生化與維生素.pdf",
       "book": 2,
       "bookName": "代謝生化與維生素",
       "type": "詳解",
-      "size": 3318765,
+      "size": 3083418,
       "cover": "assets/images/covers/extras/biochem/b2_explanation.jpg"
     },
     {
-      "key": "extras/biochem/b3_explanation_5610667453.pdf",
+      "key": "extras/biochem/b3_explanation_e71fb9404d.pdf",
       "name": "醫事國考生化_B3詳解_細胞膜訊息與生醫專題.pdf",
       "book": 3,
       "bookName": "細胞膜訊息與生醫專題",
       "type": "詳解",
-      "size": 1493400,
+      "size": 1438301,
       "cover": "assets/images/covers/extras/biochem/b3_explanation.jpg"
     },
     {
-      "key": "extras/biochem/b4_explanation_d1882d8fac.pdf",
+      "key": "extras/biochem/b4_explanation_b4cac1bd12.pdf",
       "name": "醫事國考生化_B4詳解_分子生物學與生物技術.pdf",
       "book": 4,
       "bookName": "分子生物學與生物技術",
       "type": "詳解",
-      "size": 2108755,
+      "size": 1995066,
       "cover": "assets/images/covers/extras/biochem/b4_explanation.jpg"
     },
     {
