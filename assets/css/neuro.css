@@ -1,0 +1,1879 @@
+/* =========================================
+   神經解剖學（/resources/neuro/）
+   沿用 style.css 的色票與 guide.css 的版面；3D 區塊的深色配色與心電圖教學一致
+   ========================================= */
+
+.nx-wide {
+  max-width: 980px;
+}
+
+.nx-kicker {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.nx-kicker a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nx-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 18px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.nx-crumbs a {
+  color: var(--color-text-light);
+}
+
+/* ---------- 實體頁標題 ---------- */
+.nx-head {
+  margin-bottom: 18px;
+  border-left: 4px solid var(--c, var(--color-accent));
+  padding-left: 14px;
+}
+
+.nx-head h2 {
+  margin-bottom: 2px;
+}
+
+.nx-type {
+  margin: 0 0 4px;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+.nx-type a {
+  color: inherit;
+}
+
+.nx-en {
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+  margin: 0 0 10px;
+}
+
+.nx-abbr {
+  font-size: 0.72em;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-left: 4px;
+}
+
+.nx-hy {
+  color: #d99a1e;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.nx-soon {
+  display: inline-block;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--color-section-bg);
+  border: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  font-weight: normal;
+  vertical-align: 2px;
+}
+
+.nx-block {
+  margin: 26px 0;
+}
+
+.nx-block h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.5em;
+}
+
+.nx-block h4,
+.nx-section-legend h4 {
+  font-size: 0.92rem;
+  margin: 0 0 6px;
+  color: var(--color-strong);
+}
+
+.nx-block ul,
+.nx-block ol {
+  padding-left: 1.3em;
+  margin: 0 0 0.8em;
+}
+
+.nx-block li {
+  margin-bottom: 0.3em;
+}
+
+.nx-note {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+}
+
+.nx-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 28px;
+}
+
+@media (min-width: 760px) {
+  .nx-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.nx-block ul.nx-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-chips li {
+  margin: 0;
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  font-size: 0.82rem;
+}
+
+/* ---------- 神經元鏈 ---------- */
+.nx-block ol.nx-neurons {
+  list-style: none;
+  padding: 0;
+  counter-reset: none;
+}
+
+.nx-neuron {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 12px 14px 4px;
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.nx-neuron + .nx-neuron::before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: -13px;
+  height: 12px;
+  border-left: 2px dashed var(--color-mid);
+}
+
+.nx-neuron-ord {
+  margin: 0 0 6px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.nx-neuron dl {
+  display: grid;
+  grid-template-columns: 4.5em minmax(0, 1fr);
+  gap: 4px 10px;
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+.nx-neuron dt {
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  padding-top: 2px;
+}
+
+.nx-neuron dd {
+  margin: 0;
+}
+
+/* ---------- 切面 ---------- */
+.nx-section {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nx-section .nx-wm {
+  fill: #eef1f6;
+  stroke: #7d8aa0;
+  stroke-width: 1.2;
+}
+
+.nx-section .nx-gm {
+  fill: #cfc3cf;
+  stroke: #9a8a9a;
+  stroke-width: 0.8;
+  pointer-events: none;
+}
+
+.nx-section .nx-canal {
+  fill: #fff;
+  stroke: #9a8a9a;
+  stroke-width: 0.6;
+}
+
+.nx-section .nx-tract {
+  fill: var(--c);
+  fill-opacity: 0.8;
+  stroke: #fff;
+  stroke-width: 0.6;
+  cursor: pointer;
+  transition: fill-opacity 0.15s;
+}
+
+.nx-section .nx-tract:hover,
+.nx-section .nx-tract.is-hot {
+  fill-opacity: 1;
+  stroke: #26262b;
+  stroke-width: 1.4;
+}
+
+.nx-section .nx-tract.is-dim {
+  fill: #c9ced8;
+  fill-opacity: 0.55;
+}
+
+.nx-section .nx-lesion {
+  fill: rgba(224, 65, 58, 0.34);
+  stroke: #c62f28;
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
+  pointer-events: none;
+}
+
+.nx-section .nx-fiber {
+  fill: var(--c);
+  stroke: #26262b;
+  stroke-width: 1.2;
+}
+
+.nx-section .nx-ori {
+  font-size: 13px;
+  fill: #6b6a64;
+  font-family: var(--font-base);
+}
+
+.nx-section-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .nx-section-wrap {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+}
+
+.nx-big {
+  margin: 0;
+  padding: 10px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.nx-big figcaption {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: 6px;
+}
+
+.nx-section-legend > div + div {
+  margin-top: 14px;
+}
+
+ul.nx-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nx-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 0.93rem;
+}
+
+.nx-legend i,
+.nx-dot {
+  display: inline-block;
+  flex: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  margin-right: 2px;
+  vertical-align: -1px;
+}
+
+.nx-legend li.is-hot a {
+  font-weight: 700;
+}
+
+.nx-minis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.nx-mini {
+  margin: 0;
+  text-align: center;
+}
+
+.nx-mini a {
+  display: block;
+  padding: 4px;
+  border-radius: 10px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.nx-mini a:hover {
+  border-color: var(--color-accent);
+}
+
+.nx-mini figcaption {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.nx-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+
+.nx-thumb {
+  display: block;
+  padding: 4px 4px 2px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-strong);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.nx-thumb:hover {
+  border-color: var(--color-accent);
+}
+
+.nx-thumb .nx-tract {
+  cursor: inherit;
+}
+
+.nx-prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  font-size: 0.92rem;
+}
+
+.nx-block ul.nx-seglist,
+.nx-block ul.nx-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  list-style: none;
+  padding: 0;
+}
+
+.nx-block ul.nx-backlinks {
+  columns: 2 14em;
+  font-size: 0.92rem;
+}
+
+ul.nx-sources {
+  font-size: 0.85rem;
+}
+
+.nx-src-title {
+  display: block;
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+}
+
+ul.nx-deficits {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.nx-deficits li {
+  margin-bottom: 0.35em;
+}
+
+.nx-btn {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* ---------- 表格 ---------- */
+.nx-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nx-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--color-card);
+}
+
+.nx-table th,
+.nx-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.nx-table th {
+  background: var(--color-section-bg);
+  color: var(--color-strong);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nx-table .nx-aliases {
+  color: var(--color-text-light);
+  font-size: 0.84rem;
+}
+
+.nx-groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px 28px;
+}
+
+@media (min-width: 640px) {
+  .nx-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- 搜尋 ---------- */
+.nx-search {
+  position: relative;
+  margin: 18px 0 8px;
+}
+
+.nx-search label {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  margin-bottom: 4px;
+}
+
+.nx-search input {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+}
+
+.nx-search input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.nx-results {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 4px;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  box-shadow: 0 8px 24px rgba(20, 30, 50, 0.08);
+}
+
+.nx-results li a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-strong);
+}
+
+.nx-results li a:hover,
+.nx-results li a:focus {
+  background: var(--color-surface-hover);
+}
+
+.nx-results small {
+  color: var(--color-text-light);
+  margin-left: 6px;
+}
+
+/* ---------- hover 預覽卡片 ---------- */
+.nx-pv {
+  position: absolute;
+  z-index: 50;
+  width: min(320px, calc(100vw - 24px));
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 32px rgba(20, 30, 50, 0.16);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.nx-pv[hidden] {
+  display: none;
+}
+
+.nx-pv-type {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.nx-pv-title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-strong);
+  font-size: 1rem;
+}
+
+.nx-pv-en {
+  margin: 0 0 6px;
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+}
+
+.nx-pv-s {
+  margin: 0 0 6px;
+}
+
+.nx-pv-al {
+  margin: 0 0 6px;
+  color: var(--color-text-light);
+  font-size: 0.78rem;
+}
+
+.nx-pv-chain {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+}
+
+.nx-pv-svg {
+  display: block;
+  width: 130px;
+  float: right;
+  margin: 0 0 4px 8px;
+}
+
+.nx-pv-svg .nx-wm {
+  fill: #eef1f6;
+  stroke: #7d8aa0;
+  stroke-width: 1;
+}
+
+.nx-pv-svg .nx-gm {
+  fill: #cfc3cf;
+}
+
+.nx-pv-seg {
+  font-size: 11px;
+  fill: #6b6a64;
+}
+
+.nx-pv-go {
+  display: none;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.nx-pv.is-touch .nx-pv-go {
+  display: inline-block;
+}
+
+/* ---------- 3D ---------- */
+.nx-viewer {
+  --nv-bg: #f3f5f9;
+  --nv-panel: #ffffff;
+  --nv-line: #d6dce6;
+  --nv-text: #1f2633;
+  --nv-muted: #5d6879;
+  --nv-glass: rgba(255, 255, 255, 0.86);
+  --nv-glass-strong: rgba(255, 255, 255, 0.96);
+  --nv-accent: #3d6fb8;
+  --nv-link: #2c5a96;
+  --nv-key: #8a4b00;
+  --nv-strong: #111827;
+  --nv-halo: 0 0 3px #fff, 0 0 2px #fff;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--nv-bg);
+  color: var(--nv-text);
+  border: 1px solid var(--nv-line);
+  margin: 6px 0 10px;
+}
+
+.nx-viewer[data-theme="dark"] {
+  --nv-bg: #0f1a2e;
+  --nv-panel: #16243d;
+  --nv-line: #2a3b5c;
+  --nv-text: #dfe7f5;
+  --nv-muted: #9fb0cc;
+  --nv-glass: rgba(15, 26, 46, 0.8);
+  --nv-glass-strong: rgba(15, 26, 46, 0.94);
+  --nv-accent: #6592cd;
+  --nv-link: #9cc3ff;
+  --nv-key: #ffe9a8;
+  --nv-strong: #fff;
+  --nv-halo: 0 1px 3px #000;
+}
+
+@media (min-width: 860px) {
+  .nx-viewer {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+}
+
+.nx-stage-wrap {
+  position: relative;
+}
+
+.nx-stage {
+  position: relative;
+  height: min(72vh, 620px);
+  min-height: 380px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.nx-viewer[data-compact="1"] .nx-stage {
+  height: min(60vh, 480px);
+  min-height: 340px;
+}
+
+.nx-stage:active {
+  cursor: grabbing;
+}
+
+.nx-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nx-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--nv-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.nx-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.nx-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: -0.7em 0 0 8px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--nv-glass);
+  color: var(--nv-text);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.nx-label-lvl {
+  color: var(--nv-muted);
+  background: none;
+  text-shadow: var(--nv-halo);
+  margin-left: -34px;
+}
+
+.nx-label-key {
+  color: var(--nv-key);
+}
+
+.nx-tip {
+  position: absolute;
+  z-index: 3;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--nv-glass-strong);
+  border: 1px solid var(--nv-line);
+  font-size: 0.8rem;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.nx-views {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 52%;
+}
+
+.nx-views button,
+.nx-chip {
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--nv-line);
+  background: var(--nv-glass);
+  color: var(--nv-text);
+  cursor: pointer;
+}
+
+.nx-views button:hover,
+.nx-chip:hover {
+  border-color: var(--nv-accent);
+}
+
+.nx-chip[aria-pressed="true"] {
+  background: var(--nv-accent);
+  border-color: var(--nv-accent);
+  color: #fff;
+}
+
+.nx-legend3d {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 10px;
+  margin: 0;
+  padding: 5px 9px;
+  list-style: none;
+  border-radius: 6px;
+  background: var(--nv-glass);
+  font-size: 0.72rem;
+  color: var(--nv-muted);
+  pointer-events: none;
+  max-width: calc(100% - 104px);
+}
+
+.nx-theme {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--nv-line);
+  background: var(--nv-glass);
+  color: var(--nv-text);
+  cursor: pointer;
+}
+
+.nx-theme:hover {
+  border-color: var(--nv-accent);
+}
+
+.nx-legend3d i {
+  display: inline-block;
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: 2px;
+}
+
+.nx-panel {
+  background: var(--nv-panel);
+  border-top: 1px solid var(--nv-line);
+  padding: 12px 14px 14px;
+  font-size: 0.88rem;
+  max-height: min(72vh, 620px);
+  overflow-y: auto;
+}
+
+@media (min-width: 860px) {
+  .nx-panel {
+    border-top: 0;
+    border-left: 1px solid var(--nv-line);
+  }
+  .nx-viewer[data-compact="1"] .nx-panel {
+    max-height: min(60vh, 480px);
+  }
+}
+
+.nx-panel a {
+  color: var(--nv-link);
+}
+
+.nx-panel h4 {
+  margin: 12px 0 6px;
+  font-size: 0.82rem;
+  color: var(--nv-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.nx-panel h4:first-child {
+  margin-top: 0;
+}
+
+.nx-panel select,
+.nx-panel input[type="range"] {
+  width: 100%;
+  font: inherit;
+}
+
+.nx-panel select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: var(--nv-bg);
+  color: var(--nv-text);
+  border: 1px solid var(--nv-line);
+}
+
+.nx-modes {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.nx-modes .nx-chip {
+  flex: 1;
+  padding: 5px 8px;
+}
+
+.nx-tlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nx-tlist li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.nx-tlist label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.nx-tlist i {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.nx-tlist button {
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0 7px;
+  border-radius: 999px;
+  border: 1px solid var(--nv-line);
+  background: transparent;
+  color: var(--nv-muted);
+  cursor: pointer;
+}
+
+.nx-tlist button[aria-pressed="true"] {
+  color: #fff;
+  border-color: var(--nv-accent);
+  background: var(--nv-accent);
+}
+
+.nx-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+
+.nx-row > span {
+  color: var(--nv-muted);
+  font-size: 0.8rem;
+}
+
+.nx-toggles label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 12px 4px 0;
+  cursor: pointer;
+}
+
+.nx-inset {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: min(42%, 250px);
+  padding: 6px 8px 4px;
+  border-radius: 10px;
+  background: rgba(250, 251, 253, 0.96);
+  color: #26262b;
+  border: 1px solid var(--nv-line);
+  box-shadow: 0 4px 14px rgba(20, 30, 50, 0.16);
+}
+
+.nx-viewer[data-theme="dark"] .nx-inset {
+  background: rgba(238, 241, 246, 0.94);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.nx-inset p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.nx-inset-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.nx-inset-head a {
+  color: #2c5a96;
+}
+
+.nx-inset-foot {
+  color: #6b6a64;
+  text-align: center;
+}
+
+.nx-sec2d {
+  margin: 2px 0;
+}
+
+.nx-sec2d .nx-section .nx-ori {
+  font-size: 12px;
+}
+
+.nx-lvlname {
+  font-weight: 700;
+  color: var(--nv-strong);
+}
+
+.nx-panel ul.nx-deficits {
+  padding-left: 1.1em;
+}
+
+.nx-panel .nx-deficits li {
+  margin-bottom: 0.4em;
+}
+
+.nx-panel .nx-note {
+  color: var(--nv-muted);
+  font-size: 0.8rem;
+}
+
+.nx-chainleg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+  font-size: 0.8rem;
+  color: var(--nv-muted);
+}
+
+.nx-chainleg i {
+  display: inline-block;
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: 2px;
+}
+
+.nx-btn3d {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--nv-accent);
+  background: var(--nv-accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.nx-btn3d.is-ghost {
+  background: transparent;
+  color: var(--nv-text);
+  border-color: var(--nv-line);
+}
+
+@media (max-width: 600px) {
+  .nx-legend3d {
+    display: none;
+  }
+  .nx-views {
+    max-width: 48%;
+  }
+  .nx-views button {
+    padding: 2px 8px;
+  }
+  .nx-inset {
+    width: 46%;
+  }
+}
+
+/* ---------- 腦幹切面：神經核、腦神經、腦室 ---------- */
+.nx-section .nx-vent {
+  fill: #fff;
+  stroke: #9aa4b4;
+  stroke-width: 0.8;
+}
+
+.nx-section .nx-nuc {
+  fill: var(--c);
+  fill-opacity: 0.92;
+  stroke: #5b5566;
+  stroke-width: 0.7;
+  cursor: pointer;
+}
+
+.nx-section .nx-nuc.is-hot {
+  stroke: #26262b;
+  stroke-width: 2;
+}
+
+.nx-section .nx-nuc.is-dim {
+  fill-opacity: 0.35;
+}
+
+.nx-section .nx-nerve {
+  fill: none;
+  stroke: #d98b1f;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  cursor: pointer;
+}
+
+.nx-section .nx-nerve-dot {
+  fill: #d98b1f;
+  stroke: #fff;
+  stroke-width: 0.6;
+}
+
+.nx-section .nx-nerve.is-hot,
+.nx-section .nx-nerve-dot.is-hot {
+  stroke: #b45309;
+  stroke-width: 3.6;
+}
+
+.nx-section .nx-nlabel {
+  font-size: 11px;
+  font-weight: 700;
+  fill: #b45309;
+  font-family: var(--font-base);
+}
+
+.nx-colchip {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: #26262b;
+  background: var(--c);
+  white-space: nowrap;
+}
+
+/* ---------- 視覺路徑：視野圖、俯視圖、瞳孔表 ---------- */
+.nx-vf,
+.nx-vpath {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nx-vf .nx-vf-cell {
+  fill: var(--c);
+  fill-opacity: 0.32;
+  stroke: #fff;
+  stroke-width: 0.6;
+}
+
+.nx-vf .nx-vf-cell.is-lost {
+  fill: #26262b;
+  fill-opacity: 0.92;
+}
+
+.nx-vf .nx-vf-cell.is-hot {
+  fill-opacity: 0.95;
+}
+
+.nx-vf .nx-vf-ring {
+  fill: none;
+  stroke: #7d8aa0;
+  stroke-width: 0.8;
+}
+
+.nx-vf .nx-vf-axis {
+  stroke: #7d8aa0;
+  stroke-width: 0.5;
+  stroke-dasharray: 2 2;
+}
+
+.nx-vf .nx-vf-eye {
+  font-size: 9px;
+  font-weight: 700;
+  fill: #4b4a45;
+  font-family: var(--font-base);
+}
+
+.nx-vf .nx-vf-side {
+  font-size: 7px;
+  fill: #6b6a64;
+  font-family: var(--font-base);
+}
+
+.nx-vf-pick .nx-vf-cell {
+  cursor: pointer;
+  fill-opacity: 0.6;
+}
+
+.nx-vf-pick .nx-vf-cell.is-hot {
+  fill-opacity: 1;
+  stroke: #fff;
+  stroke-width: 1.4;
+}
+
+.nx-vf-pick .nx-vf-eye,
+.nx-vf-pick .nx-vf-side {
+  fill: var(--nv-muted);
+}
+
+.nx-vfig {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .nx-vfig {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+}
+
+.nx-vpath-fig svg {
+  max-height: 620px;
+}
+
+.nx-vside h4 {
+  margin: 0 0 6px;
+}
+
+.nx-vside .nx-vf {
+  max-width: 320px;
+  margin-bottom: 6px;
+}
+
+.nx-vpath .nx-vp-hemi {
+  fill: #eef1f6;
+  stroke: #b8c2d2;
+  stroke-width: 1;
+}
+
+.nx-vpath .nx-vp-bs {
+  fill: #e3e8f0;
+  stroke: #b8c2d2;
+  stroke-width: 0.8;
+}
+
+.nx-vpath .nx-vp-pit {
+  fill: #ead9f7;
+  stroke: #a987c7;
+  stroke-width: 0.8;
+  stroke-dasharray: 3 2;
+}
+
+.nx-vpath .nx-vp-eye {
+  fill: #fff;
+  stroke: #7d8aa0;
+  stroke-width: 1.2;
+}
+
+.nx-vpath .nx-vp-lgn {
+  fill: #bfe6fb;
+  stroke: #4a9cc7;
+  stroke-width: 0.8;
+}
+
+.nx-vpath .nx-vp-v1 {
+  fill: none;
+  stroke: #c8a6b8;
+  stroke-width: 7;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.nx-vpath .nx-vp-fiber {
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+.nx-vpath .nx-vp-fiber.is-cut {
+  stroke: #8d93a0;
+  stroke-dasharray: 3 2.5;
+  opacity: 0.8;
+}
+
+.nx-vpath .nx-vp-fiber.is-dim {
+  opacity: 0.15;
+}
+
+.nx-vpath .nx-vp-pupil {
+  fill: none;
+  stroke: #d9a300;
+  stroke-width: 1.4;
+  stroke-dasharray: 4 2;
+}
+
+.nx-vpath .nx-vp-eff {
+  fill: none;
+  stroke: #d98b1f;
+  stroke-width: 1.6;
+}
+
+.nx-vpath .nx-vp-cg {
+  fill: #ffb35c;
+  stroke: #b45309;
+  stroke-width: 0.6;
+}
+
+.nx-vpath .nx-lesion {
+  fill: rgba(224, 65, 58, 0.3);
+  stroke: #c62f28;
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
+}
+
+.nx-vpath .nx-vp-mark {
+  fill: none;
+  stroke: #c62f28;
+  stroke-width: 2.4;
+}
+
+.nx-vpath .nx-vp-label {
+  font-size: 11px;
+  fill: #4b4a45;
+  font-family: var(--font-base);
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 3px;
+}
+
+.nx-vf-legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 10px;
+  font-size: 0.85rem;
+}
+
+.nx-vf-mini {
+  max-width: 160px;
+  margin-top: 6px;
+}
+
+.nx-table-vis td:nth-child(2) {
+  min-width: 150px;
+}
+
+table.nx-pupil {
+  min-width: 0;
+  max-width: 320px;
+}
+
+table.nx-pupil td,
+table.nx-pupil th {
+  text-align: center;
+  padding: 4px 8px;
+}
+
+table.nx-pupil td.is-ok {
+  color: #1c7a55;
+}
+
+table.nx-pupil td.is-bad {
+  color: #c62f28;
+  font-weight: 700;
+}
+
+.nx-panel table.nx-pupil {
+  font-size: 0.8rem;
+  background: transparent;
+}
+
+.nx-panel table.nx-pupil th,
+.nx-panel table.nx-pupil td {
+  padding: 3px 6px;
+  background: transparent;
+  border-color: var(--nv-line);
+  color: var(--nv-text);
+}
+
+.nx-panel table.nx-pupil td.is-ok {
+  color: #8be0c9;
+}
+
+.nx-panel table.nx-pupil td.is-bad {
+  color: #ff8a7a;
+}
+
+.nx-inset-vf .nx-vf .nx-vf-eye {
+  font-size: 10px;
+}
+
+/* ---------- 小腦攤開圖 ---------- */
+.nx-cbmap {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.nx-cbmap .nx-cb-cell {
+  fill: var(--c);
+  fill-opacity: 0.8;
+  stroke: #fff;
+  stroke-width: 0.8;
+}
+
+.nx-cbmap .nx-cb-cell.is-dim {
+  fill-opacity: 0.18;
+}
+
+.nx-cbmap .nx-cb-cell.is-hot {
+  fill-opacity: 1;
+}
+
+.nx-cbmap .nx-cb-fissure {
+  stroke: #3d3c38;
+  stroke-width: 1.4;
+  stroke-dasharray: 5 3;
+}
+
+.nx-cbmap .nx-cb-label {
+  font-size: 11px;
+  font-weight: 700;
+  fill: #26262b;
+  font-family: var(--font-base);
+}
+
+.nx-cbmap .nx-cb-small {
+  font-size: 8.5px;
+  fill: #4b4a45;
+  font-family: var(--font-base);
+}
+
+.nx-cbmap .nx-cb-hit {
+  fill: #e0413a;
+  fill-opacity: 0.75;
+}
+
+.nx-cbmap .nx-cb-nuc {
+  fill: var(--c);
+  stroke: #5b5566;
+  stroke-width: 0.8;
+}
+
+.nx-cbmap .nx-cb-nuc.is-dim {
+  fill-opacity: 0.25;
+}
+
+.nx-cbmap .nx-cb-nuc.is-hot {
+  stroke: #26262b;
+  stroke-width: 1.6;
+}
+
+.nx-cbmap .nx-cb-nuc.is-hit {
+  stroke: #e0413a;
+  stroke-width: 2.4;
+}
+
+.nx-inset .nx-cbmap .nx-cb-small {
+  font-size: 11px;
+}
+
+.nx-inset-cb {
+  width: min(32%, 180px);
+}
+
+/* ---------- 聽覺路線圖 ---------- */
+.nx-aud {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.nx-aud .nx-aud-hemi {
+  fill: #eef1f6;
+  stroke: #b8c2d2;
+  stroke-width: 1;
+}
+
+.nx-aud .nx-aud-stem {
+  fill: #e3e8f0;
+  stroke: #b8c2d2;
+  stroke-width: 0.8;
+}
+
+.nx-aud .nx-aud-thal {
+  fill: #dfe8fb;
+  stroke: #9fb4d4;
+  stroke-width: 0.8;
+}
+
+.nx-aud .nx-aud-coch {
+  fill: none;
+  stroke: #d9962b;
+  stroke-width: 2;
+}
+
+.nx-aud .nx-aud-canal {
+  fill: none;
+  stroke: #3fae9c;
+  stroke-width: 1.4;
+}
+
+.nx-aud .nx-aud-route {
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.nx-aud .nx-aud-route.is-cut {
+  stroke: #8d93a0;
+  stroke-dasharray: 4 3;
+  opacity: 0.8;
+}
+
+.nx-aud .nx-aud-node {
+  fill: #fff;
+  stroke: #5b6475;
+  stroke-width: 1.2;
+}
+
+.nx-aud .nx-aud-lesion {
+  fill: rgba(224, 65, 58, 0.3);
+  stroke: #c62f28;
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
+}
+
+.nx-aud .nx-aud-label,
+.nx-aud .nx-aud-ear,
+.nx-aud .nx-aud-small {
+  font-size: 11px;
+  fill: #4b4a45;
+  font-family: var(--font-base);
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 3px;
+}
+
+.nx-aud .nx-aud-ear {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nx-aud .nx-aud-small {
+  font-size: 10px;
+  fill: #6b6a64;
+}
+
+table.nx-hear {
+  min-width: 0;
+  max-width: 420px;
+  margin: 8px auto 0;
+}
+
+table.nx-hear td,
+table.nx-hear th {
+  text-align: center;
+  padding: 4px 8px;
+}
+
+table.nx-hear td.is-ok {
+  color: #1c7a55;
+}
+
+table.nx-hear td.is-bad {
+  color: #c62f28;
+  font-weight: 700;
+}
+
+.nx-table td.is-ok {
+  color: #1c7a55;
+}
+
+.nx-table td.is-bad {
+  color: #c62f28;
+  font-weight: 700;
+}
+
+/* ---------- 間腦的水平切面 ---------- */
+.nx-section .nx-di-hemi {
+  fill: #eef1f6;
+  stroke: #b8c2d2;
+  stroke-width: 1;
+}
+
+.nx-section .nx-di-vent {
+  fill: #fff;
+  stroke: #9aa4b4;
+  stroke-width: 0.8;
+}
+
+.nx-section .nx-di-shell {
+  fill: none;
+  stroke: #9aa4b4;
+  stroke-width: 0.8;
+  stroke-dasharray: 3 2;
+}
+
+.nx-section .nx-di-ic {
+  stroke: var(--c);
+  stroke-opacity: 0.55;
+  stroke-linecap: round;
+}
+
+.nx-section .nx-di-nuc {
+  fill: var(--c);
+  fill-opacity: 0.85;
+  stroke: #5b5566;
+  stroke-width: 0.6;
+  cursor: pointer;
+}
+
+.nx-section .nx-di-nuc.is-ctx {
+  fill-opacity: 0.45;
+  stroke: #a08b66;
+  cursor: pointer;
+}
+
+.nx-section .nx-di-nuc.is-hot {
+  fill-opacity: 1;
+  stroke: #26262b;
+  stroke-width: 1.8;
+}
+
+.nx-section .nx-di-nuc.is-dim {
+  fill-opacity: 0.25;
+}
+
+.nx-section .nx-di-label,
+.nx-section .nx-di-ic-label {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #26262b;
+  font-family: var(--font-base);
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 2.5px;
+}
+
+.nx-section .nx-di-ic-label {
+  font-weight: 400;
+  fill: #5b5566;
+}
+
+.nx-sec2d .nx-dsection .nx-di-label,
+.nx-sec2d .nx-dsection .nx-di-ic-label {
+  font-size: 12px;
+}
+
+/* ---------- 間腦：視丘核的連結 ---------- */
+.nx-links {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 8px;
+  font-size: 0.88rem;
+}
+
+.nx-links li {
+  padding: 2px 0 2px 10px;
+  border-left: 3px solid #7dd3fc;
+  margin-bottom: 3px;
+}
+
+.nx-links li.is-out {
+  border-left-color: #ffb86b;
+}
+
+.nx-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.nx-label-link {
+  background: rgba(255, 184, 107, 0.92);
+  color: #3a2200;
+}
+
+.nx-section-legend .nx-table {
+  min-width: 0;
+}
+
+.nx-table th.nx-in {
+  color: #2b7fb0;
+  white-space: nowrap;
+}
+
+.nx-table th.nx-out {
+  color: #c06a12;
+  white-space: nowrap;
+}
+
+.nx-di-mini {
+  min-width: 220px;
+}
+
+/* ---------- 3D 整合頁 ---------- */
+.nx-hub-title {
+  margin-bottom: 8px;
+}
+
+.nx-hub-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 8px;
+}
+
+.nx-hub-tab {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border, #d6dce6);
+  background: #fff;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nx-hub-tab:hover {
+  border-color: #3d6fb8;
+}
+
+.nx-hub-tab[aria-pressed="true"] {
+  background: #3d6fb8;
+  border-color: #3d6fb8;
+  color: #fff;
+}
+
+.nx-open3d {
+  margin: 4px 0 12px;
+}
+
+/* 路徑色系圖例 */
+.nx-fams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.nx-fams li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nx-fam-sw {
+  display: inline-flex;
+}
+
+.nx-fam-sw i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 1px;
+}
+
+@media (max-width: 600px) {
+  .nx-bg-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nx-hub-tab {
+    font-size: 0.82rem;
+    padding: 5px 11px;
+  }
+}
+
+/* ---------- 基底核迴路圖 ---------- */
+.nx-bg-card {
+  background: #fff;
+  border: 1px solid #dde2ea;
+  border-radius: 10px;
+  padding: 6px 8px 4px;
+  color: #26262b;
+  margin: 0 0 8px;
+}
+
+.nx-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font-base);
+}
+
+.nx-bg-node rect {
+  fill: #f4f6fa;
+  stroke: #8b95a7;
+  stroke-width: 0.35;
+}
+
+.nx-bg-node.is-up rect {
+  fill: #ffe3bf;
+  stroke: #e07a12;
+  stroke-width: 0.7;
+}
+
+.nx-bg-node.is-down rect {
+  fill: #e3e8f1;
+  stroke: #9aa3b2;
+  stroke-dasharray: 1 0.8;
+}
+
+.nx-bg-node.is-x rect {
+  stroke: #c92a2a;
+  stroke-width: 0.7;
+}
+
+.nx-bg-zh {
+  font-size: 3.3px;
+  font-weight: 700;
+  text-anchor: middle;
+  fill: #1f2633;
+}
+
+.nx-bg-sub {
+  font-size: 2.5px;
+  text-anchor: middle;
+  fill: #5d6879;
+}
+
+.nx-bg-dir {
+  font-size: 4px;
+  font-weight: 700;
+  text-anchor: end;
+  fill: #c2410c;
+}
+
+.nx-bg-node.is-down .nx-bg-dir {
+  fill: #3d6fb8;
+}
+
+.nx-bg-node.is-x .nx-bg-dir {
+  fill: #c92a2a;
+}
+
+.nx-bg-da {
+  font-size: 2.6px;
+  font-weight: 700;
+  fill: #b8336a;
+  text-anchor: middle;
+}
+
+.nx-bg-edge.is-dim {
+  opacity: 0.18;
+}
+
+.nx-bg-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  font-size: 0.72rem;
+  margin: 2px 0 0;
+}
+
+.nx-bg-legend li {
+  margin: 0;
+}
+
+.nx-bg-legend i.is-dash {
+  background-image: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 6px) !important;
+}
+
+.nx-bg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.nx-bg-mini {
+  margin: 0;
+}
+
+.nx-bg-mini figcaption {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 2px 2px 4px;
+}
+
+.nx-bg-fig {
+  max-width: 440px;
+}

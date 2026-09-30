@@ -124,13 +124,13 @@ key 不變 = 內容保證沒變（雜湊相同代表位元組相同），才能�
 
 ## 更新流程
 
-來源資料夾預設是 `~/Downloads/0_護理國考分章/07_pdf`。
+來源資料夾預設是 `~/Projects/多保命護理分章/07_pdf`。
 
 ```sh
 nvm use 22                 # wrangler 需要 Node 22 以上
 npm install
 
-npm run manifest -- --src "/Users/jimmy/Downloads/0_護理國考分章/07_pdf"
+npm run manifest -- --src "/Users/jimmy/Projects/多保命護理分章/07_pdf"
 npm run covers             # 補上缺少的封面（新學期）；封面設計改了要加 -- --force 全部重做
 npm run upload             # 上傳到 R2（可中斷續傳）
 npm run deploy             # 部署網站與 Worker

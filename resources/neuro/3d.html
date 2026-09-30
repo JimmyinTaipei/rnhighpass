@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D 模型｜多保命 RN High Pass</title>
+  <meta name="description" content="神經解剖學 3D 模型：脊髓、腦幹與腦神經、小腦、間腦、視覺與聽覺路徑，可以選路徑看神經元鏈、拖曳切面、模擬病灶。">
+  <link rel="icon" type="image/png" href="/assets/images/多保命.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/downloads.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <link rel="stylesheet" href="/assets/css/neuro.css">
+  <script type="importmap">
+    { "imports": { "three": "/assets/vendor/three/three.module.min.js", "three/addons/": "/assets/vendor/three/" } }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-group" href="/">
+        <img src="/assets/images/多保命.png" alt="多保命 Logo" class="brand-logo">
+        <h1 class="brand">多保命 <span class="brand-en">RN High Pass</span></h1>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="開啟選單">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="主選單">
+        <a href="/quiz.html" class="nav-soon">多保命測驗</a>
+        <a href="https://exam.rnhighpass.com">國考模擬測驗</a>
+        <a href="/">題目下載</a>
+        <a href="/downloads/more.html">更多考題</a>
+        <a href="/guide.html">使用教學</a>
+        <a href="/feedback.html">問題回饋</a>
+        <a href="/resources.html" aria-current="page">相關資源</a>
+        <a href="/sponsor.html">贊助我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section nx-page">
+    <div class="container nx-wide">
+      <p class="nx-kicker"><a href="/resources/neuro/index.html">神經解剖學</a> <span class="wip-badge">開發中・未驗證正確性</span></p>
+      <nav class="tabs" aria-label="神經解剖學分頁">
+        <a class="tab" href="/resources/neuro/index.html">總覽</a>
+        <a class="tab" href="/resources/neuro/3d.html" aria-current="page">3D 模型</a>
+        <a class="tab" href="/resources/neuro/tracts.html">傳導路徑</a>
+        <a class="tab" href="/resources/neuro/nerves.html">腦神經</a>
+        <a class="tab" href="/resources/neuro/levels.html">各節段切面</a>
+        <a class="tab" href="/resources/neuro/lesions.html">常考病灶</a>
+      </nav>
+      
+
+      <h2 class="nx-hub-title">3D 模型</h2>
+      <nav class="nx-hub-tabs" aria-label="選擇區域"><button type="button" class="nx-hub-tab" data-region="spinal-cord" data-title="3D 脊髓與傳導路徑" aria-pressed="true">脊髓</button><button type="button" class="nx-hub-tab" data-region="brainstem" data-title="3D 腦幹與腦神經" aria-pressed="false">腦幹與腦神經</button><button type="button" class="nx-hub-tab" data-region="cerebellum" data-title="3D 小腦" aria-pressed="false">小腦</button><button type="button" class="nx-hub-tab" data-region="diencephalon" data-title="3D 間腦與視丘各核" aria-pressed="false">間腦</button><button type="button" class="nx-hub-tab" data-region="basal-ganglia" data-title="3D 基底核與直接／間接路徑" aria-pressed="false">基底核</button><button type="button" class="nx-hub-tab" data-region="visual" data-title="3D 視覺路徑與瞳孔反射" aria-pressed="false">視覺與瞳孔</button><button type="button" class="nx-hub-tab" data-region="auditory" data-title="3D 聽覺與前庭" aria-pressed="false">聽覺與前庭</button></nav>
+      <div class="nx-hub-stage">
+        <div class="nx-viewer" data-mode="region" data-region="spinal-cord" data-hub="1">
+        <div class="nx-stage-wrap">
+          <div class="nx-stage" aria-label="3D 模型，可拖曳旋轉、滾輪或雙指縮放"></div>
+          <div class="nx-labels" aria-hidden="true"></div>
+          <div class="nx-tip" hidden></div>
+          <p class="nx-loading">3D 模型載入中…</p>
+        </div>
+        <div class="nx-panel"></div>
+      </div>
+      <noscript><p class="note">3D 模型需要開啟 JavaScript。</p></noscript>
+      </div>
+      <p class="nx-note">拖曳旋轉、滾輪或兩指縮放；右上角可以切換淺色、深色背景。模型是依課本描述自行繪製的示意圖，比例不是真實測量。</p>
+      <section class="nx-block nx-hub-info" data-for="spinal-cord">
+          <h3>怎麼使用：脊髓</h3>
+          <ul>
+            <li><b>旋轉、縮放</b>：拖曳可以旋轉，滾輪或兩指縮放；右上角的按鈕可以切換視角。</li>
+            <li><b>選路徑</b>：在右邊勾選要顯示的路徑；點路徑名稱會畫出一條代表性的神經元鏈，並用光點動畫從起點走到終點（第 1、2、3 級神經元顏色不同）。</li>
+            <li><b>切面</b>：拖曳節段滑桿，3D 模型上會出現切面，右邊同步顯示這一節的 2D 橫切面。</li>
+            <li><b>病灶</b>：切到「病灶」分頁選一個常考的病灶，模型上會標出範圍，並列出由路徑推導出的症狀。</li>
+            <li><b>比例</b>：預設每一節畫成一樣長，方便看清楚；勾選「真實長度」會改成接近成人的比例（胸髓很長、薦髓很短）。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/spinal-cord.html">脊髓的重點、表格與切面 →</a></p>
+        </section>
+        <section class="nx-block nx-hub-info" data-for="brainstem" hidden>
+          <h3>怎麼使用：腦幹與腦神經</h3>
+          <ul>
+            <li><b>腦神經</b>：在「腦神經」分頁點一條神經，模型會亮出它的神經核與纖維走向（例如顏面神經繞過外旋神經核的內膝、滑車神經在背側交叉）。</li>
+            <li><b>神經核的顏色</b>：依功能分類上色——<span class="nx-colchip" style="--c:#e0584a">GSE 軀體運動</span> <span class="nx-colchip" style="--c:#4f7fd6">SVE 鰓弓運動</span> <span class="nx-colchip" style="--c:#7fb7e8">GVE 副交感</span> <span class="nx-colchip" style="--c:#f0a0a0">GSA 軀體感覺</span> <span class="nx-colchip" style="--c:#3aa76d">SVA 味覺</span> <span class="nx-colchip" style="--c:#9ad7a8">GVA 內臟感覺</span> <span class="nx-colchip" style="--c:#9aa3ad">SSA 特殊感覺</span>。</li>
+            <li><b>路徑</b>：三叉神經感覺路徑、皮質延髓徑、水平注視路徑（MLF）都可以按「路線」看神經元鏈。</li>
+            <li><b>病灶</b>：選一個腦幹症候群，模型會標出範圍並列出推導出的症狀——腦神經的症狀在同側、長路徑的症狀在對側，就是「交叉性」的由來。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/brainstem.html">腦幹的重點、表格與切面 →</a></p>
+        </section>
+        <section class="nx-block nx-hub-info" data-for="cerebellum" hidden>
+          <h3>怎麼使用：小腦</h3>
+          <ul>
+            <li><b>分區</b>：在「分區」分頁切換「縱向分區」與「分葉」的顏色；小腦是半透明的，可以看到裡面的頂核、中間核與齒狀核。</li>
+            <li><b>路徑</b>：按「路線」看神經元鏈。齒狀核–視丘–皮質路徑會一路畫到脊髓前角，可以看到「交叉兩次、最後還是同側」。</li>
+            <li><b>病灶</b>：選一個病灶，模型標出範圍，右下角的攤開圖標出切到的皮質與小腦核，並列出推導出的症狀。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/cerebellum.html">小腦的重點、表格與切面 →</a></p>
+        </section>
+        <section class="nx-block nx-hub-info" data-for="diencephalon" hidden>
+          <h3>怎麼使用：間腦</h3>
+          <ul>
+            <li><b>視丘核</b>：右邊依核群列出視丘各核，點一個（或直接點 3D 裡的核），藍線是它的傳入、橘線是傳出——經內囊哪一段、到哪一區皮質。一打開先選 VL（小腦與蒼白球 → 運動皮質）。</li>
+            <li><b>切面</b>：拖曳滑桿往上，就是大腦的水平切面：看得到內囊的前肢、膝部、後肢，以及夾在旁邊的尾狀核、豆狀核與視丘。</li>
+            <li><b>路徑</b>：乳頭視丘徑（Papez 迴路）與下視丘垂體徑可以按「路線」看神經元鏈；內側蹄系、脊髓丘腦徑、小腦的路徑也都止於這裡的核。</li>
+            <li><b>病灶</b>：視丘症候群、內囊梗塞、偏身投擲症、Korsakoff 症候群與顱咽管瘤。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/diencephalon.html">間腦的重點、表格與切面 →</a></p>
+        </section>
+        <section class="nx-block nx-hub-info" data-for="basal-ganglia" hidden>
+          <h3>怎麼使用：基底核</h3>
+          <ul>
+            <li><b>迴路</b>：右邊選「直接路徑」、「間接路徑」或「黑質紋狀體」，3D 會畫出那一條的神經元鏈（右半球），光點從皮質走到紋狀體、蒼白球、視丘再回到皮質。</li>
+            <li><b>狀況</b>：選正常、Parkinson 病、Huntington 病或視丘下核受損，迴路圖會依興奮／抑制推導出每一個核比正常更活躍（↑）或更安靜（↓）；3D 裡發亮＝更活躍、變淡＝更安靜、灰色＝失去功能。</li>
+            <li><b>位置</b>：紋狀體畫成半透明，看得到裡面的蒼白球外節、內節；尾狀核沿側腦室彎成 C 字，尾端進入顳葉；黑質在中腦的大腦腳背側。</li>
+            <li><b>切面</b>：拖曳滑桿，從中腦（黑質）往上到基底核與內囊的水平切面。</li>
+            <li><b>病灶</b>：Parkinson 病、單側黑質受損、Huntington 病、Wilson 病與偏身投擲症，會列出推導出的症狀與迴路的變化。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/basal-ganglia.html">基底核的重點、表格與切面 →</a></p>
+        </section>
+        <section class="nx-block nx-hub-info" data-for="visual" hidden>
+          <h3>怎麼使用：視覺與瞳孔</h3>
+          <ul>
+            <li><b>視野與纖維</b>：視野分成 8 格（左／右、上／下、周邊／黃斑），每一格一個顏色，兩眼負責同一格視野的纖維顏色相同。點右邊視野圖的格子，模型只亮那一格的纖維，可以看它在哪裡交叉、走 Meyer 環還是頂葉、止於距狀溝哪一段。</li>
+            <li><b>瞳孔反射</b>：選光照哪一眼，光點會沿著傳入端走到兩側的頂蓋前核、再到兩側 EW 核與動眼神經，兩眼的瞳孔一起縮小。</li>
+            <li><b>病灶</b>：選一個病灶，被切斷的纖維變成灰色，右邊的視野圖與瞳孔反射表會跟著改變。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/visual.html">視覺路徑與瞳孔反射的重點、表格與切面 →</a></p>
+        </section>
+        <section class="nx-block nx-hub-info" data-for="auditory" hidden>
+          <h3>怎麼使用：聽覺與前庭</h3>
+          <ul>
+            <li><b>聽覺路徑</b>：一打開就是右耳的聽覺路徑。在右邊切換「單耳」、「雙耳：對側」、「雙耳：同側」三種走法，或切到左耳，可以看到每一耳都同時送到兩側的聽覺皮質。</li>
+            <li><b>內耳</b>：按「內耳」視角放大右耳：耳蝸依頻率上色（紅＝底部高頻、藍＝頂部低頻），綠色是三個半規管、前庭與耳石器；顳橫回也依頻率上色。</li>
+            <li><b>前庭眼反射</b>：在路徑清單按「前庭眼反射」的「路線」，選頭往哪邊轉，光點會從半規管走到對側外旋神經核、再經 MLF 回到同側動眼神經核。</li>
+            <li><b>病灶</b>：選一個病灶，模型標出範圍並推導出症狀；右下角是腦幹切面，可以看到斜方體、外側蹄系與上橄欖核的位置。</li>
+          </ul>
+          <p><a href="/resources/neuro/region/auditory.html">聽覺與前庭的重點、表格與切面 →</a></p>
+        </section>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-social">
+        <a href="https://www.instagram.com/rnhighpass/" target="_blank" rel="noopener">Instagram</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.threads.com/@rnhighpass" target="_blank" rel="noopener">Threads</a>
+      </p>
+      <p class="copyright">&copy; 2026 多保命 RN High Pass</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script type="module" src="/assets/js/neuro/preview.js"></script>
+  <script type="module" src="/assets/js/neuro/hub.js"></script>
+</body>
+</html>

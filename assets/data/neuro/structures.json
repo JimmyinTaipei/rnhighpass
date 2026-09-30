@@ -1,0 +1,6194 @@
+{
+  "_doc": "核、灰質區與纖維結構。pos = [y, X, z]，X 以「負責右側身體的那條路徑」為準（X > 0 在病人左側）；cord 表示位在脊髓裡，用 site + segs 描述。 vis = 視覺路徑俯視圖上標示的位置 {lat, y, z, r}（lat = 離中線的距離）。",
+  "structures": {
+    "drg": {
+      "zh": "背根神經節",
+      "en": "Dorsal (posterior) root ganglion",
+      "abbr": "DRG",
+      "aliases": [
+        "posterior root ganglion",
+        "spinal ganglion",
+        "後根神經節",
+        "脊神經節"
+      ],
+      "kind": "ganglion",
+      "region": "spinal-cord",
+      "summary": "所有軀體感覺第一級神經元的細胞本體所在，是偽單極神經元：周邊突到受器，中樞突經後根進入脊髓。",
+      "facts": [
+        "大型細胞發出粗的有髓纖維（Aα、Aβ），經後根內側部進入後柱，屬於[[tract:dcml]]。",
+        "小型細胞發出 Aδ 與 C 纖維，經後根外側部進入[[structure:lissauer]]，屬於[[tract:als]]。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "144–145"
+        },
+        {
+          "src": "barr",
+          "p": "70"
+        }
+      ],
+      "cord": {
+        "site": "drg",
+        "segs": [
+          "c2",
+          "co1"
+        ]
+      }
+    },
+    "lissauer": {
+      "zh": "背外側束（Lissauer 徑）",
+      "en": "Dorsolateral tract (tract of Lissauer)",
+      "aliases": [
+        "posterolateral tract",
+        "dorsolateral fasciculus",
+        "Lissauer tract",
+        "tract of Lissauer",
+        "背外側徑"
+      ],
+      "kind": "fiber",
+      "region": "spinal-cord",
+      "summary": "蓋在後角尖端與脊髓表面之間的細纖維束。痛溫覺的 Aδ、C 纖維進入後先在這裡往上、往下分支約 1–2 節，再進入後角。",
+      "facts": [
+        "這就是為什麼[[tract:als]]受損時，痛溫覺喪失的上界比病灶低 1–2 節。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "67, 70, 288"
+        },
+        {
+          "src": "haines",
+          "p": "141, 144"
+        }
+      ],
+      "cord": {
+        "site": "lissauer",
+        "segs": [
+          "c1",
+          "co1"
+        ]
+      }
+    },
+    "posterior-horn": {
+      "zh": "後角",
+      "en": "Posterior (dorsal) horn",
+      "aliases": [
+        "dorsal horn",
+        "背角",
+        "laminae I–VI",
+        "nucleus proprius",
+        "固有核",
+        "posteromarginal nucleus"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "接收感覺輸入的灰質，對應 Rexed lamina I–VI：lamina I 是後緣核、lamina II 是膠狀質、lamina III–IV 是固有核。",
+      "facts": [
+        "[[tract:als]]的第二級神經元主要在 lamina I 與 IV–V。",
+        "頸膨大與腰薦膨大的後角特別大；胸髓的後角細小。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "141–142"
+        },
+        {
+          "src": "barr",
+          "p": "69–70"
+        }
+      ],
+      "cord": {
+        "site": "dh",
+        "segs": [
+          "c1",
+          "co1"
+        ]
+      }
+    },
+    "substantia-gelatinosa": {
+      "zh": "膠狀質",
+      "en": "Substantia gelatinosa (lamina II)",
+      "aliases": [
+        "lamina II",
+        "Rolando substantia gelatinosa"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "後角尖端的 lamina II，充滿抑制性中間神經元，是疼痛訊號的「閘門」（gate control theory）；下行的縫核脊髓纖維（血清素）也在這裡調控痛覺。",
+      "facts": [
+        "在薦髓特別明顯（Haines p.142）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "288, 290–291"
+        },
+        {
+          "src": "haines",
+          "p": "141–142"
+        }
+      ],
+      "cord": {
+        "site": "sg",
+        "segs": [
+          "c1",
+          "co1"
+        ]
+      }
+    },
+    "anterior-horn": {
+      "zh": "前角",
+      "en": "Anterior (ventral) horn",
+      "aliases": [
+        "ventral horn",
+        "腹角",
+        "lamina IX",
+        "lamina VIII",
+        "alpha motor neuron",
+        "α 運動神經元",
+        "lower motor neuron",
+        "下運動神經元"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "運動神經元所在（lamina VIII–IX）：α 運動神經元支配梭外肌，γ 運動神經元支配肌梭的梭內肌。",
+      "facts": [
+        "內側群支配軸肌與近端肌，外側群支配遠端肢體肌肉，所以頸、腰薦膨大的前角特別大（Haines p.146）。",
+        "伸肌的運動神經元在前、屈肌的在後（Haines p.146）。",
+        "受損時是下運動神經元徵象：弛緩性無力、萎縮、反射減弱或消失、肌束震顫。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "142, 146"
+        },
+        {
+          "src": "barr",
+          "p": "71, 343"
+        }
+      ],
+      "cord": {
+        "site": "ah",
+        "segs": [
+          "c1",
+          "co1"
+        ]
+      }
+    },
+    "lateral-horn": {
+      "zh": "側角（中間外側細胞柱）",
+      "en": "Lateral horn / intermediolateral cell column",
+      "abbr": "IML",
+      "aliases": [
+        "intermediolateral cell column (IMLCC)",
+        "intermediolateral nucleus",
+        "中間外側核",
+        "外側角"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "T1–L2 灰質往外側突出的小角，裡面是交感神經節前神經元（lamina VII）。",
+      "facts": [
+        "[[tract:hypothalamospinal]]下行到這裡；T1 以上的外側索受損會造成同側 Horner 症候群。",
+        "S2–S4 有位置相當的[[structure:sacral-autonomic]]（副交感）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "142, 146"
+        },
+        {
+          "src": "barr",
+          "p": "67, 70"
+        }
+      ],
+      "cord": {
+        "site": "iml",
+        "segs": [
+          "t1",
+          "l2"
+        ]
+      }
+    },
+    "sacral-autonomic": {
+      "zh": "薦副交感核",
+      "en": "Sacral parasympathetic (visceromotor) nucleus",
+      "aliases": [
+        "sacral autonomic nucleus",
+        "sacral visceromotor nucleus"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "S2–S4 lamina VII 外側的副交感節前神經元，經骨盆內臟神經支配膀胱、直腸與生殖器。",
+      "facts": [
+        "S2–S3 另有 Onuf 核，支配骨盆底的外括約肌（Barr p.70）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "142, 146"
+        },
+        {
+          "src": "barr",
+          "p": "70"
+        }
+      ],
+      "cord": {
+        "site": "iml",
+        "segs": [
+          "s2",
+          "s4"
+        ]
+      }
+    },
+    "clarke": {
+      "zh": "Clarke 核（胸核）",
+      "en": "Dorsal nucleus of Clarke (nucleus thoracicus)",
+      "aliases": [
+        "nucleus dorsalis",
+        "Clarke's column",
+        "posterior thoracic nucleus",
+        "胸核",
+        "背核",
+        "克拉克核"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "後角基部內側的一團大細胞（lamina VII），分布在 T1–L2；是[[tract:dsct]]的起點。",
+      "facts": [
+        "範圍：Haines 與共筆寫 T1–L2（Haines p.255），Barr's 寫 C8–L3（Barr p.294）。",
+        "L2 以下進來的下肢纖維要先在薄束往上走，才到得了 Clarke 核。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "142, 255"
+        },
+        {
+          "src": "barr",
+          "p": "70, 294"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "9"
+        }
+      ],
+      "cord": {
+        "site": "clarke",
+        "segs": [
+          "t1",
+          "l2"
+        ]
+      }
+    },
+    "spinal-border-cells": {
+      "zh": "脊髓邊緣細胞",
+      "en": "Spinal border cells",
+      "aliases": [
+        "spinal border cell"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "腰薦髓（L3–L5）前角外緣散在的大細胞，與 lamina V–VII 一起發出[[tract:vsct]]。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "149, 256"
+        },
+        {
+          "src": "barr",
+          "p": "70"
+        }
+      ],
+      "cord": {
+        "site": "border",
+        "segs": [
+          "l3",
+          "l5"
+        ]
+      }
+    },
+    "awc": {
+      "zh": "白質前連合",
+      "en": "Anterior white commissure",
+      "aliases": [
+        "ventral white commissure",
+        "前白質連合",
+        "白連合"
+      ],
+      "kind": "fiber",
+      "region": "spinal-cord",
+      "summary": "中央管前方跨過中線的白質，[[tract:als]]、[[tract:vsct]]的第二級纖維，以及[[tract:acst]]的纖維都在這裡交叉。",
+      "facts": [
+        "[[lesion:syringomyelia]]最先破壞這裡，造成病灶節段的雙側痛溫覺喪失。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "67, 74"
+        },
+        {
+          "src": "haines",
+          "p": "141, 151"
+        }
+      ],
+      "cord": {
+        "site": "awc",
+        "segs": [
+          "c1",
+          "co1"
+        ]
+      }
+    },
+    "phrenic": {
+      "zh": "膈神經核",
+      "en": "Phrenic nucleus",
+      "aliases": [
+        "phrenic motor nucleus"
+      ],
+      "kind": "gray",
+      "region": "spinal-cord",
+      "summary": "頸髓前角中央的運動神經元群，支配橫膈。高位頸髓損傷會影響呼吸。",
+      "facts": [
+        "範圍：Barr's 寫 C3–C5（p.69），Haines 寫 C3–C6（p.151）。「C3、4、5 keeps the diaphragm alive」。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "69"
+        },
+        {
+          "src": "haines",
+          "p": "151"
+        }
+      ],
+      "cord": {
+        "site": "ahm",
+        "segs": [
+          "c3",
+          "c5"
+        ]
+      }
+    },
+    "fasciculus-proprius": {
+      "zh": "固有束",
+      "en": "Fasciculus proprius",
+      "aliases": [
+        "propriospinal fibers",
+        "spinospinal fibers",
+        "脊髓固有纖維"
+      ],
+      "kind": "fiber",
+      "region": "spinal-cord",
+      "summary": "緊貼灰質四周的一圈白質，是連接不同脊髓節段的固有纖維，負責節段間反射。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "75"
+        },
+        {
+          "src": "haines",
+          "p": "149"
+        }
+      ],
+      "cord": {
+        "site": "proprius",
+        "segs": [
+          "c1",
+          "co1"
+        ]
+      }
+    },
+    "posterior-funiculus": {
+      "zh": "後索（後柱）",
+      "en": "Posterior (dorsal) funiculus",
+      "aliases": [
+        "dorsal funiculus",
+        "posterior column",
+        "dorsal column",
+        "後柱",
+        "背柱"
+      ],
+      "kind": "funiculus",
+      "region": "spinal-cord",
+      "summary": "後正中溝與後角之間的白質。T6 以上分成內側的薄束與外側的楔束，T6 以下只有薄束。",
+      "facts": [
+        "裡面主要是[[tract:dcml]]的第一級纖維，全部同側上行。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "67, 72–73"
+        },
+        {
+          "src": "haines",
+          "p": "140–142"
+        }
+      ],
+      "funiculus": "dc"
+    },
+    "lateral-funiculus": {
+      "zh": "側索",
+      "en": "Lateral funiculus",
+      "aliases": [
+        "外側索",
+        "lateral column"
+      ],
+      "kind": "funiculus",
+      "region": "spinal-cord",
+      "summary": "後外側溝與前外側溝之間的白質，臨床上最重要的是[[tract:lcst]]與[[tract:als]]。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "141"
+        }
+      ],
+      "funiculus": "lf"
+    },
+    "anterior-funiculus": {
+      "zh": "前索",
+      "en": "Anterior funiculus",
+      "aliases": [
+        "ventral funiculus",
+        "前柱"
+      ],
+      "kind": "funiculus",
+      "region": "spinal-cord",
+      "summary": "前外側溝與前正中裂之間的白質，主要是下行的前庭脊髓、網狀脊髓、前皮質脊髓纖維與 MLF。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "141"
+        }
+      ],
+      "funiculus": "af"
+    },
+    "n-gracilis": {
+      "zh": "薄束核",
+      "en": "Nucleus gracilis",
+      "aliases": [
+        "gracile nucleus"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "med-caudal",
+      "summary": "延髓下段背側的核，接收薄束（下肢與下半軀幹）的第一級纖維，是[[tract:dcml]]的第二級神經元。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "294"
+        },
+        {
+          "src": "haines",
+          "p": "246"
+        }
+      ],
+      "pos": [
+        7,
+        -1.8,
+        -5.0
+      ]
+    },
+    "n-cuneatus": {
+      "zh": "楔束核",
+      "en": "Nucleus cuneatus",
+      "aliases": [
+        "cuneate nucleus"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "med-caudal",
+      "summary": "薄束核外側的核，接收楔束（上肢與上半軀幹）的纖維，是[[tract:dcml]]的第二級神經元。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "294"
+        },
+        {
+          "src": "haines",
+          "p": "246"
+        }
+      ],
+      "pos": [
+        8,
+        -3.8,
+        -4.4
+      ]
+    },
+    "lateral-cuneate": {
+      "zh": "外側楔束核（副楔束核）",
+      "en": "Lateral (accessory) cuneate nucleus",
+      "aliases": [
+        "accessory cuneate nucleus",
+        "external cuneate nucleus",
+        "副楔束核"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "med-sensory",
+      "summary": "楔束核外側的核，相當於上肢的 Clarke 核；發出[[tract:cuneocerebellar]]經下小腦腳到小腦。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "255"
+        }
+      ],
+      "pos": [
+        11,
+        -5.6,
+        -3.6
+      ]
+    },
+    "sensory-decussation": {
+      "zh": "感覺交叉（內弓狀纖維）",
+      "en": "Sensory decussation (internal arcuate fibers)",
+      "aliases": [
+        "decussation of the medial lemnisci",
+        "internal arcuate fibers",
+        "內弓狀纖維",
+        "蹄系交叉"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "med-sensory",
+      "summary": "薄束核、楔束核的軸突往前內側繞成內弓狀纖維，在延髓下段跨過中線，到對側組成內側蹄系。",
+      "facts": [
+        "位置在錐體交叉稍上方。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "294"
+        },
+        {
+          "src": "haines",
+          "p": "247"
+        }
+      ],
+      "pos": [
+        9,
+        0,
+        -1.2
+      ]
+    },
+    "medial-lemniscus": {
+      "zh": "內側蹄系",
+      "en": "Medial lemniscus",
+      "abbr": "ML",
+      "aliases": [
+        "medial lemniscus",
+        "內側丘系"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "summary": "[[tract:dcml]]的第二級纖維在腦幹的部分：延髓在中線旁直立、橋腦轉成橫帶、中腦移到紅核外側，最後止於視丘 VPL。",
+      "facts": [
+        "延髓：下肢在腹側、上肢在背側；橋腦以上：下肢在外、上肢在內（Barr p.294）。",
+        "內側延髓症候群會傷到錐體與內側蹄系：對側偏癱＋對側本體覺喪失（加上同側舌下神經麻痺）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "294, 302"
+        },
+        {
+          "src": "haines",
+          "p": "247, 266"
+        }
+      ],
+      "pos": [
+        22,
+        1.4,
+        2.6
+      ]
+    },
+    "pyramid": {
+      "zh": "錐體",
+      "en": "Medullary pyramid",
+      "aliases": [
+        "pyramid",
+        "延髓錐體"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "med-olive",
+      "summary": "延髓腹側、中線兩旁的隆起，由皮質脊髓纖維組成。",
+      "facts": [
+        "只有錐體受損：對側弛緩性無力，之後大多恢復，但手指動作一直不靈活（Barr p.346）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "343, 346"
+        }
+      ],
+      "pos": [
+        20,
+        2.3,
+        6.2
+      ]
+    },
+    "pyramidal-decussation": {
+      "zh": "錐體交叉（運動交叉）",
+      "en": "Pyramidal (motor) decussation",
+      "aliases": [
+        "motor decussation",
+        "decussation of the pyramids",
+        "運動交叉"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "med-caudal",
+      "summary": "延髓與脊髓交界處，約 85–90% 的皮質脊髓纖維在這裡交叉，成為對側的[[tract:lcst]]；沒有交叉的成為[[tract:acst]]。",
+      "facts": [
+        "上肢纖維比下肢纖維先（較頭側）交叉（Haines p.367）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "343"
+        },
+        {
+          "src": "haines",
+          "p": "365, 367"
+        }
+      ],
+      "pos": [
+        2,
+        0,
+        1.6
+      ]
+    },
+    "basilar-pons": {
+      "zh": "橋腦基底部",
+      "en": "Basilar pons",
+      "aliases": [
+        "basis pontis",
+        "pontine nuclei"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "pons",
+      "summary": "橋腦腹側的大塊部分；皮質脊髓纖維在這裡被橫行的橋腦小腦纖維打散成許多小束。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "343"
+        }
+      ],
+      "pos": [
+        45,
+        5.0,
+        9.0
+      ]
+    },
+    "crus-cerebri": {
+      "zh": "大腦腳",
+      "en": "Crus cerebri (basis pedunculi)",
+      "aliases": [
+        "cerebral peduncle",
+        "basis pedunculi",
+        "大腦腳底"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "midbrain",
+      "summary": "中腦腹側的纖維柱。皮質脊髓纖維在中間約 1/3（Barr's：中間 3/5），上肢在內、下肢在外。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "343"
+        },
+        {
+          "src": "haines",
+          "p": "363"
+        }
+      ],
+      "pos": [
+        66,
+        9.0,
+        7.4
+      ]
+    },
+    "internal-capsule": {
+      "zh": "內囊",
+      "en": "Internal capsule",
+      "aliases": [
+        "internal capsule",
+        "posterior limb",
+        "anterior limb",
+        "genu",
+        "retrolentiform part",
+        "sublentiform part",
+        "內囊後肢",
+        "內囊前肢",
+        "內囊膝部",
+        "corona radiata",
+        "放射冠",
+        "thalamic radiations",
+        "視丘放射"
+      ],
+      "kind": "fiber",
+      "region": "diencephalon",
+      "level": "internal-capsule",
+      "summary": "大腦皮質與視丘、腦幹、脊髓之間所有投射纖維都擠過的一片白質。水平切面上呈 V 形：前肢、膝部、後肢、後豆狀部，再加上豆狀核下部。",
+      "facts": [
+        "前肢：夾在尾狀核頭與豆狀核之間；含前視丘放射（背內側核 ↔ 前額葉、前核 → 扣帶迴）與額橋腦纖維（Barr p.253；Haines p.215, 220）。",
+        "膝部：在豆狀核尖端內側、視丘前核外側；VA、VL 到運動區的纖維經膝部與後肢前段；皮質延髓纖維在最前面（Barr p.253–255；Haines p.220）。",
+        "後肢：夾在視丘與豆狀核之間；皮質脊髓纖維在後肢後半（上肢 → 軀幹 → 下肢由前往後），體感覺放射（VPL、VPM → 中央後回）在更後面（Barr p.254–255）。",
+        "後豆狀部：視放射（外側膝狀體 → 距狀溝）、頂顳橋腦纖維；豆狀核下部：聽放射（內側膝狀體 → 顳橫回）（Barr p.254）。",
+        "每一段都有視丘皮質與皮質視丘纖維（Barr p.247）。",
+        "小的梗塞（例如後肢）就能造成對側偏癱，常合併對側感覺缺損與同側偏盲（Barr p.256）。",
+        "血液：外側豆紋動脈（中大腦動脈）、前脈絡膜動脈（膝部、後肢下部、後豆狀部）（Haines p.224）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "247, 253–256"
+        },
+        {
+          "src": "haines",
+          "p": "215, 220, 224"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "16–17"
+        }
+      ],
+      "pos": [
+        100,
+        22,
+        -3
+      ]
+    },
+    "vpl": {
+      "zh": "視丘腹後外側核",
+      "en": "Ventral posterolateral nucleus",
+      "abbr": "VPL",
+      "aliases": [
+        "ventral posterolateral nucleus (VPL)",
+        "ventral posterior nucleus (VP)",
+        "腹後外側核"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "summary": "身體（頭以下）體感覺的中繼核：內側蹄系與前外側系統都止於對側 VPL，再經內囊後肢到中央後回。",
+      "facts": [
+        "傳入：對側薄束核、楔束核（[[tract:dcml|內側蹄系]]）與對側脊髓後角（[[tract:als|前外側系統]]）（Barr p.182）。",
+        "體表定位：下肢（薦、腰）在外側、上肢（頸）在內側（Haines p.218）。",
+        "傳出：經內囊後肢的後段到初級體感覺皮質（中央後回）（Barr p.182, 254）。",
+        "受損：[[lesion:thalamic-syndrome]]——對側半身所有感覺喪失，之後常出現劇烈的視丘痛（Barr p.183）。",
+        "國考：頭以下的體感覺在 VPL、頭的在 VPM（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "182–183, 254"
+        },
+        {
+          "src": "haines",
+          "p": "218"
+        },
+        {
+          "src": "ym04",
+          "p": "29, 43–44"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "15"
+        }
+      ],
+      "pos": [
+        88,
+        16.5,
+        -5.0
+      ],
+      "color": "#6f8cff",
+      "ell": [
+        87.5,
+        16.5,
+        -4.8,
+        2.8,
+        3.4,
+        3.2
+      ],
+      "thal": {
+        "group": "ventral",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "內側蹄系（對側後柱核）",
+            "bundle": "@dcml.ml"
+          },
+          {
+            "zh": "前外側系統（對側脊髓）",
+            "bundle": "@als.lstt"
+          }
+        ],
+        "out": [
+          {
+            "zh": "初級體感覺皮質（身體）",
+            "to": "s1",
+            "ic": "posterior-s"
+          }
+        ],
+        "fn": "身體的觸覺、本體覺、痛溫覺"
+      }
+    },
+    "s1": {
+      "zh": "初級體感覺皮質（中央後回）",
+      "en": "Primary somatosensory cortex (postcentral gyrus)",
+      "abbr": "S1",
+      "aliases": [
+        "postcentral gyrus",
+        "primary somatosensory cortex (SI)",
+        "areas 3, 1, 2",
+        "中央後回",
+        "Brodmann 3, 1, 2"
+      ],
+      "kind": "cortex",
+      "region": "cortex",
+      "level": "cortex",
+      "summary": "中央溝後方的中央後回（Brodmann areas 3a、3b、1、2），對側身體倒立排列：下肢在內側面、上肢與手在外側、臉最外下方。",
+      "facts": [
+        "area 3b 受損影響最大；area 2 受損造成實體覺喪失（astereognosis）（Haines p.249）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "248–249"
+        },
+        {
+          "src": "barr",
+          "p": "290"
+        }
+      ],
+      "pos": [
+        168,
+        30,
+        -9
+      ]
+    },
+    "m1": {
+      "zh": "初級運動皮質（中央前回）",
+      "en": "Primary motor cortex (precentral gyrus)",
+      "abbr": "M1",
+      "aliases": [
+        "precentral gyrus",
+        "area 4",
+        "中央前回",
+        "Betz cells",
+        "Brodmann 4"
+      ],
+      "kind": "cortex",
+      "region": "cortex",
+      "level": "cortex",
+      "summary": "中央溝前方的中央前回（area 4），皮質脊髓纖維的主要來源之一；運動小人倒立排列，下肢在內側面（前大腦動脈區）。",
+      "facts": [
+        "前大腦動脈阻塞主要影響下肢；中大腦動脈影響臉與上肢（Barr p.349）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "361–362"
+        },
+        {
+          "src": "barr",
+          "p": "342, 349"
+        }
+      ],
+      "pos": [
+        168,
+        30,
+        3
+      ]
+    },
+    "red-nucleus": {
+      "zh": "紅核",
+      "en": "Red nucleus",
+      "aliases": [
+        "nucleus ruber"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "midbrain",
+      "summary": "中腦被蓋的核，接收對側小腦中間核與大腦運動皮質的輸入，發出交叉的[[tract:rubrospinal]]。",
+      "facts": [
+        "小腦齒狀核的輸出經上小腦腳交叉後穿過或經過紅核往視丘走；紅核附近受損（[[lesion:benedikt]]）造成對側的震顫與協調不良。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "353"
+        },
+        {
+          "src": "barr",
+          "p": "348"
+        }
+      ],
+      "pos": [
+        70,
+        4.0,
+        1.2
+      ],
+      "nuc": [
+        [
+          66,
+          4.0,
+          1.0,
+          2.0,
+          2.0
+        ],
+        [
+          75,
+          3.8,
+          1.4,
+          2.0,
+          2.0
+        ]
+      ]
+    },
+    "superior-colliculus": {
+      "zh": "上丘",
+      "en": "Superior colliculus",
+      "aliases": [
+        "tectum",
+        "頂蓋"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "midbrain",
+      "summary": "中腦背側（頂蓋）的一對隆起，與視覺反射有關；發出交叉的[[tract:tectospinal]]。",
+      "facts": [
+        "經上丘臂接收視網膜與視覺皮質的纖維，參與視覺引起的眼球、頭部反射；看近物時的輻輳、縮瞳與調節也經過上丘轉到 EW 核（Barr p.315–318）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "348"
+        },
+        {
+          "src": "barr",
+          "p": "315–318"
+        }
+      ],
+      "pos": [
+        76,
+        4.6,
+        -9.0
+      ],
+      "nuc": [
+        [
+          70,
+          4.6,
+          -8.8,
+          2.4,
+          1.6
+        ],
+        [
+          78,
+          4.6,
+          -8.8,
+          2.4,
+          1.6
+        ]
+      ]
+    },
+    "lateral-vestibular-nucleus": {
+      "zh": "外側前庭核（Deiters 核）",
+      "en": "Lateral vestibular nucleus (Deiters)",
+      "aliases": [
+        "Deiters nucleus",
+        "nucleus of Deiters"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "pons",
+      "summary": "橋腦延髓交界、第四腦室底外側的大細胞核，發出不交叉的[[tract:lvst]]。",
+      "facts": [
+        "主要輸入：前庭神經、小腦頂核與前庭小腦（Barr p.348）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "75, 347–348"
+        },
+        {
+          "src": "haines",
+          "p": "352"
+        }
+      ],
+      "pos": [
+        32,
+        -8.2,
+        -7.2
+      ]
+    },
+    "medial-vestibular-nucleus": {
+      "zh": "內側前庭核",
+      "en": "Medial vestibular nucleus",
+      "aliases": [
+        "nucleus of Schwalbe"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "med-olive",
+      "summary": "第四腦室底的前庭核之一，發出走在 MLF 裡的[[tract:mvst]]。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "75"
+        },
+        {
+          "src": "haines",
+          "p": "353"
+        }
+      ],
+      "pos": [
+        25,
+        -3.6,
+        -5.8
+      ]
+    },
+    "mlf": {
+      "zh": "內側縱束",
+      "en": "Medial longitudinal fasciculus",
+      "abbr": "MLF",
+      "aliases": [
+        "medial longitudinal fasciculus"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "summary": "腦幹中線旁、第四腦室底與導水管腹側的纖維束。上行部分把外旋神經核的核間神經元連到對側動眼神經核（水平注視），受損造成[[lesion:ino]]；下行部分含[[tract:mvst]]與[[tract:tectospinal]]。",
+      "facts": [
+        "前庭眼反射也走 MLF：前庭神經核 → 對側外旋神經核（[[tract:vor]]）；昏迷病人的娃娃眼與冷熱水試驗需要 MLF 完整（Barr p.338–340；Haines p.330–331）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "151"
+        },
+        {
+          "src": "barr",
+          "p": "75"
+        }
+      ],
+      "pos": [
+        18,
+        -1.3,
+        -4.6
+      ]
+    },
+    "pontine-rf": {
+      "zh": "橋腦網狀結構",
+      "en": "Pontine reticular formation",
+      "aliases": [
+        "nucleus reticularis pontis oralis",
+        "nucleus reticularis pontis caudalis",
+        "oral pontine reticular nucleus",
+        "caudal pontine reticular nucleus"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "pons",
+      "summary": "橋腦被蓋中央的網狀核（pontis oralis、caudalis），發出[[tract:prst]]。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "353"
+        },
+        {
+          "src": "barr",
+          "p": "346"
+        }
+      ],
+      "pos": [
+        40,
+        -3.0,
+        -3.6
+      ]
+    },
+    "medullary-rf": {
+      "zh": "延髓網狀結構（巨細胞網狀核）",
+      "en": "Medullary reticular formation (gigantocellular nucleus)",
+      "aliases": [
+        "gigantocellular reticular nucleus",
+        "nucleus reticularis gigantocellularis",
+        "巨細胞網狀核"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "med-olive",
+      "summary": "延髓中央的巨細胞網狀核，發出[[tract:mrst]]。",
+      "facts": [],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "353"
+        },
+        {
+          "src": "barr",
+          "p": "346"
+        }
+      ],
+      "pos": [
+        18,
+        -2.4,
+        -1.6
+      ]
+    },
+    "hypothalamus": {
+      "zh": "下視丘",
+      "en": "Hypothalamus (paraventricular nucleus)",
+      "aliases": [
+        "paraventricular nucleus (PVN)",
+        "室旁核"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "summary": "第三腦室下半部的兩側、下視丘溝以下的區域：自主神經、內分泌與體溫、飲食、睡眠的整合中樞。由前往後分成視交叉區、結節區、乳頭區；以穹窿為界分內側區與外側區。（3D 路徑用它代表室旁核：下視丘脊髓徑的起點。）",
+      "facts": [
+        "由前往後：視交叉區（視前區、視上核、室旁核、前核、視交叉上核）、結節區（腹內側核、背內側核、弓狀核）、乳頭區（後核、乳頭體）（Haines p.220–221；共筆）。",
+        "內側區與外側區以穹窿為界（Barr p.188；Haines p.220）。",
+        "前下視丘刺激 → 副交感反應；後、外側下視丘 → 交感反應（Barr p.190）。",
+        "輸出：往下經內側前腦束、背側縱束到腦幹與脊髓的自主神經核；往上經乳頭視丘徑到視丘前核；另外經神經分泌控制垂體（Barr p.190）。",
+        "下視丘受損可以造成尿崩症、體溫失調、肥胖（Barr p.191, 195, 197）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "188–197"
+        },
+        {
+          "src": "haines",
+          "p": "220–222, 442–456"
+        },
+        {
+          "src": "ym04",
+          "p": "31–36"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "1–19"
+        }
+      ],
+      "pos": [
+        85,
+        -3.2,
+        8.0
+      ]
+    },
+    "icp": {
+      "zh": "下小腦腳（繩狀體）",
+      "en": "Inferior cerebellar peduncle (restiform body)",
+      "abbr": "ICP",
+      "aliases": [
+        "inferior cerebellar peduncle",
+        "restiform body",
+        "繩狀體"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "med-olive",
+      "summary": "延髓背外側連到小腦的纖維束，分成大的繩狀體（傳入：[[tract:dsct]]、[[tract:cuneocerebellar]]、[[tract:olivocerebellar]]）與小的近繩狀體（和前庭系統的雙向連結）。",
+      "facts": [
+        "近繩狀體在第四腦室壁，含前庭小腦纖維與頂核、小葉結節葉往前庭神經核的輸出（Haines p.394；Barr p.165）。",
+        "最大的一群纖維是對側下橄欖核來的橄欖小腦纖維（Barr p.165）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "74, 165, 167"
+        },
+        {
+          "src": "haines",
+          "p": "255, 394"
+        }
+      ],
+      "pos": [
+        28,
+        -9.6,
+        -6.8
+      ],
+      "nuc": [
+        [
+          20,
+          8.2,
+          -4.6,
+          1.2,
+          1.2
+        ],
+        [
+          28,
+          9.8,
+          -6.6,
+          1.5,
+          1.5
+        ],
+        [
+          33,
+          12.6,
+          -12.0,
+          1.8,
+          1.8
+        ]
+      ]
+    },
+    "scp": {
+      "zh": "上小腦腳",
+      "en": "Superior cerebellar peduncle",
+      "abbr": "SCP",
+      "aliases": [
+        "superior cerebellar peduncle",
+        "brachium conjunctivum",
+        "結合臂"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "pons",
+      "summary": "連接小腦與中腦的纖維束，主要是小腦核（齒狀核、中間核）的輸出，在中腦下丘高度交叉（[[tract:dentatothalamic]]）；傳入的[[tract:vsct]]也從這裡進入小腦。",
+      "facts": [
+        "國考：上小腦腳的纖維在中腦下丘高度交叉（考古題；Haines p.394）。",
+        "上小腦腳受損：同側肢體共濟失調，而且比只傷到皮質嚴重（[[lesion:scp]]；Barr p.172）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "74, 165, 167, 172"
+        },
+        {
+          "src": "haines",
+          "p": "256, 394"
+        },
+        {
+          "src": "ex112m",
+          "p": "44–46"
+        }
+      ],
+      "pos": [
+        55,
+        7.5,
+        -12.0
+      ]
+    },
+    "cerebellum": {
+      "zh": "小腦",
+      "en": "Cerebellum",
+      "aliases": [
+        "cerebellum",
+        "小腦"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "後顱窩裡、橋腦與延髓背側的協調中樞，以三對小腦腳連到腦幹。小腦不發動動作，而是比較「想做的」和「實際在做的」動作並修正；每一側小腦管同側身體。",
+      "facts": [
+        "重量約占中樞神經的 10%，神經元數目卻約占一半（大多是顆粒細胞）（Haines p.394；共筆）。",
+        "橫向分成三葉：原裂之前是[[structure:anterior-lobe]]，後外側裂之後是[[structure:flocculonodular-lobe]]，其餘是[[structure:posterior-lobe]]（Barr p.160–161；Haines p.394–396）。",
+        "縱向分成三區：[[structure:vermis]]、[[structure:intermediate-zone]]、[[structure:lateral-zone]]，各自對應一個小腦核：頂核、中間核、齒狀核（Haines p.396）。",
+        "功能分區：前庭小腦（小葉結節葉）、脊髓小腦（蚓部＋中間區）、橋腦小腦（外側區）（Barr p.165–168）。",
+        "小腦受損不會癱瘓（肌力正常），而是動作不協調；只傷到皮質、沒傷到小腦核時，症狀常常可以恢復（Haines p.394, 410）。",
+        "中線的病灶造成姿勢與步態不穩；半球的病灶造成同側肢體的共濟失調（Barr p.159, 172）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "159–173"
+        },
+        {
+          "src": "haines",
+          "p": "394–412"
+        },
+        {
+          "src": "ym04",
+          "p": "5, 18–22"
+        },
+        {
+          "src": "c112m",
+          "p": "141–143"
+        }
+      ],
+      "pos": [
+        40,
+        -12.0,
+        -26.0
+      ],
+      "cb": {
+        "all": true
+      }
+    },
+    "hypoglossal-nucleus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "受損時同側舌肌萎縮、伸舌偏向患側。"
+      ],
+      "aliases": [
+        "hypoglossal nucleus",
+        "nucleus of XII"
+      ],
+      "zh": "舌下神經核",
+      "en": "Hypoglossal nucleus",
+      "col": "GSE",
+      "level": "med-olive",
+      "nerves": [
+        "cn12"
+      ],
+      "summary": "延髓第四腦室底、舌下三角下方的運動核，最靠近中線；發出[[nerve:cn12]]支配舌肌。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "197"
+        },
+        {
+          "src": "barr",
+          "p": "89, 97"
+        },
+        {
+          "src": "atlas",
+          "p": "116"
+        }
+      ],
+      "nuc": [
+        [
+          3,
+          1.2,
+          -3.4,
+          0.9,
+          1.1
+        ],
+        [
+          12,
+          1.2,
+          -4.2,
+          0.9,
+          1.2
+        ],
+        [
+          22,
+          1.2,
+          -5.0,
+          0.9,
+          1.1
+        ]
+      ]
+    },
+    "dmnx": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "dorsal motor vagal nucleus (DMX)",
+        "dorsal vagal nucleus"
+      ],
+      "zh": "迷走神經背核",
+      "en": "Dorsal motor nucleus of the vagus",
+      "col": "GVE",
+      "level": "med-olive",
+      "nerves": [
+        "cn10"
+      ],
+      "summary": "舌下神經核外側的副交感核（迷走三角下方），發出[[nerve:cn10]]的副交感節前纖維到胸腹腔內臟。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "195, 199"
+        },
+        {
+          "src": "barr",
+          "p": "89, 97"
+        },
+        {
+          "src": "atlas",
+          "p": "116"
+        }
+      ],
+      "nuc": [
+        [
+          4,
+          2.5,
+          -3.8,
+          0.7,
+          0.8
+        ],
+        [
+          13,
+          2.6,
+          -4.8,
+          0.7,
+          0.9
+        ],
+        [
+          22,
+          2.6,
+          -5.4,
+          0.7,
+          0.8
+        ]
+      ]
+    },
+    "ambiguus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "受損（如[[lesion:lateral-medullary]]）：同側軟顎與聲帶麻痺，聲音沙啞、吞嚥困難，懸雍垂偏向健側。",
+        "接受雙側皮質延髓投射。"
+      ],
+      "aliases": [
+        "nucleus ambiguus",
+        "ambiguous nucleus"
+      ],
+      "zh": "疑核",
+      "en": "Nucleus ambiguus",
+      "col": "SVE",
+      "level": "med-olive",
+      "nerves": [
+        "cn9",
+        "cn10"
+      ],
+      "summary": "延髓被蓋腹外側一條細長的運動核，發出[[nerve:cn9]]（莖突咽肌）與[[nerve:cn10]]（咽、喉、軟顎肌）的鰓弓運動纖維。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "199–201"
+        },
+        {
+          "src": "barr",
+          "p": "110–111"
+        },
+        {
+          "src": "atlas",
+          "p": "116"
+        }
+      ],
+      "nuc": [
+        [
+          6,
+          5.0,
+          -0.4,
+          0.5,
+          0.6
+        ],
+        [
+          16,
+          5.2,
+          -0.6,
+          0.5,
+          0.6
+        ],
+        [
+          27,
+          5.4,
+          -0.8,
+          0.5,
+          0.6
+        ]
+      ]
+    },
+    "solitary": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "nucleus of the solitary tract",
+        "nucleus tractus solitarius (NTS)",
+        "孤立束核",
+        "gustatory nucleus",
+        "味覺核"
+      ],
+      "zh": "孤束核",
+      "en": "Solitary nucleus (and tract)",
+      "col": "GVA",
+      "level": "med-olive",
+      "nerves": [
+        "cn7",
+        "cn9",
+        "cn10"
+      ],
+      "summary": "腦幹的內臟感覺中心：VII、IX、X 的味覺纖維止於頭側部（味覺核），內臟感覺止於尾側部（心肺核）。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "196–197"
+        },
+        {
+          "src": "barr",
+          "p": "109"
+        },
+        {
+          "src": "atlas",
+          "p": "116"
+        }
+      ],
+      "nuc": [
+        [
+          4,
+          3.6,
+          -4.2,
+          0.8,
+          0.8
+        ],
+        [
+          16,
+          3.8,
+          -5.2,
+          0.8,
+          0.8
+        ],
+        [
+          30,
+          4.4,
+          -5.8,
+          0.8,
+          0.8
+        ]
+      ]
+    },
+    "inferior-salivatory": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "inferior salivatory nucleus"
+      ],
+      "zh": "下唾液核",
+      "en": "Inferior salivatory nucleus",
+      "col": "GVE",
+      "level": "med-rostral",
+      "nerves": [
+        "cn9"
+      ],
+      "summary": "延髓頭側的副交感核，經[[nerve:cn9]]與耳神經節支配腮腺。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "201"
+        },
+        {
+          "src": "barr",
+          "p": "134, 139"
+        }
+      ],
+      "nuc": [
+        [
+          25,
+          3.2,
+          -5.4,
+          0.4,
+          0.4
+        ],
+        [
+          29,
+          3.4,
+          -5.8,
+          0.4,
+          0.4
+        ]
+      ]
+    },
+    "sp5": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "分成尾側部（到 obex）、內插部（到舌下神經核頭端）、口側部（Haines p.208）。",
+        "延髓外側受損（[[lesion:lateral-medullary]]）：同側臉部痛溫覺喪失。"
+      ],
+      "aliases": [
+        "spinal trigeminal nucleus",
+        "spinal trigeminal tract",
+        "spinal nucleus of V",
+        "三叉神經脊髓核",
+        "pars caudalis",
+        "pars interpolaris",
+        "pars oralis"
+      ],
+      "zh": "三叉神經脊束核（與脊束）",
+      "en": "Spinal trigeminal nucleus and tract",
+      "col": "GSA",
+      "level": "med-olive",
+      "nerves": [
+        "cn5",
+        "cn7",
+        "cn9",
+        "cn10"
+      ],
+      "summary": "從上頸髓延伸到橋腦下段的感覺核，外側包著三叉神經脊束。V、VII、IX、X 的臉部痛溫覺纖維都在這裡換站（尾側部）。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "196–197, 208"
+        },
+        {
+          "src": "barr",
+          "p": "125–129"
+        },
+        {
+          "src": "atlas",
+          "p": "116, 128"
+        }
+      ],
+      "nuc": [
+        [
+          -6,
+          3.8,
+          -2.4,
+          0.9,
+          1.3
+        ],
+        [
+          8,
+          5.2,
+          -3.0,
+          1.2,
+          1.5
+        ],
+        [
+          20,
+          6.8,
+          -3.6,
+          1.3,
+          1.6
+        ],
+        [
+          30,
+          8.4,
+          -4.4,
+          1.3,
+          1.6
+        ],
+        [
+          39,
+          9.0,
+          -4.6,
+          1.2,
+          1.4
+        ]
+      ]
+    },
+    "vestibular-nuclei": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "受損：眩暈、眼球震顫、噁心嘔吐、步態不穩（[[lesion:lateral-medullary]]）（Barr p.333）。",
+        "輸出：[[tract:vestibulocerebellar]]（小葉結節葉）、[[tract:vor]]（經 MLF 到 III、IV、VI）、[[tract:lvst]] 與 [[tract:mvst]]、[[tract:vestibulothalamic]]（Barr p.333, 337–338）。",
+        "半規管的纖維主要到上核與內側核，耳石器的主要到外側、內側與下核（Haines p.327；共筆）。",
+        "兩側前庭核之間有連合纖維，比較左右的訊號，也負責單側受損後的代償（Haines p.327, 329）。",
+        "噁心、嘔吐、冒冷汗：前庭核到孤束核與迷走神經背核的聯繫（Barr p.338）。",
+        "國考：前庭核主要與小葉結節葉、頂核聯繫，不是齒狀核（國考 1081）；連接前庭核與眼動神經核的是內側縱束（國考 1091、1121）（共筆）。"
+      ],
+      "aliases": [
+        "vestibular nuclei",
+        "前庭核"
+      ],
+      "zh": "前庭神經核",
+      "en": "Vestibular nuclei",
+      "col": "SSA",
+      "level": "med-rostral",
+      "nerves": [
+        "cn8"
+      ],
+      "summary": "第四腦室底外側的四個核（內側、外側、上、下），接收同側前庭神經，輸出到四個地方：小腦、眼動神經核（MLF）、脊髓（前庭脊髓徑）、視丘與皮質。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "197, 203, 327–333"
+        },
+        {
+          "src": "barr",
+          "p": "97–99, 336–339"
+        },
+        {
+          "src": "hy",
+          "p": "105–106"
+        },
+        {
+          "src": "c112",
+          "p": "44–47"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "42–46"
+        }
+      ],
+      "nuc": [
+        [
+          18,
+          4.8,
+          -5.8,
+          1.4,
+          0.9
+        ],
+        [
+          26,
+          6.4,
+          -6.4,
+          2.0,
+          1.0
+        ],
+        [
+          34,
+          7.4,
+          -7.6,
+          1.8,
+          1.0
+        ],
+        [
+          39,
+          7.2,
+          -8.0,
+          1.4,
+          0.9
+        ]
+      ]
+    },
+    "cochlear-nuclei": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "所有耳蝸神經纖維都止於同側耳蝸神經核，所以耳蝸神經核（含）以下的病灶會造成同側耳聾；以上的單側病灶不會（Barr p.321, 330；Haines p.312）。",
+        "背側耳蝸神經核 → 背側聽紋交叉 → 對側外側蹄系 → 下丘（單耳路線）（Barr p.330；Haines p.314）。",
+        "腹側耳蝸神經核 → 兩側上橄欖核（對側經斜方體）→ 外側蹄系（雙耳路線，用來判斷聲音方向）（Barr p.321, 330；Haines p.314）。",
+        "由小腦前下動脈（AICA）的分支供應（Haines p.312）。"
+      ],
+      "aliases": [
+        "dorsal cochlear nucleus",
+        "ventral cochlear nucleus",
+        "anterior cochlear nucleus",
+        "posterior cochlear nucleus"
+      ],
+      "zh": "耳蝸神經核",
+      "en": "Cochlear nuclei",
+      "col": "SSA",
+      "level": "med-rostral",
+      "nerves": [
+        "cn8"
+      ],
+      "summary": "延髓上端、下小腦腳外側與背側表面的背側（後）與腹側（前）耳蝸神經核，接收同側耳蝸神經，是聽覺的第 2 級神經元。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "203, 312–314"
+        },
+        {
+          "src": "barr",
+          "p": "97, 99, 327–330"
+        },
+        {
+          "src": "c112",
+          "p": "39"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "35"
+        }
+      ],
+      "nuc": [
+        [
+          29,
+          9.8,
+          -5.0,
+          0.9,
+          1.2
+        ],
+        [
+          33,
+          10.6,
+          -5.4,
+          0.9,
+          1.2
+        ]
+      ]
+    },
+    "abducens-nucleus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "被[[nerve:cn7]]的內膝繞過，兩者一起形成顏面丘。",
+        "受損：同側水平注視麻痺（兩眼都無法看向患側）。"
+      ],
+      "aliases": [
+        "abducens nucleus",
+        "nucleus of VI",
+        "外展神經核"
+      ],
+      "zh": "外旋神經核",
+      "en": "Abducens nucleus",
+      "col": "GSE",
+      "level": "pons-caudal",
+      "nerves": [
+        "cn6"
+      ],
+      "summary": "橋腦下段第四腦室底、顏面丘下方的運動核：運動神經元支配同側外直肌，核間神經元經對側 MLF 到對側動眼神經核（內直肌）。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "206–207"
+        },
+        {
+          "src": "barr",
+          "p": "100, 112"
+        },
+        {
+          "src": "atlas",
+          "p": "128"
+        }
+      ],
+      "nuc": [
+        [
+          34,
+          1.8,
+          -6.8,
+          1.2,
+          1.1
+        ],
+        [
+          37,
+          1.8,
+          -7.2,
+          1.2,
+          1.1
+        ]
+      ]
+    },
+    "pprf": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "受損：同側水平注視麻痺。",
+        "額葉眼區急性受損時，眼睛偏向病灶側（完好的另一側額葉眼區把眼睛推過去）（Haines p.207）。"
+      ],
+      "aliases": [
+        "paramedian pontine reticular formation",
+        "horizontal gaze center",
+        "lateral gaze center",
+        "水平注視中樞"
+      ],
+      "zh": "旁正中橋腦網狀結構（水平注視中樞）",
+      "en": "Paramedian pontine reticular formation (PPRF)",
+      "abbr": "PPRF",
+      "col": null,
+      "level": "pons-caudal",
+      "nerves": [
+        "cn6"
+      ],
+      "summary": "外旋神經核附近的網狀結構，接收對側額葉眼區的指令，驅動同側外旋神經核，使兩眼一起看向同側。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "207"
+        },
+        {
+          "src": "barr",
+          "p": "104, 119–121"
+        }
+      ],
+      "nuc": [
+        [
+          34,
+          2.2,
+          -4.0,
+          1.0,
+          1.0
+        ],
+        [
+          42,
+          2.2,
+          -3.8,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    "facial-nucleus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "核或纖維受損：同側整個半臉無力（周邊型）。"
+      ],
+      "aliases": [
+        "facial motor nucleus",
+        "facial nucleus",
+        "nucleus of VII",
+        "面神經核"
+      ],
+      "zh": "顏面神經核",
+      "en": "Facial motor nucleus",
+      "col": "SVE",
+      "level": "pons-caudal",
+      "nerves": [
+        "cn7"
+      ],
+      "summary": "橋腦下段被蓋腹外側的運動核，支配同側表情肌。背側部（上半臉）接受雙側皮質投射，腹側部（下半臉）只接受對側投射。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "205–206"
+        },
+        {
+          "src": "barr",
+          "p": "100, 112, 349"
+        },
+        {
+          "src": "atlas",
+          "p": "128"
+        }
+      ],
+      "nuc": [
+        [
+          31,
+          6.2,
+          -1.2,
+          1.1,
+          1.2
+        ],
+        [
+          35.5,
+          6.2,
+          -1.2,
+          1.1,
+          1.2
+        ]
+      ]
+    },
+    "superior-salivatory": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "superior salivatory nucleus",
+        "lacrimal nucleus"
+      ],
+      "zh": "上唾液核",
+      "en": "Superior salivatory nucleus",
+      "col": "GVE",
+      "level": "pons-caudal",
+      "nerves": [
+        "cn7"
+      ],
+      "summary": "橋腦下段的副交感核，經[[nerve:cn7]]（中間神經）支配淚腺、下頜下腺、舌下腺。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "205"
+        },
+        {
+          "src": "atlas",
+          "p": "128"
+        }
+      ],
+      "nuc": [
+        [
+          32,
+          4.2,
+          -4.6,
+          0.4,
+          0.4
+        ],
+        [
+          34.5,
+          4.2,
+          -4.8,
+          0.4,
+          0.4
+        ]
+      ]
+    },
+    "trigeminal-motor": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "motor nucleus of V",
+        "masticator nucleus"
+      ],
+      "zh": "三叉神經運動核",
+      "en": "Trigeminal motor nucleus",
+      "col": "SVE",
+      "level": "pons",
+      "nerves": [
+        "cn5"
+      ],
+      "summary": "橋腦中段、主感覺核內側的運動核，支配咀嚼肌等第一鰓弓肌肉；接受雙側皮質投射。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "208–209"
+        },
+        {
+          "src": "barr",
+          "p": "128"
+        }
+      ],
+      "nuc": [
+        [
+          44,
+          6.0,
+          -4.0,
+          1.2,
+          1.4
+        ],
+        [
+          49,
+          6.0,
+          -4.0,
+          1.2,
+          1.4
+        ]
+      ]
+    },
+    "principal-sensory": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "principal sensory nucleus",
+        "chief sensory nucleus",
+        "pontine trigeminal nucleus",
+        "主感覺核",
+        "橋腦三叉神經核"
+      ],
+      "zh": "三叉神經主感覺核",
+      "en": "Principal (chief) sensory nucleus of V",
+      "col": "GSA",
+      "level": "pons",
+      "nerves": [
+        "cn5"
+      ],
+      "summary": "橋腦中段外側的感覺核，負責臉部的精細觸覺；位在三叉神經脊束核的頭側。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "208"
+        },
+        {
+          "src": "barr",
+          "p": "125, 300"
+        }
+      ],
+      "nuc": [
+        [
+          43,
+          8.6,
+          -4.4,
+          1.3,
+          1.5
+        ],
+        [
+          49,
+          8.4,
+          -4.4,
+          1.3,
+          1.5
+        ]
+      ]
+    },
+    "mes5": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "下頜反射（jaw jerk）的傳入端（Haines p.209）。"
+      ],
+      "aliases": [
+        "mesencephalic trigeminal nucleus",
+        "mesencephalic nucleus"
+      ],
+      "zh": "三叉神經中腦核",
+      "en": "Mesencephalic nucleus of V",
+      "col": "GSA",
+      "level": "midbrain-ic",
+      "nerves": [
+        "cn5"
+      ],
+      "summary": "從橋腦延伸到中腦導水管周圍灰質外側的一串偽單極神經元，傳咀嚼肌與牙周的本體感覺；是唯一細胞本體位在中樞神經系統內的初級感覺神經元。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "208–209"
+        },
+        {
+          "src": "barr",
+          "p": "301"
+        }
+      ],
+      "nuc": [
+        [
+          48,
+          4.6,
+          -6.6,
+          0.4,
+          0.4
+        ],
+        [
+          60,
+          4.0,
+          -6.2,
+          0.4,
+          0.4
+        ],
+        [
+          76,
+          3.2,
+          -5.2,
+          0.4,
+          0.4
+        ]
+      ]
+    },
+    "trochlear-nucleus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "核受損造成對側上斜肌麻痺。"
+      ],
+      "aliases": [
+        "trochlear nucleus",
+        "nucleus of IV"
+      ],
+      "zh": "滑車神經核",
+      "en": "Trochlear nucleus",
+      "col": "GSE",
+      "level": "midbrain-ic",
+      "nerves": [
+        "cn4"
+      ],
+      "summary": "中腦下丘高度、MLF 背側的運動核；纖維全部交叉，支配對側上斜肌。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "209–210"
+        },
+        {
+          "src": "barr",
+          "p": "106"
+        },
+        {
+          "src": "atlas",
+          "p": "142"
+        }
+      ],
+      "nuc": [
+        [
+          62.5,
+          1.2,
+          -3.4,
+          0.7,
+          0.7
+        ],
+        [
+          65.5,
+          1.2,
+          -3.4,
+          0.7,
+          0.7
+        ]
+      ]
+    },
+    "oculomotor-nucleus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "oculomotor nucleus",
+        "nucleus of III",
+        "oculomotor complex"
+      ],
+      "zh": "動眼神經核",
+      "en": "Oculomotor nuclear complex",
+      "col": "GSE",
+      "level": "midbrain",
+      "nerves": [
+        "cn3"
+      ],
+      "summary": "中腦上丘高度、導水管周圍灰質腹側的運動核群，支配上、下、內直肌、下斜肌與提上眼瞼肌；上直肌的纖維在核內交叉。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "210"
+        },
+        {
+          "src": "barr",
+          "p": "100, 106"
+        },
+        {
+          "src": "atlas",
+          "p": "148"
+        }
+      ],
+      "nuc": [
+        [
+          66,
+          1.1,
+          -2.8,
+          0.9,
+          1.1
+        ],
+        [
+          76,
+          1.1,
+          -2.8,
+          0.9,
+          1.1
+        ]
+      ]
+    },
+    "edinger-westphal": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "接收兩側[[structure:opn]]的投射，所以光照一眼兩側都縮（Haines p.426）。",
+        "節前纖維走在動眼神經的表面，外部壓迫時瞳孔最先放大（Barr p.121, 125）。"
+      ],
+      "aliases": [
+        "Edinger-Westphal nucleus (EW)",
+        "preganglionic Edinger-Westphal nucleus (EWpg)",
+        "動眼神經副核"
+      ],
+      "zh": "艾丁格-魏斯特法爾核",
+      "en": "Edinger-Westphal nucleus",
+      "abbr": "EW",
+      "col": "GVE",
+      "level": "midbrain",
+      "nerves": [
+        "cn3"
+      ],
+      "summary": "動眼神經核背側的副交感核（EWpg），經[[nerve:cn3]]與[[structure:ciliary-ganglion]]支配瞳孔括約肌與睫狀肌：[[tract:plr]]的傳出端，也負責看近物時的縮瞳與調節。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "210"
+        },
+        {
+          "src": "barr",
+          "p": "104, 123–124"
+        },
+        {
+          "src": "atlas",
+          "p": "148"
+        }
+      ],
+      "nuc": [
+        [
+          68,
+          0.5,
+          -3.9,
+          0.4,
+          0.5
+        ],
+        [
+          76,
+          0.5,
+          -3.9,
+          0.4,
+          0.5
+        ]
+      ]
+    },
+    "inferior-colliculus": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [
+        "兩側下丘之間有連合纖維（Barr p.330）。",
+        "下丘 → 上丘 → 頂蓋脊髓徑、眼動神經核：聽到突然的聲音時把頭和眼睛轉過去（Barr p.331–332；Haines p.319）。",
+        "中央核有 tonotopy（低頻後外側、高頻前內側）（Haines p.316）。",
+        "由小腦上動脈與四疊體動脈供應（Haines p.312）。"
+      ],
+      "aliases": [
+        "inferior colliculus"
+      ],
+      "zh": "下丘",
+      "en": "Inferior colliculus",
+      "col": null,
+      "level": "midbrain-ic",
+      "nerves": [],
+      "summary": "中腦背側下方的一對隆起，是聽覺路徑必經的轉運站：外側蹄系幾乎都止於這裡，再經下丘臂到內側膝狀體。滑車神經從它的正下方出腦幹。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "209, 312, 315–316"
+        },
+        {
+          "src": "barr",
+          "p": "330–332"
+        },
+        {
+          "src": "atlas",
+          "p": "142"
+        }
+      ],
+      "nuc": [
+        [
+          61,
+          4.8,
+          -8.4,
+          2.4,
+          1.6
+        ],
+        [
+          66,
+          4.8,
+          -8.6,
+          2.4,
+          1.6
+        ]
+      ]
+    },
+    "pretectal": {
+      "kind": "nucleus",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "pretectal area",
+        "posterior commissure",
+        "riMLF",
+        "vertical gaze center",
+        "垂直注視中樞"
+      ],
+      "zh": "頂蓋前區（後連合）",
+      "en": "Pretectal area and posterior commissure",
+      "col": null,
+      "level": "midbrain",
+      "nerves": [],
+      "summary": "中腦與間腦交界背側的頂蓋前區與後連合，附近是垂直注視中樞（riMLF）；受壓迫（例如松果體腫瘤）時向上注視麻痺（[[lesion:parinaud]]）。瞳孔光反射的中繼核在它外側：[[structure:opn]]。",
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110"
+        },
+        {
+          "src": "haines",
+          "p": "210"
+        }
+      ],
+      "nuc": [
+        [
+          78,
+          1.8,
+          -7.4,
+          1.4,
+          1.0
+        ],
+        [
+          82,
+          1.8,
+          -7.4,
+          1.4,
+          1.0
+        ]
+      ]
+    },
+    "trigeminal-ganglion": {
+      "kind": "ganglion",
+      "region": "brainstem",
+      "facts": [],
+      "aliases": [
+        "semilunar ganglion",
+        "Gasserian ganglion",
+        "半月神經節"
+      ],
+      "zh": "三叉神經節",
+      "en": "Trigeminal (semilunar) ganglion",
+      "col": "GSA",
+      "level": "pons",
+      "nerves": [
+        "cn5"
+      ],
+      "summary": "位在顳骨岩部尖端（Meckel 腔）的感覺神經節，是臉部一般感覺第一級神經元的細胞本體（本體感覺除外，那在中腦核）。",
+      "sources": [
+        {
+          "src": "haines",
+          "p": "207–208"
+        }
+      ],
+      "pos": [
+        44,
+        -24,
+        10
+      ]
+    },
+    "vpm": {
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "facts": [
+        "傳入：對側三叉神經感覺核（[[tract:trigeminal|三叉丘腦徑]]）（Barr p.182；Haines p.218）。",
+        "負責臉、口、喉、咽與硬腦膜的感覺（Barr p.182）。",
+        "傳出：初級體感覺皮質的臉部區（中央後回外側）（Barr p.182；Haines p.219）。",
+        "國考：頭部的感覺路徑在 VPM 換站（共筆）。"
+      ],
+      "aliases": [
+        "ventral posteromedial nucleus (VPM)",
+        "腹後內側核"
+      ],
+      "zh": "視丘腹後內側核",
+      "en": "Ventral posteromedial nucleus",
+      "abbr": "VPM",
+      "col": null,
+      "level": "thalamus",
+      "nerves": [
+        "cn5"
+      ],
+      "summary": "頭部（臉、口腔）體感覺的中繼核：三叉丘腦徑止於對側 VPM，再到中央後回外側的臉部區；味覺也在 VPM 的小細胞部換站。",
+      "sources": [
+        {
+          "src": "barr",
+          "p": "182"
+        },
+        {
+          "src": "haines",
+          "p": "218–219"
+        },
+        {
+          "src": "ym04",
+          "p": "29–30, 43"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "15"
+        }
+      ],
+      "pos": [
+        88,
+        12.5,
+        -4.5
+      ],
+      "color": "#6f8cff",
+      "ell": [
+        87,
+        12.6,
+        -4.6,
+        1.9,
+        2.8,
+        2.8
+      ],
+      "thal": {
+        "group": "ventral",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "三叉丘腦徑（對側三叉神經核）",
+            "bundle": "@trigeminal.vtt"
+          }
+        ],
+        "out": [
+          {
+            "zh": "初級體感覺皮質（臉）",
+            "to": "s1face",
+            "ic": "posterior-s"
+          }
+        ],
+        "fn": "臉部感覺"
+      }
+    },
+    "accessory-nucleus": {
+      "kind": "gray",
+      "region": "spinal-cord",
+      "facts": [],
+      "aliases": [
+        "spinal accessory nucleus",
+        "nucleus of XI"
+      ],
+      "zh": "副神經核",
+      "en": "Accessory (spinal accessory) nucleus",
+      "col": "GSE",
+      "nerves": [
+        "cn11"
+      ],
+      "summary": "C1–C5（Haines：C1–C6）前角外側的運動神經元，發出[[nerve:cn11]]支配胸鎖乳突肌與斜方肌。",
+      "sources": [
+        {
+          "src": "barr",
+          "p": "69"
+        },
+        {
+          "src": "haines",
+          "p": "197"
+        }
+      ],
+      "cord": {
+        "site": "ah",
+        "segs": [
+          "c1",
+          "c5"
+        ]
+      }
+    },
+    "retina": {
+      "zh": "視網膜",
+      "en": "Retina",
+      "aliases": [
+        "retina",
+        "ganglion cell layer",
+        "節細胞",
+        "macula",
+        "黃斑",
+        "fovea",
+        "中央窩",
+        "optic disc",
+        "視盤",
+        "blind spot",
+        "盲點"
+      ],
+      "kind": "organ",
+      "region": "visual",
+      "summary": "眼球後壁的神經組織：感光細胞 → 雙極細胞 → 節細胞；節細胞的軸突在視盤匯集成[[nerve:cn2]]。胚胎上由間腦長出，所以是中樞神經的一部分。",
+      "facts": [
+        "影像在視網膜上上下、左右都顛倒：上半視野落在下半視網膜，顳側視野落在鼻側視網膜（Barr p.313–314；Haines p.295）。",
+        "視網膜以通過中央窩的垂直線分成鼻側、顳側兩半，再以水平線分成上、下象限（Barr p.313）。",
+        "黃斑（直徑約 5 mm）與中央窩負責最精細的中心視覺；視盤沒有感光細胞，是盲點（Barr p.306–307）。",
+        "少數含 melanopsin 的節細胞本身會感光，投射到[[structure:opn]]（瞳孔光反射）與下視丘的視交叉上核（日夜節律）（Barr p.310–311；Haines p.293–294）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "305–312"
+        },
+        {
+          "src": "haines",
+          "p": "288–295"
+        },
+        {
+          "src": "ym06",
+          "p": "30"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "25–33"
+        }
+      ],
+      "vis": {
+        "lat": 30,
+        "y": 60,
+        "z": 74,
+        "r": 5
+      }
+    },
+    "optic-chiasm": {
+      "zh": "視交叉",
+      "en": "Optic chiasm",
+      "aliases": [
+        "optic chiasma",
+        "optic chiasm",
+        "視神經交叉",
+        "chiasm"
+      ],
+      "kind": "fiber",
+      "region": "visual",
+      "summary": "兩條[[nerve:cn2]]在腦下垂體柄前上方會合：鼻側視網膜（看顳側視野）的纖維交叉，顳側視網膜的纖維不交叉，之後分成兩條[[structure:optic-tract]]。",
+      "facts": [
+        "正下方是腦下垂體：腦下垂體腫瘤從下方壓迫交叉的纖維 → [[lesion:chiasm|雙顳側偏盲]]；因為先壓到下鼻側的纖維，通常從兩眼的顳上象限開始（Barr p.316）。",
+        "外側受壓（例如內頸動脈瘤）只影響同側不交叉的纖維 → [[lesion:lateral-chiasm|同側眼鼻側偏盲]]，很少見（Barr p.316；Haines p.296）。",
+        "交叉之後，下鼻側的纖維會先往前彎進對側視神經一小段（Wilbrand 膝），所以視神經靠近視交叉的病灶會造成[[lesion:junctional|交界性暗點]]（Barr p.314；Haines p.298）。",
+        "血液供應來自前交通動脈與前大腦動脈 A1 段的小分支（Haines p.296）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "314, 316"
+        },
+        {
+          "src": "haines",
+          "p": "295–296, 298"
+        },
+        {
+          "src": "ym06",
+          "p": "34, 36"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "34, 41"
+        }
+      ],
+      "vis": {
+        "lat": 0,
+        "y": 76,
+        "z": 20,
+        "r": 5,
+        "side": "both"
+      }
+    },
+    "optic-tract": {
+      "zh": "視神經徑",
+      "en": "Optic tract",
+      "aliases": [
+        "optic tract",
+        "視徑",
+        "視束"
+      ],
+      "kind": "fiber",
+      "region": "visual",
+      "summary": "從[[structure:optic-chiasm]]往後外側繞過大腦腳，止於[[structure:lgn]]。每一側帶的是同側的顳側視網膜＋對側的鼻側視網膜，也就是對側的半邊視野。",
+      "facts": [
+        "受損 → 對側[[lesion:optic-tract|同側偏盲]]；因為兩眼的纖維還沒完全對齊，實際上常是不對稱（incongruous）的（Haines p.296, 299）。",
+        "少數纖維不進外側膝狀核，經上丘臂到[[structure:opn]]（瞳孔光反射）與[[structure:superior-colliculus]]（視覺反射）（Barr p.315–316）。",
+        "主要由前脈絡膜動脈供應（Haines p.296）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "314–316"
+        },
+        {
+          "src": "haines",
+          "p": "296"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "34, 41"
+        }
+      ],
+      "vis": {
+        "lat": 15,
+        "y": 79,
+        "z": 4,
+        "r": 4
+      }
+    },
+    "lgn": {
+      "zh": "外側膝狀核",
+      "en": "Lateral geniculate nucleus",
+      "abbr": "LGN",
+      "aliases": [
+        "lateral geniculate body (LGB)",
+        "lateral geniculate nucleus (LGN)",
+        "外側膝狀體",
+        "外膝狀核"
+      ],
+      "kind": "nucleus",
+      "region": "visual",
+      "summary": "視丘的視覺轉運站，在枕核（pulvinar）下方。接收[[structure:optic-tract]]，經[[structure:optic-radiation]]投射到同側[[structure:v1]]。",
+      "facts": [
+        "六層：交叉的纖維（對側鼻側視網膜）止於第 1、4、6 層，不交叉的（同側顳側視網膜）止於第 2、3、5 層（Barr p.314；Haines p.297–298）。",
+        "第 1、2 層是大細胞層（M，動作），第 3–6 層是小細胞層（P，顏色與細節）（Haines p.297）。",
+        "上半視野（下半視網膜）在外側、下半視野在內側；黃斑占後面很大的一塊（Barr p.313–314）。",
+        "由後大腦動脈的視丘膝狀動脈供應（Haines p.296）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "313–314"
+        },
+        {
+          "src": "haines",
+          "p": "296–298"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "35"
+        },
+        {
+          "src": "c112",
+          "p": "29, 31"
+        }
+      ],
+      "vis": {
+        "lat": 20.5,
+        "y": 82,
+        "z": -12,
+        "r": 4
+      },
+      "level": "dienc-caudal",
+      "thal": {
+        "group": "meta",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "視神經徑（兩眼同側半的視網膜）",
+            "path": [
+              [
+                76,
+                1,
+                19.5
+              ],
+              [
+                77.5,
+                11.5,
+                10.5
+              ],
+              [
+                79,
+                17,
+                3
+              ],
+              [
+                80.4,
+                19,
+                -4.5
+              ]
+            ]
+          }
+        ],
+        "out": [
+          {
+            "zh": "初級視覺皮質",
+            "to": "v1",
+            "ic": "retro"
+          }
+        ],
+        "fn": "視覺（對側視野）"
+      }
+    },
+    "optic-radiation": {
+      "zh": "視放射",
+      "en": "Optic radiation",
+      "aliases": [
+        "optic radiation",
+        "geniculocalcarine tract",
+        "geniculostriate pathway",
+        "膝距束",
+        "視輻射"
+      ],
+      "kind": "fiber",
+      "region": "visual",
+      "summary": "[[structure:lgn]]到[[structure:v1]]的纖維，經內囊的豆狀核後部與下部，繞過側腦室往後走。下半部的纖維先繞進顳葉（[[structure:meyer-loop]]）。",
+      "facts": [
+        "上半部（經頂葉）帶下半視野，止於距狀溝上唇（楔葉）；受損 → 對側[[lesion:parietal-radiation|下象限盲]]（Haines p.298；HY p.109）。",
+        "下半部（Meyer 環，經顳葉）帶上半視野，止於下唇（舌回）；受損 → 對側[[lesion:meyer-loop|上象限盲]]（Barr p.314–315；Haines p.298）。",
+        "越靠近視覺皮質，兩眼的纖維對得越整齊，病灶造成的視野缺損也越對稱（congruous）（Haines p.299）。",
+        "外側的纖維與 Meyer 環由中大腦動脈供應，內側的纖維與視覺皮質由後大腦動脈供應（Haines p.299）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "314–315"
+        },
+        {
+          "src": "haines",
+          "p": "298–299"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "34, 37"
+        }
+      ],
+      "vis": {
+        "lat": 29,
+        "y": 94,
+        "z": -32,
+        "r": 6
+      }
+    },
+    "meyer-loop": {
+      "zh": "Meyer 環",
+      "en": "Meyer's loop",
+      "aliases": [
+        "Meyer's loop",
+        "Meyer loop",
+        "Meyer-Archambault loop",
+        "temporal loop",
+        "顳葉環"
+      ],
+      "kind": "fiber",
+      "region": "visual",
+      "summary": "[[structure:optic-radiation]]下半部的纖維，先往前繞過側腦室下角（顳角）前端再往後走，帶的是對側的上半視野。",
+      "facts": [
+        "因為側腦室是 C 形，纖維必須先繞到顳角前方才能往後（共筆）。",
+        "顳葉病灶（腫瘤、顳葉切除）切到 Meyer 環 → 對側上象限盲（pie in the sky）（Barr p.315；Haines p.298；HY p.109）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "314–315"
+        },
+        {
+          "src": "haines",
+          "p": "298"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "34, 37, 43"
+        },
+        {
+          "src": "c112",
+          "p": "29, 31"
+        }
+      ],
+      "vis": {
+        "lat": 33,
+        "y": 78,
+        "z": 4,
+        "r": 5
+      }
+    },
+    "v1": {
+      "zh": "初級視覺皮質",
+      "en": "Primary visual cortex (area 17)",
+      "abbr": "V1",
+      "aliases": [
+        "primary visual cortex",
+        "striate cortex",
+        "area 17",
+        "Brodmann 17",
+        "calcarine cortex",
+        "紋狀皮質",
+        "距狀溝",
+        "calcarine sulcus",
+        "cuneus",
+        "楔葉",
+        "lingual gyrus",
+        "舌回"
+      ],
+      "kind": "cortex",
+      "region": "visual",
+      "summary": "枕葉內側面距狀溝的上下唇（Brodmann area 17）。下半視野在上唇（楔葉）、上半視野在下唇（舌回）；黃斑在枕葉後端，周邊視野在前段。",
+      "facts": [
+        "第 IV 層有一條肉眼可見的有髓纖維帶（Gennari 線），所以叫紋狀皮質（Barr p.315；Haines p.299）。",
+        "中心 10 度的視野大約占了視覺皮質的一半（Haines p.299）。",
+        "一側受損 → 對側同側偏盲，常常[[lesion:occipital|黃斑保留]]：枕葉後端另有中大腦動脈的側枝供應（Haines p.299）；Barr 另外指出檢查時病人的注視點稍微移動也會造成黃斑保留的假象（Barr p.316）。",
+        "視覺聯合皮質（areas 18、19，以及頂葉、顳葉的一部分）負責辨認物體、顏色、動作；顏色辨識在枕葉與顳葉下內側面（Barr p.315）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "313–316"
+        },
+        {
+          "src": "haines",
+          "p": "299–300"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "35"
+        },
+        {
+          "src": "c112",
+          "p": "31"
+        }
+      ],
+      "vis": {
+        "lat": 8,
+        "y": 100,
+        "z": -64,
+        "r": 8
+      }
+    },
+    "opn": {
+      "zh": "頂蓋前核（橄欖頂蓋前核）",
+      "en": "Olivary pretectal nucleus",
+      "abbr": "OPN",
+      "aliases": [
+        "olivary pretectal nucleus",
+        "pretectal nucleus",
+        "pretectum",
+        "頂蓋前核",
+        "前頂蓋核"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "midbrain",
+      "col": null,
+      "summary": "中腦與間腦交界背外側、上丘前方的小核：瞳孔光反射的中繼站。接收兩側視網膜的纖維，再投射到兩側的[[structure:edinger-westphal]]（交叉的纖維經後連合）。",
+      "facts": [
+        "投射到兩側 EW 核，是光照一眼、兩眼瞳孔都縮小（間接反射）的原因之一；另一個原因是視交叉（Barr p.316；Haines p.426）。",
+        "兩側受損 → 對光反射消失、看近物時仍會縮瞳（光—近反射分離）：[[lesion:argyll-robertson]]、[[lesion:parinaud]]（Barr p.125, 318；Haines p.428）。",
+        "看近物時的縮瞳不經過這裡：訊號從視覺皮質經上丘直接到 EW 核，所以兩者可以分開受損（Barr p.317–318）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "125, 315–318"
+        },
+        {
+          "src": "haines",
+          "p": "426–428"
+        },
+        {
+          "src": "hy",
+          "p": "112"
+        },
+        {
+          "src": "ym06",
+          "p": "32, 38"
+        }
+      ],
+      "nuc": [
+        [
+          78,
+          4.2,
+          -7.6,
+          0.9,
+          0.7
+        ],
+        [
+          82,
+          4.2,
+          -7.6,
+          0.9,
+          0.7
+        ]
+      ]
+    },
+    "ciliary-ganglion": {
+      "zh": "睫狀神經節",
+      "en": "Ciliary ganglion",
+      "aliases": [
+        "ciliary ganglion",
+        "睫狀節"
+      ],
+      "kind": "ganglion",
+      "region": "visual",
+      "summary": "眼眶內、視神經外側的副交感神經節：[[structure:edinger-westphal]]的節前纖維隨[[nerve:cn3]]到這裡換神經元，節後纖維經短睫狀神經支配瞳孔括約肌與睫狀肌。",
+      "facts": [
+        "節後神經元大多數其實是到睫狀肌（調節），少數到瞳孔括約肌（Haines p.416）。",
+        "神經節細胞壞掉 → [[lesion:adie|Adie 強直性瞳孔]]：瞳孔放大、對光反射消失、看近物時縮得很慢（Barr p.125；Haines p.427）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "416, 427"
+        },
+        {
+          "src": "barr",
+          "p": "125–126"
+        },
+        {
+          "src": "ym06",
+          "p": "32"
+        }
+      ],
+      "vis": {
+        "lat": 26,
+        "y": 58.5,
+        "z": 57,
+        "r": 3
+      }
+    },
+    "anterior-lobe": {
+      "zh": "小腦前葉",
+      "en": "Anterior lobe of cerebellum",
+      "aliases": [
+        "anterior lobe",
+        "paleocerebellum",
+        "舊小腦",
+        "lobules I–V"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "小腦上表面、原裂（primary fissure）之前的部分（lobule I–V），蚓部與中間區是脊髓小腦的主要部分，接收脊髓小腦徑。",
+      "facts": [
+        "身體在前葉蚓部與旁邊的皮質有一個倒立的代表區（Barr p.170）。",
+        "長期酗酒最先影響前葉的蚓部與中間區（前葉症候群）：以下肢為主的步態不穩（[[lesion:cb-vermis]]；共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "160–161, 168–170"
+        },
+        {
+          "src": "haines",
+          "p": "394–396"
+        },
+        {
+          "src": "ym04",
+          "p": "5, 19"
+        }
+      ],
+      "cb": {
+        "lobe": "anterior"
+      }
+    },
+    "posterior-lobe": {
+      "zh": "小腦後葉",
+      "en": "Posterior lobe of cerebellum",
+      "aliases": [
+        "posterior lobe",
+        "neocerebellum",
+        "新小腦",
+        "lobules VI–IX",
+        "tonsil",
+        "小腦扁桃"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "原裂與後外側裂之間、小腦最大的一部分（lobule VI–IX），大部分是接收橋腦小腦纖維的外側區。",
+      "facts": [
+        "小腦扁桃（tonsil）是後葉下表面靠近延髓的部分；後顱窩壓力升高時可能被擠進枕骨大孔，壓迫延髓（Barr p.161；共筆）。",
+        "後葉受損可能合併認知與情緒的變化（小腦認知情緒症候群），前葉受損則沒有（Barr p.172）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "160–161, 172"
+        },
+        {
+          "src": "haines",
+          "p": "394–396"
+        },
+        {
+          "src": "ym04",
+          "p": "5"
+        }
+      ],
+      "cb": {
+        "lobe": "posterior"
+      }
+    },
+    "flocculonodular-lobe": {
+      "zh": "小葉結節葉",
+      "en": "Flocculonodular lobe",
+      "aliases": [
+        "flocculonodular lobe",
+        "flocculus",
+        "nodulus",
+        "nodule",
+        "絨球",
+        "小結",
+        "archicerebellum",
+        "古小腦",
+        "vestibulocerebellum",
+        "前庭小腦"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "後外側裂之後的小葉（中間的小結＋兩側的絨球），接收同側前庭神經與前庭神經核的纖維，是前庭小腦：負責平衡與眼球運動。",
+      "facts": [
+        "Purkinje 細胞可以不經小腦核、直接經近繩狀體投射到前庭神經核（例外）（Barr p.163, 168；Haines p.405）。",
+        "受損（兒童常見的髓母細胞瘤）：站不穩、寬基步態、容易跌倒，常合併眼球震顫（[[lesion:cb-flocculonodular]]；Haines p.406；共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "160–161, 168–169"
+        },
+        {
+          "src": "haines",
+          "p": "405–406"
+        },
+        {
+          "src": "ym04",
+          "p": "18–19"
+        }
+      ],
+      "cb": {
+        "lobe": "fn"
+      },
+      "color": "#f2a65a"
+    },
+    "vermis": {
+      "zh": "蚓部（內側區）",
+      "en": "Vermis (medial zone)",
+      "aliases": [
+        "vermis",
+        "medial zone",
+        "蚓部",
+        "spinocerebellum",
+        "脊髓小腦"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "小腦中線的窄帶，屬於脊髓小腦。接收脊髓小腦徑與前庭的訊號，經[[structure:fastigial]]投射到前庭神經核與網狀結構，控制軀幹與近端肌肉（姿勢、步態）。",
+      "facts": [
+        "受損：軀幹與步態共濟失調、寬基步態，兩側都受影響（Haines p.406；Barr p.172）。",
+        "上蚓部在上表面和半球連在一起，下蚓部則陷在下表面的深溝（vallecula）裡（Barr p.160）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "160, 168–170, 172"
+        },
+        {
+          "src": "haines",
+          "p": "396, 406–407"
+        },
+        {
+          "src": "ym04",
+          "p": "18, 22"
+        }
+      ],
+      "cb": {
+        "zone": "vermis"
+      },
+      "color": "#c9b8e8"
+    },
+    "intermediate-zone": {
+      "zh": "中間區（蚓旁區）",
+      "en": "Intermediate (paravermal) zone",
+      "aliases": [
+        "intermediate zone",
+        "paravermis",
+        "paravermal zone",
+        "medial hemisphere",
+        "蚓旁區",
+        "spinocerebellum"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "蚓部兩旁約 1–2 cm 的皮質，屬於脊髓小腦。接收肢體的本體感覺，經[[structure:interposed]]、上小腦腳投射到對側紅核與視丘 VL，修正正在進行的肢體動作。",
+      "facts": [
+        "比較大腦運動皮質的指令與身體實際的動作，隨時修正進行中的運動（共筆）。",
+        "通常和外側區一起受損，症狀歸在半球症候群（Haines p.408）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "160, 169–170"
+        },
+        {
+          "src": "haines",
+          "p": "396, 407–408"
+        },
+        {
+          "src": "ym04",
+          "p": "13, 22"
+        }
+      ],
+      "cb": {
+        "zone": "intermediate"
+      },
+      "color": "#6fcf97"
+    },
+    "lateral-zone": {
+      "zh": "外側區（小腦半球）",
+      "en": "Lateral zone (cerebellar hemisphere)",
+      "aliases": [
+        "lateral zone",
+        "lateral hemisphere",
+        "cerebellar hemisphere",
+        "pontocerebellum",
+        "cerebrocerebellum",
+        "neocerebellum",
+        "橋腦小腦",
+        "大腦小腦",
+        "新小腦"
+      ],
+      "kind": "region",
+      "region": "cerebellum",
+      "summary": "小腦最大的部分，屬於橋腦小腦（大腦小腦）：經中小腦腳接收對側大腦皮質（經橋腦核）的訊號，經[[structure:dentate]]、上小腦腳、視丘 VL 回到運動皮質，負責規劃精細的肢體動作與時序。",
+      "facts": [
+        "受損：同側肢體的辨距不良、意向性震顫、輪替運動障礙、動作分解、肌張力低下，也可能有構音障礙（Barr p.172；Haines p.410–411）。",
+        "病灶在右側，症狀在右側：右小腦 → 左 VL → 左運動皮質 → 皮質脊髓徑交叉回右側（Haines p.410）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "160, 170–172"
+        },
+        {
+          "src": "haines",
+          "p": "396, 408–411"
+        },
+        {
+          "src": "ym04",
+          "p": "13, 20, 22"
+        }
+      ],
+      "cb": {
+        "zone": "lateral"
+      },
+      "color": "#6aa7ff"
+    },
+    "cerebellar-cortex": {
+      "zh": "小腦皮質",
+      "en": "Cerebellar cortex",
+      "aliases": [
+        "cerebellar cortex",
+        "Purkinje cell",
+        "浦金氏細胞",
+        "granule cell",
+        "顆粒細胞",
+        "molecular layer",
+        "分子層",
+        "mossy fiber",
+        "苔狀纖維",
+        "climbing fiber",
+        "攀緣纖維",
+        "parallel fiber",
+        "平行纖維",
+        "basket cell",
+        "stellate cell",
+        "Golgi cell"
+      ],
+      "kind": "gray",
+      "region": "cerebellum",
+      "summary": "三層：分子層（外）、Purkinje 細胞層、顆粒細胞層（內）。Purkinje 細胞是唯一的輸出神經元，而且是抑制性的（GABA）。",
+      "facts": [
+        "攀緣纖維只來自對側的下橄欖核，一條纏繞一個 Purkinje 細胞；其他來源的傳入都是苔狀纖維，先接顆粒細胞，再經平行纖維接很多 Purkinje 細胞（Barr p.163；Haines p.402–403）。",
+        "皮質裡只有顆粒細胞（與前庭小腦的單極刷細胞）是興奮性的；Purkinje、籃狀、星狀、Golgi 細胞都是抑制性（Haines p.402）。",
+        "所有傳入纖維在進皮質前都先分支到小腦核：小腦核的輸出＝傳入的興奮 − Purkinje 細胞的抑制（Barr p.164；Haines p.403–405）。",
+        "Purkinje 細胞的樹突像扇子，扇面和葉片（folium）的長軸垂直；平行纖維和長軸平行，所以一條平行纖維穿過很多 Purkinje 細胞（Barr p.163）。",
+        "國考與考古常考：小腦中興奮性的是顆粒細胞；攀緣纖維來自對側下橄欖核（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "161–164"
+        },
+        {
+          "src": "haines",
+          "p": "397–405"
+        },
+        {
+          "src": "ym04",
+          "p": "8, 22–23"
+        },
+        {
+          "src": "ex112m",
+          "p": "44–46"
+        }
+      ],
+      "cb": {
+        "all": true
+      }
+    },
+    "fastigial": {
+      "zh": "頂核",
+      "en": "Fastigial nucleus",
+      "aliases": [
+        "fastigial nucleus",
+        "室頂核",
+        "medial cerebellar nucleus"
+      ],
+      "kind": "nucleus",
+      "region": "cerebellum",
+      "color": "#c9b8e8",
+      "summary": "最內側、緊貼第四腦室頂的小腦核。接收蚓部與小葉結節葉，經近繩狀體（下小腦腳）投射到兩側的前庭神經核與網狀結構，影響軀幹肌肉。",
+      "facts": [
+        "投射到對側的纖維在小腦白質交叉，繞過上小腦腳形成鉤束（uncinate fasciculus）（Haines p.405；共筆）。",
+        "中線病灶傷到頂核與小結 → 軀幹共濟失調、頭部震顫（titubation）、眼球震顫（Haines p.406）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "164–165, 170–171"
+        },
+        {
+          "src": "haines",
+          "p": "396–397, 405–410"
+        },
+        {
+          "src": "ym04",
+          "p": "11, 15"
+        },
+        {
+          "src": "c112m",
+          "p": "142"
+        }
+      ],
+      "nuc": [
+        [
+          38.5,
+          2.8,
+          -17.5,
+          1.2,
+          1.4
+        ],
+        [
+          42,
+          2.8,
+          -17.5,
+          1.2,
+          1.4
+        ]
+      ],
+      "cb": {
+        "nucleus": "fastigial"
+      }
+    },
+    "interposed": {
+      "zh": "中間核（球狀核＋栓狀核）",
+      "en": "Interposed nuclei (globose + emboliform)",
+      "aliases": [
+        "interposed nucleus",
+        "globose nucleus",
+        "emboliform nucleus",
+        "球狀核",
+        "栓狀核",
+        "中間核"
+      ],
+      "kind": "nucleus",
+      "region": "cerebellum",
+      "color": "#6fcf97",
+      "summary": "頂核與齒狀核之間的球狀核與栓狀核，對應中間區。經上小腦腳交叉到對側紅核（大細胞部）與視丘 VL，影響肢體遠端的肌肉。",
+      "facts": [
+        "交叉的纖維到對側紅核，再經紅核脊髓徑交叉回同側（Haines p.408）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "164–165, 170–171"
+        },
+        {
+          "src": "haines",
+          "p": "396–397, 405–410"
+        },
+        {
+          "src": "ym04",
+          "p": "11, 15"
+        },
+        {
+          "src": "c112m",
+          "p": "142"
+        }
+      ],
+      "nuc": [
+        [
+          37.5,
+          7.2,
+          -19,
+          1.4,
+          1.6
+        ],
+        [
+          42,
+          8,
+          -19.5,
+          1.4,
+          1.6
+        ]
+      ],
+      "cb": {
+        "nucleus": "interposed"
+      }
+    },
+    "dentate": {
+      "zh": "齒狀核",
+      "en": "Dentate nucleus",
+      "aliases": [
+        "dentate nucleus",
+        "lateral cerebellar nucleus",
+        "齒狀核"
+      ],
+      "kind": "nucleus",
+      "region": "cerebellum",
+      "color": "#6aa7ff",
+      "summary": "最大、最外側的小腦核，形狀像皺起來的紙袋，開口（hilus）朝前內側。對應外側區，經上小腦腳交叉到對側視丘 VL 與紅核小細胞部。",
+      "facts": [
+        "冷卻齒狀核會讓運動皮質發動動作的時間延後：小腦負責動作的起始與時序（Haines p.410）。",
+        "小腦核或上小腦腳受損，比只傷到皮質更嚴重也更持久（Barr p.172；Haines p.410）。",
+        "國考：齒狀核的輸出經視丘 VL 到運動皮質；齒狀核是最外側的小腦核（考古題）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "164–165, 170–171"
+        },
+        {
+          "src": "haines",
+          "p": "396–397, 405–410"
+        },
+        {
+          "src": "ym04",
+          "p": "11, 15"
+        },
+        {
+          "src": "c112m",
+          "p": "142"
+        }
+      ],
+      "nuc": [
+        [
+          34,
+          15,
+          -22,
+          2.6,
+          3.6
+        ],
+        [
+          43,
+          16,
+          -21.5,
+          2.6,
+          3.6
+        ]
+      ],
+      "cb": {
+        "nucleus": "dentate"
+      }
+    },
+    "mcp": {
+      "zh": "中小腦腳（橋腦臂）",
+      "en": "Middle cerebellar peduncle (brachium pontis)",
+      "abbr": "MCP",
+      "aliases": [
+        "middle cerebellar peduncle",
+        "brachium pontis",
+        "橋腦臂",
+        "中小腦腳"
+      ],
+      "kind": "fiber",
+      "region": "brainstem",
+      "level": "pons",
+      "summary": "最大的小腦腳，幾乎全是從對側橋腦核來的[[tract:pontocerebellar|橋腦小腦纖維]]，只有傳入、沒有傳出。三叉神經根是橋腦基底部與中小腦腳的分界。",
+      "facts": [
+        "國考：只含小腦的傳入纖維、不含傳出纖維的是中小腦腳（考古題）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "165, 167"
+        },
+        {
+          "src": "haines",
+          "p": "394–395"
+        },
+        {
+          "src": "ym04",
+          "p": "21"
+        },
+        {
+          "src": "ex112m",
+          "p": "56"
+        }
+      ],
+      "pos": [
+        44,
+        -18,
+        -6
+      ]
+    },
+    "inferior-olive": {
+      "zh": "下橄欖核",
+      "en": "Inferior olivary nucleus",
+      "aliases": [
+        "inferior olive",
+        "inferior olivary complex",
+        "principal olivary nucleus",
+        "accessory olivary nuclei",
+        "下橄欖核",
+        "橄欖核"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "med-olive",
+      "col": null,
+      "color": "#e0c46c",
+      "summary": "延髓腹外側、錐體旁的皺摺狀核團，是攀緣纖維唯一的來源：纖維交叉後經對側下小腦腳到小腦皮質（[[tract:olivocerebellar]]）。",
+      "facts": [
+        "主橄欖核投射到外側區，副橄欖核投射到蚓部與中間區（Haines p.407, 409）。",
+        "接收紅核小細胞部經中央被蓋徑來的纖維（Haines p.409；Barr p.171）。",
+        "國考：下橄欖核在延髓，不屬於小腦（考古題）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "163, 170–171"
+        },
+        {
+          "src": "haines",
+          "p": "403, 409"
+        },
+        {
+          "src": "ym04",
+          "p": "13"
+        },
+        {
+          "src": "ex112m",
+          "p": "16"
+        }
+      ],
+      "nuc": [
+        [
+          8,
+          4.6,
+          3.4,
+          1.3,
+          1.8
+        ],
+        [
+          24,
+          4.9,
+          3.9,
+          1.6,
+          2.1
+        ]
+      ]
+    },
+    "pontine-nuclei": {
+      "zh": "橋腦核",
+      "en": "Pontine nuclei",
+      "aliases": [
+        "pontine nuclei",
+        "nuclei pontis",
+        "basilar pontine nuclei",
+        "橋腦核"
+      ],
+      "kind": "nucleus",
+      "region": "brainstem",
+      "level": "pons",
+      "summary": "散布在橋腦基底部的大量神經元：接收同側大腦皮質的皮質橋腦纖維，發出交叉的橋腦小腦纖維，經對側中小腦腳到小腦外側區。",
+      "facts": [
+        "皮質橋腦纖維來自額、頂、顳、枕葉的廣泛區域（Barr p.170）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "170"
+        },
+        {
+          "src": "haines",
+          "p": "408–409"
+        },
+        {
+          "src": "ym04",
+          "p": "13"
+        }
+      ],
+      "pos": [
+        46,
+        5.5,
+        9.5
+      ]
+    },
+    "vl": {
+      "zh": "視丘腹外側核",
+      "en": "Ventral lateral nucleus",
+      "abbr": "VL",
+      "aliases": [
+        "ventral lateral nucleus (VL)",
+        "anterior ventral lateral nucleus (VLa)",
+        "posterior ventral lateral nucleus (VLp)",
+        "ventral intermediate nucleus (VIM)",
+        "motor thalamus",
+        "運動視丘"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "summary": "運動視丘。後部（VLp）接收對側小腦核（齒狀核、中間核），前部（VLa）接收蒼白球；投射到初級運動皮質與運動前區。",
+      "facts": [
+        "後部（VLp）：對側小腦核經上小腦腳交叉而來 → 初級運動皮質（中央前回）：小腦修正送往運動神經元的指令（Barr p.181–182；Haines p.217–218）。",
+        "前部（VLa）：蒼白球 → 運動前區與輔助運動區：規劃指令（Barr p.182）。",
+        "小腦與蒼白球的輸入在 VL 裡大致分開（Haines p.218）。",
+        "經內囊膝部與後肢前段到額葉運動區（Barr p.254）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "181–182, 254"
+        },
+        {
+          "src": "haines",
+          "p": "217–219"
+        },
+        {
+          "src": "ym04",
+          "p": "29–30"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "13"
+        }
+      ],
+      "pos": [
+        90,
+        12,
+        1
+      ],
+      "color": "#6f8cff",
+      "ell": [
+        89,
+        14.5,
+        1.5,
+        3.2,
+        4,
+        3.2
+      ],
+      "thal": {
+        "group": "ventral",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "對側小腦核（齒狀核、中間核；上小腦腳）",
+            "bundle": "@dentatothalamic.dtt"
+          },
+          {
+            "zh": "蒼白球內節",
+            "from": "gpi"
+          }
+        ],
+        "out": [
+          {
+            "zh": "初級運動皮質（中央前回）",
+            "to": "m1",
+            "ic": "posterior"
+          },
+          {
+            "zh": "運動前區、輔助運動區",
+            "to": "premotor",
+            "ic": "genu"
+          }
+        ],
+        "fn": "小腦與基底核的運動訊息 → 運動皮質"
+      }
+    },
+    "cochlea": {
+      "zh": "耳蝸",
+      "en": "Cochlea",
+      "aliases": [
+        "cochlea",
+        "organ of Corti",
+        "Corti 器",
+        "柯蒂氏器",
+        "spiral organ",
+        "basilar membrane",
+        "基底膜",
+        "cochlear duct",
+        "耳蝸管",
+        "scala media",
+        "hair cells",
+        "毛細胞"
+      ],
+      "kind": "organ",
+      "region": "auditory",
+      "summary": "內耳前內側、繞 2.5 圈的骨性管道。中間的耳蝸管（內淋巴）底部是基底膜，上面的 Corti 器有一排內毛細胞與三排外毛細胞。",
+      "facts": [
+        "鐙骨推動卵圓窗 → 前庭階外淋巴 → 基底膜振動 → 毛細胞的靜纖毛被覆膜彎曲而興奮；圓窗讓壓力波有出口（Barr p.324–325；Haines p.310）。",
+        "Tonotopy：基底膜在底部窄而硬（高頻），往頂部越來越寬（低頻）；這個排列一路保留到聽覺皮質（Barr p.325–326；Haines p.310）。",
+        "約 90–95% 的耳蝸神經纖維（第一型）接內毛細胞；外毛細胞會伸縮，放大基底膜的振動、提高靈敏度（Barr p.321；Haines p.310）。",
+        "老年性聽損（presbycusis）先壞基底圈的 Corti 器，所以先失去高頻（HY p.102）。",
+        "國考：隔開耳蝸管與鼓階的是基底膜（共筆，國考 1141）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "321–326"
+        },
+        {
+          "src": "haines",
+          "p": "308–311"
+        },
+        {
+          "src": "hy",
+          "p": "102"
+        },
+        {
+          "src": "ym07",
+          "p": "9–14"
+        },
+        {
+          "src": "c112",
+          "p": "38–39, 47"
+        }
+      ]
+    },
+    "spiral-ganglion": {
+      "zh": "螺旋神經節",
+      "en": "Spiral ganglion",
+      "aliases": [
+        "spiral ganglion",
+        "cochlear ganglion",
+        "耳蝸神經節"
+      ],
+      "kind": "ganglion",
+      "region": "auditory",
+      "summary": "在耳蝸蝸軸（modiolus）裡的雙極神經元，是聽覺的第一級神經元：周邊突到毛細胞，中樞突組成耳蝸神經。",
+      "facts": [
+        "前庭耳蝸神經的感覺神經元是雙極的，保留了胚胎時的形態（Barr p.325）。",
+        "所有耳蝸神經纖維都止於同側的耳蝸神經核（Haines p.312, 314）。",
+        "國考：與聽覺有關的是螺旋神經節、外側蹄系、內側膝狀體；下橄欖核與聽覺無關（共筆，國考 1041）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "325, 327"
+        },
+        {
+          "src": "haines",
+          "p": "309–310, 314"
+        },
+        {
+          "src": "c112",
+          "p": "38, 46"
+        }
+      ]
+    },
+    "semicircular-canals": {
+      "zh": "半規管",
+      "en": "Semicircular canals and ducts",
+      "aliases": [
+        "semicircular canals",
+        "semicircular ducts",
+        "半規管",
+        "ampulla",
+        "壺腹",
+        "crista ampullaris",
+        "壺腹嵴",
+        "cupula",
+        "kinetic labyrinth",
+        "動態迷路",
+        "horizontal canal",
+        "lateral canal",
+        "水平半規管",
+        "anterior canal",
+        "superior canal",
+        "posterior canal"
+      ],
+      "kind": "organ",
+      "region": "auditory",
+      "summary": "三個互相垂直的半規管（前、後、外側），每個一端膨大成壺腹，裡面的壺腹嵴與 cupula 感受頭部的旋轉（角加速度）。",
+      "facts": [
+        "前、後半規管是垂直的；外側半規管往後下斜約 30°，頭前傾 30° 時才水平（Barr p.335；Haines p.322）。",
+        "頭一轉，內淋巴因慣性落後，把 cupula 往反方向推；cupula 比重和內淋巴一樣，不受重力影響（Barr p.336；Haines p.324）。",
+        "左右成對、方向相反（push–pull）：頭向左轉時左外側半規管興奮、右側抑制；前半規管與對側的後半規管同一平面（Haines p.322, 326–327）。",
+        "良性陣發性姿勢性眩暈（BPPV）：脫落的耳石掉進半規管（多是後半規管），特定頭位會引起短暫眩暈；Dix-Hallpike 手法可以誘發、復位手法治療（Barr p.340；Haines p.333）。",
+        "梅尼爾氏病：內淋巴積水，發作性眩暈、耳鳴、波動性聽損（Barr p.340；Haines p.323）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "323, 335–336, 340"
+        },
+        {
+          "src": "haines",
+          "p": "320–327, 333"
+        },
+        {
+          "src": "hy",
+          "p": "104"
+        },
+        {
+          "src": "ym07",
+          "p": "7–8, 36"
+        },
+        {
+          "src": "c112",
+          "p": "44"
+        }
+      ]
+    },
+    "otolith-organs": {
+      "zh": "橢圓囊與球囊（耳石器）",
+      "en": "Utricle and saccule (otolith organs)",
+      "aliases": [
+        "utricle",
+        "saccule",
+        "橢圓囊",
+        "球囊",
+        "球狀囊",
+        "macula",
+        "囊斑",
+        "otolith",
+        "耳石",
+        "otoconia",
+        "static labyrinth",
+        "靜態迷路"
+      ],
+      "kind": "organ",
+      "region": "auditory",
+      "summary": "前庭裡的兩個膨大，囊斑上的毛細胞埋在有耳石的膠質膜裡，感受頭的位置（重力）與直線加速度。",
+      "facts": [
+        "橢圓囊斑大致水平、球囊斑垂直（Barr p.333；Haines p.322）。",
+        "耳石比內淋巴重，頭一傾斜毛細胞就彎曲；毛細胞往動纖毛那一側彎時興奮（Barr p.334；Haines p.324）。",
+        "暈車暈船主要是囊斑受到長時間、反覆的刺激（Barr p.334）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "333–335"
+        },
+        {
+          "src": "haines",
+          "p": "322–328"
+        },
+        {
+          "src": "ym07",
+          "p": "8, 36"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "39"
+        }
+      ]
+    },
+    "vestibular-ganglion": {
+      "zh": "前庭神經節（Scarpa 神經節）",
+      "en": "Vestibular ganglion (Scarpa)",
+      "aliases": [
+        "vestibular ganglion",
+        "Scarpa ganglion",
+        "Scarpa's ganglion"
+      ],
+      "kind": "ganglion",
+      "region": "auditory",
+      "summary": "內耳道底的雙極神經元，周邊突接半規管與耳石器的毛細胞，中樞突組成前庭神經，止於前庭神經核，少數直接進小腦。",
+      "facts": [
+        "大部分前庭神經纖維止於前庭神經核，少數經近繩狀體直接到小腦（小結、蚓垂、絨球）——前庭是唯一直接投射到小腦皮質的感覺器官（Barr p.336；Haines p.328）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "334, 336"
+        },
+        {
+          "src": "haines",
+          "p": "323, 327–328"
+        },
+        {
+          "src": "hy",
+          "p": "104"
+        }
+      ]
+    },
+    "superior-olive": {
+      "zh": "上橄欖核",
+      "en": "Superior olivary nucleus (complex)",
+      "abbr": "SOC",
+      "aliases": [
+        "superior olivary nucleus (SON)",
+        "superior olivary complex (SOC)",
+        "superior olive",
+        "medial superior olivary nucleus (MSO)",
+        "lateral superior olivary nucleus (LSO)",
+        "上橄欖複合體",
+        "nucleus of the trapezoid body",
+        "斜方體核"
+      ],
+      "kind": "nucleus",
+      "region": "auditory",
+      "level": "pons-caudal",
+      "color": "#f5c26b",
+      "summary": "橋腦下段被蓋腹外側、顏面神經核旁的核團，是兩耳訊息第一次匯合的地方：比較兩耳聲音到達的時間差與音量差來判斷聲音方向。",
+      "facts": [
+        "接收兩側腹側耳蝸神經核的纖維；軸突加入兩側的外側蹄系（Barr p.321, 330；Haines p.314–315）。",
+        "內側上橄欖核比較時間差（低頻），外側上橄欖核比較音量差（高頻；對側的訊號先經斜方體核轉成抑制）（Haines p.314–315）。",
+        "橄欖耳蝸束：上橄欖核周圍的膽鹼性神經元經前庭神經（Oort 吻合）到耳蝸，抑制外毛細胞、降低靈敏度（Barr p.331；Haines p.318）。",
+        "中耳反射：上橄欖核 → 顏面神經核（鐙骨肌）與三叉神經運動核（鼓膜張肌），大聲時減少聽小骨振動（Barr p.332；Haines p.318–319）。",
+        "國考：兩耳訊息最早在上橄欖核交會（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "329–332"
+        },
+        {
+          "src": "haines",
+          "p": "314–315, 318–319"
+        },
+        {
+          "src": "ym07",
+          "p": "25, 39–40"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "32, 34, 36"
+        },
+        {
+          "src": "c112",
+          "p": "39, 41"
+        }
+      ],
+      "nuc": [
+        [
+          33.5,
+          7,
+          1.9,
+          0.9,
+          1.1
+        ],
+        [
+          38,
+          7,
+          1.6,
+          0.9,
+          1.1
+        ]
+      ]
+    },
+    "trapezoid-body": {
+      "zh": "斜方體",
+      "en": "Trapezoid body",
+      "aliases": [
+        "trapezoid body",
+        "ventral acoustic stria",
+        "腹側聽紋"
+      ],
+      "kind": "fiber",
+      "region": "auditory",
+      "level": "pons-caudal",
+      "summary": "腹側耳蝸神經核發出、在橋腦下段被蓋腹側橫越中線的聽覺纖維，穿過內側蹄系，到對側上橄欖核或直接加入對側外側蹄系。",
+      "facts": [
+        "走在上橄欖核的前方，和內側蹄系的纖維交錯（Barr p.329；Haines p.314）。",
+        "背側耳蝸神經核的纖維不走斜方體，而是從下小腦腳背側繞過（背側聽紋），在被蓋交叉後加入對側外側蹄系（Barr p.330；Haines p.314）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "329–330"
+        },
+        {
+          "src": "haines",
+          "p": "313–314"
+        },
+        {
+          "src": "c112",
+          "p": "39"
+        }
+      ],
+      "pos": [
+        34.6,
+        0,
+        3.6
+      ]
+    },
+    "lateral-lemniscus": {
+      "zh": "外側蹄系",
+      "en": "Lateral lemniscus",
+      "abbr": "LL",
+      "aliases": [
+        "lateral lemniscus",
+        "外側丘系",
+        "nucleus of the lateral lemniscus",
+        "外側蹄系核"
+      ],
+      "kind": "fiber",
+      "region": "auditory",
+      "level": "pons",
+      "summary": "上行的聽覺纖維束：從上橄欖核附近，經橋腦被蓋外側、在峽部靠近表面，止於下丘。兩側都有，但以對側耳的訊息為主。",
+      "facts": [
+        "含有耳蝸神經核（第 2 級）、上橄欖核（第 3 級）與外側蹄系核（第 4 級）的軸突（Haines p.315）。",
+        "因為外側蹄系兩側都有同一耳的纖維，這裡以上的單側病灶不會造成單耳全聾（Barr p.330；Haines p.312）。",
+        "國考：耳蝸神經核到下丘的纖維走在外側蹄系（共筆，國考 1141）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "329–330"
+        },
+        {
+          "src": "haines",
+          "p": "312, 315"
+        },
+        {
+          "src": "c112",
+          "p": "39, 47"
+        }
+      ],
+      "pos": [
+        47,
+        11,
+        -3
+      ]
+    },
+    "brachium-ic": {
+      "zh": "下丘臂",
+      "en": "Brachium of the inferior colliculus",
+      "aliases": [
+        "brachium of the inferior colliculus",
+        "inferior brachium",
+        "inferior quadrigeminal brachium"
+      ],
+      "kind": "fiber",
+      "region": "auditory",
+      "level": "midbrain",
+      "summary": "下丘往前外側到內側膝狀體的纖維束，在中腦背外側表面可以看到。",
+      "facts": [
+        "下丘的中央核投射到內側膝狀體的腹側（前）部，保留 tonotopy（Barr p.330；Haines p.316–317）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "330"
+        },
+        {
+          "src": "haines",
+          "p": "313, 316–317"
+        }
+      ],
+      "pos": [
+        72,
+        10.6,
+        -11.4
+      ]
+    },
+    "mgn": {
+      "zh": "內側膝狀體",
+      "en": "Medial geniculate nucleus (body)",
+      "abbr": "MGN",
+      "aliases": [
+        "medial geniculate body (MGB)",
+        "medial geniculate nucleus (MGN)",
+        "內側膝狀核",
+        "內膝狀體"
+      ],
+      "kind": "nucleus",
+      "region": "auditory",
+      "level": "thalamus",
+      "color": "#f5c26b",
+      "summary": "視丘後下方、外側膝狀體內側的聽覺轉運站。接收下丘臂，經內囊豆狀核下部的聽放射投射到同側顳橫回。",
+      "facts": [
+        "腹側（前）部有 tonotopy，投射到初級聽覺皮質（area 41）；背側部到次級聽覺皮質（area 42）；內側大細胞部是多感覺的（Haines p.317–318）。",
+        "兩側的內側膝狀體之間沒有纖維聯繫：左內側膝狀體只投射到左側聽覺皮質（共筆，國考 1072）。",
+        "國考：初級聽覺皮質的傳入主要來自內側膝狀體；內側膝狀體主要投射到顳橫回（共筆，國考 1062、1091）。",
+        "視覺是外側膝狀體與上丘，聽覺是內側膝狀體與下丘，別搞混（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "330"
+        },
+        {
+          "src": "haines",
+          "p": "317–318"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "35, 38"
+        },
+        {
+          "src": "c112",
+          "p": "39–40, 46"
+        },
+        {
+          "src": "ym07",
+          "p": "25"
+        }
+      ],
+      "nuc": [
+        [
+          80,
+          15.2,
+          -14.6,
+          1.8,
+          2.0
+        ],
+        [
+          82,
+          15.6,
+          -15.4,
+          1.8,
+          2.0
+        ]
+      ],
+      "thal": {
+        "group": "meta",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "下丘（下丘臂）",
+            "bundle": "@auditory.bic"
+          }
+        ],
+        "out": [
+          {
+            "zh": "初級聽覺皮質",
+            "to": "a1",
+            "ic": "sub"
+          }
+        ],
+        "fn": "聽覺（兩耳）"
+      }
+    },
+    "acoustic-radiation": {
+      "zh": "聽放射",
+      "en": "Auditory (acoustic) radiation",
+      "aliases": [
+        "auditory radiation",
+        "acoustic radiation",
+        "sublentiform part of internal capsule",
+        "sublenticular limb",
+        "內囊豆狀核下部"
+      ],
+      "kind": "fiber",
+      "region": "auditory",
+      "level": "internal-capsule",
+      "summary": "內側膝狀體到顳橫回的纖維，經過內囊的豆狀核下部（sublentiform part）。",
+      "facts": [
+        "Barr 與 Haines 都寫經內囊豆狀核下部（Barr p.330；Haines p.312）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "330"
+        },
+        {
+          "src": "haines",
+          "p": "312"
+        },
+        {
+          "src": "c112",
+          "p": "40"
+        }
+      ],
+      "pos": [
+        86,
+        32,
+        -8.4
+      ]
+    },
+    "a1": {
+      "zh": "初級聽覺皮質（顳橫回）",
+      "en": "Primary auditory cortex (areas 41, 42)",
+      "abbr": "A1",
+      "aliases": [
+        "primary auditory cortex",
+        "auditory cortex",
+        "Heschl's gyrus",
+        "Heschl gyrus",
+        "transverse temporal gyrus",
+        "顳橫回",
+        "area 41",
+        "area 42",
+        "Brodmann 41",
+        "聽覺皮質"
+      ],
+      "kind": "cortex",
+      "region": "auditory",
+      "summary": "外側溝底、顳上回上表面的顳橫回（Heschl 回，Brodmann 41、42）。低頻在前外側、高頻在後內側。",
+      "facts": [
+        "大部分藏在外側溝裡，只有一點點露到半球外側面（Barr p.330；Haines p.317）。",
+        "Tonotopy：低頻 → 前外側、高頻 → 後內側（Barr p.330）。",
+        "每一側聽覺皮質都收到兩耳的訊息，所以單側皮質病灶造成的聽力下降輕到很難測出來；主要是對側空間聲音定位變差（Barr p.330；Haines p.312）。",
+        "後方的聽覺聯合皮質（area 22）在優勢半球就是 Wernicke 區：受損時聽得到但聽不懂（接受性失語）（Barr p.330；Haines p.318）。",
+        "國考：內側膝狀體主要投射到顳橫回（共筆，國考 1091）；area 3a 不是聽覺相關皮質（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "330"
+        },
+        {
+          "src": "haines",
+          "p": "312, 317–318"
+        },
+        {
+          "src": "hy",
+          "p": "101"
+        },
+        {
+          "src": "ym07",
+          "p": "29, 37, 40"
+        },
+        {
+          "src": "c112",
+          "p": "40, 46"
+        }
+      ]
+    },
+    "pivc": {
+      "zh": "前庭皮質（頂葉島葉前庭皮質）",
+      "en": "Vestibular cortex (parietoinsular vestibular cortex)",
+      "abbr": "PIVC",
+      "aliases": [
+        "vestibular cortex",
+        "parietoinsular vestibular cortex (PIVC)",
+        "area 2v",
+        "area 3a",
+        "posterior insula"
+      ],
+      "kind": "cortex",
+      "region": "auditory",
+      "summary": "沒有單一的「初級前庭皮質」：前庭訊息分散到島葉後部與頂葉蓋（PIVC）、area 2v 與 3a、頂葉後部等多感覺區，負責動作與空間方向的意識。",
+      "facts": [
+        "人類以冷熱水刺激內耳時，只有島葉後部與相鄰的頂葉蓋一定會活化（Barr p.338–339）。",
+        "Haines 列出四個區：area 2v 與 3a、頂葉後部（area 7）、PIVC、額葉（area 6，靠近額葉眼區）（Haines p.333）。",
+        "PIVC 受損：陣發性眩暈、不穩、垂直方向的判斷變差（Haines p.333）。",
+        "國考：海馬迴不參與平衡反應；前庭核、視丘、area 2v、3a 都參與（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "338–339"
+        },
+        {
+          "src": "haines",
+          "p": "332–333"
+        },
+        {
+          "src": "ym07",
+          "p": "34–35, 38–40"
+        }
+      ]
+    },
+    "thalamus": {
+      "zh": "視丘",
+      "en": "Thalamus (dorsal thalamus)",
+      "aliases": [
+        "thalamus",
+        "dorsal thalamus",
+        "丘腦",
+        "背側視丘"
+      ],
+      "kind": "region",
+      "region": "diencephalon",
+      "summary": "間腦最大的部分，約 3 × 1.5 × 1.5 cm 的蛋形灰質。內髓板把它分成前、內側、外側核群；除了網狀核以外，每一個核都投射到大腦皮質，皮質也一定回頭投射到同一個核。",
+      "facts": [
+        "除了嗅覺以外，所有感覺都在視丘換站再到皮質（Barr p.178；共筆）。",
+        "每一個視丘核（網狀核除外）都送纖維到皮質，每一區皮質也都回送纖維到同一個核；各核之間沒有直接連結，只靠網狀核互相抑制（Barr p.178–180）。",
+        "依連結分成三類：中繼核（VPL、VPM、LGN、MGN、VL、VA、前核）、聯合核（背內側核、外側背核、外側後核、枕核）、非特異核（板內核、中線核）（Haines p.220；共筆）。",
+        "血液主要來自後大腦動脈的深部分支（視丘穿通動脈、視丘膝狀動脈）；前脈絡膜動脈供應內囊膝部與後肢下部（Haines p.223–224；國考 1051）。",
+        "國考：嗅覺訊息不經視丘投射到皮質（國考 1102）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "175–183"
+        },
+        {
+          "src": "haines",
+          "p": "212–220, 223–224"
+        },
+        {
+          "src": "ym04",
+          "p": "27–30"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "9–20"
+        },
+        {
+          "src": "c112",
+          "p": "34"
+        }
+      ],
+      "thalGroup": "shell"
+    },
+    "an": {
+      "zh": "視丘前核",
+      "en": "Anterior nucleus of the thalamus",
+      "abbr": "AN",
+      "aliases": [
+        "anterior nucleus",
+        "anterior nuclear group",
+        "anterior thalamic nucleus",
+        "anterior tubercle",
+        "前核群",
+        "前核"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#ff9ecb",
+      "summary": "視丘最前端、內髓板分叉夾住的楔形核群（前結節），在室間孔後方。接收乳頭體（乳頭視丘徑），投射到扣帶迴：是 Papez 迴路的一站。",
+      "facts": [
+        "傳入：乳頭體經[[tract:mammillothalamic|乳頭視丘徑]]；也有海馬經穹窿來的纖維（Barr p.182–183；Haines p.215）。",
+        "傳出：經內囊前肢到扣帶迴（Haines p.215, 219）。",
+        "功能：記憶、情緒（邊緣系統）（Barr p.183）。",
+        "國考：前核是乳頭體與扣帶迴之間的中繼站（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "182–183"
+        },
+        {
+          "src": "haines",
+          "p": "215, 219"
+        },
+        {
+          "src": "ym04",
+          "p": "27–30, 43"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "13"
+        }
+      ],
+      "ell": [
+        96,
+        10,
+        7.5,
+        2.4,
+        2.6,
+        3.6
+      ],
+      "thal": {
+        "group": "anterior",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "乳頭體（乳頭視丘徑）",
+            "from": "mammillary-body"
+          },
+          {
+            "zh": "海馬（穹窿）",
+            "path": [
+              [
+                108,
+                6,
+                -12
+              ],
+              [
+                106,
+                4,
+                -2
+              ],
+              [
+                103,
+                4.5,
+                5
+              ],
+              [
+                99,
+                7,
+                7
+              ]
+            ]
+          }
+        ],
+        "out": [
+          {
+            "zh": "扣帶迴",
+            "to": "cingulate",
+            "ic": "anterior"
+          }
+        ],
+        "fn": "記憶、情緒（Papez 迴路）"
+      }
+    },
+    "md": {
+      "zh": "背內側核",
+      "en": "Mediodorsal (dorsomedial) nucleus",
+      "abbr": "MD",
+      "aliases": [
+        "mediodorsal nucleus (MD)",
+        "dorsomedial nucleus (DM)",
+        "medial dorsal nucleus",
+        "內側核群",
+        "medial group"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#f2717b",
+      "summary": "內髓板內側的大核，占視丘內側大部分。與前額葉皮質雙向連結，也接收杏仁核、內嗅皮質與腹側蒼白球。",
+      "facts": [
+        "傳入：內嗅皮質、杏仁核、脊髓丘腦徑的側枝、蒼白球腹側部與黑質網狀部（Barr p.183）。",
+        "傳出：經內囊前肢（前視丘放射）到前額葉皮質（Barr p.183, 253–254）。",
+        "功能：依預測與獎賞做決定的行為；和乳頭體一起與記憶有關（Korsakoff 症候群兩者都退化）（Barr p.183；Haines p.447）。",
+        "致死性家族失眠症最先破壞背內側核與前核（Barr p.183）。",
+        "國考：背內側核是聯合核，不是中繼核（共筆、考古題）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "183, 253–254"
+        },
+        {
+          "src": "haines",
+          "p": "215, 447"
+        },
+        {
+          "src": "ym04",
+          "p": "28, 30, 44"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "13"
+        }
+      ],
+      "ell": [
+        92.5,
+        7.2,
+        -1.5,
+        2.6,
+        5,
+        7.5
+      ],
+      "thal": {
+        "group": "medial",
+        "type": "association",
+        "in": [
+          {
+            "zh": "杏仁核",
+            "path": [
+              [
+                80,
+                22,
+                12
+              ],
+              [
+                84,
+                16,
+                6
+              ],
+              [
+                88,
+                10,
+                2
+              ]
+            ]
+          },
+          {
+            "zh": "內嗅皮質（顳葉）",
+            "path": [
+              [
+                78,
+                24,
+                -4
+              ],
+              [
+                83,
+                17,
+                -2
+              ],
+              [
+                88,
+                10,
+                -1
+              ]
+            ]
+          },
+          {
+            "zh": "蒼白球腹側部、黑質網狀部",
+            "path": [
+              [
+                74,
+                9,
+                4
+              ],
+              [
+                80,
+                9,
+                2
+              ],
+              [
+                86,
+                8,
+                0
+              ]
+            ]
+          }
+        ],
+        "out": [
+          {
+            "zh": "前額葉皮質",
+            "to": "prefrontal",
+            "ic": "anterior"
+          }
+        ],
+        "fn": "決策、情緒行為、記憶"
+      }
+    },
+    "cm": {
+      "zh": "中央中核（板內核）",
+      "en": "Centromedian nucleus (intralaminar nuclei)",
+      "abbr": "CM",
+      "aliases": [
+        "centromedian nucleus (CM)",
+        "intralaminar nuclei",
+        "板內核",
+        "parafascicular nucleus",
+        "束旁核",
+        "central lateral nucleus",
+        "nonspecific nuclei",
+        "非特異核"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#4fd1b5",
+      "summary": "埋在內髓板裡的板內核中最大的一個。輸入來源很多（網狀結構、脊髓丘腦徑側枝、小腦、蒼白球），投射到紋狀體與廣泛的皮質：與清醒、注意力有關。",
+      "facts": [
+        "傳入：網狀結構的膽鹼性核與中央核群、藍斑核、脊髓丘腦與三叉丘腦徑的側枝、臂旁核、小腦核、蒼白球（Barr p.182）。",
+        "傳出：大範圍的皮質（尤其額葉與頂葉）以及紋狀體——視丘唯一投射到皮質以外的地方（Barr p.178, 182；Haines p.219）。",
+        "功能：清醒時刺激皮質、從睡眠中醒來；痛覺；動作控制（Barr p.182）。",
+        "電刺激非特異核會引起兩側大範圍、延遲較久的皮質反應（Haines p.220）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "178, 182"
+        },
+        {
+          "src": "haines",
+          "p": "219–220"
+        },
+        {
+          "src": "ym04",
+          "p": "28, 30"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "17"
+        }
+      ],
+      "ell": [
+        88.5,
+        10,
+        -5.5,
+        1.6,
+        1.8,
+        2.2
+      ],
+      "thal": {
+        "group": "intralaminar",
+        "type": "nonspecific",
+        "in": [
+          {
+            "zh": "腦幹網狀結構",
+            "path": [
+              [
+                60,
+                4,
+                -3
+              ],
+              [
+                72,
+                6,
+                -4
+              ],
+              [
+                82,
+                8.5,
+                -5
+              ]
+            ]
+          },
+          {
+            "zh": "脊髓丘腦徑的側枝",
+            "bundle": "@als.lstt",
+            "until": 80
+          },
+          {
+            "zh": "蒼白球",
+            "from": "gpi"
+          }
+        ],
+        "out": [
+          {
+            "zh": "紋狀體",
+            "to": "striatum"
+          },
+          {
+            "zh": "大腦皮質（廣泛，尤其額、頂葉）",
+            "to": "wide",
+            "ic": "posterior"
+          }
+        ],
+        "fn": "清醒、注意力、痛覺、動作"
+      }
+    },
+    "va": {
+      "zh": "腹前核",
+      "en": "Ventral anterior nucleus",
+      "abbr": "VA",
+      "aliases": [
+        "ventral anterior nucleus (VA)"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#6f8cff",
+      "summary": "腹側核群最前面的核。接收蒼白球內節與黑質網狀部，投射到額葉的運動前區與輔助運動區：基底核迴路回到皮質的一站。",
+      "facts": [
+        "傳入：蒼白球（經豆狀核束、豆狀袢）與黑質網狀部（Barr p.181–182；Haines p.217）。",
+        "傳出：額葉，包括運動前區與輔助運動區，經內囊膝部與後肢前段（Barr p.182, 254）。",
+        "功能：動作的規劃與較複雜的行為（Barr p.182）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "181–182, 254"
+        },
+        {
+          "src": "haines",
+          "p": "217"
+        },
+        {
+          "src": "ym04",
+          "p": "29–30"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "13"
+        }
+      ],
+      "ell": [
+        89.5,
+        13,
+        7,
+        3,
+        3.8,
+        3.2
+      ],
+      "thal": {
+        "group": "ventral",
+        "type": "relay",
+        "in": [
+          {
+            "zh": "蒼白球內節（豆狀核束、豆狀袢）",
+            "from": "gpi"
+          },
+          {
+            "zh": "黑質網狀部",
+            "from": "snr"
+          }
+        ],
+        "out": [
+          {
+            "zh": "運動前區、輔助運動區（額葉）",
+            "to": "premotor",
+            "ic": "genu"
+          }
+        ],
+        "fn": "動作規劃"
+      }
+    },
+    "ld": {
+      "zh": "外側背核",
+      "en": "Lateral dorsal nucleus",
+      "abbr": "LD",
+      "aliases": [
+        "lateral dorsal nucleus (LD)",
+        "背外側核"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#9fd36a",
+      "summary": "外側核群背層最前面的小核，功能上接近前核：接收海馬，投射到扣帶迴。",
+      "facts": [
+        "傳入：海馬結構、頂蓋前區與上丘（Barr p.182）。",
+        "傳出：扣帶迴、視覺聯合皮質（Barr p.182；Haines p.216）。",
+        "功能：記憶、解讀視覺刺激（Barr p.182）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "182"
+        },
+        {
+          "src": "haines",
+          "p": "216"
+        },
+        {
+          "src": "ym04",
+          "p": "28, 30"
+        }
+      ],
+      "ell": [
+        98,
+        12.5,
+        1.5,
+        2,
+        1.6,
+        3
+      ],
+      "thal": {
+        "group": "lateral",
+        "type": "association",
+        "in": [
+          {
+            "zh": "海馬（穹窿）",
+            "path": [
+              [
+                108,
+                6,
+                -12
+              ],
+              [
+                106,
+                8,
+                -4
+              ],
+              [
+                101,
+                11,
+                0
+              ]
+            ]
+          },
+          {
+            "zh": "上丘、頂蓋前區",
+            "from": "superior-colliculus"
+          }
+        ],
+        "out": [
+          {
+            "zh": "扣帶迴",
+            "to": "cingulate",
+            "ic": "anterior"
+          },
+          {
+            "zh": "視覺聯合皮質",
+            "to": "occipital",
+            "ic": "retro"
+          }
+        ],
+        "fn": "記憶、視覺"
+      }
+    },
+    "lp": {
+      "zh": "外側後核",
+      "en": "Lateral posterior nucleus",
+      "abbr": "LP",
+      "aliases": [
+        "lateral posterior nucleus (LP)",
+        "pulvinar-LP complex"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#9fd36a",
+      "summary": "外側核群背層中間的核，和枕核相連、連結相似（枕核–LP 複合體）：接收上丘，投射到頂葉聯合皮質。",
+      "facts": [
+        "傳入：上丘（Barr p.182）。",
+        "傳出：頂葉、顳葉、枕葉的聯合皮質（Barr p.182；Haines p.216）。",
+        "功能：解讀視覺與其他感覺、形成複雜的行為反應（Barr p.182）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "182"
+        },
+        {
+          "src": "haines",
+          "p": "216"
+        },
+        {
+          "src": "ym04",
+          "p": "28, 30"
+        }
+      ],
+      "ell": [
+        96.5,
+        15,
+        -6,
+        2.6,
+        2.4,
+        3.6
+      ],
+      "thal": {
+        "group": "lateral",
+        "type": "association",
+        "in": [
+          {
+            "zh": "上丘",
+            "from": "superior-colliculus"
+          }
+        ],
+        "out": [
+          {
+            "zh": "頂葉後部",
+            "to": "parietal",
+            "ic": "retro"
+          }
+        ],
+        "fn": "感覺整合、空間注意"
+      }
+    },
+    "pulvinar": {
+      "zh": "枕核",
+      "en": "Pulvinar",
+      "aliases": [
+        "pulvinar",
+        "pulvinar nucleus",
+        "枕核",
+        "丘腦枕",
+        "pulvinar of thalamus"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#9fd36a",
+      "summary": "視丘後端最大的核（人類特別大），蓋在兩個膝狀體上方。接收頂蓋前區、上丘與視覺皮質，投射到頂、枕、顳葉的聯合皮質：視覺注意與眼動。",
+      "facts": [
+        "傳入：頂蓋前區、初級與所有視覺聯合皮質、視網膜（Barr p.183）；下部接收上丘（Haines p.216）。",
+        "傳出：頂葉、額葉前部、扣帶迴、杏仁核（Barr p.183）；下部到視覺聯合皮質（Haines p.216）。",
+        "功能：解讀視覺與其他感覺、形成複雜的行為反應（Barr p.183）。",
+        "由後大腦動脈的視丘膝狀分支供應（Haines p.224）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "183"
+        },
+        {
+          "src": "haines",
+          "p": "216, 224"
+        },
+        {
+          "src": "ym04",
+          "p": "28, 30"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "15"
+        }
+      ],
+      "ell": [
+        92,
+        14,
+        -13.5,
+        5,
+        6,
+        5
+      ],
+      "thal": {
+        "group": "lateral",
+        "type": "association",
+        "in": [
+          {
+            "zh": "上丘、頂蓋前區",
+            "from": "superior-colliculus"
+          }
+        ],
+        "out": [
+          {
+            "zh": "頂葉後部",
+            "to": "parietal",
+            "ic": "retro"
+          },
+          {
+            "zh": "視覺聯合皮質",
+            "to": "occipital",
+            "ic": "retro"
+          }
+        ],
+        "fn": "視覺注意、眼動"
+      }
+    },
+    "reticular": {
+      "zh": "網狀核（視丘網狀核）",
+      "en": "Thalamic reticular nucleus",
+      "aliases": [
+        "reticular nucleus",
+        "thalamic reticular nucleus (TRN)",
+        "perithalamus",
+        "external medullary lamina",
+        "外髓板"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "color": "#b8bccb",
+      "summary": "包在視丘外側、外髓板與內囊之間的一層薄薄的抑制性（GABA）神經元。唯一不投射到皮質的視丘核：收視丘–皮質往返纖維的側枝，再回頭抑制同一個核。",
+      "facts": [
+        "傳入：視丘皮質纖維與皮質視丘纖維經過時留下的側枝；還有腦幹橋腦腳核的膽鹼性纖維（Barr p.178）。",
+        "傳出：回到送側枝給它的那個視丘核，抑制它——調節視丘到皮質的傳遞；睡眠時腦波的一些特徵靠它（Barr p.178–180）。",
+        "和腦幹的網狀結構沒有關係（Barr p.180）。",
+        "國考：網狀核接收皮質訊息，但不投射到大腦皮質（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "178–180"
+        },
+        {
+          "src": "haines",
+          "p": "219"
+        },
+        {
+          "src": "ym04",
+          "p": "29–30, 41"
+        }
+      ],
+      "ell": [
+        90,
+        19.8,
+        -3,
+        0.7,
+        8.5,
+        12.5
+      ],
+      "thal": {
+        "group": "reticular",
+        "type": "reticular",
+        "in": [
+          {
+            "zh": "視丘皮質與皮質視丘纖維的側枝",
+            "path": [
+              [
+                100,
+                24,
+                -3
+              ],
+              [
+                96,
+                22,
+                -3
+              ]
+            ]
+          }
+        ],
+        "out": [],
+        "fn": "調節（抑制）視丘到皮質的傳遞"
+      }
+    },
+    "preoptic": {
+      "zh": "視前區",
+      "en": "Preoptic area",
+      "aliases": [
+        "preoptic area",
+        "preoptic nucleus",
+        "medial preoptic nucleus",
+        "ventrolateral preoptic nucleus (VLPO)",
+        "sexually dimorphic nucleus",
+        "organum vasculosum of the lamina terminalis (OVLT)"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "終板後方、下視丘最前端（嚴格說屬於端腦）。偵測血液溫度、啟動散熱；腹外側視前核在熟睡時最活躍。",
+      "facts": [
+        "前下視丘（視前區、前核）的溫度感受神經元在血溫上升時啟動散熱（皮膚血管擴張、流汗）；受損 → 體溫過高（Barr p.190–191）。",
+        "發燒：致熱原經終板血管器（OVLT）的通透血管進入視前區（Barr p.191）。",
+        "腹外側視前核（GABA、galanin）在深睡時最活躍，抑制結節乳頭核與網狀結構（Barr p.193）。",
+        "國考：視前區受損影響體溫恆定（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "188–193"
+        },
+        {
+          "src": "haines",
+          "p": "221"
+        },
+        {
+          "src": "ym04",
+          "p": "34, 43–44"
+        }
+      ],
+      "ell": [
+        85,
+        2,
+        15.5,
+        1.6,
+        2.2,
+        2
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "chiasmatic"
+      }
+    },
+    "scn": {
+      "zh": "視交叉上核",
+      "en": "Suprachiasmatic nucleus",
+      "abbr": "SCN",
+      "aliases": [
+        "suprachiasmatic nucleus (SCN)",
+        "circadian clock",
+        "生理時鐘",
+        "retinohypothalamic tract",
+        "視網膜下視丘徑"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "視交叉正上方的小核，直接接收視網膜：生理時鐘，調節晝夜節律與松果腺的褪黑激素分泌。",
+      "facts": [
+        "視網膜的一些纖維在視交叉附近離開，止於視交叉上核（Barr p.188；Haines p.222）。",
+        "視交叉上核 → 其他下視丘核 → 胸髓交感節前神經元 → 頸上神經節 → 松果腺：光線間接調控褪黑激素（Barr p.188；Haines p.222）。",
+        "國考：晝夜節律由視交叉上核控制（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "188"
+        },
+        {
+          "src": "haines",
+          "p": "221–222, 446"
+        },
+        {
+          "src": "ym04",
+          "p": "34, 43–44"
+        }
+      ],
+      "ell": [
+        79.8,
+        1,
+        17.5,
+        0.8,
+        0.8,
+        1
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "chiasmatic"
+      }
+    },
+    "son": {
+      "zh": "視上核",
+      "en": "Supraoptic nucleus",
+      "abbr": "SON",
+      "aliases": [
+        "supraoptic nucleus (SON)",
+        "vasopressin",
+        "antidiuretic hormone (ADH)",
+        "抗利尿激素"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "視神經徑背外側的大細胞神經分泌核，主要製造抗利尿激素（血管加壓素），經下視丘垂體徑送到垂體後葉。",
+      "facts": [
+        "血管加壓素的神經元以視上核最多、催產素以室旁核最多（Barr p.194）。",
+        "視上核本身能感受血漿滲透壓：滲透壓稍微升高就放電增加、釋放抗利尿激素（Barr p.194）。",
+        "視上核、下視丘垂體徑或神經垂體被破壞 → 中樞性尿崩症（多尿、劇渴）（Barr p.195；Haines p.452）。",
+        "國考：神經垂體的血管加壓素與催產素來自視上核與室旁核（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "194–195"
+        },
+        {
+          "src": "haines",
+          "p": "221, 452"
+        },
+        {
+          "src": "ym04",
+          "p": "34, 43–44"
+        }
+      ],
+      "ell": [
+        80.2,
+        4.5,
+        15,
+        0.9,
+        0.8,
+        1.6
+      ],
+      "hyp": {
+        "zone": "lateral",
+        "part": "chiasmatic"
+      }
+    },
+    "pvn": {
+      "zh": "室旁核",
+      "en": "Paraventricular nucleus",
+      "abbr": "PVN",
+      "aliases": [
+        "paraventricular nucleus (PVN)",
+        "oxytocin",
+        "催產素",
+        "視旁核"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "第三腦室壁旁的核：大細胞部製造催產素（也有血管加壓素）送到垂體後葉；小細胞部發出下視丘脊髓徑，控制自主神經。",
+      "facts": [
+        "催產素的神經元以室旁核最多（Barr p.194）；催產素負責分娩時子宮收縮與射乳反射（Barr p.196）。",
+        "[[tract:hypothalamospinal]]主要從室旁核出發，到胸腰髓的交感節前神經元；受損造成 Horner 症候群（Barr p.74；Haines p.451）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "74, 194, 196"
+        },
+        {
+          "src": "haines",
+          "p": "221, 451"
+        },
+        {
+          "src": "ym04",
+          "p": "34"
+        }
+      ],
+      "ell": [
+        87.5,
+        1.4,
+        11.5,
+        0.8,
+        2,
+        1.6
+      ],
+      "hyp": {
+        "zone": "periventricular",
+        "part": "chiasmatic"
+      }
+    },
+    "anterior-hyp": {
+      "zh": "下視丘前核",
+      "en": "Anterior hypothalamic nucleus",
+      "aliases": [
+        "anterior hypothalamic nucleus",
+        "anterior hypothalamus"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "視交叉區的核：散熱中樞的一部分；刺激前下視丘引起副交感（膽鹼性）反應。",
+      "facts": [
+        "刺激前下視丘：心跳變慢、血管擴張、血壓下降、流口水、腸胃蠕動增加、膀胱收縮、流汗（Barr p.190）。",
+        "體溫升高時啟動散熱；受損 → 體溫過高（Barr p.191）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "190–191"
+        },
+        {
+          "src": "haines",
+          "p": "221"
+        },
+        {
+          "src": "ym04",
+          "p": "34, 36"
+        }
+      ],
+      "ell": [
+        84,
+        2.5,
+        12.5,
+        1.4,
+        1.8,
+        1.8
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "chiasmatic"
+      }
+    },
+    "vmh": {
+      "zh": "腹內側核",
+      "en": "Ventromedial nucleus of the hypothalamus",
+      "abbr": "VMH",
+      "aliases": [
+        "ventromedial nucleus (VMH)",
+        "satiety center",
+        "飽食中樞"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "結節區最大、界線最清楚的核：飽食中樞。",
+      "facts": [
+        "動物實驗破壞腹內側核 → 吃太多、肥胖（Barr p.191；Haines p.221）。",
+        "兩側受損 → 食慾大增（hyperphagia）而肥胖（Haines p.221）。",
+        "瘦素（脂肪分泌）作用在下視丘神經元，減少進食（Barr p.191）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "191"
+        },
+        {
+          "src": "haines",
+          "p": "221, 447"
+        },
+        {
+          "src": "ym04",
+          "p": "35–36"
+        }
+      ],
+      "ell": [
+        83,
+        2.6,
+        7.5,
+        1.5,
+        1.8,
+        2
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "tuberal"
+      }
+    },
+    "dmh": {
+      "zh": "下視丘背內側核",
+      "en": "Dorsomedial nucleus of the hypothalamus",
+      "abbr": "DMH",
+      "aliases": [
+        "dorsomedial hypothalamic nucleus (DMH)"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "結節區、腹內側核上方的核，和進食、喝水、體重有關。",
+      "facts": [
+        "結節區有背內側核、腹內側核、弓狀核三個核（Haines p.221）。",
+        "背內側核與進食、喝水、體重有關（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "221, 446"
+        },
+        {
+          "src": "ym04",
+          "p": "35"
+        }
+      ],
+      "ell": [
+        86.5,
+        2.4,
+        7,
+        1.3,
+        1.6,
+        1.8
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "tuberal"
+      }
+    },
+    "arcuate": {
+      "zh": "弓狀核",
+      "en": "Arcuate (infundibular) nucleus",
+      "aliases": [
+        "arcuate nucleus",
+        "infundibular nucleus",
+        "tuberoinfundibular tract",
+        "releasing hormones",
+        "釋放激素"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "漏斗基部、正中隆起上方的核：把釋放激素與抑制激素送進垂體門脈，控制垂體前葉。",
+      "facts": [
+        "弓狀核的胜肽經垂體門脈系統送到前葉，有些是釋放激素、有些是抑制激素（Haines p.221；Barr p.196–198）。",
+        "多巴胺抑制泌乳素分泌（Barr p.197）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "196–198"
+        },
+        {
+          "src": "haines",
+          "p": "221"
+        },
+        {
+          "src": "ym04",
+          "p": "35"
+        }
+      ],
+      "ell": [
+        80.5,
+        1,
+        8.5,
+        0.8,
+        0.9,
+        1.6
+      ],
+      "hyp": {
+        "zone": "periventricular",
+        "part": "tuberal"
+      }
+    },
+    "lateral-hyp": {
+      "zh": "下視丘外側區",
+      "en": "Lateral hypothalamic area",
+      "abbr": "LHA",
+      "aliases": [
+        "lateral hypothalamic area",
+        "lateral hypothalamus",
+        "feeding center",
+        "進食中樞",
+        "orexin",
+        "hypocretin",
+        "medial forebrain bundle",
+        "內側前腦束"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "穹窿外側的下視丘外側區：沒有明確的核，細胞散在內側前腦束的縱行纖維之間。進食中樞；orexin 神經元維持清醒。",
+      "facts": [
+        "以穿過的穹窿為界，分內側區與外側區（Barr p.188；Haines p.220）。",
+        "外側區的「進食中樞」含 orexin（hypocretin）神經元；orexin 神經元減少造成猝睡症（Barr p.191, 193–194）。",
+        "刺激後部與外側下視丘 → 交感反應：心跳加快、血壓上升、瞳孔放大（Barr p.190）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "188, 190–194"
+        },
+        {
+          "src": "haines",
+          "p": "220"
+        },
+        {
+          "src": "ym04",
+          "p": "35–36"
+        }
+      ],
+      "ell": [
+        84.5,
+        5,
+        8,
+        1.6,
+        4,
+        6
+      ],
+      "hyp": {
+        "zone": "lateral",
+        "part": "tuberal"
+      }
+    },
+    "posterior-hyp": {
+      "zh": "下視丘後核",
+      "en": "Posterior hypothalamic nucleus",
+      "aliases": [
+        "posterior hypothalamic nucleus",
+        "posterior hypothalamus",
+        "tuberomammillary nucleus",
+        "結節乳頭核",
+        "histamine"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "乳頭區上方的核：保溫、產熱（寒冷時血管收縮、發抖）；附近的結節乳頭核是腦中唯一的組織胺神經元，維持清醒。",
+      "facts": [
+        "血溫下降時啟動保熱與產熱；後下視丘受損 → 冷熱環境都無法調節體溫（Barr p.191）。",
+        "結節乳頭核：腦中唯一的組織胺神經元，清醒時活躍（Barr p.192–193）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "191–193"
+        },
+        {
+          "src": "haines",
+          "p": "221–222"
+        },
+        {
+          "src": "ym04",
+          "p": "35"
+        }
+      ],
+      "ell": [
+        87,
+        2.2,
+        2.5,
+        1.4,
+        2,
+        1.8
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "mammillary"
+      }
+    },
+    "mammillary-body": {
+      "zh": "乳頭體",
+      "en": "Mamillary body (mammillary nuclei)",
+      "abbr": "MB",
+      "aliases": [
+        "mammillary body",
+        "mamillary body",
+        "mammillary nuclei",
+        "乳頭體核",
+        "Korsakoff",
+        "Wernicke-Korsakoff"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "下視丘後端腹側表面的一對圓丘：接收穹窿（海馬），經乳頭視丘徑投射到視丘前核——Papez 迴路的一站。",
+      "facts": [
+        "內側乳頭核接收穹窿（主要來自下托），發出乳頭視丘徑到視丘前核（Haines p.221, 447）。",
+        "受損 → 無法把短期記憶轉成長期記憶（順向性失憶），是 Korsakoff 症候群（缺乏 thiamine，常見於酗酒）的特徵，常伴隨虛談（Haines p.447）。",
+        "中腦與間腦的交界：從後連合到乳頭體後緣的連線（Barr p.177；Haines p.214）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "177, 188, 190"
+        },
+        {
+          "src": "haines",
+          "p": "214, 221, 447"
+        },
+        {
+          "src": "ym04",
+          "p": "35"
+        }
+      ],
+      "ell": [
+        80.5,
+        2.6,
+        2.2,
+        1.6,
+        1.6,
+        1.8
+      ],
+      "hyp": {
+        "zone": "medial",
+        "part": "mammillary"
+      }
+    },
+    "pineal": {
+      "zh": "松果腺",
+      "en": "Pineal gland",
+      "aliases": [
+        "pineal gland",
+        "pineal body",
+        "epiphysis",
+        "melatonin",
+        "褪黑激素",
+        "pinealoma",
+        "松果體"
+      ],
+      "kind": "organ",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "上視丘中線的內分泌腺，接在第三腦室後上方、上丘之上。夜間分泌褪黑激素；光線經視交叉上核、交感神經間接調控它。",
+      "facts": [
+        "神經支配來自頸上神經節（交感）（Barr p.186；Haines p.222）。",
+        "16 歲以後出現鈣化（腦砂），在 X 光上可以看出有沒有被推離中線（Barr p.186）。",
+        "兒童的松果腺腫瘤：破壞松果腺細胞 → 性早熟；由松果腺細胞長出 → 青春期延遲（Barr p.186–188；Haines p.223）。",
+        "松果腺腫瘤壓迫頂蓋 → 向上注視麻痺（[[lesion:parinaud]]）（Barr p.188）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "186–188"
+        },
+        {
+          "src": "haines",
+          "p": "222–223"
+        },
+        {
+          "src": "ym04",
+          "p": "37"
+        }
+      ],
+      "ell": [
+        85,
+        0,
+        -16,
+        2.6,
+        2.4,
+        3.6
+      ],
+      "color": "#d7a6ff"
+    },
+    "habenula": {
+      "zh": "韁核",
+      "en": "Habenular nuclei",
+      "aliases": [
+        "habenula",
+        "habenular nuclei",
+        "stria medullaris thalami",
+        "視丘髓紋",
+        "fasciculus retroflexus",
+        "habenulointerpeduncular tract",
+        "韁核腳間核徑"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "thalamus",
+      "summary": "松果腺前方、視丘背內側後端的小核（上視丘）。經視丘髓紋接收中隔區，發出韁核腳間核徑（後屈束）到中腦的腳間核。",
+      "facts": [
+        "傳入經視丘髓紋，大多來自中隔區（邊緣系統）；也有蒼白球的纖維（Barr p.181；共筆）。",
+        "傳出：韁核腳間核徑到腳間核，再經中腦網狀結構影響下視丘與自主神經節前神經元（Barr p.181；Haines p.223）。",
+        "國考：韁核在上視丘、接視丘髓紋、經韁核腳間核徑到中腦；和短期記憶無關（共筆，國考 1071）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "181"
+        },
+        {
+          "src": "haines",
+          "p": "222–223"
+        },
+        {
+          "src": "ym04",
+          "p": "37"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "11, 20"
+        }
+      ],
+      "ell": [
+        95,
+        3.2,
+        -11,
+        1,
+        1.3,
+        1.6
+      ],
+      "color": "#d7a6ff"
+    },
+    "subthalamic": {
+      "zh": "視丘下核",
+      "en": "Subthalamic nucleus (body of Luys)",
+      "abbr": "STN",
+      "aliases": [
+        "subthalamic nucleus (STN)",
+        "body of Luys",
+        "丘腦下核",
+        "hemiballismus",
+        "偏身投擲症"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "color": "#ff6b8a",
+      "summary": "內囊內側、黑質上方的雙凸透鏡形核。和蒼白球互相連結，是基底核間接路徑的一站；受損造成對側偏身投擲症。",
+      "facts": [
+        "與蒼白球經視丘下束互相連結；也接收運動皮質、投射到黑質（Barr p.180；Haines p.222）。",
+        "間接路徑：蒼白球外節（GABA）抑制視丘下核；視丘下核用麩胺酸興奮蒼白球內節與黑質網狀部，讓視丘被抑制得更多（Barr p.208；Haines p.382–384）。",
+        "Parkinson 病時視丘下核過度活躍；深部腦刺激（DBS）視丘下核可以改善症狀（Barr p.108；Haines p.382, 392）。",
+        "受損（多半是局部血管阻塞：後大腦或後交通動脈的後內側分支）→ 對側[[lesion:hemiballismus|偏身投擲症]]：突然、用力、甩動的不自主動作，上肢近端最明顯（Barr p.185；Haines p.222）。",
+        "國考：視丘下核在間腦（不是中腦），用興奮性神經傳遞物質，屬於基底核的間接路徑（共筆，國考 1041）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "180, 185"
+        },
+        {
+          "src": "haines",
+          "p": "222"
+        },
+        {
+          "src": "ym04",
+          "p": "38"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "20"
+        },
+        {
+          "src": "ym08",
+          "p": "20–24"
+        }
+      ],
+      "ell": [
+        80.5,
+        10.5,
+        1.5,
+        1.4,
+        1.2,
+        3
+      ],
+      "bg": {
+        "group": "stn",
+        "nt": "麩胺酸",
+        "role": "間接路徑：興奮蒼白球內節"
+      }
+    },
+    "zona-incerta": {
+      "zh": "未定帶",
+      "en": "Zona incerta",
+      "aliases": [
+        "zona incerta (ZI)",
+        "field H of Forel",
+        "Forel 區",
+        "thalamic fasciculus",
+        "lenticular fasciculus",
+        "ansa lenticularis",
+        "豆狀核束",
+        "豆狀袢",
+        "視丘束"
+      ],
+      "kind": "nucleus",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "color": "#e07aa0",
+      "summary": "視丘下核上方、豆狀核束與視丘束之間的一層灰質（中腦網狀結構往前的延伸）。蒼白球與小腦往視丘的纖維在它上下經過。",
+      "facts": [
+        "蒼白球的纖維經豆狀核束與豆狀袢、小腦的纖維經 Forel H 區，匯成視丘束進入 VA、VL（Barr p.181；Haines p.222）。",
+        "未定帶參與口渴、喝水的迴路（Barr p.181, 192）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "180–181, 192"
+        },
+        {
+          "src": "haines",
+          "p": "222"
+        },
+        {
+          "src": "ym04",
+          "p": "38"
+        }
+      ],
+      "ell": [
+        83,
+        9.5,
+        1,
+        1.2,
+        0.8,
+        3.2
+      ]
+    },
+    "caudate": {
+      "zh": "尾狀核",
+      "en": "Caudate nucleus",
+      "aliases": [
+        "caudate nucleus",
+        "head of caudate",
+        "尾狀核頭",
+        "尾核",
+        "neostriatum",
+        "新紋狀體"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "summary": "紋狀體的一部分：頭部突入側腦室前角，往後變細成體與尾，沿側腦室彎成 C 字、尾端進入顳葉。接收聯合皮質（前額葉、頂葉後部）的輸入；Huntington 病最先萎縮的就是尾狀核頭。",
+      "facts": [
+        "尾狀核＋殼核＝紋狀體（striatum，新紋狀體）；殼核＋蒼白球＝豆狀核；尾狀核＋豆狀核＝corpus striatum（Barr p.202；國考 1062）。",
+        "頭部突入側腦室前角，體沿側腦室體部外側，尾進入顳角頂、止於杏仁核附近（Barr p.203–204）。",
+        "內囊前肢夾在尾狀核頭與豆狀核之間；尾狀核頭與殼核在內囊前肢下方有灰質橋相連，最腹側的部分就是伏隔核（Barr p.204）。",
+        "聯合皮質主要投射到尾狀核，體感覺與運動皮質投射到殼核（Barr p.205；Haines p.385）。",
+        "[[lesion:huntington]]：紋狀體萎縮，尾狀核頭最明顯，側腦室前角變平、擴大（Barr p.211；Haines p.389–390）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "202–205, 211"
+        },
+        {
+          "src": "haines",
+          "p": "377–380, 385, 389–390"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "ell": [
+        100,
+        15,
+        20,
+        4.5,
+        7,
+        6
+      ],
+      "color": "#4d7fd6",
+      "bg": {
+        "group": "striatum",
+        "nt": "GABA（中型多棘神經元）",
+        "role": "輸入核：接收皮質、視丘板內核、黑質的輸入"
+      }
+    },
+    "putamen": {
+      "zh": "殼核",
+      "en": "Putamen",
+      "aliases": [
+        "putamen",
+        "lentiform nucleus",
+        "lenticular nucleus",
+        "豆狀核",
+        "被殼"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "summary": "豆狀核的外側部分，和尾狀核合稱紋狀體。運動迴路的輸入站：接收初級運動、體感覺與運動前區皮質，投射到蒼白球與黑質網狀部。",
+      "facts": [
+        "豆狀核呈楔形：外側是殼核，內側是蒼白球；外側再依序是外囊、屏狀核、最外囊與島葉（Barr p.203）。",
+        "運動迴路：初級運動、體感覺、運動前區皮質 → 殼核 → 蒼白球 → VL、VA → 輔助運動區（Barr Table 12-1 p.209；Haines p.385）。",
+        "紋狀體的投射神經元（中型多棘神經元，約 95%）都是 GABA、抑制性：直接路徑的另含 P 物質、間接路徑的另含腦啡肽（Barr p.207–208；Haines p.380）。",
+        "Wilson 病：銅沉積，殼核退化最明顯，嚴重時豆狀核形成空洞（Barr p.211；Haines p.392–393）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "203, 207–209, 211"
+        },
+        {
+          "src": "haines",
+          "p": "378–380, 385, 392–393"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "ell": [
+        93,
+        30.5,
+        3,
+        3.5,
+        8,
+        14.5
+      ],
+      "color": "#4d7fd6",
+      "bg": {
+        "group": "striatum",
+        "nt": "GABA（中型多棘神經元）",
+        "role": "輸入核（運動迴路）"
+      }
+    },
+    "globus-pallidus": {
+      "zh": "蒼白球",
+      "en": "Globus pallidus",
+      "aliases": [
+        "globus pallidus",
+        "pallidum",
+        "paleostriatum",
+        "舊紋狀體",
+        "蒼白核"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "summary": "豆狀核的內側部分，被內髓板分成[[structure:gpe]]與[[structure:gpi]]兩節。神經元都用 GABA、平時持續放電；內節是基底核的輸出核。",
+      "facts": [
+        "含大量有髓鞘纖維，所以新鮮切片上顏色較淡（pallidus）（Barr p.207）。",
+        "內節（和黑質網狀部）＝輸出核，抑制視丘 VA、VL；外節屬於間接路徑，抑制[[structure:subthalamic]]（Barr p.207–208；Haines p.380–382）。",
+        "蒼白球神經元持續放電，平時抑制視丘；動作前紋狀體被活化，抑制蒼白球，視丘才被放開（去抑制）（Barr p.209）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "203, 207–209"
+        },
+        {
+          "src": "haines",
+          "p": "380–382"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "color": "#5f6b7d",
+      "parts": [
+        "gpe",
+        "gpi"
+      ]
+    },
+    "fornix": {
+      "zh": "穹窿（柱）",
+      "en": "Fornix (column)",
+      "aliases": [
+        "fornix",
+        "column of fornix",
+        "postcommissural fornix",
+        "穹窿柱"
+      ],
+      "kind": "fiber",
+      "region": "diencephalon",
+      "level": "internal-capsule",
+      "summary": "海馬發出的大纖維束，繞過視丘上方，柱部往下穿過下視丘止於乳頭體；它的柱把下視丘分成內側區與外側區。",
+      "facts": [
+        "穹窿起自顳葉的海馬結構，彎過視丘，主要止於乳頭體（Barr p.177；Haines p.447）。",
+        "穹窿柱是下視丘內外側區的分界（Barr p.188；Haines p.220）。",
+        "邊緣系統會在之後的單元詳述。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "177, 188"
+        },
+        {
+          "src": "haines",
+          "p": "220, 447"
+        }
+      ],
+      "pos": [
+        96,
+        2.5,
+        12.5
+      ]
+    },
+    "pituitary": {
+      "zh": "垂體",
+      "en": "Pituitary gland (hypophysis)",
+      "aliases": [
+        "pituitary",
+        "hypophysis",
+        "neurohypophysis",
+        "posterior pituitary",
+        "垂體後葉",
+        "adenohypophysis",
+        "anterior pituitary",
+        "垂體前葉",
+        "pituitary stalk",
+        "垂體柄",
+        "infundibulum",
+        "漏斗",
+        "median eminence",
+        "正中隆起",
+        "Rathke pouch"
+      ],
+      "kind": "organ",
+      "region": "diencephalon",
+      "level": "dienc-caudal",
+      "summary": "蝶鞍裡的內分泌腺。後葉（神經垂體）是下視丘的延伸，放出視上核與室旁核做的血管加壓素與催產素；前葉由 Rathke 囊長成，受下視丘釋放激素（經垂體門脈）控制。",
+      "facts": [
+        "神經垂體＝正中隆起＋垂體柄＋後葉，都是間腦長出來的；前葉來自胚胎咽部的 Rathke 囊（Barr p.178, 188；Haines p.213）。",
+        "只破壞後葉通常不會尿崩，因為正中隆起與垂體柄還能釋放一些抗利尿激素（Barr p.195）。",
+        "頭部外傷剪斷垂體柄 → 之後出現尿崩症（Haines p.443）。",
+        "[[lesion:craniopharyngioma]]（Rathke 囊腫瘤）壓迫視交叉與下視丘：視力問題、尿崩症、顱內壓上升（Haines p.213–214）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "178, 188, 194–197"
+        },
+        {
+          "src": "haines",
+          "p": "213–214, 443"
+        },
+        {
+          "src": "ym04",
+          "p": "32"
+        }
+      ],
+      "pos": [
+        67,
+        0.3,
+        18.5
+      ]
+    },
+    "gpe": {
+      "zh": "蒼白球外節",
+      "en": "Globus pallidus, external segment",
+      "abbr": "GPe",
+      "aliases": [
+        "external segment of globus pallidus (GPe)",
+        "lateral segment of globus pallidus",
+        "外蒼白球",
+        "蒼白球外側部"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "color": "#a3aab8",
+      "summary": "蒼白球靠殼核的那一節，屬於間接路徑：接收紋狀體（GABA、腦啡肽）的抑制，再用 GABA 抑制[[structure:subthalamic]]。",
+      "facts": [
+        "紋狀體 D2 神經元（GABA＋腦啡肽）→ 外節 → 視丘下束 → 視丘下核（抑制）（Barr p.208；Haines p.380–382）。",
+        "平時持續抑制視丘下核；外節被紋狀體抑制時，視丘下核被放開（Haines p.382–384）。",
+        "Huntington 病先死的就是投射到外節的紋狀體神經元 → 外節過度活躍 → 視丘下核被壓住 → 舞蹈症（Haines p.387, 390）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "207–208"
+        },
+        {
+          "src": "haines",
+          "p": "380–384, 387"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "ell": [
+        91.2,
+        27.2,
+        0.8,
+        1.1,
+        5,
+        7.6
+      ],
+      "bg": {
+        "group": "gpe",
+        "nt": "GABA",
+        "role": "間接路徑的中繼站"
+      }
+    },
+    "gpi": {
+      "zh": "蒼白球內節",
+      "en": "Globus pallidus, internal segment",
+      "abbr": "GPi",
+      "aliases": [
+        "internal segment of globus pallidus (GPi)",
+        "medial segment of globus pallidus",
+        "內蒼白球",
+        "蒼白球內側部"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "color": "#5f6b7d",
+      "summary": "基底核的主要輸出核（和[[structure:snr]]一樣）：持續用 GABA 抑制視丘 VA、VL。纖維經豆狀袢與豆狀核束進入 Forel H 區，再經視丘束到視丘。",
+      "facts": [
+        "直接路徑：紋狀體 D1 神經元（GABA＋P 物質）抑制內節 → 視丘被放開（Barr p.208；Haines p.383）。",
+        "間接路徑：視丘下核用麩胺酸興奮內節 → 視丘被抑制得更多（Barr p.208；Haines p.383–384）。",
+        "輸出：豆狀袢（繞過內囊下緣）與豆狀核束（Forel H2，橫穿內囊）→ Forel H 區 → 視丘束（H1）→ VA、VL 前部、中央中核；少數到韁核、腳橋核（Barr p.207；Haines p.381）。",
+        "黑質網狀部是「往尾側移位的內節」，連結相同，另外投射到上丘控制眼動（Barr p.207）。",
+        "Parkinson 病的手術：破壞內節後腹側（pallidotomy）或放深部腦刺激電極（Barr p.108；Haines p.392）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "107–108, 207–208"
+        },
+        {
+          "src": "haines",
+          "p": "381–384, 392"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "ell": [
+        90.4,
+        24.6,
+        0.2,
+        1,
+        4.2,
+        6
+      ],
+      "bg": {
+        "group": "gpi",
+        "nt": "GABA",
+        "role": "輸出核：抑制視丘 VA、VL"
+      }
+    },
+    "nucleus-accumbens": {
+      "zh": "伏隔核",
+      "en": "Nucleus accumbens",
+      "abbr": "NAc",
+      "aliases": [
+        "nucleus accumbens (NAc)",
+        "ventral striatum",
+        "腹側紋狀體",
+        "依伏神經核"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "color": "#4d7fd6",
+      "summary": "腹側紋狀體：尾狀核頭與殼核在內囊前肢下方相接的地方。接收邊緣系統與腹側被蓋區的多巴胺，和獎賞、動機、成癮有關。",
+      "facts": [
+        "位在尾狀核頭與殼核在內囊前肢下方相連之處（Barr p.204；Haines p.379）。",
+        "輸入：海馬、杏仁核、扣帶迴等邊緣皮質；多巴胺來自腹側被蓋區（中腦邊緣系統）（Barr p.205–206；Haines p.380）。",
+        "輸出：腹側蒼白球 → 背內側核 → 扣帶迴、眶額皮質（邊緣迴路）（Barr Table 12-1 p.209）。",
+        "安非他命、古柯鹼、鴉片、尼古丁、酒精都會增加伏隔核的多巴胺作用：與獎賞、成癮有關（Barr p.210）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "204–206, 209–210"
+        },
+        {
+          "src": "haines",
+          "p": "379–380, 383"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "ell": [
+        84.8,
+        9.8,
+        17.5,
+        2.4,
+        2.2,
+        3
+      ],
+      "bg": {
+        "group": "striatum",
+        "nt": "GABA",
+        "role": "腹側紋狀體（邊緣迴路）"
+      }
+    },
+    "claustrum": {
+      "zh": "屏狀核",
+      "en": "Claustrum",
+      "aliases": [
+        "claustrum",
+        "external capsule",
+        "extreme capsule",
+        "外囊",
+        "最外囊"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "basal-ganglia",
+      "color": "#c9b18a",
+      "summary": "殼核外側的一片薄灰質，內側隔著外囊、外側隔著最外囊與島葉。和額、頂、顳葉皮質互相連結，功能不明。",
+      "facts": [
+        "由內往外：殼核 → 外囊 → 屏狀核 → 最外囊 → 島葉皮質（Barr p.203）。",
+        "傳統上和紋狀體、杏仁核合稱基底核（basal nuclei），但不屬於臨床上的「基底核」（Barr p.202）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "202–203"
+        },
+        {
+          "src": "haines",
+          "p": "377"
+        },
+        {
+          "src": "ym08",
+          "p": "8–12"
+        }
+      ],
+      "ell": [
+        92,
+        36.6,
+        3,
+        0.5,
+        7,
+        13.5
+      ]
+    },
+    "snc": {
+      "zh": "黑質緻密部",
+      "en": "Substantia nigra, pars compacta",
+      "abbr": "SNc",
+      "aliases": [
+        "substantia nigra pars compacta (SNc)",
+        "substantia nigra",
+        "黑質",
+        "nigrostriatal neurons",
+        "neuromelanin",
+        "神經黑色素"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "midbrain",
+      "color": "#b8336a",
+      "summary": "中腦黑質靠被蓋的那一層：含神經黑色素的多巴胺神經元，經黑質紋狀體纖維調節紋狀體（D1 興奮直接路徑、D2 抑制間接路徑）。退化就是 Parkinson 病。",
+      "facts": [
+        "黑質在中腦全長，位於大腦腳（basis pedunculi）背側、被蓋腹側，往上延伸到視丘下區（Barr p.107；國考 1062：黑質在中腦，不屬於紋狀體）。",
+        "緻密部的多巴胺神經元含神經黑色素，所以肉眼是黑色（Barr p.107；Haines p.382）。",
+        "多巴胺對 D1 受體的紋狀體神經元（直接路徑）是興奮、對 D2 的（間接路徑）是抑制：兩者結果都是讓視丘更活躍、促進動作（Barr p.208；Haines p.388–389）。",
+        "[[lesion:parkinson]]：緻密部神經元退化、黑色素消失，殘存神經元有 Lewy 小體；約 70–80% 死亡後才出現症狀（Haines p.391）。",
+        "MPTP（非法合成海洛因的雜質）、錳中毒也會破壞緻密部（Barr p.107；Haines p.392）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "107–108, 206, 208"
+        },
+        {
+          "src": "haines",
+          "p": "382, 388–392"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "22–24"
+        }
+      ],
+      "nuc": [
+        [
+          64,
+          10.4,
+          3.2,
+          1,
+          0.7
+        ],
+        [
+          70,
+          11.2,
+          2.6,
+          1,
+          0.7
+        ],
+        [
+          77,
+          11.8,
+          1.4,
+          1,
+          0.7
+        ]
+      ],
+      "bg": {
+        "group": "snc",
+        "nt": "多巴胺",
+        "role": "調節紋狀體（D1 ＋、D2 −）"
+      }
+    },
+    "snr": {
+      "zh": "黑質網狀部",
+      "en": "Substantia nigra, pars reticulata",
+      "abbr": "SNr",
+      "aliases": [
+        "substantia nigra pars reticulata (SNr)",
+        "黑質網狀部"
+      ],
+      "kind": "nucleus",
+      "region": "basal-ganglia",
+      "level": "midbrain",
+      "color": "#f08bb0",
+      "summary": "黑質靠大腦腳的那一層：GABA 神經元，連結和[[structure:gpi]]相同，是基底核的另一個輸出核；另外投射到上丘，參與眼動控制。",
+      "facts": [
+        "緊貼大腦腳背側，細胞不含黑色素（Barr p.107；Haines p.382）。",
+        "可以看成往尾側移位的蒼白球內節：投射到視丘 VA、VL、背內側核，以及上丘、腳橋核（Barr p.107, 207）。",
+        "基底核的輸出核是蒼白球內節與黑質網狀部（共筆、考古題）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "107, 207"
+        },
+        {
+          "src": "haines",
+          "p": "382–383"
+        },
+        {
+          "src": "ym08",
+          "p": "8–30"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "1–24"
+        }
+      ],
+      "nuc": [
+        [
+          64,
+          9.6,
+          4.6,
+          1.4,
+          0.7
+        ],
+        [
+          70,
+          10.6,
+          4,
+          1.4,
+          0.7
+        ],
+        [
+          77,
+          11.6,
+          2.9,
+          1.3,
+          0.7
+        ]
+      ],
+      "bg": {
+        "group": "snr",
+        "nt": "GABA",
+        "role": "輸出核（和蒼白球內節相同）"
+      }
+    }
+  }
+}

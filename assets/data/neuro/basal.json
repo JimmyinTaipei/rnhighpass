@@ -1,0 +1,57 @@
+{
+  "_doc": "基底核：各核的顏色、尾狀核 C 字形的路徑，以及直接／間接路徑的迴路（節點活性推導用）。核本身的橢球寫在 structures.json 的 ell（黑質是 nuc 路徑）。座標同其他檔案：[y, lat, z]，lat 是離中線的距離（右側結構），左側鏡像。依 Barr Fig. 12-1–12-6、Haines Fig. 26.1–26.14 估計，不是測量資料。",
+  "groups": {
+    "striatum": { "zh": "紋狀體（尾狀核、殼核、伏隔核）", "color": "#4d7fd6" },
+    "gpe": { "zh": "蒼白球外節", "color": "#a3aab8" },
+    "gpi": { "zh": "蒼白球內節", "color": "#5f6b7d" },
+    "stn": { "zh": "視丘下核", "color": "#3aa865" },
+    "snc": { "zh": "黑質緻密部（多巴胺）", "color": "#b8336a" },
+    "snr": { "zh": "黑質網狀部", "color": "#f08bb0" },
+    "thal": { "zh": "視丘 VA、VL", "color": "#9b87e0" },
+    "other": { "zh": "屏狀核、未定帶", "color": "#c9b18a" }
+  },
+  "caudateTail": {
+    "_doc": "尾狀核的體與尾：從頭部後上方沿側腦室彎成 C 字，尾端進入顳葉、止於杏仁核附近（Barr p.203–204）。[y, lat, z, r]，由頭往尾排。",
+    "pts": [[103, 15.5, 14, 3.4], [106, 16, 6, 2.6], [106.5, 17, -3, 2.1], [105, 18.5, -12, 1.8], [100.5, 21.5, -20, 1.6], [94, 25, -23, 1.4], [87, 28.5, -20, 1.3], [81, 31, -12, 1.2], [77.5, 31.5, -3, 1.1], [76, 30.5, 4, 1]]
+  },
+  "circuit": {
+    "_doc": "迴路節點與連線。活性 a = 基線 + Σ w × a(來源)，由上往下依序計算，限制在 0 以上；受損的節點直接設為 0。w > 0 興奮、w < 0 抑制。權重只為了讓正常、Parkinson、Huntington、視丘下核受損四種情況的方向和課本一致（Barr p.208–209；Haines p.383–390），數值本身沒有生理意義。",
+    "nodes": [
+      { "id": "ctx", "zh": "大腦皮質", "sub": "運動前區、SMA", "base": 1, "x": 56, "y": 8, "structs": [] },
+      { "id": "snc", "zh": "黑質緻密部", "sub": "多巴胺", "base": 1, "x": 15, "y": 34, "structs": ["snc"] },
+      { "id": "d1", "zh": "紋狀體 D1", "sub": "GABA、P 物質", "base": 0, "x": 41, "y": 34, "structs": [] },
+      { "id": "d2", "zh": "紋狀體 D2", "sub": "GABA、腦啡肽", "base": 0.5, "x": 71, "y": 34, "structs": ["caudate", "putamen"] },
+      { "id": "gpe", "zh": "蒼白球外節", "sub": "GABA", "base": 1.5, "x": 82, "y": 56, "structs": ["gpe"] },
+      { "id": "stn", "zh": "視丘下核", "sub": "麩胺酸", "base": 0.5, "x": 82, "y": 78, "structs": ["subthalamic"] },
+      { "id": "gpi", "zh": "蒼白球內節", "sub": "GABA（含 SNr）", "base": 1, "x": 41, "y": 66, "structs": ["gpi", "snr"] },
+      { "id": "th", "zh": "視丘 VA、VL", "sub": "麩胺酸", "base": 1.2, "x": 41, "y": 90, "structs": ["va", "vl"] }
+    ],
+    "edges": [
+      { "from": "ctx", "to": "d1", "w": 0.5, "nt": "Glu", "via": "皮質紋狀體纖維", "path": ["direct"] },
+      { "from": "ctx", "to": "d2", "w": 0.5, "nt": "Glu", "via": "皮質紋狀體纖維", "path": ["indirect"] },
+      { "from": "ctx", "to": "stn", "w": 0.25, "nt": "Glu", "via": "皮質視丘下核纖維", "path": [] },
+      { "from": "snc", "to": "d1", "w": 0.5, "nt": "DA", "via": "黑質紋狀體纖維（D1 受體：興奮）", "path": ["nigro"] },
+      { "from": "snc", "to": "d2", "w": -0.5, "nt": "DA", "via": "黑質紋狀體纖維（D2 受體：抑制）", "path": ["nigro"] },
+      { "from": "d1", "to": "gpi", "w": -0.8, "nt": "GABA", "via": "紋狀體蒼白球纖維", "path": ["direct"] },
+      { "from": "d2", "to": "gpe", "w": -1, "nt": "GABA", "via": "紋狀體蒼白球纖維", "path": ["indirect"] },
+      { "from": "gpe", "to": "stn", "w": -0.5, "nt": "GABA", "via": "視丘下束", "path": ["indirect"] },
+      { "from": "stn", "to": "gpi", "w": 0.8, "nt": "Glu", "via": "視丘下束", "path": ["indirect"] },
+      { "from": "gpi", "to": "th", "w": -1, "nt": "GABA", "via": "豆狀袢、豆狀核束 → 視丘束", "path": ["direct", "indirect"] },
+      { "from": "th", "to": "ctx", "w": 0, "nt": "Glu", "via": "視丘皮質纖維（內囊）", "path": ["direct", "indirect"] }
+    ],
+    "order": ["ctx", "snc", "d1", "d2", "gpe", "stn", "gpi", "th"],
+    "conditions": [
+      { "id": "normal", "zh": "正常", "knock": [] },
+      { "id": "parkinson", "zh": "Parkinson 病", "knock": ["snc"], "lesion": "parkinson" },
+      { "id": "huntington", "zh": "Huntington 病", "knock": ["d2"], "lesion": "huntington", "note": "早期先死的是投射到蒼白球外節的紋狀體神經元（間接路徑，Haines p.387, 390）。" },
+      { "id": "stn", "zh": "視丘下核受損", "knock": ["stn"], "lesion": "hemiballismus" }
+    ]
+  },
+  "bundles": {
+    "_doc": "基底核的纖維束（說明用；幾何寫在 tracts.json）。",
+    "ansa": { "zh": "豆狀袢（ansa lenticularis）", "text": "蒼白球內節外側部 → 繞過內囊內下緣 → 進入 Forel H 區" },
+    "h2": { "zh": "豆狀核束（lenticular fasciculus，Forel H2 區）", "text": "蒼白球內節內側部 → 橫穿內囊後肢 → 走在未定帶與視丘下核之間 → Forel H 區" },
+    "h1": { "zh": "視丘束（thalamic fasciculus，Forel H1 區）", "text": "Forel H 區 → 在未定帶上方往上 → 視丘 VA、VL（也含齒狀核視丘纖維）" },
+    "stf": { "zh": "視丘下束（subthalamic fasciculus）", "text": "蒼白球外節 ⇄ 視丘下核 → 蒼白球內節，橫穿內囊" }
+  }
+}

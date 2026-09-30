@@ -404,3 +404,19 @@ a.brand-group {
 .footer-social span {
   margin: 0 6px;
 }
+
+/* 開發中標示 */
+.wip-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid #d9a441;
+  background: #fff6e0;
+  color: #8a5a00;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+}

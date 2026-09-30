@@ -1,0 +1,608 @@
+{
+  "_doc": "脊髓節段與腦部切面。座標：+x = 病人左、+y = 頭側、+z = 前方，單位 mm。切面參數在 keys 裡只寫關鍵節段，其他節段由 geometry.js 內插。尺寸為依教科書描述與文獻估計的約略值（示意），不是測量資料。",
+  "segLen": {
+    "C": 12.5,
+    "T": 21,
+    "L": 11,
+    "S": 6,
+    "Co": 4
+  },
+  "equalLen": 6,
+  "segments": [
+    {
+      "id": "c1",
+      "name": "C1",
+      "vertebra": "C1",
+      "note": "副神經核（C1–C5）在前角外側；C1 常沒有背根。"
+    },
+    {
+      "id": "c2",
+      "name": "C2",
+      "vertebra": "C2",
+      "dermatome": "後腦勺"
+    },
+    {
+      "id": "c3",
+      "name": "C3",
+      "vertebra": "C3",
+      "dermatome": "頸部",
+      "note": "膈神經核（C3–C5）開始出現。"
+    },
+    {
+      "id": "c4",
+      "name": "C4",
+      "vertebra": "C3–C4",
+      "dermatome": "肩膀上方（披肩）"
+    },
+    {
+      "id": "c5",
+      "name": "C5",
+      "vertebra": "C4",
+      "dermatome": "上臂外側",
+      "reflex": "二頭肌反射（C5–C6）",
+      "note": "頸膨大（C5–T1）。"
+    },
+    {
+      "id": "c6",
+      "name": "C6",
+      "vertebra": "C5",
+      "dermatome": "大拇指",
+      "reflex": "二頭肌、肱橈肌反射"
+    },
+    {
+      "id": "c7",
+      "name": "C7",
+      "vertebra": "C6",
+      "dermatome": "中指",
+      "reflex": "三頭肌反射（C6–C8）"
+    },
+    {
+      "id": "c8",
+      "name": "C8",
+      "vertebra": "C7",
+      "dermatome": "小指"
+    },
+    {
+      "id": "t1",
+      "name": "T1",
+      "vertebra": "C7–T1",
+      "dermatome": "上臂內側",
+      "note": "側角（交感節前神經元，T1–L2）與 Clarke 核（T1–L2）從這裡開始。"
+    },
+    {
+      "id": "t2",
+      "name": "T2",
+      "vertebra": "T1",
+      "dermatome": "腋下"
+    },
+    {
+      "id": "t3",
+      "name": "T3",
+      "vertebra": "T1–T2"
+    },
+    {
+      "id": "t4",
+      "name": "T4",
+      "vertebra": "T2",
+      "dermatome": "乳頭"
+    },
+    {
+      "id": "t5",
+      "name": "T5",
+      "vertebra": "T3"
+    },
+    {
+      "id": "t6",
+      "name": "T6",
+      "vertebra": "T4",
+      "dermatome": "劍突",
+      "note": "楔束只出現在 T6 以上；T6 以下的後柱只有薄束。"
+    },
+    {
+      "id": "t7",
+      "name": "T7",
+      "vertebra": "T5"
+    },
+    {
+      "id": "t8",
+      "name": "T8",
+      "vertebra": "T6"
+    },
+    {
+      "id": "t9",
+      "name": "T9",
+      "vertebra": "T7"
+    },
+    {
+      "id": "t10",
+      "name": "T10",
+      "vertebra": "T7–T8",
+      "dermatome": "肚臍"
+    },
+    {
+      "id": "t11",
+      "name": "T11",
+      "vertebra": "T8–T9"
+    },
+    {
+      "id": "t12",
+      "name": "T12",
+      "vertebra": "T9–T10",
+      "dermatome": "恥骨上方"
+    },
+    {
+      "id": "l1",
+      "name": "L1",
+      "vertebra": "T10",
+      "dermatome": "鼠蹊部",
+      "note": "腰薦膨大（約 L1–S2）。"
+    },
+    {
+      "id": "l2",
+      "name": "L2",
+      "vertebra": "T10–T11",
+      "dermatome": "大腿前側",
+      "reflex": "膝反射（L2–L4）",
+      "note": "側角與 Clarke 核到 L2 為止。"
+    },
+    {
+      "id": "l3",
+      "name": "L3",
+      "vertebra": "T11",
+      "dermatome": "膝蓋內側"
+    },
+    {
+      "id": "l4",
+      "name": "L4",
+      "vertebra": "T11–T12",
+      "dermatome": "小腿內側",
+      "reflex": "膝反射"
+    },
+    {
+      "id": "l5",
+      "name": "L5",
+      "vertebra": "T12",
+      "dermatome": "足背、大拇趾"
+    },
+    {
+      "id": "s1",
+      "name": "S1",
+      "vertebra": "T12–L1",
+      "dermatome": "足外側、小趾",
+      "reflex": "踝反射（S1–S2）"
+    },
+    {
+      "id": "s2",
+      "name": "S2",
+      "vertebra": "L1",
+      "dermatome": "大腿後側",
+      "note": "薦副交感核（S2–S4）；Onuf 核（S2–S3）。"
+    },
+    {
+      "id": "s3",
+      "name": "S3",
+      "vertebra": "L1",
+      "dermatome": "鞍區（會陰）"
+    },
+    {
+      "id": "s4",
+      "name": "S4",
+      "vertebra": "L1",
+      "dermatome": "鞍區（肛門周圍）"
+    },
+    {
+      "id": "s5",
+      "name": "S5",
+      "vertebra": "L1–L2",
+      "dermatome": "肛門"
+    },
+    {
+      "id": "co1",
+      "name": "Co1",
+      "vertebra": "L1–L2",
+      "note": "脊髓圓錐（conus medullaris），成人約止於 L1–L2 椎間盤。"
+    }
+  ],
+  "keys": {
+    "c1": {
+      "w": 11.0,
+      "h": 8.0,
+      "dh": 140,
+      "dhA": 0.8,
+      "dhW": 10,
+      "vh": 45,
+      "vhA": 0.36,
+      "vhW": 28,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.16
+    },
+    "c3": {
+      "w": 11.6,
+      "h": 7.8,
+      "dh": 139,
+      "dhA": 0.81,
+      "dhW": 10,
+      "vh": 47,
+      "vhA": 0.46,
+      "vhW": 32,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.17
+    },
+    "c5": {
+      "w": 13.2,
+      "h": 7.6,
+      "dh": 138,
+      "dhA": 0.82,
+      "dhW": 11,
+      "vh": 50,
+      "vhA": 0.62,
+      "vhW": 36,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.18
+    },
+    "c7": {
+      "w": 12.8,
+      "h": 7.4,
+      "dh": 138,
+      "dhA": 0.82,
+      "dhW": 11,
+      "vh": 50,
+      "vhA": 0.64,
+      "vhW": 38,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.18
+    },
+    "t1": {
+      "w": 10.4,
+      "h": 7.2,
+      "dh": 145,
+      "dhA": 0.78,
+      "dhW": 8,
+      "vh": 42,
+      "vhA": 0.46,
+      "vhW": 28,
+      "lhA": 0.3,
+      "clA": 0.26,
+      "base": 0.14
+    },
+    "t4": {
+      "w": 8.8,
+      "h": 6.8,
+      "dh": 150,
+      "dhA": 0.72,
+      "dhW": 7,
+      "vh": 36,
+      "vhA": 0.4,
+      "vhW": 22,
+      "lhA": 0.32,
+      "clA": 0.28,
+      "base": 0.12
+    },
+    "t8": {
+      "w": 8.2,
+      "h": 6.6,
+      "dh": 150,
+      "dhA": 0.72,
+      "dhW": 7,
+      "vh": 36,
+      "vhA": 0.4,
+      "vhW": 22,
+      "lhA": 0.32,
+      "clA": 0.28,
+      "base": 0.12
+    },
+    "t12": {
+      "w": 8.6,
+      "h": 7.0,
+      "dh": 149,
+      "dhA": 0.76,
+      "dhW": 8,
+      "vh": 40,
+      "vhA": 0.48,
+      "vhW": 28,
+      "lhA": 0.28,
+      "clA": 0.3,
+      "base": 0.14
+    },
+    "l2": {
+      "w": 9.4,
+      "h": 7.8,
+      "dh": 145,
+      "dhA": 0.82,
+      "dhW": 11,
+      "vh": 48,
+      "vhA": 0.62,
+      "vhW": 34,
+      "lhA": 0.18,
+      "clA": 0.26,
+      "base": 0.2
+    },
+    "l3": {
+      "w": 9.3,
+      "h": 7.8,
+      "dh": 143,
+      "dhA": 0.84,
+      "dhW": 12,
+      "vh": 49,
+      "vhA": 0.66,
+      "vhW": 36,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.22
+    },
+    "l5": {
+      "w": 8.8,
+      "h": 7.6,
+      "dh": 141,
+      "dhA": 0.86,
+      "dhW": 13,
+      "vh": 50,
+      "vhA": 0.7,
+      "vhW": 38,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.26
+    },
+    "s1": {
+      "w": 8.0,
+      "h": 7.0,
+      "dh": 140,
+      "dhA": 0.86,
+      "dhW": 14,
+      "vh": 50,
+      "vhA": 0.71,
+      "vhW": 40,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.3
+    },
+    "s3": {
+      "w": 6.2,
+      "h": 5.6,
+      "dh": 138,
+      "dhA": 0.87,
+      "dhW": 17,
+      "vh": 48,
+      "vhA": 0.74,
+      "vhW": 45,
+      "lhA": 0.14,
+      "clA": 0,
+      "base": 0.38
+    },
+    "s5": {
+      "w": 4.4,
+      "h": 4.0,
+      "dh": 136,
+      "dhA": 0.88,
+      "dhW": 19,
+      "vh": 46,
+      "vhA": 0.74,
+      "vhW": 46,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.44
+    },
+    "co1": {
+      "w": 3.0,
+      "h": 3.0,
+      "dh": 135,
+      "dhA": 0.88,
+      "dhW": 20,
+      "vh": 45,
+      "vhA": 0.74,
+      "vhW": 47,
+      "lhA": 0,
+      "clA": 0,
+      "base": 0.46
+    }
+  },
+  "brainstem": [
+    {
+      "y": 0,
+      "a": 5.5,
+      "b": 4.0,
+      "zc": 0
+    },
+    {
+      "y": 8,
+      "a": 6.4,
+      "b": 5.4,
+      "zc": 0.2
+    },
+    {
+      "y": 16,
+      "a": 8.6,
+      "b": 7.0,
+      "zc": 0.6
+    },
+    {
+      "y": 27,
+      "a": 10.0,
+      "b": 8.0,
+      "zc": 1.0
+    },
+    {
+      "y": 33,
+      "a": 13.0,
+      "b": 11.0,
+      "zc": 2.2
+    },
+    {
+      "y": 45,
+      "a": 15.0,
+      "b": 12.5,
+      "zc": 3.0
+    },
+    {
+      "y": 56,
+      "a": 13.0,
+      "b": 10.5,
+      "zc": 2.0
+    },
+    {
+      "y": 62,
+      "a": 12.0,
+      "b": 10.0,
+      "zc": 1.0
+    },
+    {
+      "y": 74,
+      "a": 13.0,
+      "b": 10.0,
+      "zc": 0
+    },
+    {
+      "y": 80,
+      "a": 10.0,
+      "b": 9.0,
+      "zc": 0
+    }
+  ],
+  "brainLevels": [
+    {
+      "id": "med-caudal",
+      "name": "延髓尾端（錐體交叉）",
+      "en": "Caudal medulla – motor decussation",
+      "y": 3,
+      "desc": "延髓與脊髓交界。約 85–90% 的皮質脊髓纖維在這裡交叉到對側，成為外側皮質脊髓徑；薄束與楔束還在背側，三叉神經脊束核（尾側部）在外側。"
+    },
+    {
+      "id": "med-sensory",
+      "name": "延髓下段（感覺交叉）",
+      "en": "Medulla – sensory decussation",
+      "y": 9,
+      "desc": "薄束核與楔束核發出內弓狀纖維，在中線交叉（感覺交叉），到對側組成內側蹄系。中央管仍是閉合的（closed medulla）。"
+    },
+    {
+      "id": "med-olive",
+      "name": "延髓中段（舌下神經核、疑核）",
+      "en": "Mid medulla – inferior olive, hypoglossal nucleus",
+      "y": 16,
+      "desc": "第四腦室底由內到外是舌下神經核、迷走神經背核、孤束核、前庭核；疑核在被蓋腹外側。舌下神經從錐體與橄欖之間出去，迷走神經從橄欖後溝出去。內側蹄系在中線旁直立，前外側系統在外側。"
+    },
+    {
+      "id": "med-rostral",
+      "name": "延髓上段（舌咽神經、耳蝸神經核）",
+      "en": "Rostral medulla – glossopharyngeal level",
+      "y": 27,
+      "desc": "舌咽神經從橄欖後溝出去；耳蝸神經核貼在下小腦腳外側，前庭神經核佔第四腦室底外側大部分。"
+    },
+    {
+      "id": "pons-caudal",
+      "name": "橋腦下段（顏面丘）",
+      "en": "Caudal pons – facial colliculus",
+      "y": 35,
+      "desc": "第四腦室底的顏面丘：顏面神經的內膝繞過外旋神經核。顏面神經核在被蓋腹外側；外旋神經往腹側穿過基底部，在橋腦延髓交界靠中線出去。"
+    },
+    {
+      "id": "pons",
+      "name": "橋腦中段（三叉神經）",
+      "en": "Mid pons – trigeminal level",
+      "y": 47,
+      "desc": "三叉神經從外側出入；運動核在內、主感覺核在外。皮質脊髓纖維在基底部被打散成小束；內側蹄系轉成被蓋腹側的橫帶，前外側系統在它外側。"
+    },
+    {
+      "id": "midbrain-ic",
+      "name": "中腦下段（下丘、滑車神經核）",
+      "en": "Caudal midbrain – inferior colliculus",
+      "y": 63,
+      "desc": "滑車神經核在 MLF 背側，纖維繞過導水管周圍灰質往背側走，在上髓帆交叉後從對側下丘下方出去。上小腦腳在這一層交叉。"
+    },
+    {
+      "id": "midbrain",
+      "name": "中腦上段（上丘、動眼神經核、紅核）",
+      "en": "Rostral midbrain – superior colliculus",
+      "y": 71,
+      "desc": "動眼神經核與 Edinger-Westphal 核在導水管腹側；動眼神經纖維往腹側穿過紅核，從大腦腳間窩出去。皮質脊髓纖維位在大腦腳中間約 1/3；紅核脊髓徑在腹側被蓋交叉、頂蓋脊髓徑在背側被蓋交叉。"
+    },
+    {
+      "id": "dienc-caudal",
+      "name": "間腦下段（乳頭體、膝狀體）",
+      "en": "Caudal diencephalon – mamillary bodies",
+      "y": 81,
+      "desc": "中腦與間腦交界。中線兩旁是乳頭體；外側膝狀體與內側膝狀體貼在視丘後下方；視丘下核夾在內囊與紅核之間。"
+    },
+    {
+      "id": "thalamus",
+      "name": "視丘中段（VPL、VPM、VL）",
+      "en": "Thalamus – ventral posterior nuclei",
+      "y": 88.5,
+      "desc": "內側蹄系與前外側系統止於對側 VPL（下肢在外、上肢在內）；三叉丘腦徑止於 VPM（臉）；VL 接收小腦與蒼白球。內髓板把背內側核與外側的核分開，中央中核埋在內髓板裡。外側是內囊後肢與豆狀核。"
+    },
+    {
+      "id": "basal-ganglia",
+      "name": "基底核（尾狀核頭、豆狀核）",
+      "en": "Basal ganglia – horizontal section",
+      "y": 93.5,
+      "desc": "尾狀核頭突入側腦室前角；豆狀核分成外側的殼核與內側的蒼白球外節、內節；內囊前肢在尾狀核頭與豆狀核之間、後肢在視丘與豆狀核之間；殼核外側是外囊、屏狀核與島葉（Barr p.203）。"
+    },
+    {
+      "id": "internal-capsule",
+      "name": "內囊（前肢、膝部、後肢）",
+      "en": "Internal capsule – horizontal section",
+      "y": 96,
+      "desc": "經典的水平切面：內囊前肢夾在尾狀核頭與豆狀核之間，膝部在視丘前核外側，後肢夾在視丘與豆狀核之間，後豆狀部在豆狀核後方。皮質延髓纖維在膝部、皮質脊髓纖維在後肢後半、體感覺放射在後肢最後段（Barr p.253–255）。"
+    },
+    {
+      "id": "cortex",
+      "name": "大腦皮質（中央前、後回）",
+      "en": "Cerebral cortex – pre/postcentral gyri",
+      "y": 165,
+      "desc": "中央前回（初級運動皮質，area 4）與中央後回（初級體感覺皮質，areas 3, 1, 2）。下肢在內側面，上肢與臉往外側。"
+    }
+  ],
+  "brain": {
+    "thalamus": {
+      "c": [
+        12,
+        90,
+        -3
+      ],
+      "r": [
+        7.5,
+        10,
+        15
+      ]
+    },
+    "hypothalamus": {
+      "c": [
+        3.5,
+        85,
+        9
+      ],
+      "r": [
+        3.5,
+        5.5,
+        8
+      ]
+    },
+    "cerebellum": {
+      "c": [
+        0,
+        40,
+        -34
+      ],
+      "r": [
+        50,
+        24,
+        26
+      ]
+    },
+    "hemisphere": {
+      "c": [
+        36,
+        118,
+        2
+      ],
+      "r": [
+        34,
+        66,
+        84
+      ]
+    }
+  }
+}

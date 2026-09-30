@@ -1,0 +1,3062 @@
+{
+  "_doc": "常考的脊髓病灶。zones 描述損傷範圍：segs = [頭側節段, 尾側節段]；side = R / L / both；parts 可以是 all（該側整個橫切面）、dc / lf / af（後、側、前索）、ah / dh / awc / iml（前角、後角、白質前連合、側角）、droot（後根的粗纖維入口），或 bundle id（如 lcst）。症狀由 lesion.js 從路徑資料自動推導；expect 是教科書上的預期結果，scripts/check-neuro-data.mjs 會比對兩者。 腦幹病灶用 zones[].brain = {y:[下,上], side, boxes:[{lat:[離中線距離], z:[背→腹]}]} 描述，症狀由 lesion.js 從經過的路徑、神經核與腦神經纖維推導。 region = spinal / brainstem / visual。腦部與視覺路徑的病灶用 brain 方框：y 範圍、側別、boxes（lat = 離中線的距離、z = 前後）。",
+  "order": [
+    "brown-sequard",
+    "complete-transection",
+    "central-cord",
+    "anterior-cord",
+    "scd",
+    "tabes",
+    "syringomyelia",
+    "motor-neuron-disease",
+    "polio",
+    "medial-medullary",
+    "lateral-medullary",
+    "raymond",
+    "millard-gubler",
+    "foville",
+    "one-and-a-half",
+    "ino",
+    "weber",
+    "benedikt",
+    "parinaud",
+    "locked-in",
+    "optic-nerve",
+    "junctional",
+    "chiasm",
+    "lateral-chiasm",
+    "optic-tract",
+    "meyer-loop",
+    "parietal-radiation",
+    "occipital",
+    "occipital-pole",
+    "cn3-compression",
+    "adie",
+    "argyll-robertson",
+    "cb-hemisphere",
+    "cb-vermis",
+    "cb-flocculonodular",
+    "scp",
+    "acoustic-neuroma",
+    "labyrinthine-artery",
+    "lateral-lemniscus",
+    "auditory-cortex",
+    "thalamic-syndrome",
+    "ic-lacunar",
+    "hemiballismus",
+    "korsakoff",
+    "craniopharyngioma",
+    "parkinson",
+    "hemiparkinson",
+    "huntington",
+    "wilson"
+  ],
+  "lesions": {
+    "brown-sequard": {
+      "zh": "脊髓半切症候群",
+      "en": "Brown-Séquard syndrome",
+      "aliases": [
+        "hemisection of spinal cord",
+        "Brown-Sequard",
+        "脊髓半側損傷"
+      ],
+      "highYield": 3,
+      "summary": "脊髓的一半受損：同側本體覺與震動覺消失、同側上運動神經元癱瘓；對側痛溫覺消失。",
+      "cause": "穿刺傷（刀傷、槍傷）、骨折碎片、腫瘤壓迫。真正剛好切一半的情況很少，所以常稱為「功能性半切」（Haines p.151）。",
+      "zones": [
+        {
+          "segs": [
+            "t10",
+            "t10"
+          ],
+          "side": "R",
+          "parts": [
+            "all"
+          ]
+        }
+      ],
+      "adjustable": {
+        "levels": [
+          "c2",
+          "l1"
+        ],
+        "side": true
+      },
+      "expect": [
+        "dc:R:below",
+        "als:L:below2",
+        "umn:R:below",
+        "lmn:R:seg",
+        "segsens:R:seg"
+      ],
+      "points": [
+        "同側：病灶以下的本體覺、震動覺、精細觸覺消失（[[tract:dcml]] 還沒交叉）。",
+        "同側：病灶以下的上運動神經元癱瘓（[[tract:lcst]] 已經在延髓交叉過）。",
+        "對側：約病灶下方兩節以下的痛溫覺消失（[[tract:als]] 在脊髓就交叉了）。",
+        "病灶那一節：同側所有感覺喪失（後根、後角）與下運動神經元徵象（前角）。",
+        "病灶在 T1 以上時，還會有同側 Horner 症候群（[[tract:hypothalamospinal]]）。",
+        "輕觸覺通常影響不大，因為後索與前外側索都有傳（Barr p.79）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "79"
+        },
+        {
+          "src": "haines",
+          "p": "151, 368"
+        },
+        {
+          "src": "ym05",
+          "p": "42, 50"
+        },
+        {
+          "src": "tmu106b10",
+          "p": "18"
+        }
+      ],
+      "region": "spinal"
+    },
+    "complete-transection": {
+      "zh": "脊髓完全橫斷",
+      "en": "Complete spinal cord transection",
+      "aliases": [
+        "complete cord transection",
+        "complete spinal cord injury",
+        "脊髓完全損傷"
+      ],
+      "highYield": 2,
+      "summary": "病灶以下所有感覺與隨意運動喪失；急性期有脊髓休克，之後出現痙攣與反射亢進。",
+      "cause": "外傷（車禍、跳水、脊椎骨折脫位）。",
+      "zones": [
+        {
+          "segs": [
+            "t10",
+            "t10"
+          ],
+          "side": "both",
+          "parts": [
+            "all"
+          ]
+        }
+      ],
+      "adjustable": {
+        "levels": [
+          "c2",
+          "l1"
+        ],
+        "side": false
+      },
+      "expect": [
+        "dc:B:below",
+        "als:B:below2",
+        "umn:B:below",
+        "lmn:B:seg",
+        "segsens:B:seg",
+        "bladder"
+      ],
+      "points": [
+        "高位頸髓：四肢癱瘓；C3–C5 以上還會影響橫膈（[[structure:phrenic]]）。兩個膨大之間：下半身癱瘓（Barr p.78）。",
+        "脊髓休克：剛受傷的幾天到幾週，病灶以下所有反射消失；之後出現痙攣、反射亢進。",
+        "下肢呈屈曲姿勢，因為前庭脊髓徑也斷了（Barr p.78）。",
+        "膀胱與腸道失去自主控制。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "78"
+        },
+        {
+          "src": "haines",
+          "p": "151"
+        }
+      ],
+      "region": "spinal"
+    },
+    "central-cord": {
+      "zh": "中央脊髓症候群",
+      "en": "Acute central cervical cord syndrome",
+      "aliases": [
+        "central cord syndrome",
+        "中央頸髓症候群"
+      ],
+      "highYield": 2,
+      "summary": "頸部過度伸展造成頸髓中央受損：雙側無力，手臂比腿嚴重；痛溫覺有不同程度的缺損，後柱感覺保留。",
+      "cause": "頸椎過度伸展（常見於有骨刺的老年人），暫時阻斷前脊髓動脈的血流（Haines p.142, 151）。",
+      "zones": [
+        {
+          "segs": [
+            "c5",
+            "c8"
+          ],
+          "side": "both",
+          "parts": [
+            "awc",
+            "ah",
+            "lcst-medial"
+          ]
+        }
+      ],
+      "adjustable": null,
+      "expect": [
+        "awc:B:seg",
+        "lmn:B:seg",
+        "umn-arm:B:below"
+      ],
+      "points": [
+        "[[tract:lcst]]裡上肢的纖維在內側、靠近灰質，最先受損，所以手比腳無力（Haines p.150）。",
+        "病灶節段的前角受損：手與上肢的下運動神經元徵象。",
+        "[[structure:awc]]受損：病灶節段雙側痛溫覺缺損。",
+        "後柱感覺通常保留；多數病人 4–6 天內大幅恢復，下肢最先、上肢最後（Haines p.151）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "142, 150–151"
+        }
+      ],
+      "region": "spinal"
+    },
+    "anterior-cord": {
+      "zh": "前脊髓動脈症候群",
+      "en": "Anterior spinal artery syndrome",
+      "aliases": [
+        "anterior cord syndrome",
+        "ASA syndrome",
+        "anterior spinal artery occlusion",
+        "前脊髓症候群"
+      ],
+      "highYield": 3,
+      "summary": "前脊髓動脈供應脊髓前 2/3。阻塞時病灶以下雙側上運動神經元癱瘓、雙側痛溫覺喪失，但後柱感覺（本體覺、震動覺）保留。",
+      "cause": "主動脈手術（如 Adamkiewicz 動脈受影響）、動脈粥狀硬化、主動脈剝離。",
+      "zones": [
+        {
+          "segs": [
+            "t6",
+            "t6"
+          ],
+          "side": "both",
+          "parts": [
+            "af",
+            "lf",
+            "ah",
+            "awc",
+            "iml"
+          ],
+          "except": [
+            "dsct"
+          ]
+        }
+      ],
+      "adjustable": {
+        "levels": [
+          "c4",
+          "l1"
+        ],
+        "side": false
+      },
+      "expect": [
+        "als:B:below2",
+        "umn:B:below",
+        "lmn:B:seg",
+        "awc:B:seg",
+        "bladder"
+      ],
+      "points": [
+        "前脊髓動脈的中央分支供應大部分灰質與鄰近白質；後柱由後脊髓動脈供應（Haines p.142）。",
+        "雙側：病灶以下痙攣性癱瘓、痛溫覺喪失。",
+        "後柱保留：本體覺、震動覺正常。",
+        "膀胱功能障礙常見。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "141–142"
+        },
+        {
+          "src": "ym05",
+          "p": "54"
+        },
+        {
+          "src": "c112",
+          "p": "94, 96"
+        }
+      ],
+      "region": "spinal"
+    },
+    "scd": {
+      "zh": "亞急性合併退化",
+      "en": "Subacute combined degeneration",
+      "aliases": [
+        "subacute combined degeneration (SCD)",
+        "vitamin B12 deficiency myelopathy",
+        "維生素 B12 缺乏",
+        "亞急性聯合變性"
+      ],
+      "highYield": 3,
+      "summary": "維生素 B12 缺乏造成雙側後索與側索（外側皮質脊髓徑）脫髓鞘：本體覺、震動覺喪失加上上運動神經元徵象。",
+      "cause": "維生素 B12 缺乏，常見於惡性貧血、胃切除、長期素食（Barr p.79）。",
+      "zones": [
+        {
+          "segs": [
+            "c4",
+            "t8"
+          ],
+          "side": "both",
+          "parts": [
+            "dc",
+            "lcst",
+            "dsct"
+          ]
+        }
+      ],
+      "adjustable": null,
+      "expect": [
+        "dc:B:below",
+        "umn:B:below"
+      ],
+      "points": [
+        "雙側後索：本體覺、震動覺、精細觸覺喪失 → 感覺性失調步態、Romberg 陽性。",
+        "雙側[[tract:lcst]]：痙攣、Babinski 陽性。",
+        "痛溫覺保留（前外側系統不受影響）。",
+        "「combined」指後索與側索同時受損。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "79, 302"
+        },
+        {
+          "src": "ym05",
+          "p": "49–51"
+        }
+      ],
+      "region": "spinal"
+    },
+    "tabes": {
+      "zh": "脊髓癆",
+      "en": "Tabes dorsalis",
+      "aliases": [
+        "tabes dorsalis",
+        "neurosyphilis",
+        "神經梅毒",
+        "locomotor ataxia"
+      ],
+      "highYield": 2,
+      "summary": "三期梅毒侵犯腰薦髓的後根與後索：下肢本體覺、震動覺喪失，反射消失，閃電痛。",
+      "cause": "三期梅毒（神經梅毒）。",
+      "zones": [
+        {
+          "segs": [
+            "l1",
+            "s5"
+          ],
+          "side": "both",
+          "parts": [
+            "droot",
+            "dc"
+          ]
+        }
+      ],
+      "adjustable": null,
+      "expect": [
+        "dc:B:below",
+        "areflexia:B:seg"
+      ],
+      "points": [
+        "後根的粗纖維與薄束退化：下肢本體覺、震動覺喪失 → 走路要看地面、Romberg 陽性。",
+        "反射弧的傳入端斷了：膝反射、踝反射消失。",
+        "閃電般的刺痛（lightning pain）；常合併 Argyll Robertson 瞳孔（腦神經單元再談）。",
+        "沒有上運動神經元徵象，這點和[[lesion:scd]]不同。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "302"
+        },
+        {
+          "src": "haines",
+          "p": "149"
+        }
+      ],
+      "region": "spinal"
+    },
+    "syringomyelia": {
+      "zh": "脊髓空洞症",
+      "en": "Syringomyelia",
+      "aliases": [
+        "syrinx",
+        "脊髓空洞"
+      ],
+      "highYield": 3,
+      "summary": "脊髓中央形成空洞，最先破壞在白質前連合交叉的痛溫覺纖維：病灶節段雙側痛溫覺喪失、觸覺保留，常呈披肩狀。",
+      "cause": "常合併 Chiari 畸形，也可能在外傷、腫瘤、感染之後出現（Haines p.151）。",
+      "zones": [
+        {
+          "segs": [
+            "c4",
+            "t1"
+          ],
+          "side": "both",
+          "parts": [
+            "awc"
+          ]
+        }
+      ],
+      "adjustable": null,
+      "expect": [
+        "awc:B:seg"
+      ],
+      "points": [
+        "[[structure:awc]]受損：病灶節段雙側痛溫覺喪失，觸覺與本體覺保留（感覺分離）。頸髓病灶呈披肩狀（cape distribution）（Haines p.151）。",
+        "典型症狀是手燙傷了卻不會痛（Barr p.301）。",
+        "空洞擴大到前角：上肢下運動神經元無力與萎縮；擴大到外側索：下肢上運動神經元徵象（Barr p.79）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "79, 301"
+        },
+        {
+          "src": "haines",
+          "p": "151"
+        },
+        {
+          "src": "ym05",
+          "p": "49–50"
+        }
+      ],
+      "region": "spinal"
+    },
+    "motor-neuron-disease": {
+      "zh": "肌萎縮性脊髓側索硬化症",
+      "en": "Amyotrophic lateral sclerosis (motor neuron disease)",
+      "aliases": [
+        "amyotrophic lateral sclerosis",
+        "motor neuron disease",
+        "Lou Gehrig disease",
+        "漸凍人",
+        "運動神經元疾病"
+      ],
+      "highYield": 2,
+      "summary": "只侵犯運動系統：皮質脊髓徑（上運動神經元）與前角細胞（下運動神經元）同時退化，感覺完全正常。",
+      "cause": "原因大多不明，少數是家族性。",
+      "note": "疾病「ALS」（amyotrophic lateral sclerosis）和傳導路徑「ALS」（anterolateral system，前外側系統）是兩回事，本站路徑一律寫「前外側系統」以免混淆。",
+      "zones": [
+        {
+          "segs": [
+            "c1",
+            "s5"
+          ],
+          "side": "both",
+          "parts": [
+            "lcst",
+            "acst",
+            "ah"
+          ]
+        }
+      ],
+      "adjustable": null,
+      "expect": [
+        "umn:B:below",
+        "lmn:B:seg"
+      ],
+      "points": [
+        "上運動神經元＋下運動神經元徵象同時出現（反射亢進卻又有肌肉萎縮、肌束震顫）；末期以下運動神經元徵象為主（Barr p.79）。",
+        "感覺、眼動、括約肌通常不受影響。",
+        "也會侵犯腦幹的運動神經核（延髓麻痺）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "79"
+        },
+        {
+          "src": "haines",
+          "p": "138"
+        }
+      ],
+      "region": "spinal"
+    },
+    "polio": {
+      "zh": "小兒麻痺症（前角細胞病變）",
+      "en": "Poliomyelitis",
+      "aliases": [
+        "poliomyelitis",
+        "anterior horn cell disease",
+        "小兒麻痺"
+      ],
+      "highYield": 1,
+      "summary": "病毒攻擊前角運動神經元：受影響肌肉弛緩性癱瘓、萎縮、反射消失，感覺正常。",
+      "cause": "小兒麻痺病毒（poliovirus）。",
+      "zones": [
+        {
+          "segs": [
+            "l2",
+            "l5"
+          ],
+          "side": "R",
+          "parts": [
+            "ah"
+          ]
+        }
+      ],
+      "adjustable": null,
+      "expect": [
+        "lmn:R:seg"
+      ],
+      "points": [
+        "典型的下運動神經元病變：弛緩、萎縮、反射消失、肌束震顫。",
+        "只有運動受影響，感覺正常。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "79, 343"
+        }
+      ],
+      "region": "spinal"
+    },
+    "medial-medullary": {
+      "zh": "延髓內側症候群（Dejerine）",
+      "en": "Medial medullary syndrome (Dejerine)",
+      "aliases": [
+        "medial medullary syndrome",
+        "Dejerine syndrome",
+        "inferior alternating hemiplegia",
+        "下交叉性偏癱"
+      ],
+      "highYield": 3,
+      "summary": "延髓內側（錐體、內側蹄系、舌下神經纖維）梗塞：同側舌肌麻痺＋對側偏癱＋對側本體覺喪失。",
+      "cause": "前脊髓動脈或椎動脈的旁正中分支阻塞（Barr p.109；Haines p.364–365）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              10,
+              22
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  4.2
+                ],
+                "z": [
+                  -2.2,
+                  9
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cn12:R",
+        "cst:L",
+        "ml:L"
+      ],
+      "points": [
+        "同側：舌肌下運動神經元麻痺，伸舌偏向病灶側（[[nerve:cn12]]的纖維）。",
+        "對側：上下肢上運動神經元癱瘓（[[structure:pyramid|錐體]]，還沒交叉）。",
+        "對側：本體覺、震動覺、精細觸覺喪失（[[structure:medial-lemniscus]]，已經交叉）。",
+        "這種「腦神經在同側、長路徑在對側」的交叉性缺損，是腦幹病灶的特徵；也叫下交叉性偏癱（inferior alternating hemiplegia）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "109–111"
+        },
+        {
+          "src": "haines",
+          "p": "197, 364–366"
+        },
+        {
+          "src": "c112m",
+          "p": "30, 103"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "lateral-medullary": {
+      "zh": "延髓外側症候群（Wallenberg）",
+      "en": "Lateral medullary syndrome (Wallenberg)",
+      "aliases": [
+        "Wallenberg syndrome",
+        "lateral medullary syndrome",
+        "PICA syndrome",
+        "posterior inferior cerebellar artery syndrome",
+        "後下小腦動脈症候群"
+      ],
+      "highYield": 3,
+      "summary": "延髓外側梗塞：同側臉＋對側身體的痛溫覺喪失、同側 Horner、吞嚥困難聲音沙啞、眩暈眼震、同側共濟失調。沒有偏癱。",
+      "cause": "後下小腦動脈（PICA）或椎動脈的延髓分支阻塞（Barr p.110–111）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              14,
+              27
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  4.2,
+                  10.5
+                ],
+                "z": [
+                  -7,
+                  3.5
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "als:L",
+        "ataxia:R",
+        "bulbar:R",
+        "face-pain:R",
+        "horner:R",
+        "vestib"
+      ],
+      "points": [
+        "同側臉痛溫覺喪失（[[structure:sp5]]）＋對側身體痛溫覺喪失（[[tract:als]]）＝交叉性感覺缺損。",
+        "同側軟顎、咽、喉麻痺：吞嚥困難、聲音沙啞、懸雍垂偏向健側（[[structure:ambiguus]]）。",
+        "眩暈、眼球震顫、噁心嘔吐（[[structure:vestibular-nuclei]]）。",
+        "同側 Horner 症候群（[[tract:hypothalamospinal]]）。",
+        "同側肢體共濟失調（[[structure:icp]]、脊髓小腦徑）。",
+        "錐體與內側蹄系在內側，不受影響：沒有偏癱、本體覺正常。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110–111, 302"
+        },
+        {
+          "src": "haines",
+          "p": "209, 366"
+        },
+        {
+          "src": "c112m",
+          "p": "106–110"
+        },
+        {
+          "src": "ex112m",
+          "p": "5, 16"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "raymond": {
+      "zh": "橋腦下段內側症候群（Raymond）",
+      "en": "Raymond syndrome (ventral caudal pons)",
+      "aliases": [
+        "Raymond syndrome",
+        "middle alternating hemiplegia",
+        "中交叉性偏癱",
+        "medial inferior pontine syndrome"
+      ],
+      "highYield": 2,
+      "summary": "橋腦下段腹內側（基底部的皮質脊髓纖維＋外旋神經纖維）：同側外直肌麻痺＋對側偏癱。",
+      "cause": "基底動脈的橋腦旁正中分支阻塞（Barr p.111；Haines p.363–364）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              33,
+              40
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  4.6
+                ],
+                "z": [
+                  4,
+                  14
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cn6:R",
+        "cst:L"
+      ],
+      "points": [
+        "同側外直肌麻痺：病灶側眼無法外展、內斜視（[[nerve:cn6]]的纖維，不是外旋神經核，所以沒有注視麻痺）。",
+        "對側上下肢上運動神經元癱瘓（皮質脊髓纖維）。",
+        "Haines 稱為 middle alternating hemiplegia。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110–112"
+        },
+        {
+          "src": "haines",
+          "p": "363–366"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "millard-gubler": {
+      "zh": "Millard-Gubler 症候群",
+      "en": "Millard-Gubler syndrome",
+      "aliases": [
+        "Millard-Gubler syndrome",
+        "Gubler syndrome",
+        "ventrolateral pontine syndrome"
+      ],
+      "highYield": 2,
+      "summary": "橋腦下段腹外側（皮質脊髓纖維＋顏面神經核或纖維）：同側周邊型顏面麻痺＋對側偏癱。",
+      "cause": "基底動脈的橋腦分支阻塞（Barr p.110–112）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              31,
+              38
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  2.9,
+                  6.5
+                ],
+                "z": [
+                  4,
+                  14
+                ]
+              },
+              {
+                "lat": [
+                  5.4,
+                  7.2
+                ],
+                "z": [
+                  -3,
+                  3.5
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cn7:R",
+        "cst:L"
+      ],
+      "points": [
+        "同側下運動神經元型顏面麻痺（上下半臉都無力）（[[structure:facial-nucleus]]）。",
+        "對側上下肢上運動神經元癱瘓。",
+        "部分書把外旋神經纖維也算進去（Haines p.366 表注）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110–112"
+        },
+        {
+          "src": "haines",
+          "p": "366"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "foville": {
+      "zh": "Foville 症候群",
+      "en": "Foville syndrome (dorsomedial caudal pons)",
+      "aliases": [
+        "Foville syndrome",
+        "dorsal pontine syndrome"
+      ],
+      "highYield": 2,
+      "summary": "橋腦下段背內側（外旋神經核、顏面神經內膝）：同側水平注視麻痺＋同側周邊型顏面麻痺；常有短暫的對側偏癱。",
+      "cause": "基底動脈分支阻塞、第四腦室底的腫瘤（Barr p.112）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              33,
+              38
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  1.7,
+                  4.6
+                ],
+                "z": [
+                  -9,
+                  -3
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cn7:R",
+        "gaze:R"
+      ],
+      "points": [
+        "同側水平注視麻痺：兩眼都無法看向病灶側（[[structure:abducens-nucleus]]含核間神經元；[[structure:pprf]]）。但看近物時對側眼可以內收（Barr p.112）。",
+        "同側周邊型顏面麻痺（繞過外旋神經核的顏面神經纖維）。",
+        "皮質脊髓纖維在腹側，通常只有短暫受壓（Barr p.112）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110, 112–113"
+        },
+        {
+          "src": "haines",
+          "p": "366"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "one-and-a-half": {
+      "zh": "一個半症候群",
+      "en": "One-and-a-half syndrome",
+      "aliases": [
+        "one-and-a-half syndrome",
+        "一個半綜合症"
+      ],
+      "highYield": 2,
+      "summary": "外旋神經核（或 PPRF）＋同側 MLF：同側水平注視麻痺（「一個」）＋同側核間性眼肌麻痺（「半個」），只剩對側眼的外展。",
+      "cause": "多發性硬化、橋腦梗塞。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              34,
+              36.5
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  2.3
+                ],
+                "z": [
+                  -9,
+                  -4
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "gaze:R",
+        "ino:R"
+      ],
+      "points": [
+        "看向病灶側：兩眼都不動（外旋神經核）。",
+        "看向對側：病灶側眼無法內收（同側 MLF），只有對側眼外展（常伴眼震）。",
+        "合併顏面神經受損時稱為「八個半症候群」（7 + 1½）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "207"
+        },
+        {
+          "src": "c112m",
+          "p": "32–33"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "ino": {
+      "zh": "核間性眼肌麻痺（MLF 症候群）",
+      "en": "Internuclear ophthalmoplegia (INO)",
+      "aliases": [
+        "internuclear ophthalmoplegia (INO)",
+        "MLF syndrome",
+        "內側縱束症候群"
+      ],
+      "highYield": 3,
+      "summary": "MLF 受損：看向對側時，病灶側眼無法內收，對側眼外展時出現眼震；看近物（輻輳）時可以內收。",
+      "cause": "年輕人：多發性硬化（常雙側）；老年人：腦幹梗塞（Haines p.207）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              44,
+              56
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0.6,
+                  2.0
+                ],
+                "z": [
+                  -7,
+                  -4
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "ino:R"
+      ],
+      "points": [
+        "右 MLF 受損：看向左邊時右眼無法內收（右側 INO）。",
+        "輻輳正常，證明內直肌與動眼神經本身沒問題，壞的是 MLF（Barr p.112）。",
+        "病灶側以「無法內收的那一眼」命名。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "206–207"
+        },
+        {
+          "src": "barr",
+          "p": "112, 118–121"
+        },
+        {
+          "src": "ex112m",
+          "p": "12, 56, 62"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "weber": {
+      "zh": "Weber 症候群",
+      "en": "Weber syndrome",
+      "aliases": [
+        "Weber syndrome",
+        "superior alternating hemiplegia",
+        "上交叉性偏癱",
+        "ventral midbrain syndrome"
+      ],
+      "highYield": 3,
+      "summary": "中腦腹側（大腦腳＋動眼神經纖維）：同側動眼神經麻痺＋對側偏癱（含對側下半臉與舌的上運動神經元無力）。",
+      "cause": "後大腦動脈（P1）旁正中分支或後交通動脈分支阻塞、出血（Haines p.363）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              64,
+              72
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  1.8,
+                  9.2
+                ],
+                "z": [
+                  4,
+                  12
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cbt:L",
+        "cn3:R",
+        "cst:L"
+      ],
+      "points": [
+        "同側動眼神經麻痺：眼睛向下向外、眼瞼下垂、瞳孔放大（[[nerve:cn3]]的纖維）。",
+        "對側上下肢上運動神經元癱瘓（大腦腳的皮質脊髓纖維）。",
+        "對側下半臉無力、伸舌偏向對側（皮質延髓纖維）（Haines p.366）。",
+        "也叫上交叉性偏癱（superior alternating hemiplegia）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110, 113"
+        },
+        {
+          "src": "haines",
+          "p": "363–366"
+        },
+        {
+          "src": "ym031",
+          "p": "40"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "benedikt": {
+      "zh": "Benedikt 症候群",
+      "en": "Benedikt syndrome",
+      "aliases": [
+        "Benedikt syndrome",
+        "paramedian midbrain syndrome"
+      ],
+      "highYield": 2,
+      "summary": "中腦被蓋內側（動眼神經纖維＋紅核與小腦視丘纖維，常延伸到大腦腳）：同側動眼神經麻痺＋對側震顫、協調不良（＋對側偏癱）。",
+      "cause": "後大腦動脈的中腦分支阻塞（Barr p.113）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              65,
+              74
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0.8,
+                  9.2
+                ],
+                "z": [
+                  -1.5,
+                  10
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cbt:L",
+        "cn3:R",
+        "cst:L",
+        "red:L"
+      ],
+      "points": [
+        "同側動眼神經麻痺（[[nerve:cn3]]）。",
+        "對側意向性震顫、協調不良（[[structure:red-nucleus]]與交叉過的小腦視丘纖維）。",
+        "延伸到大腦腳時加上對側偏癱（Barr p.113；Haines p.366）。",
+        "只有動眼神經＋紅核、沒有大腦腳的版本叫 Claude 症候群。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110, 113"
+        },
+        {
+          "src": "haines",
+          "p": "366"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "parinaud": {
+      "zh": "Parinaud 症候群（中腦背側症候群）",
+      "en": "Parinaud syndrome (dorsal midbrain syndrome)",
+      "aliases": [
+        "Parinaud syndrome",
+        "dorsal midbrain syndrome",
+        "pineal tumor",
+        "松果體腫瘤"
+      ],
+      "highYield": 2,
+      "summary": "中腦背側（頂蓋前區、後連合、上丘）受壓：向上注視麻痺但輻輳正常，常合併瞳孔對光反射消失、看近物會縮（光—近反射分離）；常見於松果體腫瘤。",
+      "cause": "松果體腫瘤壓迫、水腦（Barr p.110）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              76,
+              82
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  5.4
+                ],
+                "z": [
+                  -10,
+                  -6
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "lnd",
+        "upgaze"
+      ],
+      "points": [
+        "向上注視麻痺，但輻輳（看近物）不受影響（Barr p.110, 124）。",
+        "壓到[[structure:opn]]與後連合 → 對光反射消失、看近物會縮（光—近反射分離），和[[lesion:argyll-robertson]]相同的道理（Barr p.125；Haines p.428）。",
+        "也常有輻輳後退性眼震、眼瞼後縮。",
+        "松果體腫瘤也可能壓迫導水管造成水腦。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "110, 124–125"
+        },
+        {
+          "src": "haines",
+          "p": "210, 428"
+        },
+        {
+          "src": "hy",
+          "p": "113"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "locked-in": {
+      "zh": "閉鎖症候群",
+      "en": "Locked-in syndrome",
+      "aliases": [
+        "locked-in syndrome",
+        "basilar artery occlusion",
+        "基底動脈阻塞"
+      ],
+      "highYield": 2,
+      "summary": "雙側橋腦基底部（雙側皮質脊髓與皮質延髓纖維）受損：意識清楚，但四肢與臉、口、咽喉全部癱瘓，只剩垂直眼動與眨眼。",
+      "cause": "基底動脈血栓（Barr p.354）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              36,
+              52
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  7
+                ],
+                "z": [
+                  4.5,
+                  15
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cbt:B",
+        "cst:B"
+      ],
+      "points": [
+        "雙側皮質脊髓纖維：四肢癱瘓。",
+        "雙側皮質延髓纖維：不能說話、吞嚥（假性延髓麻痺）。",
+        "被蓋（網狀結構、感覺路徑）與中腦完好：意識清楚、感覺存在，可用垂直眼動與眨眼溝通（Barr p.354）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "354"
+        },
+        {
+          "src": "haines",
+          "p": "363–364"
+        }
+      ],
+      "region": "brainstem"
+    },
+    "optic-nerve": {
+      "zh": "視神經病灶（視神經炎）",
+      "en": "Optic nerve lesion (optic neuritis)",
+      "aliases": [
+        "optic neuritis",
+        "視神經炎",
+        "Marcus Gunn pupil",
+        "relative afferent pupillary defect (RAPD)",
+        "傳入性瞳孔缺損",
+        "swinging flashlight test",
+        "擺動手電筒試驗"
+      ],
+      "highYield": 2,
+      "summary": "一條視神經完全受損：同側眼全盲，加上傳入性瞳孔缺損（Marcus Gunn）。",
+      "cause": "視神經炎（多發性硬化常見）、眼動脈瘤壓迫、外傷、缺血（Barr p.125, 316；Haines p.296–297）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              62.5,
+              70
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  13,
+                  23
+                ],
+                "z": [
+                  44,
+                  58
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "blind:R",
+        "rapd:R"
+      ],
+      "points": [
+        "右眼全盲；視交叉以前的病灶只影響一眼（Barr p.316）。",
+        "光照右眼：兩側瞳孔都不縮（傳入端斷了）；光照左眼：兩側都縮（右眼的傳出端正常）（Barr p.125）。",
+        "擺動手電筒試驗：從左眼快速移到右眼時，兩側瞳孔反而放大——傳入性瞳孔缺損（Marcus Gunn）（Barr p.125；Haines p.428）。",
+        "部分受損（如視神經炎）常先出現中心暗點（HY p.109；Haines p.295）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "125, 316–317"
+        },
+        {
+          "src": "haines",
+          "p": "295–297, 428"
+        },
+        {
+          "src": "hy",
+          "p": "109, 113"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "41–42"
+        }
+      ],
+      "region": "visual"
+    },
+    "junctional": {
+      "zh": "視神經與視交叉交界病灶（交界性暗點）",
+      "en": "Junctional scotoma (optic nerve–chiasm junction)",
+      "aliases": [
+        "junctional scotoma",
+        "junctional lesion",
+        "Wilbrand's knee",
+        "Wilbrand 膝",
+        "交界性暗點"
+      ],
+      "highYield": 1,
+      "summary": "視神經剛要進入視交叉的地方受損：同側眼全盲，加上對側眼的顳上象限缺損。這裡以左側為例。",
+      "cause": "腦下垂體腫瘤、腦膜瘤、動脈瘤從一側壓迫（Haines p.298）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              72,
+              78
+            ],
+            "side": "L",
+            "boxes": [
+              {
+                "lat": [
+                  3,
+                  8.5
+                ],
+                "z": [
+                  23,
+                  29
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "blind:L",
+        "qeye:R:temporal:U",
+        "rapd:L"
+      ],
+      "points": [
+        "左視神經的纖維全部中斷 → 左眼全盲，並有左眼傳入性瞳孔缺損。",
+        "右眼下鼻側視網膜的交叉纖維，交叉後會先往前彎進左視神經一小段（Wilbrand 膝），也被切到 → 右眼顳上象限缺損（Barr p.314；Haines p.298）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "298"
+        },
+        {
+          "src": "barr",
+          "p": "314"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "42"
+        }
+      ],
+      "region": "visual"
+    },
+    "chiasm": {
+      "zh": "視交叉正中病灶（雙顳側偏盲）",
+      "en": "Midline chiasmal lesion – bitemporal hemianopia",
+      "aliases": [
+        "bitemporal hemianopia",
+        "bitemporal hemianopsia",
+        "雙顳側偏盲",
+        "顳側偏盲",
+        "pituitary adenoma",
+        "腦下垂體腫瘤",
+        "pituitary tumor"
+      ],
+      "highYield": 3,
+      "summary": "視交叉正中的交叉纖維被切斷（最常見是腦下垂體腫瘤從下方壓迫）：兩眼外側（顳側）的半邊視野都看不到。",
+      "cause": "腦下垂體腺瘤最常見；其他如顱咽管瘤、腦膜瘤（Barr p.316；Haines p.296）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              72,
+              80
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  2.6
+                ],
+                "z": [
+                  15,
+                  25
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "bitemporal"
+      ],
+      "points": [
+        "交叉的纖維來自兩眼的鼻側視網膜，看的是顳側視野 → 雙顳側偏盲（Barr p.316）。",
+        "腫瘤從下方長上來，先壓到下鼻側的纖維，所以通常從兩眼的顳上象限開始，再擴大到整個顳側（Barr p.316）。",
+        "兩眼內側的視野都還在，但外側只剩單眼看，所以病人常說「沒有眼角餘光」（共筆）。",
+        "國考：腦下垂體腫瘤壓迫視交叉 → 雙顳側偏盲（1042）；雙顳側偏盲的病灶在視交叉（1091）（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "316–317"
+        },
+        {
+          "src": "haines",
+          "p": "295–296, 298"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "c112",
+          "p": "31, 33"
+        },
+        {
+          "src": "ym06",
+          "p": "36"
+        }
+      ],
+      "region": "visual"
+    },
+    "lateral-chiasm": {
+      "zh": "視交叉外側病灶（鼻側偏盲）",
+      "en": "Lateral chiasmal lesion – nasal hemianopia",
+      "aliases": [
+        "nasal hemianopia",
+        "binasal hemianopia",
+        "鼻側偏盲",
+        "internal carotid aneurysm",
+        "內頸動脈瘤"
+      ],
+      "highYield": 1,
+      "summary": "視交叉外側被壓迫，只切到同側不交叉的纖維（顳側視網膜）：同側眼的鼻側（內側）視野看不到。",
+      "cause": "內頸動脈瘤或粥狀硬化的內頸動脈從外側壓迫，很少見（Barr p.316；Haines p.296）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              73,
+              79
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  5,
+                  8
+                ],
+                "z": [
+                  18,
+                  23
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hemi:R:nasal"
+      ],
+      "points": [
+        "右側不交叉的纖維來自右眼顳側視網膜，看的是右眼的鼻側視野 → 右眼鼻側偏盲（Barr p.316）。",
+        "兩側都被壓（例如兩側內頸動脈都鈣化）才會雙鼻側偏盲（HY p.109）。",
+        "Haines 提醒：看起來像鼻側偏盲時，也要想到其實是中心暗點（Haines p.296）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "316–317"
+        },
+        {
+          "src": "haines",
+          "p": "296"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "41"
+        }
+      ],
+      "region": "visual"
+    },
+    "optic-tract": {
+      "zh": "視神經徑病灶",
+      "en": "Optic tract lesion",
+      "aliases": [
+        "optic tract lesion",
+        "homonymous hemianopia",
+        "同側偏盲",
+        "anterior choroidal artery",
+        "前脈絡膜動脈"
+      ],
+      "highYield": 2,
+      "summary": "一側視神經徑受損：對側同側偏盲——兩眼的對側半邊視野都看不到。",
+      "cause": "前脈絡膜動脈阻塞、腫瘤、外傷（Haines p.296）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              76.5,
+              81
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  15,
+                  19.5
+                ],
+                "z": [
+                  -3,
+                  8
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hh:L"
+      ],
+      "points": [
+        "右視神經徑帶的是右眼顳側＋左眼鼻側視網膜，也就是兩眼的左半視野 → 左側同側偏盲（Barr p.316；Haines p.296）。",
+        "實際上視神經徑的病灶常常兩眼不對稱（incongruous），因為兩眼對應的纖維在這裡還沒完全排在一起（Haines p.299）；模型簡化成對稱。",
+        "視交叉以後、到視覺皮質為止的病灶都是對側同側偏盲，差別在於有沒有黃斑保留、是否只影響上或下半。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "316–317"
+        },
+        {
+          "src": "haines",
+          "p": "296–297, 299"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "41–42"
+        },
+        {
+          "src": "ym06",
+          "p": "36"
+        }
+      ],
+      "region": "visual"
+    },
+    "meyer-loop": {
+      "zh": "顳葉病灶（Meyer 環）",
+      "en": "Temporal lobe lesion – Meyer's loop",
+      "aliases": [
+        "Meyer's loop",
+        "superior quadrantanopia",
+        "pie in the sky",
+        "上象限盲",
+        "temporal lobe lesion"
+      ],
+      "highYield": 3,
+      "summary": "顳葉的病灶切到視放射下半部的 Meyer 環：對側上象限盲（pie in the sky）。",
+      "cause": "顳葉腫瘤、顳葉切除手術、中大腦動脈分支阻塞（Haines p.299）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              74,
+              84
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  28,
+                  38
+                ],
+                "z": [
+                  1,
+                  10
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "quad:L:U"
+      ],
+      "points": [
+        "Meyer 環帶的是下半視網膜 → 上半視野；右側受損 → 兩眼的左上象限看不到（Barr p.315；Haines p.298）。",
+        "記法：上半視野 → 下半視網膜 → LGN 外側 → Meyer 環 → 距狀溝下唇（共筆）。",
+        "模型裡黃斑纖維不經過 Meyer 環最前端，所以只切到前端時中心視野保留；實際的缺損大小依病灶範圍而定，也可能只影響象限的一部分（Haines p.299）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "314–315"
+        },
+        {
+          "src": "haines",
+          "p": "298–299"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "37, 43"
+        },
+        {
+          "src": "c112",
+          "p": "31"
+        }
+      ],
+      "region": "visual"
+    },
+    "parietal-radiation": {
+      "zh": "頂葉視放射病灶",
+      "en": "Parietal lobe lesion – upper optic radiation",
+      "aliases": [
+        "inferior quadrantanopia",
+        "pie on the floor",
+        "下象限盲",
+        "parietal lobe lesion"
+      ],
+      "highYield": 2,
+      "summary": "頂葉深部切到視放射上半部：對側下象限盲（pie on the floor）。",
+      "cause": "頂葉的腫瘤、梗塞、出血（Barr p.315）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              93,
+              104
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  24,
+                  34
+                ],
+                "z": [
+                  -38,
+                  -27
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "quad:L:D"
+      ],
+      "points": [
+        "視放射上半部帶上半視網膜 → 下半視野，止於距狀溝上唇（楔葉）；右側受損 → 兩眼的左下象限看不到（Barr p.315；Haines p.298）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "315"
+        },
+        {
+          "src": "haines",
+          "p": "298"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "37"
+        }
+      ],
+      "region": "visual"
+    },
+    "occipital": {
+      "zh": "枕葉病灶（後大腦動脈梗塞）",
+      "en": "Occipital lobe lesion (PCA infarct)",
+      "aliases": [
+        "macular sparing",
+        "黃斑保留",
+        "homonymous hemianopia with macular sparing",
+        "PCA infarct",
+        "posterior cerebral artery",
+        "後大腦動脈",
+        "calcarine artery"
+      ],
+      "highYield": 3,
+      "summary": "一側距狀溝的視覺皮質受損：對側同側偏盲，但中心（黃斑）視野保留。",
+      "cause": "後大腦動脈（距狀溝動脈）阻塞最常見（Haines p.299）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              93,
+              108
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  15
+                ],
+                "z": [
+                  -64,
+                  -44
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hh:L:ms"
+      ],
+      "points": [
+        "右視覺皮質負責兩眼的左半視野 → 左側同側偏盲（Barr p.316）。",
+        "黃斑保留：黃斑在枕葉後端，那裡另有中大腦動脈的側枝供應，後大腦動脈阻塞時常常保住（Haines p.299）；Barr 另外指出，檢查時注視點稍微移動也會造成黃斑保留的假象（Barr p.316）。",
+        "越靠近視覺皮質的病灶，兩眼的缺損越對稱（congruous）（Haines p.299）。",
+        "國考選項常同時出現「同側偏盲」與「同側偏盲、黃斑保留」：前者是視神經徑，後者是枕葉（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "316–317"
+        },
+        {
+          "src": "haines",
+          "p": "299"
+        },
+        {
+          "src": "hy",
+          "p": "109"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "41"
+        },
+        {
+          "src": "c112",
+          "p": "33"
+        }
+      ],
+      "region": "visual"
+    },
+    "occipital-pole": {
+      "zh": "枕葉後端病灶",
+      "en": "Occipital pole lesion",
+      "aliases": [
+        "occipital pole",
+        "homonymous central scotoma",
+        "中心暗點"
+      ],
+      "highYield": 1,
+      "summary": "只傷到枕葉後端（黃斑的代表區）：對側同側偏盲性的中心暗點，周邊視野保留。",
+      "cause": "枕部外傷，或枕葉後端中大腦動脈與後大腦動脈交界區的缺血（依 Haines p.299 的血管分布推論）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              92,
+              108
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  22
+                ],
+                "z": [
+                  -80,
+                  -67
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "scot:L"
+      ],
+      "points": [
+        "黃斑（中心視野）止於枕葉後端，而且占的面積很大（Barr p.313；Haines p.299）。",
+        "右枕葉後端受損 → 兩眼左半邊的中心視野看不到，周邊還看得到。",
+        "和[[lesion:occipital]]相反：那邊是周邊不見、中心保留。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "313, 315"
+        },
+        {
+          "src": "haines",
+          "p": "299"
+        },
+        {
+          "src": "tmu106b8",
+          "p": "37"
+        }
+      ],
+      "region": "visual"
+    },
+    "cn3-compression": {
+      "zh": "動眼神經受壓（鉤回疝脫、後交通動脈瘤）",
+      "en": "Oculomotor nerve compression (uncal herniation, PComm aneurysm)",
+      "aliases": [
+        "uncal herniation",
+        "鉤回疝脫",
+        "transtentorial herniation",
+        "posterior communicating artery aneurysm",
+        "後交通動脈瘤",
+        "blown pupil",
+        "fixed dilated pupil"
+      ],
+      "highYield": 3,
+      "summary": "動眼神經在蛛網膜下腔被壓迫：同側瞳孔先放大、對光反射消失，接著眼瞼下垂、眼睛向下向外。",
+      "cause": "硬腦膜上或下出血造成顳葉鉤回疝脫、壓在小腦天幕邊緣；後交通動脈瘤（Barr p.125；Haines p.428）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              61,
+              66
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  6,
+                  14
+                ],
+                "z": [
+                  22,
+                  36
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cn3:R"
+      ],
+      "points": [
+        "副交感纖維走在動眼神經的表面，受壓時最先受影響 → 右瞳孔放大、光照哪一眼右瞳孔都不縮（Barr p.121, 125；Haines p.428）。",
+        "左眼瞳孔反射正常：光照右眼時，左瞳孔仍會縮（間接反射），因為右眼的傳入端沒有壞。",
+        "昏迷的頭部外傷病人出現單側瞳孔放大、固定，是腦幹即將受壓的警訊（Haines p.428）。",
+        "相反地，糖尿病的缺血性動眼神經麻痺常常瞳孔正常（中心的纖維缺血、表面的副交感纖維保留）（Haines p.211）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "121, 125"
+        },
+        {
+          "src": "haines",
+          "p": "211, 416, 428"
+        },
+        {
+          "src": "hy",
+          "p": "113"
+        },
+        {
+          "src": "tmu106b3",
+          "p": "8"
+        }
+      ],
+      "region": "visual"
+    },
+    "adie": {
+      "zh": "Adie 強直性瞳孔（睫狀神經節）",
+      "en": "Holmes-Adie tonic pupil (ciliary ganglion)",
+      "aliases": [
+        "Adie pupil",
+        "Holmes-Adie pupil",
+        "tonic pupil",
+        "強直性瞳孔",
+        "Adie syndrome"
+      ],
+      "highYield": 1,
+      "summary": "睫狀神經節的節後神經元壞掉：同側瞳孔放大，對光反射消失，看近物時縮得很慢。沒有眼瞼下垂或眼球運動問題。",
+      "cause": "原因不明，可能與病毒感染有關；年輕女性較常見（Barr p.125）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              56,
+              60.5
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  24,
+                  28.5
+                ],
+                "z": [
+                  54,
+                  60
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "pupil-eff:R"
+      ],
+      "points": [
+        "右瞳孔放大：光照哪一眼右瞳孔都不縮；左瞳孔反應正常。",
+        "和動眼神經受壓不同：只有瞳孔，沒有眼瞼下垂與眼外肌麻痺（傷在睫狀神經節，不在動眼神經）。",
+        "看近物時會慢慢縮小、放鬆時也慢慢放大（強直性）；常合併肌腱反射減弱（Barr p.125）。",
+        "對稀釋的膽鹼性藥物特別敏感（去神經超敏）（Haines p.427）。"
+      ],
+      "note": "模型只區分「有反應、沒反應」；真實的 Adie 瞳孔看近物時會緩慢縮小。",
+      "sources": [
+        {
+          "src": "barr",
+          "p": "125"
+        },
+        {
+          "src": "haines",
+          "p": "416, 427"
+        }
+      ],
+      "region": "visual"
+    },
+    "argyll-robertson": {
+      "zh": "Argyll Robertson 瞳孔",
+      "en": "Argyll Robertson pupil",
+      "aliases": [
+        "Argyll Robertson pupil",
+        "light-near dissociation",
+        "光—近反射分離",
+        "光近分離",
+        "neurosyphilis",
+        "神經性梅毒",
+        "tabes dorsalis",
+        "prostitute's pupil"
+      ],
+      "highYield": 2,
+      "summary": "兩側瞳孔小而不規則，對光反射消失，但看近物時會縮小（光—近反射分離）。典型原因是神經性梅毒。",
+      "cause": "中樞神經梅毒（脊髓癆）；病灶推測在頂蓋前區或導水管周圍（Barr p.125, 318；Haines p.428）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              78,
+              83
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  3.2,
+                  5.4
+                ],
+                "z": [
+                  -9,
+                  -6
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "lnd"
+      ],
+      "points": [
+        "傳入端（視網膜、視神經）與傳出端（EW 核、動眼神經）都正常，所以視力正常、看近物會縮 → 斷在中間的頂蓋前核（Haines p.428）。",
+        "看近物的縮瞳訊號從視覺皮質經上丘到 EW 核，不經過頂蓋前核（Barr p.317–318）。",
+        "瞳孔小而不規則，可能是虹膜本身也有病變（Barr p.125, 318）。",
+        "[[lesion:parinaud]]也常有光—近反射分離，但會合併向上注視麻痺。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "125, 318"
+        },
+        {
+          "src": "haines",
+          "p": "428"
+        },
+        {
+          "src": "hy",
+          "p": "113"
+        }
+      ],
+      "region": "visual"
+    },
+    "cb-hemisphere": {
+      "zh": "小腦半球病灶（外側區＋齒狀核）",
+      "en": "Cerebellar hemisphere lesion (neocerebellar syndrome)",
+      "aliases": [
+        "neocerebellar syndrome",
+        "新小腦症候群",
+        "lateral cerebellar lesion",
+        "dysmetria",
+        "辨距不良",
+        "intention tremor",
+        "意向性震顫",
+        "dysdiadochokinesia",
+        "輪替運動障礙",
+        "past pointing",
+        "SCA infarct",
+        "上小腦動脈"
+      ],
+      "highYield": 3,
+      "summary": "一側小腦半球（含齒狀核）受損：同側肢體的辨距不良、意向性震顫、輪替運動障礙、肌張力低下；肌力正常。",
+      "cause": "上小腦動脈或後下小腦動脈的梗塞、出血、腫瘤、多發性硬化（Haines p.397, 410；Barr p.172）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              36,
+              54
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  12,
+                  34
+                ],
+                "z": [
+                  -50,
+                  -18
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cb-limb:R"
+      ],
+      "points": [
+        "症狀在病灶同側：右小腦 → 上小腦腳交叉 → 左視丘 VL → 左運動皮質 → 皮質脊髓徑交叉回右側（[[tract:dentatothalamic]]；Haines p.410）。",
+        "辨距不良（指鼻、跟膝脛試驗時超過或不到目標）、意向性震顫（越接近目標抖得越厲害，休息時不抖，和巴金森相反）（Haines p.410–411）。",
+        "輪替運動障礙（快速翻轉手掌做不好）、動作分解、反彈現象、肌張力與肌腱反射降低（Barr p.172；Haines p.411）。",
+        "構音障礙（含糊、斷續的掃描式語言）、眼球震顫也可能出現（Barr p.172）。",
+        "病灶有傷到齒狀核，症狀比只傷到皮質嚴重、恢復也比較差（Barr p.172；Haines p.410）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "172"
+        },
+        {
+          "src": "haines",
+          "p": "410–411"
+        },
+        {
+          "src": "ym04",
+          "p": "19–20, 22"
+        }
+      ],
+      "region": "cerebellum"
+    },
+    "cb-vermis": {
+      "zh": "蚓部前葉退化（酒精性小腦退化）",
+      "en": "Anterior lobe vermis degeneration (alcoholic cerebellar degeneration)",
+      "aliases": [
+        "anterior lobe syndrome",
+        "前葉症候群",
+        "alcoholic cerebellar degeneration",
+        "酒精性小腦退化",
+        "truncal ataxia",
+        "軀幹共濟失調",
+        "gait ataxia",
+        "步態不穩",
+        "midline cerebellar syndrome"
+      ],
+      "highYield": 2,
+      "summary": "前葉的蚓部退化：以下肢為主的步態不穩、寬基步態，走路搖晃；手的動作相對正常。",
+      "cause": "長期酗酒造成前葉蚓部（與鄰近中間區）退化（Barr p.172；共筆）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              50,
+              64
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  4.5
+                ],
+                "z": [
+                  -44,
+                  -14
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cb-trunk"
+      ],
+      "points": [
+        "蚓部控制軀幹與近端肌肉，受損造成軀幹與步態共濟失調，兩側都受影響（Barr p.172；Haines p.406）。",
+        "病人站立時兩腳分得很開、走路像喝醉一樣搖晃，無法走直線（腳跟接腳尖）（Haines p.406）。",
+        "前葉的代表區裡下肢佔比較多，所以下肢比上肢明顯（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "172"
+        },
+        {
+          "src": "haines",
+          "p": "406"
+        },
+        {
+          "src": "ym04",
+          "p": "19, 22"
+        }
+      ],
+      "region": "cerebellum"
+    },
+    "cb-flocculonodular": {
+      "zh": "小葉結節葉病灶（髓母細胞瘤）",
+      "en": "Flocculonodular lobe lesion (medulloblastoma)",
+      "aliases": [
+        "medulloblastoma",
+        "髓母細胞瘤",
+        "flocculonodular syndrome",
+        "archicerebellar syndrome",
+        "nodulus",
+        "nystagmus",
+        "眼球震顫"
+      ],
+      "highYield": 2,
+      "summary": "小結與鄰近中線結構（第四腦室頂）受損：平衡障礙、站坐不穩、容易跌倒，常合併眼球震顫；肢體的協調測試可以正常。",
+      "cause": "兒童的髓母細胞瘤最常見，從第四腦室頂長出（Barr p.172；共筆）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              28,
+              36
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  6
+                ],
+                "z": [
+                  -20,
+                  -12
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cb-fn"
+      ],
+      "points": [
+        "前庭小腦負責平衡：受損後站立、走路都不穩，但躺著時做肢體協調測試可以正常（Haines p.406）。",
+        "眼球震顫：蚓部與小葉結節葉連到前庭神經核與眼動神經核的路徑中斷（Barr p.172）。",
+        "腫瘤擠壓第四腦室，可能造成阻塞性水腦（共筆）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "172"
+        },
+        {
+          "src": "haines",
+          "p": "406"
+        },
+        {
+          "src": "ym04",
+          "p": "19, 22"
+        }
+      ],
+      "region": "cerebellum"
+    },
+    "scp": {
+      "zh": "上小腦腳病灶（交叉前）",
+      "en": "Superior cerebellar peduncle lesion (before the decussation)",
+      "aliases": [
+        "superior cerebellar peduncle lesion",
+        "brachium conjunctivum",
+        "上小腦腳",
+        "cerebellar tremor"
+      ],
+      "highYield": 1,
+      "summary": "一側上小腦腳在交叉之前受損（橋腦背側）：同側肢體共濟失調與意向性震顫，因為小腦核的輸出被切斷。",
+      "cause": "多發性硬化的脫髓鞘斑塊、上小腦動脈梗塞（Barr p.172）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              54,
+              59
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  3.5,
+                  8.5
+                ],
+                "z": [
+                  -10.5,
+                  -5
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "ataxia:R"
+      ],
+      "points": [
+        "交叉之前受損 → 同側；交叉之後（中腦、紅核附近）受損 → 對側（Haines p.410）。",
+        "小腦性震顫最常見於小腦腳的脫髓鞘病灶（Barr p.172）。",
+        "病灶切斷的是齒狀核與中間核的輸出，症狀比只傷到小腦皮質嚴重（Barr p.172）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "172"
+        },
+        {
+          "src": "haines",
+          "p": "394, 410"
+        },
+        {
+          "src": "ym04",
+          "p": "21"
+        }
+      ],
+      "region": "cerebellum"
+    },
+    "acoustic-neuroma": {
+      "zh": "聽神經瘤（前庭神經鞘瘤）",
+      "en": "Acoustic neuroma (vestibular schwannoma)",
+      "aliases": [
+        "acoustic neuroma",
+        "vestibular schwannoma",
+        "cerebellopontine angle tumor",
+        "小腦橋腦角腫瘤",
+        "CP angle tumor",
+        "neurofibromatosis type 2 (NF2)"
+      ],
+      "highYield": 3,
+      "summary": "前庭神經的 Schwann 細胞長出的良性腫瘤，從內耳道長到小腦橋腦角：最早是單側漸進的聽力下降與耳鳴。",
+      "cause": "前庭神經的神經鞘瘤；兩側都有時要想到第二型神經纖維瘤症（Barr p.328；HY p.67）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              30,
+              32.6
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  21,
+                  33
+                ],
+                "z": [
+                  -1,
+                  4.6
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hearing:R",
+        "vestib-periph:R"
+      ],
+      "points": [
+        "第一個症狀通常是同側漸進的聽力下降，加上耳鳴：耳蝸神經被腫瘤壓在內耳道骨壁上（Barr p.328）。",
+        "腫瘤長在前庭神經上，但因為長得慢、腦可以代償，只有部分病人有明顯眩暈（Barr p.328）。模型把前庭功能喪失也推導出來。",
+        "往小腦橋腦角長大後：先壓三叉神經（臉麻、角膜反射變弱），再來是顏面神經（出乎意料地耐拉）、舌咽神經；最後壓迫腦幹與第四腦室造成水腦（Barr p.328–329；HY p.67）。模型的病灶只畫在內耳道口，所以還沒有這些症狀。",
+        "感音性聽損：Weber 偏向健側（左）、Rinne 兩側都是氣導 > 骨導（Barr p.331；HY p.102–103）。",
+        "內耳道擴大是有用的影像徵象；腦幹聽覺誘發電位也可以幫忙診斷（Barr p.328；HY p.103）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "328–329, 331"
+        },
+        {
+          "src": "haines",
+          "p": "205, 327"
+        },
+        {
+          "src": "hy",
+          "p": "67, 102–103, 107"
+        },
+        {
+          "src": "ym07",
+          "p": "35"
+        }
+      ],
+      "region": "auditory"
+    },
+    "labyrinthine-artery": {
+      "zh": "迷路動脈阻塞（內耳梗塞）",
+      "en": "Labyrinthine artery occlusion",
+      "aliases": [
+        "labyrinthine artery occlusion",
+        "internal auditory artery",
+        "inner ear infarction",
+        "anterior inferior cerebellar artery (AICA)",
+        "小腦前下動脈",
+        "迷路動脈"
+      ],
+      "highYield": 2,
+      "summary": "供應內耳的迷路動脈（多半來自小腦前下動脈 AICA）阻塞：同側突然耳聾，加上眩暈、容易往患側倒。",
+      "cause": "迷路動脈或它的上游小腦前下動脈（AICA）阻塞（Barr p.378；Haines p.312, 323）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              27,
+              41
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  33.5,
+                  50
+                ],
+                "z": [
+                  -10,
+                  14
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hearing:R",
+        "vestib-periph:R"
+      ],
+      "points": [
+        "迷路動脈經內耳道供應整個膜性迷路：耳蝸與前庭一起壞（Barr p.378；Haines p.323）。",
+        "突然單側耳聾＋眩暈、噁心，身體容易往患側倒（Barr p.378）。",
+        "如果是上游的 AICA 阻塞，還可能傷到耳蝸神經核、顏面神經等（Haines p.312）；模型只畫內耳。",
+        "國考：供應內耳的是迷路動脈（共筆，國考 1141）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "377–378"
+        },
+        {
+          "src": "haines",
+          "p": "312, 323"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "41"
+        },
+        {
+          "src": "c112",
+          "p": "46–47"
+        }
+      ],
+      "region": "auditory"
+    },
+    "lateral-lemniscus": {
+      "zh": "外側蹄系病灶（橋腦上段外側）",
+      "en": "Lateral lemniscus lesion",
+      "aliases": [
+        "lateral lemniscus lesion",
+        "central hearing loss",
+        "中樞性聽損",
+        "central deafness"
+      ],
+      "highYield": 2,
+      "summary": "用來對照的病灶：切斷右側外側蹄系，兩耳都還聽得到——聽覺在耳蝸神經核以上是雙側上傳的。",
+      "cause": "腦幹的小梗塞、腫瘤或多發性硬化（Haines p.312, 317）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              46,
+              53
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  10.4,
+                  12.8
+                ],
+                "z": [
+                  -5.6,
+                  -2.4
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "aud-central:R"
+      ],
+      "points": [
+        "右外側蹄系帶的是左耳的單耳纖維＋雙耳纖維（左耳經斜方體、右耳經同側上橄欖核）：每一耳都還有另一側的路線，所以不會單耳全聾（Barr p.330；Haines p.312）。",
+        "症狀是中樞性的：不容易判斷對側聲音的方向、在吵雜環境中聽不清楚，對對側的聲音比較不注意（Haines p.312）。",
+        "對照：病灶只要往下移到耳蝸神經核或耳蝸神經，就會同側全聾（Barr p.321；Haines p.312）。",
+        "國考：一耳的聽覺訊息可以傳到兩側的內側膝狀體（國考 1072）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "321, 330"
+        },
+        {
+          "src": "haines",
+          "p": "312, 315, 317"
+        },
+        {
+          "src": "tmu106b9",
+          "p": "38"
+        }
+      ],
+      "region": "auditory"
+    },
+    "auditory-cortex": {
+      "zh": "單側聽覺皮質病灶（右顳橫回）",
+      "en": "Unilateral auditory cortex lesion",
+      "aliases": [
+        "auditory cortex lesion",
+        "temporal lobe lesion",
+        "cortical deafness",
+        "Heschl gyrus lesion",
+        "Wernicke aphasia",
+        "Wernicke 失語症"
+      ],
+      "highYield": 2,
+      "summary": "右側顳橫回受損：聽力下降輕到很難測出來，主要是左側（對側）空間的聲音定位變差。",
+      "cause": "中大腦動脈的分支阻塞（Haines p.312）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              86,
+              96
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  38,
+                  62
+                ],
+                "z": [
+                  -16,
+                  6
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "aud-central:R"
+      ],
+      "points": [
+        "每一側聽覺皮質都收到兩耳的訊息，所以單側皮質病灶造成的聽力下降在聽力檢查上幾乎測不出來（Barr p.330）。",
+        "如果是左側（優勢半球），常常一起傷到後面的 Wernicke 區：聽得到但聽不懂（接受性失語），比聽力問題更明顯（Barr p.330；Haines p.318）。",
+        "聽覺皮質的癲癇發作：先聽到越來越大的噪音，通常像是從對側傳過來（Barr p.332）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "330, 332"
+        },
+        {
+          "src": "haines",
+          "p": "312, 317–318"
+        },
+        {
+          "src": "ym07",
+          "p": "29, 37"
+        }
+      ],
+      "region": "auditory"
+    },
+    "thalamic-syndrome": {
+      "zh": "視丘症候群（Dejerine–Roussy）",
+      "en": "Thalamic syndrome (Dejerine–Roussy)",
+      "aliases": [
+        "thalamic syndrome",
+        "Dejerine-Roussy syndrome",
+        "thalamic pain",
+        "視丘痛",
+        "central post-stroke pain",
+        "thalamogeniculate artery",
+        "視丘膝狀動脈"
+      ],
+      "highYield": 3,
+      "summary": "視丘腹後核（VPL、VPM）受損：對側半身（含臉）所有感覺喪失；之後常出現劇烈、難以用止痛藥控制的視丘痛。",
+      "cause": "多半是血管性：後大腦動脈的視丘膝狀分支（Barr p.183；Haines p.224）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              85,
+              91
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  11,
+                  19.5
+                ],
+                "z": [
+                  -8,
+                  -1.5
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "thal-body:L",
+        "thal-face:L"
+      ],
+      "points": [
+        "內側蹄系、前外側系統止於 VPL，三叉丘腦徑止於 VPM：一起壞 → 對側身體與臉的本體覺、觸覺、痛溫覺都受損（Barr p.183）。",
+        "過了一段時間，刺激超過閾值時感覺被誇大而且非常不舒服：針刺像燒灼、原本好聽的音樂也變得刺耳；可能出現難治的自發痛與情緒不穩（Barr p.183）。",
+        "病灶常延伸到內囊，所以也可能合併對側偏癱（Barr p.183；Haines p.224）。模型的範圍只畫在腹後核。",
+        "中樞性疼痛也可能來自脊髓、腦幹、頂葉皮質或白質的病灶（Barr p.183）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "183"
+        },
+        {
+          "src": "haines",
+          "p": "218, 224"
+        },
+        {
+          "src": "ym04",
+          "p": "29"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "15"
+        }
+      ],
+      "region": "diencephalon"
+    },
+    "ic-lacunar": {
+      "zh": "內囊梗塞（後肢與膝部）",
+      "en": "Internal capsule infarct (posterior limb and genu)",
+      "aliases": [
+        "internal capsule infarct",
+        "lacunar infarct",
+        "pure motor hemiparesis",
+        "純運動性偏癱",
+        "lenticulostriate arteries",
+        "豆紋動脈",
+        "capsular stroke"
+      ],
+      "highYield": 3,
+      "summary": "內囊後肢與膝部的小梗塞：對側偏癱（臉的下半、上肢、下肢），因為皮質脊髓與皮質延髓纖維都擠在這裡。",
+      "cause": "中大腦動脈的外側豆紋動脈或前脈絡膜動脈阻塞（Haines p.224）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              90,
+              100
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  17,
+                  24
+                ],
+                "z": [
+                  -7,
+                  13
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "cbt:L",
+        "cst:L"
+      ],
+      "points": [
+        "內囊後肢的小梗塞就能造成對側偏癱：運動纖維在後肢高度集中（Barr p.247, 256）。",
+        "皮質延髓纖維在膝部與後肢最前面：臉的下半與舌頭無力（上運動神經元型）（Barr p.255）。",
+        "病灶再往後延伸到後肢後段 → 加上對側半身感覺缺損（視丘皮質放射）；延伸到後豆狀部 → 對側同側偏盲（Barr p.256）。模型的範圍停在後肢前、中段，所以推導出來是「純運動」。",
+        "對照：同樣是對側偏癱，腦幹病灶會多出同側腦神經的症狀（交叉性），內囊病灶不會。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "247, 253–256"
+        },
+        {
+          "src": "haines",
+          "p": "220, 224"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "16–17"
+        }
+      ],
+      "region": "diencephalon"
+    },
+    "hemiballismus": {
+      "zh": "偏身投擲症（視丘下核）",
+      "en": "Hemiballismus (subthalamic nucleus lesion)",
+      "aliases": [
+        "hemiballismus",
+        "ballism",
+        "subthalamic nucleus lesion",
+        "偏身投擲症",
+        "偏側投擲症"
+      ],
+      "highYield": 3,
+      "summary": "視丘下核受損：對側肢體突然、用力、甩動式的不自主動作，上肢近端最明顯。",
+      "cause": "局部血管阻塞：後大腦動脈或後交通動脈的後內側分支（Barr p.185；Haines p.222）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              79.4,
+              81.6
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  9,
+                  12
+                ],
+                "z": [
+                  -1.5,
+                  4.5
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hemiballismus:L"
+      ],
+      "points": [
+        "症狀在病灶的對側（Barr p.185；Haines p.222）。",
+        "動作沒有目的，像丟東西或甩動，以肢體近端（尤其手臂）最嚴重，有時也影響臉與頸（Barr p.185）。",
+        "迴路：視丘下核是間接路徑的一站；失去它對蒼白球內節的興奮 → 視丘 VA、VL 被放開 → 過多的不自主動作（Barr p.211；Haines p.387；國考 1041）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "180, 185"
+        },
+        {
+          "src": "haines",
+          "p": "222"
+        },
+        {
+          "src": "ym04",
+          "p": "38"
+        },
+        {
+          "src": "tmu106b5",
+          "p": "20"
+        }
+      ],
+      "region": "diencephalon",
+      "alsoIn": [
+        "basal-ganglia"
+      ]
+    },
+    "korsakoff": {
+      "zh": "Wernicke–Korsakoff 症候群（乳頭體、背內側核）",
+      "en": "Wernicke–Korsakoff syndrome",
+      "aliases": [
+        "Korsakoff syndrome",
+        "Wernicke-Korsakoff syndrome",
+        "Korsakoff psychosis",
+        "thiamine deficiency",
+        "anterograde amnesia",
+        "順向性失憶",
+        "confabulation",
+        "虛談"
+      ],
+      "highYield": 2,
+      "summary": "缺乏 thiamine（多見於長期酗酒）使兩側乳頭體與視丘背內側核退化：無法形成新的長期記憶（順向性失憶），常會虛談。",
+      "cause": "維生素 B1（thiamine）缺乏，典型是長期酗酒（Haines p.447）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              79.5,
+              81.8
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  1,
+                  4
+                ],
+                "z": [
+                  0.6,
+                  3.8
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "brain": {
+            "y": [
+              90,
+              95
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  5,
+                  9
+                ],
+                "z": [
+                  -6,
+                  3
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "amnesia"
+      ],
+      "points": [
+        "乳頭體受損：短期記憶無法轉成長期記憶；以前的事記得，病後的事只能記幾分鐘（Haines p.447）。",
+        "退化的範圍包括乳頭體、海馬與視丘背內側核（Haines p.447）。",
+        "病人常把零碎的記憶拼成沒發生過的事（虛談）（Haines p.447）。",
+        "Papez 迴路：海馬 → 穹窿 → 乳頭體 → 乳頭視丘徑 → 視丘前核 → 扣帶迴（[[tract:mammillothalamic]]）。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "221, 447"
+        },
+        {
+          "src": "barr",
+          "p": "183, 190"
+        },
+        {
+          "src": "ym04",
+          "p": "35"
+        }
+      ],
+      "region": "diencephalon"
+    },
+    "craniopharyngioma": {
+      "zh": "顱咽管瘤（鞍上腫瘤）",
+      "en": "Craniopharyngioma",
+      "aliases": [
+        "craniopharyngioma",
+        "Rathke pouch tumor",
+        "Rathke 囊腫瘤",
+        "suprasellar tumor",
+        "鞍上腫瘤",
+        "pituitary stalk lesion",
+        "垂體柄"
+      ],
+      "highYield": 3,
+      "summary": "Rathke 囊殘留長出的腫瘤，長在蝶鞍上方：壓迫視交叉（雙顳側偏盲）與垂體柄、下視丘（尿崩症），常見於兒童。",
+      "cause": "Rathke 囊沒有正常移位貼合漏斗，殘留的細胞長成腫瘤（Haines p.213–214, 443）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              74.5,
+              79.5
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  0,
+                  5
+                ],
+                "z": [
+                  12,
+                  21
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "bitemporal",
+        "di"
+      ],
+      "points": [
+        "會模仿垂體腫瘤：視力問題、尿崩症、顱內壓上升（Haines p.214）。",
+        "從下方壓視交叉正中：交叉的鼻側纖維先壞 → 雙顳側偏盲（[[lesion:chiasm]]）。",
+        "壓到垂體柄與正中隆起：下視丘垂體徑中斷 → 中樞性尿崩症（Barr p.195；Haines p.452）。",
+        "垂體前葉功能也可能不足（生長遲緩、性腺功能低下）；下視丘受損也可能造成肥胖（Barr p.197）。模型只推導神經路徑。"
+      ],
+      "sources": [
+        {
+          "src": "haines",
+          "p": "213–214, 443, 452"
+        },
+        {
+          "src": "barr",
+          "p": "195, 197, 316"
+        }
+      ],
+      "region": "diencephalon"
+    },
+    "parkinson": {
+      "zh": "Parkinson 病（黑質緻密部）",
+      "en": "Parkinson disease (substantia nigra pars compacta)",
+      "aliases": [
+        "Parkinson disease",
+        "paralysis agitans",
+        "巴金森氏症",
+        "帕金森氏症",
+        "parkinsonism",
+        "巴金森症候群"
+      ],
+      "highYield": 3,
+      "summary": "兩側黑質緻密部的多巴胺神經元退化：靜止型顫抖、齒輪狀僵直、運動遲緩（動作少、起步困難、面具臉）、姿勢不穩。",
+      "cause": "原因多半不明（退化性，平均 55 歲發病，常從一側開始）；少數由 MPTP、錳中毒、藥物（阻斷 D2）或反覆頭部外傷造成（Barr p.107；Haines p.390–392）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              64,
+              73
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  9.4,
+                  13
+                ],
+                "z": [
+                  1.5,
+                  3.2
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "parkinsonism:B"
+      ],
+      "points": [
+        "四大症狀：靜止型（搓藥丸樣）顫抖、齒輪狀僵直、運動遲緩／不動、姿勢反射喪失；另有面具臉、小碎步、前傾姿勢（Barr p.107；Haines p.391）。",
+        "迴路：失去多巴胺 → 直接路徑減弱、間接路徑增強 → 視丘下核與蒼白球內節過度活躍 → 視丘 VA、VL 被壓住 → 動作減少（Haines p.389）。",
+        "病理：緻密部黑色素消失，殘存神經元有 Lewy 小體；約 70–80% 神經元死亡才出現症狀（Haines p.391）。",
+        "治療：L-dopa＋carbidopa、多巴胺促效劑、MAO-B 抑制劑、抗膽鹼藥；手術破壞或深部腦刺激視丘下核、蒼白球內節（Barr p.107–108；Haines p.391–392）。",
+        "單側開始的 Parkinson 症狀在對側身體：可以在 3D 裡只選一側看看（[[lesion:hemiparkinson]]）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "107–108, 211"
+        },
+        {
+          "src": "haines",
+          "p": "387–392"
+        },
+        {
+          "src": "ym08",
+          "p": "24–26"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "22–24"
+        }
+      ],
+      "region": "basal-ganglia"
+    },
+    "hemiparkinson": {
+      "zh": "單側黑質受損（半側 Parkinson 症狀）",
+      "en": "Unilateral nigral lesion (hemiparkinsonism)",
+      "aliases": [
+        "hemiparkinsonism",
+        "半側巴金森",
+        "unilateral Parkinson"
+      ],
+      "highYield": 1,
+      "summary": "只有一側的黑質緻密部受損：Parkinson 症狀出現在對側身體。Parkinson 病也常從一側開始。",
+      "cause": "Parkinson 病早期（常從一側開始，Haines p.391）；少見的中腦局部病灶。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              64,
+              73
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  9.4,
+                  13
+                ],
+                "z": [
+                  1.5,
+                  3.2
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "parkinsonism:L"
+      ],
+      "points": [
+        "基底核迴路不交叉，最後經皮質脊髓徑交叉，所以症狀在病灶對側（Barr p.205–209）。",
+        "約 70–80% 的病人第一個症狀是一側的靜止型顫抖，之後才變成兩側（Haines p.391）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "107"
+        },
+        {
+          "src": "haines",
+          "p": "391"
+        },
+        {
+          "src": "ym08",
+          "p": "24"
+        }
+      ],
+      "region": "basal-ganglia",
+      "adjustable": false
+    },
+    "huntington": {
+      "zh": "Huntington 病（紋狀體）",
+      "en": "Huntington disease (striatum)",
+      "aliases": [
+        "Huntington disease",
+        "Huntington's chorea",
+        "亨丁頓舞蹈症",
+        "亨丁頓氏症",
+        "chorea",
+        "舞蹈症"
+      ],
+      "highYield": 3,
+      "summary": "體染色體顯性遺傳（第 4 對染色體 HTT 基因 CAG 重複）的紋狀體退化：舞蹈症、失智與精神症狀。尾狀核頭萎縮，側腦室前角變平、擴大。",
+      "cause": "體染色體顯性遺傳，HTT 基因的 CAG 三核苷酸重複；35–44 歲左右發病，重複越多越早發、越嚴重（Haines p.389）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              94,
+              106
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  10,
+                  20
+                ],
+                "z": [
+                  14,
+                  26
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "chorea:B"
+      ],
+      "points": [
+        "早期先死的是投射到蒼白球外節的紋狀體神經元（間接路徑）→ 外節過度活躍 → 視丘下核被壓住 → 蒼白球內節對視丘的抑制減少 → 舞蹈症（Haines p.387, 390）。",
+        "舞蹈症：快速、不規則、沒有目的、無法自主停止的動作，上肢與臉最明顯（Barr p.210）。",
+        "影像：尾狀核頭萎縮，側腦室前角外側壁變平、擴大（Haines Fig. 26.15 p.391）。",
+        "紋狀體約 90% 神經元流失；後期失智，常合併憂鬱、精神病（Barr p.211；Haines p.389）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "210–211"
+        },
+        {
+          "src": "haines",
+          "p": "387, 389–391"
+        },
+        {
+          "src": "ym08",
+          "p": "26–27"
+        },
+        {
+          "src": "tmu106b6",
+          "p": "22–24"
+        }
+      ],
+      "region": "basal-ganglia"
+    },
+    "wilson": {
+      "zh": "Wilson 病（豆狀核）",
+      "en": "Wilson disease (hepatolenticular degeneration)",
+      "aliases": [
+        "Wilson disease",
+        "hepatolenticular degeneration",
+        "肝豆狀核退化症",
+        "威爾森氏症",
+        "Kayser-Fleischer ring"
+      ],
+      "highYield": 2,
+      "summary": "銅代謝異常（ATP7B，體染色體隱性）：銅沉積在肝臟與豆狀核，殼核退化最明顯。肌張力異常、顫抖（揮翼樣）、構音困難、僵直，加上肝硬化與角膜 Kayser-Fleischer 環。",
+      "cause": "ATP7B 基因突變（第 13 對染色體，體染色體隱性），銅無法由膽汁排出；10–25 歲發病（Barr p.211；Haines p.392–393）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              87,
+              99
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  27,
+                  34
+                ],
+                "z": [
+                  -8,
+                  12
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "lentiform:B"
+      ],
+      "points": [
+        "殼核退化最明顯，嚴重時豆狀核出現空洞（Barr p.211；Haines Fig. 26.18 p.393）。",
+        "典型動作：揮翼樣顫抖（wing-beating tremor）、肌張力異常、構音困難、僵直、「譏笑」表情；也有精神症狀（Haines p.393）。",
+        "角膜邊緣的銅沉積＝Kayser-Fleischer 環（約 75% 有神經症狀的病人）（Haines p.392）。",
+        "治療：減少銅攝取、螯合劑（penicillamine、trientine）、鋅（Barr p.211；Haines p.393）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "211"
+        },
+        {
+          "src": "haines",
+          "p": "392–393"
+        },
+        {
+          "src": "ym08",
+          "p": "27"
+        }
+      ],
+      "region": "basal-ganglia"
+    }
+  }
+}

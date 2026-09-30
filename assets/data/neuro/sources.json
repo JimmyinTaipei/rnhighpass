@@ -1,0 +1,168 @@
+{
+  "barr": {
+    "short": "Barr's",
+    "title": "Barr's The Human Nervous System: An Anatomical Viewpoint, 10th ed.",
+    "authors": "Kiernan JA, Rajakumar N",
+    "note": "醫師國考指定用書"
+  },
+  "haines": {
+    "short": "Haines FN",
+    "title": "Fundamental Neuroscience for Basic and Clinical Applications, 5th ed.",
+    "authors": "Haines DE, Mihailoff GA",
+    "note": "醫師國考指定用書"
+  },
+  "atlas": {
+    "short": "Haines Atlas",
+    "title": "Neuroanatomy in Clinical Context: An Atlas of Structures, Sections, Systems, and Syndromes, 9th ed.",
+    "authors": "Haines DE",
+    "note": "橫切面形狀與 tract 位置的對照來源"
+  },
+  "noback": {
+    "short": "Noback",
+    "title": "Noback's Human Nervous System, 7th ed.",
+    "authors": "Strominger NL, Demarest RJ, Laemle LB"
+  },
+  "hy": {
+    "short": "High-Yield",
+    "title": "High-Yield Neuroanatomy",
+    "authors": "Fix JD"
+  },
+  "brs": {
+    "short": "BRS",
+    "title": "BRS Neuroanatomy",
+    "authors": "Fix JD"
+  },
+  "ym05": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym09": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b2": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b9": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b10": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "c112": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym031": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym032": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b3": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b4": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "c112m": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ex112m": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym06": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b8": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym04": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym07": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b5": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "ym08": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  },
+  "tmu106b6": {
+    "short": "醫學系共筆",
+    "title": "醫學系神經解剖學共筆與考古題（中文）",
+    "authors": "共筆",
+    "pageKind": "pdf",
+    "notes": true
+  }
+}

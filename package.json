@@ -11,7 +11,8 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "serve": "node scripts/dev-server.mjs",
-    "test": "node scripts/test-worker.mjs"
+    "test": "node scripts/test-worker.mjs",
+    "neuro": "node scripts/build-neuro.mjs && node scripts/check-neuro-data.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.136.1"
