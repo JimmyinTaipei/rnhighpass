@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>多保命 社群圖 第三篇</title>
+<link rel="stylesheet" href="../social.css">
+<style>
+  body { --total: "08"; }
+  .cover h1 { font-size: 118px; }
+  .shot.pad0 { padding: 14px; }
+  .shot.mid { width: 820px; align-self: center; }
+  .points { gap: 24px; margin-top: 40px; } .points li { font-size: 34px; padding-left: 46px; } .points li::before { top: 18px; }
+  .cap { margin-top: 30px; font-size: 34px; line-height: 1.6; color: var(--text); text-align: center; font-weight: 600; }
+  .cap b { color: var(--deep); }
+  /* 流程總覽 */
+  .flow.big li { padding: 16px 20px 16px 84px; }
+  .flow.big b { font-size: 34px; }
+  .flow.big span { font-size: 26px; }
+  .flow.big { gap: 14px; margin-top: 10px; }
+  .chal { margin-top: 22px; background: var(--gold-soft); border: 3px solid var(--gold); border-radius: 20px; padding: 16px 26px; display: flex; flex-direction: column; }
+  .chal b { font-size: 32px; color: #3A2A06; } .chal span { font-size: 25px; color: #6B5A20; margin-top: 4px; }
+  .slide:nth-of-type(2) .flow.big li { padding: 12px 20px 12px 84px; }
+  .slide:nth-of-type(2) .flow.big { gap: 12px; }
+  .slide:nth-of-type(2) .swipe { margin-top: 24px; font-size: 28px; padding: 10px 34px; }
+  /* 三格示範 */
+  .rounds { display: grid; gap: 20px; margin-top: 40px; }
+  .rd > div { display: flex; align-items: center; } .bx { margin-right: 20px; }
+  .rd { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 20px;
+        background: #fff; border-radius: 20px; padding: 20px 26px; border: 2px solid rgba(182,204,240,.7); }
+  .rd > b { font-size: 34px; color: var(--deep); }
+  .rd span { font-size: 27px; color: var(--muted); }
+  .bx { display: inline-flex; gap: 8px; margin-right: 14px; vertical-align: middle; }
+  .bx i { width: 50px; height: 50px; border: 4px solid var(--accent); border-radius: 8px; background: #fff;
+          display: grid; place-items: center; font-style: normal; font-size: 38px; font-weight: 800; line-height: 1; }
+  .bx i.o { color: #2E8B57; } .bx i.x { color: #C0504D; }
+  /* 檢討 */
+  .review { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 8px; }
+  .review .col { background: #fff; border-radius: 24px; padding: 22px; border: 2px solid rgba(182,204,240,.7); }
+  .review .col.hl { border: 4px solid var(--gold); }
+  .review h3 { font-size: 36px; color: var(--deep); margin-bottom: 8px; }
+  .review p { font-size: 28px; line-height: 1.5; color: var(--muted); }
+  .review img { display: block; width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 8px; margin-top: 14px; border: 2px solid var(--light); }
+  .review .vis { height: 120px; margin-top: 14px; }
+  /* 時間軸 */
+  .tl { display: grid; gap: 26px; margin-top: 8px; }
+  .tl .it { display: grid; grid-template-columns: 300px 1fr; background: #fff; border-radius: 24px; overflow: hidden; border: 2px solid rgba(182,204,240,.7); }
+  .tl .when { padding: 34px 8px !important; background: var(--deep); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 22px 8px; }
+  .tl .it:last-child .when { background: var(--gold); color: #3A2A06; }
+  .tl .when b { white-space: nowrap; font-size: 46px; line-height: 1.15; } .tl .when span { font-size: 24px; font-weight: 600; opacity: .85; }
+  .tl .what { padding: 24px 30px; }
+  .tl .what h3 { font-size: 40px; color: var(--deep); margin-bottom: 6px; }
+  .tl .what p { font-size: 31px; line-height: 1.55; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- 1 封面 -->
+<section class="slide cover">
+  <div class="brand tight"><img src="../../assets/images/多保命.png" alt=""><span>多保命 RN High Pass</span></div>
+  <span class="pill">期中・期末考</span>
+  <h1>用分章題本<br>準備考試</h1>
+  <p class="sub">從定範圍到考前複習，寫題流程推薦</p>
+  <div class="tags">
+    <span class="tag gold big">免費</span>
+    <span class="tag big">免註冊</span>
+  </div>
+  <div class="fan">
+    <img src="../../assets/images/covers/bundles/01_workbook.jpg" alt="">
+    <img src="../../assets/images/covers/bundles/05_workbook.jpg" alt="">
+    <img src="../../assets/images/covers/bundles/07_workbook.jpg" alt="">
+    <img src="../../assets/images/covers/bundles/10_workbook.jpg" alt="">
+    <img src="../../assets/images/covers/bundles/11_workbook.jpg" alt="">
+  </div>
+  <div class="waves"></div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 2 流程總覽 -->
+<section class="slide">
+  <div class="num">02</div>
+  <div class="kicker">流程總覽</div>
+  <h2>一輪讀書<br>分成<em>五個步驟</em></h2>
+  <ol class="flow big">
+    <li><b>定範圍</b><span>確認考試範圍，對應到章節與課本</span></li>
+    <li><b>讀完再寫</b><span>看完課本或上完課，打開同一章題本限時寫</span></li>
+    <li><b>對答案、打標記</b><span>每 10 題對一次，用三個框框記錄對錯</span></li>
+    <li><b>檢討</b><span>先看課本，再對照詳解</span></li>
+    <li><b>考前複習</b><span>只挑標記出來的錯題再寫一次，節省時間，提高複習效率</span></li>
+  </ol>
+  <div class="chal"><b>想要多挑戰？寫寫跨章與跨科考題</b><span>這類題目是依相似觀念收錄，可能超出考試範圍，當作挑戰就好</span></div>
+  <div class="swipe">往右滑，一步一步看 →</div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 3 定範圍 -->
+<section class="slide">
+  <div class="num">03</div>
+  <div class="kicker">步驟 1</div>
+  <h2>先確認<br><em>考試範圍</em></h2>
+  <div class="shot pad0">
+    <img src="shots/wb-chapter-head.png" alt="">
+  </div>
+  <p class="cap">拿到考試範圍後，先列出<b>對應的章節</b><br>每章開頭有<b>課本章節對照</b>（捷徑、華杏、永大與新文京等）</p>
+  <ul class="points">
+    <li>範圍以<b>老師公布的講義、課本章節</b>為準</li>
+    <li>範圍很多科時，合訂本可以整科帶著走</li>
+    <li><b>合訂本太多？</b>可選擇分章下載，只下載要考的章節</li>
+  </ul>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 4 讀完再寫 -->
+<section class="slide">
+  <div class="num">04</div>
+  <div class="kicker">步驟 2</div>
+  <h2>讀完考試範圍<br>再開始<em>寫題本</em></h2>
+  <div class="shot pad0">
+    <img src="../../assets/images/guide/wb-jump.png" alt="">
+  </div>
+  <p class="cap" style="margin-top:22px">題本沒有詳解，答案集中在章末<br>每寫 <b>10 題</b>，點「跳至答案區」對一次</p>
+  <ul class="points">
+    <li><b>目的不是拿高分</b>，是找出還不熟的觀念</li>
+    <li>不看答案、自己計時，模擬考試情境</li>
+    <li>對完答案，點「↩回第 N 題」回到題目繼續寫</li>
+  </ul>
+  <div class="shot pad0" style="margin-top:30px;height:240px;overflow:hidden"><img src="../../assets/images/guide/wb-answers.png" alt="" style="margin-top:0"></div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 5 三格標記 -->
+<section class="slide">
+  <div class="num">05</div>
+  <div class="kicker">步驟 3</div>
+  <h2>用<em>三個框框</em><br>快速標記每一輪</h2>
+  <div class="shot pad0">
+    <img src="shots/wb-q1.png" alt="">
+  </div>
+  <div class="rounds">
+    <div class="rd"><b>第 1 輪</b><div><span class="bx"><i class="x">✗</i><i></i><i></i></span><span>寫完對答案，錯的在第一格打叉</span></div></div>
+    <div class="rd"><b>第 2 輪</b><div><span class="bx"><i class="x">✗</i><i class="o">✓</i><i></i></span><span>複習後再寫，這次對了就打勾</span></div></div>
+    <div class="rd"><b>第 3 輪</b><div><span class="bx"><i class="x">✗</i><i class="x">✗</i><i></i></span><span>連續錯的，就是考前優先看的題目</span></div></div>
+  </div>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 6 檢討 -->
+<section class="slide">
+  <div class="num">06</div>
+  <div class="kicker">步驟 4</div>
+  <h2>檢討順序：<br>先<em>課本</em>，再<em>詳解</em></h2>
+  <div class="review">
+    <div class="col hl">
+      <h3>① 翻課本</h3>
+      <p>最準確。回到課本找到那個觀念，自己讀一次</p>
+      
+    </div>
+    <div class="col">
+      <h3>② 對照詳解</h3>
+      <p>用題號到分章詳解搜尋，每個選項都有說明</p>
+      <img src="../../assets/images/guide/exp-explanation.png" alt="">
+    </div>
+  </div>
+  <p class="cap" style="margin-top:28px;font-size:30px">複製題目右下方的考題出處，例如 <b>113-3-精社-30</b><br>到同一章的分章詳解搜尋，就能找到那一題</p>
+  <p class="fine" style="line-height:1.6">詳解由 AI 協助生成，有疑問請以課本與老師講義為準<br>若有錯誤，可至網頁填寫「問題回饋」表單</p>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 7 時間安排 -->
+<section class="slide">
+  <div class="num">07</div>
+  <div class="kicker">步驟 5</div>
+  <h2>考前怎麼<em>排時間</em></h2>
+  <div class="tl">
+    <div class="it"><div class="when"><b>考前 3 週</b><span>第 1 輪</span></div><div class="what"><h3>讀課本＋寫題本</h3><p>一章一章讀完就寫，錯的先打叉</p></div></div>
+    <div class="it"><div class="when"><b>考前 1 週</b><span>第 2 輪</span></div><div class="what"><h3>檢討＋再寫一遍</h3><p>回課本補觀念，再寫一次，對了打勾</p></div></div>
+    <div class="it"><div class="when"><b>前 3 天</b><span>第 3 輪</span></div><div class="what"><h3>只練錯題</h3><p>挑框框有叉的題目，重點複習</p></div></div>
+  </div>
+  <p class="cap" style="margin-top:44px">重點是每一輪都只複習<b>還不會的</b><br>考前可再針對正確題目快速瀏覽</p>
+  <p class="fine">時間長短依自己的進度調整</p>
+  <div class="foot"><span>rnhighpass.com</span></div>
+</section>
+
+<!-- 8 提醒 + CTA -->
+<section class="slide cta">
+  <img class="omamori" src="../../assets/images/多保命.png" alt="" style="width:300px;height:300px">
+  <p class="lead">免費・免註冊・直接下載</p>
+  <div class="url">rnhighpass.com</div>
+  <div class="card checklist">
+    <p>📌 收藏這篇，考前照著走一遍</p>
+    <p>👉 追蹤 IG／Threads：@rnhighpass</p>
+    <p>💬 轉發給一起準備考試的同學</p>
+  </div>
+  <p class="bless">多保命，祝大家考試 <em>High Pass</em></p>
+  <p class="fine">題本是校內考題型的練習，不等於押題，考試範圍以老師公布為準</p>
+  <div class="waves"></div>
+</section>
+
+<script src="../social.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """從實際的 PDF 裁出「使用教學」頁面用的截圖，輸出到 assets/images/guide/。
 
-    python3 scripts/make-guide-shots.py [--src ~/Downloads/0_護理國考分章/07_pdf]
+    python3 scripts/make-guide-shots.py [--src ~/Projects/多保命護理分章/07_pdf]
 
 需要 PyMuPDF（pip install pymupdf）。
 
@@ -20,7 +20,7 @@ import fitz  # PyMuPDF
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "images", "guide")
-DEFAULT_SRC = os.path.expanduser("~/Downloads/0_護理國考分章/07_pdf")
+DEFAULT_SRC = os.path.expanduser("~/Projects/多保命護理分章/07_pdf")
 
 SCALE = 2          # 2 倍解析度，Retina 螢幕上才不會糊
 PAD = 6            # 裁切範圍上緣與左右留白（pt）
