@@ -4,3 +4,4 @@ nursing_tool/
 .wrangler/
 dist-r2/
 .r2-uploaded.log
+scripts/ekg/build/
