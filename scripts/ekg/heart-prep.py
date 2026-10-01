@@ -48,7 +48,6 @@ GROUPS = {
     "RV": [2, 28, 29],            # 右心室（29 = 右心室中膈面的 FEC）
     "LA": [3, 11, 12, 13, 14, 15, 18, 21, 22, 23, 24],   # 左心房＋肺靜脈＋左心耳
     "RA": [4, 16, 17, 19, 20],    # 右心房＋上下腔靜脈
-    "Bachmann": [26],
     "Aorta": [5],
     "PulmArtery": [6],
     "MitralValve": [7],
@@ -131,7 +130,16 @@ def surfaces(P, tet, tag):
         gid[tags] = i
     F = np.concatenate([tet[:, [0, 1, 2]], tet[:, [0, 1, 3]], tet[:, [0, 2, 3]], tet[:, [1, 2, 3]]])
     opp = np.concatenate([tet[:, 3], tet[:, 2], tet[:, 1], tet[:, 0]])
-    G = np.tile(gid[tag], 4)
+    # Bachmann 束（26）不單獨顯示：每個四面體併入距離較近的那一側心房
+    tg = gid[tag]
+    bb = tag == 26
+    if bb.any():
+        cen = P[tet[bb]].mean(1)
+        cla, cra = P[np.unique(tet[tag == 3])].mean(0), P[np.unique(tet[tag == 4])].mean(0)
+        names = list(GROUPS)
+        tg[bb] = np.where(np.linalg.norm(cen - cla, axis=1) < np.linalg.norm(cen - cra, axis=1),
+                          names.index("LA"), names.index("RA"))
+    G = np.tile(tg, 4)
     s = np.sort(F, 1)
     key = s[:, 0] * (1 << 42) + s[:, 1] * (1 << 21) + s[:, 2]
     order = np.lexsort((G, key))
@@ -414,12 +422,52 @@ def compute_nodes(P, tet, tag, L, paths, h=3.2):
     def nearest(p, ventricular):
         idx = np.where(vent if ventricular else ~vent)[0]
         return int(idx[np.linalg.norm(pos[idx] - p, axis=1).argmin()])
+
+    # 3D 互動心臟（heart3d.js）其他節律要用的位置
+    tnodes = lambda t: np.unique(tet[np.isin(tag, t)])
+    # PVC 異位點：左心室側壁中段（心尖→心底 0.4–0.6 之間最外側）
+    lvi = np.where((creg == 0) & (ab > 0.4) & (ab < 0.6))[0]
+    L["PVC"] = pos[lvi[np.argmax(pos[lvi, 0])]]
+    # 心房異位點：左心房後壁
+    lai = np.where(creg == 2)[0]
+    L["EctopicA"] = pos[lai[np.argmin(pos[lai, 2] - 0.3 * np.abs(pos[lai, 1] - pos[lai, 1].mean()))]]
+    # Kent bundle（WPW）：左側房室溝，跨過二尖瓣環外側，從左心房到左心室
+    mvp = P[tnodes([7])]
+    lat = mvp[np.argmax(mvp[:, 0])]
+    la_side = pos[lai[np.linalg.norm(pos[lai] - lat, axis=1).argmin()]]
+    lv_all = np.where(creg == 0)[0]
+    lv_side = pos[lv_all[np.linalg.norm(pos[lv_all] - lat, axis=1).argmin()]]
+    out = lat - P[tnodes([7])].mean(0)
+    out /= np.linalg.norm(out)
+    paths["Kent"] = smooth(np.array([la_side, lat + out * 4, lv_side]), step=1.5, it=10)
+    L["Kent_end"] = lv_side
+    # 心房撲動迴路：右心房裡繞三尖瓣環一圈（貼著右心房壁）
+    tv = P[tnodes([8])]
+    c = tv.mean(0)
+    _, _, vt = np.linalg.svd(tv - c)
+    u, v_, nrm = vt[0], vt[1], vt[2]
+    rai = np.where(creg == 3)[0]
+    if (pos[rai].mean(0) - c) @ nrm < 0:
+        nrm = -nrm
+    R = np.median(np.linalg.norm((tv - c) - np.outer((tv - c) @ nrm, nrm), axis=1)) * 1.15
+    ring = []
+    for th in np.linspace(0, 2 * np.pi, 36, endpoint=False):
+        q = c + R * (np.cos(th) * u + np.sin(th) * v_) + nrm * 6
+        ring.append(pos[rai[np.linalg.norm(pos[rai] - q, axis=1).argmin()]])
+    ring = np.array(ring)
+    for _ in range(6):                                           # 環狀平滑
+        ring = 0.5 * ring + 0.25 * (np.roll(ring, 1, 0) + np.roll(ring, -1, 0))
+    paths["FlutterRing"] = ring
+    L["TV_center"], L["TV_normal"] = c, nrm
+    L["LA_entry"] = np.array(paths["Bachmann"])[-1]
     plen = lambda k: float(np.linalg.norm(np.diff(np.array(paths[k]), axis=0), axis=1).sum())
     seeds = {
         "SA": nearest(L["SA"], False), "AVN": nearest(L["AVN"], False),
         "Septal": nearest(L["Septal_seed"], True), "LAF": nearest(L["LAF_end"], True),
         "LPF": nearest(L["LPF_end"], True), "RBB": nearest(L["RBB_end"], True),
         "RVSeptal": nearest(L["RV_septal_seed"], True),
+        "PVC": nearest(L["PVC"], True), "EctopicA": nearest(L["EctopicA"], False),
+        "Kent": nearest(L["Kent_end"], True), "LAentry": nearest(L["LA_entry"], False),
     }
     return dict(
         pos=np.round(pos, 1).ravel().tolist(), vol=np.round(cvol, 1).tolist(),
@@ -654,8 +702,10 @@ def main():
         "flags": {"fec": 1, "bachmann": 2},
         **nodes,
         "electrodes": data["electrodes"],
-        "landmarks": {k: data["landmarks"][k] for k in ("SA", "AVN", "His", "Bifurcation", "Apex")},
-        "paths": data["paths"],
+        "landmarks": {k: np.round(np.asarray(L[k], float), 2).tolist() for k in
+                      ("SA", "AVN", "His", "Bifurcation", "Apex", "PVC", "EctopicA", "Kent_end", "LA_entry",
+                       "TV_center", "TV_normal", "LAF_end", "LPF_end", "RBB_end")},
+        "paths": {k: np.round(np.asarray(v, float), 2).tolist() for k, v in paths.items()},
     }
     NODES_OUT.parent.mkdir(parents=True, exist_ok=True)
     json.dump(web, open(NODES_OUT, "w"), ensure_ascii=False, separators=(",", ":"))

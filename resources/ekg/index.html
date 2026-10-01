@@ -46,7 +46,6 @@
 
       <nav class="tabs" aria-label="心電圖教學分頁">
         <a class="tab" href="/resources/ekg/index.html" aria-current="page">3D 互動心臟</a>
-        <a class="tab" href="/resources/ekg/vector.html">心電向量</a>
         <a class="tab" href="/resources/ekg/basics.html">基礎與判圖</a>
         <a class="tab" href="/resources/ekg/rhythms.html">心律不整</a>
         <a class="tab" href="/resources/ekg/blocks.html">傳導阻滯</a>
@@ -82,6 +81,7 @@
             <legend>顯示</legend>
             <label><input type="checkbox" data-toggle="showMyo" checked> 心肌</label>
             <label><input type="checkbox" data-toggle="showCond" checked> 傳導系統</label>
+            <label><input type="checkbox" data-toggle="showCoro"> 冠狀動脈</label>
             <label><input type="checkbox" data-toggle="showLabels" checked> 名稱</label>
             <label><input type="checkbox" data-toggle="showAxis"> 導程方向</label>
           </fieldset>
@@ -137,7 +137,7 @@
           <li><b>逐段前進</b>：按「下一段」會暫停，並跳到下一個波段（P → PR → QRS → ST → T），下方的說明會告訴你這時候電流在哪裡。</li>
           <li><b>顏色</b>：黃白色是正在前進的去極化波前、紅色是已經去極化（正在收縮）、藍色是正在再極化，傳導系統被電流通過時會亮起來。</li>
           <li><b>導程</b>：切換 II、V1、V6，並打開「導程方向」，可以對照「電流朝向正極 → 正波」的原則，看為什麼 RBBB 在 V1 會出現兔耳朵。</li>
-          <li>心臟是為了教學簡化過的示意模型，形狀與比例不是真實解剖；波形也是示意圖，真實的心電圖請看各章節中的 12 導程範例。</li>
+          <li>心臟是一位健康成人的真實 CT 模型；電流在心肌裡的傳導時間是沿著心肌估算的教學簡化版。下方波形是示意圖，真實的心電圖請看各章節中的 12 導程範例。</li>
         </ul>
       </section>
 
@@ -192,7 +192,8 @@
       <section id="credits">
         <h3>資料來源與授權</h3>
         <ul class="ekg-credits">
-          <li>3D 心臟模型、動畫與所有節律條（方格紙上的單導程波形）都是本站以程式自行繪製的示意圖。</li>
+          <li>3D 心臟幾何取自 Rodero 等人的四腔心模型資料集（健康女性受試者 FC9，案例 H2JQVUUF）：<i>Sex- and Disease-Stratified Patient-Specific Four-Chamber Heart Models from Clinical CT</i>，<a href="https://zenodo.org/records/19351401" rel="noopener">Zenodo 19351401</a>，CC BY 4.0。本站已修改：重新放置竇房結（原資料位於下腔靜脈旁）、自行推估房室結與希氏束位置、依解剖規則繪製結間徑路、束支、Kent bundle、心房撲動迴路與冠狀動脈主幹，Bachmann bundle 併入心房，並經抽樣、平滑、減面供網頁使用。</li>
+          <li>動畫與所有節律條（方格紙上的單導程波形）是本站以程式自行繪製的示意圖。</li>
           <li>各章節中的真實 12 導程心電圖取自 <a href="https://physionet.org/content/ptb-xl/1.0.3/" rel="noopener">PTB-XL</a>（CC BY 4.0），由本站依原始訊號重新繪製，每張圖下方標有紀錄編號。引用：Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., &amp; Schaeffter, T. (2022). <i>PTB-XL, a large publicly available electrocardiography dataset</i> (version 1.0.3). PhysioNet. https://doi.org/10.13026/kfzx-aw45；Wagner, P. et al. (2020). PTB-XL, a large publicly available electrocardiography dataset. <i>Scientific Data</i>, 7, 154；Goldberger, A. et al. (2000). PhysioBank, PhysioToolkit, and PhysioNet. <i>Circulation</i>, 101(23), e215–e220。</li>
           <li>3D 繪圖使用 <a href="https://threejs.org/" rel="noopener">three.js</a>（MIT License）。</li>
           <li>文字內容參考社團心電圖講義重新整理改寫。本頁僅供學習使用，不能取代臨床判斷與正式教科書。</li>

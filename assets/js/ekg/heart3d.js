@@ -1,9 +1,9 @@
 /**
  * 3D 互動心臟：看電流怎麼在心臟裡走，並和下方的心電圖同步。
  *
- * 心臟是用程式組出來的示意模型（不是掃描模型），座標系：
- *   +x = 病人左側、+y = 頭側、+z = 前方（面向讀者）
- * 心肌每個頂點都事先算好「活化延遲」，shader 依目前時間上色：
+ * 心臟是真實 CT 模型（Rodero 等人 CEMRG 四腔心，CC BY 4.0；見 heart-real.js），座標系：
+ *   +x = 病人左側、+y = 頭側、+z 前方（面向讀者），1 單位 = 5 cm
+ * 心肌每個頂點都事先算好「活化延遲」（沿心肌走最短路徑），shader 依目前時間上色：
  *   黃白色 = 去極化波前、紅色 = 已去極化、藍色 = 正在再極化。
  * 傳導系統（SA node → AV node → His → 束支 → Purkinje）是一段段的管子，
  * 電流經過時從頭亮到尾，被阻斷的地方就停住。
@@ -13,6 +13,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/OrbitControls.js";
 import { getRhythm, sample, segmentAt, nextBoundary, VENT_MODE } from "./rhythms.js";
+import { loadRealHeart } from "./heart-real.js";
 
 var V3 = function (x, y, z) { return new THREE.Vector3(x, y, z); };
 
@@ -63,178 +64,9 @@ export var RHYTHM_ORDER = [
 
 /* ============================== 解剖位置 ============================== */
 
-var P = {
-  SA: V3(-0.86, 1.3, 0.28),
-  AVN: V3(-0.28, 0.5, 0.02),
-  HIS: V3(-0.1, 0.24, 0.14),
-  LBB: V3(0.06, 0.1, 0.1),
-  LA_ENTRY: V3(0.15, 1.05, -0.35),
-  CENTER: V3(0.05, -0.15, 0.05)
-};
-
-var PATHS = {
-  // 三條結間徑路（前、中、後）與 Bachmann bundle
-  int1: [P.SA, V3(-0.55, 1.15, 0.55), V3(-0.35, 0.8, 0.35), P.AVN],
-  int2: [P.SA, V3(-0.8, 0.95, 0.2), V3(-0.5, 0.65, 0.08), P.AVN],
-  int3: [P.SA, V3(-1.05, 0.95, -0.15), V3(-0.65, 0.6, -0.2), P.AVN],
-  bach: [P.SA, V3(-0.5, 1.3, 0.1), V3(-0.1, 1.2, -0.15), P.LA_ENTRY, V3(0.55, 1.05, -0.6)],
-  avn: [P.AVN, V3(-0.2, 0.38, 0.06), P.HIS],
-  his: [P.HIS, V3(-0.02, 0.17, 0.13), P.LBB],
-  rbb: [P.HIS, V3(-0.18, -0.1, 0.38), V3(-0.05, -0.6, 0.52), V3(0.12, -1.0, 0.6)],
-  mod: [V3(-0.05, -0.6, 0.52), V3(-0.35, -0.62, 0.72), V3(-0.62, -0.5, 0.78)],
-  lbb: [P.LBB, V3(0.14, -0.05, 0.1)],
-  laf: [V3(0.14, -0.05, 0.1), V3(0.35, -0.4, 0.38), V3(0.62, -0.85, 0.48), V3(0.82, -1.2, 0.42)],
-  lpf: [V3(0.14, -0.05, 0.1), V3(0.4, -0.35, -0.2), V3(0.78, -0.8, -0.12), V3(0.9, -1.2, 0.12)],
-  lsf: [V3(0.14, -0.05, 0.1), V3(0.2, -0.35, 0.22), V3(0.28, -0.6, 0.28)],
-  pk1: [V3(0.82, -1.2, 0.42), V3(0.8, -1.48, 0.32)],
-  pk2: [V3(0.82, -1.2, 0.42), V3(1.2, -0.75, 0.5)],
-  pk3: [V3(0.9, -1.2, 0.12), V3(1.25, -0.65, -0.35)],
-  pk4: [V3(0.12, -1.0, 0.6), V3(-0.25, -1.0, 0.82)],
-  kent: [V3(0.55, 1.0, -0.62), V3(0.95, 0.45, -0.55), V3(1.15, 0.05, -0.35)],
-  ring: null // 心房撲動的迴圈，下面用圓形另外產生
-};
-
-// 心室活化的起點（Purkinje 末端）：[位置, 相對時間 ms]
-var VENT_SOURCES = {
-  lsf: [V3(0.28, -0.6, 0.28), 0],
-  laf: [V3(0.82, -1.2, 0.42), 8],
-  lpf: [V3(0.9, -1.2, 0.12), 8],
-  pk1: [V3(0.8, -1.48, 0.32), 14],
-  pk2: [V3(1.2, -0.75, 0.5), 16],
-  pk3: [V3(1.25, -0.65, -0.35), 16],
-  rbb: [V3(0.12, -1.0, 0.6), 10],
-  mod: [V3(-0.62, -0.5, 0.78), 16],
-  pk4: [V3(-0.25, -1.0, 0.82), 16]
-};
-var LEFT_SRC = ["lsf", "laf", "lpf", "pk1", "pk2", "pk3"];
-var RIGHT_SRC = ["rbb", "mod", "pk4"];
-var PVC_FOCUS = V3(1.3, -0.35, 0.1);
-var KENT_END = V3(1.15, 0.05, -0.35);
-var ECTOPIC_A = V3(0.45, 1.05, -0.95);
-
-/* ============================== 幾何 ============================== */
-
-/** 蛋形心腔：center、往心底的方向 up、上下半徑、橫切面兩個半徑。 */
-function egg(o) {
-  var geo = new THREE.SphereGeometry(1, 64, 44);
-  var up = o.up.clone().normalize();
-  var side = new THREE.Vector3().crossVectors(up, o.front || V3(0, 0, 1)).normalize();
-  var front = new THREE.Vector3().crossVectors(side, up).normalize();
-  var pos = geo.attributes.position, v = new THREE.Vector3();
-  for (var i = 0; i < pos.count; i++) {
-    v.fromBufferAttribute(pos, i);
-    var ly = v.y * (v.y > 0 ? o.top : o.bottom);
-    var taper = o.taper && v.y < 0 ? 1 - o.taper * v.y * v.y : 1;
-    var p = o.center.clone()
-      .addScaledVector(up, ly)
-      .addScaledVector(side, v.x * o.rx * taper)
-      .addScaledVector(front, v.z * o.rz * taper);
-    pos.setXYZ(i, p.x, p.y, p.z);
-  }
-  geo.userData.frame = { center: o.center, up: up, side: side, front: front, top: o.top, bottom: o.bottom, rx: o.rx, rz: o.rz, taper: o.taper };
-  return geo;
-}
-
-/** 把 RV 的內側壓到 LV 表面外，做出包住左心室的新月形。 */
-function wrapAround(geo, lvFrame, gap) {
-  var pos = geo.attributes.position, v = new THREE.Vector3(), d = new THREE.Vector3();
-  var f = lvFrame;
-  for (var i = 0; i < pos.count; i++) {
-    v.fromBufferAttribute(pos, i);
-    d.subVectors(v, f.center);
-    var ly = d.dot(f.up), lx = d.dot(f.side), lz = d.dot(f.front);
-    var ry = ly > 0 ? f.top : f.bottom;
-    var t = ly < 0 && f.taper ? 1 - f.taper * (ly / ry) * (ly / ry) : 1;
-    var e = Math.sqrt((ly / ry) * (ly / ry) + (lx / (f.rx * t)) * (lx / (f.rx * t)) + (lz / (f.rz * t)) * (lz / (f.rz * t)));
-    var lim = 1 + gap;
-    if (e < lim && e > 0.001) {
-      var k = lim / e;
-      pos.setXYZ(i, f.center.x + (v.x - f.center.x) * k, f.center.y + (v.y - f.center.y) * k, f.center.z + (v.z - f.center.z) * k);
-    }
-  }
-}
-
-function buildChambers() {
-  var lv = egg({ center: V3(0.5, -0.25, 0.02), up: V3(-0.3, 1, -0.22), top: 0.62, bottom: 1.3, rx: 0.78, rz: 0.72, taper: 0.28 });
-  var rv = egg({ center: V3(-0.2, -0.2, 0.42), up: V3(-0.45, 1, -0.1), top: 0.6, bottom: 1.0, rx: 0.78, rz: 0.55, taper: 0.2 });
-  wrapAround(rv, lv.userData.frame, 0.1);
-  var ra = egg({ center: V3(-0.92, 0.82, 0.12), up: V3(0.05, 1, 0), top: 0.5, bottom: 0.5, rx: 0.52, rz: 0.55 });
-  var la = egg({ center: V3(0.38, 0.95, -0.62), up: V3(0, 1, 0.1), top: 0.42, bottom: 0.42, rx: 0.6, rz: 0.48 });
-  [lv, rv, ra, la].forEach(function (g) { g.computeVertexNormals(); });
-  return { lv: lv, rv: rv, ra: ra, la: la };
-}
-
-/* ============================== 活化延遲 ============================== */
-
-function delaysFrom(geo, sources, v) {
-  var pos = geo.attributes.position, out = new Float32Array(pos.count), p = new THREE.Vector3();
-  for (var i = 0; i < pos.count; i++) {
-    p.fromBufferAttribute(pos, i);
-    var best = Infinity;
-    for (var s = 0; s < sources.length; s++) {
-      var t = sources[s][1] + p.distanceTo(sources[s][0]) / v;
-      if (t < best) best = t;
-    }
-    out[i] = best;
-  }
-  return out;
-}
-
-function maxOf(arrs) {
-  var m = 0;
-  arrs.forEach(function (a) { for (var i = 0; i < a.length; i++) if (a[i] > m) m = a[i]; });
-  return m;
-}
-
-function scaleTo(arrs, target) {
-  var m = maxOf(arrs), k = target / m;
-  arrs.forEach(function (a) { for (var i = 0; i < a.length; i++) a[i] *= k; });
-  return target;
-}
-
-/** 算出每種活化模式下，每個頂點的延遲（ms）。 */
-function buildPatterns(g) {
-  var pat = { atria: {}, vent: {} };
-  var aSrc = function (list, dur) {
-    var ra = delaysFrom(g.ra, list, 0.02), la = delaysFrom(g.la, list, 0.02);
-    scaleTo([ra, la], dur);
-    return { ra: ra, la: la, max: dur };
-  };
-  pat.atria.sa = aSrc([[P.SA, 0], [P.LA_ENTRY, 22]], 100);
-  pat.atria.ectopicA = aSrc([[ECTOPIC_A, 0]], 90);
-  pat.atria.retro = aSrc([[P.AVN, 0]], 80);
-  // 心房撲動：右心房依繞三尖瓣環的角度決定時間，左心房由 Bachmann bundle 接過去
-  (function () {
-    var c = V3(-0.75, 0.55, 0.2), pos = g.ra.attributes.position, ra = new Float32Array(pos.count), p = new THREE.Vector3();
-    for (var i = 0; i < pos.count; i++) {
-      p.fromBufferAttribute(pos, i);
-      var ang = Math.atan2(p.y - c.y, p.z - c.z);
-      ra[i] = ((ang / (Math.PI * 2) + 1) % 1) * 200;
-    }
-    var la = delaysFrom(g.la, [[P.LA_ENTRY, 60]], 0.02);
-    for (var j = 0; j < la.length; j++) la[j] = Math.min(la[j], 60 + (la[j] - 60) * 0.5) % 200;
-    pat.atria.flutter = { ra: ra, la: la, max: 200 };
-  })();
-
-  var vSrc = function (keys, shift) {
-    return keys.map(function (k) { return [VENT_SOURCES[k][0], VENT_SOURCES[k][1] + (shift || 0)]; });
-  };
-  // 以正常傳導校正心肌傳導速度：整個心室 90 ms 內去極化完畢
-  var normalList = vSrc(LEFT_SRC.concat(RIGHT_SRC));
-  var lv0 = delaysFrom(g.lv, normalList, 0.01), rv0 = delaysFrom(g.rv, normalList, 0.01);
-  var vMyo = 0.01 * (maxOf([lv0, rv0]) - 16) / (90 - 16);
-  var vPat = function (list, dur) {
-    var lv = delaysFrom(g.lv, list, vMyo), rv = delaysFrom(g.rv, list, vMyo);
-    if (dur) scaleTo([lv, rv], dur);
-    return { lv: lv, rv: rv, max: maxOf([lv, rv]) };
-  };
-  pat.vent.normal = vPat(normalList, 90);
-  pat.vent.rbbb = vPat(vSrc(LEFT_SRC), 140);
-  pat.vent.lbbb = vPat(vSrc(RIGHT_SRC), 160);
-  pat.vent.ectopicV = vPat([[PVC_FOCUS, 0]], 160);
-  pat.vent.wpw = vPat([[KENT_END, 0]].concat(vSrc(LEFT_SRC.concat(RIGHT_SRC), 80)), 0);
-  return pat;
-}
+// 心臟幾何、傳導路徑與各模式的活化延遲來自真實 CT 模型（heart-real.js）。
+// 這裡只放 three 物件建好前的預設值；模型載入後由 applyModel() 填入。
+var P = { CENTER: V3(-0.3, 0.1, -0.2) };
 
 /* ============================== Shader ============================== */
 
@@ -314,7 +146,7 @@ export function createHeartViewer(root) {
   var stage = $(".hv-stage"), ecgCanvas = $(".hv-ecg canvas");
   var state = {
     rhythm: null, now: 0, speed: 0.25, playing: true, lead: "II",
-    showMyo: true, showCond: true, showLabels: true, showAxis: false
+    showMyo: true, showCond: true, showLabels: true, showAxis: false, showCoro: false
   };
 
   /* ---------- three.js 場景 ---------- */
@@ -329,9 +161,9 @@ export function createHeartViewer(root) {
     var camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
     camera.position.set(0.9, 0.4, 7.2);
     var controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.copy(P.CENTER).add(V3(0, 0.2, 0));
+    controls.target.copy(P.CENTER);
     controls.enableDamping = true;
-    controls.minDistance = 3.5;
+    controls.minDistance = 2.2;
     controls.maxDistance = 12;
     controls.enablePan = false;
 
@@ -340,13 +172,30 @@ export function createHeartViewer(root) {
     dl.position.set(2, 3, 4);
     scene.add(dl);
 
-    var geos = buildChambers();
-    var patterns = buildPatterns(geos);
+    var t = { renderer: renderer, scene: scene, camera: camera, controls: controls, ready: false,
+      chambers: {}, cond: {}, arrows: {}, coro: [] };
+    loadRealHeart().then(function (model) {
+      applyModel(t, model);
+      resize();
+      frame(true);
+    }).catch(function (e) {
+      console.warn("3D 心臟模型載入失敗，只顯示心電圖", e);
+      root.classList.add("hv-no-webgl");
+    });
+    return t;
+  }
 
-    var chambers = {};
+  /** 把真實模型放進場景：心腔、大血管、瓣膜、冠狀動脈、傳導系統、標籤位置。 */
+  function applyModel(t, m) {
+    var scene = t.scene, lm = m.landmarks, paths = m.paths;
+    var box = new THREE.Box3();
+    Object.keys(m.geos).forEach(function (k) { m.geos[k].computeBoundingBox(); box.union(m.geos[k].boundingBox); });
+    P.CENTER = box.getCenter(new THREE.Vector3());
+    t.controls.target.copy(P.CENTER);
+
     var REST = { lv: [0.62, 0.33, 0.38], rv: [0.66, 0.4, 0.45], ra: [0.55, 0.42, 0.55], la: [0.6, 0.45, 0.6] };
-    Object.keys(geos).forEach(function (k) {
-      var geo = geos[k];
+    Object.keys(m.geos).forEach(function (k) {
+      var geo = m.geos[k];
       geo.setAttribute("aDelay", new THREE.BufferAttribute(new Float32Array(geo.attributes.position.count), 1));
       var mk = function (back) {
         var mat = new THREE.ShaderMaterial({
@@ -358,96 +207,94 @@ export function createHeartViewer(root) {
             uRest: { value: new THREE.Color().fromArray(REST[k]) }
           }
         });
-        var m = new THREE.Mesh(geo, mat);
-        m.renderOrder = back ? 1 : 3;
-        scene.add(m);
-        return m;
+        var mesh = new THREE.Mesh(geo, mat);
+        mesh.renderOrder = back ? 1 : 3;
+        scene.add(mesh);
+        return mesh;
       };
-      chambers[k] = { geo: geo, back: mk(true), front: mk(false), pattern: null };
+      t.chambers[k] = { geo: geo, back: mk(true), front: mk(false), pattern: null };
     });
+    t.patterns = m.patterns;
 
-    // 大血管（只是方位參考，不參與電流）
+    // 大血管與瓣膜（只是方位參考，不參與電流）
     var vesselMat = new THREE.MeshStandardMaterial({ color: 0x8aa0c8, transparent: true, opacity: 0.35, depthWrite: false, roughness: 0.6 });
-    [
-      [V3(-0.95, 2.1, 0.1), V3(-0.93, 1.6, 0.14), V3(-0.92, 1.2, 0.14)],                     // 上腔靜脈
-      [V3(-0.85, 0.45, -0.05), V3(-0.8, 0.0, -0.1), V3(-0.78, -0.45, -0.12)],                // 下腔靜脈
-      [V3(0.15, 0.6, 0.0), V3(0.1, 1.5, 0.05), V3(0.35, 2.0, -0.2), V3(0.8, 1.9, -0.6), V3(0.9, 1.3, -0.9)], // 主動脈
-      [V3(-0.25, 0.55, 0.6), V3(0.0, 1.3, 0.5), V3(0.45, 1.55, 0.2)]                        // 肺動脈幹
-    ].forEach(function (pts, i) {
-      var tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, i < 2 ? 0.2 : 0.24, 20), vesselMat);
-      tube.renderOrder = 2;
-      scene.add(tube);
-    });
+    var valveMat = new THREE.MeshStandardMaterial({ color: 0xece4cc, transparent: true, opacity: 0.3, depthWrite: false, roughness: 0.7, side: THREE.DoubleSide });
+    m.vessels.forEach(function (g) { var x = new THREE.Mesh(g, vesselMat); x.renderOrder = 2; scene.add(x); });
+    m.valves.forEach(function (g) { var x = new THREE.Mesh(g, valveMat); x.renderOrder = 2; scene.add(x); });
+    var coroMat = new THREE.MeshStandardMaterial({ color: 0xd9262c, roughness: 0.45 });
+    m.coronary.forEach(function (g) { var x = new THREE.Mesh(g, coroMat); x.renderOrder = 4; scene.add(x); t.coro.push(x); });
 
-    // 傳導系統
-    var cond = {};
-    Object.keys(PATHS).forEach(function (k) {
-      var curve;
-      if (k === "ring") {
-        var c = V3(-0.75, 0.55, 0.2), pts = [];
-        for (var i = 0; i < 24; i++) {
-          var a = i / 24 * Math.PI * 2;
-          pts.push(V3(-0.95 + 0.05 * Math.sin(a * 2), c.y + Math.sin(a) * 0.45, c.z + Math.cos(a) * 0.45));
-        }
-        curve = new THREE.CatmullRomCurve3(pts, true);
-      } else {
-        curve = new THREE.CatmullRomCurve3(PATHS[k]);
-      }
-      var r = k === "avn" || k === "his" ? 0.055 : k === "kent" ? 0.04 : /^pk/.test(k) ? 0.022 : k === "ring" ? 0.03 : 0.035;
+    // 傳導系統：希氏束路徑在穿入點分成房室結（avn）與希氏束（his）兩段
+    var hisPath = paths.His_bundle, cut = 0, bd = Infinity;
+    hisPath.forEach(function (p, i) { var d = p.distanceTo(lm.His); if (d < bd) { bd = d; cut = i; } });
+    var C = {
+      int1: paths.Internodal_ant, int2: paths.Internodal_mid, int3: paths.Internodal_post, bach: paths.Bachmann,
+      avn: hisPath.slice(0, Math.max(2, cut + 1)), his: hisPath.slice(Math.max(0, cut - 1)),
+      rbb: paths.RBB, laf: paths.LAF, lpf: paths.LPF, kent: paths.Kent, ring: paths.FlutterRing
+    };
+    Object.keys(C).forEach(function (k) {
+      var curve = new THREE.CatmullRomCurve3(C[k], k === "ring");
+      var r = k === "avn" || k === "his" ? 0.045 : k === "kent" ? 0.04 : 0.03;
       var mat = new THREE.ShaderMaterial({
         vertexShader: TUBE_VERT, fragmentShader: TUBE_FRAG,
         uniforms: { uHead: { value: 0 }, uGlow: { value: 0 }, uRing: { value: k === "ring" ? 1 : 0 }, uBase: { value: new THREE.Color(0.55, 0.5, 0.2) } }
       });
-      var mesh = new THREE.Mesh(new THREE.TubeGeometry(curve, 80, r, 10, k === "ring"), mat);
+      var mesh = new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(40, C[k].length * 3), r, 10, k === "ring"), mat);
       mesh.renderOrder = 0;
       scene.add(mesh);
       var spark = new THREE.Mesh(new THREE.SphereGeometry(r * 2.2, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.9, depthTest: false }));
       spark.renderOrder = 5;
       spark.visible = false;
       scene.add(spark);
-      cond[k] = { mesh: mesh, curve: curve, spark: spark };
+      t.cond[k] = { mesh: mesh, curve: curve, spark: spark };
     });
     // SA / AV node 本身畫成小球
     var nodeMat = function () { return new THREE.MeshBasicMaterial({ color: 0xc8b24a }); };
-    var saBall = new THREE.Mesh(new THREE.SphereGeometry(0.09, 20, 16), nodeMat());
-    saBall.position.copy(P.SA); scene.add(saBall);
-    var avBall = new THREE.Mesh(new THREE.SphereGeometry(0.08, 20, 16), nodeMat());
-    avBall.position.copy(P.AVN); scene.add(avBall);
-    var pvcBall = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 12), new THREE.MeshBasicMaterial({ color: 0xff7a59, transparent: true, depthTest: false }));
-    pvcBall.position.copy(PVC_FOCUS); pvcBall.renderOrder = 5; scene.add(pvcBall);
+    t.saBall = new THREE.Mesh(new THREE.SphereGeometry(0.07, 20, 16), nodeMat());
+    t.saBall.position.copy(lm.SA); scene.add(t.saBall);
+    t.avBall = new THREE.Mesh(new THREE.SphereGeometry(0.06, 20, 16), nodeMat());
+    t.avBall.position.copy(lm.AVN); scene.add(t.avBall);
+    t.pvcBall = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 12), new THREE.MeshBasicMaterial({ color: 0xff7a59, transparent: true, depthTest: false }));
+    t.pvcBall.position.copy(lm.PVC); t.pvcBall.renderOrder = 5; scene.add(t.pvcBall);
 
     // 導程方向箭頭
-    var axisGroup = new THREE.Group();
-    scene.add(axisGroup);
     var LEAD_DIR = { II: V3(0.5, -0.866, 0), V1: V3(-0.45, -0.1, 1), V6: V3(1, -0.15, -0.05) };
-    var arrows = {};
     Object.keys(LEAD_DIR).forEach(function (l) {
       var dir = LEAD_DIR[l].clone().normalize();
       var ar = new THREE.ArrowHelper(dir, P.CENTER.clone().addScaledVector(dir, -1.8), 3.6, 0x6fd0ff, 0.28, 0.16);
       ar.visible = false;
-      axisGroup.add(ar);
-      arrows[l] = { arrow: ar, tip: P.CENTER.clone().addScaledVector(dir, 1.75) };
+      scene.add(ar);
+      t.arrows[l] = { arrow: ar, tip: P.CENTER.clone().addScaledVector(dir, 1.75) };
     });
 
-    return { renderer: renderer, scene: scene, camera: camera, controls: controls, chambers: chambers, patterns: patterns,
-      cond: cond, arrows: arrows, pvcBall: pvcBall, saBall: saBall, avBall: avBall };
+    // 標籤位置：心腔標在各自的中心往外推一點，傳導系統標在路徑中段
+    var chamberLabel = function (k, push) {
+      var c = m.geos[k].boundingBox.getCenter(new THREE.Vector3());
+      return c.add(c.clone().sub(P.CENTER).multiplyScalar(push));
+    };
+    var at = { SA: lm.SA, AVN: lm.AVN, His: t.cond.his.curve.getPointAt(0.5), PVC: lm.PVC,
+      rbb: t.cond.rbb.curve.getPointAt(0.92), laf: t.cond.laf.curve.getPointAt(0.95), lpf: t.cond.lpf.curve.getPointAt(0.95),
+      kent: t.cond.kent.curve.getPointAt(0.5),
+      RA: chamberLabel("ra", 0.35), LA: chamberLabel("la", 0.35), RV: chamberLabel("rv", 0.6), LV: chamberLabel("lv", 0.6) };
+    labelEls.forEach(function (l) { l.pos = at[l.key]; });
+    t.ready = true;
   }
 
   /* ---------- 標籤 ---------- */
   var LABELS = [
-    ["SA node", P.SA, "cond"], ["AV node", P.AVN, "cond"], ["His bundle", V3(-0.05, 0.2, 0.14), "cond"],
-    ["右束支", V3(-0.12, -0.45, 0.5), "cond"], ["左束支", V3(0.45, -0.45, 0.2), "cond"],
-    ["右心房", V3(-1.35, 0.8, 0.3), "myo"], ["左心房", V3(0.95, 1.15, -0.7), "myo"],
-    ["右心室", V3(-0.7, -0.55, 0.85), "myo"], ["左心室", V3(1.35, -0.6, 0.1), "myo"],
-    ["Kent bundle", V3(1.2, 0.5, -0.5), "kent"], ["異位點", PVC_FOCUS, "pvc"]
+    ["SA node", "SA", "cond"], ["AV node", "AVN", "cond"], ["His bundle", "His", "cond"],
+    ["右束支", "rbb", "cond"], ["左前分支", "laf", "cond"], ["左後分支", "lpf", "cond"],
+    ["右心房", "RA", "myo"], ["左心房", "LA", "myo"], ["右心室", "RV", "myo"], ["左心室", "LV", "myo"],
+    ["Kent bundle", "kent", "kent"], ["異位點", "PVC", "pvc"]
   ];
   var labelLayer = $(".hv-labels");
   var labelEls = LABELS.map(function (l) {
     var el = document.createElement("span");
     el.className = "hv-label hv-label-" + l[2];
     el.textContent = l[0];
+    el.hidden = true;
     labelLayer.appendChild(el);
-    return { el: el, pos: l[1], kind: l[2] };
+    return { el: el, key: l[1], pos: null, kind: l[2] };
   });
 
   /* ---------- 時間軸：把節律換算成各部位的事件 ---------- */
@@ -472,10 +319,9 @@ export function createHeartViewer(root) {
         if (c.his != null) {
           var h = c.his;
           add("his", h, 14);
-          add("rbb", h + 12, 20, vm === "rbbb" ? 0.25 : 1);
-          add("lbb", h + 12, 8, vm === "lbbb" ? 0.35 : 1);
-          if (vm !== "lbbb") { add("laf", h + 20, 12); add("lpf", h + 20, 12); add("lsf", h + 20, 10); add("pk1", h + 32, 10); add("pk2", h + 32, 10); add("pk3", h + 32, 10); }
-          if (vm !== "rbbb") { add("mod", h + 30, 10); add("pk4", h + 32, 10); }
+          add("rbb", h + 12, 22, vm === "rbbb" ? 0.25 : 1);
+          add("laf", h + 12, 16, vm === "lbbb" ? 0.3 : 1);
+          add("lpf", h + 12, 18, vm === "lbbb" ? 0.3 : 1);
         }
       }
     });
@@ -505,7 +351,7 @@ export function createHeartViewer(root) {
   }
 
   function update3D() {
-    if (!three) return;
+    if (!three || !three.ready) return;
     var r = state.rhythm, L = r.L, local = ((state.now % L) + L) % L;
     var ch = three.chambers, pat = three.patterns;
 
@@ -580,6 +426,7 @@ export function createHeartViewer(root) {
       ch[k].back.visible = state.showMyo;
     });
     Object.keys(three.arrows).forEach(function (l) { three.arrows[l].arrow.visible = state.showAxis && l === state.lead; });
+    three.coro.forEach(function (m) { m.visible = state.showCoro; });
   }
 
   function VENT_MODE_HAS_ECTOPIC(r) {
@@ -587,13 +434,13 @@ export function createHeartViewer(root) {
   }
 
   function updateLabels() {
-    if (!three) return;
+    if (!three || !three.ready) return;
     var w = stage.clientWidth, h = stage.clientHeight, v = new THREE.Vector3();
     var r = state.rhythm;
     labelEls.forEach(function (l) {
       var show = state.showLabels &&
         (l.kind === "cond" ? state.showCond : l.kind === "myo" ? state.showMyo : l.kind === "kent" ? r.id === "wpw" : VENT_MODE_HAS_ECTOPIC(r));
-      if (!show) { l.el.hidden = true; return; }
+      if (!show || !l.pos) { l.el.hidden = true; return; }
       v.copy(l.pos).project(three.camera);
       l.el.hidden = v.z > 1;
       l.el.style.transform = "translate(" + ((v.x * 0.5 + 0.5) * w).toFixed(1) + "px," + ((-v.y * 0.5 + 0.5) * h).toFixed(1) + "px)";
@@ -829,7 +676,7 @@ export function createHeartViewer(root) {
     three.camera.aspect = w / h;
     three.camera.updateProjectionMatrix();
     // 窄螢幕（手機直向）時把鏡頭拉遠，讓整顆心臟都在畫面裡
-    var fit = Math.max(6.8, 3.7 / (0.65 * three.camera.aspect));
+    var fit = Math.max(4.6, 2.6 / (0.65 * three.camera.aspect));
     var dir = three.camera.position.clone().sub(three.controls.target).normalize();
     three.camera.position.copy(three.controls.target).addScaledVector(dir, fit);
     three.controls.maxDistance = Math.max(12, fit * 1.5);

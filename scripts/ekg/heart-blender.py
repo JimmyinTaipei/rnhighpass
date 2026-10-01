@@ -30,7 +30,6 @@ PARTS = {
     "RV":             ("右心室 Right ventricle",     (0.84, 0.38, 0.34), 0.30, 1.0),
     "LA":             ("左心房 Left atrium",         (0.80, 0.52, 0.44), 0.35, 1.0),
     "RA":             ("右心房 Right atrium",        (0.88, 0.60, 0.50), 0.35, 1.0),
-    "Bachmann":       ("巴赫曼束 Bachmann bundle",   (0.90, 0.72, 0.40), 0.40, 1.0),
     "Aorta":          ("主動脈 Aorta",               (0.78, 0.24, 0.30), 0.40, 1.0),
     "PulmArtery":     ("肺動脈 Pulmonary artery",    (0.36, 0.46, 0.78), 0.40, 1.0),
     "MitralValve":    ("二尖瓣 Mitral valve",        (0.94, 0.92, 0.82), 0.40, 0.35),
