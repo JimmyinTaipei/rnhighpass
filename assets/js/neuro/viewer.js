@@ -16,9 +16,10 @@ import { createModel, sectionSVG, brainSectionSVG, lesionPolys } from "./geometr
 import { deficits, adjustZones } from "./lesion.js";
 import { cbMapSVG, cbColors } from "./cerebellum.js";
 import { bgCompare, bgKnock, circuitSVG, circuitLegend } from "./basal.js";
+import { limbicKnock, limbicSVG, limbicLegend } from "./limbic.js";
 
 var root = null;
-var DATA_FILES = ["levels", "tracts", "structures", "lesions", "nerves", "visual", "auditory", "diencephalon", "basal"];
+var DATA_FILES = ["levels", "tracts", "structures", "lesions", "nerves", "visual", "auditory", "diencephalon", "basal", "limbic"];
 var dataCache = null;   // 同一頁切換區域時不必重新下載
 function loadData() {
   if (!dataCache) {
@@ -114,7 +115,7 @@ function init(root, life) {
   loadData().then(function (arr) {
     if (life.dead) return;
     arr = JSON.parse(JSON.stringify(arr));   // createModel 會改動資料，每次掛載用一份新的
-    var data = { levels: arr[0], tracts: arr[1], structures: arr[2], lesions: arr[3], nerves: arr[4], visual: arr[5], auditory: arr[6], diencephalon: arr[7], basal: arr[8] };
+    var data = { levels: arr[0], tracts: arr[1], structures: arr[2], lesions: arr[3], nerves: arr[4], visual: arr[5], auditory: arr[6], diencephalon: arr[7], basal: arr[8], limbic: arr[9] };
     Object.keys(data.nerves.nerves).forEach(function (id) { NAMES["nerve:" + id] = data.nerves.nerves[id].zh; });
     Object.keys(data.structures.structures).forEach(function (id) { NAMES["structure:" + id] = data.structures.structures[id].zh; });
     Object.keys(data.tracts.tracts).forEach(function (id) { NAMES["tract:" + id] = data.tracts.tracts[id].zh; });
@@ -129,15 +130,16 @@ function init(root, life) {
     var NV = model.data.nerves.nerves, COLS = model.data.nerves.columns, ST = model.data.structures.structures;
     var tk = mode === "tract" && TR[root.dataset.tract] ? TR[root.dataset.tract].kind : null;
     var region = root.dataset.region ||
-      (tk === "cerebellar" ? "cerebellum" : tk === "auditory" || tk === "vestibular" ? "auditory" : tk === "diencephalon" ? "diencephalon" : tk === "basal" ? "basal-ganglia"
+      (tk === "cerebellar" ? "cerebellum" : tk === "auditory" || tk === "vestibular" ? "auditory" : tk === "diencephalon" ? "diencephalon" : tk === "basal" ? "basal-ganglia" : tk === "limbic" ? "limbic"
         : mode === "nerve" || (mode === "tract" && TR[root.dataset.tract] && !TR[root.dataset.tract].inputs) ? "brainstem" : "spinal-cord");
     var isCb = region === "cerebellum";
     var isAud = region === "auditory";
     var isDi = region === "diencephalon";
     var isBg = region === "basal-ganglia";
-    var isFore = isDi || isBg;   // 前腦：切面變成大腦的水平切面，畫橢球形的核與內囊
+    var isLim = region === "limbic";
+    var isFore = isDi || isBg || isLim;   // 前腦：切面變成大腦的水平切面，畫橢球形的核與內囊
     var isStem = region === "brainstem" || isCb || isAud || isFore;   // 小腦、聽覺也用腦部的設定（沒有脊髓節段滑桿）
-    var lesionRegion = { "spinal-cord": "spinal", brainstem: "brainstem", cerebellum: "cerebellum", auditory: "auditory", diencephalon: "diencephalon", "basal-ganglia": "basal-ganglia" }[region];
+    var lesionRegion = { "spinal-cord": "spinal", brainstem: "brainstem", cerebellum: "cerebellum", auditory: "auditory", diencephalon: "diencephalon", "basal-ganglia": "basal-ganglia", limbic: "limbic" }[region];
     var AUD_TRACTS = (T.groups.filter(function (g) { return g.id === "auditory"; })[0] || { tracts: [] }).tracts;
     var lesionIds = LE.order.filter(function (id) { var l = LE.lesions[id]; return (l.region || "spinal") === lesionRegion || (l.alsoIn || []).indexOf(lesionRegion) >= 0; });
     var BG = model.BG, CONDS = BG ? BG.circuit.conditions : [];
@@ -146,15 +148,15 @@ function init(root, life) {
     var nerveParam = params.get("nerve");
     var state = {
       length: "equal",
-      tab: params.get("lesion") ? "lesion" : isBg && mode === "region" ? "circuit" : isDi && mode === "region" && !focusParam ? "nuclei" : (mode === "region" && isCb && !focusParam ? "zones" : mode === "region" && isStem && !isAud && !focusParam ? "nerves" : "tracts"),
+      tab: params.get("lesion") ? "lesion" : (isBg || isLim) && mode === "region" ? "circuit" : isDi && mode === "region" && !focusParam ? "nuclei" : (mode === "region" && isCb && !focusParam ? "zones" : mode === "region" && isStem && !isAud && !focusParam ? "nerves" : "tracts"),
       cbColor: "zone",
       visible: {},
-      focus: mode === "tract" ? root.dataset.tract : (TR[focusParam] ? focusParam : isAud && mode === "region" && !params.get("lesion") ? "auditory" : isBg && mode === "region" && !params.get("lesion") ? "bg-direct" : null),
+      focus: mode === "tract" ? root.dataset.tract : (TR[focusParam] ? focusParam : isAud && mode === "region" && !params.get("lesion") ? "auditory" : isBg && mode === "region" && !params.get("lesion") ? "bg-direct" : isLim && mode === "region" && !params.get("lesion") ? "fornix" : null),
       cond: CONDS.some(function (c) { return c.id === params.get("cond"); }) ? params.get("cond") : "normal",
       nerve: mode === "nerve" ? root.dataset.nerve : (NV[nerveParam] ? nerveParam : null),
       inSeg: null, variant: null,
       side: "R",
-      slice: isStem ? { kind: "brain", pos: 0, y: isAud ? 34 : isDi ? 88.5 : isBg ? 93.5 : 16 } : { kind: "seg", pos: 4.5, y: 0 },
+      slice: isStem ? { kind: "brain", pos: 0, y: isAud ? 34 : isDi ? 88.5 : isBg ? 93.5 : isLim ? 89 : 16 } : { kind: "seg", pos: 4.5, y: 0 },
       nucleus: ST[params.get("nucleus")] && (ST[params.get("nucleus")].thal || ST[params.get("nucleus")].ell) ? params.get("nucleus") : isDi && mode === "region" && !focusParam && !params.get("lesion") ? "vl" : null,
       showGray: true, showLabels: true, showBrain: true, showNuclei: true,
       lesion: lesionIds.indexOf(params.get("lesion")) >= 0 ? params.get("lesion") : lesionIds[0],
@@ -162,7 +164,7 @@ function init(root, life) {
       playing: true
     };
     T.order.forEach(function (tid) {
-      state.visible[tid] = mode === "tract" ? tid === state.focus : mode === "nerve" ? false : isCb ? TR[tid].kind === "cerebellar" : isAud ? AUD_TRACTS.indexOf(tid) >= 0 : isDi ? /^(mammillothalamic|hypothalamohypophysial)$/.test(tid) : isBg ? TR[tid].kind === "basal" : /^(dcml|als|lcst)$/.test(tid);
+      state.visible[tid] = mode === "tract" ? tid === state.focus : mode === "nerve" ? false : isCb ? TR[tid].kind === "cerebellar" : isAud ? AUD_TRACTS.indexOf(tid) >= 0 : isDi ? /^(mammillothalamic|hypothalamohypophysial)$/.test(tid) : isBg ? TR[tid].kind === "basal" : isLim ? TR[tid].kind === "limbic" || tid === "mammillothalamic" : /^(dcml|als|lcst)$/.test(tid);
     });
     function setFocus(tid) {
       state.focus = tid;
@@ -182,7 +184,7 @@ function init(root, life) {
     if (mode === "tract") {
       var firstSeg = TR[state.focus].bundles.filter(function (b) { return b.present; })[0];
       if (state.inSeg) state.slice = { kind: "seg", pos: model.segIdx[state.inSeg] + 0.5, y: 0 };
-      if (!firstSeg) state.slice = { kind: "brain", pos: 0, y: isAud ? 34 : isDi ? 88.5 : isBg ? 93.5 : tid2y(state.focus) };
+      if (!firstSeg) state.slice = { kind: "brain", pos: 0, y: isAud ? 34 : isDi ? 88.5 : isBg ? 93.5 : isLim ? 89 : tid2y(state.focus) };
     }
     /** 腦幹路徑的代表切面高度（取第一個 bundle 路點的中間）。 */
     function tid2y(tid) {
@@ -346,6 +348,9 @@ function init(root, life) {
      * 間腦單元：視丘、下視丘各核（structures.json 的 ell 橢球，依核群上色）、內囊（依段上色的帶子）、內髓板，
      * 以及當地標的尾狀核、殼核、蒼白球。
      */
+    // 邊緣系統單元：畫哪些橢球核、不透明度
+    function C_HIP() { return ST.hippocampus.color; }
+    var LIM_OP = { entorhinal: 0.8, amygdala: 0.85, "septal-area": 0.85, "cingulate-gyrus": 0.55, "nucleus-basalis": 0.75, "temporal-neocortex": 0.16, "mammillary-body": 0.95, an: 0.9, md: 0.5, habenula: 0.7, "nucleus-accumbens": 0.5, "lateral-hyp": 0.25 };
     var CTX = /^(caudate|putamen|globus-pallidus|gpe|gpi|nucleus-accumbens|claustrum)$/;
     // 基底核單元：畫哪些橢球核、不透明度（紋狀體半透明，才看得到裡面的纖維）
     var BG_OP = { caudate: 0.4, putamen: 0.36, "nucleus-accumbens": 0.5, gpe: 0.6, gpi: 0.75, subthalamic: 0.9, "zona-incerta": 0.35, claustrum: 0.3, va: 0.4, vl: 0.4, cm: 0.25 };
@@ -385,7 +390,8 @@ function init(root, life) {
         var st = ST[id];
         if (!st.ell) return;
         if (isBg && BG_OP[id] == null) return;
-        var op = isBg ? BG_OP[id] : CTX.test(id) ? 0.22 : 0.9;
+        if (isLim && LIM_OP[id] == null) return;
+        var op = isBg ? BG_OP[id] : isLim ? LIM_OP[id] : CTX.test(id) ? 0.22 : 0.9;
         var col = isBg ? bgColor(id) : st.color || "#b9b2c8";
         ["R", "L"].forEach(function (side) {
           var e = model.ellOf(id, side);
@@ -430,13 +436,13 @@ function init(root, life) {
           geo.setAttribute("color", new THREE.Float32BufferAttribute(cols, 3));
           geo.setIndex(idx);
           geo.computeVertexNormals();
-          var ic = new THREE.Mesh(geo, mat(0xffffff, isBg ? 0.18 : 0.3, { depthWrite: false, vertexColors: true }));
+          var ic = new THREE.Mesh(geo, mat(0xffffff, isBg ? 0.18 : isLim ? 0.08 : 0.3, { depthWrite: false, vertexColors: true }));
           ic.renderOrder = 7;
           ic.name = "ic";
           g.add(ic);
         });
         // 內髓板（白色細管）
-        if (!isBg) [-1, 1].forEach(function (sd) {
+        if (!isBg && !isLim) [-1, 1].forEach(function (sd) {
           var P3 = function (w) { return new THREE.Vector3(sd * w[1], w[0], w[2]); };
           [DIc.iml.stem].concat(DIc.iml.arms).forEach(function (line) {
             var t = tube(line.map(P3), 0.35, TH.iml, 0.8);
@@ -715,7 +721,7 @@ function init(root, life) {
       groups.nerves.visible = state.showNuclei;
       // 聽覺單元：只顯示聽覺、前庭相關的核與神經（看前庭眼反射時加上外旋、動眼神經）
       var vorOn = state.focus === "vor";
-      var audNuc = isAud ? ["cochlear-nuclei", "vestibular-nuclei", "superior-olive", "inferior-colliculus", "mgn"].concat(vorOn ? ["abducens-nucleus", "oculomotor-nucleus"] : []) : isDi ? ["mgn", "red-nucleus", "superior-colliculus"] : isBg ? ["snc", "snr", "red-nucleus"] : null;
+      var audNuc = isAud ? ["cochlear-nuclei", "vestibular-nuclei", "superior-olive", "inferior-colliculus", "mgn"].concat(vorOn ? ["abducens-nucleus", "oculomotor-nucleus"] : []) : isDi ? ["mgn", "red-nucleus", "superior-colliculus"] : isBg ? ["snc", "snr", "red-nucleus"] : isLim ? ["hippocampus"] : null;
       var audNv = isAud ? ["cn8"].concat(vorOn ? ["cn6", "cn3"] : []) : isFore ? [] : null;
       groups.nuclei.children.forEach(function (g) {
         var on = !nvNuc || nvNuc.indexOf(g.userData.nucleus) >= 0;
@@ -888,6 +894,17 @@ function init(root, life) {
         });
         [["外側膝狀體", [-21, 84, -12]], ["內側膝狀體", [-16, 83, -16]], ["內囊", [-26, 108, 4]]].forEach(function (d) { addLabel(d[0], new THREE.Vector3(d[1][0], d[1][1], d[1][2]), "key"); });
       }
+      if (isLim && mode === "region") {
+        ["entorhinal", "amygdala", "septal-area", "cingulate-gyrus", "nucleus-basalis", "mammillary-body", "an"].forEach(function (id) {
+          var e = model.ellOf(id, "R");
+          if (!e) return;
+          var st = ST[id];
+          addLabel(st.zh.replace(/（.*?）/g, "").replace(/^視丘/, ""), new THREE.Vector3(e.x, e.y + e.ry * 0.9, e.z), "key");
+        });
+        var hp = model.nucPath("hippocampus", "R");
+        addLabel("海馬結構", new THREE.Vector3(hp[3].x, hp[3].y + 2.4, hp[3].z), "key");
+        [["穹窿", [-3, 112, -8]], ["乳頭視丘徑", [-6.5, 91, 5.5]], ["終紋", [-23, 101, -22]]].forEach(function (d) { addLabel(d[0], new THREE.Vector3(d[1][0], d[1][1], d[1][2]), "key"); });
+      }
       if (isBg && mode === "region") {
         ["caudate", "putamen", "gpe", "gpi", "subthalamic", "nucleus-accumbens", "claustrum"].forEach(function (id) {
           var e = model.ellOf(id, "R");
@@ -946,6 +963,16 @@ function init(root, life) {
         var fz0 = camera.aspect < 1 ? Math.min(1.8, 0.95 / camera.aspect) : 1;
         if (v === "di") camera.position.copy(c0).add(new THREE.Vector3(-0.62, 0.55, 0.56).normalize().multiplyScalar(118 * fz0));
         else camera.position.set(0, 90 + 115 * fz0, 6);
+        controls.update();
+        return;
+      }
+      else if (v === "lim" || v === "limtop") {
+        // 邊緣系統：從右外上方看右側顳葉內側與穹窿；由上往下：像水平切面一樣（後方在上）
+        var c2 = v === "lim" ? new THREE.Vector3(-14, 92, -4) : new THREE.Vector3(-10, 92, -2);
+        controls.target.copy(c2);
+        var fz2 = camera.aspect < 1 ? Math.min(1.8, 0.95 / camera.aspect) : 1;
+        if (v === "lim") camera.position.copy(c2).add(new THREE.Vector3(-0.85, 0.5, 0.35).normalize().multiplyScalar(150 * fz2));
+        else camera.position.set(-10, 92 + 160 * fz2, 4);
         controls.update();
         return;
       }
@@ -1069,7 +1096,7 @@ function init(root, life) {
     function renderPanel() {
       var h = [];
       if (mode === "region") {
-        var tabs = isCb ? [["zones", "分區"], ["tracts", "路徑"], ["lesion", "病灶"]] : isBg ? [["circuit", "迴路"], ["tracts", "路徑"], ["lesion", "病灶"]] : isDi ? [["nuclei", "視丘核"], ["tracts", "路徑"], ["lesion", "病灶"]] : [["tracts", "路徑"]].concat(isStem && !isAud ? [["nerves", "腦神經"]] : []).concat([["lesion", "病灶"]]);
+        var tabs = isCb ? [["zones", "分區"], ["tracts", "路徑"], ["lesion", "病灶"]] : isBg || isLim ? [["circuit", "迴路"], ["tracts", "路徑"], ["lesion", "病灶"]] : isDi ? [["nuclei", "視丘核"], ["tracts", "路徑"], ["lesion", "病灶"]] : [["tracts", "路徑"]].concat(isStem && !isAud ? [["nerves", "腦神經"]] : []).concat([["lesion", "病灶"]]);
         h.push('<div class="nx-modes" role="tablist">' + tabs.map(function (t) {
           return '<button type="button" class="nx-chip" data-tab="' + t[0] + '" aria-pressed="' + (state.tab === t[0]) + '">' + t[1] + "</button>";
         }).join("") + "</div>");
@@ -1078,7 +1105,7 @@ function init(root, life) {
       if (mode === "nerve") h.push(nervePanel());
       else if (state.tab === "zones" && mode === "region") h.push(zonesPanel());
       else if (state.tab === "nuclei" && mode === "region") h.push(nucleiPanel());
-      else if (state.tab === "circuit" && mode === "region") h.push(circuitPanel());
+      else if (state.tab === "circuit" && mode === "region") h.push(isLim ? limbicPanel() : circuitPanel());
       else if (state.tab === "lesion" && mode === "region") h.push(lesionPanel());
       else if (state.tab === "nerves" && mode === "region") h.push(nervePanel());
       else h.push(tractPanel());
@@ -1114,7 +1141,7 @@ function init(root, life) {
         h.push('<p class="nx-note">' + chainText(state.focus) + "</p>");
         if (tr.kind === "auditory") h.push('<p class="nx-note">耳蝸與顳橫回的顏色：紅＝高頻（耳蝸底部、皮質後內側）、藍＝低頻（耳蝸頂部、皮質前外側）。三種走法切換看看：每一耳都同時送到兩側。</p>');
         if (state.focus === "vor") h.push('<p class="nx-note">' + (state.side === "R" ? "頭向右轉 → 右外側半規管興奮 → 兩眼往左轉（左外直肌＋右內直肌）。" : "頭向左轉 → 左外側半規管興奮 → 兩眼往右轉（右外直肌＋左內直肌）。") + "</p>");
-        var page3d = tr.kind === "cerebellar" ? "cerebellum" : tr.kind === "diencephalon" ? "diencephalon" : tr.kind === "basal" ? "basal-ganglia" : tr.kind === "auditory" || tr.kind === "vestibular" ? "auditory" : isStem || !tr.inputs ? "brainstem" : "spinal-cord";
+        var page3d = tr.kind === "cerebellar" ? "cerebellum" : tr.kind === "diencephalon" ? "diencephalon" : tr.kind === "basal" ? "basal-ganglia" : tr.kind === "limbic" ? "limbic" : tr.kind === "auditory" || tr.kind === "vestibular" ? "auditory" : isStem || !tr.inputs ? "brainstem" : "spinal-cord";
         if (mode === "region") h.push('<p><button type="button" class="nx-btn3d is-ghost" data-act="unfocus">取消路線</button> <button type="button" class="nx-btn3d is-ghost" data-act="fit">看整條路線</button></p>');
         else h.push('<p><button type="button" class="nx-btn3d is-ghost" data-act="fit">看整條路線</button> <a href="/resources/neuro/3d.html?region=' + page3d + '&amp;tract=' + state.focus + '">在完整 3D 中開啟 →</a></p>');
       }
@@ -1212,6 +1239,20 @@ function init(root, life) {
       h.push('<p class="nx-note">3D 裡發亮＝比正常活躍、變淡＝比正常安靜、灰色＝失去功能。</p>');
       return h.join("");
     }
+    /** 邊緣系統：選路徑（神經元鏈）；下方是 Papez 迴路與杏仁核連結的迴路圖。 */
+    var LIM_PATHS = [["fornix", "穹窿"], ["mammillothalamic", "乳頭視丘徑"], ["hippocampal-circuit", "海馬內迴路"], ["amygdalofugal", "杏仁核傳出"]];
+    function limbicPanel() {
+      var h = ["<h4>看哪一條路徑</h4>"];
+      h.push('<div class="nx-row">' + LIM_PATHS.map(function (p) {
+        return '<button type="button" class="nx-chip" data-focus="' + p[0] + '" aria-pressed="' + (state.focus === p[0]) + '">' + p[1] + "</button>";
+      }).join("") + "</div>");
+      var tr = state.focus && TR[state.focus];
+      if (tr && tr.variants) h.push('<div class="nx-row"><span>走法</span>' + tr.variants.map(function (v) { return '<button type="button" class="nx-chip" data-variant="' + v.id + '" aria-pressed="' + (state.variant === v.id) + '">' + esc(v.zh) + "</button>"; }).join("") + "</div>");
+      if (tr) h.push('<p class="nx-note">' + chainText(state.focus) + "</p>");
+      h.push('<div class="nx-bg-card">' + limbicSVG(model.LM, { label: "邊緣系統迴路" }) + limbicLegend() + "</div>");
+      h.push('<p class="nx-note"><b>Papez 迴路</b>：內嗅皮質 → 海馬 →（穹窿）→ 乳頭體 →（乳頭視丘徑）→ 前核 →（內囊前肢）→ 扣帶迴 →（扣帶束）→ 內嗅皮質。杏仁核不在這條迴路裡，它管情緒，傳出走終紋與腹側杏仁傳出徑。</p>');
+      return h.join("");
+    }
     function zonesPanel() {
       var h = ["<h4>小腦上色方式</h4>"];
       h.push('<div class="nx-row">' + [["zone", "縱向分區"], ["lobe", "分葉"]].map(function (c) {
@@ -1241,6 +1282,10 @@ function init(root, life) {
       }
       var d = deficits(model, currentZones());
       h.push("<h4>推導出的症狀</h4><ul class=\"nx-deficits\">" + d.filter(function (x) { return !x.minor; }).map(function (x) { return "<li>" + esc(x.text) + "</li>"; }).join("") + "</ul>");
+      if (isLim && model.LM) {
+        var lk = limbicKnock(model, currentZones());
+        h.push('<div class="nx-bg-card">' + limbicSVG(model.LM, { knock: lk, label: l.zh + " 的迴路" }) + limbicLegend() + "</div>");
+      }
       if (isBg && BG) {
         var kn = bgKnock(model, currentZones());
         if (kn.length) h.push('<div class="nx-bg-card">' + circuitSVG(BG, { knock: kn, label: l.zh + " 的迴路" }) + "</div><p class=\"nx-note\">" + esc(bgCompare(BG, kn).motorZh) + "</p>");
@@ -1249,12 +1294,12 @@ function init(root, life) {
       return h.join("");
     }
 
-    var BRAIN_JUMPS = model.data.levels.brainLevels.filter(function (b) { return isBg ? b.y >= 70 && b.y < 150 : isDi ? b.y >= 80 && b.y < 150 : b.y < 80; });
+    var BRAIN_JUMPS = model.data.levels.brainLevels.filter(function (b) { return isBg || isLim ? b.y >= 70 && b.y < 150 : isDi ? b.y >= 80 && b.y < 150 : b.y < 80; });
     function slicePanel() {
       var h = ["<h4>切面</h4>"];
       h.push('<div class="nx-row"><span class="nx-lvlname" data-slot="lvl">' + esc(sliceName()) + "</span></div>");
       if (isStem) {
-        h.push('<input type="range" data-act="bslice" min="' + (isBg ? 60 : isDi ? 76 : 0) + '" max="' + (isFore ? 108 : 80) + '" step="1" value="' + Math.round(state.slice.kind === "brain" ? state.slice.y : 0) + '" aria-label="腦幹高度">');
+        h.push('<input type="range" data-act="bslice" min="' + (isBg || isLim ? 60 : isDi ? 76 : 0) + '" max="' + (isFore ? 108 : 80) + '" step="1" value="' + Math.round(state.slice.kind === "brain" ? state.slice.y : 0) + '" aria-label="腦幹高度">');
       } else {
         h.push('<input type="range" data-act="slice" min="0" max="' + (model.N - 1) + '" step="1" value="' + (state.slice.kind === "seg" ? Math.floor(state.slice.pos) : 0) + '" aria-label="脊髓節段">');
       }
@@ -1311,7 +1356,7 @@ function init(root, life) {
         var id = t.dataset.focus;
         if (state.focus === id) state.focus = null; else setFocus(id);
         applyVisibility(); buildChain(); renderPanel();
-        if (state.focus && !isBg) fitChain();
+        if (state.focus && !isBg && !isLim) fitChain();
       }
       else if (t.dataset.nerve) setNerve(state.nerve === t.dataset.nerve ? null : t.dataset.nerve);
       else if (t.dataset.cond) { state.cond = t.dataset.cond; applyBgActivity(); renderPanel(); }
@@ -1373,7 +1418,7 @@ function init(root, life) {
     /* ---------- 視角按鈕 ---------- */
     var views = document.createElement("div");
     views.className = "nx-views";
-    views.innerHTML = (isCb ? [["cb", "小腦"], ["stem", "腦幹"], ["brain", "大腦"], ["all", "全程"]] : isBg ? [["bg", "基底核"], ["bgfront", "正面"], ["ditop", "由上往下"], ["slice", "切面處"]] : isAud ? [["aud", "聽覺路徑"], ["ear", "內耳"], ["stem", "腦幹"], ["slice", "切面處"]] : isDi ? [["di", "間腦"], ["ditop", "由上往下"], ["brain", "大腦"], ["slice", "切面處"]] : [["all", "全程"], ["brain", "大腦"], ["stem", "腦幹"], ["slice", "切面處"], ["top", "由上往下"]]).map(function (v) {
+    views.innerHTML = (isCb ? [["cb", "小腦"], ["stem", "腦幹"], ["brain", "大腦"], ["all", "全程"]] : isBg ? [["bg", "基底核"], ["bgfront", "正面"], ["ditop", "由上往下"], ["slice", "切面處"]] : isLim ? [["lim", "邊緣系統"], ["limtop", "由上往下"], ["brain", "大腦"], ["slice", "切面處"]] : isAud ? [["aud", "聽覺路徑"], ["ear", "內耳"], ["stem", "腦幹"], ["slice", "切面處"]] : isDi ? [["di", "間腦"], ["ditop", "由上往下"], ["brain", "大腦"], ["slice", "切面處"]] : [["all", "全程"], ["brain", "大腦"], ["stem", "腦幹"], ["slice", "切面處"], ["top", "由上往下"]]).map(function (v) {
       return '<button type="button" data-view="' + v[0] + '">' + v[1] + "</button>";
     }).join("");
     stage.parentNode.appendChild(views);
@@ -1385,6 +1430,7 @@ function init(root, life) {
     leg.className = "nx-legend3d";
     function legendHTML() {
       var li = function (c, t) { return '<li><i style="background:' + (typeof c === "number" ? hexOf(c) : c) + '"></i>' + t + "</li>"; };
+      if (isLim) return li(C_HIP(), "海馬結構") + ["amygdala", "entorhinal", "septal-area", "cingulate-gyrus", "nucleus-basalis"].map(function (id) { return li(ST[id].color, ST[id].zh.replace(/（.*）/, "")); }).join("") + li(TR.fornix.color, "穹窿") + li(TR["amygdalofugal"].color, "杏仁核傳出") + li(TR.mammillothalamic.color, "乳頭視丘徑");
       if (isBg && BG) return ["striatum", "gpe", "gpi", "stn", "snc", "snr", "thal"].map(function (g) { return li(BG.groups[g].color, BG.groups[g].zh.replace(/（.*）/, "")); }).join("") +
         li(TR["bg-direct"].color, "直接路徑") + li(TR["bg-indirect"].color, "間接路徑") + li(TR.nigrostriatal.color, "黑質紋狀體");
       return isDi && model.DI
@@ -1521,6 +1567,7 @@ function init(root, life) {
     else if (mode === "nerve" || (state.nerve && state.tab === "nerves")) fitNerve();
     else if (mode === "tract") fitChain();
     else if (isCb && mode === "region") { if (state.tab === "lesion") { buildLesion(); renderPanel(); } setView("cb"); }
+    else if (isLim && mode === "region") { if (state.tab === "lesion") { buildLesion(); jumpToLesion(); renderPanel(); } setView("lim"); }
     else if (isBg && mode === "region") { if (state.tab === "lesion") { buildLesion(); jumpToLesion(); applyBgActivity(); renderPanel(); } setView("bg"); }
     else if (isDi && mode === "region") { if (state.tab === "lesion") { buildLesion(); jumpToLesion(); renderPanel(); } setView("di"); }
     else if (isAud && mode === "region") { if (state.tab === "lesion") { buildLesion(); jumpToLesion(); renderPanel(); } setView("aud"); }

@@ -21,6 +21,7 @@ import { cbMapSVG } from "../assets/js/neuro/cerebellum.js";
 import { auditorySVG, auditoryLoss, hearingSummary } from "../assets/js/neuro/auditory.js";
 import { ellAt, diencSectionSVG } from "../assets/js/neuro/diencephalon.js";
 import { circuitSVG, circuitLegend, bgCompare, bgKnock } from "../assets/js/neuro/basal.js";
+import { limbicSVG, limbicLegend, limbicKnock } from "../assets/js/neuro/limbic.js";
 
 const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const DATA = path.join(ROOT, "assets/data/neuro");
@@ -31,7 +32,7 @@ const J = async (f) => JSON.parse(await readFile(path.join(DATA, f + ".json"), "
 const data = {
   levels: await J("levels"), tracts: await J("tracts"), structures: await J("structures"),
   lesions: await J("lesions"), regions: await J("regions"), sources: await J("sources"), nerves: await J("nerves"),
-  visual: await J("visual"), auditory: await J("auditory"), diencephalon: await J("diencephalon"), basal: await J("basal")
+  visual: await J("visual"), auditory: await J("auditory"), diencephalon: await J("diencephalon"), basal: await J("basal"), limbic: await J("limbic")
 };
 const model = createModel(data);
 const TR = data.tracts.tracts, ST = data.structures.structures, LE = data.lesions.lesions, RG = data.regions.regions;
@@ -234,6 +235,7 @@ function viewerBlock(opts) {
 const viewerScript = (engine) => engine === "visual" ? "/assets/js/neuro/visual-viewer.js" : "/assets/js/neuro/viewer.js";
 const isVisualTract = (tid) => TR[tid].kind === "visual";
 const BGD = data.basal;
+const LIMD = data.limbic;
 
 /* ---------------- 視覺路徑的圖 ---------------- */
 const VCELLS = data.visual.cells;
@@ -320,7 +322,7 @@ function tractSections(tid) {
 function tractPage(tid) {
   const t = TR[tid];
   const key = "tract:" + tid;
-  const kindZh = t.kind === "ascending" ? "上行（感覺）" : t.kind === "descending" ? "下行（運動）" : t.kind === "visual" ? "視覺" : t.kind === "cerebellar" ? "小腦" : t.kind === "auditory" ? "聽覺" : t.kind === "vestibular" ? "前庭" : t.kind === "diencephalon" ? "間腦" : t.kind === "basal" ? "基底核" : "腦幹內";
+  const kindZh = t.kind === "ascending" ? "上行（感覺）" : t.kind === "descending" ? "下行（運動）" : t.kind === "visual" ? "視覺" : t.kind === "cerebellar" ? "小腦" : t.kind === "auditory" ? "聽覺" : t.kind === "vestibular" ? "前庭" : t.kind === "diencephalon" ? "間腦" : t.kind === "basal" ? "基底核" : t.kind === "limbic" ? "邊緣系統" : "腦幹內";
   const vis = isVisualTract(tid);
   const neurons = t.neurons.map((n) => {
     const ord = n.label || (/^\d+$/.test(String(n.order)) ? `第 ${n.order} 級神經元` : n.order === "UMN" ? "上運動神經元（UMN）" : n.order === "LMN" ? "下運動神經元（LMN）" : n.order);
@@ -446,7 +448,15 @@ function structurePage(sid) {
     fig = `<section class="nx-block"><h3>在視覺路徑上的位置</h3>${visualFigure({ mark: { lat: s.vis.lat, z: s.vis.z, r: s.vis.r, side: s.vis.side || "both" }, pupil: sid === "ciliary-ganglion", label: s.zh + " 的位置" })}
             <p class="nx-note">紅色圓圈標出${esc(s.zh)}的位置${s.vis.lat === 0 ? "（在中線）" : "（左右兩側都有）"}。<a href="${BASE}/3d.html?region=visual">在 3D 中看 →</a></p></section>`;
   }
-  if (s.ell || s.thal || s.parts || /^(thalamus|hypothalamus|internal-capsule)$/.test(sid)) {
+  const limNode = LIMD.nodes.filter((n) => n.structs.indexOf(sid) >= 0)[0];
+  if (limNode || s.region === "limbic") {
+    fig += `<section class="nx-block"><h3>在邊緣系統迴路中的位置</h3>
+            <div class="nx-section-wrap">
+              <div class="nx-bg-card nx-bg-fig">${limbicSVG(LIMD, { label: "邊緣系統迴路" })}${limbicLegend()}</div>
+              <div class="nx-section-legend">${limNode ? `<p>迴路圖上的「${esc(limNode.zh)}」。</p>` : ""}<p class="nx-note"><a href="${BASE}/3d.html?region=limbic">在 3D 中看邊緣系統 →</a></p></div>
+            </div></section>`;
+  }
+  if ((s.ell && !(s.region === "limbic" && s.ell[0] < 80.5)) || s.thal || s.parts || /^(thalamus|hypothalamus|internal-capsule)$/.test(sid)) {
     const y0 = s.ell ? s.ell[0] : s.parts ? ST[s.parts[0]].ell[0] : s.nuc ? (s.nuc[0][0] + s.nuc[s.nuc.length - 1][0]) / 2 : s.vis ? s.vis.y : sid === "internal-capsule" ? 96 : sid === "hypothalamus" ? 83 : 88.5;
     const y = Math.min(106, Math.max(80.6, y0));
     const th = s.thal, DIg = data.diencephalon;
@@ -463,7 +473,7 @@ function structurePage(sid) {
               <figure class="nx-big">${diencSectionSVG(model, y, { scale: 6.5, nucleus: s.ell || s.nuc || s.vis ? sid : s.parts ? s.parts[1] : null, label: s.zh + " 的位置" })}
                 <figcaption>大腦的水平切面（後方在上；觀看者的左邊是病人右側）。${s.ell || s.nuc || s.vis ? "粗框是" + esc(s.zh) + "（左右兩側都有）。" : ""}最接近的切面：${link("level:" + nearestBrainLevel(y).id)}。</figcaption>
               </figure>
-              <div class="nx-section-legend">${conn}<p class="nx-note"><a href="${BASE}/3d.html?region=${s.region === "basal-ganglia" ? "basal-ganglia" : "diencephalon" + (s.ell || th ? "&amp;nucleus=" + sid : "")}">在 3D 中看${th ? "它的連結" : ""} →</a></p></div>
+              <div class="nx-section-legend">${conn}<p class="nx-note"><a href="${BASE}/3d.html?region=${s.region === "basal-ganglia" ? "basal-ganglia" : s.region === "limbic" ? "limbic" : "diencephalon" + (s.ell || th ? "&amp;nucleus=" + sid : "")}">在 3D 中看${th ? "它的連結" : ""} →</a></p></div>
             </div></section>`;
     fig = s.region === "auditory" || s.vis ? fig + diFig : diFig;
   }
@@ -634,6 +644,14 @@ function lesionPage(lid) {
     figure = (cortexHit ? cbFigure({ zones: l.zones, label: l.zh + " 病灶範圍示意", caption: "紅點是病灶切到的小腦皮質，紅框是被切到的小腦核（上＝前葉、下＝小葉結節葉；病人右側畫在右邊）。" }) : "") +
       (inStem ? `<figure class="nx-big nx-small">${brainSectionSVG(model, y, { scale: 12, brainLesion: zb, label: l.zh + " 在腦幹切面上" })}<figcaption>病灶在${esc(yName(y))}切面上的位置（${link("level:" + nearestBrainLevel(y).id)}）。</figcaption></figure>` : "");
     page3d = "cerebellum";
+  } else if (l.region === "limbic") {
+    const figs = l.zones.filter((zz) => zz.brain && zz.brain.y[1] > 81).map((zz) => {
+      const zb = zz.brain, y = Math.min(106, Math.max(81, (zb.y[0] + zb.y[1]) / 2));
+      return `<figure class="nx-big">${diencSectionSVG(model, y, { scale: 6.5, brainLesion: zb, label: l.zh + " 病灶範圍示意" })}<figcaption>紅色是病灶範圍（${zb.side === "both" ? "雙側" : zb.side === "R" ? "右側" : "左側"}）；最接近的切面：${link("level:" + nearestBrainLevel(y).id)}。</figcaption></figure>`;
+    });
+    const lk = limbicKnock(model, l.zones);
+    figure = `<div><div class="nx-bg-card nx-bg-fig">${limbicSVG(LIMD, { knock: lk, label: l.zh + " 的迴路" })}${limbicLegend()}</div>${figs.join("")}</div>`;
+    page3d = "limbic";
   } else if (l.region === "basal-ganglia") {
     const figs = l.zones.filter((zz) => zz.brain).map((zz) => {
       const zb = zz.brain, y = (zb.y[0] + zb.y[1]) / 2;
@@ -738,6 +756,13 @@ function famLegend() {
 /* ---------------- 3D 整合頁 ---------------- */
 /** 各區域 3D 的使用說明（整合頁依區域切換顯示）。 */
 function howtoList(rid) {
+  if (rid === "limbic") return `<ul>
+            <li><b>路徑</b>：右邊選「穹窿」、「乳頭視丘徑」、「海馬內迴路」或「杏仁核傳出」，3D 畫出那一條的神經元鏈（右半球）；穹窿與杏仁核傳出各有兩種走法可以切換。</li>
+            <li><b>位置</b>：海馬結構是顳葉內側的 C 形（青色），尾端繞過視丘後方變成穹窿腳，在胼胝體下方匯成穹窿體，柱往下穿過下視丘到乳頭體；杏仁核在海馬頭的前方。</li>
+            <li><b>迴路圖</b>：綠色實線是 Papez 迴路（記憶），橘色虛線是杏仁核的連結（情緒）；切到「病灶」分頁，被病灶切到的站會打叉。</li>
+            <li><b>切面</b>：拖曳滑桿，可以看到每一層被切到的海馬、視丘前核與乳頭體。</li>
+            <li><b>病灶</b>：H.M.（雙側海馬）、顳葉內側硬化、Klüver-Bucy 症候群、雙側穹窿切斷與 Alzheimer 病，還有 Korsakoff 症候群。</li>
+          </ul>`;
   if (rid === "basal-ganglia") return `<ul>
             <li><b>迴路</b>：右邊選「直接路徑」、「間接路徑」或「黑質紋狀體」，3D 會畫出那一條的神經元鏈（右半球），光點從皮質走到紋狀體、蒼白球、視丘再回到皮質。</li>
             <li><b>狀況</b>：選正常、Parkinson 病、Huntington 病或視丘下核受損，迴路圖會依興奮／抑制推導出每一個核比正常更活躍（↑）或更安靜（↓）；3D 裡發亮＝更活躍、變淡＝更安靜、灰色＝失去功能。</li>
@@ -789,6 +814,7 @@ const HUB = [
   ["cerebellum", "小腦", "3D 小腦"],
   ["diencephalon", "間腦", "3D 間腦與視丘各核"],
   ["basal-ganglia", "基底核", "3D 基底核與直接／間接路徑"],
+  ["limbic", "邊緣系統", "3D 邊緣系統與 Papez 迴路"],
   ["visual", "視覺與瞳孔", "3D 視覺路徑與瞳孔反射"],
   ["auditory", "聽覺與前庭", "3D 聽覺與前庭"]
 ];
@@ -812,7 +838,7 @@ function hubPage() {
 /** 區域頁頂端：開啟整合 3D 頁、並直接切到這個區域。 */
 const open3d = (rid, q = "", label = "開啟 3D 模型 →") => `<p class="nx-open3d"><a class="btn-outline nx-btn" href="${BASE}/3d.html?region=${rid}${q}">${label}</a></p>`;
 /** 路徑在整合頁的哪一個區域看最完整。 */
-const region3d = (tid) => { const k = TR[tid].kind; return k === "visual" ? "visual" : k === "cerebellar" ? "cerebellum" : k === "diencephalon" ? "diencephalon" : k === "basal" ? "basal-ganglia" : k === "auditory" || k === "vestibular" ? "auditory" : !TR[tid].inputs ? "brainstem" : "spinal-cord"; };
+const region3d = (tid) => { const k = TR[tid].kind; return k === "visual" ? "visual" : k === "cerebellar" ? "cerebellum" : k === "diencephalon" ? "diencephalon" : k === "basal" ? "basal-ganglia" : k === "limbic" ? "limbic" : k === "auditory" || k === "vestibular" ? "auditory" : !TR[tid].inputs ? "brainstem" : "spinal-cord"; };
 
 function regionPage(rid) {
   const r = RG[rid];
@@ -911,6 +937,61 @@ function regionPage(rid) {
           <h3>間腦的病灶</h3>
           <ul class="nx-inline">${data.lesions.order.filter((id) => LE[id].region === "diencephalon").map((id) => `<li>${link("lesion:" + id)}</li>`).join("")}</ul>
           <p>也和間腦有關：${link("lesion:parinaud")}（松果腺腫瘤壓迫頂蓋）、${link("lesion:optic-tract")}（前脈絡膜動脈）、${link("tract:hypothalamospinal", "下視丘脊髓徑受損的 Horner 症候群")}。</p>
+        </section>`;
+  } else if (rid === "limbic") {
+    const sec = (y, id, cap) => `<figure class="nx-mini nx-di-mini"><a href="${BASE}/level/${id}.html" data-neuro="level:${id}">${diencSectionSVG(model, y, { scale: 5, label: cap })}</a><figcaption>${esc(cap)}</figcaption></figure>`;
+    const A = ST.amygdala;
+    extra = `
+        ${open3d("limbic")}
+        <section class="nx-block">
+          <h3>Papez 迴路與杏仁核</h3>
+          <div class="nx-bg-card nx-bg-fig nx-lm-wide">${limbicSVG(LIMD, { label: "邊緣系統迴路" })}${limbicLegend()}</div>
+          <p class="nx-note">依 Barr Fig. 18-5、18-6 與 Haines Fig. 31.1 整理。記憶靠 Papez 迴路（不含杏仁核）；情緒靠杏仁核，傳出走終紋與腹側杏仁傳出徑。</p>
+        </section>
+        <section class="nx-block">
+          <h3>Papez 迴路每一站</h3>
+          <div class="nx-table-wrap"><table class="nx-table">
+            <thead><tr><th>順序</th><th>站</th><th>纖維</th><th>受損</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>${link("structure:entorhinal")}</td><td>穿通路徑、alvear 路徑 → 海馬</td><td>Alzheimer 病最早退化</td></tr>
+              <tr><td>2</td><td>${link("structure:hippocampus")}</td><td>${link("tract:fornix", "穹窿")}（起自下托）</td><td>${link("lesion:hm-bilateral-hippocampus", "雙側 → 順向失憶")}；${link("lesion:mesial-temporal-sclerosis", "單側 → 顳葉癲癇")}</td></tr>
+              <tr><td>3</td><td>${link("structure:mammillary-body")}</td><td>${link("tract:mammillothalamic", "乳頭視丘徑")}</td><td>${link("lesion:korsakoff", "Korsakoff 症候群")}</td></tr>
+              <tr><td>4</td><td>${link("structure:an")}</td><td>內囊前肢（前視丘放射）→ 扣帶迴</td><td>國考：乳頭體與扣帶迴之間的中繼站</td></tr>
+              <tr><td>5</td><td>${link("structure:cingulate-gyrus")}</td><td>扣帶束 → 海馬旁迴、內嗅皮質</td><td>前部與情緒、疼痛的不愉快感有關</td></tr>
+            </tbody>
+          </table></div>
+          <p class="nx-note">Barr p.273–274；Haines p.461–462。${link("lesion:fornix-transection", "雙側穹窿切斷")}也會失憶。</p>
+        </section>
+        <section class="nx-block">
+          <h3>杏仁核的三群核與連結</h3>
+          <div class="nx-table-wrap"><table class="nx-table">
+            <thead><tr><th>群</th><th>傳入</th><th>傳出與功能</th></tr></thead>
+            <tbody>
+              <tr><td>皮質內側群（cortical、medial）</td><td>嗅球（外側嗅覺區）</td><td>與嗅覺結構互相聯繫</td></tr>
+              <tr><td>基底外側群</td><td>顳、前額葉與扣帶迴、視丘板內核、腦幹單胺核、臂旁核（痛）、腹側被蓋區、基底前腦</td><td>與新皮質（前額葉、顳葉、前扣帶迴）互相聯繫，經伏隔核與腹側蒼白球調節前額葉</td></tr>
+              <tr><td>中央群</td><td>皮質內側群與基底外側群</td><td>${link("tract:amygdalofugal", "終紋")} → 隔區、視前區、前下視丘；一部分進內側前腦束到孤束核、迷走神經背核 → 恐懼的自主神經反應</td></tr>
+            </tbody>
+          </table></div>
+          <p class="nx-note">Barr p.277–279；Haines p.463–465。刺激杏仁核 → 恐懼、易怒、交感神經活動增加；雙側破壞（含顳葉前下部）→ ${link("lesion:kluver-bucy", "Klüver-Bucy 症候群")}。</p>
+        </section>
+        <section class="nx-block">
+          <h3>皮質的三種類型</h3>
+          <ul>
+            <li><b>新皮質（isocortex）</b>：六層，占 90% 以上（感覺、運動、聯合皮質）。</li>
+            <li><b>旁古皮質（paleocortex）</b>：3–5 層，內嗅皮質（海馬旁迴）、梨狀皮質（uncus）、外側嗅覺迴。</li>
+            <li><b>古皮質（archicortex）</b>：三層，海馬與齒狀迴。</li>
+          </ul>
+          <p class="nx-note">Haines p.457；國考、考古題：古皮質位置最內側，海馬只有三層（不是五層）（考古題）。</p>
+        </section>
+        <section class="nx-block">
+          <h3>切面</h3>
+          <div class="nx-minis">${sec(81, "dienc-caudal", "間腦下段（乳頭體、海馬體部）")}${sec(90, "thalamus", "視丘（前核、背內側核、海馬尾）")}${sec(100, "internal-capsule", "內囊（穹窿柱、尾狀核）")}</div>
+          <p class="nx-note">後方在上、觀看者的左邊是病人右側。海馬是斜著走的 C 形，所以每一層切到的位置不同。杏仁核與內嗅皮質在更低的顳葉，這個切面看不到。</p>
+        </section>
+        <section class="nx-block">
+          <h3>邊緣系統的病灶</h3>
+          <ul class="nx-inline">${data.lesions.order.filter((id) => LE[id].region === "limbic" || (LE[id].alsoIn || []).includes("limbic")).map((id) => `<li>${link("lesion:" + id)}</li>`).join("")}</ul>
+          <p>也和邊緣系統有關：${link("structure:nucleus-accumbens")}（獎賞、成癮）、${link("lesion:hemiballismus")}與基底核（${link("region:basal-ganglia", "基底核單元")}）。</p>
         </section>`;
   } else if (rid === "basal-ganglia") {
     const nt = ["caudate", "putamen", "nucleus-accumbens", "gpe", "gpi", "subthalamic", "snc", "snr"].map((id) => `<tr><td>${link("structure:" + id)}</td><td>${esc(ST[id].bg.nt)}</td><td>${esc(ST[id].bg.role)}</td></tr>`).join("");
@@ -1022,7 +1103,7 @@ function regionPage(rid) {
   const levels = rid === "spinal-cord"
     ? `<section class="nx-block"><h3>各節段</h3><ul class="nx-seglist">${model.segs.map((s) => `<li>${link("level:" + s.id, s.name)}</li>`).join("")}</ul></section>`
     : "";
-  const brainLv = { brainstem: data.levels.brainLevels.filter((b) => b.y < 80).map((b) => b.id), diencephalon: ["dienc-caudal", "thalamus", "internal-capsule"], "basal-ganglia": ["midbrain", "dienc-caudal", "basal-ganglia", "internal-capsule"], cortex: ["cortex"], cerebellum: [], visual: [], auditory: ["med-rostral", "pons-caudal", "pons", "midbrain-ic", "thalamus"] }[rid];
+  const brainLv = { brainstem: data.levels.brainLevels.filter((b) => b.y < 80).map((b) => b.id), diencephalon: ["dienc-caudal", "thalamus", "internal-capsule"], "basal-ganglia": ["midbrain", "dienc-caudal", "basal-ganglia", "internal-capsule"], limbic: ["dienc-caudal", "thalamus", "internal-capsule"], cortex: ["cortex"], cerebellum: [], visual: [], auditory: ["med-rostral", "pons-caudal", "pons", "midbrain-ic", "thalamus"] }[rid];
   const blv = brainLv && brainLv.length ? `<section class="nx-block"><h3>切面</h3><p>${brainLv.map((id) => link("level:" + id)).join("、")}</p></section>` : "";
   const structs = Object.entries(ST).filter(([, s]) => s.region === rid).map(([id]) => link("structure:" + id));
   const tracts = data.tracts.order.filter((tid) => rid === "brainstem" ? TR[tid].bundles.some((b) => b.brain)
@@ -1030,6 +1111,7 @@ function regionPage(rid) {
       : rid === "cerebellum" ? TR[tid].kind === "cerebellar" || !!CB_HL[tid]
       : rid === "visual" ? isVisualTract(tid)
       : rid === "basal-ganglia" ? TR[tid].kind === "basal" || tid === "dentatothalamic"
+      : rid === "limbic" ? TR[tid].kind === "limbic" || tid === "mammillothalamic"
       : rid === "diencephalon" ? TR[tid].kind === "diencephalon" || /^(dcml|als|trigeminal|dentatothalamic|visual|auditory|vestibulothalamic|lcst|cbt|hypothalamospinal)$/.test(tid)
       : rid === "auditory" ? /^(auditory|vestibular)$/.test(TR[tid].kind) || /^(lvst|mvst|vestibulocerebellar|mlf-gaze)$/.test(tid) : !isVisualTract(tid)).map((tid) => link("tract:" + tid));
   const body = `
@@ -1219,6 +1301,7 @@ function lesionsListPage() {
     const z = l.zones[0];
     const where = LE[lid].region === "visual" ? visWhere(lid, z.brain)
       : LE[lid].region === "diencephalon" ? ({ "thalamic-syndrome": "右側視丘腹後核（VPL、VPM）", "ic-lacunar": "右側內囊後肢與膝部", hemiballismus: "右側視丘下核", korsakoff: "兩側乳頭體＋背內側核", craniopharyngioma: "鞍上（視交叉、垂體柄）" }[lid] || "")
+      : LE[lid].region === "limbic" ? ({ "hm-bilateral-hippocampus": "兩側海馬與內嗅皮質", "mesial-temporal-sclerosis": "右側海馬", "kluver-bucy": "兩側杏仁核與顳葉前下部", "fornix-transection": "兩側穹窿體", alzheimer: "兩側內嗅皮質、海馬與基底前腦" }[lid] || "")
       : LE[lid].region === "basal-ganglia" ? ({ parkinson: "兩側黑質緻密部", hemiparkinson: "右側黑質緻密部", huntington: "兩側尾狀核（紋狀體）", wilson: "兩側殼核（豆狀核）" }[lid] || "")
       : LE[lid].region === "auditory" ? ({ "acoustic-neuroma": "右側內耳道（前庭耳蝸神經）", "labyrinthine-artery": "右側內耳", "lateral-lemniscus": "右側外側蹄系（橋腦上段）", "auditory-cortex": "右側顳橫回" }[lid] || "")
       : LE[lid].region === "cerebellum" ? ({ "cb-hemisphere": "右側小腦半球＋齒狀核", "cb-vermis": "前葉蚓部（中線）", "cb-flocculonodular": "小結與第四腦室頂（中線）", scp: "右側上小腦腳（橋腦上段，交叉前）" }[lid] || "")
@@ -1250,6 +1333,9 @@ function lesionsListPage() {
       <section class="nx-block"><h3>間腦</h3>${table("diencephalon")}
         <p class="nx-note">間腦與內囊的病灶，症狀大多在對側（內囊、視丘、視丘下核）；中線結構（乳頭體、垂體柄）的病灶兩側都受影響。</p>
       </section>
+      <section class="nx-block"><h3>邊緣系統與記憶</h3>${table("limbic")}
+        <p class="nx-note">記憶的規則：形成新的長期記憶需要海馬與 Papez 迴路完整，任何一站兩側都壞（海馬、穹窿、乳頭體、背內側核）就是順向失憶；舊的記憶儲存在新皮質，不受影響。單側幾乎沒有影響。Korsakoff 症候群列在間腦。</p>
+      </section>
       <section class="nx-block"><h3>基底核</h3>${table("basal-ganglia")}
         <p class="nx-note">基底核的迴路不交叉，最後經皮質脊髓徑交叉，所以單側病灶的症狀在對側。基底核受損不會癱瘓：動作太少（Parkinson）或太多（舞蹈症、投擲症）。偏身投擲症（視丘下核）列在間腦。</p>
       </section>
@@ -1277,7 +1363,7 @@ function indexPage() {
   const nerves = data.nerves.order.map((id) => `<li>${link("nerve:" + id, NV[id].num + " " + NV[id].zh)}</li>`).join("");
   const body = `
       <h2>神經解剖學：傳導路徑</h2>
-      <p class="guide-lead">把常考的傳導路徑與腦神經做成可以旋轉的 3D 模型：每一條路徑從哪裡出發、在哪一個節段走在哪個位置、在哪裡交叉、在哪裡換站，都可以一路跟著看。目前有脊髓、腦幹與腦神經、小腦、間腦（視丘各核與內囊）、基底核（直接與間接路徑）、視覺路徑與瞳孔反射、聽覺與前庭七個單元，之後會陸續加上邊緣系統與大腦皮質。</p>
+      <p class="guide-lead">把常考的傳導路徑與腦神經做成可以旋轉的 3D 模型：每一條路徑從哪裡出發、在哪一個節段走在哪個位置、在哪裡交叉、在哪裡換站，都可以一路跟著看。目前有脊髓、腦幹與腦神經、小腦、間腦（視丘各核與內囊）、基底核（直接與間接路徑）、邊緣系統（Papez 迴路與杏仁核）、視覺路徑與瞳孔反射、聽覺與前庭八個單元，之後會陸續加上大腦皮質。</p>
 
       <div class="nx-search">
         <label for="nx-q">查名稱（中文、英文、縮寫都可以）</label>
@@ -1313,6 +1399,8 @@ function indexPage() {
         <ul class="nx-inline">${lesions("diencephalon")}</ul>
         <h4>基底核</h4>
         <ul class="nx-inline">${lesions("basal-ganglia")}</ul>
+        <h4>邊緣系統與記憶</h4>
+        <ul class="nx-inline">${lesions("limbic")}</ul>
         <h4>聽覺與前庭</h4>
         <ul class="nx-inline">${lesions("auditory")}</ul>
         <h4>視覺路徑與瞳孔</h4>

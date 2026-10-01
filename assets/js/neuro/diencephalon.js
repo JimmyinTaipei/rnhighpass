@@ -123,7 +123,16 @@ export function diencSectionSVG(model, y, opts) {
   Object.keys(S).forEach(function (sid) {
     var s = S[sid];
     if (s.nuc && s.region !== "cerebellum" && y >= s.nuc[0][0] && y <= s.nuc[s.nuc.length - 1][0] && y > 79) {
+      // 沿著 nuc 路徑內插出這一層的位置（海馬這種斜著走的核才會跟著切面移動）
       var a = s.nuc[0];
+      for (var qi = 0; qi < s.nuc.length - 1; qi++) {
+        var q0 = s.nuc[qi], q1 = s.nuc[qi + 1];
+        if (y >= q0[0] && y <= q1[0] && q1[0] > q0[0]) {
+          var tt = (y - q0[0]) / (q1[0] - q0[0]);
+          a = q0.map(function (v, k) { return v + (q1[k] - v) * tt; });
+          break;
+        }
+      }
       [-1, 1].forEach(function (sd) {
         cut.push({ id: sid, side: sd < 0 ? "R" : "L", x: sd * a[1], z: a[2], rx: a[3], rz: a[4] });
         p.push('<ellipse class="nx-di-nuc' + (hot ? (hot === sid ? " is-hot" : " is-dim") : "") + '" data-structure="' + sid + '" cx="' + f(sd * a[1]) + '" cy="' + f(a[2]) + '" rx="' + f(a[3]) + '" ry="' + f(a[4]) + '" style="--c:' + (s.color || "#b9b2c8") + '"><title>' + esc(s.zh) + "</title></ellipse>");

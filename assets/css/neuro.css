@@ -1877,3 +1877,77 @@ table.nx-hear td.is-bad {
 .nx-bg-fig {
   max-width: 440px;
 }
+
+/* ---------- 邊緣系統迴路圖 ---------- */
+.nx-lm {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font-base);
+}
+
+.nx-lm-node rect {
+  fill: #f4f6fa;
+  stroke: #8b95a7;
+  stroke-width: 0.35;
+}
+
+.nx-lm-node.is-papez rect {
+  fill: #e4f4f1;
+  stroke: #0f766e;
+  stroke-width: 0.6;
+}
+
+.nx-lm-node.is-x rect {
+  stroke: #c92a2a;
+  stroke-width: 0.8;
+}
+
+.nx-lm-zh {
+  font-size: 3.4px;
+  font-weight: 700;
+  text-anchor: middle;
+  fill: #1f2633;
+}
+
+.nx-lm-sub {
+  font-size: 2.4px;
+  text-anchor: middle;
+  fill: #5d6879;
+}
+
+.nx-lm-dir {
+  font-size: 3.6px;
+  font-weight: 700;
+  text-anchor: end;
+  fill: #c92a2a;
+}
+
+.nx-lm-el {
+  font-size: 2.1px;
+  fill: #8a4b00;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 0.8px;
+}
+
+.nx-lm-el.is-papez {
+  fill: #0f766e;
+  font-weight: 700;
+}
+
+.nx-lm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  font-size: 0.72rem;
+  margin: 2px 0 0;
+}
+
+.nx-lm-legend li {
+  margin: 0;
+}
+
+.nx-lm-legend i.is-dash {
+  background-image: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 6px) !important;
+}

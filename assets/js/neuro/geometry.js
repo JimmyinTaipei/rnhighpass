@@ -606,6 +606,7 @@ export function createModel(data) {
   var BG = data.basal || null;
   /** 尾狀核的體與尾（C 字形）和水平面 y 的交點：[{lat, z, r}]（右側，左側鏡像）。 */
   api.BG = BG;
+  api.LM = data.limbic || null;
   api.caudateTailAt = function (y) {
     if (!BG) return [];
     var P = BG.caudateTail.pts, out = [];

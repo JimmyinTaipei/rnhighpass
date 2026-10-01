@@ -21,7 +21,7 @@ import { deficits, deficitKeys } from "../assets/js/neuro/lesion.js";
 
 const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const J = async (f) => JSON.parse(await readFile(path.join(ROOT, "assets/data/neuro", f + ".json"), "utf8"));
-const data = { levels: await J("levels"), tracts: await J("tracts"), structures: await J("structures"), lesions: await J("lesions"), regions: await J("regions"), sources: await J("sources"), nerves: await J("nerves"), visual: await J("visual"), auditory: await J("auditory"), diencephalon: await J("diencephalon"), basal: await J("basal") };
+const data = { levels: await J("levels"), tracts: await J("tracts"), structures: await J("structures"), lesions: await J("lesions"), regions: await J("regions"), sources: await J("sources"), nerves: await J("nerves"), visual: await J("visual"), auditory: await J("auditory"), diencephalon: await J("diencephalon"), basal: await J("basal"), limbic: await J("limbic") };
 const model = createModel(data);
 const TR = data.tracts.tracts;
 const errors = [], warnings = [];
@@ -110,7 +110,9 @@ const SIDES = {
   // 間腦（以右側為例）：海馬 → 乳頭體 → 前核 → 扣帶迴都在同側；視上核、室旁核 → 垂體後葉
   mammillothalamic: { start: "R", end: "R" }, hypothalamohypophysial: { start: "R", end: { son: "R", pvn: "R" } },
   // 基底核（右半球）：整個迴路不交叉
-  "bg-direct": { start: "R", end: "R" }, "bg-indirect": { start: "R", end: "R" }, nigrostriatal: { start: "R", end: "R" }
+  "bg-direct": { start: "R", end: "R" }, "bg-indirect": { start: "R", end: "R" }, nigrostriatal: { start: "R", end: "R" },
+  // 邊緣系統（右側）：海馬 → 乳頭體／隔區、內嗅皮質 → 海馬、杏仁核 → 隔區／下視丘，都在同一側
+  fornix: { start: "R", end: "R" }, "hippocampal-circuit": { start: "R", end: "R" }, amygdalofugal: { start: "R", end: "R" }
 };
 for (const tid of data.tracts.order) {
   const exp = SIDES[tid];
@@ -127,7 +129,7 @@ for (const tid of data.tracts.order) {
     // 中樞內的第一個點：上行路徑略過背根神經節與進入點；下行路徑是皮質或腦幹的核；視覺路徑從視網膜開始
     const first = tr.kind === "ascending" ? all[2] : all[0];
     // 終點：上行、視覺＝最後一個神經元的終點；下行＝前角（最後一個神經元的起點）
-    const last = /^(ascending|visual|cerebellar|auditory|vestibular|diencephalon|basal)$/.test(tr.kind) ? all[all.length - 1] : ch[ch.length - 1].pts[0];
+    const last = /^(ascending|visual|cerebellar|auditory|vestibular|diencephalon|basal|limbic)$/.test(tr.kind) ? all[all.length - 1] : ch[ch.length - 1].pts[0];
     const endSide = typeof exp.end === "string" ? exp.end : exp.end[variant];
     const sideOf = (p) => (p.x < -0.05 ? "R" : p.x > 0.05 ? "L" : "M");
     if (sideOf(first) !== exp.start) err(`${tid} @ ${seg}：起點應在${exp.start === "R" ? "右" : "左"}側，實際 x = ${first.x.toFixed(2)}`);

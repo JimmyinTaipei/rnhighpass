@@ -1,0 +1,195 @@
+{
+  "_doc": "邊緣系統的迴路圖（Papez 迴路與杏仁核的連結）：節點放在 100×100 的畫布上；structs 是這個節點對應的結構，edges.bundles 是這條連結對應的纖維束（病灶切到就標記）。依 Barr Fig. 18-5、18-6 與 Haines Fig. 31.1、31.6 整理。",
+  "nodes": [
+    {
+      "id": "sept",
+      "zh": "隔區",
+      "sub": "膽鹼性",
+      "x": 16,
+      "y": 10,
+      "structs": [
+        "septal-area"
+      ]
+    },
+    {
+      "id": "hyp",
+      "zh": "下視丘",
+      "sub": "視前區、外側區",
+      "x": 50,
+      "y": 10,
+      "structs": [
+        "lateral-hyp",
+        "anterior-hyp",
+        "preoptic"
+      ]
+    },
+    {
+      "id": "md",
+      "zh": "背內側核",
+      "sub": "→ 前額葉",
+      "x": 84,
+      "y": 10,
+      "structs": [
+        "md"
+      ]
+    },
+    {
+      "id": "mb",
+      "zh": "乳頭體",
+      "sub": "Papez",
+      "x": 16,
+      "y": 36,
+      "structs": [
+        "mammillary-body"
+      ]
+    },
+    {
+      "id": "an",
+      "zh": "視丘前核",
+      "sub": "Papez",
+      "x": 50,
+      "y": 36,
+      "structs": [
+        "an"
+      ]
+    },
+    {
+      "id": "cg",
+      "zh": "扣帶迴",
+      "sub": "Papez",
+      "x": 84,
+      "y": 36,
+      "structs": [
+        "cingulate-gyrus"
+      ]
+    },
+    {
+      "id": "hip",
+      "zh": "海馬結構",
+      "sub": "下托・CA1–3・齒狀迴",
+      "x": 16,
+      "y": 62,
+      "structs": [
+        "hippocampus"
+      ]
+    },
+    {
+      "id": "ec",
+      "zh": "內嗅皮質",
+      "sub": "海馬旁迴",
+      "x": 84,
+      "y": 62,
+      "structs": [
+        "entorhinal"
+      ]
+    },
+    {
+      "id": "amy",
+      "zh": "杏仁核",
+      "sub": "不在 Papez 迴路",
+      "x": 50,
+      "y": 88,
+      "structs": [
+        "amygdala"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "perf",
+      "from": "ec",
+      "to": "hip",
+      "zh": "穿通路徑、alvear 路徑",
+      "papez": true,
+      "bundles": []
+    },
+    {
+      "id": "fx",
+      "from": "hip",
+      "to": "mb",
+      "zh": "穹窿（連合後）",
+      "papez": true,
+      "bundles": [
+        "fornix-crus",
+        "fornix-body",
+        "fornix-col"
+      ]
+    },
+    {
+      "id": "mtt",
+      "from": "mb",
+      "to": "an",
+      "zh": "乳頭視丘徑",
+      "papez": true,
+      "bundles": [
+        "mtt"
+      ]
+    },
+    {
+      "id": "atr",
+      "from": "an",
+      "to": "cg",
+      "zh": "內囊前肢",
+      "papez": true,
+      "bundles": []
+    },
+    {
+      "id": "cgm",
+      "from": "cg",
+      "to": "ec",
+      "zh": "扣帶束",
+      "papez": true,
+      "bundles": []
+    },
+    {
+      "id": "fxp",
+      "from": "hip",
+      "to": "sept",
+      "zh": "穹窿（連合前）",
+      "papez": false,
+      "bundles": [],
+      "path": "M4 62 H2.4 V10 H4"
+    },
+    {
+      "id": "st",
+      "from": "amy",
+      "to": "sept",
+      "zh": "終紋",
+      "papez": false,
+      "bundles": [
+        "stria-post",
+        "stria-ant"
+      ],
+      "path": "M38 88 H0.6 V13 H4"
+    },
+    {
+      "id": "stH",
+      "from": "amy",
+      "to": "hyp",
+      "zh": "終紋、腹側徑",
+      "papez": false,
+      "bundles": [
+        "vaf"
+      ],
+      "path": "M56 81.5 V49 H67 V10 H62"
+    },
+    {
+      "id": "vafm",
+      "from": "amy",
+      "to": "md",
+      "zh": "腹側徑",
+      "papez": false,
+      "bundles": [],
+      "path": "M62 91 H99 V10 H96"
+    },
+    {
+      "id": "ea",
+      "from": "amy",
+      "to": "ec",
+      "zh": "互相聯繫",
+      "papez": false,
+      "bundles": []
+    }
+  ],
+  "viewBox": "-2 0 104 100"
+}

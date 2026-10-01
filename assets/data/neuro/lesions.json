@@ -49,7 +49,12 @@
     "parkinson",
     "hemiparkinson",
     "huntington",
-    "wilson"
+    "wilson",
+    "hm-bilateral-hippocampus",
+    "mesial-temporal-sclerosis",
+    "kluver-bucy",
+    "fornix-transection",
+    "alzheimer"
   ],
   "lesions": {
     "brown-sequard": {
@@ -2744,7 +2749,10 @@
           "p": "35"
         }
       ],
-      "region": "diencephalon"
+      "region": "diencephalon",
+      "alsoIn": [
+        "limbic"
+      ]
     },
     "craniopharyngioma": {
       "zh": "顱咽管瘤（鞍上腫瘤）",
@@ -3057,6 +3065,405 @@
         }
       ],
       "region": "basal-ganglia"
+    },
+    "hm-bilateral-hippocampus": {
+      "zh": "雙側內側顳葉切除（H.M.）",
+      "en": "Bilateral medial temporal lobe lesion (patient H.M.)",
+      "aliases": [
+        "H.M.",
+        "Henry Molaison",
+        "bilateral hippocampal lesion",
+        "anterograde amnesia",
+        "順向性失憶",
+        "transient global amnesia",
+        "短暫全面性失憶"
+      ],
+      "highYield": 3,
+      "summary": "兩側海馬結構受損：無法形成新的陳述性記憶（順向性失憶），舊的記憶與程序性記憶保留。H.M. 在 1953 年為了治療癲癇切除雙側內側顳葉，之後 55 年都無法記住任何新事物超過 5 分鐘。",
+      "cause": "雙側顳葉內側切除、兩側先後缺血（後大腦動脈）、心跳停止後缺氧（CA1）、單純疱疹腦炎、頭部外傷；暫時的缺氧造成短暫全面性失憶（Barr p.276–277, 279）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              68,
+              74
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  24,
+                  32
+                ],
+                "z": [
+                  -8,
+                  7
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "brain": {
+            "y": [
+              74,
+              86
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  17,
+                  27
+                ],
+                "z": [
+                  -34,
+                  -19
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "amnesia"
+      ],
+      "points": [
+        "海馬與它的連結（穹窿、乳頭體、Papez 迴路）是鞏固短期記憶所必需；兩側都要壞才會失憶，只壞一側通常可以由另一側代償（Barr p.276–277）。",
+        "舊的記憶不受影響：長期記憶儲存在廣泛的新皮質，不是海馬（Barr p.272, 276–277；Haines p.462）。",
+        "H.M. 雖然雙側內側顳葉切除，卻沒有 Klüver-Bucy 症候群的其他特徵（Barr p.279）。",
+        "同樣造成順向失憶：[[lesion:korsakoff]]（乳頭體、背內側核）、[[lesion:fornix-transection]]、[[lesion:alzheimer]]。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "272, 276–279"
+        },
+        {
+          "src": "haines",
+          "p": "462, 466"
+        },
+        {
+          "src": "ym08",
+          "p": "31–62"
+        },
+        {
+          "src": "tmu106b7",
+          "p": "9–24"
+        }
+      ],
+      "region": "limbic"
+    },
+    "mesial-temporal-sclerosis": {
+      "zh": "顳葉內側硬化（顳葉癲癇）",
+      "en": "Mesial temporal sclerosis (temporal lobe epilepsy)",
+      "aliases": [
+        "hippocampal sclerosis",
+        "temporal lobe epilepsy",
+        "complex partial seizure",
+        "déjà vu",
+        "aura",
+        "顳葉癲癇",
+        "海馬硬化",
+        "似曾相識"
+      ],
+      "highYield": 2,
+      "summary": "單側海馬的疤痕（常在出生時顳葉內側被小腦幕擠壓）成為癲癇的病灶：先兆是怪味、似曾相識、恐懼與上腹部異樣感，接著意識不清。單側海馬受損通常不會失憶。",
+      "cause": "產傷（顳葉內側被小腦幕擠壓）、熱痙攣、感染、外傷；癲癇病灶最常在杏仁核、海馬前端或內嗅區（Barr p.279–280）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              68,
+              74
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  24,
+                  32
+                ],
+                "z": [
+                  -8,
+                  7
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "brain": {
+            "y": [
+              74,
+              86
+            ],
+            "side": "R",
+            "boxes": [
+              {
+                "lat": [
+                  17,
+                  27
+                ],
+                "z": [
+                  -34,
+                  -19
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "hippo:R"
+      ],
+      "points": [
+        "先兆（aura）：不明的臭味（uncus 與皮質內側核）、似曾相識（海馬、杏仁核、感覺聯合皮質）、恐懼焦慮（杏仁核）、心跳加快與上腹異樣感（杏仁核、島葉、下視丘）（Barr p.280；Haines p.466）。",
+        "發作時失去意識或不完全清醒，不一定有抽搐，容易漏診；藥物治療無效時可以切除病灶側的前顳葉，但要先確認另一側顳葉完好，並避開 Wernicke 區（Barr p.280）。",
+        "單側海馬受損只有輕微的物質特異性記憶缺損（優勢半球：語文；非優勢半球：空間）；雙側才是[[lesion:hm-bilateral-hippocampus|順向失憶]]（Barr p.276–277）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "276, 279–280"
+        },
+        {
+          "src": "haines",
+          "p": "466"
+        },
+        {
+          "src": "ym08",
+          "p": "8, 31–62"
+        }
+      ],
+      "region": "limbic"
+    },
+    "kluver-bucy": {
+      "zh": "Klüver-Bucy 症候群（雙側杏仁核與顳葉前下部）",
+      "en": "Klüver-Bucy syndrome (bilateral amygdala and anterior temporal lobes)",
+      "aliases": [
+        "Kluver-Bucy syndrome",
+        "bilateral temporal lobectomy",
+        "psychic blindness",
+        "hyperorality",
+        "心盲",
+        "雙側顳葉切除症候群"
+      ],
+      "highYield": 3,
+      "summary": "雙側顳葉前部（含杏仁核）受損：溫馴、缺乏恐懼與憤怒、口部探索過度與暴食、性行為異常與視覺失認。人類多見於病毒性腦炎、外傷、部分 Alzheimer 病。",
+      "cause": "雙側顳葉切除（實驗）、單純疱疹腦炎、頭部外傷、Alzheimer 病與 Pick 病（Barr p.279；Haines p.466）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              68,
+              78
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  26,
+                  52
+                ],
+                "z": [
+                  10,
+                  30
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "kb"
+      ],
+      "points": [
+        "溫馴、失去恐懼與憤怒（杏仁核）、學不會新東西、過度用口探索造成暴食、性行為增加甚至異常、視覺失認（下顳迴後部的視覺聯合皮質）（Barr p.279）。",
+        "去除杏仁核的動物變得溫馴，不是更具攻擊性（考古題）。",
+        "只有杏仁核受損時症狀較輕，性行為的改變較少；再加上海馬則學不會新東西（Barr p.279）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "274, 279–280"
+        },
+        {
+          "src": "haines",
+          "p": "466"
+        },
+        {
+          "src": "ym08",
+          "p": "8, 31–62"
+        }
+      ],
+      "region": "limbic"
+    },
+    "fornix-transection": {
+      "zh": "雙側穹窿切斷",
+      "en": "Bilateral fornix transection",
+      "aliases": [
+        "fornix lesion",
+        "third ventricle tumor",
+        "colloid cyst",
+        "穹窿損傷",
+        "第三腦室膠樣囊腫"
+      ],
+      "highYield": 2,
+      "summary": "兩側穹窿（穹窿體）被切斷或壓迫：順向性失憶，因為海馬到乳頭體的傳出中斷。單側穹窿受損幾乎沒有影響。",
+      "cause": "為了限制癲癇擴散所做的手術、切除第三腦室區域腫瘤（例如膠樣囊腫）的手術併發症（Barr p.277）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              104,
+              114
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  1.5,
+                  5
+                ],
+                "z": [
+                  -14,
+                  8
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "amnesia"
+      ],
+      "points": [
+        "雙側斷在穹窿體或柱都會造成嚴重的順向失憶；老的記憶不受影響（Barr p.277）。",
+        "同一條迴路（Papez）上的不同位置，受損後都是失憶：[[lesion:hm-bilateral-hippocampus|海馬]]、[[lesion:korsakoff|乳頭體、背內側核]]。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "273, 277"
+        },
+        {
+          "src": "haines",
+          "p": "461–462"
+        },
+        {
+          "src": "ym08",
+          "p": "8, 31–62"
+        }
+      ],
+      "region": "limbic"
+    },
+    "alzheimer": {
+      "zh": "Alzheimer 病（內嗅皮質、海馬與基底前腦）",
+      "en": "Alzheimer disease (entorhinal cortex, hippocampus and basal forebrain)",
+      "aliases": [
+        "Alzheimer's disease",
+        "dementia",
+        "senile plaques",
+        "neurofibrillary tangles",
+        "阿茲海默症",
+        "失智症",
+        "老年斑",
+        "神經纖維纏結"
+      ],
+      "highYield": 3,
+      "summary": "最早的症狀是近期記憶喪失：內嗅皮質與海馬最早退化，基底前腦的膽鹼性神經元大量流失，皮質失去膽鹼性傳入；晚期新皮質（顳葉、頂葉）廣泛萎縮。",
+      "cause": "退化性疾病：老年斑（β-amyloid）與神經纖維纏結；晚期顳葉、頂葉皮質明顯萎縮（Barr p.276；Haines p.379）。",
+      "zones": [
+        {
+          "brain": {
+            "y": [
+              68,
+              74
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  24,
+                  32
+                ],
+                "z": [
+                  -8,
+                  7
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "brain": {
+            "y": [
+              74,
+              86
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  17,
+                  27
+                ],
+                "z": [
+                  -34,
+                  -19
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "brain": {
+            "y": [
+              83,
+              88
+            ],
+            "side": "both",
+            "boxes": [
+              {
+                "lat": [
+                  10,
+                  18
+                ],
+                "z": [
+                  10,
+                  19
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        "amnesia",
+        "cholinergic"
+      ],
+      "points": [
+        "近期記憶喪失是第一個症狀；內嗅皮質和海馬在很早期就有退化（Barr p.276）。",
+        "膽鹼性假說：基底前腦（Meynert 基底核等）的大型膽鹼性神經元退化，皮質與海馬失去膽鹼性傳入；三種膽鹼酯酶抑制劑是核准的治療藥物（Barr p.276；Haines p.379）。",
+        "神經元內有纖維纏結，細胞外有斑塊；大腦皮質萎縮以顳葉、頂葉最明顯（Barr p.276）。",
+        "Alzheimer 病的主要臨床特徵是皮質、海馬、隔區膽鹼性功能失調，不算基底核（basal ganglia）疾病（Haines p.379）。"
+      ],
+      "sources": [
+        {
+          "src": "barr",
+          "p": "212, 276"
+        },
+        {
+          "src": "haines",
+          "p": "379–380"
+        },
+        {
+          "src": "ym08",
+          "p": "8, 31–62"
+        }
+      ],
+      "region": "limbic"
     }
   }
 }

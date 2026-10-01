@@ -100,6 +100,24 @@ export function deficits(model, zones) {
     if (found[k] && found.ataxia) Object.keys(found[k]).forEach(function (sd) { delete found.ataxia[sd]; });
   });
 
+  // 邊緣系統：兩側都受損才有的症狀
+  (function () {
+    var both = function (k) { return found[k] && found[k].R && found[k].L; };
+    var mem = function (via) {
+      var m = found.amnesia || (found.amnesia = {});
+      var prev = (m.B || m.R || m.L || {}).via || [];
+      m.B = { brain: true, minor: false, via: prev.concat(via) };
+      delete m.R; delete m.L;
+    };
+    if (both("hippo")) { mem(found.hippo.R.via.concat(found.hippo.L.via)); delete found.hippo; }
+    if (both("fornix")) { mem(["穹窿"]); delete found.fornix; }
+    else if (found.fornix) delete found.fornix;   // 單側穹窿：幾乎沒有影響
+    if (both("amygdala") && both("tempctx")) { found.kb = { B: { brain: true, minor: false, via: ["杏仁核", "顳葉前下部"] } }; delete found.amygdala; delete found.tempctx; }
+    else { if (found.tempctx) delete found.tempctx; if (found.amygdala && !both("amygdala")) Object.keys(found.amygdala).forEach(function (sd) { found.amygdala[sd].minor = true; }); }
+    if (both("basalis")) { found.cholinergic = { B: { brain: true, minor: false, via: ["基底前腦"] } }; delete found.basalis; }
+    else if (found.basalis) delete found.basalis;
+  })();
+
   // 視覺路徑與瞳孔反射
   var vis = [];
   var bz = zones.filter(function (z) { return z.brain; });
@@ -138,7 +156,7 @@ export function deficits(model, zones) {
   });
   out = out.concat(vis);
   var ORDER = ["blind", "bitemporal", "hh", "quad", "scot", "vf", "cn3", "cn4", "cn5", "cn5m", "gaze", "cn6", "ino", "cn7", "cn8", "bulbar", "cn11", "cn12", "face-pain", "face-touch", "hearing", "vestib-periph", "vestib", "aud-central", "upgaze", "red",
-    "lnd", "rapd", "pupil-eff", "thal-body", "thal-face", "hemiballismus", "parkinsonism", "chorea", "lentiform", "amnesia", "di", "cb-limb", "cb-trunk", "cb-fn", "cst", "cbt", "ml", "dc", "als", "umn", "umn-arm", "lmn", "segsens", "awc", "areflexia", "horner", "ataxia", "bladder", "taste", "dsct", "vsct"];
+    "lnd", "rapd", "pupil-eff", "thal-body", "thal-face", "hemiballismus", "kb", "amygdala", "hippo", "cholinergic", "parkinsonism", "chorea", "lentiform", "amnesia", "di", "cb-limb", "cb-trunk", "cb-fn", "cst", "cbt", "ml", "dc", "als", "umn", "umn-arm", "lmn", "segsens", "awc", "areflexia", "horner", "ataxia", "bladder", "taste", "dsct", "vsct"];
   out.sort(function (x, y) { return ORDER.indexOf(x.kind) - ORDER.indexOf(y.kind) || x.side.localeCompare(y.side); });
   return out;
 }
@@ -191,7 +209,7 @@ export function deficitKeys(list) {
 /* ======================================================================
    腦幹病灶：看哪些路徑、神經核、腦神經纖維穿過病灶範圍
    ====================================================================== */
-var NOSIDE = { vestib: 1, upgaze: 1, bladder: 1, "cb-trunk": 1, "cb-fn": 1, amnesia: 1, di: 1 };
+var NOSIDE = { kb: 1, cholinergic: 1, vestib: 1, upgaze: 1, bladder: 1, "cb-trunk": 1, "cb-fn": 1, amnesia: 1, di: 1 };
 var OPP = { R: "L", L: "R" };
 
 // 路徑（bundle id）→ 缺損種類；side：body = 這條纖維負責的身體側，opp = 相反側
@@ -204,7 +222,9 @@ var BUNDLE_FX = {
   // 小腦的傳入與傳出（body = 這條纖維服務的身體側 = 同側小腦）
   dtt: ["ataxia", "body", false, "上小腦腳"],
   // 間腦
-  hht: ["di", "body", false, "下視丘垂體徑"], "hht-pvn": ["di", "body", false, "下視丘垂體徑"]
+  hht: ["di", "body", false, "下視丘垂體徑"], "hht-pvn": ["di", "body", false, "下視丘垂體徑"],
+  // 邊緣系統：穹窿（單側幾乎沒有影響，雙側才會失憶）
+  "fornix-crus": ["fornix", "body", true, "穹窿"], "fornix-body": ["fornix", "body", true, "穹窿"], "fornix-col": ["fornix", "body", true, "穹窿"]
 };
 // 神經核（structure id）→ 缺損種類；side：same = 核所在側，opp = 對側
 var NUC_FX = {
@@ -219,7 +239,10 @@ var NUC_FX = {
   vpl: ["thal-body", "opp"], vpm: ["thal-face", "opp"], subthalamic: ["hemiballismus", "opp"],
   "mammillary-body": ["amnesia", "same"], md: ["amnesia", "same"], son: ["di", "same"], pvn: ["di", "same"],
   // 基底核（迴路不交叉，症狀在對側身體）
-  snc: ["parkinsonism", "opp"], caudate: ["chorea", "opp"], putamen: ["lentiform", "opp"]
+  snc: ["parkinsonism", "opp"], caudate: ["chorea", "opp"], putamen: ["lentiform", "opp"],
+  // 邊緣系統（都在同一側；雙側才會失憶、Klüver-Bucy 等）
+  hippocampus: ["hippo", "same", false, "海馬"], entorhinal: ["hippo", "same", false, "內嗅皮質"], amygdala: ["amygdala", "same"],
+  "temporal-neocortex": ["tempctx", "same", true], "nucleus-basalis": ["basalis", "same", true]
 };
 var VIA = { icp: "下小腦腳", "mammillary-body": "乳頭體", md: "背內側核", son: "視上核", pvn: "室旁核", caudate: "尾狀核", putamen: "殼核" };
 var NERVE_FX = { cn3: "cn3", cn4: "cn4", cn5: "cn5", cn6: "cn6", cn7: "cn7", cn8: "cn8", cn9: "bulbar", cn10: "bulbar", cn11: "cn11", cn12: "cn12" };
@@ -305,6 +328,10 @@ function describeBrain(kind, side, info) {
     case "thal-body": return S + "半身（頭以下）：觸覺、本體覺、痛溫覺都喪失（視丘 VPL）；之後可能出現劇烈的視丘痛";
     case "thal-face": return S + "臉：所有感覺喪失（視丘 VPM）";
     case "hemiballismus": return S + "偏身投擲症：突然、用力、甩動式的不自主動作，上肢近端最明顯（視丘下核）";
+    case "hippo": return S + "顳葉內側（" + (via.length ? via.filter(function (v, i, a) { return a.indexOf(v) === i; }).join("、") : "海馬") + "）：顳葉癲癇的病灶——先兆（似曾相識、怪味、恐懼、上腹異樣感）、意識不清；單側通常不會失憶";
+    case "amygdala": return S + "杏仁核：恐懼與憤怒反應減弱（單側影響小）";
+    case "kb": return "Klüver-Bucy 症候群：溫馴、失去恐懼與憤怒、口部探索過度與暴食、性行為異常、視覺失認（雙側杏仁核與顳葉前下部）";
+    case "cholinergic": return "皮質與海馬的乙醯膽鹼輸入減少 → 認知退化、失智（基底前腦膽鹼性神經元，Alzheimer 病）";
     case "parkinsonism": return S + "身體：Parkinson 症狀——靜止型顫抖、齒輪狀僵直、運動遲緩、姿勢不穩（黑質緻密部 → 紋狀體的多巴胺減少）";
     case "chorea": return S + "身體：舞蹈症——快速、不規則、無法停止的不自主動作，上肢與臉最明顯（" + (via.length ? via.join("、") : "紋狀體") + "）";
     case "lentiform": return S + "身體：肌張力異常、顫抖（揮翼樣）、僵直、構音困難（" + (via.length ? via.join("、") : "豆狀核") + "）";
